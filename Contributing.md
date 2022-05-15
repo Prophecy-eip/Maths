@@ -5,6 +5,7 @@
 - **NEVER push on `main` branch.**
 - **ALWAYS use Pull Requests when adding new features or bug fix.**
 - **AlWAYS merge on the `develop` branch.**
+- **[Install the pre-commit hook for consistency](Contributing.md#install-the-pre-commit-hook)**
 
 ## Convention
 
@@ -45,6 +46,19 @@ Follow that [guide](https://chris.beams.io/posts/git-commit/) to see how to writ
   - Format: Use the imperative mood in the subject line: "If applied, this commit
     will `_your subject line here_`"
 
+## Install the pre-commit hook
+
+```sh
+# Install the utilitary
+pip3 install pre-commit
+
+# Install the hook
+pre-commit install
+
+# Update the hook (not mandatory)
+pre-commit autoupdate
+```
+
 ## GitHub workflow
 
 The recommended workflow is to clone the repository from `Prophecy-eip/Maths` and open pull requests directly from the repository.
@@ -78,7 +92,7 @@ git push
 
 ```sh
 # Go to main
-git checkout main 
+git checkout main
 
 # Pull change
 git pull
