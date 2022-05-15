@@ -1,5 +1,5 @@
 [package]
-name = "Maths"
+name = "maths"
 version = "0.1.0"
 authors = ["Paul BEAUDET paul.beaudet@epitech.eu"]
 description = "Maths library for our EIP project"
