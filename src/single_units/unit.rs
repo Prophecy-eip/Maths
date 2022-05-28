@@ -29,7 +29,7 @@ struct Stats {
 }
 
 /// Modifier for a unit like weapon, armor, etc.
-struct Modifier { 
+struct Modifier {
     /// The modifier effect
     stat: Stats,
     /// This represents the requirements for the unit to be able to use the modifier as an array of flags
@@ -37,10 +37,10 @@ struct Modifier {
 }
 
 /// Units status
-enum Status { 
+enum Status {
     FLEE,
     CHARGE,
-    FIGHT
+    FIGHT,
 }
 
 /// This represent a unit in the game.
@@ -48,9 +48,9 @@ struct Unit {
     /// The unit's stats
     stats: Stats,
     /// The currently affecting modofiers for the unit like weapon oe spell
-    modifiers: Vec<Modifier>, 
+    modifiers: Vec<Modifier>,
     /// The current unit position (may be helpfull if we consider close range unit and far range unit)
-    position: (usize, usize), 
+    position: (usize, usize),
     /// The current status of the unit
     status: Status,
 }
