@@ -63,6 +63,7 @@ pub enum ChargeReaction {
 }
 
 /// This represent a unit in the game.
+<<<<<<< HEAD
 pub struct Unit {
     /// The unit's stats
     pub stats: Stats,
@@ -72,4 +73,15 @@ pub struct Unit {
     pub position: (isize, isize),
     /// The current status of the unit
     pub status: Status,
+=======
+struct Unit {
+    /// The unit's stats
+    stats: Stats,
+    /// The currently affecting modofiers for the unit like weapon oe spell
+    modifiers: Vec<Modifier>,
+    /// The current unit position (may be helpfull if we consider close range unit and far range unit)
+    position: (usize, usize),
+    /// The current status of the unit
+    status: Status,
+>>>>>>> d1a7a77 (add a more clean version of the charge module)
 }
