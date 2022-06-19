@@ -32,6 +32,10 @@ struct Stats {
 struct Modifier {
     /// The modifier effect
     stat: Stats,
+    /// Number of faces added to dice rolling
+    nb_faces: isize,
+    /// Number of dice added to dice rolling
+    nb_dice: isize,
     /// This represents the requirements for the unit to be able to use the modifier as an array of flags
     requirements: Vec<String>,
 }
@@ -41,6 +45,13 @@ enum Status {
     FLEE,
     CHARGE,
     FIGHT,
+}
+
+/// This structure represent a unit reaction when beeing charged.
+enum ChargeReaction {
+    SHOOT,
+    RUN,
+    HOLD,
 }
 
 /// This represent a unit in the game.
