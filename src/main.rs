@@ -3,9 +3,9 @@ use crate::charge_reaction::{Stats, Modifier, Unit, Status};
 pub(crate) mod charge_reaction;
 
 fn main() {
-    //make two variables of type Unit a and b and use the Impl Unit for them
-    
-    let _stats_vectors_0 = Stats {
+   
+    // WEAK INITIALIZATION OF UNIT    
+    let _stats_vectors_weak = Stats {
         advance_rate: 0,
         march_rate: 0,
         discipline: 0,
@@ -22,7 +22,19 @@ fn main() {
         force: 0,
     };
 
-    let _stats_vectors_8 = Stats {
+    let _modifiers_simple_weak = Modifier {
+        requirements: Vec::new(),
+        stat: _stats_vectors_weak,
+        nb_dice: 0,
+        nb_faces: 0,
+    };
+    
+    let mut _modifiers_vectors_weak = Vec::new();
+    _modifiers_vectors_weak.push(_modifiers_simple_weak);
+
+
+    // STRONG INITIALIZATION OF UNIT
+    let _stats_vectors_strong = Stats {
         advance_rate: 8,
         march_rate: 8,
         discipline: 8,
@@ -39,45 +51,36 @@ fn main() {
         force: 8,
     };
 
-    let _modifiers_simple_0 = Modifier {
+    let _modifiers_simple_strong = Modifier {
         requirements: Vec::new(),
-        stat: _stats_vectors_0,
+        // uncomment the line beneath and commit the line above to get the first reacting, considering you are using this modifier in the primary Unit you'll call.
+        // requirements: vec!["far".to_string()],
+        stat: _stats_vectors_strong,
         nb_dice: 0,
         nb_faces: 0,
     };
 
-    let _modifiers_simple_8 = Modifier {
-        requirements: Vec::new(),
-        stat: _stats_vectors_8,
-        nb_dice: 0,
-        nb_faces: 0,
-    };
+    let mut _modifiers_vectors_strong = Vec::new();
+    _modifiers_vectors_strong.push(_modifiers_simple_strong);
 
-    // make a vectors of modifiers and initialize it with the simple modifier
-    let mut _modifiers_vectors_8 = Vec::new();
-    _modifiers_vectors_8.push(_modifiers_simple_8);
-
-    //make a vector of modifiers for B
-    let mut _modifiers_vectors_0 = Vec::new();
-    _modifiers_vectors_0.push(_modifiers_simple_0);
-
+    //Basic position
     let _pos = (0, 0);
 
     let mut a = Unit {
-        stats: _stats_vectors_0,
-        modifiers: _modifiers_vectors_0,
+        stats: _stats_vectors_strong,
+        modifiers: _modifiers_vectors_strong,
         position: _pos,
         status: Status::IDLE,
     };
 
     let mut b = Unit {
-        stats: _stats_vectors_8,
-        modifiers: _modifiers_vectors_8,
+        stats: _stats_vectors_weak,
+        modifiers: _modifiers_vectors_weak,
         position: _pos,
         status: Status::IDLE,
     };
 
-    // time to try the chargeReaction
+    // time to try the chargeReaction & print the result
     let charge_reaction = a.chargeReaction(&mut b);
     println!("{:?}", charge_reaction);
 
