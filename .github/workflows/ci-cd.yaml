@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  pull_request:
+    types:
+      - "opened"
+      - "ready_for_review"
+  push:
+    branches:
+      - "master"
+      - "develop"
+
+jobs:
+  check:
+    name: cargo-check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - uses: actions-rs/cargo@v1
+        with:
+          command: check
+  clippy:
+    name: cargo clippy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          components: clippy
+      - uses: actions-rs/cargo@v1
+        with:
+          command: clippy
+  format:
+    name: cargo fmt
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          components: rustfmt
+      - uses: actions-rs/cargo@v1
+        with:
+          command: fmt
