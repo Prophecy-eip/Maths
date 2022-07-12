@@ -1,4 +1,3 @@
-//pub use unit...
 /// This structure represent all the stats that a unit can have.
 #[derive(PartialEq, Copy, Clone)]
 pub struct Stats {
