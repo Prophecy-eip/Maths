@@ -41,10 +41,6 @@ impl Unit {
             self.stats.force.try_into().unwrap(),
             target.stats.resilience.try_into().unwrap(),
         );
-        // The number of attack that touched the enemy
-        let nb_hit: f64;
-        // The number of attack that wounded the enemy
-        let nb_wound: f64;
         // The number of attack that the enemy can save
         let foe_save: f64 = target.estimate_armour_save(self);
         // The number of face on the dices for hit rolling
@@ -53,7 +49,6 @@ impl Unit {
         let mut nb_hit_roll: isize = self.stats.attack;
         // The number of face on the dices for wound rolling
         let mut nb_wound_face: isize = DEFAULT_DICE;
-        let final_result: f64;
 
         let wound: String = "wound".to_owned();
         let hit: String = "hit".to_owned();
@@ -71,25 +66,24 @@ impl Unit {
 
         // With (nb_hit_face - minimumToHit + 1) / nb_hit_face we compute the probability to hit
         // we then time this probability with the number of attack to obtains, the mean number of hit done.
-        nb_hit = ((nb_hit_roll as f64)
-            * ((nb_hit_face as f64 - (minimum_to_hit as f64) + 1 as f64) / nb_hit_face as f64)
-                as f64)
+        let nb_hit: f64 = ((nb_hit_roll as f64)
+            * ((nb_hit_face as f64 - (minimum_to_hit as f64) + 1.0) / nb_hit_face as f64))
             .abs()
             .ceil();
 
         // With (nb_wound_face - minimumToWound + 1) / nb_wound_face we compute the probability to wound
         // we then time this probability with the number of attack that hit to obtains, the mean number of wound done.
-        nb_wound = (nb_hit
+        let nb_wound: f64 = (nb_hit
             * ((nb_wound_face as f64 - (minimum_to_wound as f64) + 1.0) / nb_wound_face as f64)
                 as f64)
             .abs()
             .ceil();
 
-        final_result = nb_wound - (nb_wound * foe_save).ceil();
+        let final_result: f64 = nb_wound - (nb_wound * foe_save).ceil();
         if final_result > 0.0 {
-            return final_result;
+            final_result
         } else {
-            return 0.0;
+            0.0
         }
     }
 
@@ -97,12 +91,6 @@ impl Unit {
     fn estimate_armour_save(&mut self, target: &Unit) -> f64 {
         // The number of faces on the dices
         let mut success_faces = DEFAULT_DICE;
-        // The minimum to save an attack
-        let mut armour_save: isize;
-        // The probability to save an attack
-        let armour_stat: f64;
-        // The probabibility to save an attack with aegis
-        let aegis_stat: f64;
 
         let save: String = "save".to_owned();
 
@@ -113,27 +101,28 @@ impl Unit {
             }
         }
 
-        armour_save = ARMOUR_SAVE_THRESHOLD - (self.stats.armour - target.stats.armour_penetration);
+        let mut armour_save: isize =
+            ARMOUR_SAVE_THRESHOLD - (self.stats.armour - target.stats.armour_penetration);
         armour_save = if armour_save < 0 { 0 } else { armour_save };
 
         // size of dice - number of winning faces + 1 / size of dice = probability to win
         //DEBUG
         let mut temp: f64 =
-            ((success_faces as f64 - armour_save as f64 + 1 as f64) / success_faces as f64) as f64;
+            (success_faces as f64 - armour_save as f64 + 1.0) / success_faces as f64;
         temp = if temp < 0.0 { 0.0 } else { temp };
-        armour_stat = temp.ceil(); //as f64;
-        aegis_stat = (((success_faces as f64 - self.stats.aegis as f64 + 1 as f64)
-            / success_faces as f64) as f64)
+        let armour_stat = temp.ceil(); //as f64;
+        let aegis_stat = ((success_faces as f64 - self.stats.aegis as f64 + 1.0)
+            / success_faces as f64)
             .abs()
             .ceil();
 
         if self.stats.aegis == 0 {
             // The probability to save an attack with no aegis
-            return armour_stat;
+            armour_stat
         } else {
             // Here we compute the probability to save an attack with aegis OR without aegis
             // return armour_stat + aegis_stat - (aegis_stat * armour_stat);
-            return armour_stat + aegis_stat + (aegis_stat * armour_stat);
+            armour_stat + aegis_stat + (aegis_stat * armour_stat)
         }
         // return 0.0;
     }
@@ -157,18 +146,16 @@ impl Unit {
             .find(|x| x.requirements.contains(&far))
             != None
         {
-            return ChargeReaction::SHOOT;
-            // If we can injure the opponent more than him, we can attack him
+            ChargeReaction::SHOOT
         } else if self.estimate_melee_damage(target) >= target.estimate_melee_damage(self) {
             println!(
                 "self: {}, other: {}",
                 self.estimate_melee_damage(target),
                 target.estimate_melee_damage(self)
             );
-            return ChargeReaction::HOLD;
-            // Or else we run away
+            ChargeReaction::HOLD
         } else {
-            return ChargeReaction::RUN;
+            ChargeReaction::RUN
         }
     }
 }
