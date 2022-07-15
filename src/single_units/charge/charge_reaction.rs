@@ -162,6 +162,61 @@ impl Unit {
 
 #[cfg(test)]
 mod tests {
+    use super::Unit;
+
+    fn generate_unit(strength: String) -> Unit {
+        let stat = if strength == "weak" { 0 } else { 9 };
+        let _stats = crate::single_units::unit::Stats {
+            advance_rate: stat,
+            march_rate: stat,
+            discipline: stat,
+            health_point: stat,
+            defense: stat,
+            resilience: stat,
+            armour: stat,
+            aegis: 0,
+            attack: stat,
+            offensive: stat,
+            strength: stat,
+            armour_penetration: stat,
+            agility: stat,
+            force: stat,
+        };
+        let _modifier_stat = crate::single_units::unit::Stats {
+            advance_rate: 0,
+            march_rate: 0,
+            discipline: 0,
+            health_point: 0,
+            defense: 0,
+            resilience: 0,
+            armour: 0,
+            aegis: 0,
+            attack: 0,
+            offensive: 0,
+            strength: 0,
+            armour_penetration: 0,
+            agility: 0,
+            force: 0,
+        };
+
+        let _modifier = crate::single_units::unit::Modifier {
+            requirements: Vec::new(),
+            stat: _modifier_stat,
+            nb_dice: 0,
+            nb_faces: 0,
+        };
+        let mut _modifiers = Vec::new();
+        _modifiers.push(_modifier);
+
+        let unit = crate::single_units::unit::Unit {
+            stats: _stats,
+            modifiers: _modifiers,
+            position: (0, 0),
+            status: crate::single_units::unit::Status::IDLE,
+        };
+        return unit;
+    }
+
     #[test]
     fn compute_roll_to_hit() {
         let sup = crate::single_units::unit::Unit::compute_roll_to_hit(5, 3);
@@ -180,107 +235,8 @@ mod tests {
 
     #[test]
     fn estimate_melee_damage() {
-        /*            UNIT A           */
-        let _stats = crate::single_units::unit::Stats {
-            advance_rate: 8,
-            march_rate: 8,
-            discipline: 8,
-            health_point: 8,
-            defense: 8,
-            resilience: 8,
-            armour: 8,
-            aegis: 0,
-            attack: 8,
-            offensive: 8,
-            strength: 8,
-            armour_penetration: 8,
-            agility: 8,
-            force: 8,
-        };
-
-        let _modifier_stat = crate::single_units::unit::Stats {
-            advance_rate: 0,
-            march_rate: 0,
-            discipline: 0,
-            health_point: 0,
-            defense: 0,
-            resilience: 0,
-            armour: 0,
-            aegis: 0,
-            attack: 0,
-            offensive: 0,
-            strength: 0,
-            armour_penetration: 0,
-            agility: 0,
-            force: 0,
-        };
-
-        let _modifier = crate::single_units::unit::Modifier {
-            requirements: Vec::new(),
-            stat: _modifier_stat,
-            nb_dice: 0,
-            nb_faces: 0,
-        };
-        let mut _modifiers = Vec::new();
-        _modifiers.push(_modifier);
-
-        let mut unit = crate::single_units::unit::Unit {
-            stats: _stats,
-            modifiers: _modifiers,
-            position: (0, 0),
-            status: crate::single_units::unit::Status::IDLE,
-        };
-
-        /*            TARGET           */
-
-        let _stats_target = crate::single_units::unit::Stats {
-            advance_rate: 9,
-            march_rate: 9,
-            discipline: 9,
-            health_point: 9,
-            defense: 9,
-            resilience: 9,
-            armour: 9,
-            aegis: 0,
-            attack: 9,
-            offensive: 9,
-            strength: 9,
-            armour_penetration: 9,
-            agility: 9,
-            force: 9,
-        };
-
-        let _modifier_stat = crate::single_units::unit::Stats {
-            advance_rate: 0,
-            march_rate: 0,
-            discipline: 0,
-            health_point: 0,
-            defense: 0,
-            resilience: 0,
-            armour: 0,
-            aegis: 0,
-            attack: 0,
-            offensive: 0,
-            strength: 0,
-            armour_penetration: 0,
-            agility: 0,
-            force: 0,
-        };
-        let _target_modifier = crate::single_units::unit::Modifier {
-            requirements: Vec::new(),
-            stat: _modifier_stat,
-            nb_dice: 0,
-            nb_faces: 0,
-        };
-        let mut _target_modifiers = Vec::new();
-        _target_modifiers.push(_target_modifier);
-
-        let mut target = crate::single_units::unit::Unit {
-            stats: _stats_target,
-            modifiers: _target_modifiers,
-            position: (0, 0),
-            status: crate::single_units::unit::Status::IDLE,
-        };
+        let mut unit = generate_unit("weak".to_string());
+        let mut target = generate_unit("strong".to_string());
 
         let damage_taken = unit.estimate_melee_damage(&mut target);
         assert_eq!(damage_taken, 0.0f64);
@@ -288,107 +244,8 @@ mod tests {
 
     #[test]
     fn estimate_armour_save() {
-        /*            UNIT A           */
-        let _stats = crate::single_units::unit::Stats {
-            advance_rate: 8,
-            march_rate: 8,
-            discipline: 8,
-            health_point: 8,
-            defense: 8,
-            resilience: 8,
-            armour: 8,
-            aegis: 0,
-            attack: 8,
-            offensive: 8,
-            strength: 8,
-            armour_penetration: 8,
-            agility: 8,
-            force: 8,
-        };
-
-        let _modifier_stat = crate::single_units::unit::Stats {
-            advance_rate: 0,
-            march_rate: 0,
-            discipline: 0,
-            health_point: 0,
-            defense: 0,
-            resilience: 0,
-            armour: 0,
-            aegis: 0,
-            attack: 0,
-            offensive: 0,
-            strength: 0,
-            armour_penetration: 0,
-            agility: 0,
-            force: 0,
-        };
-
-        let _modifier = crate::single_units::unit::Modifier {
-            requirements: Vec::new(),
-            stat: _modifier_stat,
-            nb_dice: 0,
-            nb_faces: 0,
-        };
-        let mut _modifiers = Vec::new();
-        _modifiers.push(_modifier);
-
-        let mut unit = crate::single_units::unit::Unit {
-            stats: _stats,
-            modifiers: _modifiers,
-            position: (0, 0),
-            status: crate::single_units::unit::Status::IDLE,
-        };
-
-        /*            TARGET           */
-
-        let _stats_target = crate::single_units::unit::Stats {
-            advance_rate: 9,
-            march_rate: 9,
-            discipline: 9,
-            health_point: 9,
-            defense: 9,
-            resilience: 9,
-            armour: 9,
-            aegis: 0,
-            attack: 9,
-            offensive: 9,
-            strength: 9,
-            armour_penetration: 9,
-            agility: 9,
-            force: 9,
-        };
-
-        let _modifier_stat = crate::single_units::unit::Stats {
-            advance_rate: 0,
-            march_rate: 0,
-            discipline: 0,
-            health_point: 0,
-            defense: 0,
-            resilience: 0,
-            armour: 0,
-            aegis: 0,
-            attack: 0,
-            offensive: 0,
-            strength: 0,
-            armour_penetration: 0,
-            agility: 0,
-            force: 0,
-        };
-        let _target_modifier = crate::single_units::unit::Modifier {
-            requirements: Vec::new(),
-            stat: _modifier_stat,
-            nb_dice: 0,
-            nb_faces: 0,
-        };
-        let mut _target_modifiers = Vec::new();
-        _target_modifiers.push(_target_modifier);
-
-        let mut target = crate::single_units::unit::Unit {
-            stats: _stats_target,
-            modifiers: _target_modifiers,
-            position: (0, 0),
-            status: crate::single_units::unit::Status::IDLE,
-        };
+        let mut unit = generate_unit("weak".to_string());
+        let mut target = generate_unit("strong".to_string());
 
         let damage_saved = unit.estimate_armour_save(&mut target);
         assert_eq!(damage_saved, 0.0f64);
@@ -396,106 +253,8 @@ mod tests {
 
     #[test]
     fn charge() {
-        let _stats = crate::single_units::unit::Stats {
-            advance_rate: 8,
-            march_rate: 8,
-            discipline: 8,
-            health_point: 8,
-            defense: 8,
-            resilience: 8,
-            armour: 8,
-            aegis: 0,
-            attack: 8,
-            offensive: 8,
-            strength: 8,
-            armour_penetration: 8,
-            agility: 8,
-            force: 8,
-        };
-
-        let _modifier_stat = crate::single_units::unit::Stats {
-            advance_rate: 0,
-            march_rate: 0,
-            discipline: 0,
-            health_point: 0,
-            defense: 0,
-            resilience: 0,
-            armour: 0,
-            aegis: 0,
-            attack: 0,
-            offensive: 0,
-            strength: 0,
-            armour_penetration: 0,
-            agility: 0,
-            force: 0,
-        };
-
-        let _modifier = crate::single_units::unit::Modifier {
-            requirements: Vec::new(),
-            stat: _modifier_stat,
-            nb_dice: 0,
-            nb_faces: 0,
-        };
-        let mut _modifiers = Vec::new();
-        _modifiers.push(_modifier);
-
-        let mut unit = crate::single_units::unit::Unit {
-            stats: _stats,
-            modifiers: _modifiers,
-            position: (0, 0),
-            status: crate::single_units::unit::Status::IDLE,
-        };
-
-        /*            TARGET           */
-
-        let _stats_target = crate::single_units::unit::Stats {
-            advance_rate: 9,
-            march_rate: 9,
-            discipline: 9,
-            health_point: 9,
-            defense: 9,
-            resilience: 9,
-            armour: 9,
-            aegis: 0,
-            attack: 9,
-            offensive: 9,
-            strength: 9,
-            armour_penetration: 9,
-            agility: 9,
-            force: 9,
-        };
-
-        let _modifier_stat = crate::single_units::unit::Stats {
-            advance_rate: 0,
-            march_rate: 0,
-            discipline: 0,
-            health_point: 0,
-            defense: 0,
-            resilience: 0,
-            armour: 0,
-            aegis: 0,
-            attack: 0,
-            offensive: 0,
-            strength: 0,
-            armour_penetration: 0,
-            agility: 0,
-            force: 0,
-        };
-        let _target_modifier = crate::single_units::unit::Modifier {
-            requirements: Vec::new(),
-            stat: _modifier_stat,
-            nb_dice: 0,
-            nb_faces: 0,
-        };
-        let mut _target_modifiers = Vec::new();
-        _target_modifiers.push(_target_modifier);
-
-        let mut target = crate::single_units::unit::Unit {
-            stats: _stats_target,
-            modifiers: _target_modifiers,
-            position: (0, 0),
-            status: crate::single_units::unit::Status::IDLE,
-        };
+        let mut unit = generate_unit("weak".to_string());
+        let mut target = generate_unit("strong".to_string());
 
         unit.charge(&mut target);
         match unit.status {
@@ -506,106 +265,22 @@ mod tests {
 
     #[test]
     fn charge_reaction() {
-        let _stats = crate::single_units::unit::Stats {
-            advance_rate: 8,
-            march_rate: 8,
-            discipline: 8,
-            health_point: 8,
-            defense: 8,
-            resilience: 8,
-            armour: 8,
-            aegis: 0,
-            attack: 8,
-            offensive: 8,
-            strength: 8,
-            armour_penetration: 8,
-            agility: 8,
-            force: 8,
-        };
-
-        let _modifier_stat = crate::single_units::unit::Stats {
-            advance_rate: 0,
-            march_rate: 0,
-            discipline: 0,
-            health_point: 0,
-            defense: 0,
-            resilience: 0,
-            armour: 0,
-            aegis: 0,
-            attack: 0,
-            offensive: 0,
-            strength: 0,
-            armour_penetration: 0,
-            agility: 0,
-            force: 0,
-        };
-
-        let _modifier = crate::single_units::unit::Modifier {
-            requirements: Vec::new(),
-            stat: _modifier_stat,
-            nb_dice: 0,
-            nb_faces: 0,
-        };
-        let mut _modifiers = Vec::new();
-        _modifiers.push(_modifier);
-
-        let mut unit = crate::single_units::unit::Unit {
-            stats: _stats,
-            modifiers: _modifiers,
-            position: (0, 0),
-            status: crate::single_units::unit::Status::IDLE,
-        };
-
-        /*            TARGET           */
-
-        let _stats_target = crate::single_units::unit::Stats {
-            advance_rate: 9,
-            march_rate: 9,
-            discipline: 9,
-            health_point: 9,
-            defense: 9,
-            resilience: 9,
-            armour: 9,
-            aegis: 0,
-            attack: 9,
-            offensive: 9,
-            strength: 9,
-            armour_penetration: 9,
-            agility: 9,
-            force: 9,
-        };
-
-        let _modifier_stat = crate::single_units::unit::Stats {
-            advance_rate: 0,
-            march_rate: 0,
-            discipline: 0,
-            health_point: 0,
-            defense: 0,
-            resilience: 0,
-            armour: 0,
-            aegis: 0,
-            attack: 0,
-            offensive: 0,
-            strength: 0,
-            armour_penetration: 0,
-            agility: 0,
-            force: 0,
-        };
-        let _target_modifier = crate::single_units::unit::Modifier {
-            requirements: Vec::new(),
-            stat: _modifier_stat,
-            nb_dice: 0,
-            nb_faces: 0,
-        };
-        let mut _target_modifiers = Vec::new();
-        _target_modifiers.push(_target_modifier);
-
-        let mut target = crate::single_units::unit::Unit {
-            stats: _stats_target,
-            modifiers: _target_modifiers,
-            position: (0, 0),
-            status: crate::single_units::unit::Status::IDLE,
-        };
+        let mut unit = generate_unit("weak".to_string());
+        let mut target = generate_unit("strong".to_string());
+        unit.stats.advance_rate = 8;
+        unit.stats.march_rate = 8;
+        unit.stats.discipline = 8;
+        unit.stats.health_point = 8;
+        unit.stats.defense = 8;
+        unit.stats.resilience = 8;
+        unit.stats.armour = 8;
+        unit.stats.aegis = 0;
+        unit.stats.attack = 8;
+        unit.stats.offensive = 8;
+        unit.stats.strength = 8;
+        unit.stats.armour_penetration = 8;
+        unit.stats.agility = 8;
+        unit.stats.force = 8;
 
         let mut result = target.charge_reaction(&mut unit);
         match result {
