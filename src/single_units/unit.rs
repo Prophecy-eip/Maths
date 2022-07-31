@@ -56,7 +56,6 @@ pub struct Stats {
 #[derive(PartialEq, Clone)]
 pub struct Modifier {
     pub stat: Stats,
-    pub nb_faces: isize,
     pub nb_dice: isize,
     pub requirements: Vec<String>,
 }
@@ -99,6 +98,5 @@ enum ChargeReaction {
 pub struct Unit {
     pub stats: Stats,
     pub modifiers: Vec<Modifier>,
-    pub position: (isize, isize),
     pub status: Status,
 }
