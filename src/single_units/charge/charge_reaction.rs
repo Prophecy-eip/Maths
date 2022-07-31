@@ -51,7 +51,7 @@ impl Unit {
     /// target (&mut Unit): The other unit to fight with
     ///
     /// ## Return
-    /// f64: Something with a comma
+    /// f64: Number of damge done to the other unit
     fn estimate_melee_damage(&mut self, target: &mut Unit) -> f64 {
         let minimum_to_hit: u8 = Unit::compute_roll_to_hit(
             self.stats.offensive.try_into().unwrap(),
@@ -63,11 +63,11 @@ impl Unit {
         );
         let nb_saves: f64 = target.estimate_armour_save(self);
         // The number of face on the dices for hit rolling
-        let mut nb_hit_face: isize = DEFAULT_DICE;
+        let nb_hit_face: isize = DEFAULT_DICE;
         // The number of dices to roll while hitting
         let mut nb_hit_roll: isize = self.stats.attack;
         // The number of face on the dices for wound rolling
-        let mut nb_wound_face: isize = DEFAULT_DICE;
+        let nb_wound_face: isize = DEFAULT_DICE;
 
         let wound: String = "wound".to_owned();
         let hit: String = "hit".to_owned();
@@ -75,11 +75,7 @@ impl Unit {
         // We will here determines the number of dices to roll and there number of faces. Both to hit and wound
         for n in &self.modifiers {
             if n.requirements.contains(&hit) {
-                nb_hit_face += n.nb_faces;
                 nb_hit_roll += n.nb_dice;
-            }
-            if n.requirements.contains(&wound) {
-                nb_wound_face += n.nb_faces;
             }
         }
 
@@ -89,6 +85,7 @@ impl Unit {
             * ((nb_hit_face as f64 - (minimum_to_hit as f64) + 1.0) / nb_hit_face as f64))
             .abs()
             .ceil();
+        // TODO Rajouter la précision sur quel chiffre on arrondi (ici unité supérieure)
 
         // With (nb_wound_face - minimumToWound + 1) / nb_wound_face we compute the probability to wound
         // we then time this probability with the number of attack that hit to obtains, the mean number of wound done.
@@ -97,8 +94,10 @@ impl Unit {
                 as f64)
             .abs()
             .ceil();
+        // TODO Rajouter la précision sur quel chiffre on arrondi (ici unité supérieure)
 
         let final_result: f64 = nb_wound - (nb_wound * nb_saves).ceil();
+        // TODO Changer le calcul pour les blessures restantes
         if final_result > 0.0 {
             final_result
         } else {
@@ -115,11 +114,10 @@ impl Unit {
     /// f64: Something with a comma in it
     fn estimate_armour_save(&mut self, target: &Unit) -> f64 {
         // The number of faces on the dices
-        let mut success_faces = DEFAULT_DICE;
+        let success_faces = DEFAULT_DICE;
 
         for n in &self.modifiers {
             if n.requirements.contains(&("save".to_owned())) {
-                success_faces += n.nb_faces;
                 self.stats.armour += n.stat.armour;
             }
         }
@@ -138,6 +136,8 @@ impl Unit {
             / success_faces as f64)
             .abs()
             .ceil();
+        // Rajouter la précision sur quel chiffre on arrondi (ici unité supérieure)
+        // TODO
 
         if self.stats.aegis == 0 {
             // The probability to save an attack with no aegis
@@ -157,6 +157,7 @@ impl Unit {
     pub fn charge(&mut self, _target: &Unit) {
         self.status = Status::CHARGE;
     }
+    // TODO maybe remove
 
     /// # This function is used to determined the appropriate reaction in case of charge
     ///
@@ -179,6 +180,7 @@ impl Unit {
             != None
         {
             ChargeReaction::SHOOT
+            // TODO Maybe change why hold and remove run
         } else if self.estimate_melee_damage(target) >= target.estimate_melee_damage(self) {
             println!(
                 "self: {}, other: {}",
@@ -233,7 +235,6 @@ mod tests {
             requirements: Vec::new(),
             stat: _modifier_stat,
             nb_dice: 0,
-            nb_faces: 0,
         };
         let mut _modifiers = Vec::new();
         _modifiers.push(_modifier);
@@ -241,7 +242,6 @@ mod tests {
         let unit = crate::single_units::unit::Unit {
             stats: _stats,
             modifiers: _modifiers,
-            position: (0, 0),
             status: crate::single_units::unit::Status::IDLE,
         };
         return unit;
