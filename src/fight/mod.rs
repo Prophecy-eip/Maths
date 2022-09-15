@@ -6,12 +6,30 @@
 mod global_values;
 use crate::{model, regiment, roll};
 
+/// Compute the number of attacks of a Regiment
+///
+/// # Parameters
+/// regiment (regiment::Regiment): The Regiment attacking
+///
+/// # Return
+/// usize: The number of attacks of the Regiment
 fn get_nb_attacks(regiment_attacking: &regiment::Regiment) -> usize {
     regiment_attacking.get_model().get_stats().get_attack() * regiment_attacking.get_cols()
         + ((regiment_attacking.get_model().get_stats().get_attack() * regiment_attacking.get_cols()
             / 2) as usize)
 }
 
+/// Compute the number of wounds a Regiment will suffer
+///
+/// # Parameters
+/// nb_attacks (usize): The number of attacks of the attacking Regiment
+///
+/// to_hit (usize): The value to hit the defending Regiment
+///
+/// to_wound (usize): The value to wound the defending Regiment
+///
+/// # Return
+/// usize: The number of wounds the defending Regiment will suffer
 fn get_nb_wounds(nb_attacks: usize, to_hit: usize, to_wound: usize) -> usize {
     let nb_hit: usize = (((nb_attacks * (global_values::DEFAULT_DICE - to_hit + 1))
         / global_values::DEFAULT_DICE) as f64)
@@ -20,6 +38,17 @@ fn get_nb_wounds(nb_attacks: usize, to_hit: usize, to_wound: usize) -> usize {
         .ceil() as usize
 }
 
+/// Compute the number of wound the defending Regiment will suffer after armor save
+///
+/// # Parameters
+/// nb_wounds (usize): The number of wounds the defending Regiment will suffer
+///
+/// regiment_defending_armor (usize): The armor of the defending Regiment
+///
+/// regiment_attacking_armor_penetration (usize): The armor penetration of the attacking Regiment
+///
+/// # Return
+/// usize: The number of wounds the defending Regiment will suffer after armor save
 fn get_final_result(
     nb_wounds: usize,
     regiment_defending_armor: usize,
@@ -39,6 +68,15 @@ fn get_final_result(
     nb_wounds - nb_save
 }
 
+/// Compute the first round of a fight between 2 Regiment
+///
+/// # Parameters
+/// regiment_attacking (&regiment::Regiment): The Regiment attacking
+///
+/// regiment_defending (&regiment::Regiment): The Regiment defending
+///
+/// # Return
+/// usize: The number of wounds the defending Regiment will suffer
 fn fight_first_turn(
     regiment_attacking: &regiment::Regiment,
     regiment_defending: &regiment::Regiment,
@@ -63,17 +101,39 @@ fn fight_first_turn(
     final_result
 }
 
-fn find_the_fastest(model_1: &model::Model, model_2: &model::Model) -> usize {
-    let model_1_agility: usize = model_1.get_stats().get_agility();
-    let model_2_agility: usize = model_2.get_stats().get_agility();
+/// Return the fastest Model between 2 Model
+/// If the first Model is faster than the second Model, return 1
+/// If the second Model is faster than the first Model, return 2
+/// If the Models have the same speed, return 0
+///
+/// # Parameters
+/// attacking_model (&model::Model): The first Model
+///
+/// defending_model (&model::Model): The second Model
+///
+/// # Return
+/// usize: The fastest Model
+fn find_the_fastest(attacking_model: &model::Model, defending_model: &model::Model) -> usize {
+    let attacking_model_agility: usize = attacking_model.get_stats().get_agility() + 1;
+    let defending_model_agility: usize = defending_model.get_stats().get_agility();
 
-    match model_1_agility.cmp(&model_2_agility) {
+    match attacking_model_agility.cmp(&defending_model_agility) {
         std::cmp::Ordering::Greater => 1,
         std::cmp::Ordering::Less => 2,
         std::cmp::Ordering::Equal => 0,
     }
 }
 
+/// Resolve a fight between 2 Regiment
+/// !! Only the first round is resolved !!
+///
+/// # Parameters
+/// regiment_1 (regiment::Regiment): The first Regiment
+///
+/// regiment_2 (regiment::Regiment): The second Regiment
+///
+/// # Return
+/// usize: The number of wounds the second Regiment will suffer !! Temporary !!
 pub fn resolve_fight(regiment_1: regiment::Regiment, regiment_2: regiment::Regiment) -> usize {
     let fastest: usize = find_the_fastest(regiment_1.get_model(), regiment_2.get_model());
 
@@ -142,7 +202,7 @@ mod tests {
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment =
-            regiment::Regiment::new(model_chaos_warrior.clone(), 4, 5, 20);
+            regiment::Regiment::new(model_chaos_warrior, 4, 5, 20);
         chaos_warrior
     }
 
@@ -194,7 +254,7 @@ mod tests {
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
-            regiment::Regiment::new(model_heavy_infantry.clone(), 4, 5, 20);
+            regiment::Regiment::new(model_heavy_infantry, 4, 5, 20);
         heavy_infantry
     }
 
@@ -207,7 +267,7 @@ mod tests {
         let (chaos_warrior, heavy_infantry): (regiment::Regiment, regiment::Regiment) =
             initialize_two_units();
         assert_eq!(
-            find_the_fastest(&chaos_warrior.get_model(), &heavy_infantry.get_model()),
+            find_the_fastest(chaos_warrior.get_model(), heavy_infantry.get_model()),
             1
         );
     }
@@ -217,7 +277,7 @@ mod tests {
         let (chaos_warrior, heavy_infantry): (regiment::Regiment, regiment::Regiment) =
             initialize_two_units();
         assert_eq!(
-            find_the_fastest(&heavy_infantry.get_model(), &chaos_warrior.get_model()),
+            find_the_fastest(heavy_infantry.get_model(), chaos_warrior.get_model()),
             2
         );
     }
@@ -270,8 +330,6 @@ mod tests {
             model::Modifier::new(chaos_warrior_modifier_stats, 0, vec![]);
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
-        let chaos_warrior: regiment::Regiment =
-            regiment::Regiment::new(model_chaos_warrior.clone(), 4, 5, 20);
         let heavy_infantry_stats: model::Stats = model::Stats::new(
             model::GlobalStats {
                 advance: 4,
@@ -318,8 +376,6 @@ mod tests {
             model::Modifier::new(heavy_infantry_modifier_stats, 0, vec![]);
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
-        let heavy_infantry: regiment::Regiment =
-            regiment::Regiment::new(model_heavy_infantry.clone(), 4, 5, 20);
         assert_eq!(
             find_the_fastest(&model_heavy_infantry, &model_chaos_warrior),
             0
@@ -477,7 +533,7 @@ mod tests {
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment =
-            regiment::Regiment::new(model_chaos_warrior.clone(), 4, 5, 20);
+            regiment::Regiment::new(model_chaos_warrior, 4, 5, 20);
         let heavy_infantry_stats: model::Stats = model::Stats::new(
             model::GlobalStats {
                 advance: 4,
@@ -525,7 +581,7 @@ mod tests {
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
-            regiment::Regiment::new(model_heavy_infantry.clone(), 4, 5, 20);
+            regiment::Regiment::new(model_heavy_infantry, 4, 5, 20);
         let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
         let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
         let to_hit: usize = roll::compute_roll_to_hit(
@@ -597,7 +653,7 @@ mod tests {
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment =
-            regiment::Regiment::new(model_chaos_warrior.clone(), 4, 5, 20);
+            regiment::Regiment::new(model_chaos_warrior, 4, 5, 20);
         let heavy_infantry_stats: model::Stats = model::Stats::new(
             model::GlobalStats {
                 advance: 4,
@@ -645,7 +701,7 @@ mod tests {
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
-            regiment::Regiment::new(model_heavy_infantry.clone(), 4, 5, 20);
+            regiment::Regiment::new(model_heavy_infantry, 4, 5, 20);
         let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
         let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
         let to_hit: usize = roll::compute_roll_to_hit(
@@ -717,7 +773,7 @@ mod tests {
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment =
-            regiment::Regiment::new(model_chaos_warrior.clone(), 4, 5, 20);
+            regiment::Regiment::new(model_chaos_warrior, 4, 5, 20);
         let heavy_infantry_stats: model::Stats = model::Stats::new(
             model::GlobalStats {
                 advance: 4,
@@ -765,7 +821,7 @@ mod tests {
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
-            regiment::Regiment::new(model_heavy_infantry.clone(), 4, 5, 20);
+            regiment::Regiment::new(model_heavy_infantry, 4, 5, 20);
         let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
         let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
         let to_hit: usize = roll::compute_roll_to_hit(
@@ -837,7 +893,7 @@ mod tests {
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment =
-            regiment::Regiment::new(model_chaos_warrior.clone(), 4, 5, 20);
+            regiment::Regiment::new(model_chaos_warrior, 4, 5, 20);
         let heavy_infantry_stats: model::Stats = model::Stats::new(
             model::GlobalStats {
                 advance: 4,
@@ -885,7 +941,7 @@ mod tests {
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
-            regiment::Regiment::new(model_heavy_infantry.clone(), 4, 5, 20);
+            regiment::Regiment::new(model_heavy_infantry, 4, 5, 20);
         let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
         let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
         let to_hit: usize = roll::compute_roll_to_hit(
@@ -957,7 +1013,7 @@ mod tests {
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment =
-            regiment::Regiment::new(model_chaos_warrior.clone(), 4, 5, 20);
+            regiment::Regiment::new(model_chaos_warrior, 4, 5, 20);
         let heavy_infantry_stats: model::Stats = model::Stats::new(
             model::GlobalStats {
                 advance: 4,
@@ -1005,7 +1061,7 @@ mod tests {
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
-            regiment::Regiment::new(model_heavy_infantry.clone(), 4, 5, 20);
+            regiment::Regiment::new(model_heavy_infantry, 4, 5, 20);
         let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
         let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
         let to_hit: usize = roll::compute_roll_to_hit(

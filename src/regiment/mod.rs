@@ -120,7 +120,7 @@ mod tests {
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment =
-            regiment::Regiment::new(model_chaos_warrior.clone(), 4, 5, 20);
+            regiment::Regiment::new(model_chaos_warrior, 4, 5, 20);
         chaos_warrior
     }
 
