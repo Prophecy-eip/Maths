@@ -230,6 +230,7 @@ impl Stats {
 #[derive(Clone, PartialEq, Eq, Debug)]
 pub struct Modifier {
     stat: Stats,
+    bonus: bool,
     nb_dice: usize,
     requirements: Vec<String>,
 }
@@ -239,9 +240,10 @@ impl Modifier {
     ///
     /// # Return
     /// Modifier: The Modifier created
-    pub fn new(stat: Stats, nb_dice: usize, requirements: Vec<String>) -> Modifier {
+    pub fn new(stat: Stats, bonus: bool, nb_dice: usize, requirements: Vec<String>) -> Modifier {
         Modifier {
             stat,
+            bonus,
             nb_dice,
             requirements,
         }

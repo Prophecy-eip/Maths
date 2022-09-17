@@ -199,7 +199,7 @@ mod tests {
             },
         );
         let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, 0, vec![]);
+            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment =
@@ -251,7 +251,7 @@ mod tests {
             },
         );
         let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, 0, vec![]);
+            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
@@ -319,7 +319,7 @@ mod tests {
             },
         );
         let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, 0, vec![]);
+            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
@@ -375,7 +375,7 @@ mod tests {
             },
         );
         let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, 0, vec![]);
+            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let heavy_infantry_stats: model::Stats = model::Stats::new(
@@ -421,7 +421,7 @@ mod tests {
             },
         );
         let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, 0, vec![]);
+            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         assert_eq!(
@@ -577,7 +577,7 @@ mod tests {
             },
         );
         let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, 0, vec![]);
+            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment =
@@ -625,7 +625,7 @@ mod tests {
             },
         );
         let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, 0, vec![]);
+            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
@@ -697,7 +697,7 @@ mod tests {
             },
         );
         let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, 0, vec![]);
+            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment =
@@ -745,7 +745,7 @@ mod tests {
             },
         );
         let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, 0, vec![]);
+            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
@@ -817,7 +817,7 @@ mod tests {
             },
         );
         let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, 0, vec![]);
+            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment =
@@ -865,7 +865,7 @@ mod tests {
             },
         );
         let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, 0, vec![]);
+            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
@@ -937,7 +937,7 @@ mod tests {
             },
         );
         let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, 0, vec![]);
+            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment =
@@ -985,7 +985,7 @@ mod tests {
             },
         );
         let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, 0, vec![]);
+            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
@@ -1057,7 +1057,7 @@ mod tests {
             },
         );
         let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, 0, vec![]);
+            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment =
@@ -1105,7 +1105,7 @@ mod tests {
             },
         );
         let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, 0, vec![]);
+            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
@@ -1199,7 +1199,7 @@ mod tests {
             },
         );
         let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, 0, vec![]);
+            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
