@@ -116,7 +116,7 @@ mod tests {
             },
         );
         let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, 0, vec![]);
+            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment =
@@ -169,7 +169,7 @@ mod tests {
             },
         );
         let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, 0, vec![]);
+            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
