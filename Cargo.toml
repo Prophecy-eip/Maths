@@ -14,3 +14,4 @@ name = "maths"
 crate-type = ["lib", "cdylib"]
 
 [dependencies]
+factorial = "0.2.1"
