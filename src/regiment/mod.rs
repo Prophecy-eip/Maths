@@ -15,6 +15,7 @@ use crate::model;
 ///
 /// nb_models (usize): Number of Model remaining in the Regiment
 ///
+#[derive(Debug, Clone)]
 pub struct Regiment {
     model: model::Model,
     nb_rows: usize,
