@@ -13,3 +13,4 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
+factorial = "0.2.1"
