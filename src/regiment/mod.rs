@@ -21,19 +21,29 @@ pub struct Regiment {
     nb_rows: usize,
     nb_cols: usize,
     nb_models: usize,
+    regiment_health_point: usize,
 }
 
 impl Regiment {
-    /// # Create a new Regiment of the model with the specified number of unit
+    /// ## Create a new Regiment of the model with the specified number of unit
     ///
-    /// ## Return
+    /// ### Return
     /// Regiment: The Regiment created
-    pub fn new(model: model::Model, nb_rows: usize, nb_cols: usize, nb_models: usize) -> Regiment {
+    pub fn new(
+        model: model::Model,
+        nb_rows: usize,
+        nb_cols: usize,
+        nb_models: usize,
+        regiment_health_point: Option<usize>,
+    ) -> Regiment {
+        let pv: usize = model.get_stats().get_health_point();
         Regiment {
             model,
             nb_rows,
             nb_cols,
             nb_models,
+            regiment_health_point: regiment_health_point
+                .unwrap_or(nb_models * pv),
         }
     }
     /// # Get the Model of the Regiment
@@ -66,6 +76,33 @@ impl Regiment {
     /// usize: The number of Models in the Regiment
     pub fn get_nb_models(&self) -> usize {
         self.nb_models
+    }
+
+    /// # Get the regiment total health points
+    ///
+    /// ## Return
+    /// usize: The regiment total health points
+    pub fn get_regiment_health_points(&self) -> usize {
+        self.regiment_health_point
+    }
+
+    /// # Inflict damage to the regiment and rearrange the ranks
+    ///
+    /// ## Return
+    /// usize: The new amount of regiment health points
+    pub fn take_damage(&mut self, amount: usize) -> usize {
+        self.regiment_health_point = match self.regiment_health_point.checked_sub(amount) {
+            None => 0,
+            Some(x) => x
+        };
+        self.nb_models = (self.regiment_health_point as f64 / self.model.get_stats().get_health_point() as f64).ceil() as usize;
+        if self.nb_models >= self.nb_cols {
+            self.nb_rows = (self.nb_models as f64 / self.nb_cols as f64).ceil() as usize;
+        } else {
+            self.nb_rows = 1;
+            self.nb_cols = self.nb_models;
+        }
+        self.regiment_health_point
     }
 }
 
@@ -121,7 +158,7 @@ mod tests {
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment =
-            regiment::Regiment::new(model_chaos_warrior, 4, 5, 20);
+            regiment::Regiment::new(model_chaos_warrior, 4, 5, 20, None);
         chaos_warrior
     }
 
