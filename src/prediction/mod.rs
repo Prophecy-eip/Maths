@@ -11,23 +11,45 @@ use crate::regiment::Regiment;
 ///
 /// point_gained (usize): The points earned by the regiment during the phase
 #[derive(Debug, Clone)]
-pub struct UnitResult {
-    pub regiment: Regiment,
-    pub points_gained: usize,
+pub struct RegimentResult {
+    regiment: Regiment,
+    points_gained: usize,
+}
+
+
+impl RegimentResult {
+    /// ## Create a new RegimentResult
+    /// 
+    /// ### Return
+    /// RegimentResult : The Result created
+    pub fn new(regiment: Regiment, points_gained: usize) -> RegimentResult {
+        RegimentResult {
+            regiment,
+            points_gained
+        }
+    }
+
+    pub fn get_regiment(&self) -> &Regiment {
+        &self.regiment
+    }
+
+    pub fn get_points_gained(&self) -> usize {
+        self.points_gained
+    }
 }
 
 /// This is a prediction of what happened after a phase of the game.
 ///
 /// ## Members
-/// first_unit_result (UnitResult): The first regiment
+/// first_unit_result (RegimentResult): The first regiment
 ///
-/// second_unit_result (UnitResult): The second regiment
+/// second_unit_result (RegimentResult): The second regiment
 ///
 /// achievement_probability (f64): The probability of the achievement of the prophecy
 #[derive(Debug)]
 pub struct Prediction {
-    first_unit_result: UnitResult,
-    second_unit_result: UnitResult,
+    first_unit_result: RegimentResult,
+    second_unit_result: RegimentResult,
     achivement_probability: f64,
 }
 
@@ -36,7 +58,7 @@ impl Prediction {
     ///
     /// ## Return
     /// Prediction -> The newly created Prediction
-    pub fn new(first_unit: UnitResult, second_unit: UnitResult, probability: f64) -> Prediction {
+    pub fn new(first_unit: RegimentResult, second_unit: RegimentResult, probability: f64) -> Prediction {
         Prediction {
             first_unit_result: first_unit,
             second_unit_result: second_unit,
@@ -44,11 +66,11 @@ impl Prediction {
         }
     }
 
-    pub fn get_first_unit_result(&self) -> UnitResult {
+    pub fn get_first_unit_result(&self) -> RegimentResult {
         self.first_unit_result.clone()
     }
 
-    pub fn get_second_unit_result(&self) -> UnitResult {
+    pub fn get_second_unit_result(&self) -> RegimentResult {
         self.second_unit_result.clone()
     }
 
