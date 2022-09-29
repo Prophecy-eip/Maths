@@ -412,23 +412,6 @@ pub fn create_prediction(
             ),
         ),
     ])
-    /*[
-        turn_result_to_prediction(
-            first_unit,
-            second_unit,
-            compute_turn(first_unit, second_unit, ComputeCase::MEAN),
-        ),
-        turn_result_to_prediction(
-            first_unit,
-            second_unit,
-            compute_turn(first_unit, second_unit, ComputeCase::BEST),
-        ),
-        turn_result_to_prediction(
-            first_unit,
-            second_unit,
-            compute_turn(first_unit, second_unit, ComputeCase::WORST),
-        ),
-    ]*/
 }
 
 #[cfg(test)]
