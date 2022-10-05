@@ -135,7 +135,8 @@ pub fn find_the_fastest(attacking_model: &model::Model, defending_model: &model:
 /// f64 -> The probability to save a damage inflited by attacker
 pub fn compute_save_probability(defending: &model::Model, attacking: &model::Model) -> f64 {
     let armour_save: usize = match global_values::ARMOUR_SAVE_THRESHOLD as isize
-        - (defending.get_stats().get_armour() as isize - attacking.get_stats().get_armour_penetration() as isize)
+        - (defending.get_stats().get_armour() as isize
+            - attacking.get_stats().get_armour_penetration() as isize)
     {
         x if x < 0 => 0usize,
         y => y as usize,
@@ -147,14 +148,14 @@ pub fn compute_save_probability(defending: &model::Model, attacking: &model::Mod
         x if x > 1.0 => 1.0,
         y => y,
     };
-    let aegis_proba: f64 = match (global_values::DEFAULT_DICE as f64 - defending.get_stats().get_aegis() as f64
-        + 1.0)
-        / global_values::DEFAULT_DICE as f64
-    {
-        x if x <= 0.0 => 0.0,
-        x if x > 1.0 => 1.0,
-        y => y,
-    };
+    let aegis_proba: f64 =
+        match (global_values::DEFAULT_DICE as f64 - defending.get_stats().get_aegis() as f64 + 1.0)
+            / global_values::DEFAULT_DICE as f64
+        {
+            x if x <= 0.0 => 0.0,
+            x if x > 1.0 => 1.0,
+            y => y,
+        };
     if defending.get_stats().get_aegis() == 0 {
         save_proba
     } else {
@@ -176,12 +177,11 @@ pub fn compute_damage_probability(first_unit: &model::Model, second_unit: &model
         * (1.0_f64 - compute_save_probability(second_unit, first_unit))
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::{
-        compute_nb_wounds, compute_roll_to_hit, compute_roll_to_wound, find_the_fastest,
-        get_nb_attacks,
+        compute_damage_probability, compute_nb_wounds, compute_roll_to_hit, compute_roll_to_wound,
+        compute_save_probability, compute_wound_probability, find_the_fastest, get_nb_attacks,
     };
     use crate::{model, regiment};
 
@@ -289,7 +289,7 @@ mod tests {
         heavy_infantry
     }
 
-    fn initialize_fast_heavy_infantry() -> regiment::Regiment {
+    fn initialize_buffed_heavy_infantry() -> regiment::Regiment {
         let heavy_infantry_stats: model::Stats = model::Stats::new(
             model::GlobalStats {
                 advance: 4,
@@ -300,7 +300,7 @@ mod tests {
                 health_point: 1,
                 defense: 3,
                 resilience: 3,
-                armour: 0,
+                armour: 2,
                 aegis: 0,
             },
             model::OffensiveStats {
@@ -438,10 +438,80 @@ mod tests {
     #[test]
     fn test_fastest_is_none() {
         let first_unit = initialize_chaos_warrior();
-        let second_unit = initialize_fast_heavy_infantry();
+        let second_unit = initialize_buffed_heavy_infantry();
         assert_eq!(
             find_the_fastest(second_unit.get_model(), first_unit.get_model()),
             0
         );
+    }
+
+    #[test]
+    fn test_compute_wound_probability_strongest() {
+        let first_unit = initialize_chaos_warrior();
+        let second_unit = initialize_heavy_infantry();
+
+        let wound_probability: f64 =
+            compute_wound_probability(first_unit.get_model(), second_unit.get_model());
+        assert_eq!(wound_probability - 0.555 < 0.001, true);
+    }
+
+    #[test]
+    fn test_compute_wound_probability_weakest() {
+        let first_unit = initialize_chaos_warrior();
+        let second_unit = initialize_heavy_infantry();
+
+        let wound_probability: f64 =
+            compute_wound_probability(second_unit.get_model(), first_unit.get_model());
+        assert_eq!(wound_probability - 0.166 < 0.001, true);
+    }
+
+    #[test]
+    fn test_compute_save_probability_strongest() {
+        let first_unit = initialize_chaos_warrior();
+        let second_unit = initialize_heavy_infantry();
+
+        let save_probability: f64 =
+            compute_save_probability(first_unit.get_model(), second_unit.get_model());
+        assert_eq!(save_probability, 0.0_f64);
+    }
+
+    #[test]
+    fn test_compute_save_probability_weakest() {
+        let first_unit = initialize_chaos_warrior();
+        let second_unit = initialize_heavy_infantry();
+
+        let save_probability: f64 =
+            compute_save_probability(second_unit.get_model(), first_unit.get_model());
+        assert_eq!(save_probability, 0.0_f64);
+    }
+
+    #[test]
+    fn test_compute_save_probability() {
+        let first_unit = initialize_buffed_heavy_infantry();
+        let second_unit = initialize_chaos_warrior();
+
+        let save_probability: f64 =
+            compute_save_probability(first_unit.get_model(), second_unit.get_model());
+        assert_eq!(save_probability - 0.166 < 0.001, true);
+    }
+
+    #[test]
+    fn test_compute_damage_probability_strongest() {
+        let first_unit = initialize_buffed_heavy_infantry();
+        let second_unit = initialize_chaos_warrior();
+
+        let damage_probability: f64 =
+        compute_damage_probability(first_unit.get_model(), second_unit.get_model());
+        assert_eq!(damage_probability - 0.555 < 0.001, true);
+    }
+
+    #[test]
+    fn test_compute_damage_probability_weakest() {
+        let first_unit = initialize_buffed_heavy_infantry();
+        let second_unit = initialize_chaos_warrior();
+
+        let damage_probability: f64 =
+        compute_damage_probability(second_unit.get_model(), first_unit.get_model());
+        assert_eq!(damage_probability - 0.462 < 0.001, true);
     }
 }
