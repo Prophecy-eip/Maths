@@ -231,4 +231,18 @@ mod tests {
         let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
         assert_eq!(chaos_warrior.get_nb_models(), 20);
     }
+
+    #[test]
+    fn test_get_regiment_health() {
+        let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
+        assert_eq!(chaos_warrior.get_regiment_health_points(), 20);
+    }
+
+    #[test]
+    fn test_take_damage() {
+        let mut chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
+        chaos_warrior.take_damage(5);
+        assert_eq!(chaos_warrior.get_regiment_health_points(), 15);
+        assert_eq!(chaos_warrior.get_nb_models(), 15);
+    }
 }
