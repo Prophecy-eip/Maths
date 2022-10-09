@@ -15,6 +15,9 @@ use crate::model;
 ///
 /// nb_models (usize): Number of Model remaining in the Regiment
 ///
+/// regiment_health_point (usize): The total number of health points that left to the regiment
+/// 
+/// points (usize): The points earned by the regiment
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Regiment {
     model: model::Model,
@@ -22,6 +25,7 @@ pub struct Regiment {
     nb_cols: usize,
     nb_models: usize,
     regiment_health_point: usize,
+    points: usize,
 }
 
 impl Regiment {
@@ -42,8 +46,8 @@ impl Regiment {
             nb_rows,
             nb_cols,
             nb_models,
-            regiment_health_point: regiment_health_point
-                .unwrap_or(nb_models * pv),
+            regiment_health_point: regiment_health_point.unwrap_or(nb_models * pv),
+            points: 0,
         }
     }
     /// # Get the Model of the Regiment
@@ -93,9 +97,11 @@ impl Regiment {
     pub fn take_damage(&mut self, amount: usize) -> usize {
         self.regiment_health_point = match self.regiment_health_point.checked_sub(amount) {
             None => 0,
-            Some(x) => x
+            Some(x) => x,
         };
-        self.nb_models = (self.regiment_health_point as f64 / self.model.get_stats().get_health_point() as f64).ceil() as usize;
+        self.nb_models = (self.regiment_health_point as f64
+            / self.model.get_stats().get_health_point() as f64)
+            .ceil() as usize;
         if self.nb_models >= self.nb_cols {
             self.nb_rows = (self.nb_models as f64 / self.nb_cols as f64).ceil() as usize;
         } else {
@@ -103,6 +109,15 @@ impl Regiment {
             self.nb_cols = self.nb_models;
         }
         self.regiment_health_point
+    }
+
+    pub fn get_points(&self) -> usize {
+        self.points
+    }
+
+    pub fn earn_points(&mut self, points: usize) -> usize {
+        self.points += points;
+        self.points
     }
 }
 
@@ -244,5 +259,43 @@ mod tests {
         chaos_warrior.take_damage(5);
         assert_eq!(chaos_warrior.get_regiment_health_points(), 15);
         assert_eq!(chaos_warrior.get_nb_models(), 15);
+    }
+
+    #[test]
+    fn test_take_damage_loose_a_line() {
+        let mut chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
+        chaos_warrior.take_damage(6);
+        assert_eq!(chaos_warrior.get_regiment_health_points(), 14);
+        assert_eq!(chaos_warrior.get_nb_models(), 14);
+        assert_eq!(chaos_warrior.get_cols(), 5);
+        assert_eq!(chaos_warrior.get_rows(), 3);
+    }
+
+    #[test]
+    fn test_take_damage_less_than_a_line() {
+        let mut chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
+        chaos_warrior.take_damage(17);
+        assert_eq!(chaos_warrior.get_regiment_health_points(), 3);
+        assert_eq!(chaos_warrior.get_nb_models(), 3);
+        assert_eq!(chaos_warrior.get_cols(), 3);
+        assert_eq!(chaos_warrior.get_rows(), 1);
+    }
+
+    #[test]
+    fn test_get_points() {
+        let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
+        assert_eq!(0, chaos_warrior.get_points());
+    }
+
+    #[test]
+    fn test_earn_points() {
+        let mut chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
+
+        assert_eq!(0, chaos_warrior.get_points());
+        chaos_warrior.earn_points(5);
+        assert_eq!(5, chaos_warrior.get_points());
+        chaos_warrior.earn_points(6);
+        assert_eq!(11, chaos_warrior.get_points());
+
     }
 }
