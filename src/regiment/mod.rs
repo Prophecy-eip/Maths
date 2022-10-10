@@ -16,7 +16,7 @@ use crate::model;
 /// nb_models (usize): Number of Model remaining in the Regiment
 ///
 /// regiment_health_point (usize): The total number of health points that left to the regiment
-/// 
+///
 /// points (usize): The points earned by the regiment
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Regiment {
@@ -95,10 +95,7 @@ impl Regiment {
     /// ## Return
     /// usize: The new amount of regiment health points
     pub fn take_damage(&mut self, amount: usize) -> usize {
-        self.regiment_health_point = match self.regiment_health_point.checked_sub(amount) {
-            None => 0,
-            Some(x) => x,
-        };
+        self.regiment_health_point = self.regiment_health_point.saturating_sub(amount);
         self.nb_models = (self.regiment_health_point as f64
             / self.model.get_stats().get_health_point() as f64)
             .ceil() as usize;
@@ -296,6 +293,5 @@ mod tests {
         assert_eq!(5, chaos_warrior.get_points());
         chaos_warrior.earn_points(6);
         assert_eq!(11, chaos_warrior.get_points());
-
     }
 }

@@ -85,7 +85,6 @@ fn compute_case(
         computation_tools::compute_damage_probability(attacking_model, defending_model);
     let mut results: Vec<(usize, f64)> = Vec::new();
     let mut selection: Vec<(usize, f64)> = Vec::new();
-    let res: (usize, f64);
     let mut bondaries: (isize, isize);
     let threshold: f64 = match case {
         ComputeCase::BEST => global_values::BEST_CASE_THRESHOLD,
@@ -122,7 +121,7 @@ fn compute_case(
 
     for i in results.iter() {
         if i.1 >= threshold {
-            selection.push(i.clone());
+            selection.push(*i);
         }
     }
 
@@ -130,7 +129,7 @@ fn compute_case(
         let size = (0.1 * results.len() as f64).floor() as usize;
         for i in results {
             if selection.len() < size {
-                selection.push(i.clone());
+                selection.push(i);
             } else {
                 match selection.iter().position(|e| e.1 < i.1) {
                     Some(x) => selection[x] = i,
@@ -140,7 +139,7 @@ fn compute_case(
         }
     }
 
-    res = match case {
+    let res: (usize, f64) = match case {
         ComputeCase::BEST => selection.into_iter().max_by_key(|e| e.0).unwrap(),
         ComputeCase::WORST => selection.into_iter().min_by_key(|e| e.0).unwrap(),
         ComputeCase::MEAN => unreachable!("Code not supposed to be reached!"),
