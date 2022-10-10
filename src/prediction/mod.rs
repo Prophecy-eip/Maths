@@ -15,7 +15,7 @@ use crate::regiment::Regiment;
 pub struct Prediction {
     attacking_regiment: Regiment,
     defending_regiment: Regiment,
-    achivement_probability: f64,
+    occurrence_probability: f64,
 }
 
 impl Prediction {
@@ -31,7 +31,7 @@ impl Prediction {
         Prediction {
             attacking_regiment,
             defending_regiment,
-            achivement_probability: probability,
+            occurrence_probability: probability,
         }
     }
 
@@ -56,7 +56,7 @@ impl Prediction {
     /// ### Return
     /// f64 : The probability
     pub fn get_probability(&self) -> f64 {
-        self.achivement_probability
+        self.occurrence_probability
     }
 }
 
