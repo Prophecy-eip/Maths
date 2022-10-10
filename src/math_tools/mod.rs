@@ -9,26 +9,26 @@ use factorial::Factorial;
 /// It execute the given function on the given range and return the sum of the result of the function.
 ///
 /// ## Parameters
-/// i (isize): The first value of the range
+/// initial (isize): The first value of the range
 ///
-/// k (isize): The last value of the range
+/// max (isize): The last value of the range
 ///
-/// func (fn(isize, Option<P>, isize, isize)) -> T: The function to execute on the range.
+/// function (fn(isize, Option<P>, isize, isize)) -> T: The function to execute on the range.
 /// This function params are : 1. The current value of the range 2. The parameter of the function 3. The initial value of the range 4. The final value of the range
 ///
-/// param (Option<P>): A parameter that can be passed to the function
+/// function_parameter (Option<P>): A parameter that can be passed to the function
 ///
 /// ## Return
 /// T -> The result of our sigma computation
 pub fn sigma<T: std::ops::AddAssign, P: Copy>(
-    i: isize,
-    k: isize,
-    func: fn(isize, Option<P>, isize, isize) -> T,
-    param: Option<P>,
+    initial: isize,
+    max: isize,
+    function: fn(isize, Option<P>, isize, isize) -> T,
+    function_parameter: Option<P>,
 ) -> T {
-    let mut sum = func(i, param, i, k);
-    for j in (i + 1)..k {
-        sum += func(j, param, i, k);
+    let mut sum: T = function(initial, function_parameter, initial, max);
+    for j in (initial + 1)..max {
+        sum += function(j, function_parameter, initial, max);
     }
     return sum;
 }
@@ -36,37 +36,39 @@ pub fn sigma<T: std::ops::AddAssign, P: Copy>(
 /// This function compute the bernoulli coefficient
 ///
 /// ## Parameters
-/// n(usize): The number of trials
+/// trials(usize): The number of trials
 ///
-/// k(usize): The number of sucess
+/// nb_success(usize): The number of sucess
 ///
 /// ## Return
 /// usize -> The bernouilli coefficient for our case
-fn compute_coefficient(n: usize, k: usize) -> usize {
-    let mut num: u128 = n as u128;
-    if k == 0 || n == 0 {
+fn compute_coefficient(trials: usize, nb_success: usize) -> usize {
+    if nb_success == 0 || trials == 0 {
         return 1;
     }
-    for i in 1..k {
-        num *= (n - i) as u128;
-    }
-    return (num / k.factorial() as u128) as usize;
+    let fac_trials: u128 = trials.factorial() as u128;
+    let fac_nb_success: u128 = nb_success.factorial() as u128;
+    let fac_product: u128 = (trials - nb_success).factorial() as u128;
+
+    (fac_trials / (fac_nb_success * fac_product)) as usize
 }
 
 /// This is the mathematical bernouilli function
 ///
 /// ## Parameters
-/// n (usize): The number of trials
+/// trials (usize): The number of trials
 ///
-/// k (usize): The number of successes
+/// nb_success (usize): The number of successes
 ///
-/// p (f64): The probability of success
+/// probability (f64): The probability of success
 ///
 /// ## Return
 /// f64 -> The probability that we succeed k time out of n trials
-pub fn compute_bernoulli(n: usize, k: usize, p: f64) -> f64 {
-    let coefficient: usize = compute_coefficient(n, k);
-    return coefficient as f64 * p.powi(k as i32) * (1.0 - p).powi((n - k) as i32);
+pub fn compute_bernoulli(trials: usize, nb_success: usize, probability: f64) -> f64 {
+    let coefficient: usize = compute_coefficient(trials, nb_success);
+    return coefficient as f64
+        * probability.powi(nb_success as i32)
+        * (1.0 - probability).powi((trials - nb_success) as i32);
 }
 
 #[cfg(test)]
