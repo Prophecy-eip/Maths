@@ -135,15 +135,15 @@ fn compute_save_probability(defending_stats: &model::Stats, attacking_stats: &mo
 /// ## Compute the probability for a model to damage another
 ///
 /// ### Parameters
-/// (&Model) first_unit -> The attacker
+/// (&Stats) first_unit -> The attacker
 ///
-/// (&Model) second_unit -> The defender
+/// (&Stats) second_unit -> The defender
 ///
 /// ### Return
 /// f64 -> The probability that first_unit inflict 1 damage to second_unit
-pub fn compute_damage_probability(first_unit: &model::Model, second_unit: &model::Model) -> f64 {
-    compute_wound_probability(first_unit.get_stats(), second_unit.get_stats())
-        * (1.0_f64 - compute_save_probability(second_unit.get_stats(), first_unit.get_stats()))
+pub fn compute_damage_probability(first_unit: &model::Stats, second_unit: &model::Stats) -> f64 {
+    compute_wound_probability(first_unit, second_unit)
+        * (1.0_f64 - compute_save_probability(second_unit, first_unit))
 }
 
 #[cfg(test)]
@@ -436,8 +436,10 @@ mod tests {
         let first_unit = initialize_buffed_heavy_infantry();
         let second_unit = initialize_chaos_warrior();
 
-        let damage_probability: f64 =
-            compute_damage_probability(first_unit.get_model(), second_unit.get_model());
+        let damage_probability: f64 = compute_damage_probability(
+            first_unit.get_model().get_stats(),
+            second_unit.get_model().get_stats(),
+        );
         assert_eq!(damage_probability - 0.555 < 0.001, true);
     }
 
@@ -446,8 +448,10 @@ mod tests {
         let first_unit = initialize_buffed_heavy_infantry();
         let second_unit = initialize_chaos_warrior();
 
-        let damage_probability: f64 =
-            compute_damage_probability(second_unit.get_model(), first_unit.get_model());
+        let damage_probability: f64 = compute_damage_probability(
+            second_unit.get_model().get_stats(),
+            first_unit.get_model().get_stats(),
+        );
         assert_eq!(damage_probability - 0.462 < 0.001, true);
     }
 }
