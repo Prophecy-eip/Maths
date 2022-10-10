@@ -1,5 +1,5 @@
 use crate::fight::global_values;
-use crate::{model};
+use crate::model;
 
 /// Compute the value to hit the opponent
 ///
@@ -150,7 +150,7 @@ pub fn compute_damage_probability(first_unit: &model::Model, second_unit: &model
 mod tests {
     use super::{
         compute_damage_probability, compute_roll_to_hit, compute_roll_to_wound,
-        compute_save_probability, compute_wound_probability, find_the_fastest
+        compute_save_probability, compute_wound_probability, find_the_fastest,
     };
     use crate::{model, regiment};
 
@@ -332,13 +332,15 @@ mod tests {
         assert_eq!(compute_roll_to_wound(4, 2), 2);
     }
 
-
     #[test]
     fn test_fastest_is_one() {
         let (chaos_warrior, heavy_infantry): (regiment::Regiment, regiment::Regiment) =
             initialize_two_units();
         assert_eq!(
-            find_the_fastest(chaos_warrior.get_model().get_stats(), heavy_infantry.get_model().get_stats()),
+            find_the_fastest(
+                chaos_warrior.get_model().get_stats(),
+                heavy_infantry.get_model().get_stats()
+            ),
             1
         );
     }
@@ -348,7 +350,10 @@ mod tests {
         let (chaos_warrior, heavy_infantry): (regiment::Regiment, regiment::Regiment) =
             initialize_two_units();
         assert_eq!(
-            find_the_fastest(heavy_infantry.get_model().get_stats(), chaos_warrior.get_model().get_stats()),
+            find_the_fastest(
+                heavy_infantry.get_model().get_stats(),
+                chaos_warrior.get_model().get_stats()
+            ),
             2
         );
     }
@@ -358,7 +363,10 @@ mod tests {
         let first_unit = initialize_chaos_warrior();
         let second_unit = initialize_buffed_heavy_infantry();
         assert_eq!(
-            find_the_fastest(second_unit.get_model().get_stats(), first_unit.get_model().get_stats()),
+            find_the_fastest(
+                second_unit.get_model().get_stats(),
+                first_unit.get_model().get_stats()
+            ),
             0
         );
     }
