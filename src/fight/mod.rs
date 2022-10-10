@@ -39,17 +39,15 @@ fn compute_mean_case(
     attacking_regiment: &regiment::Regiment,
     defending_regiment: &regiment::Regiment,
 ) -> (usize, f64) {
-    let attacking_model: &model::Model = attacking_regiment.get_model();
-    let defending_model: &model::Model = defending_regiment.get_model();
+    let attacking_stats: &model::Stats = attacking_regiment.get_model().get_stats();
+    let defending_stats: &model::Stats = defending_regiment.get_model().get_stats();
     let damage_probability: f64 =
-        computation_tools::compute_damage_probability(attacking_model, defending_model);
-    let nb_attacks = (attacking_model.get_stats().get_attack() as f64
-        * 1.5
-        * attacking_regiment.get_cols() as f64)
-        .round();
+        computation_tools::compute_damage_probability(attacking_stats, defending_stats);
+    let nb_attacks =
+        (attacking_stats.get_attack() as f64 * 1.5 * attacking_regiment.get_cols() as f64).round();
     let damage = std::cmp::min(
         (nb_attacks * damage_probability).round() as usize,
-        defending_model.get_stats().get_health_point() * defending_regiment.get_nb_models(),
+        defending_stats.get_health_point() * defending_regiment.get_nb_models(),
     );
 
     (
@@ -74,14 +72,13 @@ fn compute_case(
     defending_regiment: &regiment::Regiment,
     case: &ComputeCase,
 ) -> (usize, f64) {
-    let attacking_model: &model::Model = attacking_regiment.get_model();
-    let defending_model: &model::Model = defending_regiment.get_model();
-    let nb_touch: usize = (attacking_model.get_stats().get_attack() as f64
-        * 1.5
-        * attacking_regiment.get_cols() as f64)
-        .round() as usize;
+    let attacking_stats: &model::Stats = attacking_regiment.get_model().get_stats();
+    let defending_stats: &model::Stats = defending_regiment.get_model().get_stats();
+    let nb_touch: usize =
+        (attacking_stats.get_attack() as f64 * 1.5 * attacking_regiment.get_cols() as f64).round()
+            as usize;
     let touch_probability: f64 =
-        computation_tools::compute_damage_probability(attacking_model, defending_model);
+        computation_tools::compute_damage_probability(attacking_stats, defending_stats);
     let mut results: Vec<(usize, f64)> = Vec::new();
     let mut selection: Vec<(usize, f64)> = Vec::new();
     let mut bondaries: (isize, isize);
@@ -90,7 +87,7 @@ fn compute_case(
         ComputeCase::WORST => global_values::WORST_CASE_THRESHOLD,
         _ => 0.0_f64,
     };
-    let defender_hp = defending_model.get_stats().get_health_point();
+    let defender_hp = defending_stats.get_health_point();
 
     if let ComputeCase::MEAN = case {
         return compute_mean_case(attacking_regiment, defending_regiment);
