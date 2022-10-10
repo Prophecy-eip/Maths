@@ -1,5 +1,5 @@
 use crate::fight::global_values;
-use crate::{model, regiment};
+use crate::{model};
 
 /// Compute the value to hit the opponent
 ///
@@ -37,20 +37,6 @@ pub fn compute_roll_to_wound(strength: usize, resilience: usize) -> usize {
     }
 }
 
-/// Compute the number of attacks of a Regiment
-///
-/// ## Parameters
-/// regiment (regiment::Regiment): The Regiment attacking
-///
-/// ## Return
-/// usize: The number of attacks of the Regiment
-pub fn get_nb_attacks(regiment_attacking: &regiment::Regiment) -> usize {
-    (regiment_attacking.get_model().get_stats().get_attack() as f64
-        * regiment_attacking.get_cols() as f64
-        * 1.5)
-        .floor() as usize
-}
-
 /// ## Compute the probability for a model to wound an another
 ///
 /// ### Parameters
@@ -82,25 +68,6 @@ fn compute_wound_probability(
         x if x <= 0.0 => 0.0,
         y => y,
     }
-}
-
-/// Compute the number of wounds a Regiment will suffer
-///
-/// # Parameters
-/// nb_attacks (usize): The number of attacks of the attacking Regiment
-///
-/// to_hit (usize): The value to hit the defending Regiment
-///
-/// to_wound (usize): The value to wound the defending Regiment
-///
-/// # Return
-/// usize: The number of wounds the defending Regiment will suffer
-pub fn compute_nb_wounds(nb_attacks: usize, to_hit: usize, to_wound: usize) -> usize {
-    let nb_hit: usize = (((nb_attacks * (global_values::DEFAULT_DICE - to_hit + 1))
-        / global_values::DEFAULT_DICE) as f64)
-        .round() as usize;
-    (((nb_hit * (global_values::DEFAULT_DICE - to_wound + 1)) / global_values::DEFAULT_DICE) as f64)
-        .round() as usize
 }
 
 /// Return the fastest Model between 2 Model
@@ -182,8 +149,8 @@ pub fn compute_damage_probability(first_unit: &model::Model, second_unit: &model
 #[cfg(test)]
 mod tests {
     use super::{
-        compute_damage_probability, compute_nb_wounds, compute_roll_to_hit, compute_roll_to_wound,
-        compute_save_probability, compute_wound_probability, find_the_fastest, get_nb_attacks,
+        compute_damage_probability, compute_roll_to_hit, compute_roll_to_wound,
+        compute_save_probability, compute_wound_probability, find_the_fastest
     };
     use crate::{model, regiment};
 
@@ -365,57 +332,6 @@ mod tests {
         assert_eq!(compute_roll_to_wound(4, 2), 2);
     }
 
-    // get_nb_attacks
-
-    #[test]
-    fn test_nb_attacks_1() {
-        let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
-        assert_eq!(get_nb_attacks(&chaos_warrior), 15);
-    }
-
-    #[test]
-    fn test_nb_attacks_2() {
-        let heavy_infantry: regiment::Regiment = initialize_heavy_infantry();
-        assert_eq!(get_nb_attacks(&heavy_infantry), 7);
-    }
-
-    // compute_nb_wounds
-
-    #[test]
-    fn test_nb_wounds_1() {
-        let (chaos_warrior, heavy_infantry): (regiment::Regiment, regiment::Regiment) =
-            initialize_two_units();
-        let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
-        let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
-        let to_hit: usize = compute_roll_to_hit(
-            regiment_attacking_stats.get_offensive(),
-            regiment_defending_stats.get_defense(),
-        );
-        let to_wound: usize = compute_roll_to_wound(
-            regiment_attacking_stats.get_strength(),
-            regiment_defending_stats.get_resilience(),
-        );
-        let nb_attacks: usize = get_nb_attacks(&chaos_warrior);
-        assert_eq!(compute_nb_wounds(nb_attacks, to_hit, to_wound), 8);
-    }
-
-    #[test]
-    fn test_nb_wounds_2() {
-        let (chaos_warrior, heavy_infantry): (regiment::Regiment, regiment::Regiment) =
-            initialize_two_units();
-        let regiment_attacking_stats: &model::Stats = heavy_infantry.get_model().get_stats();
-        let regiment_defending_stats: &model::Stats = chaos_warrior.get_model().get_stats();
-        let to_hit: usize = compute_roll_to_hit(
-            regiment_attacking_stats.get_offensive(),
-            regiment_defending_stats.get_defense(),
-        );
-        let to_wound: usize = compute_roll_to_wound(
-            regiment_attacking_stats.get_strength(),
-            regiment_defending_stats.get_resilience(),
-        );
-        let nb_attacks: usize = get_nb_attacks(&heavy_infantry);
-        assert_eq!(compute_nb_wounds(nb_attacks, to_hit, to_wound), 1);
-    }
 
     #[test]
     fn test_fastest_is_one() {

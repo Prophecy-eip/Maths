@@ -30,7 +30,7 @@ pub fn sigma<T: std::ops::AddAssign, P: Copy>(
     for j in (initial + 1)..max {
         sum += function(j, function_parameter, initial, max);
     }
-    return sum;
+    sum
 }
 
 /// This function compute the bernoulli coefficient
@@ -66,9 +66,9 @@ fn compute_coefficient(trials: usize, nb_success: usize) -> usize {
 /// f64 -> The probability that we succeed k time out of n trials
 pub fn compute_bernoulli(trials: usize, nb_success: usize, probability: f64) -> f64 {
     let coefficient: usize = compute_coefficient(trials, nb_success);
-    return coefficient as f64
+    coefficient as f64
         * probability.powi(nb_success as i32)
-        * (1.0 - probability).powi((trials - nb_success) as i32);
+        * (1.0 - probability).powi((trials - nb_success) as i32)
 }
 
 #[cfg(test)]
