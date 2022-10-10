@@ -40,13 +40,13 @@ impl Regiment {
         nb_models: usize,
         regiment_health_point: Option<usize>,
     ) -> Regiment {
-        let pv: usize = model.get_stats().get_health_point();
+        let health_points: usize = model.get_stats().get_health_point();
         Regiment {
             model,
             nb_rows,
             nb_cols,
             nb_models,
-            regiment_health_point: regiment_health_point.unwrap_or(nb_models * pv),
+            regiment_health_point: regiment_health_point.unwrap_or(nb_models * health_points),
             points: 0,
         }
     }
