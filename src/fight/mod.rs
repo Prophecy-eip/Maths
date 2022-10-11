@@ -26,15 +26,15 @@ pub enum ComputeCase {
     MEAN,
 }
 
-/// ## Compute the average damage a unit would dealt to another
+/// Compute the average damage a unit would dealt to another
 ///
-/// ### Paramaters
-/// (&regiment::Regiment) attacking_regiment -> The attacker
+/// ## Paramaters
+/// (&regiment::Regiment) attacking_regiment: The attacker
 ///
-/// (&regiment::Regiment) defending_regiment -> The defender
+/// (&regiment::Regiment) defending_regiment: The defender
 ///
-/// ### Return
-/// (usize, f64) -> A tuple with first the damage computed and then the probability that it occurs
+/// ## Return
+/// (usize, f64): A tuple with first the damage computed and then the probability that it occurs
 fn compute_mean_case(
     attacking_regiment: &regiment::Regiment,
     defending_regiment: &regiment::Regiment,
@@ -56,17 +56,17 @@ fn compute_mean_case(
     )
 }
 
-/// ## Compute the average damage dealt by a unit to another according to the requested scenario
+/// Compute the average damage dealt by a unit to another according to the requested scenario
 ///
-/// ### Parameters
-/// (&regiment::Regiment) attacking_regiment -> The attacker
+/// ## Parameters
+/// (&regiment::Regiment) attacking_regiment: The attacker
 ///
-/// (&regiment::Regiment) defending_regiment -> The defender
+/// (&regiment::Regiment) defending_regiment: The defender
 ///
-/// (ComputeCase) case -> The scenario from first_unit point of view
+/// (ComputeCase) case: The scenario from first_unit point of view
 ///
-/// ### Return
-/// (usize, f64) -> The average amount of damage dealt by first_unit and the probability for this scenario to occurs
+/// ## Return
+/// (usize, f64): The average amount of damage dealt by first_unit and the probability for this scenario to occurs
 fn compute_case(
     attacking_regiment: &regiment::Regiment,
     defending_regiment: &regiment::Regiment,
@@ -162,17 +162,17 @@ fn compute_case(
     }
 }
 
-/// ## Compute a full scenario
+/// Compute a full scenario
 ///
-/// ### Parameters
-/// (&regiment::Regiment) attacking_regiment -> The first unit
+/// ## Parameters
+/// (&regiment::Regiment) attacking_regiment: The first unit
 ///
-/// (&regiment::Regiment) defending_regiment -> The second unit
+/// (&regiment::Regiment) defending_regiment: The second unit
 ///
-/// (ComputeCase) case -> The scenario from first unit point of view
+/// (ComputeCase) case: The scenario from first unit point of view
 ///
-/// ### Return
-/// Prediction -> The prediction computed according to the specified Compute Case
+/// ## Return
+/// Prediction: The prediction computed according to the specified Compute Case
 fn create_prediction(
     attacking_regiment: &regiment::Regiment,
     defending_regiment: &regiment::Regiment,
@@ -241,15 +241,15 @@ fn create_prediction(
     }
 }
 
-/// ## Compute the 3 most important scenario while in melee phase
+/// Compute the 3 most important scenario while in melee phase
 ///
-/// ### Parameters
-/// (&regiment::Regiment) first_unit -> The first unit
+/// ## Parameters
+/// (&regiment::Regiment) attacking_regiment: The attacking regiment
 ///
-/// (&regiment::Regiment) second_unit -> The second unit
+/// (&regiment::Regiment) defending_regiment: The defending regiment
 ///
-/// ### Return
-/// (HashMap<ComputeCase, Prediction>) -> The more realistic scenario, The best scenario for first unit, The worst scenario for first unit
+/// ## Return
+/// (HashMap<ComputeCase, Prediction>): The more realistic scenario, The best scenario for first unit, The worst scenario for first unit
 pub fn compute_turn(
     attacking_regiment: &regiment::Regiment,
     defending_regiment: &regiment::Regiment,

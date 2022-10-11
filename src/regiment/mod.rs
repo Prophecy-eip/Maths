@@ -6,7 +6,7 @@ use crate::model;
 
 /// Struct containing all the informations about a Regiment
 ///
-/// # Attributes
+/// ## Attributes
 /// model (model::Model): The Model composing the Regiment
 ///
 /// nb_rows (usize): Number of rows in the Regiment
@@ -29,9 +29,21 @@ pub struct Regiment {
 }
 
 impl Regiment {
-    /// ## Create a new Regiment of the model with the specified number of unit
+    /// Create a new Regiment of the model with the specified number of unit
     ///
-    /// ### Return
+    /// ## Parameters
+    /// (model::Model) model: The model that compose the regiment
+    ///
+    /// (usize) nb_rows: The number of rows that compose the regiment
+    ///
+    /// (usize) nb_cols: The number of columns that compose the regiment
+    ///
+    /// (usize) nb_models: The number of models in the regiment
+    ///
+    /// Option<usize> regiment_health_point: The number of health points that left to the regiment.
+    /// If None, the default value will be (the number of model * the health_point stats of the model)
+    ///
+    /// ## Return
     /// Regiment: The Regiment created
     pub fn new(
         model: model::Model,
@@ -50,7 +62,7 @@ impl Regiment {
             points: 0,
         }
     }
-    /// # Get the Model of the Regiment
+    /// Get the Model of the Regiment
     ///
     /// ## Return
     /// &model::Model: The Model in the Regiment
@@ -58,7 +70,7 @@ impl Regiment {
         &self.model
     }
 
-    /// # Get the number of rows in the Regiment
+    /// Get the number of rows in the Regiment
     ///
     /// ## Return
     /// usize: The number of rows in the Regiment
@@ -66,7 +78,7 @@ impl Regiment {
         self.nb_rows
     }
 
-    /// # Get the number of columns in the Regiment
+    /// Get the number of columns in the Regiment
     ///
     /// ## Return
     /// usize: The number of columns in the Regiment
@@ -74,7 +86,7 @@ impl Regiment {
         self.nb_cols
     }
 
-    /// # Get the number of Models in the Regiment
+    /// Get the number of Models in the Regiment
     ///
     /// ## Return
     /// usize: The number of Models in the Regiment
@@ -82,7 +94,7 @@ impl Regiment {
         self.nb_models
     }
 
-    /// # Get the regiment total health points
+    /// Get the regiment total health points
     ///
     /// ## Return
     /// usize: The regiment total health points
@@ -90,7 +102,7 @@ impl Regiment {
         self.regiment_health_point
     }
 
-    /// # Inflict damage to the regiment and rearrange the ranks
+    /// Inflict damage to the regiment and rearrange the ranks
     ///
     /// ## Return
     /// usize: The new amount of regiment health points

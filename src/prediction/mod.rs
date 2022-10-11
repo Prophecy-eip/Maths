@@ -6,12 +6,12 @@ use crate::regiment::Regiment;
 
 /// This is a prediction of what happened after a phase of the game.
 ///
-/// ## Members
+/// ## Attributes
 /// attacking_regiment (Regiment): The first regiment
 ///
 /// defending_regiment (Regiment): The second regiment
 ///
-/// achievement_probability (f64): The probability of the achievement of the prophecy
+/// occurrence_probability (f64): The probability that the prophecy occurs
 pub struct Prediction {
     attacking_regiment: Regiment,
     defending_regiment: Regiment,
@@ -21,8 +21,15 @@ pub struct Prediction {
 impl Prediction {
     /// Create a new Prediction
     ///
+    /// ## Parameters
+    /// (regiment::Regiment) attacking_regiment: The attacking regiment
+    ///
+    /// (regiment::Regiment) defending_regiment: The defending regiment
+    ///
+    /// (f64) probability: The occurence probability of the Prediction
+    ///
     /// ## Return
-    /// Prediction -> The newly created Prediction
+    /// Prediction: The newly created Prediction
     pub fn new(
         attacking_regiment: Regiment,
         defending_regiment: Regiment,
@@ -35,25 +42,25 @@ impl Prediction {
         }
     }
 
-    /// ## Get the attacking regiment
+    /// Get the attacking regiment
     ///
-    /// ### Return
+    /// ## Return
     /// Regiment : The attacking regiment
     pub fn get_attacking_regiment(&self) -> Regiment {
         self.attacking_regiment.clone()
     }
 
-    /// ## Get the defending regiment
+    /// Get the defending regiment
     ///
-    /// ### Return
+    /// ## Return
     /// Regiment : The defending regiment
     pub fn get_defending_regiment(&self) -> Regiment {
         self.defending_regiment.clone()
     }
 
-    /// ## Get the probability that this prediction occurs
+    /// Get the probability that this prediction occurs
     ///
-    /// ### Return
+    /// ## Return
     /// f64 : The probability
     pub fn get_probability(&self) -> f64 {
         self.occurrence_probability
