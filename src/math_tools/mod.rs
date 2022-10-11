@@ -9,17 +9,25 @@ use factorial::Factorial;
 /// It execute the given function on the given range and return the sum of the result of the function.
 ///
 /// ## Parameters
-/// initial (isize): The first value of the range
+/// (isize) initial: The first value of the range
 ///
-/// max (isize): The last value of the range
+/// (isize) max: The last value of the range
 ///
-/// function (fn(isize, Option<P>, isize, isize)) -> T: The function to execute on the range.
-/// This function params are : 1. The current value of the range 2. The parameter of the function 3. The initial value of the range 4. The final value of the range
+/// ((fn(isize, Option\<P>, isize, isize)) -> T) function: The function to execute on the range.
+/// This function params are :
 ///
-/// function_parameter (Option<P>): A parameter that can be passed to the function
+/// 1. The current value of the range
+///
+/// 2. The parameter of the function
+///
+/// 3. The initial value of the range
+///
+/// 4. The final value of the range
+///
+/// function_parameter (Option\<P>): A parameter that can be passed to the function
 ///
 /// ## Return
-/// T -> The result of our sigma computation
+/// T: The result of our sigma computation
 pub fn sigma<T: std::ops::AddAssign, P: Copy>(
     initial: isize,
     max: isize,
@@ -36,12 +44,12 @@ pub fn sigma<T: std::ops::AddAssign, P: Copy>(
 /// This function compute the bernoulli coefficient
 ///
 /// ## Parameters
-/// trials(usize): The number of trials
+/// (usize) trials: The number of trials
 ///
-/// nb_success(usize): The number of sucess
+/// (usize) nb_success: The number of sucess
 ///
 /// ## Return
-/// usize -> The bernouilli coefficient for our case
+/// usize: The bernouilli coefficient for our case
 fn compute_coefficient(trials: usize, nb_success: usize) -> usize {
     if nb_success == 0 || trials == 0 {
         return 1;
@@ -56,14 +64,14 @@ fn compute_coefficient(trials: usize, nb_success: usize) -> usize {
 /// This is the mathematical bernouilli function
 ///
 /// ## Parameters
-/// trials (usize): The number of trials
+/// (usize) trials: The number of trials
 ///
-/// nb_success (usize): The number of successes
+/// (usize) nb_success: The number of successes
 ///
-/// probability (f64): The probability of success
+/// (f64) probability: The probability of success
 ///
 /// ## Return
-/// f64 -> The probability that we succeed k time out of n trials
+/// f64: The probability that we succeed k time out of n trials
 pub fn compute_bernoulli(trials: usize, nb_success: usize, probability: f64) -> f64 {
     let coefficient: usize = compute_coefficient(trials, nb_success);
     coefficient as f64

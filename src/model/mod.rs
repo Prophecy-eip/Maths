@@ -6,7 +6,7 @@
 
 /// Struct containing all the statistics in the game for a Model
 ///
-/// # Attributes
+/// ## Attributes
 /// advance (usize): The distance the Model can advance per turn
 ///
 /// march (usize): The distance the Model can forcefully advance per turn
@@ -50,12 +50,32 @@ pub struct Stats {
     agility: usize,
 }
 
+/// Struct containing the global stats of a model
+///
+/// ## Attributes
+/// advance (usize): The distance the Model can advance per turn
+///
+/// march (usize): The distance the Model can forcefully advance per turn
+///
+/// discipline (usize): The discipline of the Model
 pub struct GlobalStats {
     pub advance: usize,
     pub march: usize,
     pub discipline: usize,
 }
 
+/// Struct containing the defending stats of a model
+///
+/// ## Attributes
+/// health_point (usize): The number of hit the Model can endure before being removed from the Regiment
+///
+/// defense (usize): The defense of the Model
+///
+/// resilience (usize): The resilience of the Model
+///
+/// armour (usize): The armour of the Model
+///
+/// aegis (usize): The special armour of the Model
 pub struct DefensiveStats {
     pub health_point: usize,
     pub defense: usize,
@@ -64,6 +84,18 @@ pub struct DefensiveStats {
     pub aegis: usize,
 }
 
+/// Struct containing the offending stats of a model
+///
+/// ## Attributes
+/// attack (usize): The number of attack the Model do
+///
+/// offensive (usize): The offensive of the Model
+///
+/// strength (usize): The strength of the Model
+///
+/// amour_penetration (usize): The strength of the Model
+///
+/// agility (usize): The agility of the Model
 pub struct OffensiveStats {
     pub attack: usize,
     pub offensive: usize,
@@ -116,7 +148,7 @@ impl Stats {
     }
     /// Get the advance rate of the Model
     ///
-    /// # Returns
+    /// ## Return
     /// advance (usize): The advance rate of the Model
     pub fn get_advance(&self) -> usize {
         self.advance
@@ -124,7 +156,7 @@ impl Stats {
 
     /// Get the march rate of the Model
     ///
-    /// # Returns
+    /// ## Return
     /// march (usize): The march rate of the Model
     pub fn get_march(&self) -> usize {
         self.march
@@ -132,7 +164,7 @@ impl Stats {
 
     /// Get the discipline of the Model
     ///
-    /// # Returns
+    /// ## Return
     /// discipline (usize): The discipline of the Model
     pub fn get_discipline(&self) -> usize {
         self.discipline
@@ -140,7 +172,7 @@ impl Stats {
 
     /// Get the health point of the Model
     ///
-    /// # Returns
+    /// ## Return
     /// health_point (usize): The health point of the Model
     pub fn get_health_point(&self) -> usize {
         self.health_point
@@ -148,7 +180,7 @@ impl Stats {
 
     /// Get the defense of the Model
     ///
-    /// # Returns
+    /// ## Return
     /// defense (usize): The defense of the Model
     pub fn get_defense(&self) -> usize {
         self.defense
@@ -156,7 +188,7 @@ impl Stats {
 
     /// Get the resilience of the Model
     ///
-    /// # Returns
+    /// ## Return
     /// resilience (usize): The resilience of the Model
     pub fn get_resilience(&self) -> usize {
         self.resilience
@@ -164,7 +196,7 @@ impl Stats {
 
     /// Get the armour of the Model
     ///
-    /// # Returns
+    /// ## Return
     /// armour (usize): The armour of the Model
     pub fn get_armour(&self) -> usize {
         self.armour
@@ -172,7 +204,7 @@ impl Stats {
 
     /// Get the aegis of the Model
     ///
-    /// # Returns
+    /// ## Return
     /// aegis (usize): The aegis of the Model
     pub fn get_aegis(&self) -> usize {
         self.aegis
@@ -180,7 +212,7 @@ impl Stats {
 
     /// Get the attack of the Model
     ///
-    /// # Returns
+    /// ## Return
     /// attack (usize): The attack of the Model
     pub fn get_attack(&self) -> usize {
         self.attack
@@ -188,7 +220,7 @@ impl Stats {
 
     /// Get the offensive of the Model
     ///
-    /// # Returns
+    /// ## Return
     /// offensive (usize): The offensive of the Model
     pub fn get_offensive(&self) -> usize {
         self.offensive
@@ -196,7 +228,7 @@ impl Stats {
 
     /// Get the strength of the Model
     ///
-    /// # Returns
+    /// ## Return
     /// strength (usize): The strength of the Model
     pub fn get_strength(&self) -> usize {
         self.strength
@@ -204,7 +236,7 @@ impl Stats {
 
     /// Get the armour penetration of the Model
     ///
-    /// # Returns
+    /// ## Return
     /// armour_penetration (usize): The armour penetration of the Model
     pub fn get_armour_penetration(&self) -> usize {
         self.armour_penetration
@@ -212,7 +244,7 @@ impl Stats {
 
     /// Get the agility of the Model
     ///
-    /// # Returns
+    /// ## Return
     /// agility (usize): The agility of the Model
     pub fn get_agility(&self) -> usize {
         self.agility
@@ -221,7 +253,7 @@ impl Stats {
 
 /// Struct containing all the information about a single Modifier for a Model
 ///
-/// # Attributes
+/// ## Attributes
 /// stat (Stats): Stat modified by the Modifier
 ///
 /// nb_dice (usize): The number of dice
@@ -238,7 +270,13 @@ pub struct Modifier {
 impl Modifier {
     /// Create a new Modifier using Stats, number of dice and the requirements to apply the Modifier
     ///
-    /// # Return
+    /// ## Parameters
+    /// (Stats) stats: The stats affected by the modifier
+    /// (bool) bonus: A boolean value that indicate if the effect of the modifier should be added or substract from the model who's concerned
+    /// (usize) nb_dice: The number of supplement rolls granted by the modifier
+    /// (Vec<String>) requirements: The requirements for the Modifier to apply (as an array of flags)
+    ///
+    /// ## Return
     /// Modifier: The Modifier created
     pub fn new(stat: Stats, bonus: bool, nb_dice: usize, requirements: Vec<String>) -> Modifier {
         Modifier {
@@ -252,7 +290,7 @@ impl Modifier {
 
 /// Struct containing all the information about a Model
 ///
-/// # Attributes
+/// ## Attributes
 /// stats (Stats): The statistics of the Model
 ///
 /// modifiers (Vec<Modifier>): The list of Modifier the Model have
@@ -263,16 +301,20 @@ pub struct Model {
 }
 
 impl Model {
-    /// # Create a new Model using Stats and list of Modifiers
+    /// Create a new Model using Stats and list of Modifiers
     ///
-    /// # Return
+    /// ## Parameters
+    /// (Stats) stats: The model stats
+    /// (Vec<Modifier>) modifiers: The modifiers applied on the model
+    ///
+    /// ## Return
     /// Model: The Model created
     pub fn new(stats: Stats, modifiers: Vec<Modifier>) -> Model {
         Model { stats, modifiers }
     }
     /// Get the Stats of the Model
     ///
-    /// # Returns
+    /// ## Return
     /// Stats: The Stats of the Model
     pub fn get_stats(&self) -> &Stats {
         &self.stats
