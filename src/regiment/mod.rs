@@ -120,10 +120,21 @@ impl Regiment {
         self.regiment_health_point
     }
 
+    /// Get the number of points earn by the regiment
+    ///
+    /// ## Return
+    /// usize: The number of points of the regiment
     pub fn get_points(&self) -> usize {
         self.points
     }
 
+    /// Give some points to the regiment
+    ///
+    /// ## Parameters
+    /// (usize) points: The amount of points to give
+    ///
+    /// ## Return
+    /// usize: The new number of points of the regiment
     pub fn earn_points(&mut self, points: usize) -> usize {
         self.points += points;
         self.points
