@@ -7,6 +7,9 @@ use crate::model;
 /// offensive (usize): The offensive Stats of the attacking Regiment
 ///
 /// defense (usize): The defense Stats of the defending Regiment
+///
+/// ## Return
+/// usize: The minimum roll to hit the opponent
 pub fn compute_roll_to_hit(offensive: usize, defense: usize) -> usize {
     let difference: i8 = offensive as i8 - defense as i8;
 
@@ -21,10 +24,13 @@ pub fn compute_roll_to_hit(offensive: usize, defense: usize) -> usize {
 
 /// Compute the value to wound the opponent
 ///
-/// # Parameters
+/// ## Parameters
 /// strength (usize): The strength Stats of the attacking Regiment
 ///
 /// resilience (usize): The resilience Stats of the defending Regiment
+///
+/// ## Return
+/// usize: The minimum roll to wound the opponent
 pub fn compute_roll_to_wound(strength: usize, resilience: usize) -> usize {
     let difference: i8 = strength as i8 - resilience as i8;
 
@@ -37,15 +43,15 @@ pub fn compute_roll_to_wound(strength: usize, resilience: usize) -> usize {
     }
 }
 
-/// ## Compute the probability for a model to wound an another
+/// Compute the probability for a model to wound an another
 ///
-/// ### Parameters
-/// (&model::Stats) main -> The attacker stats
+/// ## Parameters
+/// (&model::Stats) attacking_stats: The attacker stats
 ///
-/// (&model::Stats) target -> The defender stats
+/// (&model::Stats) defending_stats: The defender stats
 ///
-/// ### Return
-/// isize -> The probability for main to wound target
+/// ## Return
+/// isize: The probability for attacking_stats to wound target
 fn compute_wound_probability(
     attacking_stats: &model::Stats,
     defending_stats: &model::Stats,
@@ -75,13 +81,19 @@ fn compute_wound_probability(
 /// If the second Model is faster than the first Model, return 2
 /// If the Models have the same speed, return 0
 ///
-/// # Parameters
+/// ## Parameters
 /// attacking_stats (&model::Stats): The attacker stats
 ///
 /// defending_stats (&model::Stats): The defender stats
 ///
-/// # Return
-/// usize: The fastest Model
+/// ## Return
+/// u8: The fastest model
+///
+/// 0 if the two units have the same speed
+///
+/// 1 if the attacking is the fastest
+///
+/// 2 if the defending is the fastest)
 pub fn find_the_fastest(attacking_stats: &model::Stats, defending_stats: &model::Stats) -> u8 {
     let attacking_model_agility: usize = attacking_stats.get_agility() + 1;
     let defending_model_agility: usize = defending_stats.get_agility();
@@ -93,15 +105,15 @@ pub fn find_the_fastest(attacking_stats: &model::Stats, defending_stats: &model:
     }
 }
 
-/// ## Compute the probability for a model to protect itself from another model damages
+/// Compute the probability for a model to protect itself from another model damages
 ///
-/// ### Parameters
-/// (&model::Model) main -> The defending model
+/// ## Parameters
+/// (&model::Stats) defending_stats: The defender stats
 ///
-/// (&model::Model) attacker -> The attacking model
+/// (&model::Stats) attacking_stats: The attacker stats
 ///
-/// ### Return
-/// f64 -> The probability to save a damage inflited by attacker
+/// ## Return
+/// f64: The probability to save a damage dealt by attacker
 fn compute_save_probability(defending_stats: &model::Stats, attacking_stats: &model::Stats) -> f64 {
     let armour_save: usize = match global_values::ARMOUR_SAVE_THRESHOLD as isize
         - (defending_stats.get_armour() as isize
@@ -134,16 +146,19 @@ fn compute_save_probability(defending_stats: &model::Stats, attacking_stats: &mo
 
 /// ## Compute the probability for a model to damage another
 ///
-/// ### Parameters
-/// (&Stats) first_unit -> The attacker
+/// ## Parameters
+/// (&model::Stats) attacking_stats: The attacker stats
 ///
-/// (&Stats) second_unit -> The defender
+/// (&model::Stats) defending_stats: The defender stats
 ///
-/// ### Return
-/// f64 -> The probability that first_unit inflict 1 damage to second_unit
-pub fn compute_damage_probability(first_unit: &model::Stats, second_unit: &model::Stats) -> f64 {
-    compute_wound_probability(first_unit, second_unit)
-        * (1.0_f64 - compute_save_probability(second_unit, first_unit))
+/// ## Return
+/// f64: The probability that first_unit inflict 1 damage to second_unit
+pub fn compute_damage_probability(
+    attacking_stats: &model::Stats,
+    defending_stats: &model::Stats,
+) -> f64 {
+    compute_wound_probability(attacking_stats, defending_stats)
+        * (1.0_f64 - compute_save_probability(defending_stats, attacking_stats))
 }
 
 #[cfg(test)]
