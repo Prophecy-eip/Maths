@@ -64,12 +64,11 @@ fn compute_wound_probability(
         attacking_stats.get_strength(),
         defending_stats.get_resilience(),
     );
-    let hit_probability: f64 = (global_values::DEFAULT_DICE as f64 - (minimum_to_hit as f64)
+    let hit_probability: f64 = (global_values::DEFAULT_DICE - (minimum_to_hit as f64) + 1.0_f64)
+        / (global_values::DEFAULT_DICE);
+    let wound_probability: f64 = (global_values::DEFAULT_DICE - (minimum_to_wound as f64)
         + 1.0_f64)
-        / (global_values::DEFAULT_DICE as f64);
-    let wound_probability: f64 = (global_values::DEFAULT_DICE as f64 - (minimum_to_wound as f64)
-        + 1.0_f64)
-        / (global_values::DEFAULT_DICE as f64);
+        / (global_values::DEFAULT_DICE);
     match hit_probability * wound_probability {
         x if x <= 0.0 => 0.0,
         y => y,
@@ -122,21 +121,21 @@ fn compute_save_probability(defending_stats: &model::Stats, attacking_stats: &mo
         x if x < 0 => 0usize,
         y => y as usize,
     };
-    let save_proba: f64 = match (global_values::DEFAULT_DICE as f64 - armour_save as f64 + 1.0)
-        / global_values::DEFAULT_DICE as f64
+    let save_proba: f64 = match (global_values::DEFAULT_DICE - armour_save as f64 + 1.0)
+        / global_values::DEFAULT_DICE
     {
         x if x <= 0.0 => 0.0,
         x if x > 1.0 => 1.0,
         y => y,
     };
-    let aegis_proba: f64 =
-        match (global_values::DEFAULT_DICE as f64 - defending_stats.get_aegis() as f64 + 1.0)
-            / global_values::DEFAULT_DICE as f64
-        {
-            x if x <= 0.0 => 0.0,
-            x if x > 1.0 => 1.0,
-            y => y,
-        };
+    let aegis_proba: f64 = match (global_values::DEFAULT_DICE - defending_stats.get_aegis() as f64
+        + 1.0)
+        / global_values::DEFAULT_DICE
+    {
+        x if x <= 0.0 => 0.0,
+        x if x > 1.0 => 1.0,
+        y => y,
+    };
     if defending_stats.get_aegis() == 0 {
         save_proba
     } else {
