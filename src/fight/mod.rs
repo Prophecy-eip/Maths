@@ -56,6 +56,65 @@ fn compute_mean_case(
     )
 }
 
+/// Find two thresholds for a gaussien assuring that the area covered reprenset at least 0.06% of the curve
+///
+/// ## Parameters
+/// (usize) nb_touch: The number of hit that the attacker can assume
+///
+/// (f64) wound_probability: The probability that a hit wound the enemy
+///
+/// (usize) defender_hp: The amount of health point of the defender
+///
+/// ## Return
+/// (usize, usize): Our two gaussian threshold
+fn find_great_gauss_checkpoints(
+    nb_touch: usize,
+    wound_probability: f64,
+    defender_hp: usize,
+) -> (usize, usize) {
+    let max_hit = std::cmp::min(nb_touch, defender_hp);
+    let mut low_checkpoint: usize = (max_hit as f64 * (1.0_f64 / 3.0_f64)).round() as usize;
+    let mut high_checkpoint: usize = (max_hit as f64 * (2.0_f64 / 3.0_f64)).round() as usize;
+    let compute_proba = |e: usize| math_tools::compute_bernoulli(nb_touch, e, wound_probability);
+
+    while compute_proba(low_checkpoint) < 0.03 && low_checkpoint <= max_hit / 2 {
+        low_checkpoint += 1;
+    }
+    while compute_proba(high_checkpoint) < 0.03 && high_checkpoint >= max_hit / 2 {
+        high_checkpoint -= 1;
+    }
+    (low_checkpoint, high_checkpoint)
+}
+
+/// Evaluate the area covered on a gaussian curve
+///
+/// ## Parameters
+/// (usize) start: The start of the inverval
+///
+/// (usize) end: The end of the interval
+///
+/// (usize) gauss_len: The lenght of the X axis of the curve
+///
+/// (f64) success_probability: The probability that one success occurs
+///
+/// ## Return
+/// f64: The percentage of the curve covered by the interval
+fn evaluate_gauss_interval(
+    start: usize,
+    end: usize,
+    gauss_len: usize,
+    success_probability: f64,
+) -> f64 {
+    math_tools::sigma(
+        start as isize,
+        end as isize,
+        |current, params, _, _| {
+            math_tools::compute_bernoulli(params.unwrap().0, current as usize, params.unwrap().1)
+        },
+        Some((gauss_len, success_probability)),
+    )
+}
+
 /// Compute the average damage dealt by a unit to another according to the requested scenario
 ///
 /// ## Parameters
@@ -73,92 +132,70 @@ fn compute_case(
     case: &ComputeCase,
 ) -> (usize, f64) {
     let attacking_stats: &model::Stats = attacking_regiment.get_model().get_stats();
-    let defending_stats: &model::Stats = defending_regiment.get_model().get_stats();
     let nb_touch: usize =
         (attacking_stats.get_attack() as f64 * 1.5 * attacking_regiment.get_cols() as f64).round()
             as usize;
-    let touch_probability: f64 =
-        computation_tools::compute_damage_probability(attacking_stats, defending_stats);
-    let mut results: Vec<(usize, f64)> = Vec::new();
-    let mut selection: Vec<(usize, f64)> = Vec::new();
-    let mut bondaries: (isize, isize);
-    let threshold: f64 = match case {
-        ComputeCase::BEST => global_values::BEST_CASE_THRESHOLD,
-        ComputeCase::WORST => global_values::WORST_CASE_THRESHOLD,
-        _ => 0.0_f64,
-    };
-    let defender_hp = defending_stats.get_health_point();
+    let wound_probability: f64 = computation_tools::compute_damage_probability(
+        attacking_stats,
+        defending_regiment.get_model().get_stats(),
+    );
+    let max_hit: usize = std::cmp::min(nb_touch, defending_regiment.get_regiment_health_points());
+    let checkpoints: (usize, usize) = find_great_gauss_checkpoints(
+        nb_touch,
+        wound_probability,
+        defending_regiment.get_regiment_health_points(),
+    );
 
     if let ComputeCase::MEAN = case {
         return compute_mean_case(attacking_regiment, defending_regiment);
     }
-    for i in 0..nb_touch {
-        bondaries = match case {
-            ComputeCase::BEST => (i as isize, nb_touch as isize),
-            ComputeCase::WORST => (0, i as isize),
-            ComputeCase::MEAN => unreachable!("Code not supposed to be reached!"),
-        };
-        results.push((
-            i,
-            math_tools::sigma(
-                bondaries.0,
-                bondaries.1,
-                |curr, param, _, _| {
-                    math_tools::compute_bernoulli(
-                        param.unwrap().1 as usize,
-                        curr as usize,
-                        param.unwrap().0,
-                    )
-                },
-                Some((touch_probability, nb_touch)),
-            ),
-        ));
-    }
-
-    for i in results.iter() {
-        if i.1 >= threshold {
-            selection.push(*i);
-        }
-    }
-
-    if selection.is_empty() {
-        let size = (0.1 * results.len() as f64).floor() as usize;
-        for i in results {
-            if selection.len() < size {
-                selection.push(i);
-            } else {
-                match selection.iter().position(|e| e.1 < i.1) {
-                    Some(x) => selection[x] = i,
-                    None => (),
-                }
-            }
-        }
-    }
-
-    let res: (usize, f64) = match case {
-        ComputeCase::BEST => selection.into_iter().max_by_key(|e| e.0).unwrap(),
-        ComputeCase::WORST => selection.into_iter().min_by_key(|e| e.0).unwrap(),
-        ComputeCase::MEAN => unreachable!("Code not supposed to be reached!"),
-    };
-    bondaries = match case {
-        ComputeCase::BEST => (defender_hp as isize, nb_touch as isize),
-        ComputeCase::WORST => (0, defender_hp as isize),
-        ComputeCase::MEAN => unreachable!("Code not supposed to be reached!"),
-    };
-    match res.0.cmp(&defender_hp) {
-        std::cmp::Ordering::Less => res,
-        std::cmp::Ordering::Greater => (
-            defender_hp,
-            math_tools::sigma(
-                bondaries.0,
-                bondaries.1,
-                |curr: isize, param: Option<f64>, _, fin: isize| {
-                    math_tools::compute_bernoulli(fin as usize, curr as usize, param.unwrap())
-                },
-                Some(touch_probability),
-            ),
+    match case {
+        ComputeCase::BEST => (
+            checkpoints.1,
+            evaluate_gauss_interval(checkpoints.1, max_hit, nb_touch, wound_probability),
         ),
-        std::cmp::Ordering::Equal => res,
+        ComputeCase::WORST => (
+            checkpoints.0,
+            evaluate_gauss_interval(0, checkpoints.0, nb_touch, wound_probability),
+        ),
+        ComputeCase::MEAN => unreachable!("Code not supposed to be reached!"),
+    }
+}
+
+/// Make two units fight and return the probability that the fight occurs during the game
+///
+/// ## Parameters
+/// (&mut regiment::Regiment, ComputeCase) fastest: The fastest regiment
+///
+/// (&mut regiment::Regiment, ComputeCase) slowest: The slowest regiment
+///
+/// (bool) speed_equality: A boolean value to specify if the regiment have the same speed or not
+///
+/// ## Return
+/// Prediction: The prediction computed according to the specified Compute Case
+fn rumble(
+    fastest: (&mut regiment::Regiment, ComputeCase),
+    slowest: (&mut regiment::Regiment, ComputeCase),
+    speed_equality: bool,
+) -> f64 {
+    let first_damages: (usize, f64) = compute_case(fastest.0, slowest.0, &fastest.1);
+    let mut second_damages: (usize, f64) = compute_case(slowest.0, fastest.0, &slowest.1);
+
+    slowest.0.take_damage(first_damages.0);
+    fastest.0.earn_points(first_damages.0);
+    if speed_equality {
+        fastest.0.take_damage(second_damages.0);
+        slowest.0.earn_points(second_damages.0);
+
+        first_damages.1 * second_damages.1
+    } else if slowest.0.get_regiment_health_points() > 0 {
+        second_damages = compute_case(slowest.0, fastest.0, &slowest.1);
+        fastest.0.take_damage(second_damages.0);
+        slowest.0.earn_points(second_damages.0);
+
+        first_damages.1 * second_damages.1
+    } else {
+        first_damages.1
     }
 }
 
@@ -187,58 +224,23 @@ fn create_prediction(
         attacking_regiment.get_model().get_stats(),
         defending_regiment.get_model().get_stats(),
     );
-    let mut first_damages: (usize, f64) =
-        compute_case(attacking_regiment, defending_regiment, &case);
-    let mut second_damages: (usize, f64) =
-        compute_case(defending_regiment, attacking_regiment, &complementary);
+
     let mut final_defending = defending_regiment.clone();
     let mut final_attacking = attacking_regiment.clone();
-    match fastest {
-        0 => {
-            final_attacking.take_damage(second_damages.0);
-            final_attacking.earn_points(first_damages.0);
-            final_defending.take_damage(first_damages.0);
-            final_defending.earn_points(second_damages.0);
-            prediction::Prediction::new(
-                final_attacking,
-                final_defending,
-                first_damages.1 * second_damages.1,
-            )
-        }
-        1 => {
-            final_defending.take_damage(first_damages.0);
-            final_attacking.earn_points(first_damages.0);
-            if first_damages.0 < defending_regiment.get_regiment_health_points() {
-                second_damages = compute_case(&final_defending, &final_attacking, &complementary);
-                final_attacking.take_damage(second_damages.0);
-                final_defending.earn_points(second_damages.0);
-                prediction::Prediction::new(
-                    final_attacking,
-                    final_defending,
-                    first_damages.1 * second_damages.1,
-                )
-            } else {
-                prediction::Prediction::new(final_attacking, final_defending, first_damages.1)
-            }
-        }
-        2 => {
-            final_attacking.take_damage(second_damages.0);
-            final_defending.earn_points(second_damages.0);
-            if second_damages.0 < attacking_regiment.get_regiment_health_points() {
-                first_damages = compute_case(&final_attacking, &final_defending, &case);
-                final_defending.take_damage(first_damages.0);
-                final_attacking.earn_points(first_damages.0);
-                prediction::Prediction::new(
-                    final_attacking,
-                    final_defending,
-                    first_damages.1 * second_damages.1,
-                )
-            } else {
-                prediction::Prediction::new(final_attacking, final_defending, first_damages.1)
-            }
-        }
-        _ => unreachable!("Code not supposed to be reached!"),
-    }
+    let probability: f64 = if fastest < 2 {
+        rumble(
+            (&mut final_attacking, case),
+            (&mut final_defending, complementary),
+            fastest == 0,
+        )
+    } else {
+        rumble(
+            (&mut final_defending, complementary),
+            (&mut final_attacking, case),
+            false,
+        )
+    };
+    prediction::Prediction::new(final_attacking, final_defending, probability)
 }
 
 /// Compute the 3 most important scenario while in melee phase
@@ -401,15 +403,15 @@ mod tests {
         let mut res: (usize, f64) = compute_case(&attacking, &defending, &ComputeCase::MEAN);
         assert_eq!(res.0, 8);
         res = compute_case(&attacking, &defending, &ComputeCase::WORST);
-        assert_eq!(res.0, 1);
+        assert_eq!(res.0, 5);
         res = compute_case(&attacking, &defending, &ComputeCase::BEST);
-        assert_eq!(res.0, 1);
+        assert_eq!(res.0, 10);
         res = compute_case(&defending, &attacking, &ComputeCase::MEAN);
         assert_eq!(res.0, 1);
         res = compute_case(&defending, &attacking, &ComputeCase::WORST);
-        assert_eq!(res.0, 0);
+        assert_eq!(res.0, 3);
         res = compute_case(&defending, &attacking, &ComputeCase::BEST);
-        assert_eq!(res.0, 1);
+        assert_eq!(res.0, 3);
     }
 
     #[test]
@@ -423,13 +425,13 @@ mod tests {
 
         let res: prediction::Prediction =
             create_prediction(&attacking, &defending, ComputeCase::BEST);
-        assert_eq!(0, res.get_defending_regiment().get_points());
-        assert_eq!(1, res.get_attacking_regiment().get_points());
+        assert_eq!(3, res.get_defending_regiment().get_points());
+        assert_eq!(10, res.get_attacking_regiment().get_points());
 
         let res: prediction::Prediction =
             create_prediction(&attacking, &defending, ComputeCase::WORST);
-        assert_eq!(1, res.get_defending_regiment().get_points());
-        assert_eq!(1, res.get_attacking_regiment().get_points());
+        assert_eq!(3, res.get_defending_regiment().get_points());
+        assert_eq!(5, res.get_attacking_regiment().get_points());
     }
 
     #[test]
@@ -437,7 +439,6 @@ mod tests {
         let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
             initialize_two_units();
         let res = compute_turn(&attacking, &defending);
-        assert_eq!(1, 1);
         assert_eq!(
             res.get(&ComputeCase::MEAN)
                 .unwrap()
@@ -450,14 +451,14 @@ mod tests {
                 .unwrap()
                 .get_attacking_regiment()
                 .get_points(),
-            1
+            10
         );
         assert_eq!(
             res.get(&ComputeCase::WORST)
                 .unwrap()
                 .get_attacking_regiment()
                 .get_points(),
-            1
+            5
         );
         assert_eq!(
             res.get(&ComputeCase::MEAN)
@@ -471,14 +472,14 @@ mod tests {
                 .unwrap()
                 .get_defending_regiment()
                 .get_points(),
-            0
+            3
         );
         assert_eq!(
             res.get(&ComputeCase::WORST)
                 .unwrap()
                 .get_defending_regiment()
                 .get_points(),
-            1
+            3
         );
     }
 }
