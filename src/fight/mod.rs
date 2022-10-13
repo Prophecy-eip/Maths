@@ -43,9 +43,9 @@ fn compute_mean_case(
     let defending_stats: &model::Stats = defending_regiment.get_model().get_stats();
     let damage_probability: f64 =
         computation_tools::compute_damage_probability(attacking_stats, defending_stats);
-    let nb_attacks =
+    let nb_attacks: f64 =
         (attacking_stats.get_attack() as f64 * 1.5 * attacking_regiment.get_cols() as f64).round();
-    let damage = std::cmp::min(
+    let damage: usize = std::cmp::min(
         (nb_attacks * damage_probability).round() as usize,
         defending_stats.get_health_point() * defending_regiment.get_nb_models(),
     );
@@ -72,7 +72,7 @@ fn find_great_gauss_checkpoints(
     wound_probability: f64,
     defender_hp: usize,
 ) -> (usize, usize) {
-    let max_hit = std::cmp::min(nb_touch, defender_hp);
+    let max_hit: usize = std::cmp::min(nb_touch, defender_hp);
     let mut low_checkpoint: usize = (max_hit as f64 * (1.0_f64 / 3.0_f64)).round() as usize;
     let mut high_checkpoint: usize = (max_hit as f64 * (2.0_f64 / 3.0_f64)).round() as usize;
     let compute_proba = |e: usize| math_tools::compute_bernoulli(nb_touch, e, wound_probability);
@@ -122,7 +122,7 @@ fn evaluate_gauss_interval(
 ///
 /// (&regiment::Regiment) defending_regiment: The defender
 ///
-/// (ComputeCase) case: The scenario from first_unit point of view
+/// (&ComputeCase) case: The scenario from first_unit point of view
 ///
 /// ## Return
 /// (usize, f64): The average amount of damage dealt by first_unit and the probability for this scenario to occurs
@@ -139,12 +139,10 @@ fn compute_case(
         attacking_stats,
         defending_regiment.get_model().get_stats(),
     );
-    let max_hit: usize = std::cmp::min(nb_touch, defending_regiment.get_regiment_health_points());
-    let checkpoints: (usize, usize) = find_great_gauss_checkpoints(
-        nb_touch,
-        wound_probability,
-        defending_regiment.get_regiment_health_points(),
-    );
+    let defender_hp: usize = defending_regiment.get_regiment_health_points();
+    let max_hit: usize = std::cmp::min(nb_touch, defender_hp);
+    let checkpoints: (usize, usize) =
+        find_great_gauss_checkpoints(nb_touch, wound_probability, defender_hp);
 
     if let ComputeCase::MEAN = case {
         return compute_mean_case(attacking_regiment, defending_regiment);
@@ -165,34 +163,32 @@ fn compute_case(
 /// Make two units fight and return the probability that the fight occurs during the game
 ///
 /// ## Parameters
-/// (&mut regiment::Regiment, ComputeCase) fastest: The fastest regiment
+/// (&mut regiment::Regiment, &ComputeCase) fastest: The fastest regiment
 ///
-/// (&mut regiment::Regiment, ComputeCase) slowest: The slowest regiment
+/// (&mut regiment::Regiment, &ComputeCase) slowest: The slowest regiment
 ///
 /// (bool) speed_equality: A boolean value to specify if the regiment have the same speed or not
 ///
 /// ## Return
-/// Prediction: The prediction computed according to the specified Compute Case
-fn rumble(
-    fastest: (&mut regiment::Regiment, ComputeCase),
-    slowest: (&mut regiment::Regiment, ComputeCase),
+/// f64: The probability that the fight computed occurs
+fn apply_fight(
+    fastest: (&mut regiment::Regiment, &ComputeCase),
+    slowest: (&mut regiment::Regiment, &ComputeCase),
     speed_equality: bool,
 ) -> f64 {
-    let first_damages: (usize, f64) = compute_case(fastest.0, slowest.0, &fastest.1);
-    let mut second_damages: (usize, f64) = compute_case(slowest.0, fastest.0, &slowest.1);
+    let first_damages: (usize, f64) = compute_case(fastest.0, slowest.0, fastest.1);
+    let mut second_damages: (usize, f64) = compute_case(slowest.0, fastest.0, slowest.1);
 
     slowest.0.take_damage(first_damages.0);
     fastest.0.earn_points(first_damages.0);
     if speed_equality {
         fastest.0.take_damage(second_damages.0);
         slowest.0.earn_points(second_damages.0);
-
         first_damages.1 * second_damages.1
     } else if slowest.0.get_regiment_health_points() > 0 {
-        second_damages = compute_case(slowest.0, fastest.0, &slowest.1);
+        second_damages = compute_case(slowest.0, fastest.0, slowest.1);
         fastest.0.take_damage(second_damages.0);
         slowest.0.earn_points(second_damages.0);
-
         first_damages.1 * second_damages.1
     } else {
         first_damages.1
@@ -206,14 +202,14 @@ fn rumble(
 ///
 /// (&regiment::Regiment) defending_regiment: The second unit
 ///
-/// (ComputeCase) case: The scenario from first unit point of view
+/// (&ComputeCase) case: The scenario from first unit point of view
 ///
 /// ## Return
 /// Prediction: The prediction computed according to the specified Compute Case
 fn create_prediction(
     attacking_regiment: &regiment::Regiment,
     defending_regiment: &regiment::Regiment,
-    case: ComputeCase,
+    case: &ComputeCase,
 ) -> prediction::Prediction {
     let complementary: ComputeCase = match case {
         ComputeCase::BEST => ComputeCase::WORST,
@@ -225,17 +221,17 @@ fn create_prediction(
         defending_regiment.get_model().get_stats(),
     );
 
-    let mut final_defending = defending_regiment.clone();
-    let mut final_attacking = attacking_regiment.clone();
+    let mut final_defending: regiment::Regiment = defending_regiment.clone();
+    let mut final_attacking: regiment::Regiment = attacking_regiment.clone();
     let probability: f64 = if fastest < 2 {
-        rumble(
+        apply_fight(
             (&mut final_attacking, case),
-            (&mut final_defending, complementary),
+            (&mut final_defending, &complementary),
             fastest == 0,
         )
     } else {
-        rumble(
-            (&mut final_defending, complementary),
+        apply_fight(
+            (&mut final_defending, &complementary),
             (&mut final_attacking, case),
             false,
         )
@@ -259,15 +255,15 @@ pub fn compute_turn(
     std::collections::HashMap::from([
         (
             ComputeCase::BEST,
-            create_prediction(attacking_regiment, defending_regiment, ComputeCase::BEST),
+            create_prediction(attacking_regiment, defending_regiment, &ComputeCase::BEST),
         ),
         (
             ComputeCase::WORST,
-            create_prediction(attacking_regiment, defending_regiment, ComputeCase::WORST),
+            create_prediction(attacking_regiment, defending_regiment, &ComputeCase::WORST),
         ),
         (
             ComputeCase::MEAN,
-            create_prediction(attacking_regiment, defending_regiment, ComputeCase::MEAN),
+            create_prediction(attacking_regiment, defending_regiment, &ComputeCase::MEAN),
         ),
     ])
 }
@@ -419,17 +415,17 @@ mod tests {
         let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
             initialize_two_units();
         let res: prediction::Prediction =
-            create_prediction(&attacking, &defending, ComputeCase::MEAN);
+            create_prediction(&attacking, &defending, &ComputeCase::MEAN);
         assert_eq!(1, res.get_defending_regiment().get_points());
         assert_eq!(8, res.get_attacking_regiment().get_points());
 
         let res: prediction::Prediction =
-            create_prediction(&attacking, &defending, ComputeCase::BEST);
+            create_prediction(&attacking, &defending, &ComputeCase::BEST);
         assert_eq!(3, res.get_defending_regiment().get_points());
         assert_eq!(10, res.get_attacking_regiment().get_points());
 
         let res: prediction::Prediction =
-            create_prediction(&attacking, &defending, ComputeCase::WORST);
+            create_prediction(&attacking, &defending, &ComputeCase::WORST);
         assert_eq!(3, res.get_defending_regiment().get_points());
         assert_eq!(5, res.get_attacking_regiment().get_points());
     }
