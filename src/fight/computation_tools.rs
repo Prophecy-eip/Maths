@@ -51,7 +51,7 @@ pub fn compute_roll_to_wound(strength: usize, resilience: usize) -> usize {
 /// (&model::Stats) defending_stats: The defender stats
 ///
 /// ## Return
-/// isize: The probability for attacking_stats to wound target
+/// f64: The probability for attacking_stats to wound target
 fn compute_wound_probability(
     attacking_stats: &model::Stats,
     defending_stats: &model::Stats,
@@ -143,7 +143,9 @@ fn compute_save_probability(defending_stats: &model::Stats, attacking_stats: &mo
     }
 }
 
-/// ## Compute the probability for a model to damage another
+/// Compute the probability for a model to damage another
+///
+/// This function take account of the defender defensive stats
 ///
 /// ## Parameters
 /// (&model::Stats) attacking_stats: The attacker stats
@@ -151,7 +153,7 @@ fn compute_save_probability(defending_stats: &model::Stats, attacking_stats: &mo
 /// (&model::Stats) defending_stats: The defender stats
 ///
 /// ## Return
-/// f64: The probability that first_unit inflict 1 damage to second_unit
+/// f64: The probability that a hit wound the defender
 pub fn compute_damage_probability(
     attacking_stats: &model::Stats,
     defending_stats: &model::Stats,

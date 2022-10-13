@@ -104,6 +104,9 @@ impl Regiment {
 
     /// Inflict damage to the regiment and rearrange the ranks
     ///
+    /// ## Parameters
+    /// (usize) amount: The amount of damages inflicted to the regiment
+    ///
     /// ## Return
     /// usize: The new amount of regiment health points
     pub fn take_damage(&mut self, amount: usize) -> usize {
