@@ -128,15 +128,14 @@ fn compute_save_probability(defending_stats: &model::Stats, attacking_stats: &mo
         x if x > 1.0 => 1.0,
         y => y,
     };
-    let aegis_proba: f64 = match (global_values::DEFAULT_DICE - defending_stats.get_aegis() as f64
-        + 1.0)
-        / global_values::DEFAULT_DICE
-    {
-        x if x <= 0.0 => 0.0,
-        x if x > 1.0 => 1.0,
-        y => y,
-    };
-    if defending_stats.get_aegis() == 0 {
+    let aegis: usize = defending_stats.get_aegis();
+    let aegis_proba: f64 =
+        match (global_values::DEFAULT_DICE - aegis as f64 + 1.0) / global_values::DEFAULT_DICE {
+            x if x <= 0.0 => 0.0,
+            x if x > 1.0 => 1.0,
+            y => y,
+        };
+    if aegis == 0 {
         save_proba
     } else {
         save_proba + aegis_proba - (aegis_proba * save_proba)
