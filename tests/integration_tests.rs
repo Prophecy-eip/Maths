@@ -3,143 +3,637 @@ mod initialize_units;
 
 #[test]
 fn test_warriors_against_heavy_infantry() {
+    let attacking = initialize_units::initialize_warriors();
+    let defending = initialize_units::initialize_heavy_infantry();
+    let res = fight::compute_turn(&attacking, &defending);
     assert_eq!(
-        fight::resolve_fight(
-            initialize_units::initialize_warriors(),
-            initialize_units::initialize_heavy_infantry()
-        ),
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        8
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        10
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        5
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        1
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        3
+    );
+}
+
+#[test]
+fn test_warriors_against_wildhorn_herd() {
+    let attacking = initialize_units::initialize_warriors();
+    let defending = initialize_units::initialize_wildhorn_herd();
+    let res = fight::compute_turn(&attacking, &defending);
+    assert_eq!(
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        5
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        8
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        5
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        1
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        3
+    );
+}
+
+#[test]
+fn test_imps_against_wildhorn_herd() {
+    let attacking = initialize_units::initialize_imps();
+    let defending = initialize_units::initialize_wildhorn_herd();
+    let res = fight::compute_turn(&attacking, &defending);
+    assert_eq!(
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        1
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        5
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        2
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        4
+    );
+}
+
+#[test]
+fn test_imps_against_heavy_infantry() {
+    let attacking = initialize_units::initialize_imps();
+    let defending = initialize_units::initialize_heavy_infantry();
+    let res = fight::compute_turn(&attacking, &defending);
+    assert_eq!(
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        1
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        2
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        4
+    );
+}
+
+#[test]
+fn test_warriors_against_warriors() {
+    let attacking = initialize_units::initialize_warriors();
+    let defending = initialize_units::initialize_warriors();
+    let res = fight::compute_turn(&attacking, &defending);
+    assert_eq!(
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        5
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        8
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        5
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        5
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        5
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
         8
     );
 }
 
 #[test]
-fn test_warriors_againt_wildhorn_herd() {
+fn test_imps_against_imps() {
+    let attacking = initialize_units::initialize_imps();
+    let defending = initialize_units::initialize_imps();
+    let res = fight::compute_turn(&attacking, &defending);
     assert_eq!(
-        fight::resolve_fight(
-            initialize_units::initialize_warriors(),
-            initialize_units::initialize_wildhorn_herd()
-        ),
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        1
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        1
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        3
+    );
+}
+
+#[test]
+fn test_heavy_infantry_against_heavy_infantry() {
+    let attacking = initialize_units::initialize_heavy_infantry();
+    let defending = initialize_units::initialize_heavy_infantry();
+    let res = fight::compute_turn(&attacking, &defending);
+    assert_eq!(
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        2
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
         4
     );
-}
-
-#[test]
-fn test_imps_againt_wildhorn_herd() {
     assert_eq!(
-        fight::resolve_fight(
-            initialize_units::initialize_imps(),
-            initialize_units::initialize_wildhorn_herd()
-        ),
-        0
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        3
     );
-}
-
-#[test]
-fn test_imps_againt_heavy_infantry() {
     assert_eq!(
-        fight::resolve_fight(
-            initialize_units::initialize_imps(),
-            initialize_units::initialize_heavy_infantry()
-        ),
-        1
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        2
     );
-}
-
-#[test]
-fn test_warriors_againt_warriors() {
     assert_eq!(
-        fight::resolve_fight(
-            initialize_units::initialize_warriors(),
-            initialize_units::initialize_warriors()
-        ),
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
         4
-    );
-}
-
-#[test]
-fn test_imps_againt_imps() {
-    assert_eq!(
-        fight::resolve_fight(
-            initialize_units::initialize_imps(),
-            initialize_units::initialize_imps()
-        ),
-        1
-    );
-}
-
-#[test]
-fn test_heavy_infantry_againt_heavy_infantry() {
-    assert_eq!(
-        fight::resolve_fight(
-            initialize_units::initialize_heavy_infantry(),
-            initialize_units::initialize_heavy_infantry()
-        ),
-        1
     );
 }
 
 #[test]
 fn test_silexian_spears_against_imps() {
+    let attacking = initialize_units::initialize_silexian_spears();
+    let defending = initialize_units::initialize_imps();
+    let res = fight::compute_turn(&attacking, &defending);
     assert_eq!(
-        fight::resolve_fight(
-            initialize_units::initialize_silexian_spears(),
-            initialize_units::initialize_imps()
-        ),
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
         2
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        4
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        1
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        3
     );
 }
 
 #[test]
 fn test_silexian_spears_against_warriors() {
+    let attacking = initialize_units::initialize_silexian_spears();
+    let defending = initialize_units::initialize_warriors();
+    let res = fight::compute_turn(&attacking, &defending);
     assert_eq!(
-        fight::resolve_fight(
-            initialize_units::initialize_silexian_spears(),
-            initialize_units::initialize_warriors()
-        ),
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
         1
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        6
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        5
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        10
     );
 }
 
 #[test]
 fn test_clan_warriors_against_citizen_spears() {
+    let attacking = initialize_units::initialize_clan_warriors();
+    let defending = initialize_units::initialize_citizen_spears();
+    let res = fight::compute_turn(&attacking, &defending);
     assert_eq!(
-        fight::resolve_fight(
-            initialize_units::initialize_clan_warriors(),
-            initialize_units::initialize_citizen_spears()
-        ),
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        2
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        4
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
         1
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        3
     );
 }
 
 #[test]
 fn test_clan_warriors_against_silexian_spears() {
+    let attacking = initialize_units::initialize_clan_warriors();
+    let defending = initialize_units::initialize_silexian_spears();
+    let res = fight::compute_turn(&attacking, &defending);
     assert_eq!(
-        fight::resolve_fight(
-            initialize_units::initialize_clan_warriors(),
-            initialize_units::initialize_silexian_spears()
-        ),
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        2
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        4
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
         1
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        3
     );
 }
 
 #[test]
 fn test_infernal_warriors_against_clan_warriors() {
+    let attacking = initialize_units::initialize_infernal_warriors();
+    let defending = initialize_units::initialize_clan_warriors();
+    let res = fight::compute_turn(&attacking, &defending);
     assert_eq!(
-        fight::resolve_fight(
-            initialize_units::initialize_infernal_warriors(),
-            initialize_units::initialize_clan_warriors()
-        ),
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
         1
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        1
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        3
     );
 }
 
 #[test]
 fn test_zombies_against_imps() {
+    let attacking = initialize_units::initialize_zombies();
+    let defending = initialize_units::initialize_imps();
+    let res = fight::compute_turn(&attacking, &defending);
     assert_eq!(
-        fight::resolve_fight(
-            initialize_units::initialize_zombies(),
-            initialize_units::initialize_imps()
-        ),
-        1
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        2
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        5
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_attacking_regiment()
+            .get_points(),
+        4
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::MEAN)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        2
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::BEST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        3
+    );
+    assert_eq!(
+        res.get(&fight::ComputeCase::WORST)
+            .unwrap()
+            .get_defending_regiment()
+            .get_points(),
+        4
     );
 }
