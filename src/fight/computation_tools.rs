@@ -325,6 +325,58 @@ mod tests {
         heavy_infantry
     }
 
+    fn initialize_aegis_heavy_infantry() -> regiment::Regiment {
+        let heavy_infantry_stats: model::Stats = model::Stats::new(
+            model::GlobalStats {
+                advance: 4,
+                march: 8,
+                discipline: 7,
+            },
+            model::DefensiveStats {
+                health_point: 1,
+                defense: 3,
+                resilience: 3,
+                armour: 0,
+                aegis: 3,
+            },
+            model::OffensiveStats {
+                attack: 1,
+                strength: 3,
+                offensive: 3,
+                armour_penetration: 0,
+                agility: 3,
+            },
+        );
+        let heavy_infantry_modifier_stats: model::Stats = model::Stats::new(
+            model::GlobalStats {
+                advance: 0,
+                march: 0,
+                discipline: 0,
+            },
+            model::DefensiveStats {
+                health_point: 0,
+                defense: 0,
+                resilience: 0,
+                armour: 0,
+                aegis: 0,
+            },
+            model::OffensiveStats {
+                attack: 0,
+                strength: 0,
+                offensive: 0,
+                armour_penetration: 0,
+                agility: 0,
+            },
+        );
+        let heavy_infantry_modifier: model::Modifier =
+            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
+        let model_heavy_infantry: model::Model =
+            model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
+        let heavy_infantry: regiment::Regiment =
+            regiment::Regiment::new(model_heavy_infantry, 4, 5, 20, None);
+        heavy_infantry
+    }
+
     fn initialize_two_units() -> (regiment::Regiment, regiment::Regiment) {
         (initialize_chaos_warrior(), initialize_heavy_infantry())
     }
@@ -408,6 +460,18 @@ mod tests {
             first_unit.get_model().get_stats(),
         );
         assert_eq!(wound_probability - 0.166 < 0.001, true);
+    }
+
+    #[test]
+    fn test_compute_save_probability_aegis() {
+        let first_unit = initialize_chaos_warrior();
+        let second_unit = initialize_aegis_heavy_infantry();
+
+        let save_probability: f64 = compute_save_probability(
+            second_unit.get_model().get_stats(),
+            first_unit.get_model().get_stats(),
+        );
+        assert_eq!(save_probability - 0.667 < 0.001, true);
     }
 
     #[test]
