@@ -286,6 +286,38 @@ impl Modifier {
             requirements,
         }
     }
+
+    /// Get the stats affected by the modifier
+    ///
+    /// ## Return
+    /// Stats: The stats affected by the modifier
+    pub fn get_stat(&self) -> &Stats {
+        &self.stat
+    }
+
+    /// Get if the Modifier is a bonus or a malus
+    ///
+    /// ## Return
+    /// bool: A boolean value that indicate if the effect of the modifier should be added or substract from the model who's concerned
+    pub fn is_bonus(&self) -> bool {
+        self.bonus
+    }
+
+    /// Get the number of supplement rolls granted by the modifier
+    ///
+    /// ## Return
+    /// usize: The number of supplement rolls granted by the modifier
+    pub fn get_nb_dice(&self) -> usize {
+        self.nb_dice
+    }
+
+    /// Get the requirements for the Modifier to apply (as an array of flags)
+    ///
+    /// ## Return
+    /// Vec<String>: The requirements for the Modifier to apply (as an array of flags)
+    pub fn get_requirements(&self) -> &Vec<String> {
+        &self.requirements
+    }
 }
 
 /// Struct containing all the information about a Model
@@ -318,6 +350,14 @@ impl Model {
     /// Stats: The Stats of the Model
     pub fn get_stats(&self) -> &Stats {
         &self.stats
+    }
+
+    /// Get the list of Modifiers of the Model
+    ///
+    /// ## Return
+    /// Vec<Modifier>: The list of Modifiers of the Model
+    pub fn get_modifiers(&self) -> &Vec<Modifier> {
+        &self.modifiers
     }
 }
 
