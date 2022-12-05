@@ -147,63 +147,24 @@ impl Regiment {
 
 #[cfg(test)]
 mod tests {
-    use crate::{model, modifier, regiment};
+    use crate::{model, regiment, global_test};
+
 
     fn initialize_chaos_warrior() -> regiment::Regiment {
-        let chaos_warrior_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 4,
-                march: 8,
-                discipline: 8,
-            },
-            model::DefensiveStats {
-                health_points: 1,
-                defense: 5,
-                resilience: 4,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 2,
-                offensive: 5,
-                strength: 4,
-                armour_penetration: 1,
-                agility: 4,
-            },
-        );
-
-        let chaos_warrior_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
-        let model_chaos_warrior: model::Model =
-            model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
-        let chaos_warrior: regiment::Regiment =
-            regiment::Regiment::new(model_chaos_warrior, 4, 5, 20, None);
+        let chaos_warrior: regiment::Regiment = global_test::initialize_regiment(
+            global_test::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
+            global_test::initialize_modifier_stats_with_0(),
+            4, 5, 20);
         chaos_warrior
     }
 
     #[test]
     fn test_get_model() {
-        let chaos_warrior_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 4,
-                march: 8,
-                discipline: 8,
-            },
-            model::DefensiveStats {
-                health_points: 1,
-                defense: 5,
-                resilience: 4,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 2,
-                offensive: 5,
-                strength: 4,
-                armour_penetration: 1,
-                agility: 4,
-            },
-        );
-        let chaos_warrior_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
+        let chaos_warrior_stats: model::Stats = global_test::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4);
+        let chaos_warrior_modifier_stats: model::Stats = global_test::initialize_modifier_stats_with_0();
+
+        let chaos_warrior_modifier: model::Modifier =
+            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();

@@ -4,3 +4,4 @@ pub mod model;
 pub mod modifier;
 pub mod prediction;
 pub mod regiment;
+pub mod global_test;
