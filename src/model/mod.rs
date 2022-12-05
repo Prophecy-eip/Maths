@@ -4,6 +4,8 @@
 //! A Model is one of the figurines in a Regiment
 //! It holds Stats and Modifiers
 
+use crate::modifier;
+
 /// Struct containing all the statistics in the game for a Model
 ///
 /// ## Attributes
@@ -13,7 +15,7 @@
 ///
 /// discipline (usize): The discipline of the Model
 ///
-/// health_point (usize): The number of hit the Model can endure before being removed from the Regiment
+/// health_points (usize): The number of hit the Model can endure before being removed from the Regiment
 ///
 /// defense (usize): The defense of the Model
 ///
@@ -38,7 +40,7 @@ pub struct Stats {
     advance: usize,
     march: usize,
     discipline: usize,
-    health_point: usize,
+    health_points: usize,
     defense: usize,
     resilience: usize,
     armour: usize,
@@ -67,7 +69,7 @@ pub struct GlobalStats {
 /// Struct containing the defending stats of a model
 ///
 /// ## Attributes
-/// health_point (usize): The number of hit the Model can endure before being removed from the Regiment
+/// health_points (usize): The number of hit the Model can endure before being removed from the Regiment
 ///
 /// defense (usize): The defense of the Model
 ///
@@ -77,7 +79,7 @@ pub struct GlobalStats {
 ///
 /// aegis (usize): The special armour of the Model
 pub struct DefensiveStats {
-    pub health_point: usize,
+    pub health_points: usize,
     pub defense: usize,
     pub resilience: usize,
     pub armour: usize,
@@ -116,7 +118,7 @@ impl Stats {
             discipline,
         }: GlobalStats,
         DefensiveStats {
-            health_point,
+            health_points,
             defense,
             resilience,
             armour,
@@ -134,7 +136,7 @@ impl Stats {
             advance,
             march,
             discipline,
-            health_point,
+            health_points,
             defense,
             resilience,
             armour,
@@ -173,9 +175,9 @@ impl Stats {
     /// Get the health point of the Model
     ///
     /// ## Return
-    /// health_point (usize): The health point of the Model
-    pub fn get_health_point(&self) -> usize {
-        self.health_point
+    /// health_points (usize): The health point of the Model
+    pub fn get_health_points(&self) -> usize {
+        self.health_points
     }
 
     /// Get the defense of the Model
@@ -251,43 +253,6 @@ impl Stats {
     }
 }
 
-/// Struct containing all the information about a single Modifier for a Model
-///
-/// ## Attributes
-/// stat (Stats): Stat modified by the Modifier
-///
-/// nb_dice (usize): The number of dice
-///
-/// requirements (Vec<String>): The requirements for the Modifier to apply (as an array of flags)
-#[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
-pub struct Modifier {
-    stat: Stats,
-    bonus: bool,
-    nb_dice: usize,
-    requirements: Vec<String>,
-}
-
-impl Modifier {
-    /// Create a new Modifier using Stats, number of dice and the requirements to apply the Modifier
-    ///
-    /// ## Parameters
-    /// (Stats) stats: The stats affected by the modifier
-    /// (bool) bonus: A boolean value that indicate if the effect of the modifier should be added or substract from the model who's concerned
-    /// (usize) nb_dice: The number of supplement rolls granted by the modifier
-    /// (Vec<String>) requirements: The requirements for the Modifier to apply (as an array of flags)
-    ///
-    /// ## Return
-    /// Modifier: The Modifier created
-    pub fn new(stat: Stats, bonus: bool, nb_dice: usize, requirements: Vec<String>) -> Modifier {
-        Modifier {
-            stat,
-            bonus,
-            nb_dice,
-            requirements,
-        }
-    }
-}
-
 /// Struct containing all the information about a Model
 ///
 /// ## Attributes
@@ -297,7 +262,7 @@ impl Modifier {
 #[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
 pub struct Model {
     stats: Stats,
-    modifiers: Vec<Modifier>,
+    modifiers: Vec<modifier::Modifier>,
 }
 
 impl Model {
@@ -309,14 +274,14 @@ impl Model {
     ///
     /// ## Return
     /// Model: The Model created
-    pub fn new(stats: Stats, modifiers: Vec<Modifier>) -> Model {
+    pub fn new(stats: Stats, modifiers: Vec<modifier::Modifier>) -> Model {
         Model { stats, modifiers }
     }
     /// Get the Stats of the Model
     ///
     /// ## Return
     /// Stats: The Stats of the Model
-    pub fn get_stats(&self) -> &Stats {
+    pub fn get_pure_stats(&self) -> &Stats {
         &self.stats
     }
 }
@@ -333,7 +298,7 @@ mod tests {
                 discipline: 1,
             },
             DefensiveStats {
-                health_point: 1,
+                health_points: 1,
                 defense: 1,
                 resilience: 1,
                 armour: 1,
@@ -368,9 +333,9 @@ mod tests {
     }
 
     #[test]
-    fn stat_get_health_point() {
+    fn stat_get_health_points() {
         let stats: Stats = initialize_stats();
-        assert_eq!(stats.get_health_point(), 1);
+        assert_eq!(stats.get_health_points(), 1);
     }
 
     #[test]
