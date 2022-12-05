@@ -251,6 +251,16 @@ impl Stats {
     pub fn get_agility(&self) -> usize {
         self.agility
     }
+
+    pub fn buff_melee_weapon(&mut self, weapon: &modifier::MeleeWeaponStats) {
+        self.armour_penetration += weapon.get_armour_penetration();
+        self.strength += weapon.get_strength();
+    }
+
+    pub fn buff_ranged_weapon(&mut self, weapon: &modifier::RangedWeaponStats) {
+        self.armour_penetration += weapon.get_armour_penetration();
+        self.strength += weapon.get_strength();
+    }
 }
 
 /// Struct containing all the information about a Model
@@ -281,8 +291,17 @@ impl Model {
     ///
     /// ## Return
     /// Stats: The Stats of the Model
-    pub fn get_pure_stats(&self) -> &Stats {
-        &self.stats
+    pub fn get_stats(&self) -> Stats {
+        let mut copy = self.stats.clone();
+
+        for modifier in &self.modifiers {
+            match modifier {
+                modifier::Modifier::MeleeWeapon(weapon) => copy.buff_melee_weapon(weapon),
+
+                modifier::Modifier::RangedWeapon(weapon) => copy.buff_ranged_weapon(weapon),
+            }
+        }
+        copy
     }
 }
 

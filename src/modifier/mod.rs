@@ -31,6 +31,55 @@ pub enum Modifier {
     RangedWeapon(RangedWeaponStats),
 }
 
+impl MeleeWeaponStats {
+    pub fn new(strength: usize, armour_penetration: usize) -> MeleeWeaponStats {
+        MeleeWeaponStats {
+            strength,
+            armour_penetration,
+        }
+    }
+
+    pub fn get_strength(&self) -> usize {
+        self.strength
+    }
+
+    pub fn get_armour_penetration(&self) -> usize {
+        self.armour_penetration
+    }
+}
+
+impl RangedWeaponStats {
+    pub fn new(
+        range: usize,
+        shots: usize,
+        strength: usize,
+        armour_penetration: usize,
+    ) -> RangedWeaponStats {
+        RangedWeaponStats {
+            range,
+            shots,
+            strength,
+            armour_penetration,
+        }
+    }
+
+    pub fn get_range(&self) -> usize {
+        self.range
+    }
+
+    pub fn get_shots(&self) -> usize {
+        self.shots
+    }
+
+    pub fn get_strength(&self) -> usize {
+        self.strength
+    }
+
+    pub fn get_armour_penetration(&self) -> usize {
+        self.armour_penetration
+    }
+}
+
 impl Modifier {
     pub fn new_melee_weapon(strength: usize, armour_penetration: usize) -> Self {
         Modifier::MeleeWeapon(MeleeWeaponStats {
