@@ -148,7 +148,7 @@ pub fn resolve_fight(regiment_1: regiment::Regiment, regiment_2: regiment::Regim
 
 #[cfg(test)]
 mod tests {
-    use crate::{model, regiment, roll};
+    use crate::{model, regiment, roll, global_test};
 
     use super::{
         fight_first_turn, find_the_fastest, get_final_result, get_nb_attacks, get_nb_wounds,
@@ -156,106 +156,18 @@ mod tests {
     };
 
     fn initialize_chaos_warrior() -> regiment::Regiment {
-        let chaos_warrior_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 4,
-                march: 8,
-                discipline: 8,
-            },
-            model::DefensiveStats {
-                health_point: 1,
-                defense: 5,
-                resilience: 4,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 2,
-                strength: 5,
-                offensive: 4,
-                armour_penetration: 1,
-                agility: 4,
-            },
-        );
-        let chaos_warrior_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                strength: 0,
-                offensive: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
-        let model_chaos_warrior: model::Model =
-            model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
-        let chaos_warrior: regiment::Regiment =
-            regiment::Regiment::new(model_chaos_warrior, 4, 5, 20);
+        let chaos_warrior: regiment::Regiment = global_test::initialize_regiment(
+            global_test::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 4, 5, 1, 4),
+            global_test::initialize_modifier_stats_with_0(),
+            4, 5, 20);
         chaos_warrior
     }
 
     fn initialize_heavy_infantry() -> regiment::Regiment {
-        let heavy_infantry_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 4,
-                march: 8,
-                discipline: 7,
-            },
-            model::DefensiveStats {
-                health_point: 1,
-                defense: 3,
-                resilience: 3,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 1,
-                strength: 3,
-                offensive: 3,
-                armour_penetration: 0,
-                agility: 3,
-            },
-        );
-        let heavy_infantry_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                strength: 0,
-                offensive: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
-        let model_heavy_infantry: model::Model =
-            model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
-        let heavy_infantry: regiment::Regiment =
-            regiment::Regiment::new(model_heavy_infantry, 4, 5, 20);
+        let heavy_infantry: regiment::Regiment = global_test::initialize_regiment(
+            global_test::initialize_stats(4, 8, 7, 1, 3, 3, 0, 0, 1, 3, 3, 0, 3),
+            global_test::initialize_modifier_stats_with_0(),
+            4, 5, 20);
         heavy_infantry
     }
 
@@ -276,54 +188,10 @@ mod tests {
     #[test]
     fn test_fastest_is_two() {
         let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
-        let heavy_infantry_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 4,
-                march: 8,
-                discipline: 7,
-            },
-            model::DefensiveStats {
-                health_point: 1,
-                defense: 3,
-                resilience: 3,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 1,
-                strength: 3,
-                offensive: 3,
-                armour_penetration: 0,
-                agility: 7,
-            },
-        );
-        let heavy_infantry_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                strength: 0,
-                offensive: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
-        let model_heavy_infantry: model::Model =
-            model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
-        let heavy_infantry: regiment::Regiment =
-            regiment::Regiment::new(model_heavy_infantry, 4, 5, 20);
+        let heavy_infantry: regiment::Regiment = global_test::initialize_regiment(
+            global_test::initialize_stats(4, 8, 7, 1, 3, 3, 0, 0, 1, 3, 3, 0, 7),
+            global_test::initialize_modifier_stats_with_0(),
+            4, 5, 20);
         assert_eq!(
             find_the_fastest(chaos_warrior.get_model(), heavy_infantry.get_model()),
             2
@@ -332,100 +200,13 @@ mod tests {
 
     #[test]
     fn test_fastest_is_none() {
-        let chaos_warrior_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 4,
-                march: 8,
-                discipline: 8,
-            },
-            model::DefensiveStats {
-                health_point: 1,
-                defense: 5,
-                resilience: 4,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 2,
-                strength: 5,
-                offensive: 4,
-                armour_penetration: 1,
-                agility: 4,
-            },
-        );
-        let chaos_warrior_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                strength: 0,
-                offensive: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
-        let model_chaos_warrior: model::Model =
-            model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
-        let heavy_infantry_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 4,
-                march: 8,
-                discipline: 7,
-            },
-            model::DefensiveStats {
-                health_point: 1,
-                defense: 3,
-                resilience: 3,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 1,
-                strength: 3,
-                offensive: 3,
-                armour_penetration: 0,
-                agility: 5,
-            },
-        );
-        let heavy_infantry_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                strength: 0,
-                offensive: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
-        let model_heavy_infantry: model::Model =
-            model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
+        let model_chaos_warrior: model::Model = initialize_chaos_warrior().get_model().to_owned();
+        let heavy_infantry: regiment::Regiment = global_test::initialize_regiment(
+            global_test::initialize_stats(4, 8, 7, 1, 3, 3, 0, 0, 1, 3, 3, 0, 5),
+            global_test::initialize_modifier_stats_with_0(),
+            4, 5, 20);
         assert_eq!(
-            find_the_fastest(&model_chaos_warrior, &model_heavy_infantry),
+            find_the_fastest(&model_chaos_warrior, heavy_infantry.get_model()),
             0
         );
     }
@@ -534,102 +315,14 @@ mod tests {
 
     #[test]
     fn test_final_result_3() {
-        let chaos_warrior_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 4,
-                march: 8,
-                discipline: 8,
-            },
-            model::DefensiveStats {
-                health_point: 1,
-                defense: 5,
-                resilience: 4,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 2,
-                offensive: 5,
-                strength: 4,
-                armour_penetration: 1,
-                agility: 4,
-            },
-        );
-        let chaos_warrior_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                offensive: 0,
-                strength: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
-        let model_chaos_warrior: model::Model =
-            model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
-        let chaos_warrior: regiment::Regiment =
-            regiment::Regiment::new(model_chaos_warrior, 4, 5, 20);
-        let heavy_infantry_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 4,
-                march: 8,
-                discipline: 7,
-            },
-            model::DefensiveStats {
-                health_point: 1,
-                defense: 3,
-                resilience: 3,
-                armour: 5,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 1,
-                offensive: 3,
-                strength: 3,
-                armour_penetration: 0,
-                agility: 3,
-            },
-        );
-        let heavy_infantry_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                offensive: 0,
-                strength: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
-        let model_heavy_infantry: model::Model =
-            model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
-        let heavy_infantry: regiment::Regiment =
-            regiment::Regiment::new(model_heavy_infantry, 4, 5, 20);
+        let chaos_warrior: regiment::Regiment = global_test::initialize_regiment(
+            global_test::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
+            global_test::initialize_modifier_stats_with_0(),
+            4, 5, 20);
+        let heavy_infantry: regiment::Regiment = global_test::initialize_regiment(
+            global_test::initialize_stats(4, 8, 7, 1, 3, 3, 5, 0, 1, 3, 3, 0, 3),
+            global_test::initialize_modifier_stats_with_0(),
+            4, 5, 20);
         let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
         let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
         let to_hit: usize = roll::compute_roll_to_hit(
@@ -654,102 +347,14 @@ mod tests {
 
     #[test]
     fn test_final_result_4() {
-        let chaos_warrior_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 4,
-                march: 8,
-                discipline: 8,
-            },
-            model::DefensiveStats {
-                health_point: 1,
-                defense: 5,
-                resilience: 4,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 2,
-                offensive: 5,
-                strength: 4,
-                armour_penetration: 1,
-                agility: 4,
-            },
-        );
-        let chaos_warrior_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                offensive: 0,
-                strength: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
-        let model_chaos_warrior: model::Model =
-            model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
-        let chaos_warrior: regiment::Regiment =
-            regiment::Regiment::new(model_chaos_warrior, 4, 5, 20);
-        let heavy_infantry_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 4,
-                march: 8,
-                discipline: 7,
-            },
-            model::DefensiveStats {
-                health_point: 1,
-                defense: 3,
-                resilience: 3,
-                armour: 4,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 1,
-                offensive: 3,
-                strength: 3,
-                armour_penetration: 0,
-                agility: 3,
-            },
-        );
-        let heavy_infantry_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                offensive: 0,
-                strength: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
-        let model_heavy_infantry: model::Model =
-            model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
-        let heavy_infantry: regiment::Regiment =
-            regiment::Regiment::new(model_heavy_infantry, 4, 5, 20);
+        let chaos_warrior: regiment::Regiment = global_test::initialize_regiment(
+            global_test::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
+            global_test::initialize_modifier_stats_with_0(),
+            4, 5, 20);
+        let heavy_infantry: regiment::Regiment = global_test::initialize_regiment(
+            global_test::initialize_stats(4, 8, 7, 1, 3, 3, 4, 0, 1, 3, 3, 0, 3),
+            global_test::initialize_modifier_stats_with_0(),
+            4, 5, 20);
         let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
         let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
         let to_hit: usize = roll::compute_roll_to_hit(
@@ -774,102 +379,14 @@ mod tests {
 
     #[test]
     fn test_final_result_5() {
-        let chaos_warrior_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 4,
-                march: 8,
-                discipline: 8,
-            },
-            model::DefensiveStats {
-                health_point: 1,
-                defense: 5,
-                resilience: 4,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 2,
-                offensive: 5,
-                strength: 4,
-                armour_penetration: 1,
-                agility: 4,
-            },
-        );
-        let chaos_warrior_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                offensive: 0,
-                strength: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
-        let model_chaos_warrior: model::Model =
-            model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
-        let chaos_warrior: regiment::Regiment =
-            regiment::Regiment::new(model_chaos_warrior, 4, 5, 20);
-        let heavy_infantry_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 4,
-                march: 8,
-                discipline: 7,
-            },
-            model::DefensiveStats {
-                health_point: 1,
-                defense: 3,
-                resilience: 3,
-                armour: 3,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 1,
-                offensive: 3,
-                strength: 3,
-                armour_penetration: 0,
-                agility: 3,
-            },
-        );
-        let heavy_infantry_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                offensive: 0,
-                strength: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
-        let model_heavy_infantry: model::Model =
-            model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
-        let heavy_infantry: regiment::Regiment =
-            regiment::Regiment::new(model_heavy_infantry, 4, 5, 20);
+        let chaos_warrior: regiment::Regiment = global_test::initialize_regiment(
+            global_test::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
+            global_test::initialize_modifier_stats_with_0(),
+            4, 5, 20);
+        let heavy_infantry: regiment::Regiment = global_test::initialize_regiment(
+            global_test::initialize_stats(4, 8, 7, 1, 3, 3, 3, 0, 1, 3, 3, 0, 3),
+            global_test::initialize_modifier_stats_with_0(),
+            4, 5, 20);
         let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
         let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
         let to_hit: usize = roll::compute_roll_to_hit(
@@ -894,102 +411,14 @@ mod tests {
 
     #[test]
     fn test_final_result_6() {
-        let chaos_warrior_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 4,
-                march: 8,
-                discipline: 8,
-            },
-            model::DefensiveStats {
-                health_point: 1,
-                defense: 5,
-                resilience: 4,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 2,
-                offensive: 5,
-                strength: 4,
-                armour_penetration: 1,
-                agility: 4,
-            },
-        );
-        let chaos_warrior_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                offensive: 0,
-                strength: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
-        let model_chaos_warrior: model::Model =
-            model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
-        let chaos_warrior: regiment::Regiment =
-            regiment::Regiment::new(model_chaos_warrior, 4, 5, 20);
-        let heavy_infantry_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 4,
-                march: 8,
-                discipline: 7,
-            },
-            model::DefensiveStats {
-                health_point: 1,
-                defense: 3,
-                resilience: 3,
-                armour: 2,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 1,
-                offensive: 3,
-                strength: 3,
-                armour_penetration: 0,
-                agility: 3,
-            },
-        );
-        let heavy_infantry_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                offensive: 0,
-                strength: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
-        let model_heavy_infantry: model::Model =
-            model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
-        let heavy_infantry: regiment::Regiment =
-            regiment::Regiment::new(model_heavy_infantry, 4, 5, 20);
+        let chaos_warrior: regiment::Regiment = global_test::initialize_regiment(
+            global_test::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
+            global_test::initialize_modifier_stats_with_0(),
+            4, 5, 20);
+        let heavy_infantry: regiment::Regiment = global_test::initialize_regiment(
+            global_test::initialize_stats(4, 8, 7, 1, 3, 3, 2, 0, 1, 3, 3, 0, 3),
+            global_test::initialize_modifier_stats_with_0(),
+            4, 5, 20);
         let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
         let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
         let to_hit: usize = roll::compute_roll_to_hit(
@@ -1014,102 +443,14 @@ mod tests {
 
     #[test]
     fn test_final_result_7() {
-        let chaos_warrior_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 4,
-                march: 8,
-                discipline: 8,
-            },
-            model::DefensiveStats {
-                health_point: 1,
-                defense: 5,
-                resilience: 4,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 2,
-                offensive: 5,
-                strength: 4,
-                armour_penetration: 1,
-                agility: 4,
-            },
-        );
-        let chaos_warrior_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                offensive: 0,
-                strength: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
-        let model_chaos_warrior: model::Model =
-            model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
-        let chaos_warrior: regiment::Regiment =
-            regiment::Regiment::new(model_chaos_warrior, 4, 5, 20);
-        let heavy_infantry_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 4,
-                march: 8,
-                discipline: 7,
-            },
-            model::DefensiveStats {
-                health_point: 1,
-                defense: 3,
-                resilience: 3,
-                armour: 6,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 1,
-                offensive: 3,
-                strength: 3,
-                armour_penetration: 0,
-                agility: 3,
-            },
-        );
-        let heavy_infantry_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                offensive: 0,
-                strength: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
-        let model_heavy_infantry: model::Model =
-            model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
-        let heavy_infantry: regiment::Regiment =
-            regiment::Regiment::new(model_heavy_infantry, 4, 5, 20);
+        let chaos_warrior: regiment::Regiment = global_test::initialize_regiment(
+            global_test::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
+            global_test::initialize_modifier_stats_with_0(),
+            4, 5, 20);
+        let heavy_infantry: regiment::Regiment = global_test::initialize_regiment(
+            global_test::initialize_stats(4, 8, 7, 1, 3, 3, 6, 0, 1, 3, 3, 0, 3),
+            global_test::initialize_modifier_stats_with_0(),
+            4, 5, 20);
         let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
         let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
         let to_hit: usize = roll::compute_roll_to_hit(
@@ -1156,54 +497,10 @@ mod tests {
     #[test]
     fn test_resolve_fight_2() {
         let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
-        let heavy_infantry_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 4,
-                march: 8,
-                discipline: 7,
-            },
-            model::DefensiveStats {
-                health_point: 1,
-                defense: 3,
-                resilience: 3,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 1,
-                strength: 3,
-                offensive: 3,
-                armour_penetration: 0,
-                agility: 2,
-            },
-        );
-        let heavy_infantry_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                strength: 0,
-                offensive: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
-        let model_heavy_infantry: model::Model =
-            model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
-        let heavy_infantry: regiment::Regiment =
-            regiment::Regiment::new(model_heavy_infantry, 4, 5, 20);
+        let heavy_infantry: regiment::Regiment = global_test::initialize_regiment(
+            global_test::initialize_stats(4, 8, 7, 1, 3, 3, 0, 0, 1, 3, 3, 0, 2),
+            global_test::initialize_modifier_stats_with_0(),
+            4, 5, 20);
         assert_eq!(resolve_fight(heavy_infantry, chaos_warrior), 8)
     }
 }
