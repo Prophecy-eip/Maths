@@ -410,4 +410,44 @@ mod tests {
         let stats: Stats = initialize_stats();
         assert_eq!(stats.get_agility(), 1);
     }
+
+    #[test]
+    fn stat_buff_melee_weapon() {
+        let mut stats: Stats = initialize_stats();
+        stats.buff_melee_weapon(&super::modifier::MeleeWeaponStats::new(1, 1));
+        assert_eq!(stats.get_armour_penetration(), 2);
+        assert_eq!(stats.get_strength(), 2);
+    }
+
+    #[test]
+    fn stat_buff_ranged_weapon() {
+        let mut stats: Stats = initialize_stats();
+        stats.buff_ranged_weapon(&super::modifier::RangedWeaponStats::new(1, 1, 3, 4));
+        assert_eq!(stats.get_armour_penetration(), 5);
+        assert_eq!(stats.get_strength(), 4);
+    }
+
+    #[test]
+    fn model_get_stats() {
+        let stats: Stats = initialize_stats();
+        let copy = stats.clone();
+
+        let model = super::Model::new(stats, vec![]);
+        assert_eq!(model.get_stats(), copy);
+    }
+
+    #[test]
+    fn model_get_stats_with_modifier() {
+        let stats: Stats = initialize_stats();
+        let mut copy = stats.clone();
+        copy.buff_melee_weapon(&super::modifier::MeleeWeaponStats::new(1, 1));
+
+        let model = super::Model::new(
+            stats,
+            vec![super::modifier::Modifier::MeleeWeapon(
+                super::modifier::MeleeWeaponStats::new(1, 1),
+            )],
+        );
+        assert_eq!(model.get_stats(), copy);
+    }
 }
