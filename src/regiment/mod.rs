@@ -16,7 +16,7 @@ use serde;
 ///
 /// nb_models (usize): Number of Model remaining in the Regiment
 ///
-/// regiment_health_point (usize): The total number of health points that left to the regiment
+/// regiment_health_points (usize): The total number of health points that left to the regiment
 ///
 /// points (usize): The points earned by the regiment
 #[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
@@ -25,7 +25,7 @@ pub struct Regiment {
     nb_rows: usize,
     nb_cols: usize,
     nb_models: usize,
-    regiment_health_point: usize,
+    regiment_health_points: usize,
     points: usize,
 }
 
@@ -41,8 +41,8 @@ impl Regiment {
     ///
     /// (usize) nb_models: The number of models in the regiment
     ///
-    /// Option<usize> regiment_health_point: The number of health points that left to the regiment.
-    /// If None, the default value will be (the number of model * the health_point stats of the model)
+    /// Option<usize> regiment_health_points: The number of health points that left to the regiment.
+    /// If None, the default value will be (the number of model * the health_points stats of the model)
     ///
     /// ## Return
     /// Regiment: The Regiment created
@@ -51,15 +51,15 @@ impl Regiment {
         nb_rows: usize,
         nb_cols: usize,
         nb_models: usize,
-        regiment_health_point: Option<usize>,
+        regiment_health_points: Option<usize>,
     ) -> Regiment {
-        let health_points: usize = model.get_stats().get_health_point();
+        let health_pointss: usize = model.get_pure_stats().get_health_points();
         Regiment {
             model,
             nb_rows,
             nb_cols,
             nb_models,
-            regiment_health_point: regiment_health_point.unwrap_or(nb_models * health_points),
+            regiment_health_points: regiment_health_points.unwrap_or(nb_models * health_pointss),
             points: 0,
         }
     }
@@ -99,8 +99,8 @@ impl Regiment {
     ///
     /// ## Return
     /// usize: The regiment total health points
-    pub fn get_regiment_health_points(&self) -> usize {
-        self.regiment_health_point
+    pub fn get_regiment_health_pointss(&self) -> usize {
+        self.regiment_health_points
     }
 
     /// Inflict damage to the regiment and rearrange the ranks
@@ -111,9 +111,9 @@ impl Regiment {
     /// ## Return
     /// usize: The new amount of regiment health points
     pub fn take_damage(&mut self, amount: usize) -> usize {
-        self.regiment_health_point = self.regiment_health_point.saturating_sub(amount);
-        self.nb_models = (self.regiment_health_point as f64
-            / self.model.get_stats().get_health_point() as f64)
+        self.regiment_health_points = self.regiment_health_points.saturating_sub(amount);
+        self.nb_models = (self.regiment_health_points as f64
+            / self.model.get_pure_stats().get_health_points() as f64)
             .ceil() as usize;
         if self.nb_models >= self.nb_cols {
             self.nb_rows = (self.nb_models as f64 / self.nb_cols as f64).ceil() as usize;
@@ -121,7 +121,7 @@ impl Regiment {
             self.nb_rows = 1;
             self.nb_cols = self.nb_models;
         }
-        self.regiment_health_point
+        self.regiment_health_points
     }
 
     /// Get the number of points earn by the regiment
@@ -147,7 +147,7 @@ impl Regiment {
 
 #[cfg(test)]
 mod tests {
-    use crate::{model, regiment};
+    use crate::{model, modifier, regiment};
 
     fn initialize_chaos_warrior() -> regiment::Regiment {
         let chaos_warrior_stats: model::Stats = model::Stats::new(
@@ -157,7 +157,7 @@ mod tests {
                 discipline: 8,
             },
             model::DefensiveStats {
-                health_point: 1,
+                health_points: 1,
                 defense: 5,
                 resilience: 4,
                 armour: 0,
@@ -171,29 +171,8 @@ mod tests {
                 agility: 4,
             },
         );
-        let chaos_warrior_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                offensive: 0,
-                strength: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
+
+        let chaos_warrior_modifier: modifier::Modifier = modifier::Modifier::new_melee_weapon(0, 0);
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment =
@@ -210,7 +189,7 @@ mod tests {
                 discipline: 8,
             },
             model::DefensiveStats {
-                health_point: 1,
+                health_points: 1,
                 defense: 5,
                 resilience: 4,
                 armour: 0,
@@ -224,29 +203,7 @@ mod tests {
                 agility: 4,
             },
         );
-        let chaos_warrior_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                offensive: 0,
-                strength: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
+        let chaos_warrior_modifier: modifier::Modifier = modifier::Modifier::new_melee_weapon(0, 0);
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
@@ -274,14 +231,14 @@ mod tests {
     #[test]
     fn test_get_regiment_health() {
         let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
-        assert_eq!(chaos_warrior.get_regiment_health_points(), 20);
+        assert_eq!(chaos_warrior.get_regiment_health_pointss(), 20);
     }
 
     #[test]
     fn test_take_damage() {
         let mut chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
         chaos_warrior.take_damage(5);
-        assert_eq!(chaos_warrior.get_regiment_health_points(), 15);
+        assert_eq!(chaos_warrior.get_regiment_health_pointss(), 15);
         assert_eq!(chaos_warrior.get_nb_models(), 15);
     }
 
@@ -289,7 +246,7 @@ mod tests {
     fn test_take_damage_loose_a_line() {
         let mut chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
         chaos_warrior.take_damage(6);
-        assert_eq!(chaos_warrior.get_regiment_health_points(), 14);
+        assert_eq!(chaos_warrior.get_regiment_health_pointss(), 14);
         assert_eq!(chaos_warrior.get_nb_models(), 14);
         assert_eq!(chaos_warrior.get_cols(), 5);
         assert_eq!(chaos_warrior.get_rows(), 3);
@@ -299,7 +256,7 @@ mod tests {
     fn test_take_damage_less_than_a_line() {
         let mut chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
         chaos_warrior.take_damage(17);
-        assert_eq!(chaos_warrior.get_regiment_health_points(), 3);
+        assert_eq!(chaos_warrior.get_regiment_health_pointss(), 3);
         assert_eq!(chaos_warrior.get_nb_models(), 3);
         assert_eq!(chaos_warrior.get_cols(), 3);
         assert_eq!(chaos_warrior.get_rows(), 1);

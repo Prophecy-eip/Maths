@@ -71,7 +71,7 @@ impl Prediction {
 #[cfg(test)]
 mod tests {
     use super::{Prediction, Regiment};
-    use crate::{model, regiment};
+    use crate::{model, modifier, regiment};
 
     fn initialize_chaos_warrior() -> regiment::Regiment {
         let chaos_warrior_stats: model::Stats = model::Stats::new(
@@ -81,7 +81,7 @@ mod tests {
                 discipline: 8,
             },
             model::DefensiveStats {
-                health_point: 1,
+                health_points: 1,
                 defense: 5,
                 resilience: 4,
                 armour: 0,
@@ -95,29 +95,8 @@ mod tests {
                 agility: 4,
             },
         );
-        let chaos_warrior_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                offensive: 0,
-                strength: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
+
+        let chaos_warrior_modifier: modifier::Modifier = modifier::Modifier::new_melee_weapon(0, 0);
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment =

@@ -167,7 +167,7 @@ mod tests {
         compute_damage_probability, compute_roll_to_hit, compute_roll_to_wound,
         compute_save_probability, compute_wound_probability, find_the_fastest,
     };
-    use crate::{model, regiment};
+    use crate::{model, modifier, regiment};
 
     fn initialize_chaos_warrior() -> regiment::Regiment {
         let chaos_warrior_stats: model::Stats = model::Stats::new(
@@ -177,7 +177,7 @@ mod tests {
                 discipline: 8,
             },
             model::DefensiveStats {
-                health_point: 1,
+                health_points: 1,
                 defense: 5,
                 resilience: 4,
                 armour: 0,
@@ -191,29 +191,8 @@ mod tests {
                 agility: 5,
             },
         );
-        let chaos_warrior_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                strength: 0,
-                offensive: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
+
+        let chaos_warrior_modifier: modifier::Modifier = modifier::Modifier::new_melee_weapon(0, 0);
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment =
@@ -229,7 +208,7 @@ mod tests {
                 discipline: 7,
             },
             model::DefensiveStats {
-                health_point: 1,
+                health_points: 1,
                 defense: 3,
                 resilience: 3,
                 armour: 0,
@@ -243,29 +222,9 @@ mod tests {
                 agility: 3,
             },
         );
-        let heavy_infantry_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                strength: 0,
-                offensive: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
+
+        let heavy_infantry_modifier: modifier::Modifier =
+            modifier::Modifier::new_melee_weapon(0, 0);
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
@@ -281,7 +240,7 @@ mod tests {
                 discipline: 7,
             },
             model::DefensiveStats {
-                health_point: 1,
+                health_points: 1,
                 defense: 3,
                 resilience: 3,
                 armour: 2,
@@ -295,29 +254,9 @@ mod tests {
                 agility: 4,
             },
         );
-        let heavy_infantry_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                strength: 0,
-                offensive: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
+
+        let heavy_infantry_modifier: modifier::Modifier =
+            modifier::Modifier::new_melee_weapon(0, 0);
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
@@ -333,7 +272,7 @@ mod tests {
                 discipline: 7,
             },
             model::DefensiveStats {
-                health_point: 1,
+                health_points: 1,
                 defense: 3,
                 resilience: 3,
                 armour: 0,
@@ -347,29 +286,9 @@ mod tests {
                 agility: 3,
             },
         );
-        let heavy_infantry_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                strength: 0,
-                offensive: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
+
+        let heavy_infantry_modifier: modifier::Modifier =
+            modifier::Modifier::new_melee_weapon(0, 0);
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
@@ -405,8 +324,8 @@ mod tests {
             initialize_two_units();
         assert_eq!(
             find_the_fastest(
-                chaos_warrior.get_model().get_stats(),
-                heavy_infantry.get_model().get_stats()
+                chaos_warrior.get_model().get_pure_stats(),
+                heavy_infantry.get_model().get_pure_stats()
             ),
             1
         );
@@ -418,8 +337,8 @@ mod tests {
             initialize_two_units();
         assert_eq!(
             find_the_fastest(
-                heavy_infantry.get_model().get_stats(),
-                chaos_warrior.get_model().get_stats()
+                heavy_infantry.get_model().get_pure_stats(),
+                chaos_warrior.get_model().get_pure_stats()
             ),
             2
         );
@@ -431,8 +350,8 @@ mod tests {
         let second_unit = initialize_buffed_heavy_infantry();
         assert_eq!(
             find_the_fastest(
-                second_unit.get_model().get_stats(),
-                first_unit.get_model().get_stats()
+                second_unit.get_model().get_pure_stats(),
+                first_unit.get_model().get_pure_stats()
             ),
             0
         );
@@ -444,8 +363,8 @@ mod tests {
         let second_unit = initialize_heavy_infantry();
 
         let wound_probability: f64 = compute_wound_probability(
-            first_unit.get_model().get_stats(),
-            second_unit.get_model().get_stats(),
+            first_unit.get_model().get_pure_stats(),
+            second_unit.get_model().get_pure_stats(),
         );
         assert_eq!(wound_probability - 0.555 < 0.001, true);
     }
@@ -456,8 +375,8 @@ mod tests {
         let second_unit = initialize_heavy_infantry();
 
         let wound_probability: f64 = compute_wound_probability(
-            second_unit.get_model().get_stats(),
-            first_unit.get_model().get_stats(),
+            second_unit.get_model().get_pure_stats(),
+            first_unit.get_model().get_pure_stats(),
         );
         assert_eq!(wound_probability - 0.166 < 0.001, true);
     }
@@ -468,8 +387,8 @@ mod tests {
         let second_unit = initialize_aegis_heavy_infantry();
 
         let save_probability: f64 = compute_save_probability(
-            second_unit.get_model().get_stats(),
-            first_unit.get_model().get_stats(),
+            second_unit.get_model().get_pure_stats(),
+            first_unit.get_model().get_pure_stats(),
         );
         assert_eq!(save_probability - 0.667 < 0.001, true);
     }
@@ -480,8 +399,8 @@ mod tests {
         let second_unit = initialize_heavy_infantry();
 
         let save_probability: f64 = compute_save_probability(
-            first_unit.get_model().get_stats(),
-            second_unit.get_model().get_stats(),
+            first_unit.get_model().get_pure_stats(),
+            second_unit.get_model().get_pure_stats(),
         );
         assert_eq!(save_probability, 0.0_f64);
     }
@@ -492,8 +411,8 @@ mod tests {
         let second_unit = initialize_heavy_infantry();
 
         let save_probability: f64 = compute_save_probability(
-            second_unit.get_model().get_stats(),
-            first_unit.get_model().get_stats(),
+            second_unit.get_model().get_pure_stats(),
+            first_unit.get_model().get_pure_stats(),
         );
         assert_eq!(save_probability, 0.0_f64);
     }
@@ -504,8 +423,8 @@ mod tests {
         let second_unit = initialize_chaos_warrior();
 
         let save_probability: f64 = compute_save_probability(
-            first_unit.get_model().get_stats(),
-            second_unit.get_model().get_stats(),
+            first_unit.get_model().get_pure_stats(),
+            second_unit.get_model().get_pure_stats(),
         );
         assert_eq!(save_probability - 0.166 < 0.001, true);
     }
@@ -516,8 +435,8 @@ mod tests {
         let second_unit = initialize_chaos_warrior();
 
         let damage_probability: f64 = compute_damage_probability(
-            first_unit.get_model().get_stats(),
-            second_unit.get_model().get_stats(),
+            first_unit.get_model().get_pure_stats(),
+            second_unit.get_model().get_pure_stats(),
         );
         assert_eq!(damage_probability - 0.555 < 0.001, true);
     }
@@ -528,8 +447,8 @@ mod tests {
         let second_unit = initialize_chaos_warrior();
 
         let damage_probability: f64 = compute_damage_probability(
-            second_unit.get_model().get_stats(),
-            first_unit.get_model().get_stats(),
+            second_unit.get_model().get_pure_stats(),
+            first_unit.get_model().get_pure_stats(),
         );
         assert_eq!(damage_probability - 0.462 < 0.001, true);
     }

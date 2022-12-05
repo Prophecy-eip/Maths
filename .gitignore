@@ -15,3 +15,5 @@ libmaths.so
 
 /target
 /Cargo.lock
+
+.vscode
