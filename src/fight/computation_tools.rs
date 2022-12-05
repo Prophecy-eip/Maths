@@ -324,8 +324,8 @@ mod tests {
             initialize_two_units();
         assert_eq!(
             find_the_fastest(
-                chaos_warrior.get_model().get_pure_stats(),
-                heavy_infantry.get_model().get_pure_stats()
+                &chaos_warrior.get_model().get_stats(),
+                &heavy_infantry.get_model().get_stats()
             ),
             1
         );
@@ -337,8 +337,8 @@ mod tests {
             initialize_two_units();
         assert_eq!(
             find_the_fastest(
-                heavy_infantry.get_model().get_pure_stats(),
-                chaos_warrior.get_model().get_pure_stats()
+                &heavy_infantry.get_model().get_stats(),
+                &chaos_warrior.get_model().get_stats()
             ),
             2
         );
@@ -350,8 +350,8 @@ mod tests {
         let second_unit = initialize_buffed_heavy_infantry();
         assert_eq!(
             find_the_fastest(
-                second_unit.get_model().get_pure_stats(),
-                first_unit.get_model().get_pure_stats()
+                &second_unit.get_model().get_stats(),
+                &first_unit.get_model().get_stats()
             ),
             0
         );
@@ -363,8 +363,8 @@ mod tests {
         let second_unit = initialize_heavy_infantry();
 
         let wound_probability: f64 = compute_wound_probability(
-            first_unit.get_model().get_pure_stats(),
-            second_unit.get_model().get_pure_stats(),
+            &first_unit.get_model().get_stats(),
+            &second_unit.get_model().get_stats(),
         );
         assert_eq!(wound_probability - 0.555 < 0.001, true);
     }
@@ -375,8 +375,8 @@ mod tests {
         let second_unit = initialize_heavy_infantry();
 
         let wound_probability: f64 = compute_wound_probability(
-            second_unit.get_model().get_pure_stats(),
-            first_unit.get_model().get_pure_stats(),
+            &second_unit.get_model().get_stats(),
+            &first_unit.get_model().get_stats(),
         );
         assert_eq!(wound_probability - 0.166 < 0.001, true);
     }
@@ -387,8 +387,8 @@ mod tests {
         let second_unit = initialize_aegis_heavy_infantry();
 
         let save_probability: f64 = compute_save_probability(
-            second_unit.get_model().get_pure_stats(),
-            first_unit.get_model().get_pure_stats(),
+            &second_unit.get_model().get_stats(),
+            &first_unit.get_model().get_stats(),
         );
         assert_eq!(save_probability - 0.667 < 0.001, true);
     }
@@ -399,8 +399,8 @@ mod tests {
         let second_unit = initialize_heavy_infantry();
 
         let save_probability: f64 = compute_save_probability(
-            first_unit.get_model().get_pure_stats(),
-            second_unit.get_model().get_pure_stats(),
+            &first_unit.get_model().get_stats(),
+            &second_unit.get_model().get_stats(),
         );
         assert_eq!(save_probability, 0.0_f64);
     }
@@ -411,8 +411,8 @@ mod tests {
         let second_unit = initialize_heavy_infantry();
 
         let save_probability: f64 = compute_save_probability(
-            second_unit.get_model().get_pure_stats(),
-            first_unit.get_model().get_pure_stats(),
+            &second_unit.get_model().get_stats(),
+            &first_unit.get_model().get_stats(),
         );
         assert_eq!(save_probability, 0.0_f64);
     }
@@ -423,8 +423,8 @@ mod tests {
         let second_unit = initialize_chaos_warrior();
 
         let save_probability: f64 = compute_save_probability(
-            first_unit.get_model().get_pure_stats(),
-            second_unit.get_model().get_pure_stats(),
+            &first_unit.get_model().get_stats(),
+            &second_unit.get_model().get_stats(),
         );
         assert_eq!(save_probability - 0.166 < 0.001, true);
     }
@@ -435,8 +435,8 @@ mod tests {
         let second_unit = initialize_chaos_warrior();
 
         let damage_probability: f64 = compute_damage_probability(
-            first_unit.get_model().get_pure_stats(),
-            second_unit.get_model().get_pure_stats(),
+            &first_unit.get_model().get_stats(),
+            &second_unit.get_model().get_stats(),
         );
         assert_eq!(damage_probability - 0.555 < 0.001, true);
     }
@@ -447,8 +447,8 @@ mod tests {
         let second_unit = initialize_chaos_warrior();
 
         let damage_probability: f64 = compute_damage_probability(
-            second_unit.get_model().get_pure_stats(),
-            first_unit.get_model().get_pure_stats(),
+            &second_unit.get_model().get_stats(),
+            &first_unit.get_model().get_stats(),
         );
         assert_eq!(damage_probability - 0.462 < 0.001, true);
     }
