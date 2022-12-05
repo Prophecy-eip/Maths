@@ -139,7 +139,7 @@ fn compute_case(
         attacking_stats,
         defending_regiment.get_model().get_boosted_stats(),
     );
-    let defender_hp: usize = defending_regiment.get_regiment_health_points();
+    let defender_hp: usize = defending_regiment.get_regiment_health_pointss();
     let max_hit: usize = std::cmp::min(nb_touch, defender_hp);
     let checkpoints: (usize, usize) =
         find_great_gauss_checkpoints(nb_touch, wound_probability, defender_hp);
@@ -185,7 +185,7 @@ fn apply_fight(
         fastest.0.take_damage(second_damages.0);
         slowest.0.earn_points(second_damages.0);
         first_damages.1 * second_damages.1
-    } else if slowest.0.get_regiment_health_points() > 0 {
+    } else if slowest.0.get_regiment_health_pointss() > 0 {
         second_damages = compute_case(slowest.0, fastest.0, slowest.1);
         fastest.0.take_damage(second_damages.0);
         slowest.0.earn_points(second_damages.0);
