@@ -281,107 +281,84 @@ impl Model {
 
 #[cfg(test)]
 mod tests {
-    use super::{DefensiveStats, GlobalStats, OffensiveStats, Stats};
-
-    fn initialize_stats() -> Stats {
-        Stats::new(
-            GlobalStats {
-                advance: 1,
-                march: 1,
-                discipline: 1,
-            },
-            DefensiveStats {
-                health_point: 1,
-                defense: 1,
-                resilience: 1,
-                armour: 1,
-                aegis: 1,
-            },
-            OffensiveStats {
-                attack: 1,
-                offensive: 1,
-                strength: 1,
-                armour_penetration: 1,
-                agility: 1,
-            },
-        )
-    }
+    use super::{Stats};
+    use crate::{global_test};
 
     #[test]
     fn stat_get_advance() {
-        let stats: Stats = initialize_stats();
+        let stats: Stats = global_test::initialize_stats_with_1();
         assert_eq!(stats.get_advance(), 1);
     }
 
     #[test]
     fn stat_get_march() {
-        let stats: Stats = initialize_stats();
+        let stats: Stats = global_test::initialize_stats_with_1();
         assert_eq!(stats.get_march(), 1);
     }
 
     #[test]
     fn stat_get_discipline() {
-        let stats: Stats = initialize_stats();
+        let stats: Stats = global_test::initialize_stats_with_1();
         assert_eq!(stats.get_discipline(), 1);
     }
 
     #[test]
     fn stat_get_health_point() {
-        let stats: Stats = initialize_stats();
+        let stats: Stats = global_test::initialize_stats_with_1();
         assert_eq!(stats.get_health_point(), 1);
     }
 
     #[test]
     fn stat_get_defense() {
-        let stats: Stats = initialize_stats();
+        let stats: Stats = global_test::initialize_stats_with_1();
         assert_eq!(stats.get_defense(), 1);
     }
 
     #[test]
     fn stat_get_resilience() {
-        let stats: Stats = initialize_stats();
+        let stats: Stats = global_test::initialize_stats_with_1();
         assert_eq!(stats.get_resilience(), 1);
     }
 
     #[test]
     fn stat_get_armour() {
-        let stats: Stats = initialize_stats();
+        let stats: Stats = global_test::initialize_stats_with_1();
         assert_eq!(stats.get_armour(), 1);
     }
 
     #[test]
     fn stat_get_aegis() {
-        let stats: Stats = initialize_stats();
+        let stats: Stats = global_test::initialize_stats_with_1();
         assert_eq!(stats.get_aegis(), 1);
     }
 
     #[test]
     fn stat_get_attack() {
-        let stats: Stats = initialize_stats();
+        let stats: Stats = global_test::initialize_stats_with_1();
         assert_eq!(stats.get_attack(), 1);
     }
 
     #[test]
     fn stat_get_offensive() {
-        let stats: Stats = initialize_stats();
+        let stats: Stats = global_test::initialize_stats_with_1();
         assert_eq!(stats.get_offensive(), 1);
     }
 
     #[test]
     fn stat_get_strength() {
-        let stats: Stats = initialize_stats();
+        let stats: Stats = global_test::initialize_stats_with_1();
         assert_eq!(stats.get_strength(), 1);
     }
 
     #[test]
     fn stat_get_armour_penetration() {
-        let stats: Stats = initialize_stats();
+        let stats: Stats = global_test::initialize_stats_with_1();
         assert_eq!(stats.get_armour_penetration(), 1);
     }
 
     #[test]
     fn stat_get_agility() {
-        let stats: Stats = initialize_stats();
+        let stats: Stats = global_test::initialize_stats_with_1();
         assert_eq!(stats.get_agility(), 1);
     }
 }
