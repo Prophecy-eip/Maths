@@ -39,15 +39,15 @@ fn compute_mean_case(
     attacking_regiment: &regiment::Regiment,
     defending_regiment: &regiment::Regiment,
 ) -> (usize, f64) {
-    let attacking_stats: &model::Stats = attacking_regiment.get_model().get_stats();
-    let defending_stats: &model::Stats = defending_regiment.get_model().get_stats();
+    let attacking_stats: &model::Stats = attacking_regiment.get_model().get_pure_stats();
+    let defending_stats: &model::Stats = defending_regiment.get_model().get_pure_stats();
     let damage_probability: f64 =
         computation_tools::compute_damage_probability(attacking_stats, defending_stats);
     let nb_attacks: f64 =
         (attacking_stats.get_attack() as f64 * 1.5 * attacking_regiment.get_cols() as f64).round();
     let damage: usize = std::cmp::min(
         (nb_attacks * damage_probability).round() as usize,
-        defending_stats.get_health_point() * defending_regiment.get_nb_models(),
+        defending_stats.get_health_points() * defending_regiment.get_nb_models(),
     );
 
     (
@@ -131,15 +131,15 @@ fn compute_case(
     defending_regiment: &regiment::Regiment,
     case: &ComputeCase,
 ) -> (usize, f64) {
-    let attacking_stats: &model::Stats = attacking_regiment.get_model().get_stats();
+    let attacking_stats: &model::Stats = attacking_regiment.get_model().get_pure_stats();
     let nb_touch: usize =
         (attacking_stats.get_attack() as f64 * 1.5 * attacking_regiment.get_cols() as f64).round()
             as usize;
     let wound_probability: f64 = computation_tools::compute_damage_probability(
         attacking_stats,
-        defending_regiment.get_model().get_stats(),
+        defending_regiment.get_model().get_pure_stats(),
     );
-    let defender_hp: usize = defending_regiment.get_regiment_health_points();
+    let defender_hp: usize = defending_regiment.get_regiment_health_pointss();
     let max_hit: usize = std::cmp::min(nb_touch, defender_hp);
     let checkpoints: (usize, usize) =
         find_great_gauss_checkpoints(nb_touch, wound_probability, defender_hp);
@@ -185,7 +185,7 @@ fn apply_fight(
         fastest.0.take_damage(second_damages.0);
         slowest.0.earn_points(second_damages.0);
         first_damages.1 * second_damages.1
-    } else if slowest.0.get_regiment_health_points() > 0 {
+    } else if slowest.0.get_regiment_health_pointss() > 0 {
         second_damages = compute_case(slowest.0, fastest.0, slowest.1);
         fastest.0.take_damage(second_damages.0);
         slowest.0.earn_points(second_damages.0);
@@ -217,8 +217,8 @@ fn create_prediction(
         ComputeCase::MEAN => ComputeCase::MEAN,
     };
     let fastest: u8 = computation_tools::find_the_fastest(
-        attacking_regiment.get_model().get_stats(),
-        defending_regiment.get_model().get_stats(),
+        attacking_regiment.get_model().get_pure_stats(),
+        defending_regiment.get_model().get_pure_stats(),
     );
 
     let mut final_defending: regiment::Regiment = defending_regiment.clone();
@@ -270,7 +270,7 @@ pub fn compute_turn(
 
 #[cfg(test)]
 mod tests {
-    use crate::{model, prediction, regiment};
+    use crate::{model, modifier, prediction, regiment};
 
     use super::{compute_case, compute_mean_case, compute_turn, create_prediction, ComputeCase};
 
@@ -282,7 +282,7 @@ mod tests {
                 discipline: 8,
             },
             model::DefensiveStats {
-                health_point: 1,
+                health_points: 1,
                 defense: 5,
                 resilience: 4,
                 armour: 0,
@@ -296,29 +296,8 @@ mod tests {
                 agility: 4,
             },
         );
-        let chaos_warrior_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                strength: 0,
-                offensive: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
+
+        let chaos_warrior_modifier: modifier::Modifier = modifier::Modifier::new_melee_weapon(0, 0);
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment =
@@ -334,7 +313,7 @@ mod tests {
                 discipline: 7,
             },
             model::DefensiveStats {
-                health_point: 1,
+                health_points: 1,
                 defense: 3,
                 resilience: 3,
                 armour: 0,
@@ -348,29 +327,9 @@ mod tests {
                 agility: 3,
             },
         );
-        let heavy_infantry_modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: 0,
-                march: 0,
-                discipline: 0,
-            },
-            model::DefensiveStats {
-                health_point: 0,
-                defense: 0,
-                resilience: 0,
-                armour: 0,
-                aegis: 0,
-            },
-            model::OffensiveStats {
-                attack: 0,
-                strength: 0,
-                offensive: 0,
-                armour_penetration: 0,
-                agility: 0,
-            },
-        );
-        let heavy_infantry_modifier: model::Modifier =
-            model::Modifier::new(heavy_infantry_modifier_stats, false, 0, vec![]);
+
+        let heavy_infantry_modifier: modifier::Modifier =
+            modifier::Modifier::new_melee_weapon(0, 0);
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
