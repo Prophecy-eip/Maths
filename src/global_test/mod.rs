@@ -237,3 +237,12 @@ pub mod tests {
         regiment
     }
 }
+
+    let modifier: model::Modifier =
+        model::Modifier::new(modifier_stats, false, 0, vec![]);
+    let model: model::Model =
+        model::Model::new(stats, vec![modifier]);
+    let regiment: regiment::Regiment =
+        regiment::Regiment::new(model, nb_rows, nb_cols, nb_models);
+    regiment
+}
