@@ -79,6 +79,14 @@ pub fn compute_bernoulli(trials: usize, nb_success: usize, probability: f64) -> 
         * (1.0 - probability).powi((trials - nb_success) as i32)
 }
 
+pub fn safe_add_signed_usigned(a: usize, rhs: isize) -> usize {
+    if rhs < 0 {
+        a.saturating_sub(rhs.unsigned_abs())
+    } else {
+        a.saturating_add(rhs as usize)
+    }
+}
+
 #[cfg(test)]
 mod tests {
 
