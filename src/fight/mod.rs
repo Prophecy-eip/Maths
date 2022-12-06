@@ -148,7 +148,7 @@ pub fn resolve_fight(regiment_1: regiment::Regiment, regiment_2: regiment::Regim
 
 #[cfg(test)]
 mod tests {
-    use crate::{model, regiment, roll, global_test};
+    use crate::{global_test, model, regiment, roll};
 
     use super::{
         fight_first_turn, find_the_fastest, get_final_result, get_nb_attacks, get_nb_wounds,
@@ -156,18 +156,24 @@ mod tests {
     };
 
     fn initialize_chaos_warrior() -> regiment::Regiment {
-        let chaos_warrior: regiment::Regiment = global_test::initialize_regiment(
-            global_test::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 4, 5, 1, 4),
-            global_test::initialize_modifier_stats_with_0(),
-            4, 5, 20);
+        let chaos_warrior: regiment::Regiment = global_test::tests::initialize_regiment(
+            global_test::tests::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 4, 5, 1, 4),
+            global_test::tests::initialize_mock_modifier_stats(),
+            4,
+            5,
+            20,
+        );
         chaos_warrior
     }
 
     fn initialize_heavy_infantry() -> regiment::Regiment {
-        let heavy_infantry: regiment::Regiment = global_test::initialize_regiment(
-            global_test::initialize_stats(4, 8, 7, 1, 3, 3, 0, 0, 1, 3, 3, 0, 3),
-            global_test::initialize_modifier_stats_with_0(),
-            4, 5, 20);
+        let heavy_infantry: regiment::Regiment = global_test::tests::initialize_regiment(
+            global_test::tests::initialize_stats(4, 8, 7, 1, 3, 3, 0, 0, 1, 3, 3, 0, 3),
+            global_test::tests::initialize_mock_modifier_stats(),
+            4,
+            5,
+            20,
+        );
         heavy_infantry
     }
 
@@ -188,10 +194,13 @@ mod tests {
     #[test]
     fn test_fastest_is_two() {
         let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
-        let heavy_infantry: regiment::Regiment = global_test::initialize_regiment(
-            global_test::initialize_stats(4, 8, 7, 1, 3, 3, 0, 0, 1, 3, 3, 0, 7),
-            global_test::initialize_modifier_stats_with_0(),
-            4, 5, 20);
+        let heavy_infantry: regiment::Regiment = global_test::tests::initialize_regiment(
+            global_test::tests::initialize_stats(4, 8, 7, 1, 3, 3, 0, 0, 1, 3, 3, 0, 7),
+            global_test::tests::initialize_mock_modifier_stats(),
+            4,
+            5,
+            20,
+        );
         assert_eq!(
             find_the_fastest(chaos_warrior.get_model(), heavy_infantry.get_model()),
             2
@@ -201,10 +210,13 @@ mod tests {
     #[test]
     fn test_fastest_is_none() {
         let model_chaos_warrior: model::Model = initialize_chaos_warrior().get_model().to_owned();
-        let heavy_infantry: regiment::Regiment = global_test::initialize_regiment(
-            global_test::initialize_stats(4, 8, 7, 1, 3, 3, 0, 0, 1, 3, 3, 0, 5),
-            global_test::initialize_modifier_stats_with_0(),
-            4, 5, 20);
+        let heavy_infantry: regiment::Regiment = global_test::tests::initialize_regiment(
+            global_test::tests::initialize_stats(4, 8, 7, 1, 3, 3, 0, 0, 1, 3, 3, 0, 5),
+            global_test::tests::initialize_mock_modifier_stats(),
+            4,
+            5,
+            20,
+        );
         assert_eq!(
             find_the_fastest(&model_chaos_warrior, heavy_infantry.get_model()),
             0
@@ -315,14 +327,20 @@ mod tests {
 
     #[test]
     fn test_final_result_3() {
-        let chaos_warrior: regiment::Regiment = global_test::initialize_regiment(
-            global_test::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
-            global_test::initialize_modifier_stats_with_0(),
-            4, 5, 20);
-        let heavy_infantry: regiment::Regiment = global_test::initialize_regiment(
-            global_test::initialize_stats(4, 8, 7, 1, 3, 3, 5, 0, 1, 3, 3, 0, 3),
-            global_test::initialize_modifier_stats_with_0(),
-            4, 5, 20);
+        let chaos_warrior: regiment::Regiment = global_test::tests::initialize_regiment(
+            global_test::tests::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
+            global_test::tests::initialize_mock_modifier_stats(),
+            4,
+            5,
+            20,
+        );
+        let heavy_infantry: regiment::Regiment = global_test::tests::initialize_regiment(
+            global_test::tests::initialize_stats(4, 8, 7, 1, 3, 3, 5, 0, 1, 3, 3, 0, 3),
+            global_test::tests::initialize_mock_modifier_stats(),
+            4,
+            5,
+            20,
+        );
         let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
         let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
         let to_hit: usize = roll::compute_roll_to_hit(
@@ -347,14 +365,20 @@ mod tests {
 
     #[test]
     fn test_final_result_4() {
-        let chaos_warrior: regiment::Regiment = global_test::initialize_regiment(
-            global_test::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
-            global_test::initialize_modifier_stats_with_0(),
-            4, 5, 20);
-        let heavy_infantry: regiment::Regiment = global_test::initialize_regiment(
-            global_test::initialize_stats(4, 8, 7, 1, 3, 3, 4, 0, 1, 3, 3, 0, 3),
-            global_test::initialize_modifier_stats_with_0(),
-            4, 5, 20);
+        let chaos_warrior: regiment::Regiment = global_test::tests::initialize_regiment(
+            global_test::tests::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
+            global_test::tests::initialize_mock_modifier_stats(),
+            4,
+            5,
+            20,
+        );
+        let heavy_infantry: regiment::Regiment = global_test::tests::initialize_regiment(
+            global_test::tests::initialize_stats(4, 8, 7, 1, 3, 3, 4, 0, 1, 3, 3, 0, 3),
+            global_test::tests::initialize_mock_modifier_stats(),
+            4,
+            5,
+            20,
+        );
         let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
         let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
         let to_hit: usize = roll::compute_roll_to_hit(
@@ -379,14 +403,20 @@ mod tests {
 
     #[test]
     fn test_final_result_5() {
-        let chaos_warrior: regiment::Regiment = global_test::initialize_regiment(
-            global_test::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
-            global_test::initialize_modifier_stats_with_0(),
-            4, 5, 20);
-        let heavy_infantry: regiment::Regiment = global_test::initialize_regiment(
-            global_test::initialize_stats(4, 8, 7, 1, 3, 3, 3, 0, 1, 3, 3, 0, 3),
-            global_test::initialize_modifier_stats_with_0(),
-            4, 5, 20);
+        let chaos_warrior: regiment::Regiment = global_test::tests::initialize_regiment(
+            global_test::tests::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
+            global_test::tests::initialize_mock_modifier_stats(),
+            4,
+            5,
+            20,
+        );
+        let heavy_infantry: regiment::Regiment = global_test::tests::initialize_regiment(
+            global_test::tests::initialize_stats(4, 8, 7, 1, 3, 3, 3, 0, 1, 3, 3, 0, 3),
+            global_test::tests::initialize_mock_modifier_stats(),
+            4,
+            5,
+            20,
+        );
         let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
         let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
         let to_hit: usize = roll::compute_roll_to_hit(
@@ -411,14 +441,20 @@ mod tests {
 
     #[test]
     fn test_final_result_6() {
-        let chaos_warrior: regiment::Regiment = global_test::initialize_regiment(
-            global_test::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
-            global_test::initialize_modifier_stats_with_0(),
-            4, 5, 20);
-        let heavy_infantry: regiment::Regiment = global_test::initialize_regiment(
-            global_test::initialize_stats(4, 8, 7, 1, 3, 3, 2, 0, 1, 3, 3, 0, 3),
-            global_test::initialize_modifier_stats_with_0(),
-            4, 5, 20);
+        let chaos_warrior: regiment::Regiment = global_test::tests::initialize_regiment(
+            global_test::tests::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
+            global_test::tests::initialize_mock_modifier_stats(),
+            4,
+            5,
+            20,
+        );
+        let heavy_infantry: regiment::Regiment = global_test::tests::initialize_regiment(
+            global_test::tests::initialize_stats(4, 8, 7, 1, 3, 3, 2, 0, 1, 3, 3, 0, 3),
+            global_test::tests::initialize_mock_modifier_stats(),
+            4,
+            5,
+            20,
+        );
         let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
         let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
         let to_hit: usize = roll::compute_roll_to_hit(
@@ -443,14 +479,20 @@ mod tests {
 
     #[test]
     fn test_final_result_7() {
-        let chaos_warrior: regiment::Regiment = global_test::initialize_regiment(
-            global_test::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
-            global_test::initialize_modifier_stats_with_0(),
-            4, 5, 20);
-        let heavy_infantry: regiment::Regiment = global_test::initialize_regiment(
-            global_test::initialize_stats(4, 8, 7, 1, 3, 3, 6, 0, 1, 3, 3, 0, 3),
-            global_test::initialize_modifier_stats_with_0(),
-            4, 5, 20);
+        let chaos_warrior: regiment::Regiment = global_test::tests::initialize_regiment(
+            global_test::tests::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
+            global_test::tests::initialize_mock_modifier_stats(),
+            4,
+            5,
+            20,
+        );
+        let heavy_infantry: regiment::Regiment = global_test::tests::initialize_regiment(
+            global_test::tests::initialize_stats(4, 8, 7, 1, 3, 3, 6, 0, 1, 3, 3, 0, 3),
+            global_test::tests::initialize_mock_modifier_stats(),
+            4,
+            5,
+            20,
+        );
         let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
         let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
         let to_hit: usize = roll::compute_roll_to_hit(
@@ -497,10 +539,13 @@ mod tests {
     #[test]
     fn test_resolve_fight_2() {
         let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
-        let heavy_infantry: regiment::Regiment = global_test::initialize_regiment(
-            global_test::initialize_stats(4, 8, 7, 1, 3, 3, 0, 0, 1, 3, 3, 0, 2),
-            global_test::initialize_modifier_stats_with_0(),
-            4, 5, 20);
+        let heavy_infantry: regiment::Regiment = global_test::tests::initialize_regiment(
+            global_test::tests::initialize_stats(4, 8, 7, 1, 3, 3, 0, 0, 1, 3, 3, 0, 2),
+            global_test::tests::initialize_mock_modifier_stats(),
+            4,
+            5,
+            20,
+        );
         assert_eq!(resolve_fight(heavy_infantry, chaos_warrior), 8)
     }
 }
