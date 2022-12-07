@@ -252,69 +252,98 @@ impl Stats {
         self.agility
     }
 
+    /// Buff the Stats with a GlobalModifier
+    ///
+    /// ## Parameters
+    /// &modifier (GlobalModifier): The GlobalModifier to buff the Stats with
+    ///
+    /// ## Returns
+    /// &Stats: The Stats buffed
     fn buff_global_modifier(&mut self, modifier: &modifier::GlobalModifier) -> &Stats {
-        self.advance = math_tools::safe_add_signed_usigned(self.advance, modifier.get_advance());
-        self.march = math_tools::safe_add_signed_usigned(self.march, modifier.get_march());
+        self.advance = math_tools::safe_add_signed_unsigned(self.advance, modifier.get_advance());
+        self.march = math_tools::safe_add_signed_unsigned(self.march, modifier.get_march());
         self.discipline =
-            math_tools::safe_add_signed_usigned(self.discipline, modifier.get_discipline());
+            math_tools::safe_add_signed_unsigned(self.discipline, modifier.get_discipline());
         self
     }
 
+    /// Buff the Stats with a OffensiveModifier
+    ///
+    /// ## Parameters
+    /// &modifier (OffensiveModifier): The OffensiveModifier to buff the Stats with
+    ///
+    /// ## Returns
+    /// &Stats: The Stats buffed
     fn buff_offensive_modifier(&mut self, modifier: &modifier::OffensiveModifier) -> &Stats {
-        self.attack = math_tools::safe_add_signed_usigned(self.attack, modifier.get_attack());
+        self.attack = math_tools::safe_add_signed_unsigned(self.attack, modifier.get_attack());
         self.offensive =
-            math_tools::safe_add_signed_usigned(self.offensive, modifier.get_offensive());
-        self.strength = math_tools::safe_add_signed_usigned(self.strength, modifier.get_strength());
-        self.armour_penetration = math_tools::safe_add_signed_usigned(
+            math_tools::safe_add_signed_unsigned(self.offensive, modifier.get_offensive());
+        self.strength =
+            math_tools::safe_add_signed_unsigned(self.strength, modifier.get_strength());
+        self.armour_penetration = math_tools::safe_add_signed_unsigned(
             self.armour_penetration,
             modifier.get_armour_penetration(),
         );
-        self.agility = math_tools::safe_add_signed_usigned(self.agility, modifier.get_agility());
+        self.agility = math_tools::safe_add_signed_unsigned(self.agility, modifier.get_agility());
         self
     }
 
+    /// Buff the Stats with a DefensiveModifier
+    ///
+    /// ## Parameters
+    /// &modifier (DefensiveModifier): The DefensiveModifier to buff the Stats with
+    ///
+    /// ## Returns
+    /// &Stats: The Stats buffed
     fn buff_defensive_modifier(&mut self, modifier: &modifier::DefensiveModifier) -> &Stats {
         self.health_points =
-            math_tools::safe_add_signed_usigned(self.health_points, modifier.get_health_points());
-        self.defense = math_tools::safe_add_signed_usigned(self.defense, modifier.get_defense());
+            math_tools::safe_add_signed_unsigned(self.health_points, modifier.get_health_points());
+        self.defense = math_tools::safe_add_signed_unsigned(self.defense, modifier.get_defense());
         self.resilience =
-            math_tools::safe_add_signed_usigned(self.resilience, modifier.get_resilience());
-        self.armour = math_tools::safe_add_signed_usigned(self.armour, modifier.get_armour());
+            math_tools::safe_add_signed_unsigned(self.resilience, modifier.get_resilience());
+        self.armour = math_tools::safe_add_signed_unsigned(self.armour, modifier.get_armour());
         self
     }
 
     /// Buff the Stats with the given melee modifier
     ///
-    /// # Arguments
-    /// modifier (&modifier::MeleeWeaponModifier): The modifier to apply
+    /// ## Parameters
+    /// (&modifier::MeleeWeaponModifier) modifier : The modifier to apply
     ///
-    /// # Return
-    /// Stats: The Stats buffed
+    /// ## Returns
+    /// &Stats: The Stats buffed
     fn buff_melee_weapon(&mut self, weapon: &modifier::MeleeWeaponModifier) -> &Stats {
-        self.armour_penetration = math_tools::safe_add_signed_usigned(
+        self.armour_penetration = math_tools::safe_add_signed_unsigned(
             self.armour_penetration,
             weapon.get_armour_penetration(),
         );
-        self.strength = math_tools::safe_add_signed_usigned(self.strength, weapon.get_strength());
+        self.strength = math_tools::safe_add_signed_unsigned(self.strength, weapon.get_strength());
         self
     }
 
     /// Buff the Stats with the given ranged modifier
     ///
-    /// # Arguments
-    /// modifier (&modifier::RangedWeaponModifier): The modifier to apply
+    /// ## Parameters
+    /// (&modifier::RangedWeaponModifier) modifier : The modifier to apply
     ///
-    /// # Return
-    /// Stats: The Stats of the Model with the modifier applied
+    /// ## Returns
+    /// &Stats: The Stats of the Model with the modifier applied
     fn buff_ranged_weapon(&mut self, weapon: &modifier::RangedWeaponModifier) -> &Stats {
-        self.armour_penetration = math_tools::safe_add_signed_usigned(
+        self.armour_penetration = math_tools::safe_add_signed_unsigned(
             self.armour_penetration,
             weapon.get_armour_penetration(),
         );
-        self.strength = math_tools::safe_add_signed_usigned(self.strength, weapon.get_strength());
+        self.strength = math_tools::safe_add_signed_unsigned(self.strength, weapon.get_strength());
         self
     }
 
+    /// Apply the given modifier to the Stats
+    ///
+    /// ## Parameters
+    /// &modifier (Modifier): The Modifier to apply
+    ///
+    /// ## Returns
+    /// &Stats: The Stats buffed
     pub fn apply_modifier(&mut self, modifier: &modifier::Modifier) -> &Stats {
         match modifier {
             modifier::Modifier::MeleeWeapon(weapon) => self.buff_melee_weapon(weapon),
