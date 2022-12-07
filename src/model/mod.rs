@@ -403,6 +403,9 @@ impl Model {
 
 #[cfg(test)]
 mod tests {
+    use crate::model::Model;
+    use crate::modifier::Modifier;
+
     use super::{DefensiveStats, GlobalStats, OffensiveStats, Stats};
 
     fn initialize_stats() -> Stats {
@@ -526,24 +529,82 @@ mod tests {
     #[test]
     fn model_get_stats() {
         let stats: Stats = initialize_stats();
-        let copy = stats.clone();
+        let copy: Stats = stats.clone();
 
-        let model = super::Model::new(stats, vec![]);
+        let model: Model = super::Model::new(stats, vec![]);
         assert_eq!(model.get_stats(), copy);
     }
 
     #[test]
     fn model_get_stats_with_modifier() {
         let stats: Stats = initialize_stats();
-        let mut copy = stats.clone();
+        let mut copy: Stats = stats.clone();
         copy.buff_melee_weapon(&super::modifier::MeleeWeaponModifier::new(1, 1));
 
-        let model = super::Model::new(
+        let model: Model = super::Model::new(
             stats,
             vec![super::modifier::Modifier::MeleeWeapon(
                 super::modifier::MeleeWeaponModifier::new(1, 1),
             )],
         );
         assert_eq!(model.get_stats(), copy);
+    }
+
+    #[test]
+    fn model_get_pure_stats() {
+        let stats: Stats = initialize_stats();
+        let model: Model = super::Model::new(stats.clone(), vec![]);
+        assert_eq!(model.get_pure_stats(), &stats);
+    }
+
+    #[test]
+    fn test_apply_modifier_melee_weapon() {
+        let mut stats: Stats = initialize_stats();
+        let modifier: Modifier = super::modifier::Modifier::new_melee_weapon(1, 1);
+        stats.apply_modifier(&modifier);
+        assert_eq!(stats.get_armour_penetration(), 2);
+        assert_eq!(stats.get_strength(), 2);
+    }
+
+    #[test]
+    fn test_apply_modifier_ranged_weapon() {
+        let mut stats: Stats = initialize_stats();
+        let modifier: Modifier = super::modifier::Modifier::new_ranged_weapon(1, 1, 3, 4);
+        stats.apply_modifier(&modifier);
+        assert_eq!(stats.get_armour_penetration(), 5);
+        assert_eq!(stats.get_strength(), 4);
+    }
+
+    #[test]
+    fn test_apply_modifier_global() {
+        let mut stats: Stats = initialize_stats();
+        let modifier: Modifier = super::modifier::Modifier::new_global(1, 1, 1);
+        stats.apply_modifier(&modifier);
+        assert_eq!(stats.get_advance(), 2);
+        assert_eq!(stats.get_march(), 2);
+        assert_eq!(stats.get_discipline(), 2);
+    }
+
+    #[test]
+    fn test_apply_modifier_defensive() {
+        let mut stats: Stats = initialize_stats();
+        let modifier: Modifier = super::modifier::Modifier::new_defensive(1, 1, 1, 1);
+        stats.apply_modifier(&modifier);
+        assert_eq!(stats.get_health_points(), 2);
+        assert_eq!(stats.get_defense(), 2);
+        assert_eq!(stats.get_resilience(), 2);
+        assert_eq!(stats.get_armour(), 2);
+    }
+
+    #[test]
+    fn test_apply_modifier_offensive() {
+        let mut stats: Stats = initialize_stats();
+        let modifier: Modifier = super::modifier::Modifier::new_offensive(1, 2, 3, 4, 5);
+        stats.apply_modifier(&modifier);
+        assert_eq!(stats.get_attack(), 2);
+        assert_eq!(stats.get_offensive(), 3);
+        assert_eq!(stats.get_strength(), 4);
+        assert_eq!(stats.get_armour_penetration(), 5);
+        assert_eq!(stats.get_agility(), 6);
     }
 }

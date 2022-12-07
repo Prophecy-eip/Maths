@@ -474,7 +474,7 @@ impl Modifier {
     ///
     /// ## Returns
     /// Modifier: The Modifier struct
-    pub fn new_defense(
+    pub fn new_defensive(
         health_points: isize,
         defense: isize,
         resilience: isize,
@@ -486,5 +486,78 @@ impl Modifier {
             resilience,
             armour,
         ))
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_new_melee_weapon() {
+        let modifier = Modifier::new_melee_weapon(1, 2);
+        match modifier {
+            Modifier::MeleeWeapon(melee_weapon_modifier) => {
+                assert_eq!(melee_weapon_modifier.get_strength(), 1);
+                assert_eq!(melee_weapon_modifier.get_armour_penetration(), 2);
+            }
+            _ => panic!("Modifier is not a melee weapon modifier"),
+        }
+    }
+
+    #[test]
+    fn test_new_ranged_weapon() {
+        let modifier = Modifier::new_ranged_weapon(1, 2, 3, 4);
+        match modifier {
+            Modifier::RangedWeapon(ranged_weapon_modifier) => {
+                assert_eq!(ranged_weapon_modifier.get_range(), 1);
+                assert_eq!(ranged_weapon_modifier.get_shots(), 2);
+                assert_eq!(ranged_weapon_modifier.get_strength(), 3);
+                assert_eq!(ranged_weapon_modifier.get_armour_penetration(), 4);
+            }
+            _ => panic!("Modifier is not a ranged weapon modifier"),
+        }
+    }
+
+    #[test]
+    fn test_new_global() {
+        let modifier = Modifier::new_global(1, 2, 3);
+        match modifier {
+            Modifier::Global(global_modifier) => {
+                assert_eq!(global_modifier.get_advance(), 1);
+                assert_eq!(global_modifier.get_march(), 2);
+                assert_eq!(global_modifier.get_discipline(), 3);
+            }
+            _ => panic!("Modifier is not a global modifier"),
+        }
+    }
+
+    #[test]
+    fn test_new_offensive() {
+        let modifier = Modifier::new_offensive(1, 2, 3, 4, 5);
+        match modifier {
+            Modifier::Offensive(offensive_modifier) => {
+                assert_eq!(offensive_modifier.get_attack(), 1);
+                assert_eq!(offensive_modifier.get_offensive(), 2);
+                assert_eq!(offensive_modifier.get_strength(), 3);
+                assert_eq!(offensive_modifier.get_armour_penetration(), 4);
+                assert_eq!(offensive_modifier.get_agility(), 5);
+            }
+            _ => panic!("Modifier is not an offensive modifier"),
+        }
+    }
+
+    #[test]
+    fn test_new_defensive() {
+        let modifier = Modifier::new_defensive(1, 2, 3, 4);
+        match modifier {
+            Modifier::Defensive(defensive_modifier) => {
+                assert_eq!(defensive_modifier.get_health_points(), 1);
+                assert_eq!(defensive_modifier.get_defense(), 2);
+                assert_eq!(defensive_modifier.get_resilience(), 3);
+                assert_eq!(defensive_modifier.get_armour(), 4);
+            }
+            _ => panic!("Modifier is not a defensive modifier"),
+        }
     }
 }
