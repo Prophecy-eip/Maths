@@ -53,13 +53,13 @@ impl Regiment {
         nb_models: usize,
         regiment_health_points: Option<usize>,
     ) -> Regiment {
-        let health_pointss: usize = model.get_stats().get_health_points();
+        let health_points: usize = model.get_stats().get_health_points();
         Regiment {
             model,
             nb_rows,
             nb_cols,
             nb_models,
-            regiment_health_points: regiment_health_points.unwrap_or(nb_models * health_pointss),
+            regiment_health_points: regiment_health_points.unwrap_or(nb_models * health_points),
             points: 0,
         }
     }
@@ -99,7 +99,7 @@ impl Regiment {
     ///
     /// ## Return
     /// usize: The regiment total health points
-    pub fn get_regiment_health_pointss(&self) -> usize {
+    pub fn get_regiment_health_points(&self) -> usize {
         self.regiment_health_points
     }
 
@@ -231,14 +231,14 @@ mod tests {
     #[test]
     fn test_get_regiment_health() {
         let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
-        assert_eq!(chaos_warrior.get_regiment_health_pointss(), 20);
+        assert_eq!(chaos_warrior.get_regiment_health_points(), 20);
     }
 
     #[test]
     fn test_take_damage() {
         let mut chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
         chaos_warrior.take_damage(5);
-        assert_eq!(chaos_warrior.get_regiment_health_pointss(), 15);
+        assert_eq!(chaos_warrior.get_regiment_health_points(), 15);
         assert_eq!(chaos_warrior.get_nb_models(), 15);
     }
 
@@ -246,7 +246,7 @@ mod tests {
     fn test_take_damage_loose_a_line() {
         let mut chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
         chaos_warrior.take_damage(6);
-        assert_eq!(chaos_warrior.get_regiment_health_pointss(), 14);
+        assert_eq!(chaos_warrior.get_regiment_health_points(), 14);
         assert_eq!(chaos_warrior.get_nb_models(), 14);
         assert_eq!(chaos_warrior.get_cols(), 5);
         assert_eq!(chaos_warrior.get_rows(), 3);
@@ -256,7 +256,7 @@ mod tests {
     fn test_take_damage_less_than_a_line() {
         let mut chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
         chaos_warrior.take_damage(17);
-        assert_eq!(chaos_warrior.get_regiment_health_pointss(), 3);
+        assert_eq!(chaos_warrior.get_regiment_health_points(), 3);
         assert_eq!(chaos_warrior.get_nb_models(), 3);
         assert_eq!(chaos_warrior.get_cols(), 3);
         assert_eq!(chaos_warrior.get_rows(), 1);
