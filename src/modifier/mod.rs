@@ -495,7 +495,7 @@ mod tests {
 
     #[test]
     fn test_new_melee_weapon() {
-        let modifier = Modifier::new_melee_weapon(1, 2);
+        let modifier: Modifier = Modifier::new_melee_weapon(1, 2);
         match modifier {
             Modifier::MeleeWeapon(melee_weapon_modifier) => {
                 assert_eq!(melee_weapon_modifier.get_strength(), 1);
@@ -507,7 +507,7 @@ mod tests {
 
     #[test]
     fn test_new_ranged_weapon() {
-        let modifier = Modifier::new_ranged_weapon(1, 2, 3, 4);
+        let modifier: Modifier = Modifier::new_ranged_weapon(1, 2, 3, 4);
         match modifier {
             Modifier::RangedWeapon(ranged_weapon_modifier) => {
                 assert_eq!(ranged_weapon_modifier.get_range(), 1);
@@ -521,7 +521,7 @@ mod tests {
 
     #[test]
     fn test_new_global() {
-        let modifier = Modifier::new_global(1, 2, 3);
+        let modifier: Modifier = Modifier::new_global(1, 2, 3);
         match modifier {
             Modifier::Global(global_modifier) => {
                 assert_eq!(global_modifier.get_advance(), 1);
@@ -534,7 +534,7 @@ mod tests {
 
     #[test]
     fn test_new_offensive() {
-        let modifier = Modifier::new_offensive(1, 2, 3, 4, 5);
+        let modifier: Modifier = Modifier::new_offensive(1, 2, 3, 4, 5);
         match modifier {
             Modifier::Offensive(offensive_modifier) => {
                 assert_eq!(offensive_modifier.get_attack(), 1);
@@ -549,7 +549,7 @@ mod tests {
 
     #[test]
     fn test_new_defensive() {
-        let modifier = Modifier::new_defensive(1, 2, 3, 4);
+        let modifier: Modifier = Modifier::new_defensive(1, 2, 3, 4);
         match modifier {
             Modifier::Defensive(defensive_modifier) => {
                 assert_eq!(defensive_modifier.get_health_points(), 1);
