@@ -79,7 +79,16 @@ pub fn compute_bernoulli(trials: usize, nb_success: usize, probability: f64) -> 
         * (1.0 - probability).powi((trials - nb_success) as i32)
 }
 
-pub fn safe_add_signed_usigned(a: usize, rhs: isize) -> usize {
+/// This function return the sum of an isize and a usize
+///
+/// ## Parameters
+/// (usize) a: The usize t
+///
+/// (isize) rhs: The isize to add
+///
+/// ## Return
+/// usize: The sum of a and rhs
+pub fn safe_add_signed_unsigned(a: usize, rhs: isize) -> usize {
     if rhs < 0 {
         a.saturating_sub(rhs.unsigned_abs())
     } else {
@@ -139,5 +148,15 @@ mod tests {
         assert_eq!(res - 0.013 < 0.001, true);
         res = compute_bernoulli(10, 1, 1.0_f64 / 6.0_f64);
         assert_eq!(res - 0.324 < 0.001, true);
+    }
+
+    #[test]
+    fn test_signed_adder() {
+        let res: usize = super::safe_add_signed_unsigned(5, 2);
+        assert_eq!(res, 7);
+        let res: usize = super::safe_add_signed_unsigned(5, -2);
+        assert_eq!(res, 3);
+        let res: usize = super::safe_add_signed_unsigned(5, -10);
+        assert_eq!(res, 0);
     }
 }
