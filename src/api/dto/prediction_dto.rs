@@ -3,13 +3,14 @@ use crate::prediction;
 
 #[repr(C)]
 pub struct PredictionDto {
-    attacking_regiment: RegimentDto,
-    defending_regiment: RegimentDto,
-    occurence_probability: f64,
+    pub attacking_regiment: RegimentDto,
+    pub defending_regiment: RegimentDto,
+    pub occurence_probability: f64,
 }
 
 impl PredictionDto {
     pub fn dehydrate(prediction: &prediction::Prediction) -> PredictionDto {
+        println!("{:?}", prediction.get_attacking_regiment());
         PredictionDto {
             attacking_regiment: RegimentDto::dehydrate(prediction.get_attacking_regiment()),
             defending_regiment: RegimentDto::dehydrate(prediction.get_defending_regiment()),

@@ -1,21 +1,21 @@
 use crate::model;
 
 #[repr(C)]
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct StatsDto {
-    advance: usize,
-    march: usize,
-    discipline: usize,
-    health_point: usize,
-    defense: usize,
-    resilience: usize,
-    armour: usize,
-    aegis: usize,
-    attack: usize,
-    offensive: usize,
-    strength: usize,
-    armour_penetration: usize,
-    agility: usize,
+    pub advance: usize,
+    pub march: usize,
+    pub discipline: usize,
+    pub health_point: usize,
+    pub defense: usize,
+    pub resilience: usize,
+    pub armour: usize,
+    pub aegis: usize,
+    pub attack: usize,
+    pub offensive: usize,
+    pub strength: usize,
+    pub armour_penetration: usize,
+    pub agility: usize,
 }
 
 impl StatsDto {

@@ -12,6 +12,7 @@ use crate::regiment::Regiment;
 /// defending_regiment (Regiment): The second regiment
 ///
 /// occurrence_probability (f64): The probability that the prophecy occurs
+#[derive(Debug)]
 pub struct Prediction {
     attacking_regiment: Regiment,
     defending_regiment: Regiment,

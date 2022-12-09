@@ -1,9 +1,8 @@
-import {Sdk} from "./sdk";
-import {Regiment} from "./bindings/Regiment";
-
-const test = new Sdk("/Users/pepiloto/Epitech/EIP/Maths/target/debug/libmaths.dylib");
-
-const regiment: Regiment = {
+"use strict";
+exports.__esModule = true;
+var sdk_1 = require("./sdk");
+var test = new sdk_1.Sdk("/Users/pepiloto/Epitech/EIP/Maths/target/debug/libmaths.dylib");
+var regiment = {
     model: {
         stats: {
             advance: 4,
@@ -18,9 +17,9 @@ const regiment: Regiment = {
             resilience: 4,
             strength: 5,
             health_point: 1,
-            armour_penetration: 1,
+            armour_penetration: 1
         },
-        modifiers: [],
+        modifiers: []
     },
     nb_rows: 4,
     nb_cols: 5,
@@ -28,7 +27,6 @@ const regiment: Regiment = {
     regiment_health_point: 1,
     points: 1
 };
-
 /*const regiment: Regiment = {
     model: {
         stats: {
@@ -54,8 +52,4 @@ const regiment: Regiment = {
     regiment_health_point: 0,
     points: 0
 };*/
-
-console.log(test.computeFight(
-    regiment,
-    regiment,
-));
+console.log(test.computeFight(regiment, regiment));

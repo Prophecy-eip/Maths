@@ -1,10 +1,10 @@
 use std::ptr;
 
 #[repr(C)]
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct RawArray<T> {
-    size: u64,
-    items: *const T,
+    pub size: u64,
+    pub items: *const T,
 }
 
 impl<T> RawArray<T>

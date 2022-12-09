@@ -4,10 +4,10 @@ use crate::api::dto::stats_dto::StatsDto;
 use crate::model;
 
 #[repr(C)]
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct ModelDto {
-    stats: StatsDto,
-    modifiers: RawArray<ModifierDto>,
+    pub stats: StatsDto,
+    pub modifiers: RawArray<ModifierDto>,
 }
 
 impl ModelDto {

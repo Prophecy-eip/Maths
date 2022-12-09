@@ -29,11 +29,11 @@ export class Sdk {
         });
     }
 
-    public computeFight(attackingRegiment: Regiment, defendingRegiment: Regiment): ReturnType {
-        return Sdk.hydrateReturnType(this._library.compute_fight(
+    public computeFight(attackingRegiment: Regiment, defendingRegiment: Regiment): void {
+        this._library.compute_fight(
             dehydrateRegiment(attackingRegiment),
             dehydrateRegiment(defendingRegiment)
-        ));
+        );
     }
 
     private static hydrateReturnType(returnType: typeof ReturnTypeDto): ReturnType {

@@ -2,13 +2,14 @@ use crate::api::dto::model_dto::ModelDto;
 use crate::regiment;
 
 #[repr(C)]
+#[derive(Debug)]
 pub struct RegimentDto {
-    model: ModelDto,
-    nb_rows: usize,
-    nb_cols: usize,
-    nb_models: usize,
-    regiment_health_point: usize,
-    points: usize,
+    pub model: ModelDto,
+    pub nb_rows: usize,
+    pub nb_cols: usize,
+    pub nb_models: usize,
+    pub regiment_health_point: usize,
+    pub points: usize,
 }
 
 impl RegimentDto {
@@ -29,7 +30,7 @@ impl RegimentDto {
             regiment_dto.nb_cols,
             regiment_dto.nb_rows,
             regiment_dto.nb_models,
-            regiment_dto.regiment_health_point,
+            regiment_dto.regiment_health_point * regiment_dto.nb_models,
             regiment_dto.points
         );
         regiment::Regiment::new(
@@ -37,7 +38,7 @@ impl RegimentDto {
             regiment_dto.nb_rows,
             regiment_dto.nb_cols,
             regiment_dto.nb_models,
-            Option::from(regiment_dto.regiment_health_point),
+            Option::from(regiment_dto.regiment_health_point * regiment_dto.nb_models),
         )
     }
 }

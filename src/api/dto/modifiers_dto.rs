@@ -4,12 +4,12 @@ use crate::api::dto::stats_dto::StatsDto;
 use crate::model;
 
 #[repr(C)]
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct ModifierDto {
-    stat: StatsDto,
-    bonus: bool,
-    nb_dice: usize,
-    requirements: RawArray<RequirementsDto>,
+    pub stat: StatsDto,
+    pub bonus: bool,
+    pub nb_dice: usize,
+    pub requirements: RawArray<RequirementsDto>,
 }
 
 impl ModifierDto {
