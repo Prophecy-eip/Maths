@@ -257,7 +257,7 @@ impl Stats {
     /// ## Parameters
     /// &modifier (GlobalModifier): The GlobalModifier to buff the Stats with
     ///
-    /// ## Returns
+    /// ## Return
     /// &Stats: The Stats buffed
     fn buff_global_modifier(&mut self, modifier: &modifier::GlobalModifier) -> &Stats {
         self.advance = math_tools::safe_add_signed_unsigned(self.advance, modifier.get_advance());
@@ -272,7 +272,7 @@ impl Stats {
     /// ## Parameters
     /// &modifier (OffensiveModifier): The OffensiveModifier to buff the Stats with
     ///
-    /// ## Returns
+    /// ## Return
     /// &Stats: The Stats buffed
     fn buff_offensive_modifier(&mut self, modifier: &modifier::OffensiveModifier) -> &Stats {
         self.attack = math_tools::safe_add_signed_unsigned(self.attack, modifier.get_attack());
@@ -293,7 +293,7 @@ impl Stats {
     /// ## Parameters
     /// &modifier (DefensiveModifier): The DefensiveModifier to buff the Stats with
     ///
-    /// ## Returns
+    /// ## Return
     /// &Stats: The Stats buffed
     fn buff_defensive_modifier(&mut self, modifier: &modifier::DefensiveModifier) -> &Stats {
         self.health_points =
@@ -310,7 +310,7 @@ impl Stats {
     /// ## Parameters
     /// (&modifier::MeleeWeaponModifier) modifier : The modifier to apply
     ///
-    /// ## Returns
+    /// ## Return
     /// &Stats: The Stats buffed
     fn buff_melee_weapon(&mut self, weapon: &modifier::MeleeWeaponModifier) -> &Stats {
         self.armour_penetration = math_tools::safe_add_signed_unsigned(
@@ -326,7 +326,7 @@ impl Stats {
     /// ## Parameters
     /// (&modifier::RangedWeaponModifier) modifier : The modifier to apply
     ///
-    /// ## Returns
+    /// ## Return
     /// &Stats: The Stats of the Model with the modifier applied
     fn buff_ranged_weapon(&mut self, weapon: &modifier::RangedWeaponModifier) -> &Stats {
         self.armour_penetration = math_tools::safe_add_signed_unsigned(
@@ -342,7 +342,7 @@ impl Stats {
     /// ## Parameters
     /// &modifier (Modifier): The Modifier to apply
     ///
-    /// ## Returns
+    /// ## Return
     /// &Stats: The Stats buffed
     pub fn apply_modifier(&mut self, modifier: &modifier::Modifier) -> &Stats {
         match modifier {
