@@ -308,7 +308,7 @@ impl Stats {
     /// Apply the given modifier to the Stats
     ///
     /// ## Parameters
-    /// (&modifier::Modifier) (modifier): The Modifier to apply
+    /// (&modifier::Modifier) modifier: The Modifier to apply
     pub fn apply_modifier(&mut self, modifier: &modifier::Modifier) {
         match modifier {
             modifier::Modifier::Weapon(weapon) => self.apply_weapon_modifier(weapon),
