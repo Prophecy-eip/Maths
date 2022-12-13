@@ -259,12 +259,11 @@ impl Stats {
     ///
     /// ## Return
     /// &Stats: The Stats buffed
-    fn buff_global_modifier(&mut self, modifier: &modifier::GlobalModifier) -> &Stats {
+    fn buff_global_modifier(&mut self, modifier: &modifier::GlobalModifier) {
         self.advance = math_tools::safe_add_signed_unsigned(self.advance, modifier.get_advance());
         self.march = math_tools::safe_add_signed_unsigned(self.march, modifier.get_march());
         self.discipline =
             math_tools::safe_add_signed_unsigned(self.discipline, modifier.get_discipline());
-        self
     }
 
     /// Buff the Stats with a OffensiveModifier
@@ -274,7 +273,7 @@ impl Stats {
     ///
     /// ## Return
     /// &Stats: The Stats buffed
-    fn buff_offensive_modifier(&mut self, modifier: &modifier::OffensiveModifier) -> &Stats {
+    fn buff_offensive_modifier(&mut self, modifier: &modifier::OffensiveModifier) {
         self.attack = math_tools::safe_add_signed_unsigned(self.attack, modifier.get_attack());
         self.offensive =
             math_tools::safe_add_signed_unsigned(self.offensive, modifier.get_offensive());
@@ -285,7 +284,6 @@ impl Stats {
             modifier.get_armour_penetration(),
         );
         self.agility = math_tools::safe_add_signed_unsigned(self.agility, modifier.get_agility());
-        self
     }
 
     /// Buff the Stats with a DefensiveModifier
@@ -295,14 +293,13 @@ impl Stats {
     ///
     /// ## Return
     /// &Stats: The Stats buffed
-    fn buff_defensive_modifier(&mut self, modifier: &modifier::DefensiveModifier) -> &Stats {
+    fn buff_defensive_modifier(&mut self, modifier: &modifier::DefensiveModifier) {
         self.health_points =
             math_tools::safe_add_signed_unsigned(self.health_points, modifier.get_health_points());
         self.defense = math_tools::safe_add_signed_unsigned(self.defense, modifier.get_defense());
         self.resilience =
             math_tools::safe_add_signed_unsigned(self.resilience, modifier.get_resilience());
         self.armour = math_tools::safe_add_signed_unsigned(self.armour, modifier.get_armour());
-        self
     }
 
     /// Buff the Stats with the given melee modifier
@@ -312,13 +309,12 @@ impl Stats {
     ///
     /// ## Return
     /// &Stats: The Stats buffed
-    fn buff_melee_weapon(&mut self, weapon: &modifier::MeleeWeaponModifier) -> &Stats {
+    fn buff_melee_weapon(&mut self, weapon: &modifier::MeleeWeaponModifier) {
         self.armour_penetration = math_tools::safe_add_signed_unsigned(
             self.armour_penetration,
             weapon.get_armour_penetration(),
         );
         self.strength = math_tools::safe_add_signed_unsigned(self.strength, weapon.get_strength());
-        self
     }
 
     /// Buff the Stats with the given ranged modifier
@@ -328,13 +324,12 @@ impl Stats {
     ///
     /// ## Return
     /// &Stats: The Stats of the Model with the modifier applied
-    fn buff_ranged_weapon(&mut self, weapon: &modifier::RangedWeaponModifier) -> &Stats {
+    fn buff_ranged_weapon(&mut self, weapon: &modifier::RangedWeaponModifier) {
         self.armour_penetration = math_tools::safe_add_signed_unsigned(
             self.armour_penetration,
             weapon.get_armour_penetration(),
         );
         self.strength = math_tools::safe_add_signed_unsigned(self.strength, weapon.get_strength());
-        self
     }
 
     /// Apply the given modifier to the Stats
@@ -344,7 +339,7 @@ impl Stats {
     ///
     /// ## Return
     /// &Stats: The Stats buffed
-    pub fn apply_modifier(&mut self, modifier: &modifier::Modifier) -> &Stats {
+    pub fn apply_modifier(&mut self, modifier: &modifier::Modifier) {
         match modifier {
             modifier::Modifier::MeleeWeapon(weapon) => self.buff_melee_weapon(weapon),
             modifier::Modifier::RangedWeapon(weapon) => self.buff_ranged_weapon(weapon),
@@ -364,6 +359,7 @@ impl Stats {
 #[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
 pub struct Model {
     stats: Stats,
+    boosted_stats: Stats,
     modifiers: Vec<modifier::Modifier>,
 }
 
@@ -377,19 +373,22 @@ impl Model {
     /// ## Return
     /// Model: The Model created
     pub fn new(stats: Stats, modifiers: Vec<modifier::Modifier>) -> Model {
-        Model { stats, modifiers }
+        let mut boosted_stats = stats.clone();
+        for modifier in &modifiers {
+            boosted_stats.apply_modifier(modifier);
+        }
+        Model {
+            stats,
+            boosted_stats,
+            modifiers,
+        }
     }
     /// Get the Stats of the Model taking account of the modifiers
     ///
     /// ## Return
-    /// Stats: The Stats of the Model
-    pub fn get_stats(&self) -> Stats {
-        let mut copy = self.stats.clone();
-
-        for modifier in &self.modifiers {
-            copy.apply_modifier(modifier);
-        }
-        copy
+    /// &Stats: The Stats of the Model
+    pub fn get_stats(&self) -> &Stats {
+        &self.boosted_stats
     }
 
     /// Get the Stats of the Model without taking account of the modifiers
@@ -532,7 +531,7 @@ mod tests {
         let copy: Stats = stats.clone();
 
         let model: Model = super::Model::new(stats, vec![]);
-        assert_eq!(model.get_stats(), copy);
+        assert_eq!(model.get_stats(), &copy);
     }
 
     #[test]
@@ -547,7 +546,7 @@ mod tests {
                 super::modifier::MeleeWeaponModifier::new(1, 1),
             )],
         );
-        assert_eq!(model.get_stats(), copy);
+        assert_eq!(model.get_stats(), &copy);
     }
 
     #[test]
