@@ -52,32 +52,18 @@ pub struct DefensiveModifier {
     armour: isize,
 }
 
-/// Struct containing the modification granted by a close range weapon
+/// Struct containing the modification granted by a weapon
 ///
 /// ## Attributes
-/// strength (isize): The strength stat boost
 ///
-/// armour_penetration (isize): The armour penetration stat boost
-#[derive(Clone, PartialEq, Eq, Debug)]
-pub struct MeleeWeaponModifier {
-    strength: isize,
-    armour_penetration: isize,
-}
-
-/// Struct containing the modification granted by a ranged weapon
-///
-/// ## Attributes
-/// range (isize): The range of the weapon
-///
-/// shots (isize): The number of shots
+/// shots (Option<isize>): The number of shots if it is a ranged weapon and None if close range weapon
 ///
 /// strength (isize): The strength stat boost
 ///
 /// armour_penetration (isize): The armour penetration stat boost
 #[derive(Clone, PartialEq, Eq, Debug)]
-pub struct RangedWeaponModifier {
-    range: isize,
-    shots: isize,
+pub struct WeaponModifier {
+    shots: Option<isize>,
     strength: isize,
     armour_penetration: isize,
 }
@@ -93,14 +79,13 @@ pub struct RangedWeaponModifier {
 ///
 /// MeleeWeaponModifier: The melee weapon modifier
 ///
-/// RangedWeaponModifier: The ranged weapon modifier
+/// WeaponModifier: The ranged weapon modifier
 #[derive(Clone, PartialEq, Eq, Debug)]
 pub enum Modifier {
     Global(GlobalModifier),
     Offensive(OffensiveModifier),
     Defensive(DefensiveModifier),
-    MeleeWeapon(MeleeWeaponModifier),
-    RangedWeapon(RangedWeaponModifier),
+    Weapon(WeaponModifier),
 }
 
 impl GlobalModifier {
@@ -277,46 +262,10 @@ impl DefensiveModifier {
     }
 }
 
-impl MeleeWeaponModifier {
-    /// Constructor for the MeleeWeaponModifier struct
+impl WeaponModifier {
+    /// Constructor for the WeaponModifier struct
     ///
     /// ## Parameters
-    /// (isize) strength : The strength stat boost
-    ///
-    /// (isize) armour_penetration : The armour penetration stat boost
-    ///
-    /// ## Return
-    /// MeleeWeaponModifier: The MeleeWeaponModifier struct
-    pub fn new(strength: isize, armour_penetration: isize) -> MeleeWeaponModifier {
-        MeleeWeaponModifier {
-            strength,
-            armour_penetration,
-        }
-    }
-
-    /// Getter for the strength stat boost
-    ///
-    /// ## Return
-    /// isize: The strength stat boost
-    pub fn get_strength(&self) -> isize {
-        self.strength
-    }
-
-    /// Getter for the armour penetration stat boost
-    ///
-    /// ## Return
-    /// isize: The armour penetration stat boost
-    pub fn get_armour_penetration(&self) -> isize {
-        self.armour_penetration
-    }
-}
-
-impl RangedWeaponModifier {
-    /// Constructor for the RangedWeaponModifier struct
-    ///
-    /// ## Parameters
-    /// (isize) range : The range stat boost
-    ///
     /// (isize) shots : The shots stat boost
     ///
     /// (isize) strength : The strength stat boost
@@ -324,34 +273,20 @@ impl RangedWeaponModifier {
     /// (isize) armour_penetration : The armour penetration stat boost
     ///
     /// ## Return
-    /// RangedWeaponModifier: The RangedWeaponModifier struct
-    pub fn new(
-        range: isize,
-        shots: isize,
-        strength: isize,
-        armour_penetration: isize,
-    ) -> RangedWeaponModifier {
-        RangedWeaponModifier {
-            range,
+    /// WeaponModifier: The WeaponModifier struct
+    pub fn new(shots: Option<isize>, strength: isize, armour_penetration: isize) -> WeaponModifier {
+        WeaponModifier {
             shots,
             strength,
             armour_penetration,
         }
     }
 
-    /// Getter for the range stat boost
-    ///
-    /// ## Return
-    /// isize: The range stat boost
-    pub fn get_range(&self) -> isize {
-        self.range
-    }
-
     /// Getter for the shots stat boost
     ///
     /// ## Return
-    /// isize: The shots stat boost
-    pub fn get_shots(&self) -> isize {
+    /// Option<isize>: The nulber of shots if it's a ranged weapon, None otherwise
+    pub fn get_shots(&self) -> Option<isize> {
         self.shots
     }
 
@@ -373,24 +308,9 @@ impl RangedWeaponModifier {
 }
 
 impl Modifier {
-    /// Constructor for the Modifier struct \[Variant: melee weapon\]
+    /// Constructor for the Modifier struct \[Variant: weapon\]
     ///
     /// ## Parameters
-    /// (isize) strength : The strength stat boost
-    ///
-    /// (isize) armour_penetration : The armour penetration stat boost
-    ///
-    /// ## Return
-    /// Modifier: The Modifier struct
-    pub fn new_melee_weapon(strength: isize, armour_penetration: isize) -> Self {
-        Modifier::MeleeWeapon(MeleeWeaponModifier::new(strength, armour_penetration))
-    }
-
-    /// Constructor for the Modifier struct \[Variant: ranged weapon\]
-    ///
-    /// ## Parameters
-    /// (isize) range : The range stat boost
-    ///
     /// (isize) shots : The shots stat boost
     ///
     /// (isize) strength : The strength stat boost
@@ -399,18 +319,8 @@ impl Modifier {
     ///
     /// ## Return
     /// Modifier: The Modifier struct
-    pub fn new_ranged_weapon(
-        range: isize,
-        shots: isize,
-        strength: isize,
-        armour_penetration: isize,
-    ) -> Self {
-        Modifier::RangedWeapon(RangedWeaponModifier::new(
-            range,
-            shots,
-            strength,
-            armour_penetration,
-        ))
+    pub fn new_weapon(shots: Option<isize>, strength: isize, armour_penetration: isize) -> Self {
+        Modifier::Weapon(WeaponModifier::new(shots, strength, armour_penetration))
     }
 
     /// Constructor for the Modifier struct \[Variant: global\]
@@ -492,24 +402,30 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_new_melee_weapon() {
-        let modifier: Modifier = Modifier::new_melee_weapon(1, 2);
+    fn test_new_ranged_weapon() {
+        let modifier: Modifier = Modifier::new_weapon(Some(2), 3, 4);
         match modifier {
-            Modifier::MeleeWeapon(melee_weapon_modifier) => {
-                assert_eq!(melee_weapon_modifier.get_strength(), 1);
-                assert_eq!(melee_weapon_modifier.get_armour_penetration(), 2);
+            Modifier::Weapon(ranged_weapon_modifier) => {
+                match ranged_weapon_modifier.get_shots() {
+                    Some(shots) => assert_eq!(shots, 2),
+                    None => assert!(false),
+                }
+                assert_eq!(ranged_weapon_modifier.get_strength(), 3);
+                assert_eq!(ranged_weapon_modifier.get_armour_penetration(), 4);
             }
-            _ => panic!("Modifier is not a melee weapon modifier"),
+            _ => panic!("Modifier is not a ranged weapon modifier"),
         }
     }
 
     #[test]
-    fn test_new_ranged_weapon() {
-        let modifier: Modifier = Modifier::new_ranged_weapon(1, 2, 3, 4);
+    fn test_new_close_range_weapon() {
+        let modifier: Modifier = Modifier::new_weapon(None, 3, 4);
         match modifier {
-            Modifier::RangedWeapon(ranged_weapon_modifier) => {
-                assert_eq!(ranged_weapon_modifier.get_range(), 1);
-                assert_eq!(ranged_weapon_modifier.get_shots(), 2);
+            Modifier::Weapon(ranged_weapon_modifier) => {
+                match ranged_weapon_modifier.get_shots() {
+                    Some(_) => assert!(false),
+                    None => assert!(true),
+                }
                 assert_eq!(ranged_weapon_modifier.get_strength(), 3);
                 assert_eq!(ranged_weapon_modifier.get_armour_penetration(), 4);
             }
