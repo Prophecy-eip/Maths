@@ -293,23 +293,11 @@ impl Stats {
         self.armour = math_tools::safe_add_signed_unsigned(self.armour, modifier.get_armour());
     }
 
-    /// Buff the Stats with the given melee modifier
+    /// Buff the Stats with the given weapon modifier
     ///
     /// ## Parameters
-    /// (&modifier::MeleeWeaponModifier) modifier : The modifier to apply
-    fn apply_melee_weapon_modifier(&mut self, weapon: &modifier::MeleeWeaponModifier) {
-        self.armour_penetration = math_tools::safe_add_signed_unsigned(
-            self.armour_penetration,
-            weapon.get_armour_penetration(),
-        );
-        self.strength = math_tools::safe_add_signed_unsigned(self.strength, weapon.get_strength());
-    }
-
-    /// Buff the Stats with the given ranged modifier
-    ///
-    /// ## Parameters
-    /// (&modifier::RangedWeaponModifier) modifier : The modifier to apply
-    fn apply_ranged_weapon_modifier(&mut self, weapon: &modifier::RangedWeaponModifier) {
+    /// (&modifier::WeaponModifier) modifier : The modifier to apply
+    fn apply_weapon_modifier(&mut self, weapon: &modifier::WeaponModifier) {
         self.armour_penetration = math_tools::safe_add_signed_unsigned(
             self.armour_penetration,
             weapon.get_armour_penetration(),
@@ -326,8 +314,7 @@ impl Stats {
     /// &Stats: The Stats buffed
     pub fn apply_modifier(&mut self, modifier: &modifier::Modifier) {
         match modifier {
-            modifier::Modifier::MeleeWeapon(weapon) => self.apply_melee_weapon_modifier(weapon),
-            modifier::Modifier::RangedWeapon(weapon) => self.apply_ranged_weapon_modifier(weapon),
+            modifier::Modifier::Weapon(weapon) => self.apply_weapon_modifier(weapon),
             modifier::Modifier::Global(modifier) => self.apply_global_modifier(modifier),
             modifier::Modifier::Offensive(modifier) => self.apply_offensive_modifier(modifier),
             modifier::Modifier::Defensive(modifier) => self.apply_defensive_modifier(modifier),
@@ -497,17 +484,9 @@ mod tests {
     }
 
     #[test]
-    fn stat_buff_melee_weapon() {
-        let mut stats: Stats = initialize_stats();
-        stats.apply_melee_weapon_modifier(&super::modifier::MeleeWeaponModifier::new(1, 1));
-        assert_eq!(stats.get_armour_penetration(), 2);
-        assert_eq!(stats.get_strength(), 2);
-    }
-
-    #[test]
     fn stat_buff_ranged_weapon() {
         let mut stats: Stats = initialize_stats();
-        stats.apply_ranged_weapon_modifier(&super::modifier::RangedWeaponModifier::new(1, 1, 3, 4));
+        stats.apply_weapon_modifier(&super::modifier::WeaponModifier::new(Some(1), 3, 4));
         assert_eq!(stats.get_armour_penetration(), 5);
         assert_eq!(stats.get_strength(), 4);
     }
@@ -525,12 +504,12 @@ mod tests {
     fn model_get_stats_with_modifier() {
         let stats: Stats = initialize_stats();
         let mut copy: Stats = stats.clone();
-        copy.apply_melee_weapon_modifier(&super::modifier::MeleeWeaponModifier::new(1, 1));
+        copy.apply_weapon_modifier(&super::modifier::WeaponModifier::new(Some(1), 1, 1));
 
         let model: Model = super::Model::new(
             stats,
-            vec![super::modifier::Modifier::MeleeWeapon(
-                super::modifier::MeleeWeaponModifier::new(1, 1),
+            vec![super::modifier::Modifier::Weapon(
+                super::modifier::WeaponModifier::new(Some(1), 1, 1),
             )],
         );
         assert_eq!(model.get_stats(), &copy);
@@ -544,18 +523,9 @@ mod tests {
     }
 
     #[test]
-    fn test_apply_modifier_melee_weapon() {
-        let mut stats: Stats = initialize_stats();
-        let modifier: Modifier = super::modifier::Modifier::new_melee_weapon(1, 1);
-        stats.apply_modifier(&modifier);
-        assert_eq!(stats.get_armour_penetration(), 2);
-        assert_eq!(stats.get_strength(), 2);
-    }
-
-    #[test]
     fn test_apply_modifier_ranged_weapon() {
         let mut stats: Stats = initialize_stats();
-        let modifier: Modifier = super::modifier::Modifier::new_ranged_weapon(1, 1, 3, 4);
+        let modifier: Modifier = super::modifier::Modifier::new_weapon(Some(1), 3, 4);
         stats.apply_modifier(&modifier);
         assert_eq!(stats.get_armour_penetration(), 5);
         assert_eq!(stats.get_strength(), 4);

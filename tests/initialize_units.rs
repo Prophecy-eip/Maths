@@ -22,7 +22,7 @@ pub fn initialize_warriors() -> regiment::Regiment {
             agility: 4,
         },
     );
-    let warriors_modifier: modifier::Modifier = modifier::Modifier::new_melee_weapon(0, 0);
+    let warriors_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
     let model_warriors: model::Model = model::Model::new(warriors_stats, vec![warriors_modifier]);
     let warriors: regiment::Regiment = regiment::Regiment::new(model_warriors, 4, 5, 20, None);
     warriors
@@ -51,43 +51,12 @@ pub fn initialize_heavy_infantry() -> regiment::Regiment {
         },
     );
 
-    let heavy_infantry_modifier: modifier::Modifier = modifier::Modifier::new_melee_weapon(0, 0);
+    let heavy_infantry_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
     let model_heavy_infantry: model::Model =
         model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
     let heavy_infantry: regiment::Regiment =
         regiment::Regiment::new(model_heavy_infantry, 4, 5, 20, None);
     heavy_infantry
-}
-
-pub fn initialize_wildhorn_herd() -> regiment::Regiment {
-    let wildhorn_herd_stats: model::Stats = model::Stats::new(
-        model::GlobalStats {
-            advance: 5,
-            march: 10,
-            discipline: 7,
-        },
-        model::DefensiveStats {
-            health_points: 1,
-            defense: 4,
-            resilience: 4,
-            armour: 0,
-            aegis: 0,
-        },
-        model::OffensiveStats {
-            attack: 1,
-            offensive: 4,
-            strength: 3,
-            armour_penetration: 0,
-            agility: 3,
-        },
-    );
-
-    let wildhorn_herd_modifier: modifier::Modifier = modifier::Modifier::new_melee_weapon(0, 0);
-    let model_wildhorn_herd: model::Model =
-        model::Model::new(wildhorn_herd_stats, vec![wildhorn_herd_modifier]);
-    let wildhorn_herd: regiment::Regiment =
-        regiment::Regiment::new(model_wildhorn_herd, 4, 5, 20, None);
-    return wildhorn_herd;
 }
 
 pub fn initialize_imps() -> regiment::Regiment {
@@ -112,7 +81,7 @@ pub fn initialize_imps() -> regiment::Regiment {
             agility: 3,
         },
     );
-    let imps_modifier: modifier::Modifier = modifier::Modifier::new_melee_weapon(0, 0);
+    let imps_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
     let model_imps: model::Model = model::Model::new(imps_stats, vec![imps_modifier]);
     let imps: regiment::Regiment = regiment::Regiment::new(model_imps, 4, 5, 20, None);
     return imps;
@@ -140,7 +109,7 @@ pub fn initialize_silexian_spears() -> regiment::Regiment {
             agility: 5,
         },
     );
-    let silexian_spears_modifier: modifier::Modifier = modifier::Modifier::new_melee_weapon(0, 0);
+    let silexian_spears_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
     let model_silexian_spears: model::Model =
         model::Model::new(silexian_spears_stats, vec![silexian_spears_modifier]);
     let silexian_spears: regiment::Regiment =
@@ -170,7 +139,7 @@ pub fn initialize_clan_warriors() -> regiment::Regiment {
             agility: 2,
         },
     );
-    let clan_warriors_modifier: modifier::Modifier = modifier::Modifier::new_melee_weapon(0, 0);
+    let clan_warriors_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
     let model_clan_warriors: model::Model =
         model::Model::new(clan_warriors_stats, vec![clan_warriors_modifier]);
     let clan_warriors: regiment::Regiment =
@@ -200,7 +169,7 @@ pub fn initialize_citizen_spears() -> regiment::Regiment {
             agility: 5,
         },
     );
-    let citizen_spears_modifier: modifier::Modifier = modifier::Modifier::new_melee_weapon(0, 0);
+    let citizen_spears_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
     let model_citizen_spears: model::Model =
         model::Model::new(citizen_spears_stats, vec![citizen_spears_modifier]);
     let citizen_spears: regiment::Regiment =
@@ -230,7 +199,7 @@ pub fn initialize_infernal_warriors() -> regiment::Regiment {
             agility: 2,
         },
     );
-    let infernal_warriors_modifier: modifier::Modifier = modifier::Modifier::new_melee_weapon(0, 0);
+    let infernal_warriors_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
     let model_infernal_warriors: model::Model =
         model::Model::new(infernal_warriors_stats, vec![infernal_warriors_modifier]);
     let infernal_warriors: regiment::Regiment =
@@ -260,8 +229,38 @@ pub fn initialize_zombies() -> regiment::Regiment {
             agility: 1,
         },
     );
-    let zombies_modifier: modifier::Modifier = modifier::Modifier::new_melee_weapon(0, 0);
+    let zombies_modifier: modifier::Modifier = modifier::Modifier::new_weapon(Some(1), 0, 0);
     let model_zombies: model::Model = model::Model::new(zombies_stats, vec![zombies_modifier]);
     let zombies: regiment::Regiment = regiment::Regiment::new(model_zombies, 10, 8, 80, None);
     return zombies;
+}
+
+pub fn initialize_wildhorn_herd() -> regiment::Regiment {
+    let wildhorn_herd_stats: model::Stats = model::Stats::new(
+        model::GlobalStats {
+            advance: 5,
+            march: 10,
+            discipline: 7,
+        },
+        model::DefensiveStats {
+            health_points: 1,
+            defense: 4,
+            resilience: 4,
+            armour: 0,
+            aegis: 0,
+        },
+        model::OffensiveStats {
+            attack: 1,
+            offensive: 4,
+            strength: 3,
+            armour_penetration: 0,
+            agility: 3,
+        },
+    );
+    let wildhorn_herd_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
+    let model_wildhorn_herd: model::Model =
+        model::Model::new(wildhorn_herd_stats, vec![wildhorn_herd_modifier]);
+    let wildhorn_herd: regiment::Regiment =
+        regiment::Regiment::new(model_wildhorn_herd, 4, 5, 20, None);
+    return wildhorn_herd;
 }
