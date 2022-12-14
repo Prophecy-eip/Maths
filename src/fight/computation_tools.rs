@@ -192,7 +192,7 @@ mod tests {
             },
         );
 
-        let chaos_warrior_modifier: modifier::Modifier = modifier::Modifier::new_melee_weapon(0, 0);
+        let chaos_warrior_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment =
@@ -224,7 +224,7 @@ mod tests {
         );
 
         let heavy_infantry_modifier: modifier::Modifier =
-            modifier::Modifier::new_melee_weapon(0, 0);
+            modifier::Modifier::new_weapon(None, 0, 0);
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
@@ -256,7 +256,7 @@ mod tests {
         );
 
         let heavy_infantry_modifier: modifier::Modifier =
-            modifier::Modifier::new_melee_weapon(0, 0);
+            modifier::Modifier::new_weapon(None, 0, 0);
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
@@ -288,7 +288,7 @@ mod tests {
         );
 
         let heavy_infantry_modifier: modifier::Modifier =
-            modifier::Modifier::new_melee_weapon(0, 0);
+            modifier::Modifier::new_weapon(None, 0, 0);
         let model_heavy_infantry: model::Model =
             model::Model::new(heavy_infantry_stats, vec![heavy_infantry_modifier]);
         let heavy_infantry: regiment::Regiment =
