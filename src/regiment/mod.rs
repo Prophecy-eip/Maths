@@ -3,6 +3,7 @@
 //! This module contain all the structs and datas needed by a Regiment
 
 use crate::model;
+use serde;
 
 /// Struct containing all the informations about a Regiment
 ///
@@ -18,7 +19,7 @@ use crate::model;
 /// regiment_health_point (usize): The total number of health points that left to the regiment
 ///
 /// points (usize): The points earned by the regiment
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
 pub struct Regiment {
     model: model::Model,
     nb_rows: usize,

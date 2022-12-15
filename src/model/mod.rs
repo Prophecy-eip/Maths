@@ -33,7 +33,7 @@
 ///
 /// agility (usize): The agility of the Model
 ///
-#[derive(Clone, PartialEq, Eq, Debug)]
+#[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
 pub struct Stats {
     advance: usize,
     march: usize,
@@ -259,7 +259,7 @@ impl Stats {
 /// nb_dice (usize): The number of dice
 ///
 /// requirements (Vec<String>): The requirements for the Modifier to apply (as an array of flags)
-#[derive(Clone, PartialEq, Eq, Debug)]
+#[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
 pub struct Modifier {
     stat: Stats,
     bonus: bool,
@@ -294,7 +294,7 @@ impl Modifier {
 /// stats (Stats): The statistics of the Model
 ///
 /// modifiers (Vec<Modifier>): The list of Modifier the Model have
-#[derive(Clone, PartialEq, Eq, Debug)]
+#[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
 pub struct Model {
     stats: Stats,
     modifiers: Vec<Modifier>,

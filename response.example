@@ -1,0 +1,287 @@
+{
+	"BEST": {
+		"attacking_regiment": {
+			"model": {
+				"stats": {
+					"advance": 4,
+					"march": 8,
+					"discipline": 8,
+					"health_point": 1,
+					"defense": 5,
+					"resilience": 4,
+					"armour": 0,
+					"aegis": 0,
+					"attack": 2,
+					"offensive": 4,
+					"strength": 5,
+					"armour_penetration": 1,
+					"agility": 4
+				},
+				"modifiers": [
+					{
+						"stat": {
+							"advance": 0,
+							"march": 0,
+							"discipline": 0,
+							"health_point": 0,
+							"defense": 0,
+							"resilience": 0,
+							"armour": 0,
+							"aegis": 0,
+							"attack": 0,
+							"offensive": 0,
+							"strength": 0,
+							"armour_penetration": 0,
+							"agility": 0
+						},
+						"bonus": false,
+						"nb_dice": 0,
+						"requirements": []
+					}
+				]
+			},
+			"nb_rows": 4,
+			"nb_cols": 5,
+			"nb_models": 17,
+			"regiment_health_point": 17,
+			"points": 10
+		},
+		"defending_regiment": {
+			"model": {
+				"stats": {
+					"advance": 4,
+					"march": 8,
+					"discipline": 7,
+					"health_point": 1,
+					"defense": 3,
+					"resilience": 3,
+					"armour": 0,
+					"aegis": 0,
+					"attack": 1,
+					"offensive": 3,
+					"strength": 3,
+					"armour_penetration": 0,
+					"agility": 3
+				},
+				"modifiers": [
+					{
+						"stat": {
+							"advance": 0,
+							"march": 0,
+							"discipline": 0,
+							"health_point": 0,
+							"defense": 0,
+							"resilience": 0,
+							"armour": 0,
+							"aegis": 0,
+							"attack": 0,
+							"offensive": 0,
+							"strength": 0,
+							"armour_penetration": 0,
+							"agility": 0
+						},
+						"bonus": false,
+						"nb_dice": 0,
+						"requirements": []
+					}
+				]
+			},
+			"nb_rows": 2,
+			"nb_cols": 5,
+			"nb_models": 10,
+			"regiment_health_point": 10,
+			"points": 3
+		},
+		"occurrence_probability": 0.23791208650489054
+	},
+	"WORST": {
+		"attacking_regiment": {
+			"model": {
+				"stats": {
+					"advance": 4,
+					"march": 8,
+					"discipline": 8,
+					"health_point": 1,
+					"defense": 5,
+					"resilience": 4,
+					"armour": 0,
+					"aegis": 0,
+					"attack": 2,
+					"offensive": 4,
+					"strength": 5,
+					"armour_penetration": 1,
+					"agility": 4
+				},
+				"modifiers": [
+					{
+						"stat": {
+							"advance": 0,
+							"march": 0,
+							"discipline": 0,
+							"health_point": 0,
+							"defense": 0,
+							"resilience": 0,
+							"armour": 0,
+							"aegis": 0,
+							"attack": 0,
+							"offensive": 0,
+							"strength": 0,
+							"armour_penetration": 0,
+							"agility": 0
+						},
+						"bonus": false,
+						"nb_dice": 0,
+						"requirements": []
+					}
+				]
+			},
+			"nb_rows": 4,
+			"nb_cols": 5,
+			"nb_models": 17,
+			"regiment_health_point": 17,
+			"points": 5
+		},
+		"defending_regiment": {
+			"model": {
+				"stats": {
+					"advance": 4,
+					"march": 8,
+					"discipline": 7,
+					"health_point": 1,
+					"defense": 3,
+					"resilience": 3,
+					"armour": 0,
+					"aegis": 0,
+					"attack": 1,
+					"offensive": 3,
+					"strength": 3,
+					"armour_penetration": 0,
+					"agility": 3
+				},
+				"modifiers": [
+					{
+						"stat": {
+							"advance": 0,
+							"march": 0,
+							"discipline": 0,
+							"health_point": 0,
+							"defense": 0,
+							"resilience": 0,
+							"armour": 0,
+							"aegis": 0,
+							"attack": 0,
+							"offensive": 0,
+							"strength": 0,
+							"armour_penetration": 0,
+							"agility": 0
+						},
+						"bonus": false,
+						"nb_dice": 0,
+						"requirements": []
+					}
+				]
+			},
+			"nb_rows": 3,
+			"nb_cols": 5,
+			"nb_models": 15,
+			"regiment_health_point": 15,
+			"points": 3
+		},
+		"occurrence_probability": 0.003097758482781122
+	},
+	"MEAN": {
+		"attacking_regiment": {
+			"model": {
+				"stats": {
+					"advance": 4,
+					"march": 8,
+					"discipline": 8,
+					"health_point": 1,
+					"defense": 5,
+					"resilience": 4,
+					"armour": 0,
+					"aegis": 0,
+					"attack": 2,
+					"offensive": 4,
+					"strength": 5,
+					"armour_penetration": 1,
+					"agility": 4
+				},
+				"modifiers": [
+					{
+						"stat": {
+							"advance": 0,
+							"march": 0,
+							"discipline": 0,
+							"health_point": 0,
+							"defense": 0,
+							"resilience": 0,
+							"armour": 0,
+							"aegis": 0,
+							"attack": 0,
+							"offensive": 0,
+							"strength": 0,
+							"armour_penetration": 0,
+							"agility": 0
+						},
+						"bonus": false,
+						"nb_dice": 0,
+						"requirements": []
+					}
+				]
+			},
+			"nb_rows": 4,
+			"nb_cols": 5,
+			"nb_models": 19,
+			"regiment_health_point": 19,
+			"points": 8
+		},
+		"defending_regiment": {
+			"model": {
+				"stats": {
+					"advance": 4,
+					"march": 8,
+					"discipline": 7,
+					"health_point": 1,
+					"defense": 3,
+					"resilience": 3,
+					"armour": 0,
+					"aegis": 0,
+					"attack": 1,
+					"offensive": 3,
+					"strength": 3,
+					"armour_penetration": 0,
+					"agility": 3
+				},
+				"modifiers": [
+					{
+						"stat": {
+							"advance": 0,
+							"march": 0,
+							"discipline": 0,
+							"health_point": 0,
+							"defense": 0,
+							"resilience": 0,
+							"armour": 0,
+							"aegis": 0,
+							"attack": 0,
+							"offensive": 0,
+							"strength": 0,
+							"armour_penetration": 0,
+							"agility": 0
+						},
+						"bonus": false,
+						"nb_dice": 0,
+						"requirements": []
+					}
+				]
+			},
+			"nb_rows": 3,
+			"nb_cols": 5,
+			"nb_models": 12,
+			"regiment_health_point": 12,
+			"points": 1
+		},
+		"occurrence_probability": 0.07443220723974381
+	}
+}
