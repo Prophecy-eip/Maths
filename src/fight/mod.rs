@@ -19,7 +19,7 @@ use crate::{
 /// WORST : Represent the worst scenario for the first unit
 ///
 /// MEAN : Represent the scenario with the highest probability of occurence
-#[derive(Clone, PartialEq, Eq, Hash)]
+#[derive(Clone, PartialEq, Eq, Hash, serde::Serialize)]
 pub enum ComputeCase {
     BEST,
     WORST,
