@@ -13,5 +13,11 @@ edition = "2021"
 name = "maths"
 crate-type = ["lib", "cdylib"]
 
+[[bin]]
+name = "prophecy-maths"
+path = "src/main.rs"
+
 [dependencies]
 factorial = "0.2.1"
+actix-web = "4"
+serde = { version = "1.0", features = ["derive"] }
