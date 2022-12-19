@@ -53,7 +53,7 @@ impl Regiment {
         nb_models: usize,
         regiment_health_points: Option<usize>,
     ) -> Regiment {
-        let health_points: usize = model.get_stats().get_health_points();
+        let health_points: usize = model.get_boosted_stats().get_health_points();
         Regiment {
             model,
             nb_rows,
@@ -113,7 +113,7 @@ impl Regiment {
     pub fn take_damage(&mut self, amount: usize) -> usize {
         self.regiment_health_points = self.regiment_health_points.saturating_sub(amount);
         self.nb_models = (self.regiment_health_points as f64
-            / self.model.get_stats().get_health_points() as f64)
+            / self.model.get_boosted_stats().get_health_points() as f64)
             .ceil() as usize;
         if self.nb_models >= self.nb_cols {
             self.nb_rows = (self.nb_models as f64 / self.nb_cols as f64).ceil() as usize;
