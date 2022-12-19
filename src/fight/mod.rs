@@ -39,8 +39,8 @@ fn compute_mean_case(
     attacking_regiment: &regiment::Regiment,
     defending_regiment: &regiment::Regiment,
 ) -> (usize, f64) {
-    let attacking_stats: &model::Stats = attacking_regiment.get_model().get_stats();
-    let defending_stats: &model::Stats = defending_regiment.get_model().get_stats();
+    let attacking_stats: &model::Stats = attacking_regiment.get_model().get_boosted_stats();
+    let defending_stats: &model::Stats = defending_regiment.get_model().get_boosted_stats();
     let damage_probability: f64 =
         computation_tools::compute_damage_probability(attacking_stats, defending_stats);
     let nb_attacks: f64 =
@@ -131,13 +131,13 @@ fn compute_case(
     defending_regiment: &regiment::Regiment,
     case: &ComputeCase,
 ) -> (usize, f64) {
-    let attacking_stats: &model::Stats = attacking_regiment.get_model().get_stats();
+    let attacking_stats: &model::Stats = attacking_regiment.get_model().get_boosted_stats();
     let nb_touch: usize =
         (attacking_stats.get_attack() as f64 * 1.5 * attacking_regiment.get_cols() as f64).round()
             as usize;
     let wound_probability: f64 = computation_tools::compute_damage_probability(
         attacking_stats,
-        defending_regiment.get_model().get_stats(),
+        defending_regiment.get_model().get_boosted_stats(),
     );
     let defender_hp: usize = defending_regiment.get_regiment_health_points();
     let max_hit: usize = std::cmp::min(nb_touch, defender_hp);
@@ -217,8 +217,8 @@ fn create_prediction(
         ComputeCase::MEAN => ComputeCase::MEAN,
     };
     let fastest: u8 = computation_tools::find_the_fastest(
-        attacking_regiment.get_model().get_stats(),
-        defending_regiment.get_model().get_stats(),
+        attacking_regiment.get_model().get_boosted_stats(),
+        defending_regiment.get_model().get_boosted_stats(),
     );
 
     let mut final_defending: regiment::Regiment = defending_regiment.clone();
