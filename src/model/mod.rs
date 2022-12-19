@@ -255,7 +255,7 @@ impl Stats {
     /// Buff the Stats with a GlobalModifier
     ///
     /// ## Parameters
-    /// &modifier (GlobalModifier): The GlobalModifier to buff the Stats with
+    /// (&modifier::GlobalModifier) modifier: The GlobalModifier to buff the Stats with
     fn apply_global_modifier(&mut self, modifier: &modifier::GlobalModifier) {
         self.advance = math_tools::safe_add_signed_unsigned(self.advance, modifier.get_advance());
         self.march = math_tools::safe_add_signed_unsigned(self.march, modifier.get_march());
@@ -266,7 +266,7 @@ impl Stats {
     /// Buff the Stats with a OffensiveModifier
     ///
     /// ## Parameters
-    /// &modifier (OffensiveModifier): The OffensiveModifier to buff the Stats with
+    /// (&modifier::OffensiveModifier) modifier: The OffensiveModifier to buff the Stats with
     fn apply_offensive_modifier(&mut self, modifier: &modifier::OffensiveModifier) {
         self.attack = math_tools::safe_add_signed_unsigned(self.attack, modifier.get_attack());
         self.offensive =
@@ -283,7 +283,7 @@ impl Stats {
     /// Buff the Stats with a DefensiveModifier
     ///
     /// ## Parameters
-    /// &modifier (DefensiveModifier): The DefensiveModifier to buff the Stats with
+    /// (&modifier::DefensiveModifier) modifier: The DefensiveModifier to buff the Stats with
     fn apply_defensive_modifier(&mut self, modifier: &modifier::DefensiveModifier) {
         self.health_points =
             math_tools::safe_add_signed_unsigned(self.health_points, modifier.get_health_points());
@@ -308,7 +308,7 @@ impl Stats {
     /// Apply the given modifier to the Stats
     ///
     /// ## Parameters
-    /// &modifier (Modifier): The Modifier to apply
+    /// (&modifier::Modifier) (modifier): The Modifier to apply
     pub fn apply_modifier(&mut self, modifier: &modifier::Modifier) {
         match modifier {
             modifier::Modifier::Weapon(weapon) => self.apply_weapon_modifier(weapon),
