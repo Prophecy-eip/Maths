@@ -309,9 +309,6 @@ impl Stats {
     ///
     /// ## Parameters
     /// &modifier (Modifier): The Modifier to apply
-    ///
-    /// ## Return
-    /// &Stats: The Stats buffed
     pub fn apply_modifier(&mut self, modifier: &modifier::Modifier) {
         match modifier {
             modifier::Modifier::Weapon(weapon) => self.apply_weapon_modifier(weapon),
@@ -360,8 +357,8 @@ impl Model {
     /// Get the Stats of the Model taking account of the modifiers
     ///
     /// ## Return
-    /// &Stats: The Stats of the Model
-    pub fn get_stats(&self) -> &Stats {
+    /// &Stats: The boosted Stats of the Model
+    pub fn get_boosted_stats(&self) -> &Stats {
         &self.boosted_stats
     }
 
@@ -369,7 +366,7 @@ impl Model {
     ///
     /// ## Return
     /// &Stats: The Stats of the Model
-    pub fn get_pure_stats(&self) -> &Stats {
+    pub fn get_stats(&self) -> &Stats {
         &self.stats
     }
 }
@@ -492,16 +489,16 @@ mod tests {
     }
 
     #[test]
-    fn model_get_stats() {
+    fn model_get_boosted_stats() {
         let stats: Stats = initialize_stats();
         let copy: Stats = stats.clone();
 
         let model: Model = super::Model::new(stats, vec![]);
-        assert_eq!(model.get_stats(), &copy);
+        assert_eq!(model.get_boosted_stats(), &copy);
     }
 
     #[test]
-    fn model_get_stats_with_modifier() {
+    fn model_get_boosted_stats_with_modifier() {
         let stats: Stats = initialize_stats();
         let mut copy: Stats = stats.clone();
         copy.apply_weapon_modifier(&super::modifier::WeaponModifier::new(Some(1), 1, 1));
@@ -512,14 +509,14 @@ mod tests {
                 super::modifier::WeaponModifier::new(Some(1), 1, 1),
             )],
         );
-        assert_eq!(model.get_stats(), &copy);
+        assert_eq!(model.get_boosted_stats(), &copy);
     }
 
     #[test]
-    fn model_get_pure_stats() {
+    fn model_get_stats() {
         let stats: Stats = initialize_stats();
         let model: Model = super::Model::new(stats.clone(), vec![]);
-        assert_eq!(model.get_pure_stats(), &stats);
+        assert_eq!(model.get_stats(), &stats);
     }
 
     #[test]
