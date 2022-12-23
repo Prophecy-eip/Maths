@@ -8,7 +8,7 @@ COPY ./src ./src
 
 RUN cargo build --release
 
-FROM rust:slim-buster as runner
+FROM debian:stable-slim as runner
 
 COPY --from=builder /app/target/release/prophecy-maths .
 
