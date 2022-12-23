@@ -8,7 +8,7 @@ COPY ./src ./src
 
 RUN cargo build --release
 
-FROM rust:latest as runner
+FROM rust:slim-buster as runner
 
 COPY --from=builder /app/target/release/prophecy-maths .
 
