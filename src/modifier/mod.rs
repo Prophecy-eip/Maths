@@ -6,7 +6,7 @@
 /// march (isize): The march stat boost
 ///
 /// discipline (isize): The discipline stat boost
-#[derive(Clone, PartialEq, Eq, Debug)]
+#[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
 pub struct GlobalModifier {
     advance: isize,
     march: isize,
@@ -25,7 +25,7 @@ pub struct GlobalModifier {
 /// armour_penetration (isize): The armour penetration stat boost
 ///
 /// agility (isize): The agility stat boost
-#[derive(Clone, PartialEq, Eq, Debug)]
+#[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
 pub struct OffensiveModifier {
     attack: isize,
     offensive: isize,
@@ -44,7 +44,7 @@ pub struct OffensiveModifier {
 /// resilience (isize): The resilience stat boost
 ///
 /// armour (isize): The armour stat boost
-#[derive(Clone, PartialEq, Eq, Debug)]
+#[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
 pub struct DefensiveModifier {
     health_points: isize,
     defense: isize,
@@ -61,7 +61,7 @@ pub struct DefensiveModifier {
 /// strength (isize): The strength stat boost
 ///
 /// armour_penetration (isize): The armour penetration stat boost
-#[derive(Clone, PartialEq, Eq, Debug)]
+#[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
 pub struct WeaponModifier {
     shots: Option<isize>,
     strength: isize,
@@ -80,7 +80,7 @@ pub struct WeaponModifier {
 /// MeleeWeaponModifier: The melee weapon modifier
 ///
 /// WeaponModifier: The ranged weapon modifier
-#[derive(Clone, PartialEq, Eq, Debug)]
+#[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
 pub enum Modifier {
     Global(GlobalModifier),
     Offensive(OffensiveModifier),
