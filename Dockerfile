@@ -1,5 +1,15 @@
-FROM rust:latest
+FROM rust:latest as builder
 
-COPY . .
+WORKDIR /app
 
-RUN cargo build --bin prophecy-maths --release
+COPY ./Cargo.lock ./Cargo.lock
+COPY ./Cargo.toml ./Cargo.toml
+COPY ./src ./src
+
+RUN cargo build --release
+
+FROM rust:latest as runner
+
+COPY --from=builder /app/target/release/prophecy-maths .
+
+CMD ["./prophecy-maths"]
