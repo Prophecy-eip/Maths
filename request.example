@@ -1,4 +1,5 @@
 {
+	key: "very secret key",
 	"attacking_regiment": {
 		"model": {
 			"stats": {
