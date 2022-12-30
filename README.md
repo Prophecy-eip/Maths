@@ -3,7 +3,7 @@
 This is the library for the maths and (future) AI of the Prophecy Epitech project.
 It can be used in different ways :
 - as a dynamic library
-- as a web server to call the functions with a HTTP request
+- as a web server to call the functions with a HTTP request (the API is [here](https://app.swaggerhub.com/apis/Pepiloto/Prophecy-maths/1.0.0))
 
 # If you want to contribute you can join our [Discord](https://discord.gg/2bCeWjzV) server !
 
