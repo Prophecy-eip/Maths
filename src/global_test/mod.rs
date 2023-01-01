@@ -34,7 +34,7 @@ pub mod tests {
     ///
     /// agility (usize): the agility statistic of the model
     /// # Return
-    /// Stats Model: The Stats Model created and initialized
+    /// Stats Model: The Stats created and initialized
 
     pub fn initialize_stats(
         advance: usize,
@@ -116,7 +116,7 @@ pub mod tests {
     /// # Initialize all stats structs values to 1
     ///
     /// # Return
-    /// Stats Model: The Stats Model created and initialized
+    /// Stats Model: Our mock Stats struct
 
     pub fn initialize_mock_stats() -> model::Stats {
         let stats: model::Stats = model::Stats::new(
@@ -172,7 +172,7 @@ pub mod tests {
     ///
     /// agility (usize): the agility modifier statistic of the model
     /// # Return
-    /// Stats Model: The Stats Model created and initialized
+    /// Modifier Stats: The modifier stats created and initialized
 
     pub fn initialize_modifier_stats(
         advance: usize,
@@ -216,7 +216,7 @@ pub mod tests {
     /// #  Initialize all modifier stats structs values to 0
     ///
     /// # Return
-    /// Stats Model: The Stats Model created and initialized
+    /// Modifier Stats: Our mock modifier Stats struct
 
     pub fn initialize_mock_modifier_stats() -> model::Stats {
         let modifier_stats: model::Stats = model::Stats::new(
