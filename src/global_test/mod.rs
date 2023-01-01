@@ -34,8 +34,46 @@ pub mod tests {
     ///
     /// agility (usize): the agility statistic of the model
     /// # Return
-    /// Stats Model: The Stats Model created and initialized
+    /// Stats Model: The Stats created and initialized
 
+    pub fn initialize_stats(
+        advance: usize,
+        march: usize,
+        discipline: usize,
+        health_point: usize,
+        defense: usize,
+        resilience: usize,
+        armour: usize,
+        aegis: usize,
+        attack: usize,
+        offensive: usize,
+        strength: usize,
+        armour_penetration: usize,
+        agility: usize,
+    ) -> model::Stats {
+        let stats: model::Stats = model::Stats::new(
+            model::GlobalStats {
+                advance: advance,
+                march: march,
+                discipline: discipline,
+            },
+            model::DefensiveStats {
+                health_point: health_point,
+                defense: defense,
+                resilience: resilience,
+                armour: armour,
+                aegis: aegis,
+            },
+            model::OffensiveStats {
+                attack: attack,
+                offensive: offensive,
+                strength: strength,
+                armour_penetration: armour_penetration,
+                agility: agility,
+            },
+        );
+        stats
+    }
     pub fn initialize_stats(
         advance: usize,
         march: usize,
@@ -78,7 +116,7 @@ pub mod tests {
     /// # Initialize all stats structs values to 1
     ///
     /// # Return
-    /// Stats Model: The Stats Model created and initialized
+    /// Stats Model: Our mock Stats struct
 
     pub fn initialize_mock_stats() -> model::Stats {
         let stats: model::Stats = model::Stats::new(
@@ -134,7 +172,7 @@ pub mod tests {
     ///
     /// agility (usize): the agility modifier statistic of the model
     /// # Return
-    /// Stats Model: The Stats Model created and initialized
+    /// Modifier Stats: The modifier stats created and initialized
 
     pub fn initialize_modifier_stats(
         advance: usize,
@@ -178,7 +216,7 @@ pub mod tests {
     /// #  Initialize all modifier stats structs values to 0
     ///
     /// # Return
-    /// Stats Model: The Stats Model created and initialized
+    /// Modifier Stats: Our mock modifier Stats struct
 
     pub fn initialize_mock_modifier_stats() -> model::Stats {
         let modifier_stats: model::Stats = model::Stats::new(
@@ -229,6 +267,14 @@ pub mod tests {
     ) -> regiment::Regiment {
         let stats: model::Stats = model_stats;
         let modifier_stats: model::Stats = model_modifier_stats;
+
+        let modifier: model::Modifier = model::Modifier::new(modifier_stats, false, 0, vec![]);
+        let model: model::Model = model::Model::new(stats, vec![modifier]);
+        let regiment: regiment::Regiment =
+            regiment::Regiment::new(model, nb_rows, nb_cols, nb_models);
+        regiment
+    }
+}
 
         let modifier: model::Modifier = model::Modifier::new(modifier_stats, false, 0, vec![]);
         let model: model::Model = model::Model::new(stats, vec![modifier]);
