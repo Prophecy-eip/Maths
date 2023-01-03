@@ -33,47 +33,10 @@ pub mod tests {
     /// armour_penetration (usize): the armour_penetration statistic of the model
     ///
     /// agility (usize): the agility statistic of the model
+    ///
     /// # Return
     /// Stats Model: The Stats created and initialized
 
-    pub fn initialize_stats(
-        advance: usize,
-        march: usize,
-        discipline: usize,
-        health_point: usize,
-        defense: usize,
-        resilience: usize,
-        armour: usize,
-        aegis: usize,
-        attack: usize,
-        offensive: usize,
-        strength: usize,
-        armour_penetration: usize,
-        agility: usize,
-    ) -> model::Stats {
-        let stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: advance,
-                march: march,
-                discipline: discipline,
-            },
-            model::DefensiveStats {
-                health_point: health_point,
-                defense: defense,
-                resilience: resilience,
-                armour: armour,
-                aegis: aegis,
-            },
-            model::OffensiveStats {
-                attack: attack,
-                offensive: offensive,
-                strength: strength,
-                armour_penetration: armour_penetration,
-                agility: agility,
-            },
-        );
-        stats
-    }
     pub fn initialize_stats(
         advance: usize,
         march: usize,
@@ -171,6 +134,7 @@ pub mod tests {
     /// armour_penetration (usize): the armour_penetration modifier statistic of the model
     ///
     /// agility (usize): the agility modifier statistic of the model
+    ///
     /// # Return
     /// Modifier Stats: The modifier stats created and initialized
 
@@ -255,6 +219,7 @@ pub mod tests {
     /// nb_cols (usize): the number of columns of the regiment
     ///
     /// nb_models (usize): the number of models in the regiment
+    ///
     /// # Return
     /// Regiment : a regiment struct initialized
 
@@ -267,14 +232,6 @@ pub mod tests {
     ) -> regiment::Regiment {
         let stats: model::Stats = model_stats;
         let modifier_stats: model::Stats = model_modifier_stats;
-
-        let modifier: model::Modifier = model::Modifier::new(modifier_stats, false, 0, vec![]);
-        let model: model::Model = model::Model::new(stats, vec![modifier]);
-        let regiment: regiment::Regiment =
-            regiment::Regiment::new(model, nb_rows, nb_cols, nb_models);
-        regiment
-    }
-}
 
         let modifier: model::Modifier = model::Modifier::new(modifier_stats, false, 0, vec![]);
         let model: model::Model = model::Model::new(stats, vec![modifier]);
