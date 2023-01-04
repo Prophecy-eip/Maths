@@ -369,6 +369,24 @@ impl Model {
     pub fn get_stats(&self) -> &Stats {
         &self.stats
     }
+
+    /// Add a modifier to the Model
+    ///
+    /// ## Parameters
+    ///
+    /// (modifier::Modifier) modifier: The modifier to add
+    pub fn add_modifier(&mut self, modifier: modifier::Modifier) {
+        self.modifiers.push(modifier.clone());
+        self.boosted_stats.apply_modifier(&modifier);
+    }
+
+    /// Get the list of modifiers applied on the Model
+    ///
+    /// ## Return
+    /// &Vec<modifier::Modifier>: The list of modifiers
+    pub fn get_modifiers(&self) -> &Vec<modifier::Modifier> {
+        &self.modifiers
+    }
 }
 
 #[cfg(test)]

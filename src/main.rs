@@ -1,9 +1,4 @@
-#[derive(serde::Serialize, serde::Deserialize)]
-struct Regiments {
-    key: String,
-    attacking_regiment: maths::regiment::Regiment,
-    defending_regiment: maths::regiment::Regiment,
-}
+use maths::web_server;
 
 #[actix_web::get("/heartbeat")]
 async fn heartbeat() -> impl actix_web::Responder {
@@ -12,17 +7,26 @@ async fn heartbeat() -> impl actix_web::Responder {
 
 #[actix_web::post("/units")]
 async fn make_prophecy(
-    regiments: actix_web::web::Json<Regiments>,
+    regiments: actix_web::web::Json<
+        web_server::request_structures::make_prophecy::MakeProphecyRequest,
+    >,
 ) -> actix_web::Result<impl actix_web::Responder> {
     if !regiments
-        .key
+        .get_key()
         .eq(&std::env::var("PRIVATE_KEY").unwrap_or_else(|_| "".to_string()))
     {
         return Err(actix_web::error::ErrorUnauthorized("Missing or wrong key, if you should access this data please contact the administrators"));
     }
-    let res: std::collections::HashMap<maths::fight::ComputeCase, maths::prediction::Prediction> =
-        maths::fight::compute_turn(&regiments.attacking_regiment, &regiments.defending_regiment);
-    Ok(actix_web::web::Json(res))
+    let prophecies: std::collections::HashMap<
+        maths::fight::ComputeCase,
+        maths::prediction::Prediction,
+    > = maths::fight::compute_turn(
+        &web_server::converter::web_objects::regiment_converter(regiments.get_attacking_regiment()),
+        &web_server::converter::web_objects::regiment_converter(regiments.get_defending_regiment()),
+    );
+    let result: web_server::response_structures::make_prophecy::MakeProphecyResponse =
+        web_server::response_structures::make_prophecy::MakeProphecyResponse::from_dict(prophecies);
+    Ok(actix_web::web::Json(result))
 }
 
 #[actix_web::main]
