@@ -291,9 +291,15 @@ mod tests {
             global_test::tests::initialize_mock_modifier_stats(),
             4,
             5,
-            20);
+            20,
+        );
         heavy_infantry
-        }
+    }
+
+    fn initialize_two_units() -> (regiment::Regiment, regiment::Regiment) {
+        (initialize_chaos_warrior(), initialize_heavy_infantry())
+    }
+
     #[test]
     fn test_compute_mean_case() {
         let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
