@@ -397,7 +397,7 @@ mod tests {
     #[test]
     fn stat_get_health_point() {
         let stats: Stats = global_test::tests::initialize_mock_stats();
-        assert_eq!(stats.get_health_point(), 1);
+        assert_eq!(stats.get_health_points(), 1);
     }
 
     #[test]
@@ -456,7 +456,7 @@ mod tests {
 
     #[test]
     fn stat_buff_ranged_weapon() {
-        let mut stats: Stats = initialize_stats();
+        let mut stats: Stats = global_test::tests::initialize_mock_stats();
         stats.apply_weapon_modifier(&super::modifier::WeaponModifier::new(Some(1), 3, 4));
         assert_eq!(stats.get_armour_penetration(), 5);
         assert_eq!(stats.get_strength(), 4);
@@ -464,20 +464,20 @@ mod tests {
 
     #[test]
     fn model_get_boosted_stats() {
-        let stats: Stats = initialize_stats();
+        let stats: Stats = global_test::tests::initialize_mock_stats();
         let copy: Stats = stats.clone();
 
-        let model: Model = super::Model::new(stats, vec![]);
+        let model: super::Model = super::Model::new(stats, vec![]);
         assert_eq!(model.get_boosted_stats(), &copy);
     }
 
     #[test]
     fn model_get_boosted_stats_with_modifier() {
-        let stats: Stats = initialize_stats();
+        let stats: Stats = global_test::tests::initialize_mock_stats();
         let mut copy: Stats = stats.clone();
         copy.apply_weapon_modifier(&super::modifier::WeaponModifier::new(Some(1), 1, 1));
 
-        let model: Model = super::Model::new(
+        let model: super::Model = super::Model::new(
             stats,
             vec![super::modifier::Modifier::Weapon(
                 super::modifier::WeaponModifier::new(Some(1), 1, 1),
@@ -488,15 +488,16 @@ mod tests {
 
     #[test]
     fn model_get_stats() {
-        let stats: Stats = initialize_stats();
-        let model: Model = super::Model::new(stats.clone(), vec![]);
+        let stats: Stats = global_test::tests::initialize_mock_stats();
+        let model: super::Model = super::Model::new(stats.clone(), vec![]);
         assert_eq!(model.get_stats(), &stats);
     }
 
     #[test]
     fn test_apply_modifier_ranged_weapon() {
-        let mut stats: Stats = initialize_stats();
-        let modifier: Modifier = super::modifier::Modifier::new_weapon(Some(1), 3, 4);
+        let mut stats: Stats = global_test::tests::initialize_mock_stats();
+        let modifier: super::modifier::Modifier =
+            super::modifier::Modifier::new_weapon(Some(1), 3, 4);
         stats.apply_modifier(&modifier);
         assert_eq!(stats.get_armour_penetration(), 5);
         assert_eq!(stats.get_strength(), 4);
@@ -504,8 +505,8 @@ mod tests {
 
     #[test]
     fn test_apply_modifier_global() {
-        let mut stats: Stats = initialize_stats();
-        let modifier: Modifier = super::modifier::Modifier::new_global(1, 1, 1);
+        let mut stats: Stats = global_test::tests::initialize_mock_stats();
+        let modifier: super::modifier::Modifier = super::modifier::Modifier::new_global(1, 1, 1);
         stats.apply_modifier(&modifier);
         assert_eq!(stats.get_advance(), 2);
         assert_eq!(stats.get_march(), 2);
@@ -514,8 +515,9 @@ mod tests {
 
     #[test]
     fn test_apply_modifier_defensive() {
-        let mut stats: Stats = initialize_stats();
-        let modifier: Modifier = super::modifier::Modifier::new_defensive(1, 1, 1, 1);
+        let mut stats: Stats = global_test::tests::initialize_mock_stats();
+        let modifier: super::modifier::Modifier =
+            super::modifier::Modifier::new_defensive(1, 1, 1, 1);
         stats.apply_modifier(&modifier);
         assert_eq!(stats.get_health_points(), 2);
         assert_eq!(stats.get_defense(), 2);
@@ -525,8 +527,9 @@ mod tests {
 
     #[test]
     fn test_apply_modifier_offensive() {
-        let mut stats: Stats = initialize_stats();
-        let modifier: Modifier = super::modifier::Modifier::new_offensive(1, 2, 3, 4, 5);
+        let mut stats: Stats = global_test::tests::initialize_mock_stats();
+        let modifier: super::modifier::Modifier =
+            super::modifier::Modifier::new_offensive(1, 2, 3, 4, 5);
         stats.apply_modifier(&modifier);
         assert_eq!(stats.get_attack(), 2);
         assert_eq!(stats.get_offensive(), 3);

@@ -3,7 +3,7 @@
 //! This module contain all the initialization and global functions needed by the tests
 #[cfg(test)]
 pub mod tests {
-    use crate::{model, regiment};
+    use crate::{model, modifier, regiment};
 
     /// # Initialize the stats structs with some values given as parameters
     ///
@@ -41,7 +41,7 @@ pub mod tests {
         advance: usize,
         march: usize,
         discipline: usize,
-        health_point: usize,
+        health_points: usize,
         defense: usize,
         resilience: usize,
         armour: usize,
@@ -59,7 +59,7 @@ pub mod tests {
                 discipline: discipline,
             },
             model::DefensiveStats {
-                health_point: health_point,
+                health_points: health_points,
                 defense: defense,
                 resilience: resilience,
                 armour: armour,
@@ -89,7 +89,7 @@ pub mod tests {
                 discipline: 1,
             },
             model::DefensiveStats {
-                health_point: 1,
+                health_points: 1,
                 defense: 1,
                 resilience: 1,
                 armour: 1,
@@ -142,7 +142,7 @@ pub mod tests {
         advance: usize,
         march: usize,
         discipline: usize,
-        health_point: usize,
+        health_points: usize,
         defense: usize,
         resilience: usize,
         armour: usize,
@@ -160,7 +160,7 @@ pub mod tests {
                 discipline: discipline,
             },
             model::DefensiveStats {
-                health_point: health_point,
+                health_points: health_points,
                 defense: defense,
                 resilience: resilience,
                 armour: armour,
@@ -190,7 +190,7 @@ pub mod tests {
                 discipline: 0,
             },
             model::DefensiveStats {
-                health_point: 0,
+                health_points: 0,
                 defense: 0,
                 resilience: 0,
                 armour: 0,
@@ -231,12 +231,12 @@ pub mod tests {
         nb_models: usize,
     ) -> regiment::Regiment {
         let stats: model::Stats = model_stats;
-        let modifier_stats: model::Stats = model_modifier_stats;
+        let _modifier_stats: model::Stats = model_modifier_stats;
 
-        let modifier: model::Modifier = model::Modifier::new(modifier_stats, false, 0, vec![]);
+        let modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
         let model: model::Model = model::Model::new(stats, vec![modifier]);
         let regiment: regiment::Regiment =
-            regiment::Regiment::new(model, nb_rows, nb_cols, nb_models);
+            regiment::Regiment::new(model, nb_rows, nb_cols, nb_models, None);
         regiment
     }
 }
