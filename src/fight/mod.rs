@@ -270,7 +270,7 @@ pub fn compute_turn(
 
 #[cfg(test)]
 mod tests {
-    use crate::{global_test, model, regiment, roll};
+    use crate::{global_test, prediction, regiment};
 
     use super::{compute_case, compute_mean_case, compute_turn, create_prediction, ComputeCase};
 
@@ -291,15 +291,9 @@ mod tests {
             global_test::tests::initialize_mock_modifier_stats(),
             4,
             5,
-            20,
-        );
+            20);
         heavy_infantry
-    }
-
-    fn initialize_two_units() -> (regiment::Regiment, regiment::Regiment) {
-        (initialize_chaos_warrior(), initialize_heavy_infantry())
-    }
-
+        }
     #[test]
     fn test_compute_mean_case() {
         let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
@@ -311,37 +305,31 @@ mod tests {
     }
 
     #[test]
-    fn test_fastest_is_two() {
-        let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
-        let heavy_infantry: regiment::Regiment = global_test::tests::initialize_regiment(
-            global_test::tests::initialize_stats(4, 8, 7, 1, 3, 3, 0, 0, 1, 3, 3, 0, 7),
-            global_test::tests::initialize_mock_modifier_stats(),
-            4,
-            5,
-            20,
-        );
-        assert_eq!(
-            find_the_fastest(chaos_warrior.get_model(), heavy_infantry.get_model()),
-            2
-        );
+    fn test_compute_case() {
+        let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
+            initialize_two_units();
+        let mut res: (usize, f64) = compute_case(&attacking, &defending, &ComputeCase::MEAN);
+        assert_eq!(res.0, 8);
+        res = compute_case(&attacking, &defending, &ComputeCase::WORST);
+        assert_eq!(res.0, 5);
+        res = compute_case(&attacking, &defending, &ComputeCase::BEST);
+        assert_eq!(res.0, 10);
+        res = compute_case(&defending, &attacking, &ComputeCase::MEAN);
+        assert_eq!(res.0, 1);
+        res = compute_case(&defending, &attacking, &ComputeCase::WORST);
+        assert_eq!(res.0, 3);
+        res = compute_case(&defending, &attacking, &ComputeCase::BEST);
+        assert_eq!(res.0, 3);
     }
 
     #[test]
-    fn test_fastest_is_none() {
-        let model_chaos_warrior: model::Model = initialize_chaos_warrior().get_model().to_owned();
-        let heavy_infantry: regiment::Regiment = global_test::tests::initialize_regiment(
-            global_test::tests::initialize_stats(4, 8, 7, 1, 3, 3, 0, 0, 1, 3, 3, 0, 5),
-            global_test::tests::initialize_mock_modifier_stats(),
-            4,
-            5,
-            20,
-        );
-        assert_eq!(
-            find_the_fastest(&model_chaos_warrior, heavy_infantry.get_model()),
-            0
-        );
-    }
-
+    fn test_create_prediction() {
+        let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
+            initialize_two_units();
+        let res: prediction::Prediction =
+            create_prediction(&attacking, &defending, &ComputeCase::MEAN);
+        assert_eq!(1, res.get_defending_regiment().get_points());
+        assert_eq!(8, res.get_attacking_regiment().get_points());
         let res: prediction::Prediction =
             create_prediction(&attacking, &defending, &ComputeCase::BEST);
         assert_eq!(3, res.get_defending_regiment().get_points());
@@ -372,236 +360,5 @@ mod tests {
                 .get_points(),
             10
         );
-        assert_eq!(
-            get_final_result(
-                nb_wounds,
-                regiment_defending_stats.get_armour(),
-                regiment_attacking_stats.get_armour_penetration()
-            ),
-            2
-        )
-    }
-
-    #[test]
-    fn test_final_result_3() {
-        let chaos_warrior: regiment::Regiment = global_test::tests::initialize_regiment(
-            global_test::tests::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
-            global_test::tests::initialize_mock_modifier_stats(),
-            4,
-            5,
-            20,
-        );
-        let heavy_infantry: regiment::Regiment = global_test::tests::initialize_regiment(
-            global_test::tests::initialize_stats(4, 8, 7, 1, 3, 3, 5, 0, 1, 3, 3, 0, 3),
-            global_test::tests::initialize_mock_modifier_stats(),
-            4,
-            5,
-            20,
-        );
-        let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
-        let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
-        let to_hit: usize = roll::compute_roll_to_hit(
-            regiment_attacking_stats.get_offensive(),
-            regiment_defending_stats.get_defense(),
-        );
-        let to_wound: usize = roll::compute_roll_to_wound(
-            regiment_attacking_stats.get_strength(),
-            regiment_defending_stats.get_resilience(),
-        );
-        let nb_attacks: usize = get_nb_attacks(&chaos_warrior);
-        let nb_wounds: usize = get_nb_wounds(nb_attacks, to_hit, to_wound);
-        assert_eq!(
-            get_final_result(
-                nb_wounds,
-                regiment_defending_stats.get_armour(),
-                regiment_attacking_stats.get_armour_penetration()
-            ),
-            2
-        )
-    }
-
-    #[test]
-    fn test_final_result_4() {
-        let chaos_warrior: regiment::Regiment = global_test::tests::initialize_regiment(
-            global_test::tests::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
-            global_test::tests::initialize_mock_modifier_stats(),
-            4,
-            5,
-            20,
-        );
-        let heavy_infantry: regiment::Regiment = global_test::tests::initialize_regiment(
-            global_test::tests::initialize_stats(4, 8, 7, 1, 3, 3, 4, 0, 1, 3, 3, 0, 3),
-            global_test::tests::initialize_mock_modifier_stats(),
-            4,
-            5,
-            20,
-        );
-        let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
-        let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
-        let to_hit: usize = roll::compute_roll_to_hit(
-            regiment_attacking_stats.get_offensive(),
-            regiment_defending_stats.get_defense(),
-        );
-        let to_wound: usize = roll::compute_roll_to_wound(
-            regiment_attacking_stats.get_strength(),
-            regiment_defending_stats.get_resilience(),
-        );
-        let nb_attacks: usize = get_nb_attacks(&chaos_warrior);
-        let nb_wounds: usize = get_nb_wounds(nb_attacks, to_hit, to_wound);
-        assert_eq!(
-            res.get(&ComputeCase::BEST)
-                .unwrap()
-                .get_defending_regiment()
-                .get_points(),
-            3
-        )
-    }
-
-    #[test]
-    fn test_final_result_5() {
-        let chaos_warrior: regiment::Regiment = global_test::tests::initialize_regiment(
-            global_test::tests::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
-            global_test::tests::initialize_mock_modifier_stats(),
-            4,
-            5,
-            20,
-        );
-        let heavy_infantry: regiment::Regiment = global_test::tests::initialize_regiment(
-            global_test::tests::initialize_stats(4, 8, 7, 1, 3, 3, 3, 0, 1, 3, 3, 0, 3),
-            global_test::tests::initialize_mock_modifier_stats(),
-            4,
-            5,
-            20,
-        );
-        let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
-        let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
-        let to_hit: usize = roll::compute_roll_to_hit(
-            regiment_attacking_stats.get_offensive(),
-            regiment_defending_stats.get_defense(),
-        );
-        let to_wound: usize = roll::compute_roll_to_wound(
-            regiment_attacking_stats.get_strength(),
-            regiment_defending_stats.get_resilience(),
-        );
-        let nb_attacks: usize = get_nb_attacks(&chaos_warrior);
-        let nb_wounds: usize = get_nb_wounds(nb_attacks, to_hit, to_wound);
-        assert_eq!(
-            get_final_result(
-                nb_wounds,
-                regiment_defending_stats.get_armour(),
-                regiment_attacking_stats.get_armour_penetration()
-            ),
-            4
-        )
-    }
-
-    #[test]
-    fn test_final_result_6() {
-        let chaos_warrior: regiment::Regiment = global_test::tests::initialize_regiment(
-            global_test::tests::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
-            global_test::tests::initialize_mock_modifier_stats(),
-            4,
-            5,
-            20,
-        );
-        let heavy_infantry: regiment::Regiment = global_test::tests::initialize_regiment(
-            global_test::tests::initialize_stats(4, 8, 7, 1, 3, 3, 2, 0, 1, 3, 3, 0, 3),
-            global_test::tests::initialize_mock_modifier_stats(),
-            4,
-            5,
-            20,
-        );
-        let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
-        let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
-        let to_hit: usize = roll::compute_roll_to_hit(
-            regiment_attacking_stats.get_offensive(),
-            regiment_defending_stats.get_defense(),
-        );
-        let to_wound: usize = roll::compute_roll_to_wound(
-            regiment_attacking_stats.get_strength(),
-            regiment_defending_stats.get_resilience(),
-        );
-        let nb_attacks: usize = get_nb_attacks(&chaos_warrior);
-        let nb_wounds: usize = get_nb_wounds(nb_attacks, to_hit, to_wound);
-        assert_eq!(
-            get_final_result(
-                nb_wounds,
-                regiment_defending_stats.get_armour(),
-                regiment_attacking_stats.get_armour_penetration()
-            ),
-            5
-        )
-    }
-
-    #[test]
-    fn test_final_result_7() {
-        let chaos_warrior: regiment::Regiment = global_test::tests::initialize_regiment(
-            global_test::tests::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
-            global_test::tests::initialize_mock_modifier_stats(),
-            4,
-            5,
-            20,
-        );
-        let heavy_infantry: regiment::Regiment = global_test::tests::initialize_regiment(
-            global_test::tests::initialize_stats(4, 8, 7, 1, 3, 3, 6, 0, 1, 3, 3, 0, 3),
-            global_test::tests::initialize_mock_modifier_stats(),
-            4,
-            5,
-            20,
-        );
-        let regiment_attacking_stats: &model::Stats = chaos_warrior.get_model().get_stats();
-        let regiment_defending_stats: &model::Stats = heavy_infantry.get_model().get_stats();
-        let to_hit: usize = roll::compute_roll_to_hit(
-            regiment_attacking_stats.get_offensive(),
-            regiment_defending_stats.get_defense(),
-        );
-        let to_wound: usize = roll::compute_roll_to_wound(
-            regiment_attacking_stats.get_strength(),
-            regiment_defending_stats.get_resilience(),
-        );
-        let nb_attacks: usize = get_nb_attacks(&chaos_warrior);
-        let nb_wounds: usize = get_nb_wounds(nb_attacks, to_hit, to_wound);
-        assert_eq!(
-            get_final_result(
-                nb_wounds,
-                regiment_defending_stats.get_armour(),
-                regiment_attacking_stats.get_armour_penetration()
-            ),
-            1
-        )
-    }
-
-    #[test]
-    fn test_fight_first_turn_1() {
-        let (chaos_warrior, heavy_infantry): (regiment::Regiment, regiment::Regiment) =
-            initialize_two_units();
-        assert_eq!(fight_first_turn(&chaos_warrior, &heavy_infantry), 8)
-    }
-
-    #[test]
-    fn test_fight_first_turn_2() {
-        let (chaos_warrior, heavy_infantry): (regiment::Regiment, regiment::Regiment) =
-            initialize_two_units();
-        assert_eq!(fight_first_turn(&heavy_infantry, &chaos_warrior), 1)
-    }
-
-    #[test]
-    fn test_resolve_fight_1() {
-        let (chaos_warrior, heavy_infantry): (regiment::Regiment, regiment::Regiment) =
-            initialize_two_units();
-        assert_eq!(resolve_fight(chaos_warrior, heavy_infantry), 8)
-    }
-
-    #[test]
-    fn test_resolve_fight_2() {
-        let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
-        let heavy_infantry: regiment::Regiment = global_test::tests::initialize_regiment(
-            global_test::tests::initialize_stats(4, 8, 7, 1, 3, 3, 0, 0, 1, 3, 3, 0, 2),
-            global_test::tests::initialize_mock_modifier_stats(),
-            4,
-            5,
-            20,
-        );
-        assert_eq!(resolve_fight(heavy_infantry, chaos_warrior), 8)
     }
 }

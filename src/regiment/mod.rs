@@ -147,7 +147,7 @@ impl Regiment {
 
 #[cfg(test)]
 mod tests {
-    use crate::{global_test, model, regiment};
+    use crate::{global_test, model, modifier, regiment};
 
     fn initialize_chaos_warrior() -> regiment::Regiment {
         let chaos_warrior: regiment::Regiment = global_test::tests::initialize_regiment(
@@ -164,11 +164,10 @@ mod tests {
     fn test_get_model() {
         let chaos_warrior_stats: model::Stats =
             global_test::tests::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4);
-        let chaos_warrior_modifier_stats: model::Stats =
+        let _chaos_warrior_modifier_stats: model::Stats =
             global_test::tests::initialize_mock_modifier_stats();
 
-        let chaos_warrior_modifier: model::Modifier =
-            model::Modifier::new(chaos_warrior_modifier_stats, false, 0, vec![]);
+        let chaos_warrior_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
         let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
