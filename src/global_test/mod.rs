@@ -222,7 +222,6 @@ pub mod tests {
     ///
     /// # Return
     /// Regiment : a regiment struct initialized
-
     pub fn initialize_regiment(
         model_stats: model::Stats,
         model_modifier_stats: model::Stats,
@@ -237,6 +236,30 @@ pub mod tests {
         let model: model::Model = model::Model::new(stats, vec![modifier]);
         let regiment: regiment::Regiment =
             regiment::Regiment::new(model, nb_rows, nb_cols, nb_models, None);
+        regiment
+    }
+
+    /// Initialize a model with a stats that have 1 for each element of it's stat and and a dummy weapon
+    pub fn initialize_mock_model() -> model::Model {
+        let stats: model::Stats = initialize_mock_stats();
+        let _modifier_stats: model::Stats = initialize_mock_modifier_stats();
+
+        let modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
+        let model: model::Model = model::Model::new(stats, vec![modifier]);
+        model
+    }
+
+    /// Initialize a regiment with a model that have 1 for each element of it's stat and a dummy weapon
+    ///
+    /// ## Return
+    /// regiment: Our mock modifier Stats struct
+    pub fn initialize_mock_regiment() -> regiment::Regiment {
+        let stats: model::Stats = initialize_mock_stats();
+        let _modifier_stats: model::Stats = initialize_mock_modifier_stats();
+
+        let modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
+        let model: model::Model = model::Model::new(stats, vec![modifier]);
+        let regiment: regiment::Regiment = regiment::Regiment::new(model, 1, 1, 1, None);
         regiment
     }
 }

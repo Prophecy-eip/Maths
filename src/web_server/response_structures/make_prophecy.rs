@@ -166,21 +166,46 @@ mod tests {
         assert_eq!(make_prophecy_response.average_case == copies.2, true);
     }
 
-    /*#[test]
+    #[test]
     fn test_make_prophecy_response_from_dict() {
-        let prophecies: std::collections::HashMap<
+        let mut prophecies: std::collections::HashMap<
             crate::fight::ComputeCase,
             crate::prediction::Prediction,
         > = std::collections::HashMap::new();
         prophecies.insert(
             crate::fight::ComputeCase::BEST,
             crate::prediction::Prediction::new(
-                crate::regiment::Regiment::new(1, 2, 3, 4, None),
-                crate::regiment::Regiment::new(5, 6, 7, 8, None),
+                crate::global_test::tests::initialize_mock_regiment(),
+                crate::global_test::tests::initialize_mock_regiment(),
                 0.5,
+            ),
+        );
+        prophecies.insert(
+            crate::fight::ComputeCase::WORST,
+            crate::prediction::Prediction::new(
+                crate::global_test::tests::initialize_mock_regiment(),
+                crate::global_test::tests::initialize_mock_regiment(),
+                0.6,
+            ),
+        );
+        prophecies.insert(
+            crate::fight::ComputeCase::MEAN,
+            crate::prediction::Prediction::new(
+                crate::global_test::tests::initialize_mock_regiment(),
+                crate::global_test::tests::initialize_mock_regiment(),
+                0.7,
             ),
         );
 
         let make_prophecy_response = MakeProphecyResponse::from_dict(prophecies);
-    }*/
+        assert_eq!(make_prophecy_response.best_case.occurrence_probability, 0.5);
+        assert_eq!(
+            make_prophecy_response.worst_case.occurrence_probability,
+            0.6
+        );
+        assert_eq!(
+            make_prophecy_response.average_case.occurrence_probability,
+            0.7
+        );
+    }
 }
