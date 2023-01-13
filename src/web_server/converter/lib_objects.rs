@@ -4,6 +4,13 @@
 
 use crate::web_server;
 
+/// Create a modifier usable by the web server from a library modifier
+///
+/// ## Parameters
+/// (crate::modifier::Modifier) modifier: The library modifier to convert
+///
+/// ## Return
+/// (web_server::data_structures::modifier::Modifier) The converted modifier
 pub fn modifier_converter(
     modifier: &crate::modifier::Modifier,
 ) -> web_server::data_structures::modifier::Modifier {
@@ -50,6 +57,13 @@ pub fn modifier_converter(
     }
 }
 
+/// Create a model usable by the web server from a library model
+///
+/// ## Parameters
+/// (crate::model::Model) model: The library model to convert
+///
+/// ## Return
+/// (web_server::data_structures::model::Model) The converted model
 pub fn model_converter(model: &crate::model::Model) -> web_server::data_structures::model::Model {
     let mut web_model: web_server::data_structures::model::Model =
         web_server::data_structures::model::Model {
@@ -76,6 +90,13 @@ pub fn model_converter(model: &crate::model::Model) -> web_server::data_structur
     web_model
 }
 
+/// Create a regiment usable by the web server from a library regiment
+///
+/// ## Parameters
+/// (crate::regiment::Regiment) regiment: The library regiment to convert
+///
+/// ## Return
+/// (web_server::data_structures::regiment::Regiment) The converted regiment
 pub fn regiment_converter(
     regiment: &crate::regiment::Regiment,
 ) -> web_server::data_structures::regiment::Regiment {
