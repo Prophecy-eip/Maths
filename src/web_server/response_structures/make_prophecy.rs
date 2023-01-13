@@ -2,6 +2,16 @@
 //!
 //! This module contains all the data structures needed by the make_prophecy response
 
+/// Struct that describe a regiment's formation and the number of points it carries
+///
+/// ## Attributes
+/// nb_rows (usize): Number of rows in the regiment's formation
+///
+/// nb_cols (usize): Number of columns in the regiment's formation
+///
+/// nb_models (usize): Number of models in the regiment's formation
+///
+/// points (usize): Number of points the regiment carries
 #[derive(serde::Serialize, serde::Deserialize, PartialEq, Clone)]
 pub struct RegimentData {
     pub nb_rows: usize,
@@ -11,6 +21,19 @@ pub struct RegimentData {
 }
 
 impl RegimentData {
+    /// Create a new RegimentData
+    ///
+    /// ## Parameters
+    /// (usize) nb_rows: Number of rows in the regiment's formation
+    ///
+    /// (usize) nb_cols: Number of columns in the regiment's formation
+    ///
+    /// (usize) nb_models: Number of models in the regiment's formation
+    ///
+    /// (usize) points: Number of points the regiment carries
+    ///
+    /// ## Return
+    /// RegimentData: The newly created RegimentData
     pub fn new(nb_rows: usize, nb_cols: usize, nb_models: usize, points: usize) -> Self {
         Self {
             nb_rows,
@@ -21,6 +44,14 @@ impl RegimentData {
     }
 }
 
+/// Struct that describe a prediction
+///
+/// ## Attributes
+/// attacking_regiment (RegimentData): The attacking regiment post fight
+///
+/// defending_regiment (RegimentData): The defending regiment post fight
+///
+/// occurrence_probability (f64): The probability of the prediction to occur
 #[derive(serde::Serialize, serde::Deserialize, PartialEq, Clone)]
 pub struct Prediction {
     pub attacking_regiment: RegimentData,
@@ -29,6 +60,17 @@ pub struct Prediction {
 }
 
 impl Prediction {
+    /// Create a new Prediction
+    ///
+    /// ## Parameters
+    /// (RegimentData) attacking_regiment: The attacking regiment post fight
+    ///
+    /// (RegimentData) defending_regiment: The defending regiment post fight
+    ///
+    /// (f64) occurrence_probability: The probability of the prediction to occur
+    ///
+    /// ## Return
+    /// Prediction: The newly created Prediction
     pub fn new(
         attacking_regiment: RegimentData,
         defending_regiment: RegimentData,
@@ -42,6 +84,14 @@ impl Prediction {
     }
 }
 
+/// The data_structure returned by the make_prophecy endpoint
+///
+/// ## Attributes
+/// best_case (Prediction): The best case prediction
+///
+/// worst_case (Prediction): The worst case prediction
+///
+/// average_case (Prediction): The average case prediction
 #[derive(serde::Serialize, serde::Deserialize, PartialEq, Clone)]
 pub struct MakeProphecyResponse {
     best_case: Prediction,
@@ -50,6 +100,17 @@ pub struct MakeProphecyResponse {
 }
 
 impl MakeProphecyResponse {
+    /// Create a new MakeProphecyResponse
+    ///
+    /// ## Parameters
+    /// (Prediction) best_case: The best case prediction
+    ///
+    /// (Prediction) worst_case: The worst case prediction
+    ///
+    /// (Prediction) average_case: The average case prediction
+    ///
+    /// ## Return
+    /// MakeProphecyResponse: The newly created MakeProphecyResponse
     pub fn new(best_case: Prediction, worst_case: Prediction, average_case: Prediction) -> Self {
         Self {
             best_case,
@@ -58,6 +119,13 @@ impl MakeProphecyResponse {
         }
     }
 
+    /// Create a new MakeProphecyResponse from a dictionary of predictions
+    ///
+    /// ## Parameters
+    /// (std::collections::HashMap<crate::fight::ComputeCase, crate::prediction::Prediction>) prophecies: The dictionary of predictions
+    ///
+    /// ## Return
+    /// MakeProphecyResponse: The newly created MakeProphecyResponse
     pub fn from_dict(
         prophecies: std::collections::HashMap<
             crate::fight::ComputeCase,
