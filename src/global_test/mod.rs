@@ -181,7 +181,6 @@ pub mod tests {
     ///
     /// # Return
     /// Modifier Stats: Our mock modifier Stats struct
-
     pub fn initialize_mock_modifier_stats() -> model::Stats {
         let modifier_stats: model::Stats = model::Stats::new(
             model::GlobalStats {
@@ -235,7 +234,10 @@ pub mod tests {
         regiment
     }
 
-    /// Initialize a model with a stats that have 1 for each element of it's stat and and a dummy weapon
+    /// Initialize a model with a stats that values 1 for each of it's fields and and a dummy weapon
+    ///
+    /// ## Return
+    /// model: Our mock model struct
     pub fn initialize_mock_model() -> model::Model {
         let stats: model::Stats = initialize_mock_stats();
 

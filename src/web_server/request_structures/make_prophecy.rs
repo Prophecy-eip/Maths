@@ -4,6 +4,14 @@
 
 use crate::web_server::data_structures::regiment;
 
+/// The request sent to the server on the make_prophecy endpoint
+///
+/// ## Attributes
+/// key (String): The private key used to authenticate the request
+///
+/// attacking_regiment (Regiment): The attacking regiment
+///
+/// defending_regiment (Regiment): The defending regiment
 #[derive(serde::Serialize, serde::Deserialize)]
 pub struct MakeProphecyRequest {
     key: String,
@@ -12,6 +20,17 @@ pub struct MakeProphecyRequest {
 }
 
 impl MakeProphecyRequest {
+    /// Create a new MakeProphecyRequest
+    ///
+    /// ## Parameters
+    /// (String) key: The private key used to authenticate the request
+    ///
+    /// (Regiment) attacking_regiment: The attacking regiment
+    ///
+    /// (Regiment) defending_regiment: The defending regiment
+    ///
+    /// ## Return
+    /// MakeProphecyRequest: The newly created MakeProphecyRequest
     pub fn new(
         key: String,
         attacking_regiment: regiment::Regiment,
@@ -24,14 +43,26 @@ impl MakeProphecyRequest {
         }
     }
 
+    /// Get the private key used to authenticate the request
+    ///
+    /// ## Return
+    /// String: The private key used to authenticate the request
     pub fn get_key(&self) -> &String {
         &self.key
     }
 
+    /// Get the attacking regiment
+    ///
+    /// ## Return
+    /// Regiment: The attacking regiment
     pub fn get_attacking_regiment(&self) -> &regiment::Regiment {
         &self.attacking_regiment
     }
 
+    /// Get the defending regiment
+    ///
+    /// ## Return
+    /// Regiment: The defending regiment
     pub fn get_defending_regiment(&self) -> &regiment::Regiment {
         &self.defending_regiment
     }
