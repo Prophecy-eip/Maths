@@ -10,20 +10,6 @@ pub struct RegimentData {
     pub points: usize,
 }
 
-#[derive(serde::Serialize, serde::Deserialize, PartialEq, Clone)]
-pub struct Prediction {
-    pub attacking_regiment: RegimentData,
-    pub defending_regiment: RegimentData,
-    pub occurrence_probability: f64,
-}
-
-#[derive(serde::Serialize, serde::Deserialize, PartialEq, Clone)]
-pub struct MakeProphecyResponse {
-    best_case: Prediction,
-    worst_case: Prediction,
-    average_case: Prediction,
-}
-
 impl RegimentData {
     pub fn new(nb_rows: usize, nb_cols: usize, nb_models: usize, points: usize) -> Self {
         Self {
@@ -33,6 +19,13 @@ impl RegimentData {
             points,
         }
     }
+}
+
+#[derive(serde::Serialize, serde::Deserialize, PartialEq, Clone)]
+pub struct Prediction {
+    pub attacking_regiment: RegimentData,
+    pub defending_regiment: RegimentData,
+    pub occurrence_probability: f64,
 }
 
 impl Prediction {
@@ -47,6 +40,13 @@ impl Prediction {
             occurrence_probability,
         }
     }
+}
+
+#[derive(serde::Serialize, serde::Deserialize, PartialEq, Clone)]
+pub struct MakeProphecyResponse {
+    best_case: Prediction,
+    worst_case: Prediction,
+    average_case: Prediction,
 }
 
 impl MakeProphecyResponse {
