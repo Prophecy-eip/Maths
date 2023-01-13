@@ -57,8 +57,6 @@ pub struct Stats {
 /// ## Attributes
 /// stats (Stats): The statistics of the Model
 ///
-/// boosted_stats (Stats): The statistics of the Model taking account of the modifiers
-///
 /// modifiers (Vec<Modifier>): The list of Modifier the Model have
 #[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
 pub struct Model {

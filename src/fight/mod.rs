@@ -277,7 +277,6 @@ mod tests {
     fn initialize_chaos_warrior() -> regiment::Regiment {
         let chaos_warrior: regiment::Regiment = global_test::tests::initialize_regiment(
             global_test::tests::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 4, 5, 1, 4),
-            global_test::tests::initialize_mock_modifier_stats(),
             4,
             5,
             20,
@@ -288,7 +287,6 @@ mod tests {
     fn initialize_heavy_infantry() -> regiment::Regiment {
         let heavy_infantry: regiment::Regiment = global_test::tests::initialize_regiment(
             global_test::tests::initialize_stats(4, 8, 7, 1, 3, 3, 0, 0, 1, 3, 3, 0, 3),
-            global_test::tests::initialize_mock_modifier_stats(),
             4,
             5,
             20,
