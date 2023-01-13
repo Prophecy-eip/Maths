@@ -152,7 +152,6 @@ mod tests {
     fn initialize_chaos_warrior() -> regiment::Regiment {
         let chaos_warrior: regiment::Regiment = global_test::tests::initialize_regiment(
             global_test::tests::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
-            global_test::tests::initialize_mock_modifier_stats(),
             4,
             5,
             20,

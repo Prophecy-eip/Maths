@@ -14,8 +14,6 @@ use crate::web_server::data_structures::model;
 /// nb_cols (usize): Number of columns in the Regiment
 ///
 /// nb_models (usize): Number of Model remaining in the Regiment
-///
-/// regiment_health_points (usize): The total number of health points that left to the regiment
 #[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
 pub struct Regiment {
     pub model: model::Model,
