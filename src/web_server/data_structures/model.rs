@@ -58,8 +58,11 @@ pub struct Stats {
 /// stats (Stats): The statistics of the Model
 ///
 /// modifiers (Vec<Modifier>): The list of Modifier the Model have
+///
+/// banner_bearer (bool): If the Model is a banner bearer
 #[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
 pub struct Model {
     pub stats: Stats,
     pub modifiers: Vec<modifier::Modifier>,
+    pub banner_bearer: bool,
 }

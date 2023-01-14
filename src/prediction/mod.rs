@@ -98,7 +98,7 @@ mod tests {
 
         let chaos_warrior_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
         let model_chaos_warrior: model::Model =
-            model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier]);
+            model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier], false);
         let chaos_warrior: regiment::Regiment =
             regiment::Regiment::new(model_chaos_warrior, 4, 5, 20, None);
         chaos_warrior
