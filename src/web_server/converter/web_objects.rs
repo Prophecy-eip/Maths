@@ -111,6 +111,28 @@ pub fn regiment_converter(
     )
 }
 
+/// This is the enumeration of the differents attacking positions
+///
+/// FRONT: The attacking regiment is charging from the front of the defending unit
+/// FLANK: The attacking regiment is charging from the left or the right flank of the defending unit
+/// BACK: The attacking regiment is charging from the back of the defending unit
+#[derive(Clone, Copy)]
+pub enum AttackPosition {
+    FRONT,
+    FLANK,
+    BACK,
+}
+
+
+pub fn attacking_position_converter(attacking_position: String) -> AttackPosition {
+    match attacking_position.as_str() {
+        "front" => AttackPosition::FRONT,
+        "flank" => AttackPosition::FLANK,
+        "back" => AttackPosition::BACK,
+        _ => AttackPosition::FRONT,
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
