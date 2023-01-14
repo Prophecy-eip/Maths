@@ -15,6 +15,7 @@ use crate::web_server::data_structures::regiment;
 #[derive(serde::Serialize, serde::Deserialize)]
 pub struct MakeProphecyRequest {
     key: String,
+    attacking_position: String,
     attacking_regiment: regiment::Regiment,
     defending_regiment: regiment::Regiment,
 }
@@ -33,11 +34,13 @@ impl MakeProphecyRequest {
     /// MakeProphecyRequest: The newly created MakeProphecyRequest
     pub fn new(
         key: String,
+        attacking_position: String,
         attacking_regiment: regiment::Regiment,
         defending_regiment: regiment::Regiment,
     ) -> Self {
         Self {
             key,
+            attacking_position,
             attacking_regiment,
             defending_regiment,
         }
@@ -49,6 +52,14 @@ impl MakeProphecyRequest {
     /// String: The private key used to authenticate the request
     pub fn get_key(&self) -> &String {
         &self.key
+    }
+
+    /// Get the attacking position
+    /// 
+    /// ## Return
+    /// &String: The attacking position
+    pub fn get_attacking_position(&self) -> String {
+        self.attacking_position.clone()
     }
 
     /// Get the attacking regiment
@@ -103,9 +114,10 @@ mod tests {
 
     fn create_prophecy_request() -> MakeProphecyRequest {
         let key: String = std::env::var("PRIVATE_KEY").unwrap_or_else(|_| "".to_string());
+        let attacking_position: String = String::from("front");
         let attacking_regiment: regiment::Regiment = create_dummy_regiment(1);
         let defending_regiment: regiment::Regiment = create_dummy_regiment(2);
-        MakeProphecyRequest::new(key, attacking_regiment, defending_regiment)
+        MakeProphecyRequest::new(key, attacking_position, attacking_regiment, defending_regiment)
     }
 
     #[test]
