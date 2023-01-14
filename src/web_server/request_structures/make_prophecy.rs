@@ -96,6 +96,7 @@ mod tests {
                     armour_penetration: value,
                     agility: value,
                 },
+                banner_bearer: false,
             },
         }
     }

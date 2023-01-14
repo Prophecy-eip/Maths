@@ -217,6 +217,8 @@ pub mod tests {
     ///
     /// nb_models (usize): the number of models in the regiment
     ///
+    /// banner (bool): if the regiment has a banner or not
+    ///
     /// # Return
     /// Regiment : a regiment struct initialized
     pub fn initialize_regiment(
@@ -224,11 +226,12 @@ pub mod tests {
         nb_rows: usize,
         nb_cols: usize,
         nb_models: usize,
+        banner: bool,
     ) -> regiment::Regiment {
         let stats: model::Stats = model_stats;
 
         let modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
-        let model: model::Model = model::Model::new(stats, vec![modifier]);
+        let model: model::Model = model::Model::new(stats, vec![modifier], banner);
         let regiment: regiment::Regiment =
             regiment::Regiment::new(model, nb_rows, nb_cols, nb_models, None);
         regiment
@@ -242,7 +245,7 @@ pub mod tests {
         let stats: model::Stats = initialize_mock_stats();
 
         let modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
-        let model: model::Model = model::Model::new(stats, vec![modifier]);
+        let model: model::Model = model::Model::new(stats, vec![modifier], false);
         model
     }
 
@@ -254,7 +257,7 @@ pub mod tests {
         let stats: model::Stats = initialize_mock_stats();
 
         let modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
-        let model: model::Model = model::Model::new(stats, vec![modifier]);
+        let model: model::Model = model::Model::new(stats, vec![modifier], false);
         let regiment: regiment::Regiment = regiment::Regiment::new(model, 1, 1, 1, None);
         regiment
     }

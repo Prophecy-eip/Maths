@@ -83,6 +83,7 @@ pub fn model_converter(model: &crate::model::Model) -> web_server::data_structur
                 agility: model.get_stats().get_agility(),
             },
             modifiers: vec![],
+            banner_bearer: model.is_banner_bearer(),
         };
     for modifier in model.get_modifiers() {
         web_model.modifiers.push(modifier_converter(modifier));

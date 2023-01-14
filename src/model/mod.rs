@@ -327,11 +327,14 @@ impl Stats {
 /// boosted_stats (Stats): The statistics of the Model taking account of the modifiers
 ///
 /// modifiers (Vec<Modifier>): The list of Modifier the Model have
+///
+/// banner_bearer (bool): If the Model is a banner bearer
 #[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
 pub struct Model {
     stats: Stats,
     boosted_stats: Stats,
     modifiers: Vec<modifier::Modifier>,
+    banner_bearer: bool,
 }
 
 impl Model {
@@ -339,11 +342,14 @@ impl Model {
     ///
     /// ## Parameters
     /// (Stats) stats: The model stats
+    ///
     /// (Vec<Modifier>) modifiers: The modifiers applied on the model
+    ///
+    /// (bool) banner_bearer: If the model is a banner bearer
     ///
     /// ## Return
     /// Model: The Model created
-    pub fn new(stats: Stats, modifiers: Vec<modifier::Modifier>) -> Model {
+    pub fn new(stats: Stats, modifiers: Vec<modifier::Modifier>, banner_bearer: bool) -> Model {
         let mut boosted_stats = stats.clone();
         for modifier in &modifiers {
             boosted_stats.apply_modifier(modifier);
@@ -352,6 +358,7 @@ impl Model {
             stats,
             boosted_stats,
             modifiers,
+            banner_bearer,
         }
     }
     /// Get the Stats of the Model taking account of the modifiers
@@ -386,6 +393,14 @@ impl Model {
     /// &Vec<modifier::Modifier>: The list of modifiers
     pub fn get_modifiers(&self) -> &Vec<modifier::Modifier> {
         &self.modifiers
+    }
+
+    /// Tells if the model owns a banner
+    ///
+    /// ## Return
+    /// bool: If the model is a banner bearer
+    pub fn is_banner_bearer(&self) -> bool {
+        self.banner_bearer
     }
 }
 
@@ -485,7 +500,7 @@ mod tests {
         let stats: Stats = global_test::tests::initialize_mock_stats();
         let copy: Stats = stats.clone();
 
-        let model: super::Model = super::Model::new(stats, vec![]);
+        let model: super::Model = super::Model::new(stats, vec![], false);
         assert_eq!(model.get_boosted_stats(), &copy);
     }
 
@@ -500,6 +515,7 @@ mod tests {
             vec![super::modifier::Modifier::Weapon(
                 super::modifier::WeaponModifier::new(Some(1), 1, 1),
             )],
+            false,
         );
         assert_eq!(model.get_boosted_stats(), &copy);
     }
@@ -507,7 +523,7 @@ mod tests {
     #[test]
     fn model_get_stats() {
         let stats: Stats = global_test::tests::initialize_mock_stats();
-        let model: super::Model = super::Model::new(stats.clone(), vec![]);
+        let model: super::Model = super::Model::new(stats.clone(), vec![], false);
         assert_eq!(model.get_stats(), &stats);
     }
 
@@ -554,5 +570,14 @@ mod tests {
         assert_eq!(stats.get_strength(), 4);
         assert_eq!(stats.get_armour_penetration(), 5);
         assert_eq!(stats.get_agility(), 6);
+    }
+
+    #[test]
+    fn test_model_banner_bearing() {
+        let stats: Stats = global_test::tests::initialize_mock_stats();
+        let model: super::Model = super::Model::new(stats.clone(), vec![], true);
+        let second_model: super::Model = super::Model::new(stats, vec![], false);
+        assert_eq!(model.is_banner_bearer(), true);
+        assert_eq!(second_model.is_banner_bearer(), false);
     }
 }

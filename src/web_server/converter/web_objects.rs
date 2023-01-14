@@ -82,6 +82,7 @@ pub fn model_converter(
             },
         ),
         vec![],
+        web_model.banner_bearer,
     );
 
     for web_modifier in &web_model.modifiers {
@@ -181,6 +182,7 @@ mod tests {
                 agility: 13,
             },
             modifiers: vec![],
+            banner_bearer: false,
         };
         let model: Model = model_converter(&web_model);
         assert_eq!(
@@ -207,7 +209,8 @@ mod tests {
                         agility: 13,
                     },
                 ),
-                vec![]
+                vec![],
+                false
             )
         );
     }
@@ -232,6 +235,7 @@ mod tests {
                     agility: 13,
                 },
                 modifiers: vec![],
+                banner_bearer: false,
             },
             nb_rows: 1,
             nb_cols: 2,
@@ -263,7 +267,8 @@ mod tests {
                             agility: 13,
                         },
                     ),
-                    vec![]
+                    vec![],
+                    false
                 ),
                 1,
                 2,
