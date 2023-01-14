@@ -179,6 +179,12 @@ fn apply_fight(
     let first_damages: (usize, f64) = compute_case(fastest.0, slowest.0, fastest.1);
     let mut second_damages: (usize, f64) = compute_case(slowest.0, fastest.0, slowest.1);
 
+    if fastest.0.get_model().is_banner_bearer() {
+        fastest.0.earn_points(1);
+    }
+    if slowest.0.get_model().is_banner_bearer() {
+        slowest.0.earn_points(1);
+    }
     slowest.0.take_damage(first_damages.0);
     fastest.0.earn_points(first_damages.0);
     if speed_equality {
@@ -236,6 +242,8 @@ fn create_prediction(
             false,
         )
     };
+    // as we consider the attacking regiment's charging. According to the rules, they get one bonus point
+    final_attacking.earn_points(1);
     prediction::Prediction::new(final_attacking, final_defending, probability)
 }
 
@@ -280,6 +288,18 @@ mod tests {
             4,
             5,
             20,
+            false,
+        );
+        chaos_warrior
+    }
+
+    fn initialize_chaos_warrior_with_banner() -> regiment::Regiment {
+        let chaos_warrior: regiment::Regiment = global_test::tests::initialize_regiment(
+            global_test::tests::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 4, 5, 1, 4),
+            4,
+            5,
+            20,
+            true,
         );
         chaos_warrior
     }
@@ -290,12 +310,31 @@ mod tests {
             4,
             5,
             20,
+            false,
+        );
+        heavy_infantry
+    }
+
+    fn initialize_heavy_infantry_with_banner() -> regiment::Regiment {
+        let heavy_infantry: regiment::Regiment = global_test::tests::initialize_regiment(
+            global_test::tests::initialize_stats(4, 8, 7, 1, 3, 3, 0, 0, 1, 3, 3, 0, 3),
+            4,
+            5,
+            20,
+            true,
         );
         heavy_infantry
     }
 
     fn initialize_two_units() -> (regiment::Regiment, regiment::Regiment) {
         (initialize_chaos_warrior(), initialize_heavy_infantry())
+    }
+
+    fn initialize_two_units_with_banner() -> (regiment::Regiment, regiment::Regiment) {
+        (
+            initialize_chaos_warrior_with_banner(),
+            initialize_heavy_infantry_with_banner(),
+        )
     }
 
     #[test]
@@ -333,16 +372,16 @@ mod tests {
         let res: prediction::Prediction =
             create_prediction(&attacking, &defending, &ComputeCase::MEAN);
         assert_eq!(1, res.get_defending_regiment().get_points());
-        assert_eq!(8, res.get_attacking_regiment().get_points());
+        assert_eq!(9, res.get_attacking_regiment().get_points());
         let res: prediction::Prediction =
             create_prediction(&attacking, &defending, &ComputeCase::BEST);
         assert_eq!(3, res.get_defending_regiment().get_points());
-        assert_eq!(10, res.get_attacking_regiment().get_points());
+        assert_eq!(11, res.get_attacking_regiment().get_points());
 
         let res: prediction::Prediction =
             create_prediction(&attacking, &defending, &ComputeCase::WORST);
         assert_eq!(3, res.get_defending_regiment().get_points());
-        assert_eq!(5, res.get_attacking_regiment().get_points());
+        assert_eq!(6, res.get_attacking_regiment().get_points());
     }
 
     #[test]
@@ -355,14 +394,35 @@ mod tests {
                 .unwrap()
                 .get_attacking_regiment()
                 .get_points(),
-            8
+            9
         );
         assert_eq!(
             res.get(&ComputeCase::BEST)
                 .unwrap()
                 .get_attacking_regiment()
                 .get_points(),
+            11
+        );
+    }
+
+    #[test]
+    fn test_compute_turn_with_banner() {
+        let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
+            initialize_two_units_with_banner();
+        let res = compute_turn(&attacking, &defending);
+        assert_eq!(
+            res.get(&ComputeCase::MEAN)
+                .unwrap()
+                .get_attacking_regiment()
+                .get_points(),
             10
+        );
+        assert_eq!(
+            res.get(&ComputeCase::BEST)
+                .unwrap()
+                .get_attacking_regiment()
+                .get_points(),
+            12
         );
     }
 }

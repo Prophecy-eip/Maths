@@ -14,21 +14,21 @@ fn test_warriors_against_heavy_infantry() {
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        8
+        9
     );
     assert_eq!(
         res.get(&fight::ComputeCase::BEST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        10
+        11
     );
     assert_eq!(
         res.get(&fight::ComputeCase::WORST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        5
+        6
     );
     assert_eq!(
         res.get(&fight::ComputeCase::MEAN)
@@ -64,21 +64,21 @@ fn test_warriors_against_wildhorn_herd() {
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        5
+        6
     );
     assert_eq!(
         res.get(&fight::ComputeCase::BEST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        8
+        9
     );
     assert_eq!(
         res.get(&fight::ComputeCase::WORST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        5
+        6
     );
     assert_eq!(
         res.get(&fight::ComputeCase::MEAN)
@@ -114,21 +114,21 @@ fn test_imps_against_wildhorn_herd() {
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        1
+        2
     );
     assert_eq!(
         res.get(&fight::ComputeCase::BEST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        3
+        4
     );
     assert_eq!(
         res.get(&fight::ComputeCase::WORST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        5
+        6
     );
     assert_eq!(
         res.get(&fight::ComputeCase::MEAN)
@@ -164,21 +164,21 @@ fn test_imps_against_heavy_infantry() {
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        1
+        2
     );
     assert_eq!(
         res.get(&fight::ComputeCase::BEST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        3
+        4
     );
     assert_eq!(
         res.get(&fight::ComputeCase::WORST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        3
+        4
     );
     assert_eq!(
         res.get(&fight::ComputeCase::MEAN)
@@ -214,21 +214,21 @@ fn test_warriors_against_warriors() {
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        5
+        6
     );
     assert_eq!(
         res.get(&fight::ComputeCase::BEST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        8
+        9
     );
     assert_eq!(
         res.get(&fight::ComputeCase::WORST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        5
+        6
     );
     assert_eq!(
         res.get(&fight::ComputeCase::MEAN)
@@ -264,21 +264,21 @@ fn test_imps_against_imps() {
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        1
+        2
     );
     assert_eq!(
         res.get(&fight::ComputeCase::BEST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        3
+        4
     );
     assert_eq!(
         res.get(&fight::ComputeCase::WORST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        3
+        4
     );
     assert_eq!(
         res.get(&fight::ComputeCase::MEAN)
@@ -314,21 +314,21 @@ fn test_heavy_infantry_against_heavy_infantry() {
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        2
+        3
     );
     assert_eq!(
         res.get(&fight::ComputeCase::BEST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        4
+        5
     );
     assert_eq!(
         res.get(&fight::ComputeCase::WORST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        3
+        4
     );
     assert_eq!(
         res.get(&fight::ComputeCase::MEAN)
@@ -364,21 +364,21 @@ fn test_silexian_spears_against_imps() {
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        2
+        3
     );
     assert_eq!(
         res.get(&fight::ComputeCase::BEST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        4
+        5
     );
     assert_eq!(
         res.get(&fight::ComputeCase::WORST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        3
+        4
     );
     assert_eq!(
         res.get(&fight::ComputeCase::MEAN)
@@ -414,21 +414,21 @@ fn test_silexian_spears_against_warriors() {
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        1
+        2
     );
     assert_eq!(
         res.get(&fight::ComputeCase::BEST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        3
+        4
     );
     assert_eq!(
         res.get(&fight::ComputeCase::WORST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        3
+        4
     );
     assert_eq!(
         res.get(&fight::ComputeCase::MEAN)
@@ -464,21 +464,21 @@ fn test_clan_warriors_against_citizen_spears() {
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        2
+        3
     );
     assert_eq!(
         res.get(&fight::ComputeCase::BEST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        4
+        5
     );
     assert_eq!(
         res.get(&fight::ComputeCase::WORST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        3
+        4
     );
     assert_eq!(
         res.get(&fight::ComputeCase::MEAN)
@@ -514,21 +514,21 @@ fn test_clan_warriors_against_silexian_spears() {
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        2
+        3
     );
     assert_eq!(
         res.get(&fight::ComputeCase::BEST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        4
+        5
     );
     assert_eq!(
         res.get(&fight::ComputeCase::WORST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        3
+        4
     );
     assert_eq!(
         res.get(&fight::ComputeCase::MEAN)
@@ -564,21 +564,21 @@ fn test_infernal_warriors_against_clan_warriors() {
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        1
+        2
     );
     assert_eq!(
         res.get(&fight::ComputeCase::BEST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        3
+        4
     );
     assert_eq!(
         res.get(&fight::ComputeCase::WORST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        3
+        4
     );
     assert_eq!(
         res.get(&fight::ComputeCase::MEAN)
@@ -614,21 +614,21 @@ fn test_zombies_against_imps() {
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        2
+        3
     );
     assert_eq!(
         res.get(&fight::ComputeCase::BEST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        5
+        6
     );
     assert_eq!(
         res.get(&fight::ComputeCase::WORST)
             .unwrap()
             .get_attacking_regiment()
             .get_points(),
-        4
+        5
     );
     assert_eq!(
         res.get(&fight::ComputeCase::MEAN)
