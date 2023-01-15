@@ -1,47 +1,47 @@
 {
-	"best_case": {
-		"attacking_regiment": {
-			"nb_rows": 4,
-			"nb_cols": 5,
-			"nb_models": 17,
-			"points": 11
-		},
-		"defending_regiment": {
-			"nb_rows": 2,
-			"nb_cols": 5,
-			"nb_models": 10,
-			"points": 4
-		},
-		"occurrence_probability": 0.23791208650489054
-	},
-	"worst_case": {
-		"attacking_regiment": {
-			"nb_rows": 4,
-			"nb_cols": 5,
-			"nb_models": 17,
-			"points": 6
-		},
-		"defending_regiment": {
-			"nb_rows": 3,
-			"nb_cols": 5,
-			"nb_models": 15,
-			"points": 4
-		},
-		"occurrence_probability": 0.003097758482781122
-	},
-	"average_case": {
-		"attacking_regiment": {
-			"nb_rows": 4,
-			"nb_cols": 5,
-			"nb_models": 19,
-			"points": 9
-		},
-		"defending_regiment": {
-			"nb_rows": 3,
-			"nb_cols": 5,
-			"nb_models": 12,
-			"points": 2
-		},
-		"occurrence_probability": 0.07443220723974381
-	}
+  "best_case": {
+    "attacking_regiment": {
+      "nb_rows": 4,
+      "nb_cols": 5,
+      "nb_models": 17,
+      "points": 11
+    },
+    "defending_regiment": {
+      "nb_rows": 2,
+      "nb_cols": 5,
+      "nb_models": 10,
+      "points": 4
+    },
+    "occurrence_probability": 0.23791208650489054
+  },
+  "worst_case": {
+    "attacking_regiment": {
+      "nb_rows": 4,
+      "nb_cols": 5,
+      "nb_models": 17,
+      "points": 6
+    },
+    "defending_regiment": {
+      "nb_rows": 3,
+      "nb_cols": 5,
+      "nb_models": 15,
+      "points": 4
+    },
+    "occurrence_probability": 0.003097758482781122
+  },
+  "average_case": {
+    "attacking_regiment": {
+      "nb_rows": 4,
+      "nb_cols": 5,
+      "nb_models": 19,
+      "points": 9
+    },
+    "defending_regiment": {
+      "nb_rows": 3,
+      "nb_cols": 5,
+      "nb_models": 12,
+      "points": 2
+    },
+    "occurrence_probability": 0.07443220723974381
+  }
 }
