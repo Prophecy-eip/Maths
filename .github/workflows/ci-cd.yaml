@@ -5,6 +5,7 @@ on:
     types:
       - "opened"
       - "ready_for_review"
+      - "converted_to_draft"
   push:
     branches:
       - "master"
@@ -46,3 +47,9 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           command: fmt
+  coverage:
+    name: code cov
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: codecov/codecov-action@v3
