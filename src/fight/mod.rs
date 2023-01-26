@@ -421,7 +421,7 @@ mod tests {
     fn test_compute_turn_with_banner() {
         let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
             initialize_two_units_with_banner();
-        let res = compute_turn(&attacking, &defending);
+        let res = compute_turn(crate::web_server::converter::web_objects::AttackPosition::FRONT, &attacking, &defending);
         assert_eq!(
             res.get(&ComputeCase::MEAN)
                 .unwrap()
