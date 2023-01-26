@@ -5,8 +5,8 @@ on:
     types:
       - "opened"
       - "ready_for_review"
-      - "converted_to_draft"
   push:
+  workflow_dispatch:
 
 jobs:
   check:
