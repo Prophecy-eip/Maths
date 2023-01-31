@@ -5,8 +5,8 @@ pub mod model;
 pub mod modifier;
 pub mod prediction;
 pub mod regiment;
-pub mod web_server;
 pub mod stat;
+pub mod web_server;
 
 #[actix_web::get("/heartbeat")]
 async fn heartbeat() -> impl actix_web::Responder {
@@ -25,18 +25,15 @@ async fn make_prophecy(
     {
         return Err(actix_web::error::ErrorUnauthorized("Missing or wrong key, if you should access this data please contact the administrators"));
     }
-    let prophecies: std::collections::HashMap<
-        maths::fight::ComputeCase,
-        maths::prediction::Prediction,
-    > = maths::fight::compute_turn(
+    let prophecies: maths::fight::FightPredictionResult
+    = maths::fight::compute_turn(
         web_server::converter::web_objects::attacking_position_converter(
             regiments.get_attacking_position(),
         ),
         &web_server::converter::web_objects::regiment_converter(regiments.get_attacking_regiment()),
         &web_server::converter::web_objects::regiment_converter(regiments.get_defending_regiment()),
     );
-    let result: web_server::response_structures::make_prophecy::MakeProphecyResponse =
-        web_server::response_structures::make_prophecy::MakeProphecyResponse::from_dict(prophecies);
+    let result: web_server::response_structures::make_prophecy::MakeProphecyResponse = web_server::response_structures::make_prophecy::MakeProphecyResponse::from_fight_prediction_result(prophecies);
     Ok(actix_web::web::Json(result))
 }
 
