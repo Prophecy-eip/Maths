@@ -9,7 +9,7 @@ mod global_values;
 use crate::{
     math_tools, model,
     prediction::{self, Prediction},
-    regiment,
+    regiment, stat,
 };
 
 /// ## This describe the scenario we are computing when creating a prediction
@@ -26,6 +26,18 @@ pub enum ComputeCase {
     MEAN,
 }
 
+/// This is the enumeration of the differents attacking positions
+///
+/// FRONT: The attacking regiment is charging from the front of the defending unit
+/// FLANK: The attacking regiment is charging from the left or the right flank of the defending unit
+/// BACK: The attacking regiment is charging from the back of the defending unit
+#[derive(Clone, Copy)]
+pub enum AttackPosition {
+    FRONT,
+    FLANK,
+    BACK,
+}
+
 /// Compute the average damage a unit would dealt to another
 ///
 /// ## Paramaters
@@ -39,8 +51,8 @@ fn compute_mean_case(
     attacking_regiment: &regiment::Regiment,
     defending_regiment: &regiment::Regiment,
 ) -> (usize, f64) {
-    let attacking_stats: &model::Stats = attacking_regiment.get_model().get_boosted_stats();
-    let defending_stats: &model::Stats = defending_regiment.get_model().get_boosted_stats();
+    let attacking_stats: &stat::Stats = attacking_regiment.get_model().get_boosted_stats();
+    let defending_stats: &stat::Stats = defending_regiment.get_model().get_boosted_stats();
     let damage_probability: f64 =
         computation_tools::compute_damage_probability(attacking_stats, defending_stats);
     let nb_attacks: f64 =
@@ -131,7 +143,7 @@ fn compute_case(
     defending_regiment: &regiment::Regiment,
     case: &ComputeCase,
 ) -> (usize, f64) {
-    let attacking_stats: &model::Stats = attacking_regiment.get_model().get_boosted_stats();
+    let attacking_stats: &stat::Stats = attacking_regiment.get_model().get_boosted_stats();
     let nb_touch: usize =
         (attacking_stats.get_attack() as f64 * 1.5 * attacking_regiment.get_cols() as f64).round()
             as usize;
@@ -215,7 +227,7 @@ fn apply_fight(
 /// ## Return
 /// Prediction: The prediction computed according to the specified Compute Case
 fn create_prediction(
-    attacking_position: crate::web_server::converter::web_objects::AttackPosition,
+    attacking_position: AttackPosition,
     attacking_regiment: &regiment::Regiment,
     defending_regiment: &regiment::Regiment,
     case: &ComputeCase,
@@ -248,9 +260,9 @@ fn create_prediction(
     // as we consider the attacking regiment's charging. According to the rules, they get one bonus point
     final_attacking.earn_points(1);
     match attacking_position {
-        crate::web_server::converter::web_objects::AttackPosition::FRONT => final_attacking.earn_points(0),
-        crate::web_server::converter::web_objects::AttackPosition::FLANK => final_attacking.earn_points(1),
-        crate::web_server::converter::web_objects::AttackPosition::BACK => final_attacking.earn_points(2),
+        AttackPosition::FRONT => final_attacking.earn_points(0),
+        AttackPosition::FLANK => final_attacking.earn_points(1),
+        AttackPosition::BACK => final_attacking.earn_points(2),
     };
     prediction::Prediction::new(final_attacking, final_defending, probability)
 }
@@ -267,22 +279,37 @@ fn create_prediction(
 /// ## Return
 /// (HashMap<ComputeCase, Prediction>): The more realistic scenario, The best scenario for first unit, The worst scenario for first unit
 pub fn compute_turn(
-    attacking_position: crate::web_server::converter::web_objects::AttackPosition,
+    attacking_position: AttackPosition,
     attacking_regiment: &regiment::Regiment,
     defending_regiment: &regiment::Regiment,
 ) -> std::collections::HashMap<ComputeCase, Prediction> {
     std::collections::HashMap::from([
         (
             ComputeCase::BEST,
-            create_prediction(attacking_position, attacking_regiment, defending_regiment, &ComputeCase::BEST),
+            create_prediction(
+                attacking_position,
+                attacking_regiment,
+                defending_regiment,
+                &ComputeCase::BEST,
+            ),
         ),
         (
             ComputeCase::WORST,
-            create_prediction(attacking_position, attacking_regiment, defending_regiment, &ComputeCase::WORST),
+            create_prediction(
+                attacking_position,
+                attacking_regiment,
+                defending_regiment,
+                &ComputeCase::WORST,
+            ),
         ),
         (
             ComputeCase::MEAN,
-            create_prediction(attacking_position, attacking_regiment, defending_regiment, &ComputeCase::MEAN),
+            create_prediction(
+                attacking_position,
+                attacking_regiment,
+                defending_regiment,
+                &ComputeCase::MEAN,
+            ),
         ),
     ])
 }
@@ -378,20 +405,32 @@ mod tests {
 
     #[test]
     fn test_create_prediction() {
-        let attacking_position: crate::web_server::converter::web_objects::AttackPosition = crate::web_server::converter::web_objects::AttackPosition::FRONT;
+        let attacking_position: crate::fight::AttackPosition = crate::fight::AttackPosition::FRONT;
         let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
             initialize_two_units();
-        let res: prediction::Prediction =
-            create_prediction(attacking_position, &attacking, &defending, &ComputeCase::MEAN);
+        let res: prediction::Prediction = create_prediction(
+            attacking_position,
+            &attacking,
+            &defending,
+            &ComputeCase::MEAN,
+        );
         assert_eq!(1, res.get_defending_regiment().get_points());
         assert_eq!(9, res.get_attacking_regiment().get_points());
-        let res: prediction::Prediction =
-            create_prediction(attacking_position, &attacking, &defending, &ComputeCase::BEST);
+        let res: prediction::Prediction = create_prediction(
+            attacking_position,
+            &attacking,
+            &defending,
+            &ComputeCase::BEST,
+        );
         assert_eq!(3, res.get_defending_regiment().get_points());
         assert_eq!(11, res.get_attacking_regiment().get_points());
 
-        let res: prediction::Prediction =
-            create_prediction(attacking_position, &attacking, &defending, &ComputeCase::WORST);
+        let res: prediction::Prediction = create_prediction(
+            attacking_position,
+            &attacking,
+            &defending,
+            &ComputeCase::WORST,
+        );
         assert_eq!(3, res.get_defending_regiment().get_points());
         assert_eq!(6, res.get_attacking_regiment().get_points());
     }
@@ -400,7 +439,7 @@ mod tests {
     fn test_compute_turn() {
         let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
             initialize_two_units();
-        let res = compute_turn(crate::web_server::converter::web_objects::AttackPosition::FRONT, &attacking, &defending);
+        let res = compute_turn(crate::fight::AttackPosition::FRONT, &attacking, &defending);
         assert_eq!(
             res.get(&ComputeCase::MEAN)
                 .unwrap()
@@ -421,7 +460,7 @@ mod tests {
     fn test_compute_turn_with_banner() {
         let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
             initialize_two_units_with_banner();
-        let res = compute_turn(crate::web_server::converter::web_objects::AttackPosition::FRONT, &attacking, &defending);
+        let res = compute_turn(crate::fight::AttackPosition::FRONT, &attacking, &defending);
         assert_eq!(
             res.get(&ComputeCase::MEAN)
                 .unwrap()

@@ -13,17 +13,17 @@ use crate::web_server;
 /// (crate::modifier::Modifier) The converted modifier
 pub fn modifier_converter(
     web_modifier: &web_server::data_structures::modifier::Modifier,
-) -> crate::modifier::Modifier {
+) -> maths::modifier::Modifier {
     match web_modifier {
         web_server::data_structures::modifier::Modifier::Global(web_global_modifier) => {
-            crate::modifier::Modifier::new_global(
+            maths::modifier::Modifier::new_global(
                 web_global_modifier.advance,
                 web_global_modifier.march,
                 web_global_modifier.discipline,
             )
         }
         web_server::data_structures::modifier::Modifier::Offensive(web_offensive_modifier) => {
-            crate::modifier::Modifier::new_offensive(
+            maths::modifier::Modifier::new_offensive(
                 web_offensive_modifier.attack,
                 web_offensive_modifier.offensive,
                 web_offensive_modifier.strength,
@@ -32,7 +32,7 @@ pub fn modifier_converter(
             )
         }
         web_server::data_structures::modifier::Modifier::Defensive(web_defensive_modifier) => {
-            crate::modifier::Modifier::new_defensive(
+            maths::modifier::Modifier::new_defensive(
                 web_defensive_modifier.health_points,
                 web_defensive_modifier.defense,
                 web_defensive_modifier.resilience,
@@ -40,7 +40,7 @@ pub fn modifier_converter(
             )
         }
         web_server::data_structures::modifier::Modifier::Weapon(web_weapon_modifier) => {
-            crate::modifier::Modifier::new_weapon(
+            maths::modifier::Modifier::new_weapon(
                 web_weapon_modifier.shots,
                 web_weapon_modifier.strength,
                 web_weapon_modifier.armour_penetration,
@@ -58,22 +58,22 @@ pub fn modifier_converter(
 /// (crate::model::Model) The converted model
 pub fn model_converter(
     web_model: &web_server::data_structures::model::Model,
-) -> crate::model::Model {
-    let mut model: crate::model::Model = crate::model::Model::new(
-        crate::model::Stats::new(
-            crate::model::GlobalStats {
+) -> maths::model::Model {
+    let mut model: maths::model::Model = maths::model::Model::new(
+        maths::stat::Stats::new(
+            maths::stat::GlobalStats {
                 advance: web_model.stats.advance,
                 march: web_model.stats.march,
                 discipline: web_model.stats.discipline,
             },
-            crate::model::DefensiveStats {
+            maths::stat::DefensiveStats {
                 health_points: web_model.stats.health_points,
                 defense: web_model.stats.defense,
                 resilience: web_model.stats.resilience,
                 armour: web_model.stats.armour,
                 aegis: web_model.stats.aegis,
             },
-            crate::model::OffensiveStats {
+            maths::stat::OffensiveStats {
                 attack: web_model.stats.attack,
                 offensive: web_model.stats.offensive,
                 strength: web_model.stats.strength,
@@ -101,8 +101,8 @@ pub fn model_converter(
 /// (crate::regiment::Regiment) The converted regiment
 pub fn regiment_converter(
     web_regiment: &web_server::data_structures::regiment::Regiment,
-) -> crate::regiment::Regiment {
-    crate::regiment::Regiment::new(
+) -> maths::regiment::Regiment {
+    maths::regiment::Regiment::new(
         model_converter(&web_regiment.model),
         web_regiment.nb_rows,
         web_regiment.nb_cols,
@@ -111,34 +111,18 @@ pub fn regiment_converter(
     )
 }
 
-/// This is the enumeration of the differents attacking positions
-///
-/// FRONT: The attacking regiment is charging from the front of the defending unit
-/// FLANK: The attacking regiment is charging from the left or the right flank of the defending unit
-/// BACK: The attacking regiment is charging from the back of the defending unit
-#[derive(Clone, Copy)]
-pub enum AttackPosition {
-    FRONT,
-    FLANK,
-    BACK,
-}
-
-
-pub fn attacking_position_converter(attacking_position: String) -> AttackPosition {
+pub fn attacking_position_converter(attacking_position: String) -> maths::fight::AttackPosition {
     match attacking_position.as_str() {
-        "front" => AttackPosition::FRONT,
-        "flank" => AttackPosition::FLANK,
-        "back" => AttackPosition::BACK,
-        _ => AttackPosition::FRONT,
+        "front" => maths::fight::AttackPosition::FRONT,
+        "flank" => maths::fight::AttackPosition::FLANK,
+        "back" => maths::fight::AttackPosition::BACK,
+        _ => maths::fight::AttackPosition::FRONT,
     }
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::model::Model;
-    use crate::modifier::Modifier;
-    use crate::regiment::Regiment;
     use crate::web_server::data_structures::model::Model as WebModel;
     use crate::web_server::data_structures::modifier::Modifier as WebModifier;
     use crate::web_server::data_structures::regiment::Regiment as WebRegiment;
@@ -151,8 +135,8 @@ mod tests {
                 march: 2,
                 discipline: 3,
             });
-        let modifier: Modifier = modifier_converter(&web_modifier);
-        assert_eq!(modifier, Modifier::new_global(1, 2, 3));
+        let modifier: maths::modifier::Modifier = modifier_converter(&web_modifier);
+        assert_eq!(modifier, maths::modifier::Modifier::new_global(1, 2, 3));
 
         let web_modifier: WebModifier =
             WebModifier::Offensive(web_server::data_structures::modifier::OffensiveModifier {
@@ -162,8 +146,11 @@ mod tests {
                 armour_penetration: 4,
                 agility: 5,
             });
-        let modifier: Modifier = modifier_converter(&web_modifier);
-        assert_eq!(modifier, Modifier::new_offensive(1, 2, 3, 4, 5));
+        let modifier: maths::modifier::Modifier = modifier_converter(&web_modifier);
+        assert_eq!(
+            modifier,
+            maths::modifier::Modifier::new_offensive(1, 2, 3, 4, 5)
+        );
 
         let web_modifier: WebModifier =
             WebModifier::Defensive(web_server::data_structures::modifier::DefensiveModifier {
@@ -172,8 +159,11 @@ mod tests {
                 resilience: 3,
                 armour: 4,
             });
-        let modifier: Modifier = modifier_converter(&web_modifier);
-        assert_eq!(modifier, Modifier::new_defensive(1, 2, 3, 4));
+        let modifier: maths::modifier::Modifier = modifier_converter(&web_modifier);
+        assert_eq!(
+            modifier,
+            maths::modifier::Modifier::new_defensive(1, 2, 3, 4)
+        );
 
         let web_modifier: WebModifier =
             WebModifier::Weapon(web_server::data_structures::modifier::WeaponModifier {
@@ -181,8 +171,8 @@ mod tests {
                 strength: 2,
                 armour_penetration: 3,
             });
-        let modifier: Modifier = modifier_converter(&web_modifier);
-        assert_eq!(modifier, Modifier::new_weapon(None, 2, 3));
+        let modifier: maths::modifier::Modifier = modifier_converter(&web_modifier);
+        assert_eq!(modifier, maths::modifier::Modifier::new_weapon(None, 2, 3));
     }
 
     #[test]
@@ -206,24 +196,24 @@ mod tests {
             modifiers: vec![],
             banner_bearer: false,
         };
-        let model: Model = model_converter(&web_model);
+        let model: maths::model::Model = model_converter(&web_model);
         assert_eq!(
             model,
-            Model::new(
-                crate::model::Stats::new(
-                    crate::model::GlobalStats {
+            maths::model::Model::new(
+                maths::stat::Stats::new(
+                    maths::stat::GlobalStats {
                         advance: 1,
                         march: 2,
                         discipline: 3,
                     },
-                    crate::model::DefensiveStats {
+                    maths::stat::DefensiveStats {
                         health_points: 4,
                         defense: 5,
                         resilience: 6,
                         armour: 7,
                         aegis: 8,
                     },
-                    crate::model::OffensiveStats {
+                    maths::stat::OffensiveStats {
                         attack: 9,
                         offensive: 10,
                         strength: 11,
@@ -263,25 +253,25 @@ mod tests {
             nb_cols: 2,
             nb_models: 3,
         };
-        let regiment: Regiment = regiment_converter(&web_regiment);
+        let regiment: maths::regiment::Regiment = regiment_converter(&web_regiment);
         assert_eq!(
             regiment,
-            Regiment::new(
-                Model::new(
-                    crate::model::Stats::new(
-                        crate::model::GlobalStats {
+            maths::regiment::Regiment::new(
+                maths::model::Model::new(
+                    maths::stat::Stats::new(
+                        maths::stat::GlobalStats {
                             advance: 1,
                             march: 2,
                             discipline: 3,
                         },
-                        crate::model::DefensiveStats {
+                        maths::stat::DefensiveStats {
                             health_points: 4,
                             defense: 5,
                             resilience: 6,
                             armour: 7,
                             aegis: 8,
                         },
-                        crate::model::OffensiveStats {
+                        maths::stat::OffensiveStats {
                             attack: 9,
                             offensive: 10,
                             strength: 11,
