@@ -96,6 +96,69 @@ pub fn safe_add_signed_unsigned(a: usize, rhs: isize) -> usize {
     }
 }
 
+/// Evaluate the area covered on a gaussian curve
+///
+/// ## Parameters
+/// (usize) start: The start of the inverval
+///
+/// (usize) end: The end of the interval
+///
+/// (usize) gauss_len: The lenght of the X axis of the curve
+///
+/// (f64) success_probability: The probability that one success occurs
+///
+/// ## Return
+/// f64: The percentage of the curve covered by the interval
+pub fn evaluate_gauss_interval(
+    start: usize,
+    end: usize,
+    gauss_len: usize,
+    success_probability: f64,
+) -> f64 {
+    crate::math_tools::sigma(
+        start as isize,
+        end as isize,
+        |current, params, _, _| {
+            crate::math_tools::compute_bernoulli(
+                params.unwrap().0,
+                current as usize,
+                params.unwrap().1,
+            )
+        },
+        Some((gauss_len, success_probability)),
+    )
+}
+
+/// Find two thresholds for a gaussien assuring that the area covered reprenset at least 0.06% of the curve
+///
+/// ## Parameters
+/// (usize) nb_touch: The number of hit that the attacker can assume
+///
+/// (f64) wound_probability: The probability that a hit wound the enemy
+///
+/// (usize) defender_hp: The amount of health point of the defender
+///
+/// ## Return
+/// (usize, usize): Our two gaussian threshold
+pub fn find_great_gauss_checkpoints(
+    nb_touch: usize,
+    wound_probability: f64,
+    defender_hp: usize,
+) -> (usize, usize) {
+    let max_hit: usize = std::cmp::min(nb_touch, defender_hp);
+    let mut low_checkpoint: usize = (max_hit as f64 * (1.0_f64 / 3.0_f64)).round() as usize;
+    let mut high_checkpoint: usize = (max_hit as f64 * (2.0_f64 / 3.0_f64)).round() as usize;
+    let compute_proba = |e: usize| compute_bernoulli(nb_touch, e, wound_probability);
+
+    while compute_proba(low_checkpoint) < 0.03 && low_checkpoint <= max_hit / 2 {
+        low_checkpoint += 1;
+    }
+    while compute_proba(high_checkpoint) < 0.03 && high_checkpoint >= max_hit / 2 {
+        high_checkpoint -= 1;
+    }
+    (low_checkpoint, high_checkpoint)
+}
+
 #[cfg(test)]
 mod tests {
 

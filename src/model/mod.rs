@@ -4,7 +4,7 @@
 //! A Model is one of the figurines in a Regiment
 //! It holds Stats and Modifiers
 
-use crate::{stat, modifier};
+use crate::{modifier, stat};
 
 /// Struct containing all the information about a Model
 ///
@@ -36,7 +36,11 @@ impl Model {
     ///
     /// ## Return
     /// Model: The Model created
-    pub fn new(stats: stat::Stats, modifiers: Vec<modifier::Modifier>, banner_bearer: bool) -> Model {
+    pub fn new(
+        stats: stat::Stats,
+        modifiers: Vec<modifier::Modifier>,
+        banner_bearer: bool,
+    ) -> Model {
         let mut boosted_stats = stats.clone();
         for modifier in &modifiers {
             boosted_stats.apply_modifier(modifier);

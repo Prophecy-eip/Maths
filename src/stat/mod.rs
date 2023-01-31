@@ -2,7 +2,6 @@
 
 use crate::math_tools;
 
-
 /// Struct containing all the statistics in the game for a Model
 ///
 /// ## Attributes
@@ -310,8 +309,12 @@ impl Stats {
         match modifier {
             crate::modifier::Modifier::Weapon(weapon) => self.apply_weapon_modifier(weapon),
             crate::modifier::Modifier::Global(modifier) => self.apply_global_modifier(modifier),
-            crate::modifier::Modifier::Offensive(modifier) => self.apply_offensive_modifier(modifier),
-            crate::modifier::Modifier::Defensive(modifier) => self.apply_defensive_modifier(modifier),
+            crate::modifier::Modifier::Offensive(modifier) => {
+                self.apply_offensive_modifier(modifier)
+            }
+            crate::modifier::Modifier::Defensive(modifier) => {
+                self.apply_defensive_modifier(modifier)
+            }
         }
     }
 }
