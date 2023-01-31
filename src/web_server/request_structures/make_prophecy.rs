@@ -55,7 +55,7 @@ impl MakeProphecyRequest {
     }
 
     /// Get the attacking position
-    /// 
+    ///
     /// ## Return
     /// &String: The attacking position
     pub fn get_attacking_position(&self) -> String {
@@ -117,7 +117,12 @@ mod tests {
         let attacking_position: String = String::from("front");
         let attacking_regiment: regiment::Regiment = create_dummy_regiment(1);
         let defending_regiment: regiment::Regiment = create_dummy_regiment(2);
-        MakeProphecyRequest::new(key, attacking_position, attacking_regiment, defending_regiment)
+        MakeProphecyRequest::new(
+            key,
+            attacking_position,
+            attacking_regiment,
+            defending_regiment,
+        )
     }
 
     #[test]

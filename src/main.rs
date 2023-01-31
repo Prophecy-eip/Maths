@@ -1,4 +1,12 @@
-use maths::web_server;
+pub mod fight;
+pub mod global_test;
+mod math_tools;
+pub mod model;
+pub mod modifier;
+pub mod prediction;
+pub mod regiment;
+pub mod web_server;
+pub mod stat;
 
 #[actix_web::get("/heartbeat")]
 async fn heartbeat() -> impl actix_web::Responder {
@@ -21,7 +29,9 @@ async fn make_prophecy(
         maths::fight::ComputeCase,
         maths::prediction::Prediction,
     > = maths::fight::compute_turn(
-        web_server::converter::web_objects::attacking_position_converter(regiments.get_attacking_position()),
+        web_server::converter::web_objects::attacking_position_converter(
+            regiments.get_attacking_position(),
+        ),
         &web_server::converter::web_objects::regiment_converter(regiments.get_attacking_regiment()),
         &web_server::converter::web_objects::regiment_converter(regiments.get_defending_regiment()),
     );

@@ -3,7 +3,7 @@
 //! This module contain all the initialization and global functions needed by the tests
 #[cfg(test)]
 pub mod tests {
-    use crate::{model, modifier, regiment};
+    use crate::{model, modifier, regiment, stat};
 
     /// # Initialize the stats structs with some values given as parameters
     ///
@@ -36,7 +36,6 @@ pub mod tests {
     ///
     /// # Return
     /// Stats Model: The Stats created and initialized
-
     pub fn initialize_stats(
         advance: usize,
         march: usize,
@@ -51,26 +50,26 @@ pub mod tests {
         strength: usize,
         armour_penetration: usize,
         agility: usize,
-    ) -> model::Stats {
-        let stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
-                advance: advance,
-                march: march,
-                discipline: discipline,
+    ) -> stat::Stats {
+        let stats: stat::Stats = stat::Stats::new(
+            stat::GlobalStats {
+                advance,
+                march,
+                discipline,
             },
-            model::DefensiveStats {
-                health_points: health_points,
-                defense: defense,
-                resilience: resilience,
-                armour: armour,
-                aegis: aegis,
+            stat::DefensiveStats {
+                health_points,
+                defense,
+                resilience,
+                armour,
+                aegis,
             },
-            model::OffensiveStats {
-                attack: attack,
-                offensive: offensive,
-                strength: strength,
-                armour_penetration: armour_penetration,
-                agility: agility,
+            stat::OffensiveStats {
+                attack,
+                offensive,
+                strength,
+                armour_penetration,
+                agility,
             },
         );
         stats
@@ -80,22 +79,21 @@ pub mod tests {
     ///
     /// # Return
     /// Stats Model: Our mock Stats struct
-
-    pub fn initialize_mock_stats() -> model::Stats {
-        let stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
+    pub fn initialize_mock_stats() -> stat::Stats {
+        let stats: stat::Stats = stat::Stats::new(
+            stat::GlobalStats {
                 advance: 1,
                 march: 1,
                 discipline: 1,
             },
-            model::DefensiveStats {
+            stat::DefensiveStats {
                 health_points: 1,
                 defense: 1,
                 resilience: 1,
                 armour: 1,
                 aegis: 1,
             },
-            model::OffensiveStats {
+            stat::OffensiveStats {
                 attack: 1,
                 offensive: 1,
                 strength: 1,
@@ -137,7 +135,6 @@ pub mod tests {
     ///
     /// # Return
     /// Modifier Stats: The modifier stats created and initialized
-
     pub fn initialize_modifier_stats(
         advance: usize,
         march: usize,
@@ -152,21 +149,21 @@ pub mod tests {
         strength: usize,
         armour_penetration: usize,
         agility: usize,
-    ) -> model::Stats {
-        let modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
+    ) -> stat::Stats {
+        let modifier_stats: stat::Stats = stat::Stats::new(
+            stat::GlobalStats {
                 advance: advance,
                 march: march,
                 discipline: discipline,
             },
-            model::DefensiveStats {
+            stat::DefensiveStats {
                 health_points: health_points,
                 defense: defense,
                 resilience: resilience,
                 armour: armour,
                 aegis: aegis,
             },
-            model::OffensiveStats {
+            stat::OffensiveStats {
                 attack: attack,
                 offensive: offensive,
                 strength: strength,
@@ -181,21 +178,21 @@ pub mod tests {
     ///
     /// # Return
     /// Modifier Stats: Our mock modifier Stats struct
-    pub fn initialize_mock_modifier_stats() -> model::Stats {
-        let modifier_stats: model::Stats = model::Stats::new(
-            model::GlobalStats {
+    pub fn initialize_mock_modifier_stats() -> stat::Stats {
+        let modifier_stats: stat::Stats = stat::Stats::new(
+            stat::GlobalStats {
                 advance: 0,
                 march: 0,
                 discipline: 0,
             },
-            model::DefensiveStats {
+            stat::DefensiveStats {
                 health_points: 0,
                 defense: 0,
                 resilience: 0,
                 armour: 0,
                 aegis: 0,
             },
-            model::OffensiveStats {
+            stat::OffensiveStats {
                 attack: 0,
                 offensive: 0,
                 strength: 0,
@@ -222,13 +219,13 @@ pub mod tests {
     /// # Return
     /// Regiment : a regiment struct initialized
     pub fn initialize_regiment(
-        model_stats: model::Stats,
+        model_stats: stat::Stats,
         nb_rows: usize,
         nb_cols: usize,
         nb_models: usize,
         banner: bool,
     ) -> regiment::Regiment {
-        let stats: model::Stats = model_stats;
+        let stats: stat::Stats = model_stats;
 
         let modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
         let model: model::Model = model::Model::new(stats, vec![modifier], banner);
@@ -242,7 +239,7 @@ pub mod tests {
     /// ## Return
     /// model: Our mock model struct
     pub fn initialize_mock_model() -> model::Model {
-        let stats: model::Stats = initialize_mock_stats();
+        let stats: stat::Stats = initialize_mock_stats();
 
         let modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
         let model: model::Model = model::Model::new(stats, vec![modifier], false);
@@ -254,7 +251,7 @@ pub mod tests {
     /// ## Return
     /// regiment: Our mock modifier Stats struct
     pub fn initialize_mock_regiment() -> regiment::Regiment {
-        let stats: model::Stats = initialize_mock_stats();
+        let stats: stat::Stats = initialize_mock_stats();
 
         let modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
         let model: model::Model = model::Model::new(stats, vec![modifier], false);
