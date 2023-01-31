@@ -285,7 +285,7 @@ impl WeaponModifier {
     /// Getter for the shots stat boost
     ///
     /// ## Return
-    /// Option<isize>: The nulber of shots if it's a ranged weapon, None otherwise
+    /// Option<isize>: The number of shots if it's a ranged weapon, None otherwise
     pub fn get_shots(&self) -> Option<isize> {
         self.shots
     }
