@@ -145,101 +145,101 @@ impl Regiment {
     }
 }
 
-// #[cfg(test)]
-// mod tests {
-//     use crate::{global_test, model, modifier, regiment};
+#[cfg(test)]
+mod tests {
+    use crate::{global_test, model, modifier, regiment, stat};
 
-//     fn initialize_chaos_warrior() -> regiment::Regiment {
-//         let chaos_warrior: regiment::Regiment = global_test::tests::initialize_regiment(
-//             global_test::tests::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
-//             4,
-//             5,
-//             20,
-//             false,
-//         );
-//         chaos_warrior
-//     }
+    fn initialize_chaos_warrior() -> regiment::Regiment {
+        let chaos_warrior: regiment::Regiment = global_test::tests::initialize_regiment(
+            global_test::tests::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4),
+            4,
+            5,
+            20,
+            false,
+        );
+        chaos_warrior
+    }
 
-//     #[test]
-//     fn test_get_model() {
-//         let chaos_warrior_stats: model::Stats =
-//             global_test::tests::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4);
-//         let _chaos_warrior_modifier_stats: model::Stats =
-//             global_test::tests::initialize_mock_modifier_stats();
+    #[test]
+    fn test_get_model() {
+        let chaos_warrior_stats: stat::Stats =
+            global_test::tests::initialize_stats(4, 8, 8, 1, 5, 4, 0, 0, 2, 5, 4, 1, 4);
+        let _chaos_warrior_modifier_stats: stat::Stats =
+            global_test::tests::initialize_mock_modifier_stats();
 
-//         let chaos_warrior_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
-//         let model_chaos_warrior: model::Model =
-//             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier], false);
-//         let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
-//         assert_eq!(chaos_warrior.get_model().to_owned(), model_chaos_warrior);
-//     }
+        let chaos_warrior_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
+        let model_chaos_warrior: model::Model =
+            model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier], false);
+        let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
+        assert_eq!(chaos_warrior.get_model().to_owned(), model_chaos_warrior);
+    }
 
-//     #[test]
-//     fn test_get_rows() {
-//         let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
-//         assert_eq!(chaos_warrior.get_rows(), 4);
-//     }
+    #[test]
+    fn test_get_rows() {
+        let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
+        assert_eq!(chaos_warrior.get_rows(), 4);
+    }
 
-//     #[test]
-//     fn test_get_cols() {
-//         let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
-//         assert_eq!(chaos_warrior.get_cols(), 5);
-//     }
+    #[test]
+    fn test_get_cols() {
+        let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
+        assert_eq!(chaos_warrior.get_cols(), 5);
+    }
 
-//     #[test]
-//     fn test_get_nb_models() {
-//         let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
-//         assert_eq!(chaos_warrior.get_nb_models(), 20);
-//     }
+    #[test]
+    fn test_get_nb_models() {
+        let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
+        assert_eq!(chaos_warrior.get_nb_models(), 20);
+    }
 
-//     #[test]
-//     fn test_get_regiment_health() {
-//         let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
-//         assert_eq!(chaos_warrior.get_regiment_health_points(), 20);
-//     }
+    #[test]
+    fn test_get_regiment_health() {
+        let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
+        assert_eq!(chaos_warrior.get_regiment_health_points(), 20);
+    }
 
-//     #[test]
-//     fn test_take_damage() {
-//         let mut chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
-//         chaos_warrior.take_damage(5);
-//         assert_eq!(chaos_warrior.get_regiment_health_points(), 15);
-//         assert_eq!(chaos_warrior.get_nb_models(), 15);
-//     }
+    #[test]
+    fn test_take_damage() {
+        let mut chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
+        chaos_warrior.take_damage(5);
+        assert_eq!(chaos_warrior.get_regiment_health_points(), 15);
+        assert_eq!(chaos_warrior.get_nb_models(), 15);
+    }
 
-//     #[test]
-//     fn test_take_damage_loose_a_line() {
-//         let mut chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
-//         chaos_warrior.take_damage(6);
-//         assert_eq!(chaos_warrior.get_regiment_health_points(), 14);
-//         assert_eq!(chaos_warrior.get_nb_models(), 14);
-//         assert_eq!(chaos_warrior.get_cols(), 5);
-//         assert_eq!(chaos_warrior.get_rows(), 3);
-//     }
+    #[test]
+    fn test_take_damage_loose_a_line() {
+        let mut chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
+        chaos_warrior.take_damage(6);
+        assert_eq!(chaos_warrior.get_regiment_health_points(), 14);
+        assert_eq!(chaos_warrior.get_nb_models(), 14);
+        assert_eq!(chaos_warrior.get_cols(), 5);
+        assert_eq!(chaos_warrior.get_rows(), 3);
+    }
 
-//     #[test]
-//     fn test_take_damage_less_than_a_line() {
-//         let mut chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
-//         chaos_warrior.take_damage(17);
-//         assert_eq!(chaos_warrior.get_regiment_health_points(), 3);
-//         assert_eq!(chaos_warrior.get_nb_models(), 3);
-//         assert_eq!(chaos_warrior.get_cols(), 3);
-//         assert_eq!(chaos_warrior.get_rows(), 1);
-//     }
+    #[test]
+    fn test_take_damage_less_than_a_line() {
+        let mut chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
+        chaos_warrior.take_damage(17);
+        assert_eq!(chaos_warrior.get_regiment_health_points(), 3);
+        assert_eq!(chaos_warrior.get_nb_models(), 3);
+        assert_eq!(chaos_warrior.get_cols(), 3);
+        assert_eq!(chaos_warrior.get_rows(), 1);
+    }
 
-//     #[test]
-//     fn test_get_points() {
-//         let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
-//         assert_eq!(0, chaos_warrior.get_points());
-//     }
+    #[test]
+    fn test_get_points() {
+        let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
+        assert_eq!(0, chaos_warrior.get_points());
+    }
 
-//     #[test]
-//     fn test_earn_points() {
-//         let mut chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
+    #[test]
+    fn test_earn_points() {
+        let mut chaos_warrior: regiment::Regiment = initialize_chaos_warrior();
 
-//         assert_eq!(0, chaos_warrior.get_points());
-//         chaos_warrior.earn_points(5);
-//         assert_eq!(5, chaos_warrior.get_points());
-//         chaos_warrior.earn_points(6);
-//         assert_eq!(11, chaos_warrior.get_points());
-//     }
-// }
+        assert_eq!(0, chaos_warrior.get_points());
+        chaos_warrior.earn_points(5);
+        assert_eq!(5, chaos_warrior.get_points());
+        chaos_warrior.earn_points(6);
+        assert_eq!(11, chaos_warrior.get_points());
+    }
+}
