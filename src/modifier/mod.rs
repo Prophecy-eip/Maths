@@ -13,82 +13,6 @@ pub struct GlobalModifier {
     discipline: isize,
 }
 
-/// Struct containing the modification granted to the offensive stats of a Model
-///
-/// ## Attributes
-/// attack (isize): The attack stat boost
-///
-/// offensive (isize): The offensive stat boost
-///
-/// strength (isize): The strength stat boost
-///
-/// armour_penetration (isize): The armour penetration stat boost
-///
-/// agility (isize): The agility stat boost
-#[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
-pub struct OffensiveModifier {
-    attack: isize,
-    offensive: isize,
-    strength: isize,
-    armour_penetration: isize,
-    agility: isize,
-}
-
-/// Struct containing the modification granted to the defensive stats of a Model
-///
-/// ## Attributes
-/// health_points (isize): The health points stat boost
-///
-/// defense (isize): The defense stat boost
-///
-/// resilience (isize): The resilience stat boost
-///
-/// armour (isize): The armour stat boost
-#[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
-pub struct DefensiveModifier {
-    health_points: isize,
-    defense: isize,
-    resilience: isize,
-    armour: isize,
-    aegis: isize,
-}
-
-/// Struct containing the modification granted by a weapon
-///
-/// ## Attributes
-///
-/// shots (Option<isize>): The number of shots if it is a ranged weapon and None if close range weapon
-///
-/// strength (isize): The strength stat boost
-///
-/// armour_penetration (isize): The armour penetration stat boost
-#[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
-pub struct WeaponModifier {
-    shots: Option<isize>,
-    strength: isize,
-    armour_penetration: isize,
-}
-
-/// Enum containing all the possible modifiers
-///
-/// ## Variants
-/// GlobalModifier: The global modifier
-///
-/// OffensiveModifier: The offensive modifier
-///
-/// DefensiveModifier: The defensive modifier
-///
-/// MeleeWeaponModifier: The melee weapon modifier
-///
-/// WeaponModifier: The ranged weapon modifier
-#[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
-pub enum Modifier {
-    Global(GlobalModifier),
-    Offensive(OffensiveModifier),
-    Defensive(DefensiveModifier),
-    Weapon(WeaponModifier),
-}
-
 impl GlobalModifier {
     /// Constructor for the GlobalModifier struct
     ///
@@ -132,6 +56,27 @@ impl GlobalModifier {
     pub fn get_discipline(&self) -> isize {
         self.discipline
     }
+}
+
+/// Struct containing the modification granted to the offensive stats of a Model
+///
+/// ## Attributes
+/// attack (isize): The attack stat boost
+///
+/// offensive (isize): The offensive stat boost
+///
+/// strength (isize): The strength stat boost
+///
+/// armour_penetration (isize): The armour penetration stat boost
+///
+/// agility (isize): The agility stat boost
+#[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
+pub struct OffensiveModifier {
+    attack: isize,
+    offensive: isize,
+    strength: isize,
+    armour_penetration: isize,
+    agility: isize,
 }
 
 impl OffensiveModifier {
@@ -207,6 +152,25 @@ impl OffensiveModifier {
     }
 }
 
+/// Struct containing the modification granted to the defensive stats of a Model
+///
+/// ## Attributes
+/// health_points (isize): The health points stat boost
+///
+/// defense (isize): The defense stat boost
+///
+/// resilience (isize): The resilience stat boost
+///
+/// armour (isize): The armour stat boost
+#[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
+pub struct DefensiveModifier {
+    health_points: isize,
+    defense: isize,
+    resilience: isize,
+    armour: isize,
+    aegis: isize,
+}
+
 impl DefensiveModifier {
     /// Constructor for the DefensiveModifier struct
     ///
@@ -278,6 +242,22 @@ impl DefensiveModifier {
     }
 }
 
+/// Struct containing the modification granted by a weapon
+///
+/// ## Attributes
+///
+/// shots (Option<isize>): The number of shots if it is a ranged weapon and None if close range weapon
+///
+/// strength (isize): The strength stat boost
+///
+/// armour_penetration (isize): The armour penetration stat boost
+#[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
+pub struct WeaponModifier {
+    shots: Option<isize>,
+    strength: isize,
+    armour_penetration: isize,
+}
+
 impl WeaponModifier {
     /// Constructor for the WeaponModifier struct
     ///
@@ -321,6 +301,26 @@ impl WeaponModifier {
     pub fn get_armour_penetration(&self) -> isize {
         self.armour_penetration
     }
+}
+
+/// Enum containing all the possible modifiers
+///
+/// ## Variants
+/// GlobalModifier: The global modifier
+///
+/// OffensiveModifier: The offensive modifier
+///
+/// DefensiveModifier: The defensive modifier
+///
+/// MeleeWeaponModifier: The melee weapon modifier
+///
+/// WeaponModifier: The ranged weapon modifier
+#[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
+pub enum Modifier {
+    Global(GlobalModifier),
+    Offensive(OffensiveModifier),
+    Defensive(DefensiveModifier),
+    Weapon(WeaponModifier),
 }
 
 impl Modifier {
