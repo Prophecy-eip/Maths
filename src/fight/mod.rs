@@ -247,7 +247,8 @@ pub fn compute_turn(
 
 #[cfg(test)]
 mod tests {
-    use crate::fight::computation_tools::compute_case;
+    use crate::fight::{create_prediction, compute_turn};
+use crate::fight::computation_tools::compute_case;
     use crate::{global_test, regiment};
 
     use super::ComputeCase;
@@ -325,77 +326,73 @@ mod tests {
         assert_eq!(res.0, 3);
     }
 
-    // #[test]
-    // fn test_create_prediction() {
-    //     let attacking_position: crate::fight::AttackPosition = crate::fight::AttackPosition::FRONT;
-    //     let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
-    //         initialize_two_units();
-    //     let res: prediction::Prediction = create_prediction(
-    //         attacking_position,
-    //         &attacking,
-    //         &defending,
-    //         &ComputeCase::MEAN,
-    //     );
-    //     assert_eq!(1, res.get_defending_regiment().get_points());
-    //     assert_eq!(9, res.get_attacking_regiment().get_points());
-    //     let res: prediction::Prediction = create_prediction(
-    //         attacking_position,
-    //         &attacking,
-    //         &defending,
-    //         &ComputeCase::BEST,
-    //     );
-    //     assert_eq!(3, res.get_defending_regiment().get_points());
-    //     assert_eq!(11, res.get_attacking_regiment().get_points());
+    #[test]
+    fn test_create_prediction() {
+        let attacking_position: crate::fight::AttackPosition = crate::fight::AttackPosition::FRONT;
+        let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
+            initialize_two_units();
+        let res: crate::fight::FightCase = create_prediction(
+            attacking_position,
+            &attacking,
+            &defending,
+            &ComputeCase::MEAN,
+        );
+        assert_eq!(1, res.get_defending_regiment().get_points());
+        assert_eq!(9, res.get_attacking_regiment().get_points());
+        let res: crate::fight::FightCase = create_prediction(
+            attacking_position,
+            &attacking,
+            &defending,
+            &ComputeCase::BEST,
+        );
+        assert_eq!(3, res.get_defending_regiment().get_points());
+        assert_eq!(11, res.get_attacking_regiment().get_points());
 
-    //     let res: prediction::Prediction = create_prediction(
-    //         attacking_position,
-    //         &attacking,
-    //         &defending,
-    //         &ComputeCase::WORST,
-    //     );
-    //     assert_eq!(3, res.get_defending_regiment().get_points());
-    //     assert_eq!(6, res.get_attacking_regiment().get_points());
-    // }
+        let res: crate::fight::FightCase = create_prediction(
+            attacking_position,
+            &attacking,
+            &defending,
+            &ComputeCase::WORST,
+        );
+        assert_eq!(3, res.get_defending_regiment().get_points());
+        assert_eq!(6, res.get_attacking_regiment().get_points());
+    }
 
-    // #[test]
-    // fn test_compute_turn() {
-    //     let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
-    //         initialize_two_units();
-    //     let res = compute_turn(crate::fight::AttackPosition::FRONT, &attacking, &defending);
-    //     assert_eq!(
-    //         res.get(&ComputeCase::MEAN)
-    //             .unwrap()
-    //             .get_attacking_regiment()
-    //             .get_points(),
-    //         9
-    //     );
-    //     assert_eq!(
-    //         res.get(&ComputeCase::BEST)
-    //             .unwrap()
-    //             .get_attacking_regiment()
-    //             .get_points(),
-    //         11
-    //     );
-    // }
+    #[test]
+    fn test_compute_turn() {
+        let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
+            initialize_two_units();
+        let res: super::FightPredictionResult = compute_turn(crate::fight::AttackPosition::FRONT, &attacking, &defending);
+        assert_eq!(
+            res.get_mean_case().get_attacking_regiment().get_points(),
+            9
+        );
+        assert_eq!(
+            res.get_best_case().get_attacking_regiment().get_points(),
+            11
+        );
+        assert_eq!(
+            res.get_worst_case().get_attacking_regiment().get_points(),
+            6
+        );
+    }
 
-    // #[test]
-    // fn test_compute_turn_with_banner() {
-    //     let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
-    //         initialize_two_units_with_banner();
-    //     let res = compute_turn(crate::fight::AttackPosition::FRONT, &attacking, &defending);
-    //     assert_eq!(
-    //         res.get(&ComputeCase::MEAN)
-    //             .unwrap()
-    //             .get_attacking_regiment()
-    //             .get_points(),
-    //         10
-    //     );
-    //     assert_eq!(
-    //         res.get(&ComputeCase::BEST)
-    //             .unwrap()
-    //             .get_attacking_regiment()
-    //             .get_points(),
-    //         12
-    //     );
-    // }
+    #[test]
+    fn test_compute_turn_with_banner() {
+        let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
+            initialize_two_units_with_banner();
+        let res: crate::fight::FightPredictionResult = compute_turn(crate::fight::AttackPosition::FRONT, &attacking, &defending);
+        assert_eq!(
+            res.get_mean_case().get_attacking_regiment().get_points(),
+            10
+        );
+        assert_eq!(
+            res.get_best_case().get_attacking_regiment().get_points(),
+            12
+        );
+        assert_eq!(
+            res.get_worst_case().get_attacking_regiment().get_points(),
+            7
+        );
+    }
 }
