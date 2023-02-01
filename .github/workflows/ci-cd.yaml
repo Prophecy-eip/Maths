@@ -48,7 +48,7 @@ jobs:
     needs: [check, clippy, format]
     name: cargo clean
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - uses: actions/checkout@v2
       - uses: actions-rs/toolchain@v1
         with:
