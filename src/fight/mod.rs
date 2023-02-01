@@ -35,17 +35,17 @@ pub enum AttackPosition {
 }
 
 /// Struct containing a fight case, a probability of that case to happen and the two regiments
-/// 
+///
 /// ## Attributes
-/// 
-/// 
+///
+///
 /// probability (f64): The probability of that case to happen
-/// 
+///
 /// attacking_regiment (regiment::Regiment): The attacking regiment
-/// 
+///
 /// defending_regiment (regiment::Regiment): The defending regiment
-/// 
-/// 
+///
+///
 #[derive(serde::Serialize, serde::Deserialize, Clone)]
 pub struct FightCase {
     probability: f64,
@@ -54,7 +54,11 @@ pub struct FightCase {
 }
 
 impl FightCase {
-    pub fn new(probability: f64, attacking_regiment: regiment::Regiment, defending_regiment: regiment::Regiment) -> FightCase {
+    pub fn new(
+        probability: f64,
+        attacking_regiment: regiment::Regiment,
+        defending_regiment: regiment::Regiment,
+    ) -> FightCase {
         FightCase {
             probability,
             attacking_regiment,
@@ -82,7 +86,11 @@ pub struct FightPredictionResult {
 }
 
 impl FightPredictionResult {
-    pub fn new(best_case: FightCase, worst_case: FightCase, mean_case: FightCase) -> FightPredictionResult {
+    pub fn new(
+        best_case: FightCase,
+        worst_case: FightCase,
+        mean_case: FightCase,
+    ) -> FightPredictionResult {
         FightPredictionResult {
             best_case,
             worst_case,
@@ -234,15 +242,15 @@ pub fn compute_turn(
         defending_regiment,
         &ComputeCase::MEAN,
     );
-    return FightPredictionResult::new(best_case, worst_case, mean_case);
+    FightPredictionResult::new(best_case, worst_case, mean_case)
 }
 
 #[cfg(test)]
 mod tests {
     use crate::fight::computation_tools::compute_case;
-    use crate::{global_test, prediction, regiment};
+    use crate::{global_test, regiment};
 
-    use super::{compute_turn, create_prediction, ComputeCase};
+    use super::ComputeCase;
 
     fn initialize_chaos_warrior() -> regiment::Regiment {
         let chaos_warrior: regiment::Regiment = global_test::tests::initialize_regiment(

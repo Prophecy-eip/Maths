@@ -50,6 +50,7 @@ pub struct DefensiveModifier {
     defense: isize,
     resilience: isize,
     armour: isize,
+    aegis: isize,
 }
 
 /// Struct containing the modification granted by a weapon
@@ -220,12 +221,19 @@ impl DefensiveModifier {
     ///
     /// ## Return
     /// DefensiveModifier: The DefensiveModifier struct
-    pub fn new(health_points: isize, defense: isize, resilience: isize, armour: isize) -> Self {
+    pub fn new(
+        health_points: isize,
+        defense: isize,
+        resilience: isize,
+        armour: isize,
+        aegis: isize,
+    ) -> Self {
         DefensiveModifier {
             health_points,
             defense,
             resilience,
             armour,
+            aegis,
         }
     }
 
@@ -259,6 +267,14 @@ impl DefensiveModifier {
     /// isize: The armour stat boost
     pub fn get_armour(&self) -> isize {
         self.armour
+    }
+
+    /// Getter for the aegis stat boost
+    ///
+    /// ## Return
+    /// isize: The aegis stat boost
+    pub fn get_aegis(&self) -> isize {
+        self.aegis
     }
 }
 
@@ -387,12 +403,14 @@ impl Modifier {
         defense: isize,
         resilience: isize,
         armour: isize,
+        aegis: isize,
     ) -> Self {
         Modifier::Defensive(DefensiveModifier::new(
             health_points,
             defense,
             resilience,
             armour,
+            aegis,
         ))
     }
 }
@@ -463,7 +481,7 @@ mod tests {
 
     #[test]
     fn test_new_defensive() {
-        let modifier: Modifier = Modifier::new_defensive(1, 2, 3, 4);
+        let modifier: Modifier = Modifier::new_defensive(1, 2, 3, 4, 0);
         match modifier {
             Modifier::Defensive(defensive_modifier) => {
                 assert_eq!(defensive_modifier.get_health_points(), 1);

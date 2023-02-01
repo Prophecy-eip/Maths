@@ -1,3 +1,4 @@
+pub mod dto;
 pub mod fight;
 pub mod global_test;
 mod math_tools;
@@ -15,9 +16,7 @@ async fn heartbeat() -> impl actix_web::Responder {
 
 #[actix_web::post("/units")]
 async fn make_prophecy(
-    regiments: actix_web::web::Json<
-        web_server::request_structures::make_prophecy::MakeProphecyRequest,
-    >,
+    regiments: actix_web::web::Json<web_server::ProphecyRequest>,
 ) -> actix_web::Result<impl actix_web::Responder> {
     if !regiments
         .get_key()
@@ -25,15 +24,12 @@ async fn make_prophecy(
     {
         return Err(actix_web::error::ErrorUnauthorized("Missing or wrong key, if you should access this data please contact the administrators"));
     }
-    let prophecies: maths::fight::FightPredictionResult
-    = maths::fight::compute_turn(
-        web_server::converter::web_objects::attacking_position_converter(
-            regiments.get_attacking_position(),
-        ),
-        &web_server::converter::web_objects::regiment_converter(regiments.get_attacking_regiment()),
-        &web_server::converter::web_objects::regiment_converter(regiments.get_defending_regiment()),
+    let prophecies: maths::fight::FightPredictionResult = maths::fight::compute_turn(
+        regiments.convert_attacking_position(),
+        &regiments.convert_regiment(true),
+        &regiments.convert_regiment(false),
     );
-    let result: web_server::response_structures::make_prophecy::MakeProphecyResponse = web_server::response_structures::make_prophecy::MakeProphecyResponse::from_fight_prediction_result(prophecies);
+    let result = web_server::response::ProphecyResponse::from_fight_prediction_result(prophecies);
     Ok(actix_web::web::Json(result))
 }
 
