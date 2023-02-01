@@ -9,22 +9,13 @@ fn test_warriors_against_heavy_infantry() {
     let defending: regiment::Regiment = initialize_units::initialize_heavy_infantry();
     let res: fight::FightPredictionResult =
         fight::compute_turn(attacking_position, &attacking, &defending);
-    assert_eq!(
-        res.get_mean_case().get_attacking_regiment().get_points(),
-        9
-    );
-    assert_eq!(
-        res.get_mean_case().get_defending_regiment().get_points(),
-        1
-    );
+    assert_eq!(res.get_mean_case().get_attacking_regiment().get_points(), 9);
+    assert_eq!(res.get_mean_case().get_defending_regiment().get_points(), 1);
     assert_eq!(
         res.get_best_case().get_attacking_regiment().get_points(),
         11
     );
-    assert_eq!(
-        res.get_best_case().get_defending_regiment().get_points(),
-        3
-    );
+    assert_eq!(res.get_best_case().get_defending_regiment().get_points(), 3);
     assert_eq!(
         res.get_worst_case().get_attacking_regiment().get_points(),
         6
@@ -42,22 +33,10 @@ fn test_warriors_against_wildhorn_herd() {
     let defending: regiment::Regiment = initialize_units::initialize_wildhorn_herd();
     let res: fight::FightPredictionResult =
         fight::compute_turn(attacking_position, &attacking, &defending);
-    assert_eq!(
-        res.get_mean_case().get_attacking_regiment().get_points(),
-        6
-    );
-    assert_eq!(
-        res.get_mean_case().get_defending_regiment().get_points(),
-        1
-    );
-    assert_eq!(
-        res.get_best_case().get_attacking_regiment().get_points(),
-        9
-    );
-    assert_eq!(
-        res.get_best_case().get_defending_regiment().get_points(),
-        3
-    );
+    assert_eq!(res.get_mean_case().get_attacking_regiment().get_points(), 6);
+    assert_eq!(res.get_mean_case().get_defending_regiment().get_points(), 1);
+    assert_eq!(res.get_best_case().get_attacking_regiment().get_points(), 9);
+    assert_eq!(res.get_best_case().get_defending_regiment().get_points(), 3);
     assert_eq!(
         res.get_worst_case().get_attacking_regiment().get_points(),
         6
@@ -75,22 +54,10 @@ fn test_imps_against_wildhorn_herd() {
     let defending: regiment::Regiment = initialize_units::initialize_wildhorn_herd();
     let res: fight::FightPredictionResult =
         fight::compute_turn(attacking_position, &attacking, &defending);
-    assert_eq!(
-        res.get_mean_case().get_attacking_regiment().get_points(),
-        2
-    );
-    assert_eq!(
-        res.get_mean_case().get_defending_regiment().get_points(),
-        2
-    );
-    assert_eq!(
-        res.get_best_case().get_attacking_regiment().get_points(),
-        4
-    );
-    assert_eq!(
-        res.get_best_case().get_defending_regiment().get_points(),
-        3
-    );
+    assert_eq!(res.get_mean_case().get_attacking_regiment().get_points(), 2);
+    assert_eq!(res.get_mean_case().get_defending_regiment().get_points(), 2);
+    assert_eq!(res.get_best_case().get_attacking_regiment().get_points(), 4);
+    assert_eq!(res.get_best_case().get_defending_regiment().get_points(), 3);
     assert_eq!(
         res.get_worst_case().get_attacking_regiment().get_points(),
         6
@@ -108,22 +75,10 @@ fn test_imps_against_heavy_infantry() {
     let defending: regiment::Regiment = initialize_units::initialize_heavy_infantry();
     let res: fight::FightPredictionResult =
         fight::compute_turn(attacking_position, &attacking, &defending);
-    assert_eq!(
-        res.get_mean_case().get_attacking_regiment().get_points(),
-        2
-    );
-    assert_eq!(
-        res.get_mean_case().get_defending_regiment().get_points(),
-        2
-    );
-    assert_eq!(
-        res.get_best_case().get_attacking_regiment().get_points(),
-        4
-    );
-    assert_eq!(
-        res.get_best_case().get_defending_regiment().get_points(),
-        3
-    );
+    assert_eq!(res.get_mean_case().get_attacking_regiment().get_points(), 2);
+    assert_eq!(res.get_mean_case().get_defending_regiment().get_points(), 2);
+    assert_eq!(res.get_best_case().get_attacking_regiment().get_points(), 4);
+    assert_eq!(res.get_best_case().get_defending_regiment().get_points(), 3);
     assert_eq!(
         res.get_worst_case().get_attacking_regiment().get_points(),
         4
@@ -141,22 +96,10 @@ fn test_warriors_against_warriors() {
     let defending: regiment::Regiment = initialize_units::initialize_warriors();
     let res: fight::FightPredictionResult =
         fight::compute_turn(attacking_position, &attacking, &defending);
-    assert_eq!(
-        res.get_mean_case().get_attacking_regiment().get_points(),
-        6
-    );
-    assert_eq!(
-        res.get_mean_case().get_defending_regiment().get_points(),
-        5
-    );
-    assert_eq!(
-        res.get_best_case().get_attacking_regiment().get_points(),
-        9
-    );
-    assert_eq!(
-        res.get_best_case().get_defending_regiment().get_points(),
-        5
-    );
+    assert_eq!(res.get_mean_case().get_attacking_regiment().get_points(), 6);
+    assert_eq!(res.get_mean_case().get_defending_regiment().get_points(), 5);
+    assert_eq!(res.get_best_case().get_attacking_regiment().get_points(), 9);
+    assert_eq!(res.get_best_case().get_defending_regiment().get_points(), 5);
     assert_eq!(
         res.get_worst_case().get_attacking_regiment().get_points(),
         6

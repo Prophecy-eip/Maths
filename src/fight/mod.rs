@@ -247,9 +247,9 @@ pub fn compute_turn(
 
 #[cfg(test)]
 mod tests {
-    use crate::fight::{create_prediction, compute_turn};
     use crate::fight::computation_tools::compute_case;
-    use crate::{global_test, regiment, modifier, stat, model};
+    use crate::fight::{compute_turn, create_prediction};
+    use crate::{global_test, model, modifier, regiment, stat};
 
     use super::ComputeCase;
 
@@ -275,7 +275,8 @@ mod tests {
                 agility: 5,
             },
         );
-        let silexian_spears_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
+        let silexian_spears_modifier: modifier::Modifier =
+            modifier::Modifier::new_weapon(None, 0, 0);
         let model_silexian_spears: model::Model =
             model::Model::new(silexian_spears_stats, vec![silexian_spears_modifier], false);
         let silexian_spears: regiment::Regiment =
@@ -392,11 +393,9 @@ mod tests {
     fn test_compute_turn() {
         let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
             initialize_two_units();
-        let res: super::FightPredictionResult = compute_turn(crate::fight::AttackPosition::FRONT, &attacking, &defending);
-        assert_eq!(
-            res.get_mean_case().get_attacking_regiment().get_points(),
-            9
-        );
+        let res: super::FightPredictionResult =
+            compute_turn(crate::fight::AttackPosition::FRONT, &attacking, &defending);
+        assert_eq!(res.get_mean_case().get_attacking_regiment().get_points(), 9);
         assert_eq!(
             res.get_best_case().get_attacking_regiment().get_points(),
             11
@@ -411,7 +410,8 @@ mod tests {
     fn test_compute_turn_with_banner() {
         let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
             initialize_two_units_with_banner();
-        let res: crate::fight::FightPredictionResult = compute_turn(crate::fight::AttackPosition::FRONT, &attacking, &defending);
+        let res: crate::fight::FightPredictionResult =
+            compute_turn(crate::fight::AttackPosition::FRONT, &attacking, &defending);
         assert_eq!(
             res.get_mean_case().get_attacking_regiment().get_points(),
             10
@@ -430,7 +430,8 @@ mod tests {
     fn test_get_probability_fight_case() {
         let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
             initialize_two_units();
-        let res: crate::fight::FightPredictionResult = compute_turn(crate::fight::AttackPosition::FRONT, &attacking, &defending);
+        let res: crate::fight::FightPredictionResult =
+            compute_turn(crate::fight::AttackPosition::FRONT, &attacking, &defending);
         assert_eq!(res.get_mean_case().get_probability(), 0.07443220723974381);
         assert_eq!(res.get_best_case().get_probability(), 0.23791208650489054);
         assert_eq!(res.get_worst_case().get_probability(), 0.003097758482781122);
@@ -440,8 +441,12 @@ mod tests {
     fn test_speed_equality() {
         let attacking: regiment::Regiment = initialize_chaos_warrior();
         let defending: regiment::Regiment = initialize_silexian_spears();
-        assert_eq!(attacking.get_model().get_stats().get_agility() + 1, defending.get_model().get_stats().get_agility());
-        let res: crate::fight::FightPredictionResult = compute_turn(crate::fight::AttackPosition::FRONT, &attacking, &defending);
+        assert_eq!(
+            attacking.get_model().get_stats().get_agility() + 1,
+            defending.get_model().get_stats().get_agility()
+        );
+        let res: crate::fight::FightPredictionResult =
+            compute_turn(crate::fight::AttackPosition::FRONT, &attacking, &defending);
         assert_eq!(res.get_mean_case().get_attacking_regiment().get_points(), 7);
     }
 }
