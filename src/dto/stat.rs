@@ -1,4 +1,3 @@
-
 pub struct GlobalStatsDto {
     advance: usize,
     march: usize,
@@ -86,7 +85,11 @@ pub struct StatsDto {
 
 impl StatsDto {
     pub fn new(
-        GlobalStatsDto { advance, march, discipline }: GlobalStatsDto,
+        GlobalStatsDto {
+            advance,
+            march,
+            discipline,
+        }: GlobalStatsDto,
         DefensiveStatsDto {
             health_points,
             defense,

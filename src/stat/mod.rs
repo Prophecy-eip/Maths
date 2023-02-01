@@ -321,8 +321,8 @@ impl Stats {
 
 #[cfg(test)]
 mod tests {
-    use crate::{global_test, model, modifier};
     use super::Stats;
+    use crate::{global_test, model, modifier};
 
     #[test]
     fn stat_get_advance() {
@@ -427,9 +427,11 @@ mod tests {
 
         let model: model::Model = model::Model::new(
             stats,
-            vec![modifier::Modifier::Weapon(
-                modifier::WeaponModifier::new(Some(1), 1, 1),
-            )],
+            vec![modifier::Modifier::Weapon(modifier::WeaponModifier::new(
+                Some(1),
+                1,
+                1,
+            ))],
             false,
         );
         assert_eq!(model.get_boosted_stats(), &copy);
@@ -445,8 +447,7 @@ mod tests {
     #[test]
     fn test_apply_modifier_ranged_weapon() {
         let mut stats: Stats = global_test::tests::initialize_mock_stats();
-        let modifier: modifier::Modifier =
-            modifier::Modifier::new_weapon(Some(1), 3, 4);
+        let modifier: modifier::Modifier = modifier::Modifier::new_weapon(Some(1), 3, 4);
         stats.apply_modifier(&modifier);
         assert_eq!(stats.get_armour_penetration(), 5);
         assert_eq!(stats.get_strength(), 4);
@@ -465,8 +466,7 @@ mod tests {
     #[test]
     fn test_apply_modifier_defensive() {
         let mut stats: Stats = global_test::tests::initialize_mock_stats();
-        let modifier: modifier::Modifier =
-            modifier::Modifier::new_defensive(1, 1, 1, 1, 1);
+        let modifier: modifier::Modifier = modifier::Modifier::new_defensive(1, 1, 1, 1, 1);
         stats.apply_modifier(&modifier);
         assert_eq!(stats.get_health_points(), 2);
         assert_eq!(stats.get_defense(), 2);
@@ -478,8 +478,7 @@ mod tests {
     #[test]
     fn test_apply_modifier_offensive() {
         let mut stats: Stats = global_test::tests::initialize_mock_stats();
-        let modifier: modifier::Modifier =
-            modifier::Modifier::new_offensive(1, 2, 3, 4, 5);
+        let modifier: modifier::Modifier = modifier::Modifier::new_offensive(1, 2, 3, 4, 5);
         stats.apply_modifier(&modifier);
         assert_eq!(stats.get_attack(), 2);
         assert_eq!(stats.get_offensive(), 3);
