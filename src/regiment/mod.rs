@@ -7,7 +7,8 @@ use serde;
 
 /// Struct containing all the informations about a Regiment
 ///
-/// ## Attributes
+/// # Attributes
+///
 /// model (model::Model): The Model composing the Regiment
 ///
 /// nb_rows (usize): Number of rows in the Regiment
@@ -32,19 +33,21 @@ pub struct Regiment {
 impl Regiment {
     /// Create a new Regiment of the model with the specified number of unit
     ///
-    /// ## Parameters
-    /// (model::Model) model: The model that compose the regiment
+    /// # Parameters
     ///
-    /// (usize) nb_rows: The number of rows that compose the regiment
+    /// model (model::Model): The model that compose the regiment
     ///
-    /// (usize) nb_cols: The number of columns that compose the regiment
+    /// nb_rows (isize): The number of rows that compose the regiment
     ///
-    /// (usize) nb_models: The number of models in the regiment
+    /// nb_cols (isize): The number of columns that compose the regiment
     ///
-    /// Option<usize> regiment_health_points: The number of health points that left to the regiment.
+    /// nb_models (isize): The number of models in the regiment
+    ///
+    /// regiment_health_points (Option<usize>): The number of health points that left to the regiment.
     /// If None, the default value will be (the number of model * the health_points stats of the model)
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// Regiment: The Regiment created
     pub fn new(
         model: model::Model,
@@ -65,7 +68,8 @@ impl Regiment {
     }
     /// Get the Model of the Regiment
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// &model::Model: The Model in the Regiment
     pub fn get_model(&self) -> &model::Model {
         &self.model
@@ -73,7 +77,8 @@ impl Regiment {
 
     /// Get the number of rows in the Regiment
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// usize: The number of rows in the Regiment
     pub fn get_rows(&self) -> usize {
         self.nb_rows
@@ -81,7 +86,8 @@ impl Regiment {
 
     /// Get the number of columns in the Regiment
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// usize: The number of columns in the Regiment
     pub fn get_cols(&self) -> usize {
         self.nb_cols
@@ -89,7 +95,8 @@ impl Regiment {
 
     /// Get the number of Models in the Regiment
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// usize: The number of Models in the Regiment
     pub fn get_nb_models(&self) -> usize {
         self.nb_models
@@ -97,7 +104,8 @@ impl Regiment {
 
     /// Get the regiment total health points
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// usize: The regiment total health points
     pub fn get_regiment_health_points(&self) -> usize {
         self.regiment_health_points
@@ -105,10 +113,12 @@ impl Regiment {
 
     /// Inflict damage to the regiment and rearrange the ranks
     ///
-    /// ## Parameters
-    /// (usize) amount: The amount of damages inflicted to the regiment
+    /// # Parameters
     ///
-    /// ## Return
+    /// amount (usize): The amount of damages inflicted to the regiment
+    ///
+    /// # Return
+    ///
     /// usize: The new amount of regiment health points
     pub fn take_damage(&mut self, amount: usize) -> usize {
         self.regiment_health_points = self.regiment_health_points.saturating_sub(amount);
@@ -126,7 +136,8 @@ impl Regiment {
 
     /// Get the number of points earn by the regiment
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// usize: The number of points of the regiment
     pub fn get_points(&self) -> usize {
         self.points
@@ -134,10 +145,12 @@ impl Regiment {
 
     /// Give some points to the regiment
     ///
-    /// ## Parameters
-    /// (usize) points: The amount of points to give
+    /// # Parameters
     ///
-    /// ## Return
+    /// points (usize): The amount of points to give
+    ///
+    /// # Return
+    ///
     /// usize: The new number of points of the regiment
     pub fn earn_points(&mut self, points: usize) -> usize {
         self.points += points;

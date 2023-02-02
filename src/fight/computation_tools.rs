@@ -4,12 +4,12 @@ use crate::stat;
 
 /// Compute the value to hit the opponent
 ///
-/// ## Parameters
+/// # Parameters
 /// offensive (usize): The offensive Stats of the attacking Regiment
 ///
 /// defense (usize): The defense Stats of the defending Regiment
 ///
-/// ## Return
+/// # Return
 /// usize: The minimum roll to hit the opponent
 pub fn compute_roll_to_hit(offensive: usize, defense: usize) -> usize {
     let difference: i8 = offensive as i8 - defense as i8;
@@ -25,12 +25,12 @@ pub fn compute_roll_to_hit(offensive: usize, defense: usize) -> usize {
 
 /// Compute the value to wound the opponent
 ///
-/// ## Parameters
+/// # Parameters
 /// strength (usize): The strength Stats of the attacking Regiment
 ///
 /// resilience (usize): The resilience Stats of the defending Regiment
 ///
-/// ## Return
+/// # Return
 /// usize: The minimum roll to wound the opponent
 pub fn compute_roll_to_wound(strength: usize, resilience: usize) -> usize {
     let difference: i8 = strength as i8 - resilience as i8;
@@ -46,12 +46,12 @@ pub fn compute_roll_to_wound(strength: usize, resilience: usize) -> usize {
 
 /// Compute the probability for a model to wound an another
 ///
-/// ## Parameters
-/// (&model::Stats) attacking_stats: The attacker stats
+/// # Parameters
+/// attacking_stats (&model::Stats): The attacker stats
 ///
-/// (&model::Stats) defending_stats: The defender stats
+/// defending_stats (&model::Stats): The defender stats
 ///
-/// ## Return
+/// # Return
 /// f64: The probability for attacking_stats to wound target
 fn compute_wound_probability(attacking_stats: &stat::Stats, defending_stats: &stat::Stats) -> f64 {
     let minimum_to_hit: usize = compute_roll_to_hit(
@@ -78,12 +78,12 @@ fn compute_wound_probability(attacking_stats: &stat::Stats, defending_stats: &st
 /// If the second Model is faster than the first Model, return 2
 /// If the Models have the same speed, return 0
 ///
-/// ## Parameters
+/// # Parameters
 /// attacking_stats (&model::Stats): The attacker stats
 ///
 /// defending_stats (&model::Stats): The defender stats
 ///
-/// ## Return
+/// # Return
 /// u8: The fastest model
 ///
 /// 0 if the two units have the same speed
@@ -104,12 +104,12 @@ pub fn find_the_fastest(attacking_stats: &stat::Stats, defending_stats: &stat::S
 
 /// Compute the probability for a model to protect itself from another model damages
 ///
-/// ## Parameters
-/// (&model::Stats) defending_stats: The defender stats
+/// # Parameters
+/// defending_stats (&model::Stats): The defender stats
 ///
-/// (&model::Stats) attacking_stats: The attacker stats
+/// attacking_stats (&model::Stats): The attacker stats
 ///
-/// ## Return
+/// # Return
 /// f64: The probability to save a damage dealt by attacker
 fn compute_save_probability(defending_stats: &stat::Stats, attacking_stats: &stat::Stats) -> f64 {
     let armour_save: usize = match global_values::ARMOUR_SAVE_THRESHOLD as isize
@@ -137,12 +137,12 @@ fn compute_save_probability(defending_stats: &stat::Stats, attacking_stats: &sta
 ///
 /// This function take account of the defender defensive stats
 ///
-/// ## Parameters
-/// (&model::Stats) attacking_stats: The attacker stats
+/// # Parameters
+/// attacking_stats (&model::Stats): The attacker stats
 ///
-/// (&model::Stats) defending_stats: The defender stats
+/// defending_stats (&model::Stats): The defender stats
 ///
-/// ## Return
+/// # Return
 /// f64: The probability that a hit wound the defender
 pub fn compute_damage_probability(
     attacking_stats: &stat::Stats,
@@ -154,12 +154,12 @@ pub fn compute_damage_probability(
 
 /// Compute the average damage a unit would dealt to another
 ///
-/// ## Paramaters
-/// (&regiment::Regiment) attacking_regiment: The attacker
+/// # Paramaters
+/// attacking_regiment (&regiment::Regiment): The attacker
 ///
-/// (&regiment::Regiment) defending_regiment: The defender
+/// defending_regiment (&regiment::Regiment): The defender
 ///
-/// ## Return
+/// # Return
 /// (usize, f64): A tuple with first the damage computed and then the probability that it occurs
 fn compute_mean_case(
     attacking_regiment: &crate::regiment::Regiment,
@@ -183,14 +183,14 @@ fn compute_mean_case(
 
 /// Compute the average damage dealt by a unit to another according to the requested scenario
 ///
-/// ## Parameters
-/// (&regiment::Regiment) attacking_regiment: The attacker
+/// # Parameters
+/// attacking_regiment (&regiment::Regiment): The attacker
 ///
-/// (&regiment::Regiment) defending_regiment: The defender
+/// defending_regiment (&regiment::Regiment): The defender
 ///
-/// (&ComputeCase) case: The scenario from first_unit point of view
+/// case (&ComputeCase): The scenario from first_unit point of view
 ///
-/// ## Return
+/// # Return
 /// (usize, f64): The average amount of damage dealt by first_unit and the probability for this scenario to occurs
 pub fn compute_case(
     attacking_regiment: &crate::regiment::Regiment,

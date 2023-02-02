@@ -1,4 +1,18 @@
-#[derive(serde::Serialize, serde::Deserialize)]
+//! ModifierDto module
+//!
+//! This module contains the ModifierDto enum and its implementation.
+//! The goal is to be able to communicate easily with outside of the library.
+
+/// Struct used to represent a Global modifier outside of rust code
+///
+/// # Attributes
+///
+/// advance (isize): The advance modifier
+///
+/// march (isize): The march modifier
+///
+/// discipline (isize): The discipline modifier
+#[derive(serde::Serialize, serde::Deserialize, Debug, Clone, Copy)]
 pub struct GlobalModifierDto {
     pub advance: isize,
     pub march: isize,
@@ -6,6 +20,19 @@ pub struct GlobalModifierDto {
 }
 
 impl GlobalModifierDto {
+    /// Create a new GlobalModifierDto
+    ///
+    /// # Parameters
+    ///
+    /// advance (isize): The advance modifier
+    ///
+    /// march (isize): The march modifier
+    ///
+    /// discipline (isize): The discipline modifier
+    ///
+    /// # Return
+    ///
+    /// GlobalModifierDto: The newly created GlobalModifierDto
     pub fn new(advance: isize, march: isize, discipline: isize) -> GlobalModifierDto {
         GlobalModifierDto {
             advance,
@@ -15,7 +42,20 @@ impl GlobalModifierDto {
     }
 }
 
-#[derive(serde::Serialize, serde::Deserialize)]
+/// Struct used to represent a Defensive modifier outside of rust code
+///
+/// # Attributes
+///
+/// health_points (isize): The health points modifier
+///
+/// defense (isize): The defense modifier
+///
+/// resilience (isize): The resilience modifier
+///
+/// armour (isize): The armour modifier
+///
+/// aegis (isize): The aegis modifier
+#[derive(serde::Serialize, serde::Deserialize, Debug, Clone, Copy)]
 pub struct DefensiveModifierDto {
     pub health_points: isize,
     pub defense: isize,
@@ -25,6 +65,23 @@ pub struct DefensiveModifierDto {
 }
 
 impl DefensiveModifierDto {
+    /// Create a new DefensiveModifierDto
+    ///
+    /// # Parameters
+    ///
+    /// health_points (isize): The health points modifier
+    ///
+    /// defense (isize): The defense modifier
+    ///
+    /// resilience (isize): The resilience modifier
+    ///
+    /// armour (isize): The armour modifier
+    ///
+    /// aegis (isize): The aegis modifier
+    ///
+    /// # Return
+    ///
+    /// DefensiveModifierDto: The newly created DefensiveModifierDto
     pub fn new(
         health_points: isize,
         defense: isize,
@@ -42,7 +99,20 @@ impl DefensiveModifierDto {
     }
 }
 
-#[derive(serde::Serialize, serde::Deserialize)]
+/// Struct used to represent an Offensive modifier outside of rust code
+///
+/// # Attributes
+///
+/// attack (isize): The attack modifier
+///
+/// offensive (isize): The offensive modifier
+///
+/// strength (isize): The strength modifier
+///
+/// armour_penetration (isize): The armour penetration modifier
+///
+/// agility (isize): The agility modifier
+#[derive(serde::Serialize, serde::Deserialize, Debug, Clone, Copy)]
 pub struct OffensiveModifierDto {
     pub attack: isize,
     pub offensive: isize,
@@ -52,6 +122,23 @@ pub struct OffensiveModifierDto {
 }
 
 impl OffensiveModifierDto {
+    /// Create a new OffensiveModifierDto
+    ///
+    /// # Parameters
+    ///
+    /// attack (isize): The attack modifier
+    ///
+    /// offensive (isize): The offensive modifier
+    ///
+    /// strength (isize): The strength modifier
+    ///
+    /// armour_penetration (isize): The armour penetration modifier
+    ///
+    /// agility (isize): The agility modifier
+    ///
+    /// # Return
+    ///
+    /// OffensiveModifierDto: The newly created OffensiveModifierDto
     pub fn new(
         attack: isize,
         offensive: isize,
@@ -69,7 +156,16 @@ impl OffensiveModifierDto {
     }
 }
 
-#[derive(serde::Serialize, serde::Deserialize)]
+/// Struct used to represent a Weapon modifier outside of rust code
+///
+/// # Attributes
+///
+/// shots (Option<isize>): The shots modifier
+///
+/// strength (isize): The strength modifier
+///
+/// armour_penetration (isize): The armour penetration modifier
+#[derive(serde::Serialize, serde::Deserialize, Debug, Clone, Copy)]
 pub struct WeaponModifierDto {
     shots: Option<isize>,
     strength: isize,
@@ -77,6 +173,19 @@ pub struct WeaponModifierDto {
 }
 
 impl WeaponModifierDto {
+    /// Create a new WeaponModifierDto
+    ///
+    /// # Parameters
+    ///
+    /// shots (Option<isize>): The shots modifier
+    ///
+    /// strength (isize): The strength modifier
+    ///
+    /// armour_penetration (isize): The armour penetration modifier
+    ///
+    /// # Return
+    ///
+    /// WeaponModifierDto: The newly created WeaponModifierDto
     pub fn new(
         shots: Option<isize>,
         strength: isize,
@@ -90,7 +199,18 @@ impl WeaponModifierDto {
     }
 }
 
-#[derive(serde::Serialize, serde::Deserialize)]
+/// Enum used to represent a modifier outside of rust code
+///
+/// # Attributes
+///
+/// Global (GlobalModifierDto): The global modifier
+///
+/// Defensive (DefensiveModifierDto): The defensive modifier
+///
+/// Offensive (OffensiveModifierDto): The offensive modifier
+///
+/// Weapon (WeaponModifierDto): The weapon modifier
+#[derive(serde::Serialize, serde::Deserialize, Debug, Clone, Copy)]
 pub enum ModifierDto {
     Global(GlobalModifierDto),
     Defensive(DefensiveModifierDto),
@@ -99,10 +219,40 @@ pub enum ModifierDto {
 }
 
 impl ModifierDto {
+    /// Create a new ModifierDto
+    ///
+    /// # Parameters
+    ///
+    /// advance (isize): The advance modifier
+    ///
+    /// march (isize): The march modifier
+    ///
+    /// discipline (isize): The discipline modifier
+    ///
+    /// # Return
+    ///
+    /// ModifierDto: The newly created ModifierDto
     pub fn new_global_dto(advance: isize, march: isize, discipline: isize) -> ModifierDto {
         ModifierDto::Global(GlobalModifierDto::new(advance, march, discipline))
     }
 
+    /// Create a new ModifierDto
+    ///
+    /// # Parameters
+    ///
+    /// health_points (isize): The health points modifier
+    ///
+    /// defense (isize): The defense modifier
+    ///
+    /// resilience (isize): The resilience modifier
+    ///
+    /// armour (isize): The armour modifier
+    ///
+    /// aegis (isize): The aegis modifier
+    ///
+    /// # Return
+    ///
+    /// ModifierDto: The newly created ModifierDto
     pub fn new_defensive_dto(
         health_points: isize,
         defense: isize,
@@ -119,6 +269,23 @@ impl ModifierDto {
         ))
     }
 
+    /// Create a new ModifierDto
+    ///
+    /// # Parameters
+    ///
+    /// attack (isize): The attack modifier
+    ///
+    /// offensive (isize): The offensive modifier
+    ///
+    /// strength (isize): The strength modifier
+    ///
+    /// armour_penetration (isize): The armour penetration modifier
+    ///
+    /// agility (isize): The agility modifier
+    ///
+    /// # Return
+    ///
+    /// ModifierDto: The newly created ModifierDto
     pub fn new_offensive_dto(
         attack: isize,
         offensive: isize,
@@ -135,6 +302,19 @@ impl ModifierDto {
         ))
     }
 
+    /// Create a new ModifierDto
+    ///
+    /// # Parameters
+    ///
+    /// shots (Option<isize>): The shots modifier
+    ///
+    /// strength (isize): The strength modifier
+    ///
+    /// armour_penetration (isize): The armour penetration modifier
+    ///
+    /// # Return
+    ///
+    /// ModifierDto: The newly created ModifierDto
     pub fn new_weapon_dto(
         shots: Option<isize>,
         strength: isize,
@@ -143,6 +323,11 @@ impl ModifierDto {
         ModifierDto::Weapon(WeaponModifierDto::new(shots, strength, armour_penetration))
     }
 
+    /// Convert the ModifierDto into a Modifier
+    ///
+    /// # Return
+    ///
+    /// Modifier: The newly created Modifier
     pub fn hydrate(&self) -> crate::modifier::Modifier {
         match self {
             ModifierDto::Global(global) => crate::modifier::Modifier::new_global(
@@ -172,6 +357,15 @@ impl ModifierDto {
         }
     }
 
+    /// Convert a Modifier into a ModifierDto
+    ///
+    /// # Parameters
+    ///
+    /// modifier (Modifier): The modifier to convert
+    ///
+    /// # Return
+    ///
+    /// ModifierDto: The newly created ModifierDto
     pub fn dehydrate(modifier: &crate::modifier::Modifier) -> ModifierDto {
         match modifier {
             crate::modifier::Modifier::Global(global) => ModifierDto::new_global_dto(

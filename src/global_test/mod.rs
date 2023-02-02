@@ -1,6 +1,7 @@
 //! # Test module
 //!
 //! This module contain all the initialization and global functions needed by the tests
+
 #[cfg(test)]
 pub mod tests {
     use crate::{model, modifier, regiment, stat};
@@ -8,6 +9,7 @@ pub mod tests {
     /// # Initialize the stats structs with some values given as parameters
     ///
     /// # Parameters
+    ///
     /// advance (usize): the advance statistic of the model
     ///
     /// march (usize): the march statistic of the model
@@ -35,6 +37,7 @@ pub mod tests {
     /// agility (usize): the agility statistic of the model
     ///
     /// # Return
+    ///
     /// Stats Model: The Stats created and initialized
     pub fn initialize_stats(
         advance: usize,
@@ -75,9 +78,10 @@ pub mod tests {
         stats
     }
 
-    /// # Initialize all stats structs values to 1
+    /// Initialize all stats structs values to 1
     ///
     /// # Return
+    ///
     /// Stats Model: Our mock Stats struct
     pub fn initialize_mock_stats() -> stat::Stats {
         let stats: stat::Stats = stat::Stats::new(
@@ -104,9 +108,10 @@ pub mod tests {
         stats
     }
 
-    /// # Initialize the modifier stats structs with some values given as parameters
+    /// Initialize the modifier stats structs with some values given as parameters
     ///
     /// # Parameters
+    ///
     /// advance (usize): the advance modifier statistic of the model
     ///
     /// march (usize): the march modifier statistic of the model
@@ -134,6 +139,7 @@ pub mod tests {
     /// agility (usize): the agility modifier statistic of the model
     ///
     /// # Return
+    ///
     /// Modifier Stats: The modifier stats created and initialized
     pub fn initialize_modifier_stats(
         advance: usize,
@@ -174,9 +180,10 @@ pub mod tests {
         modifier_stats
     }
 
-    /// #  Initialize all modifier stats structs values to 0
+    /// Initialize all modifier stats structs values to 0
     ///
     /// # Return
+    ///
     /// Modifier Stats: Our mock modifier Stats struct
     pub fn initialize_mock_modifier_stats() -> stat::Stats {
         let modifier_stats: stat::Stats = stat::Stats::new(
@@ -206,6 +213,7 @@ pub mod tests {
     /// # Initialize a regiment according to the parameters
     ///
     /// # Parameters
+    ///
     /// model_stats (model::Stats): the stats of a Model
     ///
     /// nb_rows (usize): the number of rows of the regiment
@@ -217,6 +225,7 @@ pub mod tests {
     /// banner (bool): if the regiment has a banner or not
     ///
     /// # Return
+    ///
     /// Regiment : a regiment struct initialized
     pub fn initialize_regiment(
         model_stats: stat::Stats,
@@ -236,7 +245,8 @@ pub mod tests {
 
     /// Initialize a model with a stats that values 1 for each of it's fields and and a dummy weapon
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// model: Our mock model struct
     pub fn initialize_mock_model() -> model::Model {
         let stats: stat::Stats = initialize_mock_stats();
@@ -248,7 +258,8 @@ pub mod tests {
 
     /// Initialize a regiment with a model that have 1 for each element of it's stat and a dummy weapon
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// regiment: Our mock modifier Stats struct
     pub fn initialize_mock_regiment() -> regiment::Regiment {
         let stats: stat::Stats = initialize_mock_stats();

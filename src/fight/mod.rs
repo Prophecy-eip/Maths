@@ -8,7 +8,7 @@ mod global_values;
 
 use crate::regiment;
 
-/// ## This describe the scenario we are computing when creating a prediction
+/// This describe the scenario we are computing when creating a prediction
 ///
 /// BEST : Represent the best scenario for the first unit
 ///
@@ -25,7 +25,9 @@ pub enum ComputeCase {
 /// This is the enumeration of the differents attacking positions
 ///
 /// FRONT: The attacking regiment is charging from the front of the defending unit
+///
 /// FLANK: The attacking regiment is charging from the left or the right flank of the defending unit
+///
 /// BACK: The attacking regiment is charging from the back of the defending unit
 #[derive(Clone, Copy)]
 pub enum AttackPosition {
@@ -36,16 +38,13 @@ pub enum AttackPosition {
 
 /// Struct containing a fight case, a probability of that case to happen and the two regiments
 ///
-/// ## Attributes
-///
+/// # Attributes
 ///
 /// probability (f64): The probability of that case to happen
 ///
 /// attacking_regiment (regiment::Regiment): The attacking regiment
 ///
 /// defending_regiment (regiment::Regiment): The defending regiment
-///
-///
 #[derive(serde::Serialize, serde::Deserialize, Clone)]
 pub struct FightCase {
     probability: f64,
@@ -54,6 +53,19 @@ pub struct FightCase {
 }
 
 impl FightCase {
+    /// Create a new FightCase
+    ///
+    /// # Parameters
+    ///
+    /// probability (f64): The probability of that case to happen
+    ///
+    /// attacking_regiment (regiment::Regiment): The attacking regiment
+    ///
+    /// defending_regiment (regiment::Regiment): The defending regiment
+    ///
+    /// # Return
+    ///
+    /// FightCase: The new FightCase
     pub fn new(
         probability: f64,
         attacking_regiment: regiment::Regiment,
@@ -66,19 +78,43 @@ impl FightCase {
         }
     }
 
+    /// Get the defending regiment
+    ///
+    /// # Return
+    ///
+    /// regiment::Regiment: The defending regiment
     pub fn get_attacking_regiment(&self) -> regiment::Regiment {
         self.attacking_regiment.clone()
     }
 
+    /// Get the attacking regiment
+    ///
+    /// # Return
+    ///
+    /// regiment::Regiment: The attacking regiment
     pub fn get_defending_regiment(&self) -> regiment::Regiment {
         self.defending_regiment.clone()
     }
 
+    /// Get the probability of that case to happen
+    ///
+    /// # Return
+    ///
+    /// f64: The probability of that case to happen
     pub fn get_probability(&self) -> f64 {
         self.probability
     }
 }
 
+/// Struct containing the 3 possible cases of a fight
+///
+/// # Attributes
+///
+/// best_case (FightCase): The best case of the fight
+///
+/// worst_case (FightCase): The worst case of the fight
+///
+/// mean_case (FightCase): The mean case of the fight
 pub struct FightPredictionResult {
     best_case: FightCase,
     worst_case: FightCase,
@@ -86,6 +122,19 @@ pub struct FightPredictionResult {
 }
 
 impl FightPredictionResult {
+    /// Create a new FightPredictionResult
+    ///
+    /// # Parameters
+    ///
+    /// best_case (FightCase): The best case of the fight
+    ///
+    /// worst_case (FightCase): The worst case of the fight
+    ///
+    /// mean_case (FightCase): The mean case of the fight
+    ///
+    /// # Return
+    ///
+    /// FightPredictionResult: The new FightPredictionResult
     pub fn new(
         best_case: FightCase,
         worst_case: FightCase,
@@ -98,14 +147,29 @@ impl FightPredictionResult {
         }
     }
 
+    /// Get the best case of the fight
+    ///
+    /// # Return
+    ///
+    /// FightCase: The best case of the fight
     pub fn get_best_case(&self) -> FightCase {
         self.best_case.clone()
     }
 
+    /// Get the worst case of the fight
+    ///
+    /// # Return
+    ///
+    /// FightCase: The worst case of the fight
     pub fn get_worst_case(&self) -> FightCase {
         self.worst_case.clone()
     }
 
+    /// Get the mean case of the fight
+    ///
+    /// # Return
+    ///
+    /// FightCase: The mean case of the fight
     pub fn get_mean_case(&self) -> FightCase {
         self.mean_case.clone()
     }
@@ -113,14 +177,14 @@ impl FightPredictionResult {
 
 /// Make two units fight and return the probability that the fight occurs during the game
 ///
-/// ## Parameters
-/// (&mut regiment::Regiment, &ComputeCase) fastest: The fastest regiment
+/// # Parameters
+/// fastest (&mut regiment::Regiment, &ComputeCase): The fastest regiment
 ///
-/// (&mut regiment::Regiment, &ComputeCase) slowest: The slowest regiment
+/// slowest (&mut regiment::Regiment, &ComputeCase): The slowest regiment
 ///
-/// (bool) speed_equality: A boolean value to specify if the regiment have the same speed or not
+/// speed_equality (bool): A boolean value to specify if the regiment have the same speed or not
 ///
-/// ## Return
+/// # Return
 /// f64: The probability that the fight computed occurs
 fn apply_fight(
     fastest: (&mut regiment::Regiment, &ComputeCase),
@@ -154,19 +218,19 @@ fn apply_fight(
     }
 }
 
-/// Compute a full scenario
+/// Create a prediction for a fight between two units
 ///
-/// ## Parameters
-/// (crate::web_server::converter::web_objects::AttackPosition) attacking_position: The position of the attacking Regiment
+/// # Parameters
+/// attacking_position (AttackPosition): The position of the attacking Regiment
 ///
-/// (&regiment::Regiment) attacking_regiment: The first unit
+/// attacking_regiment (&regiment::Regiment): The first unit
 ///
-/// (&regiment::Regiment) defending_regiment: The second unit
+/// defending_regiment (&regiment::Regiment): The second unit
 ///
-/// (&ComputeCase) case: The scenario from first unit point of view
+/// case (&ComputeCase): The scenario from first unit point of view
 ///
-/// ## Return
-/// Prediction: The prediction computed according to the specified Compute Case
+/// # Return
+/// FightCase: The case of the fight
 fn create_prediction(
     attacking_position: AttackPosition,
     attacking_regiment: &regiment::Regiment,
@@ -210,15 +274,15 @@ fn create_prediction(
 
 /// Compute the 3 most important scenario while in melee phase
 ///
-/// ## Parameters
-/// (crate::web_server::converter::web_objects::AttackPosition) attacking_position: The position of the attacking Regiment
+/// # Parameters
+/// attacking_position (AttackPosition): The position of the attacking Regiment
 ///
-/// (&regiment::Regiment) attacking_regiment: The attacking regiment
+/// attacking_regiment (&regiment::Regiment): The attacking regiment
 ///
-/// (&regiment::Regiment) defending_regiment: The defending regiment
+/// defending_regiment (&regiment::Regiment): The defending regiment
 ///
-/// ## Return
-/// (HashMap<ComputeCase, Prediction>): The more realistic scenario, The best scenario for first unit, The worst scenario for first unit
+/// # Return
+/// FightPredictionResult: The best scenario, the worst scenario and the mean scenario for the attacking unit
 pub fn compute_turn(
     attacking_position: AttackPosition,
     attacking_regiment: &regiment::Regiment,

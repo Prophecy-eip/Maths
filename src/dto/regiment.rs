@@ -1,4 +1,20 @@
-#[derive(serde::Serialize, serde::Deserialize)]
+//! RegimentDto module
+//!
+//! This module contains the RegimentDto struct and its implementation.
+//! The goal is to be able to communicate easily with outside of the library.
+
+/// Struct used to represent a Regiment outside of the library.
+///
+/// # Attributes
+///
+/// model (ModelDto): The model of the regiment.
+///
+/// nb_rows (usize): The number of rows of the regiment.
+///
+/// nb_cols (usize): The number of columns of the regiment.
+///
+/// nb_models (usize): The number of models in the regiment.
+#[derive(serde::Serialize, serde::Deserialize, Debug)]
 pub struct RegimentDto {
     model: super::model::ModelDto,
     nb_rows: usize,
@@ -7,6 +23,21 @@ pub struct RegimentDto {
 }
 
 impl RegimentDto {
+    /// Creates a new RegimentDto.
+    ///
+    /// # Arguments
+    ///
+    /// model (ModelDto): The model of the regiment.
+    ///
+    /// nb_rows (usize): The number of rows of the regiment.
+    ///
+    /// nb_cols (usize): The number of columns of the regiment.
+    ///
+    /// nb_models (usize): The number of models in the regiment.
+    ///
+    /// # Returns
+    ///
+    /// RegimentDto: The newly created RegimentDto.
     pub fn new(
         model: super::model::ModelDto,
         nb_rows: usize,
@@ -21,6 +52,11 @@ impl RegimentDto {
         }
     }
 
+    /// Hydrates the RegimentDto into a Regiment.
+    ///
+    /// # Returns
+    ///
+    /// Regiment: The newly created Regiment.
     pub fn hydrate(&self) -> crate::regiment::Regiment {
         crate::regiment::Regiment::new(
             self.model.hydrate(),
@@ -31,6 +67,11 @@ impl RegimentDto {
         )
     }
 
+    /// Dehydrates a Regiment into a RegimentDto.
+    ///
+    /// # Arguments
+    ///
+    /// regiment (Regiment): The Regiment to dehydrate.
     pub fn dehydrate(regiment: &crate::regiment::Regiment) -> RegimentDto {
         RegimentDto {
             model: super::model::ModelDto::dehydrate(regiment.get_model()),
