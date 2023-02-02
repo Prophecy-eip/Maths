@@ -1,3 +1,18 @@
+//! StatsDto module
+//!
+//! This module contains the StatsDto struct and its implementation.
+//! The goal is to be able to communicate easily with outside of the library.
+
+/// Struct used to represent the GlobalStats of a model outside of rust code
+///
+/// # Attributes
+///
+/// advance (usize): The advance of the model
+///
+/// march (usize): The march of the model
+///
+/// discipline (usize): The discipline of the model
+#[derive(Clone, Copy, Debug)]
 pub struct GlobalStatsDto {
     advance: usize,
     march: usize,
@@ -5,6 +20,15 @@ pub struct GlobalStatsDto {
 }
 
 impl GlobalStatsDto {
+    /// Creates a new GlobalStatsDto
+    ///
+    /// # Arguments
+    ///
+    /// advance (usize): The advance of the model
+    ///
+    /// march (usize): The march of the model
+    ///
+    /// discipline (usize): The discipline of the model
     pub fn new(advance: usize, march: usize, discipline: usize) -> GlobalStatsDto {
         GlobalStatsDto {
             advance,
@@ -14,6 +38,20 @@ impl GlobalStatsDto {
     }
 }
 
+/// Struct used to represent the DefensiveStats of a model outside of rust code
+///
+/// # Attributes
+///
+/// health_points (usize): The health points of the model
+///
+/// defense (usize): The defense of the model
+///
+/// resilience (usize): The resilience of the model
+///
+/// armour (usize): The armour of the model
+///
+/// aegis (usize): The aegis of the model
+#[derive(Clone, Copy, Debug)]
 pub struct DefensiveStatsDto {
     health_points: usize,
     defense: usize,
@@ -23,6 +61,23 @@ pub struct DefensiveStatsDto {
 }
 
 impl DefensiveStatsDto {
+    /// Creates a new DefensiveStatsDto
+    ///
+    /// # Arguments
+    ///
+    /// health_points (usize): The health points of the model
+    ///
+    /// defense (usize): The defense of the model
+    ///
+    /// resilience (usize): The resilience of the model
+    ///
+    /// armour (usize): The armour of the model
+    ///
+    /// aegis (usize): The aegis of the model
+    ///
+    /// # Returns
+    ///
+    /// DefensiveStatsDto: The newly created DefensiveStatsDto
     pub fn new(
         health_points: usize,
         defense: usize,
@@ -40,6 +95,20 @@ impl DefensiveStatsDto {
     }
 }
 
+/// Struct used to represent the OffensiveStats of a model outside of rust code
+///
+/// # Attributes
+///
+/// attack (usize): The attack of the model
+///
+/// offensive (usize): The offensive of the model
+///
+/// strength (usize): The strength of the model
+///
+/// armour_penetration (usize): The armour penetration of the model
+///
+/// agility (usize): The agility of the model
+#[derive(Clone, Copy, Debug)]
 pub struct OffensiveStatsDto {
     attack: usize,
     offensive: usize,
@@ -49,6 +118,23 @@ pub struct OffensiveStatsDto {
 }
 
 impl OffensiveStatsDto {
+    /// Creates a new OffensiveStatsDto
+    ///
+    /// # Arguments
+    ///
+    /// attack (usize): The attack of the model
+    ///
+    /// offensive (usize): The offensive of the model
+    ///
+    /// strength (usize): The strength of the model
+    ///
+    /// armour_penetration (usize): The armour penetration of the model
+    ///
+    /// agility (usize): The agility of the model
+    ///
+    /// # Returns
+    ///
+    /// OffensiveStatsDto: The newly created OffensiveStatsDto
     pub fn new(
         attack: usize,
         offensive: usize,
@@ -66,7 +152,36 @@ impl OffensiveStatsDto {
     }
 }
 
-#[derive(Clone, serde::Serialize, serde::Deserialize)]
+/// Struct used to represent the Stats of a model outside of rust code
+///
+/// # Attributes
+///
+/// advance (usize): The advance of the model
+///
+/// march (usize): The march of the model
+///
+/// discipline (usize): The discipline of the model
+///
+/// health_points (usize): The health points of the model
+///
+/// defense (usize): The defense of the model
+///
+/// resilience (usize): The resilience of the model
+///
+/// armour (usize): The armour of the model
+///
+/// aegis (usize): The aegis of the model
+///
+/// attack (usize): The attack of the model
+///
+/// offensive (usize): The offensive of the model
+///
+/// strength (usize): The strength of the model
+///
+/// armour_penetration (usize): The armour penetration of the model
+///
+/// agility (usize): The agility of the model
+#[derive(serde::Serialize, serde::Deserialize, Clone, Copy, Debug)]
 pub struct StatsDto {
     advance: usize,
     march: usize,
@@ -84,6 +199,19 @@ pub struct StatsDto {
 }
 
 impl StatsDto {
+    /// Creates a new StatsDto
+    ///
+    /// # Arguments
+    ///
+    /// GlobalStatsDto { advance, march, discipline }: The global stats of the model
+    ///
+    /// DefensiveStatsDto { health_points, defense, resilience, armour, aegis }: The defensive stats of the model
+    ///
+    /// OffensiveStatsDto { attack, offensive, strength, armour_penetration, agility }: The offensive stats of the model
+    ///
+    /// # Returns
+    ///
+    /// StatsDto: The newly created StatsDto
     pub fn new(
         GlobalStatsDto {
             advance,
@@ -122,6 +250,11 @@ impl StatsDto {
         }
     }
 
+    /// Hydrates a StatsDto into a Stats
+    ///
+    /// # Returns
+    ///
+    /// Stats: The hydrated Stats
     pub fn hydrate(&self) -> crate::stat::Stats {
         crate::stat::Stats::new(
             crate::stat::GlobalStats {
@@ -146,6 +279,15 @@ impl StatsDto {
         )
     }
 
+    /// Dehydrates a Stats into a StatsDto
+    ///
+    /// # Arguments
+    ///
+    /// stat (Stats): The Stats to dehydrate
+    ///
+    /// # Returns
+    ///
+    /// StatsDto: The dehydrated StatsDto
     pub fn dehydrate(stat: &crate::stat::Stats) -> StatsDto {
         StatsDto {
             advance: stat.get_advance(),

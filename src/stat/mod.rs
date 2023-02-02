@@ -1,10 +1,13 @@
-//TODO describe the module
+//! Stat module
+//!
+//! This module contains all the stats structures and functions
 
 use crate::math_tools;
 
 /// Struct containing all the statistics in the game for a Model
 ///
-/// ## Attributes
+/// # Attributes
+///
 /// advance (usize): The distance the Model can advance per turn
 ///
 /// march (usize): The distance the Model can forcefully advance per turn
@@ -30,7 +33,6 @@ use crate::math_tools;
 /// amour_penetration (usize): The strength of the Model
 ///
 /// agility (usize): The agility of the Model
-///
 #[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
 pub struct Stats {
     advance: usize,
@@ -50,7 +52,8 @@ pub struct Stats {
 
 /// Struct containing the global stats of a model
 ///
-/// ## Attributes
+/// # Attributes
+///
 /// advance (usize): The distance the Model can advance per turn
 ///
 /// march (usize): The distance the Model can forcefully advance per turn
@@ -64,7 +67,8 @@ pub struct GlobalStats {
 
 /// Struct containing the defending stats of a model
 ///
-/// ## Attributes
+/// # Attributes
+///
 /// health_points (usize): The number of hit the Model can endure before being removed from the Regiment
 ///
 /// defense (usize): The defense of the Model
@@ -84,7 +88,8 @@ pub struct DefensiveStats {
 
 /// Struct containing the offending stats of a model
 ///
-/// ## Attributes
+/// # Attributes
+///
 /// attack (usize): The number of attack the Model do
 ///
 /// offensive (usize): The offensive of the Model
@@ -106,6 +111,7 @@ impl Stats {
     /// Create new Stats
     ///
     /// # Return
+    ///
     /// Stats: The Stats created
     pub fn new(
         GlobalStats {
@@ -146,7 +152,8 @@ impl Stats {
     }
     /// Get the advance rate of the Model
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// advance (usize): The advance rate of the Model
     pub fn get_advance(&self) -> usize {
         self.advance
@@ -154,7 +161,8 @@ impl Stats {
 
     /// Get the march rate of the Model
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// march (usize): The march rate of the Model
     pub fn get_march(&self) -> usize {
         self.march
@@ -162,7 +170,8 @@ impl Stats {
 
     /// Get the discipline of the Model
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// discipline (usize): The discipline of the Model
     pub fn get_discipline(&self) -> usize {
         self.discipline
@@ -170,7 +179,8 @@ impl Stats {
 
     /// Get the health point of the Model
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// health_points (usize): The health point of the Model
     pub fn get_health_points(&self) -> usize {
         self.health_points
@@ -178,7 +188,8 @@ impl Stats {
 
     /// Get the defense of the Model
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// defense (usize): The defense of the Model
     pub fn get_defense(&self) -> usize {
         self.defense
@@ -186,7 +197,8 @@ impl Stats {
 
     /// Get the resilience of the Model
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// resilience (usize): The resilience of the Model
     pub fn get_resilience(&self) -> usize {
         self.resilience
@@ -194,7 +206,8 @@ impl Stats {
 
     /// Get the armour of the Model
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// armour (usize): The armour of the Model
     pub fn get_armour(&self) -> usize {
         self.armour
@@ -202,7 +215,8 @@ impl Stats {
 
     /// Get the aegis of the Model
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// aegis (usize): The aegis of the Model
     pub fn get_aegis(&self) -> usize {
         self.aegis
@@ -210,7 +224,8 @@ impl Stats {
 
     /// Get the attack of the Model
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// attack (usize): The attack of the Model
     pub fn get_attack(&self) -> usize {
         self.attack
@@ -218,7 +233,8 @@ impl Stats {
 
     /// Get the offensive of the Model
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// offensive (usize): The offensive of the Model
     pub fn get_offensive(&self) -> usize {
         self.offensive
@@ -226,7 +242,8 @@ impl Stats {
 
     /// Get the strength of the Model
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// strength (usize): The strength of the Model
     pub fn get_strength(&self) -> usize {
         self.strength
@@ -234,7 +251,8 @@ impl Stats {
 
     /// Get the armour penetration of the Model
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// armour_penetration (usize): The armour penetration of the Model
     pub fn get_armour_penetration(&self) -> usize {
         self.armour_penetration
@@ -242,7 +260,8 @@ impl Stats {
 
     /// Get the agility of the Model
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// agility (usize): The agility of the Model
     pub fn get_agility(&self) -> usize {
         self.agility
@@ -250,8 +269,9 @@ impl Stats {
 
     /// Buff the Stats with a GlobalModifier
     ///
-    /// ## Parameters
-    /// (&modifier::GlobalModifier) modifier: The GlobalModifier to buff the Stats with
+    /// # Parameters
+    ///
+    /// modifier (&modifier::GlobalModifier): The GlobalModifier to buff the Stats with
     fn apply_global_modifier(&mut self, modifier: &crate::modifier::GlobalModifier) {
         self.advance = math_tools::safe_add_signed_unsigned(self.advance, modifier.get_advance());
         self.march = math_tools::safe_add_signed_unsigned(self.march, modifier.get_march());
@@ -261,8 +281,9 @@ impl Stats {
 
     /// Buff the Stats with a OffensiveModifier
     ///
-    /// ## Parameters
-    /// (&modifier::OffensiveModifier) modifier: The OffensiveModifier to buff the Stats with
+    /// # Parameters
+    ///
+    /// modifier (&modifier::OffensiveModifier): The OffensiveModifier to buff the Stats with
     fn apply_offensive_modifier(&mut self, modifier: &crate::modifier::OffensiveModifier) {
         self.attack = math_tools::safe_add_signed_unsigned(self.attack, modifier.get_attack());
         self.offensive =
@@ -278,8 +299,9 @@ impl Stats {
 
     /// Buff the Stats with a DefensiveModifier
     ///
-    /// ## Parameters
-    /// (&modifier::DefensiveModifier) modifier: The DefensiveModifier to buff the Stats with
+    /// # Parameters
+    ///
+    /// modifier (&modifier::DefensiveModifier): The DefensiveModifier to buff the Stats with
     fn apply_defensive_modifier(&mut self, modifier: &crate::modifier::DefensiveModifier) {
         self.health_points =
             math_tools::safe_add_signed_unsigned(self.health_points, modifier.get_health_points());
@@ -291,8 +313,9 @@ impl Stats {
 
     /// Buff the Stats with the given weapon modifier
     ///
-    /// ## Parameters
-    /// (&modifier::WeaponModifier) modifier : The modifier to apply
+    /// # Parameters
+    ///
+    /// modifier (&modifier::WeaponModifier): The modifier to apply
     fn apply_weapon_modifier(&mut self, weapon: &crate::modifier::WeaponModifier) {
         self.armour_penetration = math_tools::safe_add_signed_unsigned(
             self.armour_penetration,
@@ -303,8 +326,9 @@ impl Stats {
 
     /// Apply the given modifier to the Stats
     ///
-    /// ## Parameters
-    /// (&modifier::Modifier) modifier: The Modifier to apply
+    /// # Parameters
+    ///
+    /// modifier (&modifier::Modifier): The Modifier to apply
     pub fn apply_modifier(&mut self, modifier: &crate::modifier::Modifier) {
         match modifier {
             crate::modifier::Modifier::Weapon(weapon) => self.apply_weapon_modifier(weapon),

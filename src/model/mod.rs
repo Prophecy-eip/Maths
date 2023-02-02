@@ -2,13 +2,14 @@
 //!
 //! This module contain all the structs and datas needed by a Model
 //! A Model is one of the figurines in a Regiment
-//! It holds Stats and Modifiers
+//! It holds Stats
 
 use crate::{modifier, stat};
 
 /// Struct containing all the information about a Model
 ///
-/// ## Attributes
+/// # Attributes
+///
 /// stats (Stats): The statistics of the Model
 ///
 /// boosted_stats (Stats): The statistics of the Model taking account of the modifiers
@@ -27,14 +28,16 @@ pub struct Model {
 impl Model {
     /// Create a new Model using Stats and list of Modifiers
     ///
-    /// ## Parameters
-    /// (Stats) stats: The model stats
+    /// # Parameters
     ///
-    /// (Vec<Modifier>) modifiers: The modifiers applied on the model
+    /// stats (Stats): The model stats
     ///
-    /// (bool) banner_bearer: If the model is a banner bearer
+    /// modifiers (Vec<Modifier>): The modifiers applied on the model
     ///
-    /// ## Return
+    /// banner_bearer (bool): If the model is a banner bearer
+    ///
+    /// # Return
+    ///
     /// Model: The Model created
     pub fn new(
         stats: stat::Stats,
@@ -52,9 +55,11 @@ impl Model {
             banner_bearer,
         }
     }
+
     /// Get the Stats of the Model taking account of the modifiers
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// &Stats: The boosted Stats of the Model
     pub fn get_boosted_stats(&self) -> &stat::Stats {
         &self.boosted_stats
@@ -62,7 +67,8 @@ impl Model {
 
     /// Get the Stats of the Model without taking account of the modifiers
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// &Stats: The Stats of the Model
     pub fn get_stats(&self) -> &stat::Stats {
         &self.stats
@@ -70,9 +76,9 @@ impl Model {
 
     /// Add a modifier to the Model
     ///
-    /// ## Parameters
+    /// # Parameters
     ///
-    /// (modifier::Modifier) modifier: The modifier to add
+    /// modifier (modifier::Modifier): The modifier to add
     pub fn add_modifier(&mut self, modifier: modifier::Modifier) {
         self.modifiers.push(modifier.clone());
         self.boosted_stats.apply_modifier(&modifier);
@@ -80,15 +86,17 @@ impl Model {
 
     /// Get the list of modifiers applied on the Model
     ///
-    /// ## Return
-    /// &Vec<modifier::Modifier>: The list of modifiers
+    /// # Return
+    ///
+    /// &Vec\<modifier::Modifier>: The list of modifiers
     pub fn get_modifiers(&self) -> &Vec<modifier::Modifier> {
         &self.modifiers
     }
 
     /// Tells if the model owns a banner
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// bool: If the model is a banner bearer
     pub fn is_banner_bearer(&self) -> bool {
         self.banner_bearer

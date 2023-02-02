@@ -1,6 +1,14 @@
+//! Modifier module
+//!
+//! This module contain all the structs and datas needed by a Modifier
+//! A Modifier is a boost or a malus applied on a Model
+//! It can be applied on the global stats or the offensive stats or the defensive stats
+//! It can be applied on a specific stat or on all the stats of a category
+
 /// Struct containing the modification granted to the global stats of a Model
 ///
-/// ## Attributes
+/// # Attributes
+///
 /// advance (isize): The advance stat boost
 ///
 /// march (isize): The march stat boost
@@ -16,14 +24,16 @@ pub struct GlobalModifier {
 impl GlobalModifier {
     /// Constructor for the GlobalModifier struct
     ///
-    /// ## Parameters
-    /// (isize) advance : The advance stat boost
+    /// # Parameters
     ///
-    /// (isize) march : The march stat boost
+    /// advance (isize): The advance stat boost
     ///
-    /// (isize) discipline : The discipline stat boost
+    /// march (isize): The march stat boost
     ///
-    /// ## Return
+    /// discipline (isize): The discipline stat boost
+    ///
+    /// # Return
+    ///
     /// GlobalModifier: The GlobalModifier struct
     pub fn new(advance: isize, march: isize, discipline: isize) -> Self {
         GlobalModifier {
@@ -35,7 +45,8 @@ impl GlobalModifier {
 
     /// Getter for the advance stat boost
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// isize: The advance stat boost
     pub fn get_advance(&self) -> isize {
         self.advance
@@ -43,7 +54,8 @@ impl GlobalModifier {
 
     /// Getter for the march stat boost
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// isize: The march stat boost
     pub fn get_march(&self) -> isize {
         self.march
@@ -51,7 +63,8 @@ impl GlobalModifier {
 
     /// Getter for the discipline stat boost
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// isize: The discipline stat boost
     pub fn get_discipline(&self) -> isize {
         self.discipline
@@ -60,7 +73,8 @@ impl GlobalModifier {
 
 /// Struct containing the modification granted to the offensive stats of a Model
 ///
-/// ## Attributes
+/// # Attributes
+///
 /// attack (isize): The attack stat boost
 ///
 /// offensive (isize): The offensive stat boost
@@ -82,18 +96,19 @@ pub struct OffensiveModifier {
 impl OffensiveModifier {
     /// Constructor for the OffensiveModifier struct
     ///
-    /// ## Parameters
-    /// (isize) attack : The attack stat boost
+    /// # Parameters
+    /// attack (isize): The attack stat boost
     ///
-    /// (isize) offensive : The offensive stat boost
+    /// offensive (isize): The offensive stat boost
     ///
-    /// (isize) strength : The strength stat boost
+    /// strength (isize): The strength stat boost
     ///
-    /// (isize) armour_penetration : The armour penetration stat boost
+    /// armour_penetration (isize): The armour penetration stat boost
     ///
-    /// (isize) agility : The agility stat boost
+    /// agility (isize): The agility stat boost
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// OffensiveModifier: The OffensiveModifier struct
     pub fn new(
         attack: isize,
@@ -113,7 +128,8 @@ impl OffensiveModifier {
 
     /// Getter for the attack stat boost
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// isize: The attack stat boost
     pub fn get_attack(&self) -> isize {
         self.attack
@@ -121,7 +137,8 @@ impl OffensiveModifier {
 
     /// Getter for the offensive stat boost
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// isize: The offensive stat boost
     pub fn get_offensive(&self) -> isize {
         self.offensive
@@ -129,7 +146,8 @@ impl OffensiveModifier {
 
     /// Getter for the strength stat boost
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// isize: The strength stat boost
     pub fn get_strength(&self) -> isize {
         self.strength
@@ -137,7 +155,8 @@ impl OffensiveModifier {
 
     /// Getter for the armour penetration stat boost
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// isize: The armour penetration stat boost
     pub fn get_armour_penetration(&self) -> isize {
         self.armour_penetration
@@ -145,7 +164,8 @@ impl OffensiveModifier {
 
     /// Getter for the agility stat boost
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// isize: The agility stat boost
     pub fn get_agility(&self) -> isize {
         self.agility
@@ -154,7 +174,8 @@ impl OffensiveModifier {
 
 /// Struct containing the modification granted to the defensive stats of a Model
 ///
-/// ## Attributes
+/// # Attributes
+///
 /// health_points (isize): The health points stat boost
 ///
 /// defense (isize): The defense stat boost
@@ -174,16 +195,17 @@ pub struct DefensiveModifier {
 impl DefensiveModifier {
     /// Constructor for the DefensiveModifier struct
     ///
-    /// ## Parameters
-    /// (isize) health_points : The health points stat boost
+    /// # Parameters
+    /// health_points (isize): The health points stat boost
     ///
-    /// (isize) defense : The defense stat boost
+    /// defense (isize): The defense stat boost
     ///
-    /// (isize) resilience : The resilience stat boost
+    /// resilience (isize): The resilience stat boost
     ///
-    /// (isize) armour : The armour stat boost
+    /// armour (isize): The armour stat boost
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// DefensiveModifier: The DefensiveModifier struct
     pub fn new(
         health_points: isize,
@@ -203,7 +225,8 @@ impl DefensiveModifier {
 
     /// Getter for the health points stat boost
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// isize: The health points stat boost
     pub fn get_health_points(&self) -> isize {
         self.health_points
@@ -211,7 +234,8 @@ impl DefensiveModifier {
 
     /// Getter for the defense stat boost
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// isize: The defense stat boost
     pub fn get_defense(&self) -> isize {
         self.defense
@@ -219,7 +243,8 @@ impl DefensiveModifier {
 
     /// Getter for the resilience stat boost
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// isize: The resilience stat boost
     pub fn get_resilience(&self) -> isize {
         self.resilience
@@ -227,7 +252,8 @@ impl DefensiveModifier {
 
     /// Getter for the armour stat boost
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// isize: The armour stat boost
     pub fn get_armour(&self) -> isize {
         self.armour
@@ -235,7 +261,8 @@ impl DefensiveModifier {
 
     /// Getter for the aegis stat boost
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// isize: The aegis stat boost
     pub fn get_aegis(&self) -> isize {
         self.aegis
@@ -244,7 +271,7 @@ impl DefensiveModifier {
 
 /// Struct containing the modification granted by a weapon
 ///
-/// ## Attributes
+/// # Attributes
 ///
 /// shots (Option<isize>): The number of shots if it is a ranged weapon and None if close range weapon
 ///
@@ -261,14 +288,15 @@ pub struct WeaponModifier {
 impl WeaponModifier {
     /// Constructor for the WeaponModifier struct
     ///
-    /// ## Parameters
-    /// (isize) shots : The shots stat boost
+    /// # Parameters
+    /// shots (isize): The shots stat boost
     ///
-    /// (isize) strength : The strength stat boost
+    /// strength (isize): The strength stat boost
     ///
-    /// (isize) armour_penetration : The armour penetration stat boost
+    /// armour_penetration (isize): The armour penetration stat boost
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// WeaponModifier: The WeaponModifier struct
     pub fn new(shots: Option<isize>, strength: isize, armour_penetration: isize) -> WeaponModifier {
         WeaponModifier {
@@ -280,7 +308,8 @@ impl WeaponModifier {
 
     /// Getter for the shots stat boost
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// Option<isize>: The number of shots if it's a ranged weapon, None otherwise
     pub fn get_shots(&self) -> Option<isize> {
         self.shots
@@ -288,7 +317,8 @@ impl WeaponModifier {
 
     /// Getter for the strength stat boost
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// isize: The strength stat boost
     pub fn get_strength(&self) -> isize {
         self.strength
@@ -296,7 +326,8 @@ impl WeaponModifier {
 
     /// Getter for the armour penetration stat boost
     ///
-    /// ## Return
+    /// # Return
+    ///
     /// isize: The armour penetration stat boost
     pub fn get_armour_penetration(&self) -> isize {
         self.armour_penetration
@@ -305,7 +336,8 @@ impl WeaponModifier {
 
 /// Enum containing all the possible modifiers
 ///
-/// ## Variants
+/// # Variants
+///
 /// GlobalModifier: The global modifier
 ///
 /// OffensiveModifier: The offensive modifier
@@ -326,14 +358,16 @@ pub enum Modifier {
 impl Modifier {
     /// Constructor for the Modifier struct \[Variant: weapon\]
     ///
-    /// ## Parameters
-    /// (isize) shots : The shots stat boost
+    /// # Parameters
     ///
-    /// (isize) strength : The strength stat boost
+    /// shots (isize): The shots stat boost
     ///
-    /// (isize) armour_penetration : The armour penetration stat boost
+    /// strength (isize): The strength stat boost
     ///
-    /// ## Return
+    /// armour_penetration (isize): The armour penetration stat boost
+    ///
+    /// # Return
+    ///
     /// Modifier: The Modifier struct
     pub fn new_weapon(shots: Option<isize>, strength: isize, armour_penetration: isize) -> Self {
         Modifier::Weapon(WeaponModifier::new(shots, strength, armour_penetration))
@@ -341,14 +375,16 @@ impl Modifier {
 
     /// Constructor for the Modifier struct \[Variant: global\]
     ///
-    /// ## Parameters
-    /// (isize) advance : The advance stat boost
+    /// # Parameters
     ///
-    /// (isize) march : The march stat boost
+    /// advance (isize): The advance stat boost
     ///
-    /// (isize) discipline : The discipline stat boost
+    /// march (isize): The march stat boost
     ///
-    /// ## Return
+    /// discipline (isize): The discipline stat boost
+    ///
+    /// # Return
+    ///
     /// Modifier: The Modifier struct
     pub fn new_global(advance: isize, march: isize, discipline: isize) -> Self {
         Modifier::Global(GlobalModifier::new(advance, march, discipline))
@@ -356,18 +392,20 @@ impl Modifier {
 
     /// Constructor for the Modifier struct \[Variant: offensive\]
     ///
-    /// ## Parameters
-    /// (isize) attack : The attack stat boost
+    /// # Parameters
     ///
-    /// (isize) offensive : The offensive stat boost
+    /// attack (isize): The attack stat boost
     ///
-    /// (isize) strength : The strength stat boost
+    /// offensive (isize): The offensive stat boost
     ///
-    /// (isize) armour_penetration : The armour penetration stat boost
+    /// strength (isize): The strength stat boost
     ///
-    /// (isize) agility : The agility stat boost
+    /// armour_penetration (isize): The armour penetration stat boost
     ///
-    /// ## Return
+    /// agility (isize): The agility stat boost
+    ///
+    /// # Return
+    ///
     /// Modifier: The Modifier struct
     pub fn new_offensive(
         attack: isize,
@@ -387,16 +425,16 @@ impl Modifier {
 
     /// Constructor for the Modifier struct \[Variant: defensive\]
     ///
-    /// ## Parameters
-    /// (isize) health_points : The health points stat boost
+    /// # Parameters
+    /// health_points (isize): The health points stat boost
     ///
-    /// (isize) defense : The defense stat boost
+    /// defense (isize): The defense stat boost
     ///
-    /// (isize) resilience : The resilience stat boost
+    /// resilience (isize): The resilience stat boost
     ///
-    /// (isize) armour : The armour stat boost
+    /// armour (isize): The armour stat boost
     ///
-    /// ## Return
+    /// # Return
     /// Modifier: The Modifier struct
     pub fn new_defensive(
         health_points: isize,
