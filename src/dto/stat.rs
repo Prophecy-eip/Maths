@@ -75,7 +75,7 @@ impl DefensiveStatsDto {
     ///
     /// aegis (usize): The aegis of the model
     ///
-    /// # Returns
+    /// # Return
     ///
     /// DefensiveStatsDto: The newly created DefensiveStatsDto
     pub fn new(
@@ -132,7 +132,7 @@ impl OffensiveStatsDto {
     ///
     /// agility (usize): The agility of the model
     ///
-    /// # Returns
+    /// # Return
     ///
     /// OffensiveStatsDto: The newly created OffensiveStatsDto
     pub fn new(
@@ -209,7 +209,7 @@ impl StatsDto {
     ///
     /// OffensiveStatsDto { attack, offensive, strength, armour_penetration, agility }: The offensive stats of the model
     ///
-    /// # Returns
+    /// # Return
     ///
     /// StatsDto: The newly created StatsDto
     pub fn new(
@@ -252,7 +252,7 @@ impl StatsDto {
 
     /// Hydrates a StatsDto into a Stats
     ///
-    /// # Returns
+    /// # Return
     ///
     /// Stats: The hydrated Stats
     pub fn hydrate(&self) -> crate::stat::Stats {
@@ -285,7 +285,7 @@ impl StatsDto {
     ///
     /// stat (Stats): The Stats to dehydrate
     ///
-    /// # Returns
+    /// # Return
     ///
     /// StatsDto: The dehydrated StatsDto
     pub fn dehydrate(stat: &crate::stat::Stats) -> StatsDto {

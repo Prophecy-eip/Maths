@@ -35,7 +35,7 @@ impl RegimentDto {
     ///
     /// nb_models (usize): The number of models in the regiment.
     ///
-    /// # Returns
+    /// # Return
     ///
     /// RegimentDto: The newly created RegimentDto.
     pub fn new(
@@ -54,7 +54,7 @@ impl RegimentDto {
 
     /// Hydrates the RegimentDto into a Regiment.
     ///
-    /// # Returns
+    /// # Return
     ///
     /// Regiment: The newly created Regiment.
     pub fn hydrate(&self) -> crate::regiment::Regiment {
@@ -72,6 +72,10 @@ impl RegimentDto {
     /// # Arguments
     ///
     /// regiment (Regiment): The Regiment to dehydrate.
+    ///
+    /// # Return
+    ///
+    /// RegimentDto: The newly created RegimentDto.
     pub fn dehydrate(regiment: &crate::regiment::Regiment) -> RegimentDto {
         RegimentDto {
             model: super::model::ModelDto::dehydrate(regiment.get_model()),
