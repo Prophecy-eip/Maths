@@ -13,7 +13,7 @@ The python version that will be used is >= 3.10.6.
 All the dependencies are listed in the `requirements.txt` file.
 To install them, run the following command:
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 The dependency list will be updated as the project evolves.
