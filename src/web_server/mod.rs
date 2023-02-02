@@ -1,5 +1,20 @@
+//! Web server module
+//!
+//! This module contains the web server implementation and the response structures.
+
 pub mod response;
 
+///ProphecyRequest
+///
+/// # Attributes
+///
+/// key (String): The key to access the web server
+///
+/// attacking_position (String): The attacking position
+///
+/// attacking_regiment (RegimentDto): The attacking regiment
+///
+/// defending_regiment (RegimentDto): The defending regiment
 #[derive(serde::Serialize, serde::Deserialize)]
 pub struct ProphecyRequest {
     key: String,
@@ -9,6 +24,21 @@ pub struct ProphecyRequest {
 }
 
 impl ProphecyRequest {
+    /// Creates a new ProphecyRequest
+    ///
+    /// # Arguments
+    ///
+    /// key (String): The key to access the web server
+    ///
+    /// attacking_position (String): The attacking position
+    ///
+    /// attacking_regiment (RegimentDto): The attacking regiment
+    ///
+    /// defending_regiment (RegimentDto): The defending regiment
+    ///
+    /// # Returns
+    ///
+    /// ProphecyRequest: The new ProphecyRequest
     pub fn new(
         key: String,
         attacking_position: String,
@@ -23,22 +53,47 @@ impl ProphecyRequest {
         }
     }
 
+    /// Get the key
+    ///
+    /// # Returns
+    ///
+    /// String: The key
     pub fn get_key(&self) -> &String {
         &self.key
     }
 
+    /// Get the attacking position
+    ///
+    /// # Returns
+    ///
+    /// String: The attacking position
     pub fn get_attacking_position(&self) -> &String {
         &self.attacking_position
     }
 
+    /// Get the attacking regiment
+    ///
+    /// # Returns
+    ///
+    /// RegimentDto: The attacking regiment
     pub fn get_attacking_regiment(&self) -> &maths::dto::regiment::RegimentDto {
         &self.attacking_regiment
     }
 
+    /// Get the defending regiment
+    ///
+    /// # Returns
+    ///
+    /// RegimentDto: The defending regiment
     pub fn get_defending_regiment(&self) -> &maths::dto::regiment::RegimentDto {
         &self.defending_regiment
     }
 
+    /// Convert the attacking position received to an AttackPosition usable in the library
+    ///
+    /// # Returns
+    ///
+    /// AttackPosition: The converted attacking position
     pub fn convert_attacking_position(&self) -> maths::fight::AttackPosition {
         match self.attacking_position.as_str() {
             "front" => maths::fight::AttackPosition::FRONT,
@@ -48,6 +103,15 @@ impl ProphecyRequest {
         }
     }
 
+    /// Convert the attacking or defending regiment received to a Regiment usable in the library
+    ///
+    /// # Arguments
+    ///
+    /// attacking (bool): If the attacking regiment should be converted or the defending regiment
+    ///
+    /// # Returns
+    ///
+    /// regiment::Regiment: The converted attacking or defending regiment
     pub fn convert_regiment(&self, attacking: bool) -> maths::regiment::Regiment {
         match attacking {
             true => self.attacking_regiment.hydrate(),

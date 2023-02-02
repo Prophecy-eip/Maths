@@ -8,12 +8,12 @@ use factorial::Factorial;
 /// This is the math sigma function
 /// It execute the given function on the given range and return the sum of the result of the function.
 ///
-/// ## Parameters
-/// (isize) initial: The first value of the range
+/// # Parameters
+/// initial (isize): The first value of the range
 ///
-/// (isize) max: The last value of the range
+/// max (isize): The last value of the range
 ///
-/// ((fn(isize, Option\<P>, isize, isize)) -> T) function: The function to execute on the range.
+/// function ((fn(isize, Option\<P>, isize, isize)) -> T): The function to execute on the range.
 /// This function params are :
 ///
 /// 1. The current value of the range
@@ -26,7 +26,8 @@ use factorial::Factorial;
 ///
 /// function_parameter (Option\<P>): A parameter that can be passed to the function
 ///
-/// ## Return
+/// # Return
+///
 /// T: The result of our sigma computation
 pub fn sigma<T: std::ops::AddAssign, P: Copy>(
     initial: isize,
@@ -43,12 +44,13 @@ pub fn sigma<T: std::ops::AddAssign, P: Copy>(
 
 /// This function compute the bernoulli coefficient
 ///
-/// ## Parameters
-/// (usize) trials: The number of trials
+/// # Parameters
+/// trials (usize): The number of trials
 ///
-/// (usize) nb_success: The number of sucess
+/// nb_success (usize): The number of sucess
 ///
-/// ## Return
+/// # Return
+///
 /// usize: The bernouilli coefficient for our case
 fn compute_coefficient(trials: usize, nb_success: usize) -> usize {
     if nb_success == 0 || trials == 0 {
@@ -63,14 +65,15 @@ fn compute_coefficient(trials: usize, nb_success: usize) -> usize {
 
 /// This is the mathematical bernouilli function
 ///
-/// ## Parameters
-/// (usize) trials: The number of trials
+/// # Parameters
+/// trials (usize): The number of trials
 ///
-/// (usize) nb_success: The number of successes
+/// nb_success (usize): The number of successes
 ///
-/// (f64) probability: The probability of success
+/// probability (f64): The probability of success
 ///
-/// ## Return
+/// # Return
+///
 /// f64: The probability that we succeed k time out of n trials
 pub fn compute_bernoulli(trials: usize, nb_success: usize, probability: f64) -> f64 {
     let coefficient: usize = compute_coefficient(trials, nb_success);
@@ -81,12 +84,13 @@ pub fn compute_bernoulli(trials: usize, nb_success: usize, probability: f64) -> 
 
 /// This function return the sum of an isize and a usize
 ///
-/// ## Parameters
-/// (usize) a: The usize t
+/// # Parameters
+/// a (usize): The usize t
 ///
-/// (isize) rhs: The isize to add
+/// rhs (isize): The isize to add
 ///
-/// ## Return
+/// # Return
+///
 /// usize: The sum of a and rhs
 pub fn safe_add_signed_unsigned(a: usize, rhs: isize) -> usize {
     if rhs < 0 {
@@ -98,16 +102,18 @@ pub fn safe_add_signed_unsigned(a: usize, rhs: isize) -> usize {
 
 /// Evaluate the area covered on a gaussian curve
 ///
-/// ## Parameters
-/// (usize) start: The start of the inverval
+/// # Parameters
 ///
-/// (usize) end: The end of the interval
+/// start (usize): The start of the inverval
 ///
-/// (usize) gauss_len: The lenght of the X axis of the curve
+/// end (usize): The end of the interval
 ///
-/// (f64) success_probability: The probability that one success occurs
+/// gauss_len (usize): The lenght of the X axis of the curve
 ///
-/// ## Return
+/// success_probability (f64): The probability that one success occurs
+///
+/// # Return
+///
 /// f64: The percentage of the curve covered by the interval
 pub fn evaluate_gauss_interval(
     start: usize,
@@ -131,14 +137,16 @@ pub fn evaluate_gauss_interval(
 
 /// Find two thresholds for a gaussien assuring that the area covered reprenset at least 0.06% of the curve
 ///
-/// ## Parameters
-/// (usize) nb_touch: The number of hit that the attacker can assume
+/// # Parameters
 ///
-/// (f64) wound_probability: The probability that a hit wound the enemy
+/// nb_touch (usize): The number of hit that the attacker can assume
 ///
-/// (usize) defender_hp: The amount of health point of the defender
+/// wound_probability (f64): The probability that a hit wound the enemy
 ///
-/// ## Return
+/// defender_hp (usize): The amount of health point of the defender
+///
+/// # Return
+///
 /// (usize, usize): Our two gaussian threshold
 pub fn find_great_gauss_checkpoints(
     nb_touch: usize,
