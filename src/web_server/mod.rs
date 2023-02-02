@@ -36,7 +36,7 @@ impl ProphecyRequest {
     ///
     /// defending_regiment (RegimentDto): The defending regiment
     ///
-    /// # Returns
+    /// # Return
     ///
     /// ProphecyRequest: The new ProphecyRequest
     pub fn new(
@@ -55,7 +55,7 @@ impl ProphecyRequest {
 
     /// Get the key
     ///
-    /// # Returns
+    /// # Return
     ///
     /// String: The key
     pub fn get_key(&self) -> &String {
@@ -64,7 +64,7 @@ impl ProphecyRequest {
 
     /// Get the attacking position
     ///
-    /// # Returns
+    /// # Return
     ///
     /// String: The attacking position
     pub fn get_attacking_position(&self) -> &String {
@@ -73,7 +73,7 @@ impl ProphecyRequest {
 
     /// Get the attacking regiment
     ///
-    /// # Returns
+    /// # Return
     ///
     /// RegimentDto: The attacking regiment
     pub fn get_attacking_regiment(&self) -> &maths::dto::regiment::RegimentDto {
@@ -82,7 +82,7 @@ impl ProphecyRequest {
 
     /// Get the defending regiment
     ///
-    /// # Returns
+    /// # Return
     ///
     /// RegimentDto: The defending regiment
     pub fn get_defending_regiment(&self) -> &maths::dto::regiment::RegimentDto {
@@ -91,7 +91,7 @@ impl ProphecyRequest {
 
     /// Convert the attacking position received to an AttackPosition usable in the library
     ///
-    /// # Returns
+    /// # Return
     ///
     /// AttackPosition: The converted attacking position
     pub fn convert_attacking_position(&self) -> maths::fight::AttackPosition {
@@ -109,7 +109,7 @@ impl ProphecyRequest {
     ///
     /// attacking (bool): If the attacking regiment should be converted or the defending regiment
     ///
-    /// # Returns
+    /// # Return
     ///
     /// regiment::Regiment: The converted attacking or defending regiment
     pub fn convert_regiment(&self, attacking: bool) -> maths::regiment::Regiment {
