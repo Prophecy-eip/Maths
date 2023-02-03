@@ -395,3 +395,46 @@ impl ModifierDto {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test_modifier_dto_global() {
+        let modifier = crate::modifier::Modifier::new_global(1, 2, 3);
+        let modifier_dto = crate::dto::modifier::ModifierDto::dehydrate(&modifier);
+        let modifier2 = modifier_dto.hydrate();
+        assert_eq!(modifier, modifier2);
+    }
+
+    #[test]
+    fn test_modifier_dto_defensive() {
+        let modifier = crate::modifier::Modifier::new_defensive(1, 2, 3, 4, 5);
+        let modifier_dto = crate::dto::modifier::ModifierDto::dehydrate(&modifier);
+        let modifier2 = modifier_dto.hydrate();
+        assert_eq!(modifier, modifier2);
+    }
+
+    #[test]
+    fn test_modifier_dto_offensive() {
+        let modifier = crate::modifier::Modifier::new_offensive(1, 2, 3, 4, 5);
+        let modifier_dto = crate::dto::modifier::ModifierDto::dehydrate(&modifier);
+        let modifier2 = modifier_dto.hydrate();
+        assert_eq!(modifier, modifier2);
+    }
+
+    #[test]
+    fn test_modifier_dto_shooting_weapon() {
+        let modifier = crate::modifier::Modifier::new_weapon(Some(1), 2, 3);
+        let modifier_dto = crate::dto::modifier::ModifierDto::dehydrate(&modifier);
+        let modifier2 = modifier_dto.hydrate();
+        assert_eq!(modifier, modifier2);
+    }
+
+    #[test]
+    fn test_modifier_dto_melee_weapon() {
+        let modifier = crate::modifier::Modifier::new_weapon(None, 2, 3);
+        let modifier_dto = crate::dto::modifier::ModifierDto::dehydrate(&modifier);
+        let modifier2 = modifier_dto.hydrate();
+        assert_eq!(modifier, modifier2);
+    }
+}

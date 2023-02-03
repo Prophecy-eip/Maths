@@ -85,3 +85,61 @@ impl RegimentDto {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test_regiment_dto_hydrate() {
+        let model_dto = crate::dto::model::ModelDto::new(
+            crate::dto::stat::StatsDto::new(
+                crate::dto::stat::GlobalStatsDto::new(1, 2, 3),
+                crate::dto::stat::DefensiveStatsDto::new(4, 5, 6, 7, 8),
+                crate::dto::stat::OffensiveStatsDto::new(9, 10, 11, 12, 13),
+            ),
+            vec![],
+            true,
+        );
+        let regiment = super::RegimentDto::new(model_dto, 1, 2, 3).hydrate();
+        assert_eq!(regiment.get_rows(), 1);
+        assert_eq!(regiment.get_cols(), 2);
+        assert_eq!(regiment.get_nb_models(), 3);
+        assert_eq!(regiment.get_model().get_stats().get_advance(), 1);
+        assert_eq!(regiment.get_model().get_stats().get_attack(), 9);
+    }
+
+    #[test]
+    fn test_regiment_dto_dehydrate() {
+        let model = crate::model::Model::new(
+            crate::stat::Stats::new(
+                crate::stat::GlobalStats {
+                    advance: 1,
+                    march: 2,
+                    discipline: 3,
+                },
+                crate::stat::DefensiveStats {
+                    health_points: 4,
+                    defense: 5,
+                    resilience: 6,
+                    armour: 7,
+                    aegis: 8,
+                },
+                crate::stat::OffensiveStats {
+                    attack: 9,
+                    offensive: 10,
+                    strength: 11,
+                    armour_penetration: 12,
+                    agility: 13,
+                },
+            ),
+            vec![],
+            true,
+        );
+        let regiment = crate::regiment::Regiment::new(model, 1, 2, 3, None);
+        let regiment_dto = super::RegimentDto::dehydrate(&regiment);
+        assert_eq!(regiment_dto.nb_rows, 1);
+        assert_eq!(regiment_dto.nb_cols, 2);
+        assert_eq!(regiment_dto.nb_models, 3);
+        assert_eq!(regiment_dto.model.get_stats().get_advance(), 1);
+        assert_eq!(regiment_dto.model.get_stats().get_attack(), 9);
+    }
+}
