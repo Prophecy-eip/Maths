@@ -305,6 +305,123 @@ impl StatsDto {
             agility: stat.get_agility(),
         }
     }
+
+    /// Gets the advance of the model
+    ///
+    /// # Return
+    ///
+    /// usize: The advance of the model
+    pub fn get_advance(&self) -> usize {
+        self.advance
+    }
+
+    /// Gets the march of the model
+    ///
+    /// # Return
+    ///
+    /// usize: The march of the model
+    pub fn get_march(&self) -> usize {
+        self.march
+    }
+
+    /// Gets the discipline of the model
+    ///
+    /// # Return
+    ///
+    /// usize: The discipline of the model
+    pub fn get_discipline(&self) -> usize {
+        self.discipline
+    }
+
+    /// Gets the health points of the model
+    ///
+    /// # Return
+    ///
+    /// usize: The health points of the model
+    pub fn get_health_points(&self) -> usize {
+        self.health_points
+    }
+
+    /// Gets the defense of the model
+    ///
+    /// # Return
+    ///
+    /// usize: The defense of the model
+    pub fn get_defense(&self) -> usize {
+        self.defense
+    }
+
+    /// Gets the resilience of the model
+    ///
+    /// # Return
+    ///
+    /// usize: The resilience of the model
+    pub fn get_resilience(&self) -> usize {
+        self.resilience
+    }
+
+    /// Gets the armour of the model
+    ///
+    /// # Return
+    ///
+    /// usize: The armour of the model
+    pub fn get_armour(&self) -> usize {
+        self.armour
+    }
+
+    /// Gets the aegis of the model
+    ///
+    /// # Return
+    ///
+    /// usize: The aegis of the model
+    pub fn get_aegis(&self) -> usize {
+        self.aegis
+    }
+
+    /// Gets the attack of the model
+    ///
+    /// # Return
+    ///
+    /// usize: The attack of the model
+    pub fn get_attack(&self) -> usize {
+        self.attack
+    }
+
+    /// Gets the offensive of the model
+    ///
+    /// # Return
+    ///
+    /// usize: The offensive of the model
+    pub fn get_offensive(&self) -> usize {
+        self.offensive
+    }
+
+    /// Gets the strength of the model
+    ///
+    /// # Return
+    ///
+    /// usize: The strength of the model
+    pub fn get_strength(&self) -> usize {
+        self.strength
+    }
+
+    /// Gets the armour penetration of the model
+    ///
+    /// # Return
+    ///
+    /// usize: The armour penetration of the model
+    pub fn get_armour_penetration(&self) -> usize {
+        self.armour_penetration
+    }
+
+    /// Gets the agility of the model
+    ///
+    /// # Return
+    ///
+    /// usize: The agility of the model
+    pub fn get_agility(&self) -> usize {
+        self.agility
+    }
 }
 
 #[cfg(test)]
