@@ -196,6 +196,7 @@ pub struct StatsDto {
     strength: usize,
     armour_penetration: usize,
     agility: usize,
+    ballistic_skill: Option<usize>,
 }
 
 impl StatsDto {
@@ -247,6 +248,7 @@ impl StatsDto {
             strength,
             armour_penetration,
             agility,
+            ballistic_skill: None,
         }
     }
 
@@ -275,6 +277,7 @@ impl StatsDto {
                 strength: self.strength,
                 armour_penetration: self.armour_penetration,
                 agility: self.agility,
+                ballistic_skill: self.ballistic_skill,
             },
         )
     }
@@ -303,6 +306,7 @@ impl StatsDto {
             strength: stat.get_strength(),
             armour_penetration: stat.get_armour_penetration(),
             agility: stat.get_agility(),
+            ballistic_skill: stat.get_ballistic(),
         }
     }
 
@@ -422,6 +426,14 @@ impl StatsDto {
     pub fn get_agility(&self) -> usize {
         self.agility
     }
+    /// Get the ballistic of the Model
+    ///
+    /// # Return
+    ///
+    /// ballistic (usize): The ballistic of the Model
+    pub fn get_ballistic(&self) -> Option<usize> {
+        self.ballistic_skill
+    }
 }
 
 #[cfg(test)]
@@ -496,6 +508,7 @@ mod tests {
                 strength: 11,
                 armour_penetration: 12,
                 agility: 13,
+                ballistic_skill: None,
             },
         ));
 

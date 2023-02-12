@@ -20,6 +20,7 @@ pub fn initialize_warriors() -> regiment::Regiment {
             offensive: 4,
             armour_penetration: 1,
             agility: 4,
+            ballistic_skill: None,
         },
     );
     let warriors_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
@@ -49,6 +50,7 @@ pub fn initialize_heavy_infantry() -> regiment::Regiment {
             offensive: 3,
             armour_penetration: 0,
             agility: 3,
+            ballistic_skill: None,
         },
     );
     let heavy_infantry_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
@@ -79,6 +81,7 @@ pub fn initialize_imps() -> regiment::Regiment {
             strength: 2,
             armour_penetration: 0,
             agility: 3,
+            ballistic_skill: None,
         },
     );
     let imps_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
@@ -107,6 +110,7 @@ pub fn initialize_silexian_spears() -> regiment::Regiment {
             strength: 3,
             armour_penetration: 0,
             agility: 5,
+            ballistic_skill: None,
         },
     );
     let silexian_spears_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
@@ -137,6 +141,7 @@ pub fn initialize_clan_warriors() -> regiment::Regiment {
             strength: 3,
             armour_penetration: 0,
             agility: 2,
+            ballistic_skill: None,
         },
     );
     let clan_warriors_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
@@ -167,6 +172,7 @@ pub fn initialize_citizen_spears() -> regiment::Regiment {
             strength: 3,
             armour_penetration: 0,
             agility: 5,
+            ballistic_skill: None,
         },
     );
     let citizen_spears_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
@@ -197,6 +203,7 @@ pub fn initialize_infernal_warriors() -> regiment::Regiment {
             strength: 3,
             armour_penetration: 0,
             agility: 2,
+            ballistic_skill: None,
         },
     );
     let infernal_warriors_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
@@ -230,6 +237,7 @@ pub fn initialize_zombies() -> regiment::Regiment {
             strength: 3,
             armour_penetration: 0,
             agility: 1,
+            ballistic_skill: None,
         },
     );
     let zombies_modifier: modifier::Modifier = modifier::Modifier::new_weapon(Some(1), 0, 0);
@@ -259,6 +267,7 @@ pub fn initialize_wildhorn_herd() -> regiment::Regiment {
             strength: 3,
             armour_penetration: 0,
             agility: 3,
+            ballistic_skill: None,
         },
     );
     let wildhorn_herd_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);

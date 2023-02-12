@@ -277,6 +277,7 @@ mod tests {
                 offensive: 4,
                 armour_penetration: 1,
                 agility: 5,
+                ballistic_skill: None,
             },
         );
         let chaos_warrior_modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
@@ -307,6 +308,7 @@ mod tests {
                 offensive: 3,
                 armour_penetration: 0,
                 agility: 3,
+                ballistic_skill: None,
             },
         );
         let heavy_infantry_modifier: modifier::Modifier =
@@ -338,6 +340,7 @@ mod tests {
                 offensive: 3,
                 armour_penetration: 0,
                 agility: 4,
+                ballistic_skill: None,
             },
         );
         let heavy_infantry_modifier: modifier::Modifier =
@@ -369,6 +372,7 @@ mod tests {
                 offensive: 3,
                 armour_penetration: 0,
                 agility: 3,
+                ballistic_skill: None,
             },
         );
         let heavy_infantry_modifier: modifier::Modifier =

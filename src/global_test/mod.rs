@@ -73,6 +73,7 @@ pub mod tests {
                 strength,
                 armour_penetration,
                 agility,
+                ballistic_skill: None,
             },
         );
         stats
@@ -103,6 +104,7 @@ pub mod tests {
                 strength: 1,
                 armour_penetration: 1,
                 agility: 1,
+                ballistic_skill: None,
             },
         );
         stats
@@ -175,6 +177,7 @@ pub mod tests {
                 strength: strength,
                 armour_penetration: armour_penetration,
                 agility: agility,
+                ballistic_skill: None,
             },
         );
         modifier_stats
@@ -205,6 +208,7 @@ pub mod tests {
                 strength: 0,
                 armour_penetration: 0,
                 agility: 0,
+                ballistic_skill: None,
             },
         );
         modifier_stats

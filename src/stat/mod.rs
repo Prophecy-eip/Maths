@@ -33,6 +33,8 @@ use crate::math_tools;
 /// amour_penetration (usize): The strength of the Model
 ///
 /// agility (usize): The agility of the Model
+///
+/// ballistic_skill (usize): The ballistic skill of the Model
 #[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
 pub struct Stats {
     advance: usize,
@@ -48,6 +50,7 @@ pub struct Stats {
     strength: usize,
     armour_penetration: usize,
     agility: usize,
+    ballistic_skill: Option<usize>,
 }
 
 /// Struct containing the global stats of a model
@@ -105,6 +108,7 @@ pub struct OffensiveStats {
     pub strength: usize,
     pub armour_penetration: usize,
     pub agility: usize,
+    pub ballistic_skill: Option<usize>,
 }
 
 impl Stats {
@@ -132,6 +136,8 @@ impl Stats {
             strength,
             armour_penetration,
             agility,
+            ballistic_skill,
+            // ..
         }: OffensiveStats,
     ) -> Stats {
         Stats {
@@ -148,6 +154,47 @@ impl Stats {
             strength,
             armour_penetration,
             agility,
+            ballistic_skill,
+        }
+    }
+
+    pub fn new_ballistic(
+        GlobalStats {
+            advance,
+            march,
+            discipline,
+        }: GlobalStats,
+        DefensiveStats {
+            health_points,
+            defense,
+            resilience,
+            armour,
+            aegis,
+        }: DefensiveStats,
+        OffensiveStats {
+            attack,
+            offensive,
+            strength,
+            armour_penetration,
+            agility,
+            ballistic_skill,
+        }: OffensiveStats,
+    ) -> Stats {
+        Stats {
+            advance,
+            march,
+            discipline,
+            health_points,
+            defense,
+            resilience,
+            armour,
+            aegis,
+            attack,
+            offensive,
+            strength,
+            armour_penetration,
+            agility,
+            ballistic_skill,
         }
     }
     /// Get the advance rate of the Model
@@ -220,6 +267,15 @@ impl Stats {
     /// aegis (usize): The aegis of the Model
     pub fn get_aegis(&self) -> usize {
         self.aegis
+    }
+
+    /// Get the ballistic of the Model
+    ///
+    /// # Return
+    ///
+    /// ballistic (usize): The ballistic of the Model
+    pub fn get_ballistic(&self) -> Option<usize> {
+        self.ballistic_skill
     }
 
     /// Get the attack of the Model

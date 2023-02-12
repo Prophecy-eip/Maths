@@ -5,6 +5,8 @@
 
 mod computation_tools;
 mod global_values;
+pub mod shooting;
+mod shooting_tools;
 
 use crate::regiment;
 
@@ -337,6 +339,7 @@ mod tests {
                 strength: 3,
                 armour_penetration: 0,
                 agility: 5,
+                ballistic_skill: None,
             },
         );
         let silexian_spears_modifier: modifier::Modifier =

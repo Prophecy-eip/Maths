@@ -143,6 +143,7 @@ mod tests {
                     strength: 11,
                     armour_penetration: 12,
                     agility: 13,
+                    ballistic_skill: None,
                 },
             ),
             vec![],
