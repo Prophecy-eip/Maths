@@ -83,6 +83,10 @@ class Stats:
     armour_penetration: uint32
     # agility (usize): The agility of the Model
     agility: uint32
+    # ballistic_skill (usize): The ballistic skill of the Model
+    ballistic_skill: uint32
+    # shots (usize): The number of shots the Model can do depending on the weapon
+    shots: uint32 = 0
 
     # This function will take up any type of modifiers as long as it has the 'Modifiers' type, then apply the stats changes if there is any
     def safe_apply_modifiers(self, modifiers : Modifiers):
@@ -121,7 +125,8 @@ class TestInitModifiers(unittest.TestCase):
             offensive=5,
             strength=5,
             armour_penetration=5,
-            agility=4
+            agility=4,
+            ballistic_skill=5
         )
         self.assertEqual(s.advance, 5)
         self.assertEqual(s.march, 5)
@@ -155,7 +160,8 @@ class TestInitModifiers(unittest.TestCase):
             offensive=5,
             strength=5,
             armour_penetration=5,
-            agility=4
+            agility=4,
+            ballistic_skill=5
         )
         global_mod1 = _BaseGlobalModifiers(
             advance=2,
