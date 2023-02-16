@@ -211,6 +211,7 @@ impl WeaponModifierDto {
 ///
 /// Weapon (WeaponModifierDto): The weapon modifier
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, Copy)]
+#[serde(rename_all = "lowercase")]
 pub enum ModifierDto {
     Global(GlobalModifierDto),
     Defensive(DefensiveModifierDto),

@@ -15,6 +15,7 @@
 #[derive(serde::Serialize, serde::Deserialize, Debug)]
 pub struct ModelDto {
     stats: super::stat::StatsDto,
+    #[serde(skip_serializing_if = "Vec::is_empty")]
     modifiers: Vec<super::modifier::ModifierDto>,
     banner_bearer: bool,
 }

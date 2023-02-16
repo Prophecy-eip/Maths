@@ -22,7 +22,7 @@ async fn heartbeat() -> impl actix_web::Responder {
 #[actix_web::post("/units")]
 async fn make_prophecy(
     regiments: actix_web::web::Json<web_server::ProphecyRequest>,
-) -> actix_web::Result<impl actix_web::Responder> {
+) -> Result<actix_web::web::Json<web_server::response::ProphecyResponse>, actix_web::error::Error> {
     if !regiments
         .get_key()
         .eq(&std::env::var("PRIVATE_KEY").unwrap_or_else(|_| "".to_string()))
@@ -34,16 +34,31 @@ async fn make_prophecy(
         &regiments.convert_regiment(true),
         &regiments.convert_regiment(false),
     );
-    let result = web_server::response::ProphecyResponse::from_fight_prediction_result(prophecies);
+    let result: web_server::response::ProphecyResponse =
+        web_server::response::ProphecyResponse::from_fight_prediction_result(prophecies);
     Ok(actix_web::web::Json(result))
 }
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
+    env_logger::init();
     actix_web::HttpServer::new(|| {
+        let logger: actix_web::middleware::Logger = actix_web::middleware::Logger::default();
         actix_web::App::new()
             .service(make_prophecy)
             .service(heartbeat)
+            .wrap(logger)
+            .app_data(
+                actix_web::web::JsonConfig::default().error_handler(|err, _req| {
+                    actix_web::error::InternalError::from_response(
+                        "Missing element in request",
+                        actix_web::HttpResponse::BadRequest()
+                            .content_type("application/json")
+                            .body(format!(r#"{{"statusCode": 400,"message":"{err}"}}"#)),
+                    )
+                    .into()
+                }),
+            )
     })
     .bind(("0.0.0.0", 8080))?
     .run()
