@@ -1,0 +1,2014 @@
+{
+  "amuut_mount": {
+    "name": "Amuut",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Ensouled Statue",
+        "id": "ensouled_statue"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+1"
+    },
+    "offensename": "Amuut",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      }
+    ],
+    "unit_id": "amuut_mount",
+    "option_id": "zvnj6m2rmpkl6qjru6qt"
+  },
+  "ark_of_ages_mount": {
+    "name": "Ark of Ages",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "60\u00d7100",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Sacred Ark",
+        "id": "sacred_ark"
+      },
+      {
+        "name": "War Platform",
+        "id": "war_platform"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "C",
+      "Re": "5",
+      "Arm": "C+2"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Guard (2)",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenseweapons": [
+      {
+        "name": "Aspen Bow",
+        "id": "aspen_bow",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offenserules": [
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      },
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      }
+    ],
+    "offensenameB": "Bound Spirits",
+    "offenseB": {
+      "At": "2",
+      "Of": "2",
+      "St": "2",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "ark_of_ages_mount",
+    "option_id": "wice8hfpg8hso7dwequ9el"
+  },
+  "battle_sphinx": {
+    "name": "Battle Sphinx",
+    "cost": "470",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "5",
+      "Ma": "12",
+      "Di": "8",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Ensouled Statue",
+        "id": "ensouled_statue"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "4",
+      "Re": "8",
+      "Arm": "3"
+    },
+    "offensename": "Rider (4)",
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      }
+    ],
+    "offensenameB": "Battle Sphinx",
+    "offenseB": {
+      "At": "4",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "1"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Breath Attack",
+        "id": "breath_attack",
+        "params": [
+          "Str 4",
+          "AP 1",
+          "Flaming Attacks"
+        ]
+      }
+    ],
+    "unit_id": "battle_sphinx",
+    "option_id": "4imwgbgarwvhbocteidqgw"
+  },
+  "casket_of_phatep": {
+    "name": "Casket of Phatep",
+    "cost": "195",
+    "type": "Construct",
+    "size": "Standard",
+    "basesize": "75",
+    "global": {
+      "Ad": "4",
+      "Ma": "4",
+      "Di": "8",
+      "Rsr": "2"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Dust to Dust",
+        "id": "dust_to_dust"
+      },
+      {
+        "name": "War Machine",
+        "id": "war_machine"
+      },
+      {
+        "name": "Not a Leader",
+        "id": "not_a_leader"
+      },
+      {
+        "name": "Channel",
+        "id": "channel",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "Divine Light",
+        "id": "divine_light"
+      },
+      {
+        "name": "Phatep's Curse",
+        "id": "phateps_curse"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "1",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Necropolis Guards",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenseweapons": [
+      {
+        "name": "Halberd",
+        "id": "halberd"
+      }
+    ],
+    "offenserules": [
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      },
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      },
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      }
+    ],
+    "unit_id": "casket_of_phatep",
+    "option_id": "t1e4mrj2z5m1f5qg65d1zk"
+  },
+  "charnel_catapult": {
+    "name": "Charnel Catapult",
+    "cost": "180",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "75",
+    "global": {
+      "Ad": "4",
+      "Ma": "4",
+      "Di": "4",
+      "Rsr": "2"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Dust to Dust",
+        "id": "dust_to_dust"
+      },
+      {
+        "name": "War Machine",
+        "id": "war_machine"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "1",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "offensename": "Crew",
+    "offense": {
+      "At": "3",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Move or Fire",
+        "id": "move_or_fire"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Charnel Catapult",
+        "id": "charnel_catapult",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "unit_id": "charnel_catapult",
+    "option_id": "tqosmce5zm2vjxvqe6bnd"
+  },
+  "colossus": {
+    "name": "Colossus",
+    "cost": "405",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Ensouled Statue",
+        "id": "ensouled_statue"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "4",
+      "Re": "6",
+      "Arm": "3"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Colossus",
+    "offense": {
+      "At": "6",
+      "Of": "4",
+      "St": "6",
+      "AP": "3",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Grind Attacks",
+        "id": "grind_attacks",
+        "params": [
+          "D3"
+        ]
+      }
+    ],
+    "unit_id": "colossus",
+    "option_id": "cqjj89zrp3thhibny8edhj"
+  },
+  "death_cult_hierarch": {
+    "name": "Death Cult Hierarch",
+    "cost": "115",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Dust to Dust",
+        "id": "dust_to_dust"
+      },
+      {
+        "name": "Wizard Apprentice",
+        "id": "wizard_apprentice"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Death Cult Hierarch",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "paths": "Cosmology=cosmology,Divination=divination,Evocation=evocation",
+    "unit_id": "death_cult_hierarch",
+    "option_id": "toed1syr9fo5t2rzzr5bgo"
+  },
+  "dread_sphinx": {
+    "name": "Dread Sphinx",
+    "cost": "430",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Adfly": "6",
+      "Mafly": "12",
+      "Di": "8",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Ensouled Statue",
+        "id": "ensouled_statue"
+      },
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "6\"",
+          "12\""
+        ]
+      },
+      {
+        "name": "Autonomous",
+        "id": "autonomous"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "5",
+      "Re": "8",
+      "Arm": "3"
+    },
+    "offensename": "Dread Sphinx",
+    "offense": {
+      "At": "5",
+      "Of": "5",
+      "St": "5",
+      "AP": "1",
+      "Ag": "0"
+    },
+    "offenserules": [
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      },
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Colossal Kopesh",
+        "id": "colossal_kopesh"
+      }
+    ],
+    "unit_id": "dread_sphinx",
+    "option_id": "okj27l9lharcjz8ajir22"
+  },
+  "great_vultures": {
+    "name": "Great Vultures",
+    "cost": "150",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "2",
+      "Ma": "4",
+      "Adfly": "9",
+      "Mafly": "18",
+      "Di": "4",
+      "Rsr": "3"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Dust to Dust",
+        "id": "dust_to_dust"
+      },
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      },
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "9\"",
+          "18\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "2",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Great Vulture",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "unit_id": "great_vultures",
+    "option_id": "qv46odukaims6vtsr55mc"
+  },
+  "necropolis_guard": {
+    "name": "Necropolis Guard",
+    "cost": "185",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8",
+      "Rsr": "4"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Dust to Dust",
+        "id": "dust_to_dust"
+      },
+      {
+        "name": "Bodyguard",
+        "id": "bodyguard"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Necropolis Guard",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      },
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      },
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      }
+    ],
+    "unit_id": "necropolis_guard",
+    "option_id": "l47b0gr7ouopp2tc8ckuve"
+  },
+  "nomarch": {
+    "name": "Nomarch",
+    "cost": "130",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "9",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Dust to Dust",
+        "id": "dust_to_dust"
+      },
+      {
+        "name": "Undying Will",
+        "id": "undying_will"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Flammable",
+        "id": "flammable"
+      }
+    ],
+    "offensename": "Nomarch",
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserules": [],
+    "unit_id": "nomarch",
+    "option_id": "ffvhcuft1dhldllm36bjcr"
+  },
+  "pharaoh": {
+    "name": "Pharaoh",
+    "cost": "230",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "9",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Dust to Dust",
+        "id": "dust_to_dust"
+      },
+      {
+        "name": "Undying Will",
+        "id": "undying_will"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "6",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Flammable",
+        "id": "flammable"
+      }
+    ],
+    "offensename": "Pharaoh",
+    "offense": {
+      "At": "4",
+      "Of": "6",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserules": [],
+    "unit_id": "pharaoh",
+    "option_id": "mhbroxxntj936k1uhtoirh"
+  },
+  "sand_scorpion": {
+    "name": "Sand Scorpion",
+    "cost": "170",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8",
+      "Rsr": "2"
+    },
+    "globalrules": [
+      {
+        "name": "Ensouled Statue",
+        "id": "ensouled_statue"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Special Ambush",
+        "id": "special_ambush",
+        "params": [
+          "Battlefield"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "2"
+    },
+    "offensename": "Sand Scorpion",
+    "offense": {
+      "At": "4",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      }
+    ],
+    "unit_id": "sand_scorpion",
+    "option_id": "2aa3hbjor8h70futfibykk"
+  },
+  "sand_stalkers": {
+    "name": "Sand Stalkers",
+    "cost": "220",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8",
+      "Rsr": "2"
+    },
+    "globalrules": [
+      {
+        "name": "Ensouled Statue",
+        "id": "ensouled_statue"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Tall",
+        "id": "tall"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "offensename": "Sand Stalker",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Petrifying Gaze",
+        "id": "petrifying_gaze"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Halberd",
+        "id": "halberd"
+      }
+    ],
+    "unit_id": "sand_stalkers",
+    "option_id": "t89csg6ayxdq8ese1t1uf"
+  },
+  "scarab_swarms": {
+    "name": "Scarab Swarms",
+    "cost": "110",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "7",
+      "Rsr": "4"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Dust to Dust",
+        "id": "dust_to_dust"
+      },
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "3",
+      "Re": "2",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Distracting",
+        "id": "distracting"
+      },
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Scarab Swarm",
+    "offense": {
+      "At": "5",
+      "Of": "3",
+      "St": "2",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Extra Support",
+        "id": "extra_support",
+        "params": [
+          "3"
+        ]
+      }
+    ],
+    "unit_id": "scarab_swarms",
+    "option_id": "75nw1g3lb0dceqae8m9kp"
+  },
+  "shabti_archers": {
+    "name": "Shabti Archers",
+    "cost": "180",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8",
+      "Rsr": "2"
+    },
+    "globalrules": [
+      {
+        "name": "Ensouled Statue",
+        "id": "ensouled_statue"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Shabti Archer",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "5",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenseweapons": [
+      {
+        "name": "Great Aspen Bow",
+        "id": "great_aspen_bow",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "unit_id": "shabti_archers",
+    "option_id": "46rd41xec1fly266guz4g"
+  },
+  "shabtis": {
+    "name": "Shabtis",
+    "cost": "200",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8",
+      "Rsr": "2"
+    },
+    "globalrules": [
+      {
+        "name": "Ensouled Statue",
+        "id": "ensouled_statue"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Shabti",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "unit_id": "shabtis",
+    "option_id": "xhfk8lcuunuluwxwgt81"
+  },
+  "sha_guardian_mount": {
+    "name": "Sha Guardian",
+    "type": "Beast",
+    "maxmountsperarmy": "2",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Ensouled Statue",
+        "id": "ensouled_statue"
+      }
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "5",
+      "Re": "6",
+      "Arm": "4"
+    },
+    "defenserules": [
+      {
+        "name": "Eternal Guardian",
+        "id": "eternal_guardian"
+      }
+    ],
+    "offensename": "Sha Guardian",
+    "offense": {
+      "At": "4",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      },
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      }
+    ],
+    "unit_id": "sha_guardian_mount",
+    "option_id": "t00nn6rqafaaj79xrjvpo"
+  },
+  "skeletal_horse_mount": {
+    "name": "Skeletal Horse",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "C"
+    },
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+1"
+    },
+    "offensename": "Skeletal Horse",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "skeletal_horse_mount",
+    "option_id": "tu1z72v0w7a73oy7z6rhvc"
+  },
+  "skeleton_archers": {
+    "name": "Skeleton Archers",
+    "secondlogo": "arrows",
+    "cost": "115",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "4",
+      "Rsr": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Dust to Dust",
+        "id": "dust_to_dust"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Skeleton Archer",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenseweapons": [
+      {
+        "name": "Aspen Bow",
+        "id": "aspen_bow",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "unit_id": "skeleton_archers",
+    "option_id": "ohrmzqmjlbf5cj617hxhzg"
+  },
+  "skeleton_cavalry": {
+    "name": "Skeleton Cavalry",
+    "cost": "160",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "6",
+      "Rsr": "4"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Dust to Dust",
+        "id": "dust_to_dust"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Rider",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      }
+    ],
+    "offensenameB": "Skeletal Horse",
+    "offenseB": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "skeleton_cavalry",
+    "option_id": "jq9s2k7ksbhqn9lo3cg3he"
+  },
+  "skeleton_chariot_mount": {
+    "name": "Skeleton Chariot",
+    "type": "Construct",
+    "maxmountsperarmy": "3",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "10",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+1"
+    },
+    "offensename": "Skeletal Horse (2)",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "4",
+      "AP": "1"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D3+3"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "skeleton_chariot_mount",
+    "option_id": "f3n8nknp8p8wl4spsb4jfb"
+  },
+  "skeleton_chariots": {
+    "name": "Skeleton Chariots",
+    "cost": "260",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "10",
+      "Di": "7",
+      "Rsr": "2"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Dust to Dust",
+        "id": "dust_to_dust"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Bound in Death",
+        "id": "bound_in_death"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Charioteer (2)",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenseweapons": [
+      {
+        "name": "Halberd",
+        "id": "halberd"
+      },
+      {
+        "name": "Aspen Bow",
+        "id": "aspen_bow",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensenameB": "Skeletal Horse (2)",
+    "offenseB": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "4",
+      "AP": "1"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D3+1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "skeleton_chariots",
+    "option_id": "tzrh115eeyaqnnnhovqe0s"
+  },
+  "skeletons": {
+    "name": "Skeletons",
+    "cost": "145",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "4",
+      "Rsr": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Dust to Dust",
+        "id": "dust_to_dust"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Skeleton",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "unit_id": "skeletons",
+    "option_id": "ua54o4stuqpw12h9tya8"
+  },
+  "skeleton_scouts": {
+    "name": "Skeleton Scouts",
+    "secondlogo": "arrows",
+    "cost": "145",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "6",
+      "Rsr": "4"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Dust to Dust",
+        "id": "dust_to_dust"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      },
+      {
+        "name": "Scout",
+        "id": "scout"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "offensename": "Rider",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenseweapons": [
+      {
+        "name": "Aspen Bow",
+        "id": "aspen_bow",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensenameB": "Skeletal Horse",
+    "offenseB": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "skeleton_scouts",
+    "option_id": "k514yw315rgqwpheghck"
+  },
+  "tomb_architect": {
+    "name": "Tomb Architect",
+    "cost": "200",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Dust to Dust",
+        "id": "dust_to_dust"
+      },
+      {
+        "name": "Master of Stone",
+        "id": "master_of_stone"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Flammable",
+        "id": "flammable"
+      }
+    ],
+    "offensename": "Tomb Architect",
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "unit_id": "tomb_architect",
+    "option_id": "qtzn5svg71rm8csurd8fo"
+  },
+  "tomb_cataphracts": {
+    "name": "Tomb Cataphracts",
+    "cost": "295",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8",
+      "Rsr": "2"
+    },
+    "globalrules": [
+      {
+        "name": "Ensouled Statue",
+        "id": "ensouled_statue"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "3"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Rider",
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Halberd",
+        "id": "halberd"
+      }
+    ],
+    "offensenameB": "Amuut",
+    "offenseB": {
+      "At": "3",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      }
+    ],
+    "unit_id": "tomb_cataphracts",
+    "option_id": "npaj29c21yg0us28hlwo"
+  },
+  "tomb_harbinger": {
+    "name": "Tomb Harbinger",
+    "cost": "125",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Dust to Dust",
+        "id": "dust_to_dust"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Flammable",
+        "id": "flammable"
+      }
+    ],
+    "offensename": "Tomb Harbinger",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      },
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Guardian's Wrath",
+        "id": "guardians_wrath"
+      }
+    ],
+    "unit_id": "tomb_harbinger",
+    "option_id": "jclv68ewrgg5q1ld3xhyp"
+  },
+  "tomb_reapers": {
+    "name": "Tomb Reapers",
+    "cost": "295",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Adfly": "6",
+      "Mafly": "12",
+      "Di": "10",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Ensouled Statue",
+        "id": "ensouled_statue"
+      },
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "6\"",
+          "12\""
+        ]
+      },
+      {
+        "name": "Autonomous",
+        "id": "autonomous"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "2"
+    },
+    "offensename": "Tomb Reaper",
+    "offense": {
+      "At": "4",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      }
+    ],
+    "unit_id": "tomb_reapers",
+    "option_id": "68ro8yq8ji56vka3inpwz8"
+  },
+  "ancient_giant": {
+    "name": "Ancient Giant",
+    "cost": "275",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "id": "ud-giant_see_giant_do",
+        "name": "Giant See, Giant Do",
+        "params": []
+      },
+      null
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "defenserules": [],
+    "offensename": "Ancient Giant",
+    "offense": {
+      "Ag": "3",
+      "At": "5",
+      "Of": "3",
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Rage",
+        "id": "rage"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "ancient_giant",
+    "option_id": "bw30wjwswqg8l4egmoq72s"
+  }
+}

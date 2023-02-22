@@ -1,0 +1,2561 @@
+{
+  "cave_gnasher_mount": {
+    "name": "Cave Gnasher",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "maxmountsperarmy": "3",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Adfly": "6",
+      "Mafly": "12",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "6\"",
+          "12\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Oi it bites!",
+        "id": "oi_it_bites"
+      },
+      {
+        "name": "Bouncers",
+        "id": "bouncers"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+1"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Cave Gnasher",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "6",
+      "AP": "3",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "unit_id": "cave_gnasher_mount",
+    "option_id": "6cz6679mg5kmpkgtssoo"
+  },
+  "gargantula": {
+    "name": "Gargantula",
+    "cost": "500",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "100\u00d7150",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Stubborn",
+        "id": "stubborn"
+      },
+      {
+        "name": "Strider",
+        "id": "strider"
+      }
+    ],
+    "defense": {
+      "HP": "8",
+      "Df": "4",
+      "Re": "6",
+      "Arm": "3"
+    },
+    "offensename": "Goblin (8)",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Forest Goblin",
+        "id": "forest_goblin"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      },
+      {
+        "name": "Bow",
+        "id": "bow",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "offensenameB": "Gargantula",
+    "offenseB": {
+      "At": "8",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Venomous Fangs",
+        "id": "venomous_fangs"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "gargantula",
+    "option_id": "qvw3h0n5m1gawzdl54udld"
+  },
+  "gargantula_mount": {
+    "name": "Gargantula",
+    "maxmountsperarmy": "1",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "100\u00d7150",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Stubborn",
+        "id": "stubborn"
+      },
+      {
+        "name": "Strider",
+        "id": "strider"
+      }
+    ],
+    "defense": {
+      "HP": "8",
+      "Df": "4",
+      "Re": "6",
+      "Arm": "3"
+    },
+    "offensename": "Goblin (8)",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Forest Goblin",
+        "id": "forest_goblin"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      },
+      {
+        "name": "Bow",
+        "id": "bow",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "offensenameB": "Gargantula",
+    "offenseB": {
+      "At": "8",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Venomous Fangs",
+        "id": "venomous_fangs"
+      }
+    ],
+    "unit_id": "gargantula_mount",
+    "option_id": "y288bg9byi8bk9trrahm"
+  },
+  "giant": {
+    "name": "Giant",
+    "cost": "255",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "id": "ong-giant_see_giant_do",
+        "name": "Giant See, Giant Do",
+        "params": []
+      },
+      null
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "offensename": "Giant",
+    "offense": {
+      "At": "5",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Rage",
+        "id": "rage"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "giant",
+    "option_id": "l18woyv16dtvrf6lkzuy"
+  },
+  "gnasher_dashers": {
+    "name": "Gnasher Dashers",
+    "cost": "130",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Adfly": "6",
+      "Mafly": "12",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "6\"",
+          "12\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Oi it bites!",
+        "id": "oi_it_bites"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Goblin Rider",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Cave Goblin",
+        "id": "cave_goblin"
+      }
+    ],
+    "offensenameB": "Gnasher Dasher",
+    "offenseB": {
+      "At": "2",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Rows of Teeth",
+        "id": "rows_of_teeth"
+      }
+    ],
+    "unit_id": "gnasher_dashers",
+    "option_id": "8h4kev9t59ootvh9ef1sol"
+  },
+  "gnasher_herd": {
+    "name": "Gnasher Herd",
+    "cost": "135",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Insignificant",
+        "id": "insignificant"
+      },
+      {
+        "name": "Oi it bites!",
+        "id": "oi_it_bites"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Gnasher",
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "They're Everywhere!",
+        "id": "theyre_everywhere"
+      }
+    ],
+    "unit_id": "gnasher_herd",
+    "option_id": "qnuoybe36n2lemtz45mm"
+  },
+  "gnasher_wrecking_team": {
+    "name": "Gnasher Wrecking Team",
+    "cost": "130",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "60",
+    "global": {
+      "Ad": "3D6",
+      "Ma": "",
+      "Di": "3"
+    },
+    "globalrules": [
+      {
+        "name": "Ricochet",
+        "id": "ricochet",
+        "params": [
+          "2D6"
+        ]
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Random Movement",
+        "id": "random_movement",
+        "params": [
+          "3D6\""
+        ]
+      },
+      {
+        "name": "Shambolic",
+        "id": "shambolic"
+      },
+      {
+        "name": "Look at Em Go!",
+        "id": "look_at_em_go"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "0",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Wrecking Team",
+    "offense": {
+      "At": "",
+      "Of": "0",
+      "St": "6",
+      "AP": "4",
+      "Ag": "3"
+    },
+    "offenserules": [],
+    "unit_id": "gnasher_wrecking_team",
+    "option_id": "hl65qp6gfy72bcuyd1k8t4"
+  },
+  "goblin_chief": {
+    "name": "Goblin Chief",
+    "cost": "75",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7"
+    },
+    "defense": {
+      "HP": "2",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Goblin Chief",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [],
+    "additionalframe": "Common Goblin,,Wolf=50,\r\n\t\t\tGoblin Wolf Chariot=60,\r\n\t\tCave Goblin,,Cave Gnasher=65,\r\n\t\tForest Goblin,,Scuttler Spider=25,\r\n\t\t\tHuntsmen Spider=40,\r\n\t\t",
+    "unit_id": "goblin_chief",
+    "option_id": "hldpllxs648ifeoetuuwj"
+  },
+  "goblin_king": {
+    "name": "Goblin King",
+    "cost": "120",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Goblin King",
+    "offense": {
+      "At": "4",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "5"
+    },
+    "offenserules": [],
+    "additionalframe": "Common Goblin,,Wolf=35,\r\n\t\t\tGoblin Wolf Chariot=50,\r\n\t\tCave Goblin,,Cave Gnasher=65,\r\n\t\tForest Goblin,,Scuttler Spider=30,\r\n\t\t\tHuntsmen Spider=40,\r\n\t\t\tGargantula (BnN)=440,\r\n\t\t",
+    "endtext": "*May only be taken if the army does not contain any models with the Greenhide Races Common Orc, Feral Orc, or Iron Orc.\\",
+    "unit_id": "goblin_king",
+    "option_id": "6o92auyi7ztkuw1h9p6iq"
+  },
+  "mad_git": {
+    "name": "Mad Git",
+    "costnote": "This model is an optional additional model for Goblins units.",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25",
+    "global": {
+      "Ad": "2D6",
+      "Ma": "",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Random Movement",
+        "id": "random_movement",
+        "params": [
+          "2D6\""
+        ]
+      },
+      {
+        "name": "Shambolic",
+        "id": "shambolic"
+      },
+      {
+        "name": "Ricochet",
+        "id": "ricochet",
+        "params": [
+          "D6"
+        ]
+      },
+      {
+        "name": "Running Amok!!",
+        "id": "running_amok"
+      },
+      {
+        "name": "Surprise!",
+        "id": "surprise"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "0",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Mad Git",
+    "offense": {
+      "At": "",
+      "Of": "0",
+      "St": "5",
+      "AP": "3",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Cave Goblin",
+        "id": "cave_goblin"
+      }
+    ],
+    "unit_id": "mad_git",
+    "option_id": "hpypxvxrqgvhf1fxuxok"
+  },
+  "goblin_raiders": {
+    "name": "Goblin Raiders",
+    "cost": "115",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "globalname": "Common Goblin",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Feigned Flight",
+        "id": "feigned_flight"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "globalnameB": "Forest Goblin",
+    "globalB": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "6"
+    },
+    "globalrulesB": [
+      {
+        "name": "Feigned Flight",
+        "id": "feigned_flight"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Scout",
+        "id": "scout"
+      },
+      {
+        "name": "Strider",
+        "id": "strider"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "offensename": "Goblin Raider",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offensenameB": "Wolf",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameC": "Scuttler Spider",
+    "offenseC": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserulesC": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      }
+    ],
+    "additionalframe": "Forest Goblin,Throwing Weapons (5+)=1/model,,",
+    "unit_id": "goblin_raiders",
+    "option_id": "t21uzi3set3ncu8j72vv5"
+  },
+  "goblins": {
+    "name": "Goblins",
+    "cost": "120",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "globalname": "Common Goblin",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "globalnameB": "Cave Goblin",
+    "globalB": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "5"
+    },
+    "globalrulesB": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "globalnameC": "Forest Goblin",
+    "globalC": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "6"
+    },
+    "globalrulesC": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [],
+    "offensename": "Common Goblin",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offensenameB": "Cave Goblin",
+    "offenseB": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offensenameC": "Forest Goblin",
+    "offenseC": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserulesC": [
+      {
+        "name": "Poison Attacks*",
+        "id": "poison_attacks"
+      }
+    ],
+    "offenseCcomment": "*affects only Close Combat Attacks",
+    "additionalframe": "Common Goblin,Shield (only if armed with Bow)=free,\r\n\t\t\t<span class=\"textbf\">Shady Git</span> (0--X Models/Unit)=10/Shady Git,\r\n\t\t\tAdditional model (profile on the next page). The value of X in the 0--X limitation depends on the unit's size:\r\n\t\t\t\r\n\t\t\t\t<hr>Starting size & 20--29 & 30+ <br>X & 2 & 3 <br><hr>=,\r\n\t\t,Cave Goblin,Nets=50,\r\n\t\t\t<span class=\"textbf\">Mad Git</span> (0--X Models/Unit)=65/Mad Git,\r\n\t\t\tAdditional model (profile on the next page). The value of X in the 0--X limitation depends on the unit's size:\r\n\t\t\t\r\n\t\t\t\t<hr>Starting size & 20--29 & 30--44 & 45+ <br>X & 1 & 2 & 3 <br><hr>=,\r\n\t\t,Forest Goblin,<span class=\"textbf\">Creepers</span> (0--20 Models/Unit)=free,\r\n\t\t\tThrowing Weapons (5+)=1/model,,",
+    "unit_id": "goblins",
+    "option_id": "g7va2244f4mlroxd50o0xi"
+  },
+  "shady_git": {
+    "name": "Shady Git",
+    "costnote": "This model is an optional additional model for Goblins units.",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Sneaky!",
+        "id": "sneaky"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Shady Git",
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Common Goblin",
+        "id": "common_goblin"
+      },
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Paired Weapons",
+        "id": "paired_weapons"
+      }
+    ],
+    "unit_id": "shady_git",
+    "option_id": "inbj698blsl3kcgm9wheb2"
+  },
+  "goblin_witch_doctor": {
+    "name": "Goblin Witch Doctor",
+    "cost": "105",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "globalrules": [
+      {
+        "name": "Wizard Apprentice",
+        "id": "wizard_apprentice"
+      }
+    ],
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "6"
+    },
+    "defense": {
+      "HP": "2",
+      "Df": "2",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Goblin Witch Doctor",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [],
+    "paths": "Witchcraft=witchcraft,Thaumaturgy=thaumaturgy,Pyromancy=pyromancy",
+    "additionalframe": "Common Goblin,,Wolf=20,\r\n\t\t\tGoblin Wolf Chariot=35,\r\n\t\tCave Goblin,Light Armour=5,\r\n\t\t,Forest Goblin,,Scuttler Spider=20,\r\n\t\t\tGargantula (Wizard Master only) (BnN)=460,\r\n\t\t",
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "goblin_witch_doctor",
+    "option_id": "jfztkwsm43accier2wgef"
+  },
+  "goblin_wolf_chariot_mount": {
+    "name": "Goblin Wolf Chariot",
+    "maxmountsperarmy": "3",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "9",
+      "Ma": "9",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "4",
+      "Arm": "C+1"
+    },
+    "offensename": "Goblin (2)",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Common Goblin",
+        "id": "common_goblin"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      },
+      {
+        "name": "Bow",
+        "id": "bow",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "offensenameB": "Wolf (2)",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6+1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "goblin_wolf_chariot_mount",
+    "option_id": "x15pshggf4047h90edsd93"
+  },
+  "goblin_wolf_chariots": {
+    "name": "Goblin Wolf Chariots",
+    "cost": "125",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "9",
+      "Ma": "9",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "2",
+      "Re": "4",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Goblin Crew (3)",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Common Goblin",
+        "id": "common_goblin"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      },
+      {
+        "name": "Bow",
+        "id": "bow",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "offensenameB": "Wolf (2)",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6+1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "goblin_wolf_chariots",
+    "option_id": "gyl9518v3gu42xinuooqva"
+  },
+  "great_green_idol": {
+    "name": "Great Green Idol",
+    "cost": "375",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "100\u00d7100",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Smash 'Em Flat",
+        "id": "smash_em_flat"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "2",
+      "Re": "8",
+      "Arm": "3"
+    },
+    "offensename": "Great Green Idol",
+    "offense": {
+      "At": "3",
+      "Of": "2",
+      "St": "6",
+      "AP": "3",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Crush Attack",
+        "id": "crush_attack"
+      },
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D3"
+        ]
+      }
+    ],
+    "unit_id": "great_green_idol",
+    "option_id": "gj3vcooug3dn9gvmw3r7q"
+  },
+  "greenhide_catapult": {
+    "name": "Greenhide Catapult",
+    "cost": "150",
+    "addrestriction": "0--3 Units/Army",
+    "type": "Construct",
+    "size": "Standard",
+    "basesize": "75",
+    "global": {
+      "Ad": "4",
+      "Ma": "4",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "War Machine",
+        "id": "war_machine"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "1",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Goblin Crew",
+    "forceoffensenameprint": "yes",
+    "offense": {
+      "At": "3",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Common Goblin",
+        "id": "common_goblin"
+      },
+      {
+        "name": "Move or Fire",
+        "id": "move_or_fire"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "greenhide_catapult",
+    "option_id": "9sba76figrebrp74jgk5p"
+  },
+  "grotlings": {
+    "name": "Grotlings",
+    "cost": "90",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "4"
+    },
+    "globalrules": [
+      {
+        "name": "Insignificant",
+        "id": "insignificant"
+      },
+      {
+        "name": "Scout",
+        "id": "scout"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      },
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Unstable",
+        "id": "unstable"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "2",
+      "Re": "2",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Grotling",
+    "offense": {
+      "At": "5",
+      "Of": "2",
+      "St": "2",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenseweapons": [
+      {
+        "name": "Throwing Weapons",
+        "id": "throwing_weapons",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offenserules": [
+      {
+        "name": "Extra Support",
+        "id": "extra_support",
+        "params": [
+          "3"
+        ]
+      }
+    ],
+    "unit_id": "grotlings",
+    "option_id": "efaji1auxrfxdic9jl1f4"
+  },
+  "huntsmen_spider_mount": {
+    "name": "Huntsmen Spider",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d750",
+    "maxmountsperarmy": "4",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Strider",
+        "id": "strider"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "C",
+      "Re": "4",
+      "Arm": "C+2"
+    },
+    "offensename": "Huntsmen Spider",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      }
+    ],
+    "unit_id": "huntsmen_spider_mount",
+    "option_id": "x167fal1h245k043a3y8"
+  },
+  "iron_orcs": {
+    "name": "Iron Orcs",
+    "cost": "300",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Bodyguard",
+        "id": "bodyguard",
+        "params": [
+          "Iron Orc Warlord",
+          "Iron Orc Chief"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Plate Armour",
+        "id": "plate_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Iron Orc",
+    "offense": {
+      "At": "1",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Iron Orc",
+        "id": "iron_orc"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Paired Weapons",
+        "id": "paired_weapons"
+      },
+      {
+        "name": "Great Weapon",
+        "id": "great_weapon"
+      }
+    ],
+    "unit_id": "iron_orcs",
+    "option_id": "r6pjapsogroqbtnt6l0so"
+  },
+  "mounted_eadbashers": {
+    "name": "Mounted 'Eadbashers",
+    "cost": "145",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defensename": "Common Orc",
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "defensenameB": "Feral Orc",
+    "defenseB": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defenserulesB": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "offensename": "Mounted 'Eadbasher",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      }
+    ],
+    "offensenameB": "War Boar",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Str",
+          "+1 AP"
+        ]
+      },
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "additionalframe": "Common Orc,Lance=3/model,\r\n\t\t,Feral Orc,Paired Weapons=3/model,,",
+    "unit_id": "mounted_eadbashers",
+    "option_id": "rgx849t2f0kefswiym4yz7"
+  },
+  "orc_boar_chariot": {
+    "name": "Orc Boar Chariot",
+    "cost": "140",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "7",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "'Eadbasher Crew (2)",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Common Orc",
+        "id": "common_orc"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Lance",
+        "id": "lance"
+      }
+    ],
+    "offensenameB": "War Boar (2)",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Str",
+          "+1 AP"
+        ]
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6+1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "orc_boar_chariot",
+    "option_id": "h9jnf9a07ktwzgms2q6swh"
+  },
+  "orc_boar_chariot_mount": {
+    "name": "Orc Boar Chariot",
+    "maxmountsperarmy": "3",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "7",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "5",
+      "Arm": "C+2"
+    },
+    "offensename": "'Eadbasher Crew",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Common Orc",
+        "id": "common_orc"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Lance",
+        "id": "lance"
+      }
+    ],
+    "offensenameB": "War Boar (2)",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Str",
+          "+1 AP"
+        ]
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6+1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "orc_boar_chariot_mount",
+    "option_id": "x15pshgsz1547h90ewrsd3"
+  },
+  "orc_boar_riders": {
+    "name": "Orc Boar Riders",
+    "cost": "135",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defensename": "Common Orc",
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "defensenameB": "Feral Orc",
+    "defenseB": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defenserulesB": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "offensename": "Orc Boar Rider",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      }
+    ],
+    "offensenameB": "War Boar",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Str",
+          "+1 AP"
+        ]
+      },
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "additionalframe": "Common Orc,Lance=4/model,\r\n\t\t,Feral Orc,Paired Weapons=3/model,\r\n\t\t,",
+    "unit_id": "orc_boar_riders",
+    "option_id": "sh1yiuhlo7oo87oalpdlh"
+  },
+  "orc_chief": {
+    "name": "Orc Chief",
+    "cost": "115",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "defensename": "Common Orc",
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "defensenameB": "Feral Orc",
+    "defenseB": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defenserulesB": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "defensenameC": "Iron Orc",
+    "defenseC": {
+      "HP": "3",
+      "Df": "6",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defensearmourC": [
+      {
+        "name": "Plate Armour",
+        "id": "plate_armour"
+      }
+    ],
+    "offensename": "Common Orc",
+    "offense": {
+      "At": "3",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offensenameB": "Feral Orc",
+    "offenseB": {
+      "At": "3",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offensenameC": "Iron Orc",
+    "offenseC": {
+      "At": "3",
+      "Of": "6",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserules": [],
+    "additionalframe": "Common Orc,Bow (4+)=5,,War Boar=40,\r\n\t\t\tOrc Boar Chariot=80,\r\n\t\t\tWyvern (BnN)=150,\r\n\t\tFeral Orc,Light Armour=5,Bow (4+)=5,,War Boar=30,\r\n\t\t\tWyvern (BnN)=160,\r\n\t\tIron Orc,,War Boar=40,\r\n\t\t\tWyvern (BnN)=160,\r\n\t\t",
+    "unit_id": "orc_chief",
+    "option_id": "1xwqbcldv9id45g94s713"
+  },
+  "orc_eadbashers": {
+    "name": "Orc 'Eadbashers",
+    "cost": "195",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defensename": "Common Orc",
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "defensenameB": "Feral Orc",
+    "defenseB": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmourB": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "offensename": "Orc 'Eadbasher",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [],
+    "additionalframe": "Feral Orc,Mammoth Stabber=25,,",
+    "unit_id": "orc_eadbashers",
+    "option_id": "x3f0fqwpgh9ia7tbhvqjt"
+  },
+  "orcs": {
+    "name": "Orcs",
+    "cost": "155",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defensename": "Common Orc",
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "defensenameB": "Feral Orc",
+    "defenseB": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defenserulesB": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "offensename": "Orc",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserules": [],
+    "additionalframe": "Common Orc,Heavy Armour and Crossbow (4+)*=5/model,\r\n\t\t\t*Only if not armed with Paired Weapons, Spear, and/or Bow.=,\r\n\t\t,Feral Orc,Mammoth Stabber=20,,",
+    "unit_id": "orcs",
+    "option_id": "z350e3vtlmmos5erxuc2"
+  },
+  "orc_shaman": {
+    "name": "Orc Shaman",
+    "cost": "130",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Wizard Apprentice",
+        "id": "wizard_apprentice"
+      }
+    ],
+    "defensename": "Common Orc",
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "defensenameB": "Feral Orc",
+    "defenseB": {
+      "HP": "3",
+      "Df": "2",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defenserulesB": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Orc Shaman",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [],
+    "paths": "Shamanism=shamanism,Thaumaturgy=thaumaturgy,Pyromancy=pyromancy",
+    "additionalframe": "Common Orc,,War Boar=30,\r\n\t\t\tOrc Boar Chariot=60,\r\n\t\t\tWyvern (Wizard Master only) (BnN)=75,\r\n\t\tFeral Orc,,War Boar=30,\r\n\t\t\tWyvern (Wizard Master only) (BnN)=75,\r\n\t\t",
+    "unit_id": "orc_shaman",
+    "option_id": "ru8tih04cofkmach52cb5p"
+  },
+  "orc_warlord": {
+    "name": "Orc Warlord",
+    "cost": "200",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "9"
+    },
+    "defensename": "Common Orc",
+    "defense": {
+      "HP": "3",
+      "Df": "6",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "defensenameB": "Feral Orc",
+    "defenseB": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defenserulesB": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "defensenameC": "Iron Orc",
+    "defenseC": {
+      "HP": "3",
+      "Df": "7",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defensearmourC": [
+      {
+        "name": "Plate Armour",
+        "id": "plate_armour"
+      }
+    ],
+    "offensename": "Common Orc",
+    "offense": {
+      "At": "4",
+      "Of": "6",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offensenameB": "Feral Orc",
+    "offenseB": {
+      "At": "4",
+      "Of": "6",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offensenameC": "Iron Orc",
+    "offenseC": {
+      "At": "4",
+      "Of": "7",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [],
+    "additionalframe": "Common Orc,Bow (4+)=5,,War Boar=40,\r\n\t\t\tOrc Boar Chariot=75,\r\n\t\t\tWyvern (BnN)=150,\r\n\t\tFeral Orc,Light Armour=10,Bow (4+)=5,,War Boar=30,\r\n\t\t\tWyvern (BnN)=160,\r\n\t\tIron Orc,,War Boar=55,\r\n\t\t\tOrc Boar Chariot=105,\r\n\t\t\tWyvern (BnN)=180,\r\n\t\t",
+    "unit_id": "orc_warlord",
+    "option_id": "hgy9e4j3ptab3p1a0tmuju"
+  },
+  "scrap_wagon": {
+    "name": "Scrap Wagon",
+    "cost": "80",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "3D6",
+      "Ma": "",
+      "Di": "4"
+    },
+    "globalrules": [
+      {
+        "name": "Random Movement",
+        "id": "random_movement",
+        "params": [
+          "3D6\""
+        ]
+      },
+      {
+        "name": "Shambolic",
+        "id": "shambolic"
+      },
+      {
+        "name": "Insignificant",
+        "id": "insignificant"
+      },
+      {
+        "name": "Unstable",
+        "id": "unstable"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Pursuit Mode",
+        "id": "pursuit_mode"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "2",
+      "Re": "4",
+      "Arm": "1"
+    },
+    "offensename": "Grotling Crew",
+    "offense": {
+      "At": "5",
+      "Of": "2",
+      "St": "2",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserules": [],
+    "offenseweapons": [
+      {
+        "name": "Throwing Weapons",
+        "id": "throwing_weapons",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensenameB": "Chassis",
+    "offenseB": {
+      "At": "",
+      "Of": "",
+      "St": "4",
+      "AP": "3",
+      "Ag": ""
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "2D6"
+        ]
+      }
+    ],
+    "unit_id": "scrap_wagon",
+    "option_id": "i6pdmspb9uufon1k9y6xb"
+  },
+  "scuttler_spider_mount": {
+    "name": "Scuttler Spider",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Feigned Flight",
+        "id": "feigned_flight"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      },
+      {
+        "name": "Scout",
+        "id": "scout"
+      },
+      {
+        "name": "Strider",
+        "id": "strider"
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+1"
+    },
+    "offensename": "Scuttler Spider",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      }
+    ],
+    "unit_id": "scuttler_spider_mount",
+    "option_id": "x1bp1hl1h2c4zh43a3y8"
+  },
+  "skewerer": {
+    "name": "Skewerer",
+    "cost": "90",
+    "type": "Construct",
+    "size": "Standard",
+    "basesize": "60",
+    "global": {
+      "Ad": "4",
+      "Ma": "4",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "War Machine",
+        "id": "war_machine"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "1",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Goblin Crew",
+    "offense": {
+      "At": "3",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Common Goblin",
+        "id": "common_goblin"
+      },
+      {
+        "name": "Move or Fire",
+        "id": "move_or_fire"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Ballista",
+        "id": "ballista",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "unit_id": "skewerer",
+    "option_id": "jrkd6bpvj89k4do1q0ey"
+  },
+  "trolls": {
+    "name": "Trolls",
+    "cost": "160",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "4"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Stupid",
+        "id": "stupid"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "offensename": "Troll",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Troll Belch",
+        "id": "troll_belch"
+      }
+    ],
+    "unit_id": "trolls",
+    "option_id": "eksl38y6s6samc5grj3lsh"
+  },
+  "war_boar_mount": {
+    "name": "War Boar",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+2"
+    },
+    "offensename": "War Boar",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Str",
+          "+1 AP"
+        ]
+      },
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "war_boar_mount",
+    "option_id": "x1bp1husz1c47hcwaiyg"
+  },
+  "wolf_mount": {
+    "name": "Wolf",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Feigned Flight",
+        "id": "feigned_flight"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+1"
+    },
+    "offensename": "Wolf",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "wolf_mount",
+    "option_id": "x1bp1hu5z2c4zh43azag"
+  },
+  "wyvern_mount": {
+    "name": "Wyvern",
+    "maxmountsperarmy": "2",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Adfly": "8",
+      "Mafly": "16",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "16\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "5",
+      "Arm": "C"
+    },
+    "offensename": "Wyvern",
+    "offense": {
+      "At": "3",
+      "Of": "5",
+      "St": "6",
+      "AP": "3",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Venomous Fangs",
+        "id": "venomous_fangs"
+      }
+    ],
+    "unit_id": "wyvern_mount",
+    "option_id": "x1bp1hpsj3cz7h8waiyg"
+  },
+  "supplement_giant": {
+    "name": "Supplement Giant",
+    "cost": "255",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "id": "ong-giant_see_giant_do",
+        "name": "Giant See, Giant Do",
+        "params": []
+      },
+      null
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "offensename": "Giant",
+    "offense": {
+      "Ag": "3",
+      "At": "5",
+      "Of": "3",
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Rage",
+        "id": "rage"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "supplement_giant",
+    "option_id": "sl18woyv16dtvrf6lkzuy"
+  }
+}

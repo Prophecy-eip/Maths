@@ -1,0 +1,2181 @@
+{
+  "barbarian_chief": {
+    "name": "Barbarian Chief",
+    "cost": "100",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Battle Fever",
+        "id": "battle_fever"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Barbarian Chief",
+    "offense": {
+      "Ag": "5",
+      "At": "3",
+      "Of": "5",
+      "St": "5",
+      "AP": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Deeds not Words",
+        "id": "deeds_not_words"
+      }
+    ],
+    "unit_id": "barbarian_chief",
+    "option_id": "93lfw9f6ks58nzainwx9t"
+  },
+  "barbarian_horsemen": {
+    "name": "Barbarian Horsemen",
+    "cost": "130",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Battle Fever",
+        "id": "battle_fever"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Barbarian Horseman",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offensenameB": "Black Steed",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "barbarian_horsemen",
+    "option_id": "zr01x7o14egnqzbg2dm01q"
+  },
+  "barbarians": {
+    "name": "Barbarians",
+    "cost": "135",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Battle Fever",
+        "id": "battle_fever"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Barbarian",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "unit_id": "barbarians",
+    "option_id": "e0m2g9u52iwpt4c0c1u20e"
+  },
+  "battleshrine": {
+    "name": "Battleshrine",
+    "cost": "320",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Not a Leader",
+        "id": "not_a_leader"
+      },
+      {
+        "name": "Battle Fever",
+        "id": "battle_fever"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      },
+      {
+        "name": "Channel",
+        "id": "channel",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "War Platform",
+        "id": "war_platform"
+      },
+      {
+        "name": "Trophy Rack",
+        "id": "trophy_rack"
+      },
+      {
+        "name": "Beacon of the Dark Gods",
+        "id": "beacon_of_the_dark_gods"
+      },
+      {
+        "name": "Wizard Apprentice",
+        "id": "wizard_apprentice"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "4"
+    },
+    "defensearmour": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Shrine Priest",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [],
+    "offensenameB": "Wretched One (2)",
+    "offenseB": {
+      "At": "",
+      "Of": "",
+      "St": "4",
+      "AP": "0",
+      "Ag": "1"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Grind Attacks",
+        "id": "grind_attacks",
+        "params": [
+          "D6+1"
+        ]
+      }
+    ],
+    "toggles": "onecolprintmodelrulesdeftwocolprintmodelrulesdef",
+    "unit_id": "battleshrine",
+    "option_id": "vm7x9ojk7z9xqvsevxipqc"
+  },
+  "battleshrine_mount": {
+    "name": "Battleshrine",
+    "maxmountsperarmy": "1",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      },
+      {
+        "name": "Channel",
+        "id": "channel",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "War Platform",
+        "id": "war_platform"
+      },
+      {
+        "name": "Trophy Rack",
+        "id": "trophy_rack"
+      },
+      {
+        "name": "Keeper of the Beacon",
+        "id": "keeper_of_the_beacon"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "C",
+      "Re": "5",
+      "Arm": "C+1"
+    },
+    "defensearmour": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Wretched One (2)",
+    "forceoffensenameprint": "Please display the name mighty LaTeX",
+    "offense": {
+      "At": "",
+      "Of": "",
+      "St": "4",
+      "AP": "0",
+      "Ag": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Grind Attacks",
+        "id": "grind_attacks",
+        "params": [
+          "D6+1"
+        ]
+      }
+    ],
+    "toggles": "onecolprintmodelrulesdeftwocolprintmodelrulesdef",
+    "unit_id": "battleshrine_mount",
+    "option_id": "f74bmcvsm9g27svfpjza98"
+  },
+  "black_steed_mount": {
+    "name": "Black Steed",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+2"
+    },
+    "offensename": "Black Steed",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "black_steed_mount",
+    "option_id": "wrzmd5puq4ecnsjjl658kg"
+  },
+  "chimera": {
+    "name": "Chimera",
+    "cost": "200",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "20",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "3"
+    },
+    "offensename": "Chimera",
+    "offense": {
+      "At": "5",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [],
+    "unit_id": "chimera",
+    "option_id": "x5lcby6m1zhv670yd9vz0m"
+  },
+  "chimera_mount": {
+    "name": "Chimera",
+    "maxmountsperarmy": "2",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "20",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      },
+      {
+        "name": "Legendary Beasts",
+        "id": "legendary_beasts",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "5",
+      "Arm": "C"
+    },
+    "offensename": "Chimera",
+    "offense": {
+      "At": "5",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "chimera_mount",
+    "option_id": "bdb6ula9wvrw87qqv7pqp"
+  },
+  "chosen": {
+    "name": "Chosen",
+    "cost": "235",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Path of the Favoured",
+        "id": "path_of_the_favoured"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "2",
+      "Df": "6",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Hell-Forged Armour",
+        "id": "hellforged_armour"
+      },
+      {
+        "name": "Spiked Shield",
+        "id": "spiked_shield"
+      }
+    ],
+    "offensename": "Chosen",
+    "offense": {
+      "At": "3",
+      "Of": "6",
+      "St": "4",
+      "AP": "1",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Extra Support",
+        "id": "extra_support",
+        "params": [
+          "3"
+        ]
+      }
+    ],
+    "unit_id": "chosen",
+    "option_id": "eawxz4g0r0d9aqks5sfq8u"
+  },
+  "chosen_chariot": {
+    "name": "Chosen Chariot",
+    "cost": "335",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "7",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Path of the Favoured",
+        "id": "path_of_the_favoured"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "6",
+      "Re": "5",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Hell-Forged Armour",
+        "id": "hellforged_armour"
+      }
+    ],
+    "offensename": "Chosen Crew (2)",
+    "offense": {
+      "At": "3",
+      "Of": "6",
+      "St": "4",
+      "AP": "1",
+      "Ag": "5"
+    },
+    "offensenameB": "Karkadan",
+    "offenseB": {
+      "At": "2",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Halberd",
+        "id": "halberd"
+      }
+    ],
+    "offenserules": [],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6+1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "chosen_chariot",
+    "option_id": "7ylninb79wpqsud793rj9"
+  },
+  "chosen_knights": {
+    "name": "Chosen Knights",
+    "cost": "410",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Path of the Favoured",
+        "id": "path_of_the_favoured"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "6",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Hell-Forged Armour",
+        "id": "hellforged_armour"
+      }
+    ],
+    "offensename": "Chosen Rider",
+    "offense": {
+      "At": "3",
+      "Of": "6",
+      "St": "4",
+      "AP": "1",
+      "Ag": "5"
+    },
+    "offenseweapons": [
+      {
+        "name": "Halberd",
+        "id": "halberd"
+      }
+    ],
+    "offensenameB": "Karkadan",
+    "offenseB": {
+      "At": "2",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "chosen_knights",
+    "option_id": "cx0d73pkxt1lchw4me1lp"
+  },
+  "chosen_lord": {
+    "name": "Chosen Lord",
+    "cost": "300",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Path of the Favoured",
+        "id": "path_of_the_favoured"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "7",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Hell-Forged Armour",
+        "id": "hellforged_armour"
+      }
+    ],
+    "offensename": "Chosen Lord",
+    "offense": {
+      "Ag": "7",
+      "At": "5",
+      "Of": "8",
+      "St": "5",
+      "AP": "2"
+    },
+    "endtext": "<span class=\"textbf\">Gifts of the Dark Gods</span>. Each Gift is One of a Kind.<br>Gifts of the Dark Gods follow the general rules of Special Items concerning which model parts are affected.../giftsofthedarkgodsfolder/daemonicwings.tex\r\n\t\t\t../giftsofthedarkgodsfolder/entropicaura.tex\r\n\t\t\t../giftsofthedarkgodsfolder/luckofthedarkgods.tex\r\n\t\t\t../giftsofthedarkgodsfolder/idolofspite.tex\r\n\t\t\t../giftsofthedarkgodsfolder/darkprelate.tex\r\n\t\t\r\n\t",
+    "unit_id": "chosen_lord",
+    "option_id": "bme1pa4bpduaez1kfpvb"
+  },
+  "dark_chariot_mount": {
+    "name": "Dark Chariot",
+    "maxmountsperarmy": "3",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "8",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "5",
+      "Arm": "C+2"
+    },
+    "offensename": "Black Steed (2)",
+    "offense": {
+      "Ag": "3",
+      "St": "4",
+      "AP": "0",
+      "At": "1",
+      "Of": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6+1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "dark_chariot_mount",
+    "option_id": "bbz5vr0u9amsgoyyw31u9p"
+  },
+  "doomlord": {
+    "name": "Doomlord",
+    "cost": "355",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Path of the Exiled",
+        "id": "path_of_the_exiled"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "6",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Hell-Forged Armour",
+        "id": "hellforged_armour"
+      }
+    ],
+    "offensename": "Doomlord",
+    "offense": {
+      "Ag": "5",
+      "At": "5",
+      "Of": "7",
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Master of Destruction",
+        "id": "master_of_destruction"
+      }
+    ],
+    "unit_id": "doomlord",
+    "option_id": "v5kqpz77v6nddewjc1csh6"
+  },
+  "exalted_herald": {
+    "name": "Exalted Herald",
+    "cost": "780",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Wizard Adept",
+        "id": "wizard_adept"
+      },
+      {
+        "name": "Manifestation",
+        "id": "manifestation"
+      },
+      {
+        "name": "Legendary Beasts",
+        "id": "legendary_beasts",
+        "params": [
+          "2"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "8",
+      "Re": "5",
+      "Arm": "3"
+    },
+    "defensearmour": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "offensename": "Exalted Herald",
+    "offense": {
+      "Ag": "8",
+      "At": "6",
+      "Of": "9",
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserules": [],
+    "endtext": "Abiding Spirit<span class=\"textbf\">Hard Target (1)</span>. At the end of each friendly Melee Phase, if the Exalted Herald has been on the winning side of a combat in this phase, it Recovers 1 Health Point.<i>Smite the Unbeliever</i> (Thaumaturgy)Brand of the DragonFly (7\", 14\"),Swiftstride,Breath Attack (Str 4, AP 1, Flaming Attacks)<i>Breath of Corruption</i> (Occultism)Emissary of ChaosStomp Attacks (D6),Stubborn,Tall,Terror<i>Pentagram of Pain</i> (Occultism)Sorcerer Immortal<span class=\"textbf\">Veil Walker</span>,Channel (1)<i>Marked for Doom</i> (Occultism) and<br><i>The Grave Calls</i> (Occultism)Unholy Avatar+1 Strength, +1 Armour Penetration, and <span class=\"textbf\">Divine Attacks</span><i>The Rot Within</i> (Occultism)\r\n\t\t",
+    "unit_id": "exalted_herald",
+    "option_id": "l6xvufn83p31zg13lg2vk"
+  },
+  "fallen": {
+    "name": "Fallen",
+    "cost": "145",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "addrestriction": "0--2 Units/Army*",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Path of the Exiled",
+        "id": "path_of_the_exiled"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Hell-Forged Armour",
+        "id": "hellforged_armour"
+      }
+    ],
+    "offensename": "Fallen",
+    "offense": {
+      "Ag": "4",
+      "At": "2",
+      "Of": "4",
+      "St": "4",
+      "AP": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Paired Weapons",
+        "id": "paired_weapons"
+      }
+    ],
+    "unit_id": "fallen",
+    "option_id": "5s8dflxjwn3zyosk2gs8z"
+  },
+  "feldrak_ancestor": {
+    "name": "Feldrak Ancestor",
+    "cost": "640",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "75\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Primal Legend",
+        "id": "primal_legend"
+      },
+      {
+        "name": "Legendary Beasts",
+        "id": "legendary_beasts",
+        "params": [
+          "2"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "8",
+      "Df": "6",
+      "Re": "6",
+      "Arm": "3"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Unburnt",
+        "id": "unburnt"
+      }
+    ],
+    "offensename": "Feldrak Ancestor",
+    "offense": {
+      "Ag": "3",
+      "At": "6",
+      "Of": "6",
+      "St": "7",
+      "AP": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Hatred",
+        "id": "hatred",
+        "params": [
+          "against Fly"
+        ]
+      },
+      {
+        "name": "Breath Attack",
+        "id": "breath_attack",
+        "params": [
+          "Str 4",
+          "AP 1",
+          "Dying Embers",
+          "Flaming Attacks"
+        ]
+      }
+    ],
+    "unit_id": "feldrak_ancestor",
+    "option_id": "6xg8ipt9m6acembg5jrw94"
+  },
+  "feldrak_elder": {
+    "name": "Feldrak Elder",
+    "cost": "450",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Legendary Beasts",
+        "id": "legendary_beasts",
+        "params": [
+          "2"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "5",
+      "Re": "6",
+      "Arm": "3"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Unburnt",
+        "id": "unburnt"
+      }
+    ],
+    "offensename": "Feldrak Elder",
+    "offense": {
+      "Ag": "3",
+      "At": "5",
+      "Of": "5",
+      "St": "6",
+      "AP": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Hatred",
+        "id": "hatred",
+        "params": [
+          "against Fly"
+        ]
+      }
+    ],
+    "unit_id": "feldrak_elder",
+    "option_id": "35c12tzqza3m9apzxucu"
+  },
+  "feldraks": {
+    "name": "Feldraks",
+    "cost": "340",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Tall",
+        "id": "tall"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Unburnt",
+        "id": "unburnt"
+      }
+    ],
+    "offensename": "Feldrak",
+    "offense": {
+      "Ag": "3",
+      "At": "3",
+      "Of": "4",
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Hatred",
+        "id": "hatred",
+        "params": [
+          "against Fly"
+        ]
+      }
+    ],
+    "unit_id": "feldraks",
+    "option_id": "1zipxpi56z85x5dm2pnt43"
+  },
+  "flayers": {
+    "name": "Flayers",
+    "cost": "155",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "10",
+      "Ma": "20",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Strider",
+        "id": "strider"
+      },
+      {
+        "name": "Battle Fever",
+        "id": "battle_fever"
+      },
+      {
+        "name": "Feigned Flight",
+        "id": "feigned_flight"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard",
+        "params": [
+          "6\""
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "defenserules": [],
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Flayer",
+    "offense": {
+      "Ag": "4",
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "0"
+    },
+    "offensenameB": "Shadow Chaser",
+    "offenseB": {
+      "Ag": "4",
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "flayers",
+    "option_id": "fwl5f6jvrsl8ni0xcasndl"
+  },
+  "forsaken_one": {
+    "name": "Forsaken One",
+    "cost": "390",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "3D6",
+      "Ma": "",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Irredeemable",
+        "id": "irredeemable"
+      },
+      {
+        "name": "Random Movement",
+        "id": "random_movement",
+        "params": [
+          "3D6\""
+        ]
+      },
+      {
+        "name": "Unbreakable",
+        "id": "unbreakable"
+      },
+      {
+        "name": "Legendary Beasts",
+        "id": "legendary_beasts",
+        "params": [
+          "2"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "2",
+      "Re": "6",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Forsaken One",
+    "offense": {
+      "Ag": "1",
+      "At": "",
+      "Of": "",
+      "St": "6",
+      "AP": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Grind Attacks",
+        "id": "grind_attacks",
+        "params": [
+          "D6+3"
+        ]
+      }
+    ],
+    "unit_id": "forsaken_one",
+    "option_id": "9toh6p6bidanbus5lxt5pb"
+  },
+  "forsworn": {
+    "name": "Forsworn",
+    "cost": "200",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Bodyguard",
+        "id": "bodyguard",
+        "params": [
+          "Doomlord"
+        ]
+      },
+      {
+        "name": "Path of the Exiled",
+        "id": "path_of_the_exiled"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Hell-Forged Armour",
+        "id": "hellforged_armour"
+      }
+    ],
+    "offensename": "Forsworn",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "forsworn",
+    "option_id": "lile7wytactk3ugtciwb"
+  },
+  "hellmaw": {
+    "name": "Hellmaw",
+    "cost": "300",
+    "type": "Construct",
+    "size": "Gigantic",
+    "basesize": "100\u00d7150",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Gateway",
+        "id": "gateway"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "3",
+      "Re": "6",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Hellmaw",
+    "offense": {
+      "Ag": "1",
+      "At": "5",
+      "Of": "3",
+      "St": "5",
+      "AP": "2"
+    },
+    "unit_id": "hellmaw",
+    "option_id": "nvmpi907eyzx6b2tbzc7"
+  },
+  "karkadan_mount": {
+    "name": "Karkadan",
+    "maxmountsperarmy": "4",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+2"
+    },
+    "offensename": "Karkadan",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "karkadan_mount",
+    "option_id": "cpuomlqe6zw84zufr376bn"
+  },
+  "marauding_giant": {
+    "name": "Marauding Giant",
+    "cost": "290",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "id": "wdg-giant_see_giant_do",
+        "name": "Giant See, Giant Do",
+        "params": []
+      },
+      {
+        "name": "Legendary Beasts",
+        "id": "legendary_beasts",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "offensename": "Marauding Giant",
+    "offense": {
+      "Ag": "3",
+      "At": "5",
+      "Of": "3",
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Rage",
+        "id": "rage"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "marauding_giant",
+    "option_id": "snrr66jcz7vzza49z4j7d"
+  },
+  "scythed_skywheel_mount": {
+    "name": "Scythed Skywheel",
+    "type": "Construct",
+    "size": "Standard",
+    "basesize": "50\u00d750",
+    "maxmountsperarmy": "3",
+    "global": {
+      "Ad": "C",
+      "Ma": "C",
+      "Di": "C",
+      "Adfly": "6",
+      "Mafly": "18"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "6\"",
+          "18\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Tall",
+        "id": "tall"
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "Cannot be Stomped",
+        "id": "cannot_be_stomped"
+      }
+    ],
+    "offensename": "Scythed Skywheel",
+    "offense": {
+      "Ag": "3",
+      "St": "3",
+      "AP": "0"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Grind Attacks",
+        "id": "grind_attacks",
+        "params": [
+          "D3+1"
+        ]
+      }
+    ],
+    "unit_id": "scythed_skywheel_mount",
+    "option_id": "japvnhtxvicuxy606jnfze"
+  },
+  "shadow_chaser_mount": {
+    "name": "Shadow Chaser",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "10",
+      "Ma": "20",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Strider",
+        "id": "strider"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard",
+        "params": [
+          "6\""
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+1"
+    },
+    "defenserules": [],
+    "offensename": "Shadow Chaser",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "shadow_chaser_mount",
+    "option_id": "9s2tnfwq3lsfdw8uwj77"
+  },
+  "sorcerer": {
+    "name": "Sorcerer",
+    "cost": "130",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Battle Fever",
+        "id": "battle_fever"
+      },
+      {
+        "name": "Wizard Apprentice",
+        "id": "wizard_apprentice"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Sorcerer",
+    "offense": {
+      "Ag": "3",
+      "At": "2",
+      "Of": "4",
+      "St": "3",
+      "AP": "0"
+    },
+    "offenserules": [],
+    "paths": "Alchemy=alchemy,Evocation=evocation,Occultism=occultism",
+    "unit_id": "sorcerer",
+    "option_id": "nmro608e0loekuqk43qre"
+  },
+  "war_dais_mount": {
+    "name": "War Dais",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "50\u00d750",
+    "maxmountsperarmy": "2",
+    "global": {
+      "Ad": "C",
+      "Ma": "C",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Tall",
+        "id": "tall"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+2"
+    },
+    "defenserules": [
+      {
+        "name": "Cannot be Stomped",
+        "id": "cannot_be_stomped"
+      }
+    ],
+    "offensename": "War Dais",
+    "offense": {
+      "At": "4",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "war_dais_mount",
+    "option_id": "t7zplfuqlagyh5b5pss1to"
+  },
+  "warhounds": {
+    "name": "Warhounds",
+    "cost": "95",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Insignificant",
+        "id": "insignificant"
+      },
+      {
+        "name": "Release the Hounds",
+        "id": "release_the_hounds"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Warhound",
+    "offense": {
+      "Ag": "4",
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0"
+    },
+    "offenserules": [],
+    "unit_id": "warhounds",
+    "option_id": "3vf6mhubuzee2wxr3ysfgw"
+  },
+  "warrior_chariot": {
+    "name": "Warrior Chariot",
+    "cost": "230",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Path of the Favoured",
+        "id": "path_of_the_favoured"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Hell-Forged Armour",
+        "id": "hellforged_armour"
+      }
+    ],
+    "offensename": "Warrior Crew (2)",
+    "offense": {
+      "Ag": "4",
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1"
+    },
+    "offenseweapons": [
+      {
+        "name": "Halberd",
+        "id": "halberd"
+      }
+    ],
+    "offensenameB": "Black Steed (2)",
+    "offenseB": {
+      "Ag": "3",
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "0"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offenseweaponsB": [],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6+1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "warrior_chariot",
+    "option_id": "58w4b8xokp70od3e3mdcqb"
+  },
+  "warrior_knights": {
+    "name": "Warrior Knights",
+    "cost": "255",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Path of the Favoured",
+        "id": "path_of_the_favoured"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Hell-Forged Armour",
+        "id": "hellforged_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Warrior Rider",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offensenameB": "Black Steed",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "warrior_knights",
+    "option_id": "k4cikt6svzbfkawkbtenxd"
+  },
+  "warriors": {
+    "name": "Warriors",
+    "cost": "230",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Path of the Favoured",
+        "id": "path_of_the_favoured"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Hell-Forged Armour",
+        "id": "hellforged_armour"
+      },
+      {
+        "name": "Spiked Shield",
+        "id": "spiked_shield"
+      }
+    ],
+    "offensename": "Warrior",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "unit_id": "warriors",
+    "option_id": "8u27dlfbqd4g855q10b5br"
+  },
+  "wasteland_behemoth_mount": {
+    "name": "Wasteland Behemoth",
+    "maxmountsperarmy": "2",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "100\u00d7150",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Legendary Beasts",
+        "id": "legendary_beasts",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "6",
+      "Arm": "4"
+    },
+    "offensename": "Wasteland Behemoth",
+    "offense": {
+      "Ag": "3",
+      "At": "6",
+      "Of": "3",
+      "St": "6",
+      "AP": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "wasteland_behemoth_mount",
+    "option_id": "ggyr7t6f1j7t5rexowv1v8"
+  },
+  "wasteland_dragon_mount": {
+    "name": "Wasteland Dragon",
+    "maxmountsperarmy": "1",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Adfly": "7",
+      "Mafly": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "7\"",
+          "14\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Legendary Beasts",
+        "id": "legendary_beasts",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "Meeting of Minds",
+        "id": "meeting_of_minds"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "5",
+      "Re": "6",
+      "Arm": "4"
+    },
+    "offensename": "Wasteland Dragon",
+    "offense": {
+      "Ag": "3",
+      "At": "5",
+      "Of": "5",
+      "St": "6",
+      "AP": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Breath Attack",
+        "id": "breath_attack",
+        "params": [
+          "Str 4",
+          "AP 1",
+          "Flaming Attacks"
+        ]
+      }
+    ],
+    "unit_id": "wasteland_dragon_mount",
+    "option_id": "dlwh3h61d92bmpqy8fxgr"
+  },
+  "wretched_ones": {
+    "name": "Wretched Ones",
+    "cost": "75",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "3D6",
+      "Ma": "",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Irredeemable",
+        "id": "irredeemable"
+      },
+      {
+        "name": "Random Movement",
+        "id": "random_movement",
+        "params": [
+          "3D6\""
+        ]
+      },
+      {
+        "name": "Unbreakable",
+        "id": "unbreakable"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "2",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Wretched One",
+    "offense": {
+      "Ag": "1",
+      "At": "",
+      "Of": "",
+      "St": "4",
+      "AP": "0"
+    },
+    "offenserules": [
+      {
+        "name": "Grind Attacks",
+        "id": "grind_attacks",
+        "params": [
+          "D6+1"
+        ]
+      }
+    ],
+    "unit_id": "wretched_ones",
+    "option_id": "nsqmu9gk7fxpxe1inefq9"
+  },
+  "supplement_marauding_giant": {
+    "name": "Supplement Marauding Giant",
+    "cost": "290",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "id": "wdg-giant_see_giant_do",
+        "name": "Giant See, Giant Do",
+        "params": []
+      },
+      {
+        "name": "Legendary Beasts",
+        "id": "legendary_beasts"
+      }
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "offensename": "Marauding Giant",
+    "offense": {
+      "Ag": "3",
+      "At": "5",
+      "Of": "3",
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Rage",
+        "id": "rage"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "supplement_marauding_giant",
+    "option_id": "ssnrr66jcz7vzza49z4j7d"
+  }
+}

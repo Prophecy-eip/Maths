@@ -1,0 +1,2180 @@
+{
+  "ancient_dragon_mount": {
+    "name": "Ancient Dragon",
+    "type": "Beast",
+    "size": "Gigantic",
+    "maxmountsperarmy": "1",
+    "addrestriction": "One of a Kind",
+    "basesize": "100\u00d7150",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Adfly": "7",
+      "Mafly": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "7\"",
+          "14\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Ancient Allies",
+        "id": "ancient_allies",
+        "params": [
+          "2"
+        ]
+      },
+      {
+        "name": "Meeting of Minds",
+        "id": "meeting_of_minds"
+      }
+    ],
+    "defense": {
+      "HP": "8",
+      "Df": "6",
+      "Re": "6",
+      "Arm": "4"
+    },
+    "offensename": "Ancient Dragon",
+    "offense": {
+      "At": "6",
+      "Of": "6",
+      "St": "7",
+      "AP": "4",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Breath Attack",
+        "id": "breath_attack",
+        "params": [
+          "Str 4",
+          "AP 1",
+          "Flaming Attacks"
+        ]
+      }
+    ],
+    "unit_id": "ancient_dragon_mount",
+    "option_id": "52dl5g0ov7mim1r4tai15"
+  },
+  "citizen_archers": {
+    "name": "Citizen Archers",
+    "secondlogo": "arrows",
+    "cost": "150",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Martial Discipline",
+        "id": "martial_discipline"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Citizen Archer",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Longbow",
+        "id": "longbow",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "unit_id": "citizen_archers",
+    "option_id": "9p7xul2yom5dzl3vp7s8d"
+  },
+  "citizen_spears": {
+    "name": "Citizen Spears",
+    "cost": "260",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Martial Discipline",
+        "id": "martial_discipline"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Citizen Spear",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Fight in Extra Rank",
+        "id": "fight_in_extra_rank"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Spear",
+        "id": "spear"
+      }
+    ],
+    "unit_id": "citizen_spears",
+    "option_id": "rqafi24w6djvsp3j0nkc"
+  },
+  "commander": {
+    "name": "Commander",
+    "cost": "130",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Martial Discipline",
+        "id": "martial_discipline"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "6",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Commander",
+    "offense": {
+      "At": "3",
+      "Of": "6",
+      "St": "4",
+      "AP": "1",
+      "Ag": "7"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "unit_id": "commander",
+    "option_id": "rtw7g9gzot1s1pdulkewi"
+  },
+  "he_dragon_mount": {
+    "name": "Dragon",
+    "type": "Beast",
+    "size": "Gigantic",
+    "maxmountsperarmy": "1",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Adfly": "7",
+      "Mafly": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "7\"",
+          "14\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Ancient Allies",
+        "id": "ancient_allies",
+        "params": [
+          "2"
+        ]
+      },
+      {
+        "name": "Meeting of Minds",
+        "id": "meeting_of_minds"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "5",
+      "Re": "6",
+      "Arm": "4"
+    },
+    "offensename": "Dragon",
+    "offense": {
+      "At": "5",
+      "Of": "5",
+      "St": "6",
+      "AP": "3",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Breath Attack",
+        "id": "breath_attack",
+        "params": [
+          "Str 4",
+          "AP 1",
+          "Flaming Attacks"
+        ]
+      }
+    ],
+    "unit_id": "he_dragon_mount",
+    "option_id": "0aqjz1daje4gx2cf2kgnheb"
+  },
+  "elein_reavers": {
+    "name": "Elein Reavers",
+    "secondlogo": "arrows",
+    "cost": "180",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Martial Discipline",
+        "id": "martial_discipline"
+      },
+      {
+        "name": "Feigned Flight",
+        "id": "feigned_flight"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Elein Reaver",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      }
+    ],
+    "offensenameB": "Elven Horse",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "elein_reavers",
+    "option_id": "olqgtoz7pylzx18lx119cc"
+  },
+  "he_elven_horse_mount": {
+    "name": "Elven Horse",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "C"
+    },
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+2"
+    },
+    "offensename": "Elven Horse",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "he_elven_horse_mount",
+    "option_id": "zcj3b0w35dexhnxdoabxl8"
+  },
+  "flame_wardens": {
+    "name": "Flame Wardens",
+    "cost": "260",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Martial Discipline",
+        "id": "martial_discipline"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "offensename": "Flame Warden",
+    "offense": {
+      "At": "1",
+      "Of": "5",
+      "St": "3",
+      "AP": "0",
+      "Ag": "6"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Fight in Extra Rank",
+        "id": "fight_in_extra_rank"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Halberd",
+        "id": "halberd"
+      }
+    ],
+    "unit_id": "flame_wardens",
+    "option_id": "8tyu65zdf1kd34hbt5z8"
+  },
+  "giant_eagle_mount": {
+    "name": "Giant Eagle",
+    "type": "Cavalry",
+    "size": "Large",
+    "maxmountsperarmy": "3",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "2",
+      "Ma": "4",
+      "Adfly": "9",
+      "Mafly": "18",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "9\"",
+          "18\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "4",
+      "Arm": "C+1"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Giant Eagle",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "giant_eagle_mount",
+    "option_id": "lr7d6bcj0rs0vatqh22z1fl"
+  },
+  "giant_eagles": {
+    "name": "Giant Eagles",
+    "cost": "100",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "2",
+      "Ma": "4",
+      "Adfly": "9",
+      "Mafly": "18",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "9\"",
+          "18\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "offensename": "Giant Eagle",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "unit_id": "giant_eagles",
+    "option_id": "kchawhiz131nbvlfvmxgb"
+  },
+  "grey_watchers": {
+    "name": "Grey Watchers",
+    "cost": "135",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Martial Discipline",
+        "id": "martial_discipline"
+      },
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Grey Watcher",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Accurate",
+        "id": "accurate"
+      },
+      {
+        "name": "Fae Miasma",
+        "id": "fae_miasma"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Longbow",
+        "id": "longbow",
+        "params": [
+          "2+"
+        ]
+      }
+    ],
+    "unit_id": "grey_watchers",
+    "option_id": "r51eq62rmrz1gr59rf78c"
+  },
+  "griffon_mount": {
+    "name": "Griffon",
+    "type": "Cavalry",
+    "size": "Large",
+    "maxmountsperarmy": "3",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Adfly": "8",
+      "Mafly": "16",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "16\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      },
+      {
+        "name": "Ancient Allies",
+        "id": "ancient_allies",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "5",
+      "Arm": "C"
+    },
+    "offensename": "Griffon",
+    "offense": {
+      "At": "4",
+      "Of": "5",
+      "St": "5",
+      "AP": "3",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Att",
+          "+1 Str",
+          "+1 AP"
+        ]
+      }
+    ],
+    "unit_id": "griffon_mount",
+    "option_id": "866izmabqr7elrynkxfj5v"
+  },
+  "highborn_lancers": {
+    "name": "Highborn Lancers",
+    "cost": "210",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Martial Discipline",
+        "id": "martial_discipline"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Highborn Lancer",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Lance",
+        "id": "lance"
+      }
+    ],
+    "offensenameB": "Elven Horse",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "highborn_lancers",
+    "option_id": "0ku0rivg5wgqwzdt0qnl"
+  },
+  "high_prince": {
+    "name": "High Prince",
+    "cost": "235",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "10"
+    },
+    "globalrules": [
+      {
+        "name": "Martial Discipline",
+        "id": "martial_discipline"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "7",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "High Prince",
+    "offense": {
+      "At": "4",
+      "Of": "7",
+      "St": "4",
+      "AP": "1",
+      "Ag": "8"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "unit_id": "high_prince",
+    "option_id": "rydim7dt7hq9rufz2wpn4l"
+  },
+  "initiate_of_the_fiery_heart": {
+    "name": "Initiate of the Fiery Heart",
+    "cost": "320",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Adfly": "7",
+      "Mafly": "14",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "7\"",
+          "14\""
+        ]
+      },
+      {
+        "name": "Ancient Allies",
+        "id": "ancient_allies",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Martial Discipline",
+        "id": "martial_discipline"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      },
+      {
+        "name": "Wizard Adept",
+        "id": "wizard_adept"
+      },
+      {
+        "name": "Meeting of Minds",
+        "id": "meeting_of_minds"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "3"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Dragon Mage",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Flaming Attacks",
+        "id": "flaming_attacks"
+      }
+    ],
+    "offensenameB": "Young Dragon",
+    "offenseB": {
+      "At": "4",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Stomp Attacks",
+        "id": "stomp_attacks",
+        "params": [
+          "D3"
+        ]
+      },
+      {
+        "name": "Breath Attack",
+        "id": "breath_attack",
+        "params": [
+          "Str 4",
+          "AP 1",
+          "Flaming Attacks"
+        ]
+      },
+      {
+        "name": "Flaming Attacks",
+        "id": "flaming_attacks"
+      }
+    ],
+    "paths": "Pyromancy=pyromancy,Alchemy=alchemy",
+    "unit_id": "initiate_of_the_fiery_heart",
+    "option_id": "bg8osewd0w7i61k9fq570g"
+  },
+  "knights_of_ryma": {
+    "name": "Knights of Ryma",
+    "cost": "320",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Martial Discipline",
+        "id": "martial_discipline"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "3",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Dragonforged Armour",
+        "id": "dragonforged_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Knight of Ryma",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "6"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Lance",
+        "id": "lance"
+      }
+    ],
+    "offensenameB": "Elven Horse",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "knights_of_ryma",
+    "option_id": "r4tbd7se9f8jbehij32cdr"
+  },
+  "lion_chariot": {
+    "name": "Lion Chariot",
+    "cost": "205",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Martial Discipline",
+        "id": "martial_discipline"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Valiant",
+        "id": "valiant"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Crew (2)",
+    "offense": {
+      "At": "1",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Multiple Wounds",
+        "id": "multiple_wounds",
+        "params": [
+          "2",
+          "against Large and Beast",
+          "Large and Cavalry",
+          "Gigantic"
+        ]
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Great Weapon",
+        "id": "great_weapon"
+      }
+    ],
+    "offensenameB": "Lion (2)",
+    "offenseB": {
+      "At": "2",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6+1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "lion_chariot",
+    "option_id": "xnszcdzk5qe5uke3scs06"
+  },
+  "lion_chariot_mount": {
+    "name": "Lion Chariot",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "maxmountsperarmy": "3",
+    "global": {
+      "Ad": "8",
+      "Ma": "8",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "4",
+      "Arm": "C+2"
+    },
+    "offensename": "Crew",
+    "offense": {
+      "At": "1",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Multiple Wounds",
+        "id": "multiple_wounds",
+        "params": [
+          "2",
+          "against Large and Beast",
+          "Large and Cavalry",
+          "Gigantic"
+        ]
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Great Weapon",
+        "id": "great_weapon"
+      }
+    ],
+    "offensenameB": "Lion (2)",
+    "offenseB": {
+      "At": "2",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6+1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "lion_chariot_mount",
+    "option_id": "lbnfksbcjk112x2oim7e0i"
+  },
+  "lion_guard": {
+    "name": "Lion Guard",
+    "cost": "220",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Martial Discipline",
+        "id": "martial_discipline"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      },
+      {
+        "name": "Valiant",
+        "id": "valiant"
+      },
+      {
+        "name": "Bodyguard",
+        "id": "bodyguard",
+        "params": [
+          "High Prince that is the General"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      },
+      {
+        "name": "Lion's Fur",
+        "id": "lions_fur"
+      }
+    ],
+    "offensename": "Lion Guard",
+    "offense": {
+      "At": "1",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Multiple Wounds",
+        "id": "multiple_wounds",
+        "params": [
+          "2",
+          "against Large and Beast",
+          "Large and Cavalry",
+          "Gigantic"
+        ]
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Great Weapon",
+        "id": "great_weapon"
+      }
+    ],
+    "unit_id": "lion_guard",
+    "option_id": "cd0vd8flw29ep1fxqa6d7"
+  },
+  "mage": {
+    "name": "Mage",
+    "cost": "230",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Martial Discipline",
+        "id": "martial_discipline"
+      },
+      {
+        "name": "Master of Spellcrafting",
+        "id": "master_of_spellcrafting"
+      },
+      {
+        "name": "Wizard Adept",
+        "id": "wizard_adept"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Mage",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "paths": "Divination=divination,Pyromancy=pyromancy,Cosmology=cosmology",
+    "toggles": "onecolprintmountstwocolprintmounts",
+    "unit_id": "mage",
+    "option_id": "9usolw35sevi5lopoekdx"
+  },
+  "phoenix": {
+    "name": "Phoenix",
+    "cost": "330",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "2",
+      "Ma": "4",
+      "Adfly": "9",
+      "Mafly": "18",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "9\"",
+          "18\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Rebirth",
+        "id": "rebirth"
+      },
+      {
+        "name": "Ancient Allies",
+        "id": "ancient_allies",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "3"
+    },
+    "offensename": "Phoenix",
+    "offense": {
+      "At": "4",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [],
+    "toggles": "printoffensenameonecolprintmodelrulesdeftwocolprintmodelrulesdefonecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdefonecolprintoptionstwocolprintoptions",
+    "unit_id": "phoenix",
+    "option_id": "0lo67tk84y3c20ogepcriaj"
+  },
+  "queens_guard": {
+    "name": "Queen's Guard",
+    "cost": "135",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Martial Discipline",
+        "id": "martial_discipline"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Queen's Guard",
+    "offense": {
+      "At": "1",
+      "Of": "5",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Moonlight Arrows",
+        "id": "moonlight_arrows"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Longbow",
+        "id": "longbow",
+        "params": [
+          "2+"
+        ]
+      }
+    ],
+    "unit_id": "queens_guard",
+    "option_id": "h835i2h8fahth4kipstij"
+  },
+  "reaver_chariot_mount": {
+    "name": "Reaver Chariot",
+    "type": "Construct",
+    "size": "Large",
+    "maxmountsperarmy": "3",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "9",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "C",
+      "Re": "4",
+      "Arm": "C+2"
+    },
+    "offensename": "Crew (2)",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      },
+      {
+        "name": "Longbow",
+        "id": "longbow",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "offensenameB": "Elven Horse (2)",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "reaver_chariot_mount",
+    "option_id": "03xv2o5n2idb4ldcoxgnuks"
+  },
+  "reaver_chariots": {
+    "name": "Reaver Chariots",
+    "cost": "110",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "9",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Martial Discipline",
+        "id": "martial_discipline"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "offensename": "Crew (2)",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      },
+      {
+        "name": "Longbow",
+        "id": "longbow",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "offensenameB": "Elven Horse (2)",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "reaver_chariots",
+    "option_id": "qb6lnpljzcoaxk3g3wbweu"
+  },
+  "sea_guard": {
+    "name": "Sea Guard",
+    "secondlogo": "arrows",
+    "cost": "240",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Martial Discipline",
+        "id": "martial_discipline"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Sea Guard",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Steady Aim",
+        "id": "steady_aim"
+      },
+      {
+        "name": "Marine Training",
+        "id": "marine_training"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Spear",
+        "id": "spear"
+      },
+      {
+        "name": "Bow",
+        "id": "bow",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "toggles": "twocolprintmodelrulesdefonecolprintmodelrulesdef",
+    "unit_id": "sea_guard",
+    "option_id": "l63mjum7h3f7aqs8545kp5"
+  },
+  "sea_guard_reaper": {
+    "name": "Sea Guard Reaper",
+    "cost": "190",
+    "addrestriction": "0--3 Units/Army*",
+    "type": "Construct",
+    "size": "Standard",
+    "basesize": "60",
+    "global": {
+      "Ad": "5",
+      "Ma": "5",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Martial Discipline",
+        "id": "martial_discipline"
+      },
+      {
+        "name": "War Machine",
+        "id": "war_machine"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "1",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Crew",
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Move or Fire",
+        "id": "move_or_fire"
+      },
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Elven Bolt Thrower",
+        "id": "elven_bolt_thrower",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "unit_id": "sea_guard_reaper",
+    "option_id": "fewfwedsgfdgwegerwdgsdhwe"
+  },
+  "sky_sloop": {
+    "name": "Sky Sloop",
+    "cost": "235",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "2",
+      "Ma": "2",
+      "Adfly": "9",
+      "Mafly": "9",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "9\"",
+          "9\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Martial Discipline",
+        "id": "martial_discipline"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "1"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Crew (2)",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      }
+    ],
+    "offensenameB": "Hawk",
+    "offenseB": {
+      "At": "2",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      },
+      {
+        "name": "Sky Reaper",
+        "id": "sky_reaper",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "unit_id": "sky_sloop",
+    "option_id": "whmhj2n4au4js5ul75nu"
+  },
+  "sky_sloop_mount": {
+    "name": "Sky Sloop",
+    "type": "Construct",
+    "size": "Large",
+    "maxmountsperarmy": "2",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "2",
+      "Ma": "2",
+      "Adfly": "9",
+      "Mafly": "9",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "9\"",
+          "9\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "4",
+      "Arm": "C+1"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Crew (2)",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      }
+    ],
+    "offensenameB": "Hawk",
+    "offenseB": {
+      "At": "2",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "offenseweaponsI": [
+      {
+        "name": "Sky Reaper",
+        "id": "sky_reaper",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "unit_id": "sky_sloop_mount",
+    "option_id": "dq2quszoxaoagh4pbsvxf"
+  },
+  "sword_masters": {
+    "name": "Sword Masters",
+    "cost": "125",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Martial Discipline",
+        "id": "martial_discipline"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "6",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Sword Master",
+    "offense": {
+      "At": "2",
+      "Of": "6",
+      "St": "3",
+      "AP": "0",
+      "Ag": "6"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Sword Sworn",
+        "id": "sword_sworn"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Great Weapon",
+        "id": "great_weapon"
+      }
+    ],
+    "unit_id": "sword_masters",
+    "option_id": "05tlh0h4o4m30imomz2f2r28"
+  },
+  "highborn_giant": {
+    "name": "Highborn Giant",
+    "cost": "270",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "id": "he-giant_see_giant_do",
+        "name": "Giant See, Giant Do",
+        "params": []
+      },
+      {
+        "name": "Ancient Allies",
+        "id": "ancient_allies",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "defensearmour": [],
+    "offensename": "Highborn Giant",
+    "offense": {
+      "Ag": "3",
+      "At": "5",
+      "Of": "3",
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Rage",
+        "id": "rage"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "highborn_giant",
+    "option_id": "a17bx384p6rzvktpl1f39b"
+  }
+}

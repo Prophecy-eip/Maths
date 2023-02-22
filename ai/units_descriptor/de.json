@@ -1,0 +1,2228 @@
+{
+  "beastmaster": {
+    "name": "Beastmaster",
+    "cost": "170",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Willbreaker's Craft",
+        "id": "willbreakers_craft"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Cannot be Stomped",
+        "id": "cannot_be_stomped"
+      }
+    ],
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Beastmaster",
+    "offense": {
+      "At": "4",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "7"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      }
+    ],
+    "unit_id": "beastmaster",
+    "option_id": "mejghkx7omhfbv3w4jy4p"
+  },
+  "black_cloaks": {
+    "name": "Black Cloaks",
+    "cost": "180",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      },
+      {
+        "name": "Scout",
+        "id": "scout"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Black Cloak",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Repeater Handbow",
+        "id": "repeater_handbow",
+        "params": [
+          "2",
+          "3+"
+        ]
+      },
+      {
+        "name": "Paired Weapons",
+        "id": "paired_weapons"
+      }
+    ],
+    "unit_id": "black_cloaks",
+    "option_id": "jaquzaxepb9nnxyfek1tb"
+  },
+  "divine_altar": {
+    "name": "Divine Altar",
+    "cost": "200",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "60\u00d7100",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      },
+      {
+        "name": "Channel",
+        "id": "channel",
+        "params": [
+          "3"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "2"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Attendant (3)",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "3",
+      "AP": "1",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      },
+      {
+        "name": "Battle Focus",
+        "id": "battle_focus"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Blades of Darag",
+        "id": "blades_of_darag"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "divine_altar",
+    "option_id": "7416pbp90zdxz3uhi7nbob"
+  },
+  "dread_knights": {
+    "name": "Dread Knights",
+    "cost": "285",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Scent of Blood",
+        "id": "scent_of_blood"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "3",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Dread Knight",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "6"
+    },
+    "offenserules": [
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      },
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "offensenameB": "Daeb Raptor",
+    "offenseB": {
+      "At": "2",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      }
+    ],
+    "unit_id": "dread_knights",
+    "option_id": "7e5en0ynro5orskqt6v8v"
+  },
+  "dread_prince": {
+    "name": "Dread Prince",
+    "cost": "215",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "9"
+    },
+    "globalrules": [],
+    "defense": {
+      "HP": "3",
+      "Df": "7",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Dread Prince",
+    "offense": {
+      "At": "5",
+      "Of": "8",
+      "St": "4",
+      "AP": "1",
+      "Ag": "8"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Artistry of Death",
+        "id": "artistry_of_death"
+      }
+    ],
+    "unit_id": "dread_prince",
+    "option_id": "b9zfx5gyutn3ae7282hik"
+  },
+  "de_elven_horse_mount": {
+    "name": "Elven Horse",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "C"
+    },
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+1"
+    },
+    "offensename": "Elven Horse",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "de_elven_horse_mount",
+    "option_id": "ut5aqil7314yukodf1ebl"
+  },
+  "gorgons": {
+    "name": "Gorgons",
+    "cost": "155",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Strider",
+        "id": "strider"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Gorgon",
+    "offense": {
+      "At": "3",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Petrifying Stare",
+        "id": "petrifying_stare"
+      },
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      }
+    ],
+    "unit_id": "gorgons",
+    "option_id": "aeydqvgbv5rfnmdtzwaqt9"
+  },
+  "harpies": {
+    "name": "Harpies",
+    "cost": "175",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Adfly": "8",
+      "Mafly": "16",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      },
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "16\""
+        ]
+      },
+      {
+        "name": "Insignificant",
+        "id": "insignificant"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Scent of Blood",
+        "id": "scent_of_blood"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Harpy",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Att"
+        ]
+      },
+      {
+        "name": "Raking Claws",
+        "id": "raking_claws"
+      }
+    ],
+    "unit_id": "harpies",
+    "option_id": "i5n8gjka5pfsz8fusano"
+  },
+  "hunting_chariot": {
+    "name": "Hunting Chariot",
+    "cost": "175",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "9",
+      "Ma": "9",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Crew (2)",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      }
+    ],
+    "offensenameB": "Elven Horse (2)",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "offenseweaponsI": [
+      {
+        "name": "Barbed Net Thrower",
+        "id": "barbed_net_thrower",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "unit_id": "hunting_chariot",
+    "option_id": "71pr6kzlduil20vcxusr"
+  },
+  "hydra": {
+    "name": "Hydra",
+    "cost": "415",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Cut one off",
+        "id": "cut_one_off"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "3"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Hydra",
+    "offense": {
+      "At": "5",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Breath Attack",
+        "id": "breath_attack",
+        "params": [
+          "Str 3",
+          "AP 2"
+        ]
+      },
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Rage",
+        "id": "rage"
+      }
+    ],
+    "offensenameB": "Lashmaster (2)",
+    "offenseB": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserulesB": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      }
+    ],
+    "unit_id": "hydra",
+    "option_id": "d97g1aazgdrwqvciq9i5ef"
+  },
+  "de_dragon_mount": {
+    "name": "Imperious Dragon",
+    "maxmountsperarmy": "1",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Adfly": "7",
+      "Mafly": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "7\"",
+          "14\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Meeting of Minds",
+        "id": "meeting_of_minds"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "5",
+      "Re": "6",
+      "Arm": "4"
+    },
+    "offensename": "Imperious Dragon",
+    "offense": {
+      "At": "5",
+      "Of": "5",
+      "St": "6",
+      "AP": "3",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Breath Attack",
+        "id": "breath_attack",
+        "params": [
+          "Str 4",
+          "AP 1",
+          "Flaming Attacks"
+        ]
+      }
+    ],
+    "unit_id": "de_dragon_mount",
+    "option_id": "pod370mlmjbym9r306573q"
+  },
+  "judicators": {
+    "name": "Judicators",
+    "cost": "200",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Judicator",
+    "offense": {
+      "At": "1",
+      "Of": "5",
+      "St": "3",
+      "AP": "2",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Hatred",
+        "id": "hatred"
+      },
+      {
+        "name": "Artistry of Death",
+        "id": "artistry_of_death"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Great Weapon",
+        "id": "great_weapon"
+      }
+    ],
+    "unit_id": "judicators",
+    "option_id": "d5zt2o412rzfaw86dgaxn"
+  },
+  "de_kraken": {
+    "name": "Kraken",
+    "cost": "375",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Coastal Predator",
+        "id": "coastal_predator"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "3"
+    },
+    "defenserules": [
+      {
+        "name": "Distracting",
+        "id": "distracting"
+      },
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Kraken",
+    "offense": {
+      "At": "4",
+      "Of": "5",
+      "St": "7",
+      "AP": "3",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Multiple Wounds",
+        "id": "multiple_wounds",
+        "params": [
+          "D3"
+        ]
+      },
+      {
+        "name": "Hatred",
+        "id": "hatred",
+        "params": [
+          "against Large",
+          "Gigantic"
+        ]
+      }
+    ],
+    "offensenameB": "Lashmaster (2)",
+    "offenseB": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserulesB": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      }
+    ],
+    "unit_id": "de_kraken",
+    "option_id": "ls6wj45b6y1stmkogamn7"
+  },
+  "manticore_mount": {
+    "name": "Manticore",
+    "maxmountsperarmy": "2",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Adfly": "8",
+      "Mafly": "16",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "16\""
+        ]
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Scent of Blood",
+        "id": "scent_of_blood"
+      },
+      {
+        "name": "Exclusive",
+        "id": "exclusive"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "5",
+      "Arm": "C+1"
+    },
+    "offensename": "Manticore",
+    "offense": {
+      "At": "4",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      }
+    ],
+    "unit_id": "manticore_mount",
+    "option_id": "2ulu6eqaow81afar61rm98"
+  },
+  "mist_leviathan": {
+    "name": "Mist Leviathan",
+    "cost": "240",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "100\u00d7100",
+    "global": {
+      "Ad": "2",
+      "Ma": "4",
+      "Adfly": "7",
+      "Mafly": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Under the Cover of Mists",
+        "id": "under_the_cover_of_mists"
+      },
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "7\"",
+          "14\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "8",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Distracting",
+        "id": "distracting"
+      }
+    ],
+    "offensename": "Mist Leviathan",
+    "offense": {
+      "At": "4",
+      "Of": "3",
+      "St": "4",
+      "AP": "3",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameB": "Lashmaster (4)",
+    "offenseB": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserulesB": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      }
+    ],
+    "unit_id": "mist_leviathan",
+    "option_id": "tjjmq40ztypzep0pml0ex"
+  },
+  "obsidian_guard": {
+    "name": "Obsidian Guard",
+    "cost": "240",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Academy Trained",
+        "id": "academy_trained"
+      },
+      {
+        "name": "Hold the Line",
+        "id": "hold_the_line"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "6",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Obsidian Guard",
+    "offense": {
+      "At": "2",
+      "Of": "6",
+      "St": "3",
+      "AP": "1",
+      "Ag": "6"
+    },
+    "offenserules": [
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      },
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Halberd",
+        "id": "halberd"
+      }
+    ],
+    "toggles": "onecolprintcommandgrouptwocolprintcommandgroup",
+    "unit_id": "obsidian_guard",
+    "option_id": "4skls9zahh8qam3dv61ty"
+  },
+  "blackmane_pegasus_mount": {
+    "name": "Blackmane Pegasus",
+    "maxmountsperarmy": "2",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Adfly": "8",
+      "Mafly": "16",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "16\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "4",
+      "Arm": "C+1"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Blackmane Pegasus",
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Str",
+          "+1 Ap"
+        ]
+      }
+    ],
+    "unit_id": "blackmane_pegasus_mount",
+    "option_id": "p6cs3c55i1d98prrnat6j5"
+  },
+  "raiding_party": {
+    "name": "Raiding Party",
+    "cost": "170",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Dread Raider",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      },
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "raiding_party",
+    "option_id": "jn8qdybbs3doup2h2gd8x"
+  },
+  "coastal_raptor_mount": {
+    "name": "Daeb Raptor",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Scent of Blood",
+        "id": "scent_of_blood"
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+2"
+    },
+    "offensename": "Daeb Raptor",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      }
+    ],
+    "unit_id": "coastal_raptor_mount",
+    "option_id": "c6w331h3evtoczf7gxty7"
+  },
+  "raptor_chariot": {
+    "name": "Raptor Chariot",
+    "cost": "210",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "7",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Scent of Blood",
+        "id": "scent_of_blood"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Crew (2)",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "6"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      }
+    ],
+    "offenseweapons": [],
+    "offensenameB": "Daeb Raptor (2)",
+    "offenseB": {
+      "At": "2",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6+1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "raptor_chariot",
+    "option_id": "rk592wn7e3bmg7j72se6f"
+  },
+  "raptor_chariot_mount": {
+    "name": "Raptor Chariot",
+    "maxmountsperarmy": "2",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "7",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Scent of Blood",
+        "id": "scent_of_blood"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "4",
+      "Arm": "C+2"
+    },
+    "offensename": "Daeb Raptor (2)",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      }
+    ],
+    "offensenameB": "Chassis",
+    "offenseB": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6+1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "raptor_chariot_mount",
+    "option_id": "fwv6ltmpm97ubm0rvbu58"
+  },
+  "repeater_battery": {
+    "name": "Repeater Battery",
+    "cost": "210",
+    "type": "Construct",
+    "size": "Standard",
+    "basesize": "60",
+    "global": {
+      "Ad": "5",
+      "Ma": "5",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "War Machine",
+        "id": "war_machine"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "1",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Crew",
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Daeb Bolt Thrower",
+        "id": "daeb_bolt_thrower",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "unit_id": "repeater_battery",
+    "option_id": "n2k6f6jb1vidi1zgt2ab2b"
+  },
+  "shadow_riders": {
+    "name": "Shadow Riders",
+    "secondoptionallogo": "arrows",
+    "cost": "185",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Feigned Flight",
+        "id": "feigned_flight"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Shadow Rider",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      },
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      }
+    ],
+    "offensenameB": "Elven Horse",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "shadow_riders",
+    "option_id": "k4nefiguwaacsp3mu4e5id"
+  },
+  "silent_assassin": {
+    "name": "Silent Assassin",
+    "cost": "165",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Not a Leader",
+        "id": "not_a_leader"
+      },
+      {
+        "name": "Hidden",
+        "id": "hidden"
+      },
+      {
+        "name": "Professional Courtesy",
+        "id": "professional_courtesy"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "7",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Silent Assassin",
+    "offense": {
+      "At": "3",
+      "Of": "7",
+      "St": "4",
+      "AP": "3",
+      "Ag": "9"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Artistry of Death",
+        "id": "artistry_of_death"
+      },
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Multiple Wounds",
+        "id": "multiple_wounds",
+        "params": [
+          "2",
+          "against Characters"
+        ]
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Repeater Handbow",
+        "id": "repeater_handbow",
+        "params": [
+          "3",
+          "2+"
+        ]
+      },
+      {
+        "name": "Paired Weapons",
+        "id": "paired_weapons"
+      }
+    ],
+    "toggles": "onecolprintmodelrulesdeftwocolprintmodelrulesdef",
+    "unit_id": "silent_assassin",
+    "option_id": "chydjz6qmql5zehjtu1sow"
+  },
+  "silexian_auxiliaries": {
+    "name": "Silexian Auxiliaries",
+    "secondlogo": "arrows",
+    "cost": "255",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Academy Trained",
+        "id": "academy_trained"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Silexian Auxiliary",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      },
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "March and Shoot",
+        "id": "march_and_shoot"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Repeater Crossbow",
+        "id": "repeater_crossbow",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "toggles": "onecolprintcommandgrouptwocolprintcommandgroup",
+    "unit_id": "silexian_auxiliaries",
+    "option_id": "lrmyj022sdy6qdwo7qqgi"
+  },
+  "silexian_officer": {
+    "name": "Silexian Officer",
+    "cost": "160",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "10"
+    },
+    "globalrules": [
+      {
+        "name": "Academy Trained",
+        "id": "academy_trained"
+      },
+      {
+        "name": "Tactician",
+        "id": "tactician"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "6",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Silexian Officer",
+    "offense": {
+      "At": "3",
+      "Of": "6",
+      "St": "4",
+      "AP": "1",
+      "Ag": "7"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      }
+    ],
+    "unit_id": "silexian_officer",
+    "option_id": "16q1vabk6f67k7b5ovn3uk"
+  },
+  "silexian_spears": {
+    "name": "Silexian Spears",
+    "cost": "210",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Academy Trained",
+        "id": "academy_trained"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Silexian Spear",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      },
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Spear",
+        "id": "spear"
+      }
+    ],
+    "unit_id": "silexian_spears",
+    "option_id": "rhh3x8vj8np1qw5fu3mu8r"
+  },
+  "temple_exarch": {
+    "name": "Temple Exarch",
+    "cost": "250",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Wizard Apprentice",
+        "id": "wizard_apprentice"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "4+",
+          "against Melee Attacks"
+        ]
+      }
+    ],
+    "offensename": "Temple Exarch",
+    "offense": {
+      "At": "3",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "6"
+    },
+    "offenserules": [
+      {
+        "name": "Battle Focus",
+        "id": "battle_focus"
+      },
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      }
+    ],
+    "paths": "Alchemy=alchemy,Divination=divination",
+    "magicnoptstag": "yes",
+    "unit_id": "temple_exarch",
+    "option_id": "pgms74x4gv6tn3voavzrs"
+  },
+  "temple_militants": {
+    "name": "Temple Militants",
+    "cost": "260",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Frenzy",
+        "id": "frenzy"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [],
+    "offensename": "Temple Militant",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Battle Focus",
+        "id": "battle_focus"
+      },
+      {
+        "name": "Fight in Extra Rank",
+        "id": "fight_in_extra_rank"
+      },
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Blades of Darag",
+        "id": "blades_of_darag"
+      }
+    ],
+    "unit_id": "temple_militants",
+    "option_id": "ohp6e67oecrlb5s0h56on"
+  },
+  "thunder_pack": {
+    "name": "Thunder Pack",
+    "cost": "270",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "40\u00d760",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scent of Blood",
+        "id": "scent_of_blood"
+      },
+      {
+        "name": "Swift Reform",
+        "id": "swift_reform"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "defenserules": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Thunder Beast",
+    "offense": {
+      "At": "4",
+      "Of": "3",
+      "St": "6",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Devastating Charge (",
+        "id": "devastating_charge_"
+      },
+      {
+        "name": "Terror)",
+        "id": "terror"
+      },
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameB": "Lashmaster (2)",
+    "offenseB": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserulesB": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      }
+    ],
+    "unit_id": "thunder_pack",
+    "option_id": "lj3xztierzfg0rxki1by9m"
+  },
+  "warlock_acolytes": {
+    "name": "Warlock Acolytes",
+    "cost": "200",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Wizard Conclave",
+        "id": "wizard_conclave"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Acolyte",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      },
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Blades of Darag",
+        "id": "blades_of_darag"
+      }
+    ],
+    "offensenameB": "Elven Horse",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "wizardconclave": "<span class=\"textbf\">Must</span> select 2 spells from:\n\t",
+    "unit_id": "warlock_acolytes",
+    "option_id": "vy251ajyw8k9nesd9brv"
+  },
+  "warlock_outcast": {
+    "name": "Warlock Outcast",
+    "cost": "240",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Irresistible Will",
+        "id": "irresistible_will"
+      },
+      {
+        "name": "Wizard Adept",
+        "id": "wizard_adept"
+      },
+      {
+        "name": "Mistrusted",
+        "id": "mistrusted"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Warlock Outcast",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Ruthless Efficiency",
+        "id": "ruthless_efficiency"
+      }
+    ],
+    "paths": "Cosmology=cosmology,Evocation=evocation,Witchcraft=witchcraft",
+    "unit_id": "warlock_outcast",
+    "option_id": "ugb2xdcavkec28z8yut0j"
+  },
+  "dreaded_giant": {
+    "name": "Dreaded Giant",
+    "cost": "270",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "id": "de-giant_see_giant_do",
+        "name": "Giant See, Giant Do",
+        "params": []
+      },
+      null
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "defenserules": [],
+    "offensename": "Dreaded Giant",
+    "offense": {
+      "Ag": "3",
+      "At": "5",
+      "Of": "3",
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Rage",
+        "id": "rage"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "dreaded_giant",
+    "option_id": "eywzuhh7atm3anta1xzdax"
+  }
+}
