@@ -1,0 +1,1501 @@
+{
+  "altar_of_battle_mount": {
+    "name": "Altar of Battle",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "maxmountsperarmy": "1",
+    "global": {
+      "Ad": "8",
+      "Ma": "8",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Stubborn",
+        "id": "stubborn"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      },
+      {
+        "name": "Holy Relic",
+        "id": "holy_relic"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "C",
+      "Re": "5",
+      "Arm": "C"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "offensename": "Horse (2)",
+    "offense": {
+      "Ag": "3",
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0"
+    },
+    "offenseweapons": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "altar_of_battle_mount",
+    "option_id": "dgzona0bc1e1rzyuuwiynq"
+  },
+  "arcane_engine": {
+    "name": "Arcane Engine",
+    "cost": "255",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "8",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      },
+      {
+        "name": "Channel",
+        "id": "channel",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "2"
+    },
+    "offensename": "Crew (2)",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offensenameB": "Horse (2)",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "arcane_engine",
+    "option_id": "xydovo384299alna3cltj"
+  },
+  "arcane_engine_mount": {
+    "name": "Arcane Engine",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "8",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      },
+      {
+        "name": "Channel",
+        "id": "channel",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "C",
+      "Re": "5",
+      "Arm": "C+2"
+    },
+    "offensename": "Crew (2)",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offensenameB": "Horse (2)",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "arcane_engine_mount",
+    "option_id": "9a3bma577f85uhlactd2g9"
+  },
+  "artificer": {
+    "name": "Artificer",
+    "secondlogo": "cannonballs",
+    "cost": "120",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Master Artificer",
+        "id": "master_artificer"
+      },
+      {
+        "name": "Engineer",
+        "id": "engineer",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "2",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Artificer",
+    "offense": {
+      "Ag": "3",
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0"
+    },
+    "unit_id": "artificer",
+    "option_id": "kajohn6ktvo2qrgrmp5z9"
+  },
+  "artillery": {
+    "name": "Artillery",
+    "cost": "150",
+    "addrestriction": "0--4 Units/Army",
+    "type": "Construct",
+    "size": "Standard",
+    "basesize": "60",
+    "global": {
+      "Ad": "4",
+      "Ma": "4",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "War Machine",
+        "id": "war_machine"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "1",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "offensename": "Crew",
+    "forceoffensenameprint": "yes",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Move or Fire",
+        "id": "move_or_fire"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdef\r\n\t\ttwocolprintoptionalmodelrulesdef\r\n\t",
+    "unit_id": "artillery",
+    "option_id": "zk5izc6b97gn8jija8hwpp"
+  },
+  "dragon_mount": {
+    "name": "Dragon",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Adfly": "7",
+      "Mafly": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "7\"",
+          "14\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Meeting of Minds",
+        "id": "meeting_of_minds"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "5",
+      "Re": "6",
+      "Arm": "4"
+    },
+    "offensename": "Dragon",
+    "offense": {
+      "At": "5",
+      "Of": "5",
+      "St": "6",
+      "AP": "3",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Breath Attack",
+        "id": "breath_attack",
+        "params": [
+          "Str 4",
+          "AP 1",
+          "Flaming Attacks"
+        ]
+      }
+    ],
+    "unit_id": "dragon_mount",
+    "option_id": "nls4blep38ri37muj6mtta"
+  },
+  "electoral_cavalry": {
+    "name": "Electoral Cavalry",
+    "cost": "155",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Plate Armour",
+        "id": "plate_armour"
+      }
+    ],
+    "offensename": "Knight",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offensenameB": "Horse",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "electoral_cavalry",
+    "option_id": "nrl9sb8a9ed1qk4ty1cj21"
+  },
+  "flagellants": {
+    "name": "Flagellants",
+    "cost": "195",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Unbreakable",
+        "id": "unbreakable"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Frenzy",
+        "id": "frenzy"
+      },
+      {
+        "name": "Fanatical",
+        "id": "fanatical"
+      },
+      {
+        "name": "Zealots",
+        "id": "zealots"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "1",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "offensename": "Flagellant",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenseweapons": [
+      {
+        "name": "Great Weapon",
+        "id": "great_weapon"
+      }
+    ],
+    "offenserules": [
+      {
+        "name": "Battle Focus",
+        "id": "battle_focus"
+      }
+    ],
+    "unit_id": "flagellants",
+    "option_id": "0gza2gb7jws92kc5o4bjy5v"
+  },
+  "great_griffon_mount": {
+    "name": "Great Griffon",
+    "type": "Cavalry",
+    "size": "Large",
+    "maxmountsperarmy": "2",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Adfly": "8",
+      "Mafly": "16",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "16\""
+        ]
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "5",
+      "Arm": "C"
+    },
+    "offensename": "Great Griffon",
+    "offense": {
+      "Ag": "5",
+      "At": "4",
+      "Of": "5",
+      "St": "6",
+      "AP": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "great_griffon_mount",
+    "option_id": "gsp5krrswosxghxnzsz6jo"
+  },
+  "horse_mount": {
+    "name": "Horse",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+2"
+    },
+    "offensename": "Horse",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "horse_mount",
+    "option_id": "bgpgukvkiiocd8vrdi05f"
+  },
+  "heavy_infantry": {
+    "name": "Heavy Infantry",
+    "cost": "140",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Parent Unit*",
+        "id": "parent_unit"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Support Unit",
+        "id": "support_unit"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Heavy Infantry",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "endtext": "*If starting size is 21 or more models.\\If starting size is 20 models.",
+    "unit_id": "heavy_infantry",
+    "option_id": "oap04i73sesyo3pl7ulwh"
+  },
+  "imperial_guard": {
+    "name": "Imperial Guard",
+    "cost": "170",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Parent Unit",
+        "id": "parent_unit"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Bodyguard",
+        "id": "bodyguard"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Plate Armour",
+        "id": "plate_armour"
+      }
+    ],
+    "offensename": "Imperial Guard",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "unit_id": "imperial_guard",
+    "option_id": "mcejar1c09drxaxawdo3i8"
+  },
+  "imperial_rangers": {
+    "name": "Imperial Rangers",
+    "cost": "90",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Frontiersmen",
+        "id": "frontiersmen"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Scout",
+        "id": "scout"
+      },
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Imperial Ranger",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenseweapons": [
+      {
+        "name": "Bow",
+        "id": "bow",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "offenserules": [
+      {
+        "name": "Beast Hunters",
+        "id": "beast_hunters"
+      }
+    ],
+    "unit_id": "imperial_rangers",
+    "option_id": "udvftxybn0hd8sx8y7jxwh"
+  },
+  "inquisitor": {
+    "name": "Inquisitor",
+    "cost": "105",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Not a Leader",
+        "id": "not_a_leader"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Plate Armour",
+        "id": "plate_armour"
+      }
+    ],
+    "offensename": "Inquisitor",
+    "offense": {
+      "Ag": "4",
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      },
+      {
+        "name": "Multiple Wounds",
+        "id": "multiple_wounds",
+        "params": [
+          "D3"
+        ]
+      }
+    ],
+    "unit_id": "inquisitor",
+    "option_id": "82l356eaaes6x7buepmp7p"
+  },
+  "knight_commander": {
+    "name": "Knight Commander",
+    "cost": "175",
+    "type": "Cavalry",
+    "size": "see mount",
+    "basesize": "see mount",
+    "basesizenotag": "yes",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "First Knight",
+        "id": "first_knight"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "6",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Plate Armour",
+        "id": "plate_armour"
+      }
+    ],
+    "offensename": "Knight Commander",
+    "offense": {
+      "Ag": "6",
+      "At": "4",
+      "Of": "6",
+      "St": "4",
+      "AP": "1"
+    },
+    "unit_id": "knight_commander",
+    "option_id": "oddhezvsjkictkwijd7huv"
+  },
+  "knightly_orders": {
+    "name": "Knightly Orders",
+    "cost": "195",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "addrestriction": "One of a Kind*",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Plate Armour",
+        "id": "plate_armour"
+      }
+    ],
+    "offensename": "Knight",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offensenameB": "Horse",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "knightly_orders",
+    "option_id": "32f43f43fg34g34fg34f3"
+  },
+  "knights_of_the_sun_griffon": {
+    "name": "Knights of the Sun Griffon",
+    "cost": "275",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Plate Armour",
+        "id": "plate_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Knight",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offensenameB": "Young Griffon",
+    "offenseB": {
+      "At": "3",
+      "Of": "4",
+      "St": "5",
+      "AP": "3",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "knights_of_the_sun_griffon",
+    "option_id": "nczj90ehq2u9ri7mzwn6"
+  },
+  "light_infantry": {
+    "name": "Light Infantry",
+    "secondlogo": "pistols",
+    "cost": "130",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Support Unit",
+        "id": "support_unit"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Light Infantry",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "unit_id": "light_infantry",
+    "option_id": "87d8ysls3d82qtvsvgw6xe"
+  },
+  "marshal": {
+    "name": "Marshal",
+    "cost": "140",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Orders",
+        "id": "orders"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Plate Armour",
+        "id": "plate_armour"
+      }
+    ],
+    "offensename": "Marshal",
+    "offense": {
+      "Ag": "5",
+      "At": "3",
+      "Of": "5",
+      "St": "4",
+      "AP": "1"
+    },
+    "unit_id": "marshal",
+    "option_id": "d7ua7pszibc3tyfx3g0xk"
+  },
+  "pegasus_mount": {
+    "name": "Pegasus",
+    "type": "Cavalry",
+    "size": "Large",
+    "maxmountsperarmy": "4",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Adfly": "8",
+      "Mafly": "16",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "16\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "4",
+      "Arm": "C+1"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Pegasus",
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "pegasus_mount",
+    "option_id": "xuxc96ldgi3zb599kln8b"
+  },
+  "prelate": {
+    "name": "Prelate",
+    "cost": "145",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Blessings",
+        "id": "blessings"
+      },
+      {
+        "name": "Channel",
+        "id": "channel",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Prelate",
+    "offense": {
+      "Ag": "4",
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Divine Attacks",
+        "id": "divine_attacks"
+      }
+    ],
+    "unit_id": "prelate",
+    "option_id": "0fkzjvcpi9wehpp81a0v6cj"
+  },
+  "reiters": {
+    "name": "Reiters",
+    "cost": "155",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Feigned Flight",
+        "id": "feigned_flight"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Reiter",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Fire on Impact!",
+        "id": "fire_on_impact"
+      }
+    ],
+    "offensenameB": "Horse",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "reiters",
+    "option_id": "m29783l01ncz5n53znjkfk"
+  },
+  "state_militia": {
+    "name": "State Militia",
+    "secondlogo": "pistols",
+    "cost": "135",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Reserves",
+        "id": "reserves"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "State Militia",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenseweapons": [
+      {
+        "name": "Paired Weapons",
+        "id": "paired_weapons"
+      },
+      {
+        "name": "Bow",
+        "id": "bow",
+        "params": [
+          "4+"
+        ]
+      },
+      {
+        "name": "Pistol",
+        "id": "pistol",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "unit_id": "state_militia",
+    "option_id": "4qqcplcft7omchj6sf3zrs"
+  },
+  "steam_tank": {
+    "name": "Steam Tank",
+    "secondlogo": "cannonballs",
+    "cost": "430",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "2D6",
+      "Ma": "",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Unbreakable",
+        "id": "unbreakable"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Random Movement",
+        "id": "random_movement",
+        "params": [
+          "2D6\""
+        ]
+      },
+      {
+        "name": "Steam Powered",
+        "id": "steam_powered"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "0",
+      "Re": "6",
+      "Arm": "6"
+    },
+    "offensename": "Chassis",
+    "offense": {
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Breath Attack",
+        "id": "breath_attack",
+        "params": [
+          "Str 2",
+          "AP 3"
+        ]
+      },
+      {
+        "name": "Steam Cannon",
+        "id": "steam_cannon",
+        "params": [
+          "3+"
+        ]
+      },
+      {
+        "name": "Grind Attacks",
+        "id": "grind_attacks",
+        "params": [
+          "3D3"
+        ]
+      }
+    ],
+    "offensenameI": "",
+    "offenseI": {
+      "St": "",
+      "AP": ""
+    },
+    "offenserulesI": [],
+    "unit_id": "steam_tank",
+    "option_id": "oavqr7ni8da55c4mplpdel"
+  },
+  "wizard": {
+    "name": "Wizard",
+    "cost": "115",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Wizard Apprentice",
+        "id": "wizard_apprentice"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Wizard",
+    "offense": {
+      "Ag": "3",
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0"
+    },
+    "paths": "Alchemy=alchemy,Cosmology=cosmology,Pyromancy=pyromancy,Divination=divination",
+    "unit_id": "wizard",
+    "option_id": "bv5obwwubniyjq0v8mdz"
+  },
+  "young_griffon_mount": {
+    "name": "Young Griffon",
+    "type": "Cavalry",
+    "size": "Large",
+    "maxmountsperarmy": "3",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+1"
+    },
+    "offensename": "Young Griffon",
+    "offense": {
+      "Ag": "4",
+      "At": "3",
+      "Of": "4",
+      "St": "5",
+      "AP": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "young_griffon_mount",
+    "option_id": "rr6ggjfbthkhslfq0ipas"
+  },
+  "imperial_giant": {
+    "name": "Imperial Giant",
+    "cost": "270",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "id": "eos-giant_see_giant_do",
+        "name": "Giant See, Giant Do",
+        "params": []
+      },
+      null
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "defenserules": [],
+    "offensename": "Imperial Giant",
+    "offense": {
+      "Ag": "3",
+      "At": "5",
+      "Of": "3",
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Rage",
+        "id": "rage"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "imperial_giant",
+    "option_id": "f368t0957lwuon4n5pzqj"
+  }
+}

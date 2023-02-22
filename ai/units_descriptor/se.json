@@ -1,0 +1,1714 @@
+{
+  "avatar_of_nature": {
+    "name": "Avatar of Nature",
+    "cost": "585",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "75\u00d750",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Forest Walker",
+        "id": "forest_walker"
+      },
+      {
+        "name": "Stubborn",
+        "id": "stubborn"
+      },
+      {
+        "name": "Tree Singing",
+        "id": "tree_singing"
+      },
+      {
+        "name": "Sylvan Spirit",
+        "id": "sylvan_spirit"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "6",
+      "Re": "6",
+      "Arm": "4"
+    },
+    "defenserules": [
+      {
+        "name": "Flammable",
+        "id": "flammable"
+      },
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Avatar of Nature",
+    "offense": {
+      "At": "6",
+      "Of": "6",
+      "St": "7",
+      "AP": "4",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Crush Attack",
+        "id": "crush_attack"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Impaling Roots",
+        "id": "impaling_roots",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "scrollmodelrulesdef": "|\u00a8title\u00a8: \u00a8Forest Walker\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Strider (Forest)</span>. If a unit comprised entirely of models with Forest Walker starts a Round of Combat with more than half of its models with the centre of their bases inside a Forest, then all model parts without Harnessed <span class=\"textbf\">must</span> reroll to-wound rolls of \u20181\u2019 with their Close Combat Attacks for the duration of that Round of Combat.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Tree Singing\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>Each model with one or more instances of Tree Singing may discard 1 Veil Token once per friendly Magic Phase, immediately after Siphon the Veil. If so, choose a Forest Terrain Feature within 24\" of the model with Tree Singing that is not in contact with any unit. Move this Forest in a straight line up to 6\". This movement stops immediately before moving into contact with any units or any Terrain Features other than Open Terrain. Each Forest may only be moved with Tree Singing once per Magic Phase.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Sylvan Spirit\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Fearless</span>, <span class=\"textbf\">Magical Attacks</span>, and <span class=\"textbf\">Exclusive (Sylvan Spirit)</span>. \u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Impaling Roots\u00a8, \u00a8def\u00a8: \u00a8<i>Shooting Weapon</i><br><br>Range 12\", Shots D6+1, Str 4, AP 1, <span class=\"textbf\">March and Shoot</span>, <span class=\"textbf\">Quick to Fire</span>, ignores to-hit modifiers from Cover. If its target is in contact with a Forest, the Strength is <span class=\"textbf\">set</span> to 5 and Armour Penetration to 2.\u00a8\u00a7,\n\t",
+    "unit_id": "avatar_of_nature",
+    "option_id": "npg6nuh9wby396yqn4cna"
+  },
+  "blade_dancers": {
+    "name": "Blade Dancers",
+    "cost": "210",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Magic Resistance",
+        "id": "magic_resistance",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Forest Walker",
+        "id": "forest_walker"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Dances of Cenyrn",
+        "id": "dances_of_cenyrn"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "6",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "offensename": "Blade Dancer",
+    "offense": {
+      "At": "1",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "6"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Sylvan Blades",
+        "id": "sylvan_blades"
+      }
+    ],
+    "scrollmodelrulesdef": "|\u00a8title\u00a8: \u00a8Forest Walker\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Strider (Forest)</span>. If a unit comprised entirely of models with Forest Walker starts a Round of Combat with more than half of its models with the centre of their bases inside a Forest, then all model parts without Harnessed <span class=\"textbf\">must</span> reroll to-wound rolls of \u20181\u2019 with their Close Combat Attacks for the duration of that Round of Combat.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Sylvan Blades\u00a8, \u00a8def\u00a8: \u00a8<i>Close Combat Weapon</i><br><br>Paired Weapons. Attacks made with Sylvan Blades gain +1 Armour Penetration.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Dances of Cenyrn\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>At the start of each Round of Combat, units consisting entirely of models with this rule <span class=\"textbf\">must</span> choose one of the dances listed below and apply its effects until the end of the Round of Combat. The unit cannot choose this dance again until after one of the following has happened:<br>&bull;  The unit is no longer Engaged in Combat.<br>&bull;  The unit has chosen a different dance.\u00a8\u00a7,\n\t",
+    "endtext": "Dance of Whirling Blades+1 Attack Value.Dance of the Parting Mists<span class=\"textbf\">Aegis (3+)</span>, -1 Strength, and -1 Armour Penetration.Dance of Biting Wind+1 Armour Penetration and <span class=\"textbf\">Lethal Strike</span>.Dance of Bedevilments<span class=\"textbf\">Fear</span>, and enemy units in base contact with the model always have a Rank Bonus of 0.",
+    "scrollendtext": "Dance of Whirling Blades+1 Attack Value.Dance of the Parting Mists<span class=\"textbf\">Aegis (3+)</span>, -1 Strength, and -1 Armour Penetration.Dance of Biting Wind+1 Armour Penetration and <span class=\"textbf\">Lethal Strike</span>.Dance of Bedevilments<span class=\"textbf\">Fear</span>, and enemy units in base contact with the model always have a Rank Bonus of 0.",
+    "toggles": "twocolprintcommandgrouponecolprintcommandgroup",
+    "unit_id": "blade_dancers",
+    "option_id": "8fc7r13q78v6lhg7oan1m5"
+  },
+  "briar_maidens": {
+    "name": "Briar Maidens",
+    "cost": "200",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Forest Walker",
+        "id": "forest_walker"
+      },
+      {
+        "name": "Wizard Conclave",
+        "id": "wizard_conclave"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "offensename": "Briar Maiden",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Poisoned Thorn",
+        "id": "poisoned_thorn",
+        "params": [
+          "2+"
+        ]
+      }
+    ],
+    "offensenameB": "Elven Deer",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "wizardconclave": "<span class=\"textbf\">Must</span> select 2 spells from:\n\t",
+    "scrollmodelrulesdef": "|\u00a8title\u00a8: \u00a8Forest Walker\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Strider (Forest)</span>. If a unit comprised entirely of models with Forest Walker starts a Round of Combat with more than half of its models with the centre of their bases inside a Forest, then all model parts without Harnessed <span class=\"textbf\">must</span> reroll to-wound rolls of \u20181\u2019 with their Close Combat Attacks for the duration of that Round of Combat.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Poisoned Thorn\u00a8, \u00a8def\u00a8: \u00a8<i>Shooting Weapon</i><br><br>Range 12\", Shots 1, Str 3, AP 1, <span class=\"textbf\">Quick to Fire</span>.\u00a8\u00a7,\n\t",
+    "unit_id": "briar_maidens",
+    "option_id": "yuh8pxlmigh8dy29eaz3ze"
+  },
+  "chieftain": {
+    "name": "Chieftain",
+    "cost": "135",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Forest Walker",
+        "id": "forest_walker"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "6",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Chieftain",
+    "offense": {
+      "At": "3",
+      "Of": "6",
+      "St": "4",
+      "AP": "1",
+      "Ag": "7"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "scrollmodelrulesdef": "|\u00a8title\u00a8: \u00a8Forest Walker\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Strider (Forest)</span>. If a unit comprised entirely of models with Forest Walker starts a Round of Combat with more than half of its models with the centre of their bases inside a Forest, then all model parts without Harnessed <span class=\"textbf\">must</span> reroll to-wound rolls of \u20181\u2019 with their Close Combat Attacks for the duration of that Round of Combat.\u00a8\u00a7,\n\t",
+    "unit_id": "chieftain",
+    "option_id": "e4yfv9f1gnbk3r44j363r9"
+  },
+  "se_dragon_mount": {
+    "name": "Dragon",
+    "maxmountsperarmy": "1",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Adfly": "7",
+      "Mafly": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "7\"",
+          "14\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Meeting of Minds",
+        "id": "meeting_of_minds"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "5",
+      "Re": "6",
+      "Arm": "4"
+    },
+    "offensename": "Dragon",
+    "offense": {
+      "At": "5",
+      "Of": "5",
+      "St": "6",
+      "AP": "3",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Breath Attack",
+        "id": "breath_attack",
+        "params": [
+          "Str 4",
+          "AP 1",
+          "Flaming Attacks"
+        ]
+      }
+    ],
+    "unit_id": "se_dragon_mount",
+    "option_id": "10s0bvq9t1el9xbtucmg2"
+  },
+  "druid": {
+    "name": "Druid",
+    "cost": "115",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Forest Walker",
+        "id": "forest_walker"
+      },
+      {
+        "name": "Tree Singing",
+        "id": "tree_singing"
+      },
+      {
+        "name": "Wizard Apprentice",
+        "id": "wizard_apprentice"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Druid",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "paths": "Druidism=druidism,Shamanism=shamanism,Cosmology=cosmology",
+    "scrollmodelrulesdef": "|\u00a8title\u00a8: \u00a8Forest Walker\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Strider (Forest)</span>. If a unit comprised entirely of models with Forest Walker starts a Round of Combat with more than half of its models with the centre of their bases inside a Forest, then all model parts without Harnessed <span class=\"textbf\">must</span> reroll to-wound rolls of \u20181\u2019 with their Close Combat Attacks for the duration of that Round of Combat.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Tree Singing\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>Each model with one or more instances of Tree Singing may discard 1 Veil Token once per friendly Magic Phase, immediately after Siphon the Veil. If so, choose a Forest Terrain Feature within 24\" of the model with Tree Singing that is not in contact with any unit. Move this Forest in a straight line up to 6\". This movement stops immediately before moving into contact with any units or any Terrain Features other than Open Terrain. Each Forest may only be moved with Tree Singing once per Magic Phase.\u00a8\u00a7,\n\t",
+    "unit_id": "druid",
+    "option_id": "sxdev79mx96gdlh0e9r3l"
+  },
+  "dryad_ancient": {
+    "name": "Dryad Ancient",
+    "cost": "100",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Forest Walker",
+        "id": "forest_walker"
+      },
+      {
+        "name": "Tree Singing",
+        "id": "tree_singing"
+      },
+      {
+        "name": "Sylvan Spirit",
+        "id": "sylvan_spirit"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "6",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Dryad Ancient",
+    "offense": {
+      "At": "3",
+      "Of": "6",
+      "St": "4",
+      "AP": "1",
+      "Ag": "7"
+    },
+    "offenserules": [
+      {
+        "name": "Hatred",
+        "id": "hatred"
+      }
+    ],
+    "paths": "Druidism=druidism,Divination=divination",
+    "scrollmodelrulesdef": "|\u00a8title\u00a8: \u00a8Forest Walker\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Strider (Forest)</span>. If a unit comprised entirely of models with Forest Walker starts a Round of Combat with more than half of its models with the centre of their bases inside a Forest, then all model parts without Harnessed <span class=\"textbf\">must</span> reroll to-wound rolls of \u20181\u2019 with their Close Combat Attacks for the duration of that Round of Combat.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Tree Singing\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>Each model with one or more instances of Tree Singing may discard 1 Veil Token once per friendly Magic Phase, immediately after Siphon the Veil. If so, choose a Forest Terrain Feature within 24\" of the model with Tree Singing that is not in contact with any unit. Move this Forest in a straight line up to 6\". This movement stops immediately before moving into contact with any units or any Terrain Features other than Open Terrain. Each Forest may only be moved with Tree Singing once per Magic Phase.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Sylvan Spirit\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Fearless</span>, <span class=\"textbf\">Magical Attacks</span>, and <span class=\"textbf\">Exclusive (Sylvan Spirit)</span>. \u00a8\u00a7,\n\t",
+    "unit_id": "dryad_ancient",
+    "option_id": "j7vhts5h9dnmbdhuv0vvde"
+  },
+  "dryads": {
+    "name": "Dryads",
+    "cost": "150",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Forest Walker",
+        "id": "forest_walker"
+      },
+      {
+        "name": "Sylvan Spirit",
+        "id": "sylvan_spirit"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Dryad",
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "5"
+    },
+    "scrollmodelrulesdef": "|\u00a8title\u00a8: \u00a8Forest Walker\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Strider (Forest)</span>. If a unit comprised entirely of models with Forest Walker starts a Round of Combat with more than half of its models with the centre of their bases inside a Forest, then all model parts without Harnessed <span class=\"textbf\">must</span> reroll to-wound rolls of \u20181\u2019 with their Close Combat Attacks for the duration of that Round of Combat.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Sylvan Spirit\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Fearless</span>, <span class=\"textbf\">Magical Attacks</span>, and <span class=\"textbf\">Exclusive (Sylvan Spirit)</span>. \u00a8\u00a7,\n\t",
+    "scrolloptionalmodelrulesdef": "|\u00a8title\u00a8: \u00a8Clearing Spirits\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Hard Target (1)</span>, <span class=\"textbf\">Light Troops</span>, and <span class=\"textbf\">Skirmisher</span>.\u00a8\u00a7,",
+    "unit_id": "dryads",
+    "option_id": "meiram78yonwo1vgus4fh"
+  },
+  "eagle_king_mount": {
+    "name": "Eagle King",
+    "maxmountsperarmy": "2",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "2",
+      "Ma": "4",
+      "Adfly": "9",
+      "Mafly": "18",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "9\"",
+          "18\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "4",
+      "Arm": "C+1"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Eagle King",
+    "offense": {
+      "At": "3",
+      "Of": "5",
+      "St": "5",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "eagle_king_mount",
+    "option_id": "ibwu71n1xbbfkjq9eoxn36"
+  },
+  "se_elven_horse_mount": {
+    "name": "Elven Horse",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "C"
+    },
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+1"
+    },
+    "offensename": "Elven Horse",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "se_elven_horse_mount",
+    "option_id": "9o11vmurvnwiw3bgueu4zb"
+  },
+  "forest_eagles": {
+    "name": "Forest Eagles",
+    "cost": "95",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "2",
+      "Ma": "4",
+      "Adfly": "9",
+      "Mafly": "18",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      },
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "9\"",
+          "18\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "offensename": "Forest Eagle",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "unit_id": "forest_eagles",
+    "option_id": "rbwyeici4gz0qpj4t6b9o"
+  },
+  "forest_guard": {
+    "name": "Forest Guard",
+    "cost": "160",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Forest Walker",
+        "id": "forest_walker"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Forest Guard",
+    "offense": {
+      "At": "1",
+      "Of": "5",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "scrollmodelrulesdef": "|\u00a8title\u00a8: \u00a8Forest Walker\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Strider (Forest)</span>. If a unit comprised entirely of models with Forest Walker starts a Round of Combat with more than half of its models with the centre of their bases inside a Forest, then all model parts without Harnessed <span class=\"textbf\">must</span> reroll to-wound rolls of \u20181\u2019 with their Close Combat Attacks for the duration of that Round of Combat.\u00a8\u00a7,\n\t",
+    "scrolloptionalmodelrulesdef": "|\u00a8title\u00a8: \u00a8Sylvan Blades\u00a8, \u00a8def\u00a8: \u00a8<i>Close Combat Weapon</i><br><br>Paired Weapons. Attacks made with Sylvan Blades gain +1 Armour Penetration.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Elven Cloak\u00a8, \u00a8def\u00a8: \u00a8<i>Personal Protection</i><br><br>When combined with Light Armour, the wearer gains +1 Armour. \u00a8\u00a7,\n\t",
+    "unit_id": "forest_guard",
+    "option_id": "3vo9jbl0rqyzizicakgs5"
+  },
+  "forest_prince": {
+    "name": "Forest Prince",
+    "cost": "210",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Forest Walker",
+        "id": "forest_walker"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "7",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Forest Prince",
+    "offense": {
+      "At": "4",
+      "Of": "7",
+      "St": "4",
+      "AP": "2",
+      "Ag": "9"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Accurate",
+        "id": "accurate"
+      }
+    ],
+    "scrollmodelrulesdef": "|\u00a8title\u00a8: \u00a8Forest Walker\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Strider (Forest)</span>. If a unit comprised entirely of models with Forest Walker starts a Round of Combat with more than half of its models with the centre of their bases inside a Forest, then all model parts without Harnessed <span class=\"textbf\">must</span> reroll to-wound rolls of \u20181\u2019 with their Close Combat Attacks for the duration of that Round of Combat.\u00a8\u00a7,\n\t",
+    "unit_id": "forest_prince",
+    "option_id": "xwsub4gu99cmky6ya031io"
+  },
+  "forest_rangers": {
+    "name": "Forest Rangers",
+    "cost": "195",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Forest Walker",
+        "id": "forest_walker"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      },
+      {
+        "name": "Elven Cloak",
+        "id": "elven_cloak"
+      }
+    ],
+    "offensename": "Forest Ranger",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "3",
+      "AP": "1",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Great Weapon",
+        "id": "great_weapon"
+      }
+    ],
+    "scrollmodelrulesdef": "|\u00a8title\u00a8: \u00a8Forest Walker\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Strider (Forest)</span>. If a unit comprised entirely of models with Forest Walker starts a Round of Combat with more than half of its models with the centre of their bases inside a Forest, then all model parts without Harnessed <span class=\"textbf\">must</span> reroll to-wound rolls of \u20181\u2019 with their Close Combat Attacks for the duration of that Round of Combat.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Elven Cloak\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>When combined with Light Armour, the wearer gains +1 Armour. \u00a8\u00a7,\n\t",
+    "unit_id": "forest_rangers",
+    "option_id": "5e5gep9z4fihbclnzgywp"
+  },
+  "great_elk_mount": {
+    "name": "Great Elk",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "C"
+    },
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "5",
+      "Arm": "C+1"
+    },
+    "offensename": "Great Elk",
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "great_elk_mount",
+    "option_id": "h17xbtdrfadcpnnwfnkxzt"
+  },
+  "heath_riders": {
+    "name": "Heath Riders",
+    "cost": "165",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Forest Walker",
+        "id": "forest_walker"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Heath Rider",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Str",
+          "+1 AP"
+        ]
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Sylvan Lance",
+        "id": "sylvan_lance"
+      }
+    ],
+    "offensenameB": "Elven Horse",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "scrollmodelrulesdef": "|\u00a8title\u00a8: \u00a8Forest Walker\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Strider (Forest)</span>. If a unit comprised entirely of models with Forest Walker starts a Round of Combat with more than half of its models with the centre of their bases inside a Forest, then all model parts without Harnessed <span class=\"textbf\">must</span> reroll to-wound rolls of \u20181\u2019 with their Close Combat Attacks for the duration of that Round of Combat.\u00a8\u00a7,\n\t",
+    "scrolloptionalmodelrulesdef": "|\u00a8title\u00a8: \u00a8Heath Hunters\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model loses Devastating Charge (+1 Str, +1 AP) and Scoring, and gains Sylvan Longbow (3+), <span class=\"textbf\">Feigned Flight</span>, <span class=\"textbf\">Light Troops</span>, and <span class=\"textbf\">Vanguard</span>.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Sylvan Lance\u00a8, \u00a8def\u00a8: \u00a8<i>Close Combat Weapon</i><br><br>Light Lance. Attacks made with a Sylvan Lance gain +1 Armour Penetration.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Sylvan Longbow\u00a8, \u00a8def\u00a8: \u00a8<i>Shooting Weapon</i><br><br><i>0-55 Models with Sylvan Longbow per Army.</i><br><br>\r\n\tLongbow. Attacks made with a Sylvan Longbow gain Armour Penetration 1 and <span class=\"textbf\">Quick to Fire</span>. Also, when  made from Short Range,  they gain Str 4.\u00a8\u00a7,\n\t",
+    "unit_id": "heath_riders",
+    "option_id": "0hcubb18q1bpmpyrsyzxjd"
+  },
+  "kestrel_knights": {
+    "name": "Kestrel Knights",
+    "cost": "275",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "2",
+      "Ma": "4",
+      "Adfly": "9",
+      "Mafly": "18",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "9\"",
+          "18\""
+        ]
+      },
+      {
+        "name": "Feigned Flight",
+        "id": "feigned_flight"
+      },
+      {
+        "name": "Forest Walker",
+        "id": "forest_walker"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "2",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "1"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Kestrel Knight",
+    "offense": {
+      "At": "1",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Att"
+        ]
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Sylvan Lance",
+        "id": "sylvan_lance"
+      }
+    ],
+    "offensenameB": "Kestrel",
+    "offenseB": {
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "scrollmodelrulesdef": "|\u00a8title\u00a8: \u00a8Forest Walker\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Strider (Forest)</span>. If a unit comprised entirely of models with Forest Walker starts a Round of Combat with more than half of its models with the centre of their bases inside a Forest, then all model parts without Harnessed <span class=\"textbf\">must</span> reroll to-wound rolls of \u20181\u2019 with their Close Combat Attacks for the duration of that Round of Combat.\u00a8\u00a7,\n\t",
+    "scrolloptionalmodelrulesdef": "|\u00a8title\u00a8: \u00a8Sylvan Lance\u00a8, \u00a8def\u00a8: \u00a8<i>Close Combat Weapon</i><br><br>Light Lance. Attacks made with a Sylvan Lance gain +1 Armour Penetration.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Sylvan Longbow\u00a8, \u00a8def\u00a8: \u00a8<i>Shooting Weapon</i><br><br><i>0-55 Models with Sylvan Longbow per Army.</i><br><br>\r\n\tLongbow. Attacks made with a Sylvan Longbow gain Armour Penetration 1 and <span class=\"textbf\">Quick to Fire</span>. Also, when  made from Short Range,  they gain Str 4.\u00a8\u00a7,\n\t",
+    "unit_id": "kestrel_knights",
+    "option_id": "13m5bhybqovh2zrorce22l"
+  },
+  "pathfinders": {
+    "name": "Pathfinders",
+    "cost": "175",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      },
+      {
+        "name": "Forest Walker",
+        "id": "forest_walker"
+      },
+      {
+        "name": "Scout",
+        "id": "scout"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Pathfinder",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Master Archer",
+        "id": "master_archer"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Sylvan Longbow",
+        "id": "sylvan_longbow",
+        "params": [
+          "2+"
+        ]
+      },
+      {
+        "name": "Sylvan Blades",
+        "id": "sylvan_blades"
+      }
+    ],
+    "scrollmodelrulesdef": "|\u00a8title\u00a8: \u00a8Forest Walker\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Strider (Forest)</span>. If a unit comprised entirely of models with Forest Walker starts a Round of Combat with more than half of its models with the centre of their bases inside a Forest, then all model parts without Harnessed <span class=\"textbf\">must</span> reroll to-wound rolls of \u20181\u2019 with their Close Combat Attacks for the duration of that Round of Combat.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Master Archer\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>Immediately before shooting with a Sylvan Longbow, all models with Master Archer in a unit may choose to gain either +2 Armour Penetration or +2 to hit until the end of the phase.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Sylvan Longbow\u00a8, \u00a8def\u00a8: \u00a8<i>Shooting Weapon</i><br><br><i>0-55 Models with Sylvan Longbow per Army.</i><br><br>\r\n\tLongbow. Attacks made with a Sylvan Longbow gain Armour Penetration 1 and <span class=\"textbf\">Quick to Fire</span>. Also, when  made from Short Range,  they gain Str 4.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Sylvan Blades\u00a8, \u00a8def\u00a8: \u00a8<i>Close Combat Weapon</i><br><br>Paired Weapons. Attacks made with Sylvan Blades gain +1 Armour Penetration.\u00a8\u00a7,\n\t",
+    "unit_id": "pathfinders",
+    "option_id": "cm7hzhraa4m0zx6yfkm8rnb"
+  },
+  "sylvan_archers": {
+    "name": "Sylvan Archers",
+    "cost": "225",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Forest Walker",
+        "id": "forest_walker"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Sylvan Archer",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Sylvan Longbow",
+        "id": "sylvan_longbow",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "scrollmodelrulesdef": "|\u00a8title\u00a8: \u00a8Forest Walker\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Strider (Forest)</span>. If a unit comprised entirely of models with Forest Walker starts a Round of Combat with more than half of its models with the centre of their bases inside a Forest, then all model parts without Harnessed <span class=\"textbf\">must</span> reroll to-wound rolls of \u20181\u2019 with their Close Combat Attacks for the duration of that Round of Combat.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Sylvan Longbow\u00a8, \u00a8def\u00a8: \u00a8<i>Shooting Weapon</i><br><br><i>0-55 Models with Sylvan Longbow per Army.</i><br><br>\r\n\tLongbow. Attacks made with a Sylvan Longbow gain Armour Penetration 1 and <span class=\"textbf\">Quick to Fire</span>. Also, when  made from Short Range,  they gain Str 4.\u00a8\u00a7,\n\t",
+    "flavour": "It is said a Sylvan Archer can hit an apple falling from a tree with an arrow at one-hundred meters. It is a rumour: a Sylvan Elf would never waste an apple.",
+    "unit_id": "sylvan_archers",
+    "option_id": "mobrl1drftccyrft9iyzcn"
+  },
+  "sylvan_sentinels": {
+    "name": "Sylvan Sentinels",
+    "cost": "150",
+    "addrestriction": "0--2 Units/Army*",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Forest Walker",
+        "id": "forest_walker"
+      },
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Sylvan Sentinel",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Sylvan Longbow",
+        "id": "sylvan_longbow",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "scrollmodelrulesdef": "|\u00a8title\u00a8: \u00a8Forest Walker\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Strider (Forest)</span>. If a unit comprised entirely of models with Forest Walker starts a Round of Combat with more than half of its models with the centre of their bases inside a Forest, then all model parts without Harnessed <span class=\"textbf\">must</span> reroll to-wound rolls of \u20181\u2019 with their Close Combat Attacks for the duration of that Round of Combat.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Sylvan Longbow\u00a8, \u00a8def\u00a8: \u00a8<i>Shooting Weapon</i><br><br><i>0-55 Models with Sylvan Longbow per Army.</i><br><br>\r\n\tLongbow. Attacks made with a Sylvan Longbow gain Armour Penetration 1 and <span class=\"textbf\">Quick to Fire</span>. Also, when  made from Short Range,  they gain Str 4.\u00a8\u00a7,\n\t",
+    "scrolloptionalmodelrulesdef": "|\u00a8title\u00a8: \u00a8Sylvan Blades\u00a8, \u00a8def\u00a8: \u00a8<i>Close Combat Weapon</i><br><br>Paired Weapons. Attacks made with Sylvan Blades gain +1 Armour Penetration.\u00a8\u00a7,\n\t",
+    "unit_id": "sylvan_sentinels",
+    "option_id": "hmu25j99mr50oipesj8j2"
+  },
+  "thicket_beasts": {
+    "name": "Thicket Beasts",
+    "cost": "355",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Bodyguard",
+        "id": "bodyguard",
+        "params": [
+          "Thicket Shepherd"
+        ]
+      },
+      {
+        "name": "Emboldening Boughs",
+        "id": "emboldening_boughs"
+      },
+      {
+        "name": "Forest Walker",
+        "id": "forest_walker"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Sylvan Spirit",
+        "id": "sylvan_spirit"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "3"
+    },
+    "defenserules": [
+      {
+        "name": "Flammable",
+        "id": "flammable"
+      },
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Thicket Beast",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "scrollmodelrulesdef": "|\u00a8title\u00a8: \u00a8Forest Walker\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Strider (Forest)</span>. If a unit comprised entirely of models with Forest Walker starts a Round of Combat with more than half of its models with the centre of their bases inside a Forest, then all model parts without Harnessed <span class=\"textbf\">must</span> reroll to-wound rolls of \u20181\u2019 with their Close Combat Attacks for the duration of that Round of Combat.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Emboldening Boughs\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>A unit with more than half of its models with Emboldening Boughs gains <span class=\"textbf\">Stubborn</span> while more than half of the unit's models are inside a Forest with the centre of their bases.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Sylvan Spirit\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Fearless</span>, <span class=\"textbf\">Magical Attacks</span>, and <span class=\"textbf\">Exclusive (Sylvan Spirit)</span>. \u00a8\u00a7,\n\t",
+    "unit_id": "thicket_beasts",
+    "option_id": "rx0hf2gsualhtuvwfvs9kh"
+  },
+  "thicket_shepherd": {
+    "name": "Thicket Shepherd",
+    "cost": "250",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Forest Walker",
+        "id": "forest_walker"
+      },
+      {
+        "name": "Emboldening Boughs",
+        "id": "emboldening_boughs"
+      },
+      {
+        "name": "Sylvan Spirit",
+        "id": "sylvan_spirit"
+      },
+      {
+        "name": "A Shepherd and its Flock",
+        "id": "a_shepherd_and_its_flock"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "3"
+    },
+    "defenserules": [
+      {
+        "name": "Flammable",
+        "id": "flammable"
+      },
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Thicket Shepherd",
+    "offense": {
+      "At": "4",
+      "Of": "5",
+      "St": "5",
+      "AP": "3",
+      "Ag": "4"
+    },
+    "scrollmodelrulesdef": "|\u00a8title\u00a8: \u00a8A Shepherd and its Flock\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model cannot join a unit that contains another model with this rule.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Forest Walker\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Strider (Forest)</span>. If a unit comprised entirely of models with Forest Walker starts a Round of Combat with more than half of its models with the centre of their bases inside a Forest, then all model parts without Harnessed <span class=\"textbf\">must</span> reroll to-wound rolls of \u20181\u2019 with their Close Combat Attacks for the duration of that Round of Combat.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Emboldening Boughs\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>A unit with more than half of its models with Emboldening Boughs gains <span class=\"textbf\">Stubborn</span> while more than half of the unit's models are inside a Forest with the centre of their bases.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Sylvan Spirit\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Fearless</span>, <span class=\"textbf\">Magical Attacks</span>, and <span class=\"textbf\">Exclusive (Sylvan Spirit)</span>. \u00a8\u00a7,\n\t",
+    "toggles": "onecolprintmodelrulesdeftwocolprintmodelrulesdef",
+    "unit_id": "thicket_shepherd",
+    "option_id": "yv01fd0nrtdi5tsns5ejdk"
+  },
+  "treefather": {
+    "name": "Treefather",
+    "cost": "445",
+    "addrestriction": "0--2 Units/Army*",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "75\u00d750",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Forest Walker",
+        "id": "forest_walker"
+      },
+      {
+        "name": "Stubborn",
+        "id": "stubborn"
+      },
+      {
+        "name": "Tree Singing",
+        "id": "tree_singing"
+      },
+      {
+        "name": "Sylvan Spirit",
+        "id": "sylvan_spirit"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "5",
+      "Re": "6",
+      "Arm": "4"
+    },
+    "defenserules": [
+      {
+        "name": "Flammable",
+        "id": "flammable"
+      },
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Treefather",
+    "offense": {
+      "At": "5",
+      "Of": "5",
+      "St": "6",
+      "AP": "3",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Crush Attack",
+        "id": "crush_attack"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Impaling Roots",
+        "id": "impaling_roots",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "scrollmodelrulesdef": "|\u00a8title\u00a8: \u00a8Forest Walker\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Strider (Forest)</span>. If a unit comprised entirely of models with Forest Walker starts a Round of Combat with more than half of its models with the centre of their bases inside a Forest, then all model parts without Harnessed <span class=\"textbf\">must</span> reroll to-wound rolls of \u20181\u2019 with their Close Combat Attacks for the duration of that Round of Combat.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Tree Singing\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>Each model with one or more instances of Tree Singing may discard 1 Veil Token once per friendly Magic Phase, immediately after Siphon the Veil. If so, choose a Forest Terrain Feature within 24\" of the model with Tree Singing that is not in contact with any unit. Move this Forest in a straight line up to 6\". This movement stops immediately before moving into contact with any units or any Terrain Features other than Open Terrain. Each Forest may only be moved with Tree Singing once per Magic Phase.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Sylvan Spirit\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Fearless</span>, <span class=\"textbf\">Magical Attacks</span>, and <span class=\"textbf\">Exclusive (Sylvan Spirit)</span>. \u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Impaling Roots\u00a8, \u00a8def\u00a8: \u00a8<i>Shooting Weapon</i><br><br>Range 12\", Shots D6+1, Str 4, AP 1, <span class=\"textbf\">March and Shoot</span>, <span class=\"textbf\">Quick to Fire</span>, ignores to-hit modifiers from Cover. If its target is in contact with a Forest, the Strength is <span class=\"textbf\">set</span> to 5 and Armour Penetration to 2.\u00a8\u00a7,\n\t",
+    "unit_id": "treefather",
+    "option_id": "2ymd52tbygmsprhun4w5xf"
+  },
+  "treefather_ancient": {
+    "name": "Treefather Ancient",
+    "cost": "445",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "75\u00d750",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Forest Walker",
+        "id": "forest_walker"
+      },
+      {
+        "name": "Stubborn",
+        "id": "stubborn"
+      },
+      {
+        "name": "Tree Singing",
+        "id": "tree_singing"
+      },
+      {
+        "name": "Sylvan Spirit",
+        "id": "sylvan_spirit"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "4",
+      "Re": "6",
+      "Arm": "4"
+    },
+    "defenserules": [
+      {
+        "name": "Flammable",
+        "id": "flammable"
+      },
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Treefather Ancient",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Crush Attack",
+        "id": "crush_attack"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Impaling Roots",
+        "id": "impaling_roots",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "paths": "Druidism=druidism,Divination=divination",
+    "scrollmodelrulesdef": "|\u00a8title\u00a8: \u00a8Forest Walker\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Strider (Forest)</span>. If a unit comprised entirely of models with Forest Walker starts a Round of Combat with more than half of its models with the centre of their bases inside a Forest, then all model parts without Harnessed <span class=\"textbf\">must</span> reroll to-wound rolls of \u20181\u2019 with their Close Combat Attacks for the duration of that Round of Combat.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Tree Singing\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>Each model with one or more instances of Tree Singing may discard 1 Veil Token once per friendly Magic Phase, immediately after Siphon the Veil. If so, choose a Forest Terrain Feature within 24\" of the model with Tree Singing that is not in contact with any unit. Move this Forest in a straight line up to 6\". This movement stops immediately before moving into contact with any units or any Terrain Features other than Open Terrain. Each Forest may only be moved with Tree Singing once per Magic Phase.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Sylvan Spirit\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Fearless</span>, <span class=\"textbf\">Magical Attacks</span>, and <span class=\"textbf\">Exclusive (Sylvan Spirit)</span>. \u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Impaling Roots\u00a8, \u00a8def\u00a8: \u00a8<i>Shooting Weapon</i><br><br>Range 12\", Shots D6+1, Str 4, AP 1, <span class=\"textbf\">March and Shoot</span>, <span class=\"textbf\">Quick to Fire</span>, ignores to-hit modifiers from Cover. If its target is in contact with a Forest, the Strength is <span class=\"textbf\">set</span> to 5 and Armour Penetration to 2.\u00a8\u00a7,\n\t",
+    "unit_id": "treefather_ancient",
+    "option_id": "qxq7l7xtpwfmgoyz2cjz5c"
+  },
+  "sylvan_unicorn_mount": {
+    "name": "Sylvan Unicorn",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "10",
+      "Ma": "20",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Herald of Sura",
+        "id": "herald_of_sura"
+      },
+      {
+        "name": "Magic Resistance",
+        "id": "magic_resistance",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "Strider",
+        "id": "strider"
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "4",
+      "Arm": "C+1"
+    },
+    "defenserules": [],
+    "offensename": "Sylvan Unicorn",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      }
+    ],
+    "unit_id": "sylvan_unicorn_mount",
+    "option_id": "y3dp3ybomv7hxng6v0psak"
+  },
+  "wild_huntsmen": {
+    "name": "Wild Huntsmen",
+    "cost": "260",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Forest Walker",
+        "id": "forest_walker"
+      },
+      {
+        "name": "Frenzy",
+        "id": "frenzy"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "offensename": "Wild Huntsman",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "6"
+    },
+    "offenserules": [
+      {
+        "name": "Lightning Reflexes",
+        "id": "lightning_reflexes"
+      },
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Att"
+        ]
+      },
+      {
+        "name": "Battle Focus",
+        "id": "battle_focus"
+      }
+    ],
+    "offensenameB": "Elven Deer",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "scrollmodelrulesdef": "|\u00a8title\u00a8: \u00a8Forest Walker\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains <span class=\"textbf\">Strider (Forest)</span>. If a unit comprised entirely of models with Forest Walker starts a Round of Combat with more than half of its models with the centre of their bases inside a Forest, then all model parts without Harnessed <span class=\"textbf\">must</span> reroll to-wound rolls of \u20181\u2019 with their Close Combat Attacks for the duration of that Round of Combat.\u00a8\u00a7,\n\t",
+    "scrolloptionalmodelrulesdef": "|\u00a8title\u00a8: \u00a8Sylvan Blades\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>Paired Weapons. Attacks made with Sylvan Blades gain +1 Armour Penetration.\u00a8\u00a7,\n\t\t|\u00a8title\u00a8: \u00a8Sylvan Lance\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>Light Lance. Attacks made with a Sylvan Lance gain +1 Armour Penetration.\u00a8\u00a7,\n\t",
+    "unit_id": "wild_huntsmen",
+    "option_id": "dljdwj3ctl579uwan3v0lo"
+  },
+  "sylvan_giant": {
+    "name": "Sylvan Giant",
+    "cost": "270",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "id": "se-giant_see_giant_do",
+        "name": "Giant See, Giant Do",
+        "params": []
+      },
+      null
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "defensearmour": [],
+    "offensename": "Sylvan Giant",
+    "offense": {
+      "Ag": "3",
+      "At": "5",
+      "Of": "3",
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Rage",
+        "id": "rage"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "sylvan_giant",
+    "option_id": "5m53hwdr3cbdz5wrk158iw"
+  }
+}

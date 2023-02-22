@@ -1,0 +1,1778 @@
+{
+  "beast_chieftain": {
+    "name": "Beast Chieftain",
+    "cost": "110",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Pack Tactics",
+        "id": "pack_tactics"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Beast Chieftain",
+    "offense": {
+      "At": "3",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Primal Instinct",
+        "id": "primal_instinct"
+      }
+    ],
+    "unit_id": "beast_chieftain",
+    "option_id": "z1x9fhce8fsyfy9jcswcyj"
+  },
+  "beast_giant": {
+    "name": "Beast Giant",
+    "cost": "270",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "id": "bh-giant_see_giant_do",
+        "name": "Giant See, Giant Do",
+        "params": []
+      },
+      null
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "offensename": "Beast Giant",
+    "offense": {
+      "At": "5",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Rage",
+        "id": "rage"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "beast_giant",
+    "option_id": "2opbsqy04k47vb9ek9k0ru"
+  },
+  "beast_lord": {
+    "name": "Beast Lord",
+    "cost": "180",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Pack Tactics",
+        "id": "pack_tactics"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "6",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Beast Lord",
+    "offense": {
+      "At": "4",
+      "Of": "6",
+      "St": "5",
+      "AP": "2",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Primal Instinct",
+        "id": "primal_instinct"
+      }
+    ],
+    "unit_id": "beast_lord",
+    "option_id": "gbxvgq25wot1e6wbox7rg7"
+  },
+  "briar_beast": {
+    "name": "Briar Beast",
+    "cost": "85",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "3D6",
+      "Di": "10"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      },
+      {
+        "name": "Random Movement",
+        "id": "random_movement",
+        "params": [
+          "3D6\""
+        ]
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Unbreakable",
+        "id": "unbreakable"
+      },
+      {
+        "name": "Sleeper",
+        "id": "sleeper"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "offensename": "Briar Beast",
+    "offense": {
+      "At": "D6+1",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "unit_id": "briar_beast",
+    "option_id": "rqemwn4y09mqq6mrx5a71b"
+  },
+  "centaur_chieftain": {
+    "name": "Centaur Chieftain",
+    "cost": "195",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      },
+      {
+        "name": "Looted Booze",
+        "id": "looted_booze"
+      },
+      {
+        "name": "Drunkard",
+        "id": "drunkard"
+      },
+      {
+        "name": "Tall",
+        "id": "tall"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Cannot be Stomped",
+        "id": "cannot_be_stomped"
+      }
+    ],
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Centaur Chieftain",
+    "offense": {
+      "At": "4",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Primal Instinct",
+        "id": "primal_instinct"
+      }
+    ],
+    "unit_id": "centaur_chieftain",
+    "option_id": "e99ja4pjawbvxrdb02fn8l"
+  },
+  "centaurs": {
+    "name": "Centaurs",
+    "cost": "165",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Drunkard",
+        "id": "drunkard"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      },
+      {
+        "name": "Tall",
+        "id": "tall"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "offensename": "Centaur",
+    "defenserules": [
+      {
+        "name": "Cannot be Stomped",
+        "id": "cannot_be_stomped"
+      }
+    ],
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Primal Instinct",
+        "id": "primal_instinct"
+      }
+    ],
+    "unit_id": "centaurs",
+    "option_id": "n2vg3syubms3ohhckhgfr3"
+  },
+  "cyclops": {
+    "name": "Cyclops",
+    "cost": "315",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Magic Resistance",
+        "id": "magic_resistance",
+        "params": [
+          "3"
+        ]
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "2",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Cyclops",
+    "offense": {
+      "At": "5",
+      "Of": "2",
+      "St": "6",
+      "AP": "3",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Divine Attacks",
+        "id": "divine_attacks"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Hurl Attack",
+        "id": "hurl_attack",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "unit_id": "cyclops",
+    "option_id": "kh0ynhmt0xr2lxnkg4p6sj"
+  },
+  "feral_hounds": {
+    "name": "Feral Hounds",
+    "secondlogo": "ambush",
+    "cost": "80",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Insignificant",
+        "id": "insignificant"
+      },
+      {
+        "name": "Ambush",
+        "id": "ambush"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Feral Hound",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "unit_id": "feral_hounds",
+    "option_id": "7emrtxj5unjsgvu9dwp8d"
+  },
+  "gargoyles": {
+    "name": "Gargoyles",
+    "cost": "135",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Adfly": "9",
+      "Mafly": "18",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      },
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "9\"",
+          "18\""
+        ]
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Gargoyle",
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Primal Instinct",
+        "id": "primal_instinct"
+      },
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Str",
+          "+1 AP"
+        ]
+      }
+    ],
+    "unit_id": "gargoyles",
+    "option_id": "zqtpky1k1klnfdb3bgtbyi"
+  },
+  "gortach": {
+    "name": "Gortach",
+    "cost": "455",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      },
+      {
+        "name": "Frenzy",
+        "id": "frenzy"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "3",
+      "Re": "6",
+      "Arm": "0"
+    },
+    "offensename": "Gortach",
+    "offense": {
+      "At": "6",
+      "Of": "4",
+      "St": "6",
+      "AP": "3",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Primal Instinct",
+        "id": "primal_instinct"
+      },
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D3"
+        ]
+      },
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      },
+      {
+        "name": "Battle Focus",
+        "id": "battle_focus"
+      },
+      {
+        "name": "Strength from Flesh",
+        "id": "strength_from_flesh"
+      }
+    ],
+    "unit_id": "gortach",
+    "option_id": "tyhvya76hiaeel21zh47de"
+  },
+  "jabberwock": {
+    "name": "Jabberwock",
+    "cost": "280",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Adfly": "8",
+      "Mafly": "16",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      },
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "16\""
+        ]
+      },
+      {
+        "name": "Aura of Madness",
+        "id": "aura_of_madness"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "3"
+    },
+    "offensename": "Jabberwock",
+    "offense": {
+      "At": "4",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Breath Attack",
+        "id": "breath_attack",
+        "params": [
+          "Str 3",
+          "AP 2"
+        ]
+      }
+    ],
+    "unit_id": "jabberwock",
+    "option_id": "jst4xfqv4rg2uxawsvyz8"
+  },
+  "longhorn_herd": {
+    "name": "Longhorn Herd",
+    "cost": "145",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Pack Tactics",
+        "id": "pack_tactics"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      },
+      {
+        "name": "Bodyguard",
+        "id": "bodyguard",
+        "params": [
+          "Beast Lord",
+          "Beast Chieftain"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Longhorn",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Primal Instinct",
+        "id": "primal_instinct"
+      }
+    ],
+    "unit_id": "longhorn_herd",
+    "option_id": "f2sk8kq416sr9z4vh8tz"
+  },
+  "minotaur_chieftain": {
+    "name": "Minotaur Chieftain",
+    "cost": "215",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Frenzy",
+        "id": "frenzy"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Minotaur Chieftain",
+    "offense": {
+      "At": "4",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Primal Instinct",
+        "id": "primal_instinct"
+      },
+      {
+        "name": "Battle Focus",
+        "id": "battle_focus"
+      },
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D3"
+        ]
+      }
+    ],
+    "unit_id": "minotaur_chieftain",
+    "option_id": "hd6bpv200av7tdnl42soof"
+  },
+  "minotaurs": {
+    "name": "Minotaurs",
+    "cost": "225",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      },
+      {
+        "name": "Frenzy",
+        "id": "frenzy"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Minotaur",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Primal Instinct",
+        "id": "primal_instinct"
+      },
+      {
+        "name": "Battle Focus",
+        "id": "battle_focus"
+      },
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "unit_id": "minotaurs",
+    "option_id": "an4gd5xiiy7w1yymjtwv8d"
+  },
+  "minotaur_warlord": {
+    "name": "Minotaur Warlord",
+    "cost": "465",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Frenzy",
+        "id": "frenzy"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Minotaur Warlord",
+    "offense": {
+      "At": "5",
+      "Of": "6",
+      "St": "6",
+      "AP": "3",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Primal Instinct",
+        "id": "primal_instinct"
+      },
+      {
+        "name": "Battle Focus",
+        "id": "battle_focus"
+      },
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D3"
+        ]
+      }
+    ],
+    "unit_id": "minotaur_warlord",
+    "option_id": "umlh8jjxhnx14d5rgibq"
+  },
+  "mongrel_herd": {
+    "name": "Mongrel Herd",
+    "cost": "140",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Pack Tactics",
+        "id": "pack_tactics"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Mongrel",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Primal Instinct",
+        "id": "primal_instinct"
+      }
+    ],
+    "unit_id": "mongrel_herd",
+    "option_id": "2hurh0qb0tiwbsop4zevx8"
+  },
+  "mongrel_raiders": {
+    "name": "Mongrel Raiders",
+    "cost": "90",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Pack Tactics",
+        "id": "pack_tactics"
+      },
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Mongrel Raider",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Primal Instinct",
+        "id": "primal_instinct"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Bow",
+        "id": "bow",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "unit_id": "mongrel_raiders",
+    "option_id": "72q31s0kr2yi6pdatqsrz"
+  },
+  "raiding_chariot_mount": {
+    "name": "Raiding Chariot",
+    "maxmountsperarmy": "3",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "7",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+2"
+    },
+    "offensename": "Wildhorn Crew",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Primal Instinct",
+        "id": "primal_instinct"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      }
+    ],
+    "offensenameB": "War Hog (2)",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "raiding_chariot_mount",
+    "option_id": "c9hc962r5xp4mj9x0y1vx"
+  },
+  "raiding_chariots": {
+    "name": "Raiding Chariots",
+    "cost": "105",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "7",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Wildhorn Crew",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Primal Instinct",
+        "id": "primal_instinct"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      }
+    ],
+    "offensenameB": "Longhorn Crew",
+    "offenseB": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Primal Instinct",
+        "id": "primal_instinct"
+      }
+    ],
+    "offenseweaponsB": [
+      {
+        "name": "Great Weapon",
+        "id": "great_weapon"
+      }
+    ],
+    "offensenameC": "War Hog (2)",
+    "offenseC": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserulesC": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "raiding_chariots",
+    "option_id": "m2f9zhgy4iols95lxd5md"
+  },
+  "razortusk_chariot": {
+    "name": "Razortusk Chariot",
+    "cost": "235",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "7",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Hunting Horn",
+        "id": "hunting_horn"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Wildhorn Crew",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Primal Instinct",
+        "id": "primal_instinct"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      }
+    ],
+    "offensenameB": "Longhorn Crew",
+    "offenseB": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Primal Instinct",
+        "id": "primal_instinct"
+      }
+    ],
+    "offenseweaponsB": [
+      {
+        "name": "Great Weapon",
+        "id": "great_weapon"
+      }
+    ],
+    "offensenameC": "Razortusk",
+    "offenseC": {
+      "At": "4",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenserulesC": [
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Str",
+          "+1 AP"
+        ]
+      },
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6+1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "razortusk_chariot",
+    "option_id": "ky2oha3hponr24g7g5sr7j"
+  },
+  "razortusk_chariot_mount": {
+    "name": "Razortusk Chariot",
+    "maxmountsperarmy": "2",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "7",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Hunting Horn",
+        "id": "hunting_horn"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+1"
+    },
+    "offensename": "Wildhorn Crew",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Primal Instinct",
+        "id": "primal_instinct"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      }
+    ],
+    "offensenameB": "Razortusk",
+    "offenseB": {
+      "At": "4",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Str",
+          "+1 AP"
+        ]
+      },
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6+1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "razortusk_chariot_mount",
+    "option_id": "a4s1i8rxmjsphwtmfil89"
+  },
+  "razortusk_herd": {
+    "name": "Razortusk Herd",
+    "cost": "100",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "offensename": "Razortusk",
+    "offense": {
+      "At": "4",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Str",
+          "+1 AP"
+        ]
+      }
+    ],
+    "unit_id": "razortusk_herd",
+    "option_id": "62ie1xfow8egcuidu13bz8"
+  },
+  "soothsayer": {
+    "name": "Soothsayer",
+    "cost": "140",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Pack Tactics",
+        "id": "pack_tactics"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      },
+      {
+        "name": "Blood Offering",
+        "id": "blood_offering"
+      },
+      {
+        "name": "Wizard Apprentice",
+        "id": "wizard_apprentice"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "offensename": "Soothsayer",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Primal Instinct",
+        "id": "primal_instinct"
+      }
+    ],
+    "paths": "Druidism=druidism,Evocation=evocation,Shamanism=shamanism",
+    "unit_id": "soothsayer",
+    "option_id": "pzl7h4bd9ehq2kkp2kqtbf"
+  },
+  "wildhorn_herd": {
+    "name": "Wildhorn Herd",
+    "cost": "145",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Pack Tactics",
+        "id": "pack_tactics"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "offensename": "Wildhorn",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Primal Instinct",
+        "id": "primal_instinct"
+      }
+    ],
+    "unit_id": "wildhorn_herd",
+    "option_id": "5r65k3sbmzlfynylvbxbcj"
+  },
+  "supplement_beast_giant": {
+    "name": "Supplement Beast Giant",
+    "cost": "270",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "id": "bh-giant_see_giant_do",
+        "name": "Giant See, Giant Do",
+        "params": []
+      },
+      null
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "offensename": "Beast Giant",
+    "offense": {
+      "At": "5",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Rage",
+        "id": "rage"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "supplement_beast_giant",
+    "option_id": "ss2opbsqy04k47vb9ek9k0ru"
+  },
+  "totemic_beast": {
+    "name": "Totemic Beast",
+    "speciallogo": "Icon_shamanism.pdf",
+    "size": "Large",
+    "type": "Beast",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "3D6",
+      "Ma": "",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Random Movement",
+        "id": "random_movement",
+        "params": [
+          "3D6\""
+        ]
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "offensename": "Totemic Beast",
+    "offense": {
+      "At": "4",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Breath Attack",
+        "id": "breath_attack",
+        "params": [
+          "Str 3",
+          "AP 0"
+        ]
+      }
+    ],
+    "unit_id": "totemic_beast",
+    "option_id": "hp2gvhn932432371fxuxok"
+  }
+}

@@ -1,0 +1,2722 @@
+{
+  "altar_of_undeath": {
+    "name": "Altar of Undeath",
+    "cost": "340",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "8",
+      "Di": "5",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Ghost Step",
+        "id": "ghost_step"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Terror",
+        "id": "terror"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      },
+      {
+        "name": "Lash of Souls",
+        "id": "lash_of_souls"
+      },
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Ashes to Ashes",
+        "id": "ashes_to_ashes"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "2"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "offensename": "Dark Conductor",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Aura of Undeath",
+        "id": "aura_of_undeath"
+      }
+    ],
+    "offensenameB": "Ghost Steeds",
+    "offenseB": {
+      "At": "8",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "altar_of_undeath",
+    "option_id": "7fnwc8znh1sqdgqbequt"
+  },
+  "banshee": {
+    "name": "Banshee",
+    "secondlogo": "tower",
+    "cost": "155",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "5",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Ashes to Ashes",
+        "id": "ashes_to_ashes"
+      },
+      {
+        "name": "Not a Leader",
+        "id": "not_a_leader"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Terror",
+        "id": "terror"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Ghostly Form",
+        "id": "ghostly_form"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      },
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "3+",
+          "against non-Magical Attacks"
+        ]
+      }
+    ],
+    "offensename": "Banshee",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Reaper",
+        "id": "reaper"
+      },
+      {
+        "name": "Wail of Woe",
+        "id": "wail_of_woe"
+      }
+    ],
+    "unit_id": "banshee",
+    "option_id": "neox3b3k2mtfwpzt2qe6f"
+  },
+  "barrow_guard": {
+    "name": "Barrow Guard",
+    "cost": "165",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7",
+      "Rsr": "D3+4"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Ashes to Ashes",
+        "id": "ashes_to_ashes"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Bodyguard",
+        "id": "bodyguard",
+        "params": [
+          "General",
+          "Barrow King"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Barrow Guard",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      },
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      },
+      {
+        "name": "Multiple Wounds",
+        "id": "multiple_wounds",
+        "params": [
+          "2",
+          "against Standard"
+        ]
+      }
+    ],
+    "unit_id": "barrow_guard",
+    "option_id": "2wkhxn2l9b981wmhc5pyd4"
+  },
+  "barrow_king": {
+    "name": "Barrow King",
+    "cost": "150",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Ashes to Ashes",
+        "id": "ashes_to_ashes"
+      },
+      {
+        "name": "Not a Leader",
+        "id": "not_a_leader"
+      },
+      {
+        "name": "Unliving Shield",
+        "id": "unliving_shield"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Barrow King",
+    "offense": {
+      "At": "3",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      },
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      },
+      {
+        "name": "Multiple Wounds",
+        "id": "multiple_wounds",
+        "params": [
+          "2",
+          "against Standard"
+        ]
+      }
+    ],
+    "unit_id": "barrow_king",
+    "option_id": "43s5a9wyaf2xeifh0uolio"
+  },
+  "barrow_knights": {
+    "name": "Barrow Knights",
+    "cost": "160",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "7",
+      "Rsr": "D3+2"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Ashes to Ashes",
+        "id": "ashes_to_ashes"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Ghost Step",
+        "id": "ghost_step"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Barrow Knight",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenseweapons": [
+      {
+        "name": "Lance",
+        "id": "lance"
+      }
+    ],
+    "offenserules": [
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      },
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      },
+      {
+        "name": "Multiple Wounds",
+        "id": "multiple_wounds",
+        "params": [
+          "2",
+          "against Standard"
+        ]
+      }
+    ],
+    "offensenameB": "Skeletal Steed",
+    "offenseB": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      }
+    ],
+    "unit_id": "barrow_knights",
+    "option_id": "8xt73s3nvib9i997m8jh8w"
+  },
+  "bat_swarms": {
+    "name": "Bat Swarms",
+    "cost": "105",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "1",
+      "Ma": "2",
+      "Adfly": "6",
+      "Mafly": "12",
+      "Di": "3",
+      "Rsr": "D6+4"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Ashes to Ashes",
+        "id": "ashes_to_ashes"
+      },
+      {
+        "name": "Storm of Wings",
+        "id": "storm_of_wings"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "6\"",
+          "12\""
+        ]
+      },
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "3",
+      "Re": "2",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Distracting",
+        "id": "distracting"
+      },
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Bat Swarm",
+    "offense": {
+      "At": "4",
+      "Of": "3",
+      "St": "2",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Extra Support",
+        "id": "extra_support",
+        "params": [
+          "3"
+        ]
+      }
+    ],
+    "unit_id": "bat_swarms",
+    "option_id": "4v0gk8u2h0svtdcyegawo9"
+  },
+  "cadaver_wagon": {
+    "name": "Cadaver Wagon",
+    "cost": "250",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "60\u00d7100",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "5",
+      "Rsr": "2"
+    },
+    "globalrules": [
+      {
+        "name": "War Platform",
+        "id": "war_platform"
+      },
+      {
+        "name": "Necromantic Aura",
+        "id": "necromantic_aura"
+      },
+      {
+        "name": "No Rest for the Wicked",
+        "id": "no_rest_for_the_wicked"
+      },
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Not a Leader",
+        "id": "not_a_leader"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "offensename": "Cadaver Master",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offensenameB": "Shambling Horde",
+    "offenseB": {
+      "At": "8",
+      "Of": "1",
+      "St": "3",
+      "AP": "0",
+      "Ag": "1"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "4",
+      "AP": "1"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "cadaver_wagon",
+    "option_id": "uq8qhzk0v4n4lgozemebgt"
+  },
+  "cadaver_wagon_mount": {
+    "name": "Cadaver Wagon",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "60\u00d7100",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "War Platform",
+        "id": "war_platform"
+      },
+      {
+        "name": "Necromantic Aura",
+        "id": "necromantic_aura"
+      },
+      {
+        "name": "No Rest for the Wicked",
+        "id": "no_rest_for_the_wicked"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "4",
+      "Arm": "C+2"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "offensename": "Shambling Horde",
+    "offense": {
+      "At": "8",
+      "Of": "1",
+      "St": "3",
+      "AP": "0",
+      "Ag": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "4",
+      "AP": "1"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "cadaver_wagon_mount",
+    "option_id": "gw56ie2cjao4ndh0shwtdf"
+  },
+  "colossal_zombie_dragon_mount": {
+    "name": "Colossal Zombie Dragon",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "100\u00d7150",
+    "maxmountsperarmy": "1",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C",
+      "Adfly": "7",
+      "Mafly": "14"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "7\"",
+          "14\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Meeting of Minds",
+        "id": "meeting_of_minds"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "5",
+      "Re": "6",
+      "Arm": "4"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "6+"
+        ]
+      },
+      {
+        "name": "Distracting",
+        "id": "distracting"
+      }
+    ],
+    "offensename": "Colossal ZD",
+    "offense": {
+      "At": "5",
+      "Of": "5",
+      "St": "6",
+      "AP": "3",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Breath Attack",
+        "id": "breath_attack",
+        "params": [
+          "Toxic Attacks"
+        ]
+      }
+    ],
+    "unit_id": "colossal_zombie_dragon_mount",
+    "option_id": "0seehvc5c4ed2rtvdmclfv"
+  },
+  "court_of_the_damned": {
+    "name": "Court of the Damned",
+    "cost": "320",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "60\u00d7100",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Ghost Step",
+        "id": "ghost_step"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      },
+      {
+        "name": "War Platform",
+        "id": "war_platform"
+      },
+      {
+        "name": "Chill of the Grave",
+        "id": "chill_of_the_grave"
+      },
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Not a Leader",
+        "id": "not_a_leader"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "2"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Paramour (3)",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "6"
+    },
+    "offenserules": [
+      {
+        "name": "Vampiric",
+        "id": "vampiric",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "offensenameB": "Spectral Pallbearers",
+    "offenseB": {
+      "At": "8",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "court_of_the_damned",
+    "option_id": "dt1rdnkwa83gikh3md3xn"
+  },
+  "court_of_the_damned_mount": {
+    "name": "Court of the Damned",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "60\u00d7100",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Ghost Step",
+        "id": "ghost_step"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      },
+      {
+        "name": "War Platform",
+        "id": "war_platform"
+      },
+      {
+        "name": "Chill of the Grave",
+        "id": "chill_of_the_grave"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "2"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Paramour (2)",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "6"
+    },
+    "offenserules": [
+      {
+        "name": "Vampiric",
+        "id": "vampiric",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "offensenameB": "Spectral Pallbearers",
+    "offenseB": {
+      "At": "8",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "court_of_the_damned_mount",
+    "option_id": "9d0u49m4bqqqso6ny46oim"
+  },
+  "dark_coach": {
+    "name": "Dark Coach",
+    "cost": "455",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "8",
+      "Di": "7",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Ghost Step",
+        "id": "ghost_step"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Unholy Conduit",
+        "id": "unholy_conduit"
+      },
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "4"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "offensename": "Coachman",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "3",
+      "AP": "10",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Great Weapon",
+        "id": "great_weapon"
+      }
+    ],
+    "offensenameB": "Vampire",
+    "offenseB": {
+      "At": "4",
+      "Of": "6",
+      "St": "5",
+      "AP": "2",
+      "Ag": "6"
+    },
+    "offenserulesB": [
+      {
+        "name": "Vampiric",
+        "id": "vampiric",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "offensenameC": "Undead Mount (2)",
+    "offenseC": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserulesC": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6+1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "dark_coach",
+    "option_id": "09pgrv5jyj6c0bval2yizhsv"
+  },
+  "dire_wolves": {
+    "name": "Dire Wolves",
+    "cost": "80",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "3",
+      "Rsr": "D3+4"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Ashes to Ashes",
+        "id": "ashes_to_ashes"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Dire Wolf",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Str",
+          "+1 AP"
+        ]
+      }
+    ],
+    "unit_id": "dire_wolves",
+    "option_id": "vyl6r646yz9jh3qzyqoo2g"
+  },
+  "ghasts": {
+    "name": "Ghasts",
+    "cost": "155",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "5",
+      "Rsr": "D3+1"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Ashes to Ashes",
+        "id": "ashes_to_ashes"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Ghast",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Unholy Appetite",
+        "id": "unholy_appetite"
+      }
+    ],
+    "unit_id": "ghasts",
+    "option_id": "y4bkbjenxwhhzdw61392b"
+  },
+  "ghouls": {
+    "name": "Ghouls",
+    "cost": "115",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "6",
+      "Rsr": "D6+4"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Ashes to Ashes",
+        "id": "ashes_to_ashes"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "offensename": "Ghoul",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Unholy Appetite",
+        "id": "unholy_appetite"
+      }
+    ],
+    "unit_id": "ghouls",
+    "option_id": "xf3kmrqwybnw0fkwdqkk8"
+  },
+  "great_bats": {
+    "name": "Great Bats",
+    "cost": "95",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "1",
+      "Ma": "2",
+      "Adfly": "9",
+      "Mafly": "18",
+      "Di": "5",
+      "Rsr": "D3+1"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Ashes to Ashes",
+        "id": "ashes_to_ashes"
+      },
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "9\"",
+          "18\""
+        ]
+      },
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "2",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Great Bat",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "unit_id": "great_bats",
+    "option_id": "9zp5wgb36fiyvfmbu0iew"
+  },
+  "monstrous_revenant_mount": {
+    "name": "Monstrous Revenant",
+    "type": "Cavalry",
+    "maxmountsperarmy": "3",
+    "size": "Large",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "C",
+      "Adfly": "8",
+      "Mafly": "16"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "16\""
+        ]
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "5",
+      "Arm": "C"
+    },
+    "offensename": "Monstrous Revenant",
+    "offense": {
+      "At": "4",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      }
+    ],
+    "unit_id": "monstrous_revenant_mount",
+    "option_id": "ulgbjjv5nf3mhdqeowib8"
+  },
+  "necromancer": {
+    "name": "Necromancer",
+    "cost": "110",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Gates of the Netherworld",
+        "id": "gates_of_the_netherworld"
+      },
+      {
+        "name": "Awaken",
+        "id": "awaken",
+        "params": [
+          "Skeletons",
+          "Zombies"
+        ]
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Wizard Apprentice",
+        "id": "wizard_apprentice"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Necromancer",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "paths": "Evocation=evocation,Alchemy=alchemy",
+    "unit_id": "necromancer",
+    "option_id": "mv8hkzukgudg7y55xuaxqf"
+  },
+  "phantom_hosts": {
+    "name": "Phantom Hosts",
+    "cost": "160",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "4",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Ashes to Ashes",
+        "id": "ashes_to_ashes"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Ghostly Form",
+        "id": "ghostly_form"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+",
+          "against Magical Attacks"
+        ]
+      },
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "3+",
+          "against non-Magical Attacks"
+        ]
+      }
+    ],
+    "offensename": "Phantom Host",
+    "offense": {
+      "At": "4",
+      "Of": "3",
+      "St": "3",
+      "AP": "1",
+      "Ag": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Extra Support",
+        "id": "extra_support",
+        "params": [
+          "3"
+        ]
+      }
+    ],
+    "unit_id": "phantom_hosts",
+    "option_id": "c2vfrfucdr41733xpu5dr5"
+  },
+  "shrieking_horror": {
+    "name": "Shrieking Horror",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "100\u00d7150",
+    "cost": "510",
+    "addrestriction": "0--2 Units/Army*",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "4",
+      "Adfly": "8",
+      "Mafly": "16",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "16\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Ashes to Ashes",
+        "id": "ashes_to_ashes"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "4",
+      "Re": "6",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "offensename": "Shrieking Horror",
+    "offense": {
+      "At": "4",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Chilling Shriek",
+        "id": "chilling_shriek"
+      }
+    ],
+    "unit_id": "shrieking_horror",
+    "option_id": "sv9d95il8kbbo22v6b5vdn"
+  },
+  "shrieking_horror_mount": {
+    "name": "Shrieking Horror",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "100\u00d7150",
+    "maxmountsperarmy": "1",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "C",
+      "Adfly": "8",
+      "Mafly": "16"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "16\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "4",
+      "Re": "6",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Shrieking Horror",
+    "offense": {
+      "At": "4",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Chilling Shriek",
+        "id": "chilling_shriek"
+      }
+    ],
+    "unit_id": "shrieking_horror_mount",
+    "option_id": "8b0yhejgzu5bwnetbr7f95"
+  },
+  "skeletal_steed_mount": {
+    "name": "Skeletal Steed",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Ghost Step",
+        "id": "ghost_step"
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+2"
+    },
+    "offensename": "Skeletal Steed",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      }
+    ],
+    "unit_id": "skeletal_steed_mount",
+    "option_id": "6u52rcj6w5apvaq0i6j3n"
+  },
+  "skeletons": {
+    "name": "Skeletons",
+    "cost": "145",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "4",
+      "Rsr": "D6+4"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Ashes to Ashes",
+        "id": "ashes_to_ashes"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Skeleton",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "unit_id": "skeletons",
+    "option_id": "dyxrtrqulty6sw2xeu9sq"
+  },
+  "spectral_hunters": {
+    "name": "Spectral Hunters",
+    "cost": "175",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "5",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Ashes to Ashes",
+        "id": "ashes_to_ashes"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Ghostly Form",
+        "id": "ghostly_form"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Terror",
+        "id": "terror"
+      },
+      {
+        "name": "Wizard Conclave",
+        "id": "wizard_conclave"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      },
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "3+",
+          "against non-Magical Attacks"
+        ]
+      }
+    ],
+    "offensename": "Spectral Hunter",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "3",
+      "AP": "10",
+      "Ag": "2"
+    },
+    "offenseweapons": [
+      {
+        "name": "Great Weapon",
+        "id": "great_weapon"
+      }
+    ],
+    "offenserules": [
+      {
+        "name": "Flaming Attacks",
+        "id": "flaming_attacks"
+      },
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      }
+    ],
+    "offensenameB": "Ghost Steed",
+    "offenseB": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Flaming Attacks",
+        "id": "flaming_attacks"
+      },
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "wizardconclave": "<span class=\"textbf\">Must</span> select 2 spells from:\n\t",
+    "unit_id": "spectral_hunters",
+    "option_id": "ozmq2g5e40it7in58rfjq"
+  },
+  "spectral_steed_mount": {
+    "name": "Spectral Steed",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Adfly": "8",
+      "Mafly": "16",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Ghost Step",
+        "id": "ghost_step"
+      },
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "16\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+1"
+    },
+    "offensename": "Spectral Steed",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      }
+    ],
+    "unit_id": "spectral_steed_mount",
+    "option_id": "3lk4o98w02r5tw9elicqmj"
+  },
+  "vampire_count": {
+    "name": "Vampire Count",
+    "cost": "315",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "9",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Awaken",
+        "id": "awaken",
+        "params": [
+          "Zombies"
+        ]
+      },
+      {
+        "name": "Autonomous",
+        "id": "autonomous"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "7",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "offensename": "Vampire Count",
+    "offense": {
+      "At": "5",
+      "Of": "7",
+      "St": "5",
+      "AP": "2",
+      "Ag": "7"
+    },
+    "offenserules": [
+      {
+        "name": "Vampiric",
+        "id": "vampiric",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "paths": "Evocation=evocation,Occultism=occultism",
+    "pathsnote": "",
+    "unit_id": "vampire_count",
+    "option_id": "ejlny08k4pqobea1lmjlvj"
+  },
+  "vampire_courtier": {
+    "name": "Vampire Courtier",
+    "cost": "135",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Awaken",
+        "id": "awaken",
+        "params": [
+          "Zombies"
+        ]
+      },
+      {
+        "name": "Autonomous",
+        "id": "autonomous"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "6",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "offensename": "Vampire Courtier",
+    "offense": {
+      "At": "4",
+      "Of": "6",
+      "St": "5",
+      "AP": "2",
+      "Ag": "6"
+    },
+    "offenserules": [
+      {
+        "name": "Vampiric",
+        "id": "vampiric",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "paths": "Evocation=evocation,Occultism=occultism",
+    "pathsnote": "",
+    "unit_id": "vampire_courtier",
+    "option_id": "x7s9zmmgcose8uyy8pxzn"
+  },
+  "vampire_knights": {
+    "name": "Vampire Knights",
+    "cost": "250",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "7",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Autonomous",
+        "id": "autonomous"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      }
+    ],
+    "defense": {
+      "HP": "2",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Knight",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "5"
+    },
+    "offenseweapons": [
+      {
+        "name": "Lance",
+        "id": "lance"
+      }
+    ],
+    "offenserules": [
+      {
+        "name": "Vampiric",
+        "id": "vampiric",
+        "params": [
+          "6+"
+        ]
+      },
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Att"
+        ]
+      }
+    ],
+    "offensenameB": "Undead Mount",
+    "offenseB": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      }
+    ],
+    "unit_id": "vampire_knights",
+    "option_id": "knslua1e57txal8go5n7"
+  },
+  "vampire_spawn": {
+    "name": "Vampire Spawn",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "cost": "240",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8",
+      "Adfly": "9",
+      "Mafly": "18",
+      "Rsr": "D3"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "9\"",
+          "18\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Autonomous",
+        "id": "autonomous"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Frenzy",
+        "id": "frenzy"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "offensename": "Vampire Spawn",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Vampiric",
+        "id": "vampiric",
+        "params": [
+          "6+"
+        ]
+      },
+      {
+        "name": "Battle Focus",
+        "id": "battle_focus"
+      }
+    ],
+    "unit_id": "vampire_spawn",
+    "option_id": "xwwvqu0my6rmf2x2taxbq"
+  },
+  "varkolak": {
+    "name": "Varkolak",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "50\u00d750",
+    "cost": "325",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "7",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Autonomous",
+        "id": "autonomous"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "offensename": "Varkolak",
+    "offense": {
+      "At": "5",
+      "Of": "5",
+      "St": "6",
+      "AP": "3",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Hatred",
+        "id": "hatred"
+      },
+      {
+        "name": "Vampiric",
+        "id": "vampiric",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "unit_id": "varkolak",
+    "option_id": "h8keycvcdpwwgfn954al"
+  },
+  "winged_reapers": {
+    "name": "Winged Reapers",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "50\u00d775",
+    "cost": "260",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "10",
+      "Adfly": "6",
+      "Mafly": "12",
+      "Rsr": "D3"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "6\"",
+          "12\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Necromantic Aura",
+        "id": "necromantic_aura"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "2"
+    },
+    "offensename": "Winged Reaper",
+    "offense": {
+      "At": "4",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      }
+    ],
+    "unit_id": "winged_reapers",
+    "option_id": "6jw20mpmfk56szsdynfx6u"
+  },
+  "wraiths": {
+    "name": "Wraiths",
+    "cost": "175",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "5",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Ashes to Ashes",
+        "id": "ashes_to_ashes"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Ghostly Form",
+        "id": "ghostly_form"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Terror",
+        "id": "terror"
+      },
+      {
+        "name": "Wizard Conclave",
+        "id": "wizard_conclave"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      },
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "3+",
+          "against non-Magical Attacks"
+        ]
+      }
+    ],
+    "offensename": "Wraith",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "3",
+      "AP": "10",
+      "Ag": "2"
+    },
+    "offenseweapons": [
+      {
+        "name": "Great Weapon",
+        "id": "great_weapon"
+      }
+    ],
+    "offenserules": [
+      {
+        "name": "Reaper",
+        "id": "reaper"
+      }
+    ],
+    "wizardconclave": "<span class=\"textbf\">Must</span> select 2 spells from:\n\t",
+    "unit_id": "wraiths",
+    "option_id": "hve1z8cukyk31a9dryuz9"
+  },
+  "zombie_dragon_mount": {
+    "name": "Zombie Dragon",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "maxmountsperarmy": "1",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C",
+      "Adfly": "7",
+      "Mafly": "14"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "7\"",
+          "14\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Meeting of Minds",
+        "id": "meeting_of_minds"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "4",
+      "Re": "6",
+      "Arm": "3"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "6+"
+        ]
+      },
+      {
+        "name": "Distracting",
+        "id": "distracting"
+      }
+    ],
+    "offensename": "Zombie Dragon",
+    "offense": {
+      "At": "5",
+      "Of": "4",
+      "St": "6",
+      "AP": "3",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Breath Attack",
+        "id": "breath_attack",
+        "params": [
+          "Toxic Attacks"
+        ]
+      }
+    ],
+    "unit_id": "zombie_dragon_mount",
+    "option_id": "6ar1bjfey0k1dq0x3x941b"
+  },
+  "zombies": {
+    "name": "Zombies",
+    "cost": "120",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "2",
+      "Rsr": "2D6+4"
+    },
+    "globalrules": [
+      {
+        "name": "Undead",
+        "id": "undead"
+      },
+      {
+        "name": "Ashes to Ashes",
+        "id": "ashes_to_ashes"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "1",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Zombie",
+    "offense": {
+      "At": "1",
+      "Of": "1",
+      "St": "3",
+      "AP": "0",
+      "Ag": "1"
+    },
+    "unit_id": "zombies",
+    "option_id": "oozgiaxl0kdoej0r6wq3q"
+  },
+  "corpse_giant": {
+    "name": "Corpse Giant",
+    "cost": "280",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "7",
+      "Rsr": "1"
+    },
+    "globalrules": [
+      {
+        "id": "vc-giant_see_giant_do",
+        "name": "Giant See, Giant Do",
+        "params": []
+      },
+      null
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "defenserules": [],
+    "offensename": "Corpse Giant",
+    "offense": {
+      "Ag": "3",
+      "At": "5",
+      "Of": "3",
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Rage",
+        "id": "rage"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "corpse_giant",
+    "option_id": "r7m3ty7qz5phxadqxmqic"
+  }
+}

@@ -1,0 +1,2362 @@
+{
+  "blazing_glory": {
+    "name": "Blazing Glory",
+    "cost": "320",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "50\u00d750",
+    "unit_id": "blazing_glory",
+    "option_id": "4b6n0sknb9t6b63q3ysezc",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      },
+      {
+        "name": "Falling Star",
+        "id": "falling_star"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "",
+      "Re": "5",
+      "Arm": "0",
+      "Aeg": "5+"
+    },
+    "printAeg": "defined",
+    "offensename": "Blazing Glory",
+    "offense": {
+      "At": "5",
+      "Of": "",
+      "St": "5",
+      "AP": "5",
+      "Ag": "5"
+    },
+    "explicitoptions": "Fly (8\", 16\") [Av]=55,\r\n\t\t\u00a7prename=chaos,hypertag=brimstonesecretions,name=Brimstone Secretions,cost=10\u00a7,\r\n\t\t\t\u00a7prename=pride,hypertag=hornsofhubris,name=Horns of Hubris,cost=15\u00a7,\r\n\t\t\t\u00a7prename=pride,hypertag=stiffupperlip,name=Stiff Upper Lip,cost=20\u00a7,\t\t\t\r\n\t\t\t\u00a7prename=chaos,hypertag=,name=,cost=\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=bronzebackbone,name=Bronze Backbone,cost=30\u00a7,\r\n\t\t\r\n\t"
+  },
+  "bloat_flies": {
+    "name": "Bloat Flies",
+    "cost": "320",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "50\u00d775",
+    "unit_id": "bloat_flies",
+    "option_id": "yurg18sxxmrpq7oc271uz",
+    "global": {
+      "Ad": "2",
+      "Ma": "4",
+      "Adfly": "6",
+      "Mafly": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "6\"",
+          "14\""
+        ]
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Tall",
+        "id": "tall"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "2",
+      "Re": "4",
+      "Arm": "0",
+      "Aeg": ""
+    },
+    "printAeg": "defined",
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+",
+          "against Magical Attacks"
+        ]
+      },
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Bloat Fly",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "6",
+      "AP": "3",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Acid Blood",
+        "id": "acid_blood"
+      }
+    ],
+    "explicitoptions": "\u00a7prename=gluttony,hypertag=broodmother,name=Broodmother,cost=8/model\u00a7,\r\n\t\t\t\u00a7prename=gluttony,hypertag=digestivevomit,name=Digestive Vomit,cost=7/model\u00a7,\r\n\t\t\t\u00a7prename=gluttony,hypertag=unhingingjaw,name=Unhinging Jaw,cost=12/model\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=,name=,cost=\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=kaleidoscopicflesh,name=Kaleidoscopic Flesh,cost=6/model\u00a7,\r\n\t\t\r\n\t"
+  },
+  "brazen_beasts": {
+    "name": "Brazen Beasts",
+    "cost": "350",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d775",
+    "unit_id": "brazen_beasts",
+    "option_id": "9cxwn49ul7j3tm05p9fo7x",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "0",
+      "Aeg": "5+"
+    },
+    "printAeg": "defined",
+    "offensename": "Daredevil",
+    "offense": {
+      "At": "1",
+      "Of": "5",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+2 Att",
+          "+2 Str",
+          "+2 AP"
+        ]
+      },
+      {
+        "name": "Battle Focus",
+        "id": "battle_focus"
+      }
+    ],
+    "offensenameB": "Beast",
+    "offenseB": {
+      "At": "2",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "2"
+        ]
+      },
+      {
+        "name": "Battle Focus",
+        "id": "battle_focus"
+      }
+    ],
+    "explicitoptions": "\u00a7prename=wrath,hypertag=incendiaryichor,name=Incendiary Ichor,cost=1/model\u00a7,\r\n\t\t\t\u00a7prename=wrath,hypertag=redhaze,name=Red Haze,cost=21/model\u00a7,\r\n\t\t\t\u00a7prename=wrath,hypertag=whipcracktail,name=Whipcrack Tail,cost=12/model\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=centipedelegs,name=Centipede Legs,cost=5/model\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=chitinousscales,name=Chitinous Scales,cost=5/model\u00a7,\r\n\t\t\r\n\t"
+  },
+  "clawed_fiends": {
+    "name": "Clawed Fiends",
+    "cost": "255",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "unit_id": "clawed_fiends",
+    "option_id": "5fbrfgkuz2txwpyurk8n4",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0",
+      "Aeg": "5+"
+    },
+    "printAeg": "defined",
+    "offensename": "Clawed Fiend",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "4",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Smother",
+        "id": "smother"
+      }
+    ],
+    "explicitoptions": "\u00a7prename=gluttony,hypertag=broodmother,name=Broodmother,cost=8/model\u00a7,\r\n\t\t\t\u00a7prename=gluttony,hypertag=unhingingjaw,name=Unhinging Jaw,cost=15/model\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=darkhide,name=Dark Hide,cost=4/model\u00a7,\r\n\t\t\t\u00a7prename=envy,hypertag=piercingspike,name=Piercing Spike,cost=13/model\u00a7,\r\n\t\t\t\u00a7prename=lust,hypertag=mesmerisingplumage,name=Mesmerising Plumage,cost=8/model\u00a7,\r\n\t\t\r\n\t"
+  },
+  "courtesan_of_cibaresh": {
+    "name": "Courtesan of Cibaresh",
+    "cost": "540",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "paths": "Divination=divination,Witchcraft=witchcraft",
+    "unit_id": "courtesan_of_cibaresh",
+    "option_id": "puassdcq5ug9v6719pvonr",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Wizard Apprentice",
+        "id": "wizard_apprentice"
+      },
+      {
+        "name": "Avert your Gaze",
+        "id": "avert_your_gaze"
+      },
+      {
+        "name": "Strider",
+        "id": "strider"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "7",
+      "Re": "5",
+      "Arm": "0",
+      "Aeg": "5+"
+    },
+    "printAeg": "defined",
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "Distracting",
+        "id": "distracting"
+      }
+    ],
+    "offensename": "Courtesan of Cibaresh",
+    "offense": {
+      "At": "6",
+      "Of": "7",
+      "St": "5",
+      "AP": "4",
+      "Ag": "7"
+    },
+    "offenserules": [
+      {
+        "name": "Razor Tentacles",
+        "id": "razor_tentacles"
+      }
+    ]
+  },
+  "eidolons": {
+    "name": "Eidolons",
+    "cost": "170",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "wizardconclave": "<span class=\"textbf\">Must</span> select 2 spells from:\r\n\t",
+    "unit_id": "eidolons",
+    "option_id": "8gskutocx0l2alu05p8huo",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      },
+      {
+        "name": "Wizard Conclave",
+        "id": "wizard_conclave"
+      },
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "4",
+      "Arm": "0",
+      "Aeg": "5+"
+    },
+    "printAeg": "defined",
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Eidolon",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "2",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenseweapons": [
+      {
+        "name": "Dark Fire",
+        "id": "dark_fire",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "explicitoptions": "Scout (0--1 Units/Army)=5/model,\r\n\t\t\u00a7prename=wrath,hypertag=incendiaryichor,name=Incendiary Ichor,cost=1/model\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=kaleidoscopicflesh,name=Kaleidoscopic Flesh,cost=5/model\u00a7,\r\n\t\t\t\u00a7prename=sloth,hypertag=auraofdespair,name=Aura of Despair,cost=3/model\u00a7,\r\n\t\t\t\u00a7prename=sloth,hypertag=sorcerousantennae,name=Sorcerous Antennae,cost=25\u00a7,\r\n\t\t\r\n\t"
+  },
+  "furies": {
+    "name": "Furies",
+    "cost": "170",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "unit_id": "furies",
+    "option_id": "2yit1ja6eplte6385t18ep",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Adfly": "10",
+      "Mafly": "20",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "10\"",
+          "20\""
+        ]
+      },
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0",
+      "Aeg": "6+"
+    },
+    "printAeg": "defined",
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Fury",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Str"
+        ]
+      }
+    ],
+    "explicitoptions": "\u00a7prename=envy,hypertag=venomsacs,name=Venom Sacs,cost=1/model\u00a7,\r\n\t\t\t\u00a7prename=wrath,hypertag=redhaze,name=Red Haze,cost=1/model\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=darkhide,name=Dark Hide,cost=1/model\u00a7,\r\n\t\t\t\u00a7prename=lust,hypertag=mesmerisingplumage,name=Mesmerising Plumage,cost=4/model\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=kaleidoscopicflesh,name=Kaleidoscopic Flesh,cost=2/model\u00a7,\r\n\t\t\r\n\t"
+  },
+  "harbinger_of_envy": {
+    "name": "Harbinger of Envy",
+    "cost": "160",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "paths": "Witchcraft=witchcraft,Thaumaturgy=thaumaturgy,Evocation=evocation,Divination=divination",
+    "toggles": "onecolprintmodelrulesdeftwocolprintmodelrulesdef",
+    "unit_id": "harbinger_of_envy",
+    "option_id": "vo4wr0t1osshmgk4vk6i9i",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0",
+      "Aeg": "4+"
+    },
+    "printAeg": "defined",
+    "offensename": "Harbinger",
+    "offense": {
+      "At": "3",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "5"
+    }
+  },
+  "harbinger_of_gluttony": {
+    "name": "Harbinger of Gluttony",
+    "cost": "160",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "paths": "Witchcraft=witchcraft,Thaumaturgy=thaumaturgy,Evocation=evocation,Divination=divination",
+    "toggles": "onecolprintmodelrulesdeftwocolprintmodelrulesdef",
+    "unit_id": "harbinger_of_gluttony",
+    "option_id": "1g16sds2kjj1m8uu45v7x1",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0",
+      "Aeg": "4+"
+    },
+    "printAeg": "defined",
+    "offensename": "Harbinger",
+    "offense": {
+      "At": "3",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "5"
+    }
+  },
+  "harbinger_of_greed": {
+    "name": "Harbinger of Greed",
+    "cost": "160",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "paths": "Witchcraft=witchcraft,Thaumaturgy=thaumaturgy,Evocation=evocation,Divination=divination",
+    "toggles": "onecolprintmodelrulesdeftwocolprintmodelrulesdef",
+    "unit_id": "harbinger_of_greed",
+    "option_id": "o1kla3t5vcidw08lu0axoj",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0",
+      "Aeg": "4+"
+    },
+    "printAeg": "defined",
+    "offensename": "Harbinger",
+    "offense": {
+      "At": "3",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "5"
+    }
+  },
+  "harbinger_of_lust": {
+    "name": "Harbinger of Lust",
+    "cost": "160",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "paths": "Witchcraft=witchcraft,Thaumaturgy=thaumaturgy,Evocation=evocation,Divination=divination",
+    "toggles": "onecolprintmodelrulesdeftwocolprintmodelrulesdef",
+    "unit_id": "harbinger_of_lust",
+    "option_id": "23r96zrl96948cg4nfdy4s",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0",
+      "Aeg": "4+"
+    },
+    "printAeg": "defined",
+    "offensename": "Harbinger",
+    "offense": {
+      "At": "3",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "5"
+    }
+  },
+  "harbinger_of_pride": {
+    "name": "Harbinger of Pride",
+    "cost": "160",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "paths": "Witchcraft=witchcraft,Thaumaturgy=thaumaturgy,Evocation=evocation,Divination=divination",
+    "toggles": "onecolprintmodelrulesdeftwocolprintmodelrulesdef",
+    "unit_id": "harbinger_of_pride",
+    "option_id": "viuwq89vpj8slzteexdno",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0",
+      "Aeg": "4+"
+    },
+    "printAeg": "defined",
+    "offensename": "Harbinger",
+    "offense": {
+      "At": "3",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "5"
+    }
+  },
+  "harbinger_of_sloth": {
+    "name": "Harbinger of Sloth",
+    "cost": "160",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "paths": "Witchcraft=witchcraft,Thaumaturgy=thaumaturgy,Evocation=evocation,Divination=divination",
+    "toggles": "onecolprintmodelrulesdeftwocolprintmodelrulesdef",
+    "unit_id": "harbinger_of_sloth",
+    "option_id": "wjy6l8c4usi240hn7n4644",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0",
+      "Aeg": "4+"
+    },
+    "printAeg": "defined",
+    "offensename": "Harbinger",
+    "offense": {
+      "At": "3",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "5"
+    }
+  },
+  "harbinger_of_wrath": {
+    "name": "Harbinger of Wrath",
+    "cost": "160",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "paths": "Witchcraft=witchcraft,Thaumaturgy=thaumaturgy,Evocation=evocation,Divination=divination",
+    "toggles": "onecolprintmodelrulesdeftwocolprintmodelrulesdef",
+    "unit_id": "harbinger_of_wrath",
+    "option_id": "nfrfmjy2m4t3l227cwa7vw",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0",
+      "Aeg": "4+"
+    },
+    "printAeg": "defined",
+    "offensename": "Harbinger",
+    "offense": {
+      "At": "3",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "5"
+    }
+  },
+  "hellhounds": {
+    "name": "Hellhounds",
+    "cost": "170",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "unit_id": "hellhounds",
+    "option_id": "h4dyq4rtal1je7xbvjqjj",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "0",
+      "Aeg": "5+"
+    },
+    "printAeg": "defined",
+    "offensename": "Hellhound",
+    "offense": {
+      "At": "3",
+      "Of": "5",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      },
+      {
+        "name": "Extra Support",
+        "id": "extra_support",
+        "params": [
+          "2"
+        ]
+      }
+    ],
+    "explicitoptions": "\u00a7prename=lust,hypertag=hotblood,name=Hot Blood,cost=1/model\u00a7,\r\n\t\t\t\u00a7prename=wrath,hypertag=incendiaryichor,name=Incendiary Ichor,cost=1/model\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=centipedelegs,name=Centipede Legs,cost=1/model\u00a7,\r\n\t\t\t\u00a7prename=greed,hypertag=,name=,cost=\u00a7,\r\n\t\t\t\u00a7prename=gluttony,hypertag=digestivevomit,name=Digestive Vomit,cost=2/model\u00a7,\r\n\t\t\t\u00a7prename=pride,hypertag=hornsofhubris,name=Horns of Hubris,cost=1/model\u00a7,\r\n\t\t\r\n\t"
+  },
+  "hoarders": {
+    "name": "Hoarders",
+    "cost": "270",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "unit_id": "hoarders",
+    "option_id": "2jr4sonqu1lm1ml7ctne1e",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Strider",
+        "id": "strider"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "0",
+      "Aeg": "5+"
+    },
+    "printAeg": "defined",
+    "offensename": "Hoarder",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "4",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Tightening Grasp",
+        "id": "tightening_grasp"
+      }
+    ],
+    "explicitoptions": "\u00a7prename=greed,hypertag=,name=,cost=\u00a7,\r\n\t\t\t\u00a7prename=greed,hypertag=diviningsnout,name=Divining Snout,cost=5/model\u00a7,\r\n\t\t\t\u00a7prename=greed,hypertag=smotheringcoils,name=Smothering Coils,cost=10/model\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=mirroredscales,name=Mirrored Scales,cost=21/model\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=unnaturalroots,name=Unnatural Roots,cost=30\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=chitinousscales,name=Chitinous Scales,cost=3/model\u00a7,\r\n\t\t\t\u00a7prename=greed,hypertag=segmentedshell,name=Segmented Shell,cost=4/model\u00a7,\r\n\t\t\r\n\t"
+  },
+  "hope_harvester": {
+    "name": "Hope Harvester",
+    "cost": "285",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "unit_id": "hope_harvester",
+    "option_id": "4hilcpol8hs407oknf236o",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "War Platform",
+        "id": "war_platform"
+      },
+      {
+        "name": "Not a Leader",
+        "id": "not_a_leader"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "3",
+      "Aeg": "5+"
+    },
+    "printAeg": "defined",
+    "offensename": "Hope Harvester",
+    "offense": {
+      "At": "4",
+      "Of": "4",
+      "St": "6",
+      "AP": "3",
+      "Ag": "1"
+    },
+    "offenseweapons": [
+      {
+        "name": "Aether Battery",
+        "id": "aether_battery",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "explicitoptions": "<span class=\"textbf\">Engine of Damnation</span>=100,\r\n\t\t\u00a7prename=sloth,hypertag=auraofdespair,name=Aura of Despair,cost=15\u00a7,\r\n\t\t\t\u00a7prename=sloth,hypertag=chillingyawn,name=Chilling Yawn,cost=55\u00a7,\r\n\t\t\t\u00a7prename=sloth,hypertag=segmentedshell,name=,cost=\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=sorcerousantennae,name=,cost=\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=ironhusk,name=Iron Husk,cost=80\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=markoftheeternalchampion,name=Mark of the Eternal Champion,cost=50\u00a7,\r\n\t\t\r\n\t",
+    "toggles": "onecolprintoptionalmodelrulesdef\r\n\t\ttwocolprintoptionalmodelrulesdef\r\n\t"
+  },
+  "imps": {
+    "name": "Imps",
+    "cost": "205",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "unit_id": "imps",
+    "option_id": "zjolx1t1kuhrnjj93n017",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "3",
+      "Arm": "0",
+      "Aeg": "5+"
+    },
+    "printAeg": "defined",
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "3+",
+          "against Shooting Attacks"
+        ]
+      }
+    ],
+    "offensename": "Imp",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "2",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Energy Bolts",
+        "id": "energy_bolts",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "explicitoptions": "\u00a7prename=wrath,hypertag=incendiaryichor,name=Incendiary Ichor,cost=1/model\u00a7,\t\r\n\t\t\t\u00a7prename=sloth,hypertag=auraofdespair,name=Aura of Despair,cost=1/model\u00a7,\t\r\n\t\t\t\u00a7prename=chaos,hypertag=darkhide,name=Dark Hide,cost=3/model\u00a7,\t\t\r\n\t\t\t\u00a7prename=chaos,hypertag=,name=,cost=\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=markoftheeternalchampion,name=Mark of the Eternal Champion,postname=<br>(Champion only),cost=30\u00a7,\r\n\t\t\t\u00a7prename=sloth,hypertag=sorcerousantennae,name=Sorcerous Antennae,cost=50\u00a7,\t\r\n\t\t\r\n\t"
+  },
+  "kuulimas_deceiver": {
+    "name": "Kuulima's Deceiver",
+    "cost": "330",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "paths": "Divination=divination,Thaumaturgy=thaumaturgy,Witchcraft=witchcraft,Evocation=evocation",
+    "unit_id": "kuulimas_deceiver",
+    "option_id": "cqnz4ke1liwuii9paobm9",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Protean Magic",
+        "id": "protean_magic"
+      },
+      {
+        "name": "Wizard Apprentice",
+        "id": "wizard_apprentice"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "6",
+      "Re": "5",
+      "Arm": "0",
+      "Aeg": "4+"
+    },
+    "printAeg": "defined",
+    "offensename": "Kuulima's Deceiver",
+    "offense": {
+      "At": "1",
+      "Of": "8",
+      "St": "5",
+      "AP": "2",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Know Thyself",
+        "id": "know_thyself"
+      },
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      }
+    ]
+  },
+  "lemures_of_sloth": {
+    "name": "Lemures",
+    "cost": "235",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "unit_id": "lemures_of_sloth",
+    "option_id": "4zzr9jiy38n90uh529eg",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "0",
+      "Aeg": "5+"
+    },
+    "printAeg": "defined",
+    "defenserules": [
+      {
+        "name": "Parry",
+        "id": "parry"
+      }
+    ],
+    "offensename": "Lemure",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "explicitoptions": "\u00a7prename=sloth,hypertag=chillingyawn,name=Chilling Yawn,cost=3/model\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=unnaturalroots,name=Unnatural Roots,cost=45\u00a7,\r\n\t\t\t\u00a7prename=envy,hypertag=venomsacs,name=Venom Sacs,cost=2/model\u00a7,\r\n\t\t\t\u00a7prename=pride,hypertag=stiffupperlip,name=Stiff Upper Lip,cost=1/model\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=brimstonesecretions,name=Brimstone Secretions,cost=1/model\u00a7,\r\n\t\t\r\n\t"
+  },
+  "mageblight_gremlins": {
+    "name": "Mageblight Gremlins",
+    "cost": "175",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "40\u00d740",
+    "unit_id": "mageblight_gremlins",
+    "option_id": "7ioeno2kst70wt98mppps3",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Veil Stalker",
+        "id": "veil_stalker"
+      },
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0",
+      "Aeg": "5+"
+    },
+    "printAeg": "defined",
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Mageblight Gremlin",
+    "offense": {
+      "At": "5",
+      "Of": "3",
+      "St": "2",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Spell Craving",
+        "id": "spell_craving"
+      },
+      {
+        "name": "Extra Support",
+        "id": "extra_support",
+        "params": [
+          "3"
+        ]
+      }
+    ],
+    "explicitoptions": "\u00a7prename=envy,hypertag=greenfireeyes,name=Greenfire Eyes,cost=2/model\u00a7,\r\n\t\t\t\u00a7prename=envy,hypertag=venomsacs,name=Venom Sacs,cost=17/model\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=livingshield,name=Living Shield,cost=9/model\u00a7,\r\n\t\t\t\u00a7prename=envy,hypertag=piercingspike,name=Piercing Spike,cost=8/model\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=unnaturalroots,name=Unnatural Roots,cost=10\u00a7,\r\n\t\t\r\n\t"
+  },
+  "maw_of_akaan": {
+    "name": "Maw of Akaan",
+    "cost": "555",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "150\u00d7100",
+    "paths": "Evocation=evocation,Witchcraft=witchcraft",
+    "unit_id": "maw_of_akaan",
+    "option_id": "dldk6fh6p5o1xv9ucypn3r",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Wizard Apprentice",
+        "id": "wizard_apprentice"
+      }
+    ],
+    "defense": {
+      "HP": "9",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "0",
+      "Aeg": ""
+    },
+    "printAeg": "defined",
+    "defenserules": [
+      {
+        "name": "Devour",
+        "id": "devour"
+      },
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "5+"
+        ]
+      },
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+",
+          "against Magical Attacks"
+        ]
+      }
+    ],
+    "offensename": "Maw of Akaan",
+    "offense": {
+      "At": "6",
+      "Of": "5",
+      "St": "7",
+      "AP": "2",
+      "Ag": "3"
+    }
+  },
+  "miser_of_sugulag": {
+    "name": "Miser of Sugulag",
+    "cost": "615",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "paths": "Divination=divination,Thaumaturgy=thaumaturgy,Evocation=evocation",
+    "unit_id": "miser_of_sugulag",
+    "option_id": "1jowahatf8jpudmkqlq5eh",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Wizard Apprentice",
+        "id": "wizard_apprentice"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "7",
+      "Re": "7",
+      "Arm": "0",
+      "Aeg": "5+"
+    },
+    "printAeg": "defined",
+    "defenserules": [],
+    "defensearmour": [
+      {
+        "name": "Abyssal Armour",
+        "id": "abyssal_armour"
+      }
+    ],
+    "offensename": "Miser of Sugulag",
+    "offense": {
+      "At": "5",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    }
+  },
+  "myrmidons": {
+    "name": "Myrmidons",
+    "cost": "215",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "unit_id": "myrmidons",
+    "option_id": "9st21v0sgj9ft0lfswze5",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0",
+      "Aeg": "5+"
+    },
+    "printAeg": "defined",
+    "offensename": "Myrmidon",
+    "offense": {
+      "At": "1",
+      "Of": "5",
+      "St": "5",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Fight in Extra Rank",
+        "id": "fight_in_extra_rank"
+      },
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "Battle Focus"
+        ]
+      }
+    ],
+    "explicitoptions": "\u00a7prename=gluttony,hypertag=unhingingjaw,name=Unhinging Jaw,cost=2/model\u00a7,\r\n\t\t\t\u00a7prename=lust,hypertag=hotblood,name=Hot Blood,cost=1/model\u00a7,\r\n\t\t\t\u00a7prename=wrath,hypertag=whipcracktail,name=Whipcrack Tail,cost=3/model\u00a7,\r\n\t\t\t\u00a7prename=pride,hypertag=bronzebackbone,name=Bronze Backbone,cost=5/model\u00a7,\r\n\t\t\t\u00a7prename=envy,hypertag=piercingspike,name=Piercing Spike,cost=4/model\u00a7,\r\n\t\t\r\n\t"
+  },
+  "omen_of_savar": {
+    "name": "Omen of Savar",
+    "cost": "485",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "50\u00d750",
+    "paths": "Divination=divination,Thaumaturgy=thaumaturgy",
+    "unit_id": "omen_of_savar",
+    "option_id": "pyo9r7jm4vovoben27pod",
+    "global": {
+      "Ad": "6",
+      "Ma": "18",
+      "Di": "10"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Divine Right",
+        "id": "divine_right"
+      },
+      {
+        "name": "Wizard Apprentice",
+        "id": "wizard_apprentice"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "7",
+      "Re": "5",
+      "Arm": "0",
+      "Aeg": "6+"
+    },
+    "printAeg": "defined",
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "4+",
+          "against Magical Attacks"
+        ]
+      }
+    ],
+    "offensename": "Omen of Savar",
+    "offense": {
+      "At": "D6+2",
+      "Of": "D6+5",
+      "St": "6",
+      "AP": "3",
+      "Ag": "6"
+    }
+  },
+  "sentinel_of_nukuja": {
+    "name": "Sentinel of Nukuja",
+    "cost": "710",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "50\u00d7100",
+    "paths": "Divination=divination,Thaumaturgy=thaumaturgy,Evocation=evocation,Witchcraft=witchcraft",
+    "unit_id": "sentinel_of_nukuja",
+    "option_id": "dpf2eq169i8tzyuqdfqo4",
+    "global": {
+      "Ad": "2",
+      "Ma": "4",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Wizard Master",
+        "id": "wizard_master"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Omniscience",
+        "id": "omniscience"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "0",
+      "Aeg": "4+"
+    },
+    "printAeg": "defined",
+    "offensename": "Sentinel of Nukuja",
+    "offense": {
+      "At": "1",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Crush Attack",
+        "id": "crush_attack"
+      }
+    ]
+  },
+  "sirens": {
+    "name": "Sirens",
+    "cost": "205",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "unit_id": "sirens",
+    "option_id": "xayzkp1sh386vvjxs5xbld",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Strider",
+        "id": "strider"
+      },
+      {
+        "name": "Elusive",
+        "id": "elusive"
+      },
+      {
+        "name": "Feigned Flight",
+        "id": "feigned_flight"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "3",
+      "Arm": "0",
+      "Aeg": "5+"
+    },
+    "printAeg": "defined",
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Siren",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offensenameB": "Symbiotic Steed",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "explicitoptions": "\u00a7prename=lust,hypertag=mesmerisingplumage,name=Mesmerising Plumage,cost=5/model\u00a7,\r\n\t\t\t\u00a7prename=lust,hypertag=roaminghands,name=Roaming Hands,cost=5/model\u00a7,\r\n\t\t\t\u00a7prename=lust,hypertag=hotblood,name=Hot Blood,cost=1/model\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=centipedelegs,name=Centipede Legs,cost=2/model\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=hammerhand,name=Hammer Hand,cost=8/model\u00a7,\r\n\t\t\r\n\t"
+  },
+  "succubi": {
+    "name": "Succubi",
+    "cost": "225",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "unit_id": "succubi",
+    "option_id": "ei52sfjbtxugbccbtgv5ij",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0",
+      "Aeg": "5+"
+    },
+    "printAeg": "defined",
+    "offensename": "Succubus",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "3",
+      "AP": "1",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Smother",
+        "id": "smother"
+      }
+    ],
+    "explicitoptions": "\u00a7prename=chaos,hypertag=darkhide,name=Dark Hide,cost=1/model\u00a7,\r\n\t\t\t\u00a7prename=lust,hypertag=mesmerisingplumage,name=Mesmerising Plumage,cost=2/model\u00a7,\r\n\t\t\t\u00a7prename=greed,hypertag=smotheringcoils,name=,cost=\u00a7,\r\n\t\t\t\u00a7prename=greed,hypertag=diviningsnout,name=Divining Snout,cost=1/model\u00a7,\r\n\t\t\t\u00a7prename=sloth,hypertag=chillingyawn,name=Chilling Yawn,cost=4/model\u00a7,\r\n\t\t\t\u00a7prename=pride,hypertag=bronzebackbone,name=Bronze Backbone,cost=5/model\u00a7,\r\n\t\t\r\n\t",
+    "toggles": "onecolprintmodelrulesdef\r\n\t\ttwocolprintmodelrulesdef\r\n\t"
+  },
+  "threshing_engine": {
+    "name": "Threshing Engine",
+    "cost": "155",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "unit_id": "threshing_engine",
+    "option_id": "50vasnnbvuoj7s2po0ams",
+    "global": {
+      "Ad": "10",
+      "Ma": "10",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0",
+      "Aeg": "5+"
+    },
+    "printAeg": "defined",
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Tiller (2)",
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "3",
+      "AP": "3",
+      "Ag": "3"
+    },
+    "offensenameB": "Draft Beast (2)",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "4",
+      "AP": "3"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "2D3"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "explicitoptions": "Fly (9\", 9\")  [Av]<br>(0--2 Units/Army)=20,\r\n\t\t\t<span class=\"textbf\">Horde Thresher</span> (0--3 Units/Army)=110,\r\n\t\t\t<span class=\"textbf\">Legion Thresher</span> (0--2 Units/Army)=180,\r\n\t\t\r\n\t\t\u00a7prename=greed,hypertag=diviningsnout,name=Divining Snout,cost=25\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=markoftheeternalchampion,name=Mark of the Eternal Champion,cost=40\u00a7,\r\n\t\t\t\u00a7prename=pride,hypertag=hornsofhubris,name=Horns of Hubris,cost=15\u00a7,\r\n\t\t\t\u00a7prename=lust,hypertag=roaminghands,name=Roaming Hands,cost=45\u00a7,\r\n\t\t\t\u00a7prename=wrath,hypertag=whipcracktail,name=Whipcrack Tail,cost=25\u00a7,\r\n\t\t\r\n\t"
+  },
+  "titanslayer_chariot": {
+    "name": "Titanslayer Chariot",
+    "cost": "205",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "unit_id": "titanslayer_chariot",
+    "option_id": "84e00xix2jq29mu7oyvhcq",
+    "global": {
+      "Ad": "8",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Mountain Breaker",
+        "id": "mountain_breaker"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "0",
+      "Aeg": "5+"
+    },
+    "printAeg": "defined",
+    "offensename": "Myrmidon (2)",
+    "offense": {
+      "At": "1",
+      "Of": "5",
+      "St": "5",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "Battle Focus"
+        ]
+      }
+    ],
+    "offensenameB": "Chthonic Machinator",
+    "offenseB": {
+      "At": "3",
+      "Of": "3",
+      "St": "6",
+      "AP": "3",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "7",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D3+1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "explicitoptions": "\u00a7prename=greed,hypertag=diviningsnout,name=,cost=\u00a7,\r\n\t\t\t\u00a7prename=gluttony,hypertag=digestivevomit,name=Digestive Vomit,cost=10\u00a7,\r\n\t\t\t\u00a7prename=pride,hypertag=stiffupperlip,name=Stiff Upper Lip,cost=5\u00a7,\r\n\t\t\t\u00a7prename=greed,hypertag=segmentedshell,name=Segmented Shell,cost=5\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=centipedelegs,name=Centipede Legs,cost=15\u00a7,\r\n\t\t\t\u00a7prename=chaos,hypertag=hammerhand,name=Hammer Hand,cost=25\u00a7,\r\n\t\t\r\n\t"
+  },
+  "vanadras_scourge": {
+    "name": "Vanadra's Scourge",
+    "cost": "760",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "paths": "Thaumaturgy=thaumaturgy,Evocation=evocation",
+    "unit_id": "vanadras_scourge",
+    "option_id": "j6hcpgqh94f3rw6ezes33u",
+    "secondlogo": "bird",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Adfly": "7",
+      "Mafly": "14",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "7\"",
+          "14\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "4",
+      "Re": "6",
+      "Arm": "0",
+      "Aeg": "5+"
+    },
+    "printAeg": "defined",
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "4+",
+          "against Melee Attacks"
+        ]
+      }
+    ],
+    "offensename": "Vanadra's Scourge",
+    "offense": {
+      "At": "5",
+      "Of": "7",
+      "St": "7",
+      "AP": "4",
+      "Ag": "0"
+    },
+    "offenserules": [
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "Distracting"
+        ]
+      },
+      {
+        "name": "Battle Focus",
+        "id": "battle_focus"
+      },
+      {
+        "name": "Rage",
+        "id": "rage"
+      }
+    ]
+  },
+  "veil_serpents": {
+    "name": "Veil Serpents",
+    "cost": "240",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "wizardconclave": "<span class=\"textbf\">Must</span> select 2 spells from:\r\n\t",
+    "unit_id": "veil_serpents",
+    "option_id": "zvn8rchn3cm6ocm5w1vgrd",
+    "global": {
+      "Ad": "2",
+      "Ma": "4",
+      "Adfly": "9",
+      "Mafly": "12",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "9\"",
+          "12\""
+        ]
+      },
+      {
+        "name": "Wizard Conclave",
+        "id": "wizard_conclave"
+      },
+      {
+        "name": "Morphlings",
+        "id": "morphlings"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0",
+      "Aeg": "5+"
+    },
+    "printAeg": "defined",
+    "offensename": "Veil Serpent",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "4",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef"
+  },
+  "legion_unit": {
+    "name": "Legion",
+    "cost": "0",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "100\u00d7100",
+    "global": {
+      "Ad": "0",
+      "Ma": "0",
+      "Di": "0"
+    },
+    "globalrules": [
+      {
+        "name": "Descent into Sin",
+        "id": "descent_into_sin"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "0",
+      "Re": "0",
+      "Arm": "0"
+    },
+    "offensename": "Legion",
+    "offense": {
+      "Ag": "0",
+      "At": "0",
+      "Of": "0",
+      "St": "0",
+      "AP": "0"
+    },
+    "offenserules": [],
+    "unit_id": "legion_unit",
+    "option_id": "ZnUngjvJQ9fdnQ8josbj"
+  },
+  "burning_wheel_mount": {
+    "name": "Burning Wheel",
+    "secondlogo": "bird",
+    "maxmountsperarmy": "3",
+    "type": "Construct",
+    "size": "Standard",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "2",
+      "Ma": "4",
+      "Adfly": "10",
+      "Mafly": "10",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "10\"",
+          "10\""
+        ]
+      },
+      {
+        "name": "Tall",
+        "id": "tall"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "1",
+      "Aeg": "C"
+    },
+    "printAeg": "defined",
+    "defenserules": [
+      {
+        "name": "Cannot be Stomped",
+        "id": "cannot_be_stomped"
+      },
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Burning Wheel",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "4",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "burning_wheel_mount",
+    "option_id": "bvz6xekykennyfexzujnh"
+  },
+  "dark_pulpit_mount": {
+    "name": "Dark Pulpit",
+    "type": "Beast",
+    "maxmountsperarmy": "2",
+    "size": "Standard",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Tall",
+        "id": "tall"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "1",
+      "Aeg": "C"
+    },
+    "printAeg": "defined",
+    "defenserules": [
+      {
+        "name": "Cannot be Stomped",
+        "id": "cannot_be_stomped"
+      }
+    ],
+    "offensename": "Dark Pulpit",
+    "offense": {
+      "At": "4",
+      "Of": "4",
+      "St": "5",
+      "AP": "0",
+      "Ag": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "dark_pulpit_mount",
+    "option_id": "osn72y1a3sdb74n4sqxfgn"
+  },
+  "great_beast_of_prophecy_mount": {
+    "name": "Great Beast of Prophecy",
+    "maxmountsperarmy": "3",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "5",
+      "Arm": "2",
+      "Aeg": "C"
+    },
+    "printAeg": "defined",
+    "offensename": "Great Beast",
+    "offense": {
+      "At": "3",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "great_beast_of_prophecy_mount",
+    "option_id": "1o4vuajhnga4388byzaarg"
+  },
+  "pale_horse_mount": {
+    "name": "Pale Horse",
+    "maxmountsperarmy": "3",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Strider",
+        "id": "strider"
+      },
+      {
+        "name": "Elusive",
+        "id": "elusive"
+      },
+      {
+        "name": "Feigned Flight",
+        "id": "feigned_flight"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C",
+      "Aeg": "C"
+    },
+    "printAeg": "defined",
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Pale Horse",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "pale_horse_mount",
+    "option_id": "76r46krllzaha2sxnwh2j8"
+  },
+  "throne_of_overwhelming_splendour_mount": {
+    "name": "Throne of Overwhelming Splendour",
+    "type": "Construct",
+    "size": "Large",
+    "maxmountsperarmy": "1",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "9",
+      "Ma": "9",
+      "Adfly": "9",
+      "Mafly": "9",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "9\"",
+          "9\""
+        ]
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      },
+      {
+        "name": "Rising Star",
+        "id": "rising_star"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C",
+      "Aeg": "4+"
+    },
+    "printAeg": "defined",
+    "offensename": "Writhing Majesties",
+    "offense": {
+      "At": "4",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "throne_of_overwhelming_splendour_mount",
+    "option_id": "rrtvvqt2qy9oi3a2e5y2"
+  }
+}
