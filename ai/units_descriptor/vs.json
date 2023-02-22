@@ -1,0 +1,1741 @@
+{
+  "arena_beast": {
+    "name": "Arena Beast",
+    "cost": "295",
+    "addrestriction": "0--3 Units/Army*",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Callous",
+        "id": "callous"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "2"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Arena Beast",
+    "offense": {
+      "At": "2D3+1",
+      "Of": "3",
+      "St": "7",
+      "AP": "3",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameB": "Pitmaster",
+    "offenseB": {
+      "At": "2",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenseweaponsB": [
+      {
+        "name": "Halberd",
+        "id": "halberd"
+      }
+    ],
+    "unit_id": "arena_beast",
+    "option_id": "40p3o104hzb5mq68ob90i7"
+  },
+  "blackfur_veterans": {
+    "name": "Blackfur Veterans",
+    "cost": "225",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Callous",
+        "id": "callous"
+      },
+      {
+        "name": "Life is Cheap",
+        "id": "life_is_cheap"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "2",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Blackfur Veteran",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Cohort Coordination",
+        "id": "cohort_coordination"
+      },
+      {
+        "name": "Fight in Extra Rank",
+        "id": "fight_in_extra_rank"
+      },
+      {
+        "name": "Phalanx",
+        "id": "phalanx"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Halberd",
+        "id": "halberd"
+      }
+    ],
+    "unit_id": "blackfur_veterans",
+    "option_id": "tqfuo9glymbu3ysmohczom"
+  },
+  "bloodfur_legate": {
+    "name": "Bloodfur Legate",
+    "cost": "115",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Callous",
+        "id": "callous"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Bloodfur Legate",
+    "offense": {
+      "At": "4",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "6"
+    },
+    "offenserules": [],
+    "unit_id": "bloodfur_legate",
+    "option_id": "nzqms2my62njfo1qb7c2k"
+  },
+  "doomspark_device": {
+    "name": "Doomspark Device",
+    "cost": "250",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "6",
+      "Ma": "10",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Callous",
+        "id": "callous"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "2",
+      "Re": "5",
+      "Arm": "3"
+    },
+    "offensename": "Rakachit Engineer (3)",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [],
+    "offensenameB": "Chassis",
+    "offenseB": {
+      "At": "",
+      "Of": "",
+      "St": "",
+      "AP": "",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Chain Lightning",
+        "id": "chain_lightning"
+      },
+      {
+        "name": "Grind Attacks",
+        "id": "grind_attacks",
+        "params": [
+          "D6+1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "offenseweaponsB": [
+      {
+        "name": "Darkstone Generator",
+        "id": "darkstone_generator"
+      }
+    ],
+    "unit_id": "doomspark_device",
+    "option_id": "gf19l3tdamll84augmbpu"
+  },
+  "dreadmill_chariots": {
+    "name": "Dreadmill Chariots",
+    "cost": "115",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "7",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Callous",
+        "id": "callous"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Unstable Engines",
+        "id": "unstable_engines"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "2",
+      "Re": "4",
+      "Arm": "3"
+    },
+    "defenserules": [
+      {
+        "name": "Flammable",
+        "id": "flammable"
+      }
+    ],
+    "offensename": "Dreadmill Driver",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [],
+    "offensenameB": "Chassis",
+    "offenseB": {
+      "At": "",
+      "Of": "",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Grind Attacks",
+        "id": "grind_attacks",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6+1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "dreadmill_chariots",
+    "option_id": "12vbs5prfix308n7fvhnbh"
+  },
+  "duskblade_assassin": {
+    "name": "Duskblade Assassin",
+    "cost": "125",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Callous",
+        "id": "callous"
+      },
+      {
+        "name": "Not a Leader",
+        "id": "not_a_leader"
+      },
+      {
+        "name": "Hidden",
+        "id": "hidden"
+      },
+      {
+        "name": "Sic Semper Tyrannis",
+        "id": "sic_semper_tyrannis"
+      },
+      {
+        "name": "Disdain for Plebs",
+        "id": "disdain_for_plebs"
+      }
+    ],
+    "defense": {
+      "HP": "2",
+      "Df": "5",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Distracting",
+        "id": "distracting"
+      }
+    ],
+    "offensename": "Duskblade Assassin",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "3",
+      "Ag": "8"
+    },
+    "offenseweapons": [
+      {
+        "name": "Paired Weapons",
+        "id": "paired_weapons"
+      },
+      {
+        "name": "Throwing Weapons",
+        "id": "throwing_weapons",
+        "params": [
+          "2+"
+        ]
+      }
+    ],
+    "offenserules": [
+      {
+        "name": "Divine Attacks",
+        "id": "divine_attacks"
+      },
+      {
+        "name": "Multiple Wounds",
+        "id": "multiple_wounds",
+        "params": [
+          "2",
+          "against Character"
+        ]
+      }
+    ],
+    "unit_id": "duskblade_assassin",
+    "option_id": "nti7n7yy2x3t6fxkg2t75"
+  },
+  "experimental_weapon_teams": {
+    "name": "Experimental Weapon Teams",
+    "cost": "120",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "5",
+      "Ma": "8",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Callous",
+        "id": "callous"
+      },
+      {
+        "name": "Life is Cheap",
+        "id": "life_is_cheap"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "2",
+      "Re": "2",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Exp. Weapon Team",
+    "offense": {
+      "At": "2",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Quick to Fire",
+        "id": "quick_to_fire"
+      }
+    ],
+    "offenseweapons": [],
+    "unit_id": "experimental_weapon_teams",
+    "option_id": "blwo5tptes7e4lij7ekgw"
+  },
+  "fetthis_brutes": {
+    "name": "Fetthis Brutes",
+    "cost": "255",
+    "addrestriction": "0--24 Models/Army*",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Callous",
+        "id": "callous"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defenserules": [],
+    "offensename": "Fetthis Brute",
+    "offense": {
+      "At": "3",
+      "Of": "2",
+      "St": "4",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Fight in Extra Rank",
+        "id": "fight_in_extra_rank"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Paired Weapons",
+        "id": "paired_weapons"
+      }
+    ],
+    "unit_id": "fetthis_brutes",
+    "option_id": "6giwfa75jfkzn323y15h2f"
+  },
+  "giant_rats": {
+    "name": "Giant Rats",
+    "cost": "90",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Callous",
+        "id": "callous"
+      },
+      {
+        "name": "Insignificant",
+        "id": "insignificant"
+      },
+      {
+        "name": "Life is Cheap",
+        "id": "life_is_cheap"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "2",
+      "Arm": "0"
+    },
+    "offensename": "Giant Rat",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "1",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Att"
+        ]
+      }
+    ],
+    "unit_id": "giant_rats",
+    "option_id": "brz2row3lcdmoripdu016"
+  },
+  "house_prefect": {
+    "name": "House Prefect",
+    "cost": "80",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Callous",
+        "id": "callous"
+      }
+    ],
+    "defense": {
+      "HP": "2",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "House Prefect",
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [],
+    "unit_id": "house_prefect",
+    "option_id": "lcp7rw8t35ls8dnarttb"
+  },
+  "ignifier_grenadiers": {
+    "name": "Ignifier Grenadiers",
+    "cost": "115",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Callous",
+        "id": "callous"
+      },
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Life is Cheap",
+        "id": "life_is_cheap"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Flammable",
+        "id": "flammable"
+      },
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Ignifier Grenadier",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenseweapons": [
+      {
+        "name": "Deepfire Grenades",
+        "id": "deepfire_grenades",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "unit_id": "ignifier_grenadiers",
+    "option_id": "sosrd2vy7kbc580xt7fhcc"
+  },
+  "legionary_drill_team": {
+    "name": "Legionary Drill Team",
+    "cost": "80",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Callous",
+        "id": "callous"
+      },
+      {
+        "name": "Life is Cheap",
+        "id": "life_is_cheap"
+      },
+      {
+        "name": "War Platform",
+        "id": "war_platform"
+      },
+      {
+        "name": "Attached",
+        "id": "attached"
+      },
+      {
+        "name": "Back to the Burrows",
+        "id": "back_to_the_burrows"
+      },
+      {
+        "name": "Not a Leader",
+        "id": "not_a_leader"
+      },
+      {
+        "name": "Exclusive",
+        "id": "exclusive",
+        "params": [
+          "Vermin Legionaries",
+          "Vermin Velites"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "2",
+      "Re": "3",
+      "Arm": "3"
+    },
+    "defensearmour": [],
+    "offensename": "Legionary Drill Team",
+    "offense": {
+      "At": "",
+      "Of": "",
+      "St": "6",
+      "AP": "3",
+      "Ag": "4"
+    },
+    "offenserules": [],
+    "offenseweapons": [
+      {
+        "name": "Grind Attacks",
+        "id": "grind_attacks",
+        "params": [
+          "3"
+        ]
+      }
+    ],
+    "unit_id": "legionary_drill_team",
+    "option_id": "destt9c7l1pnr0m4dohq8h"
+  },
+  "murmillo_brutes": {
+    "name": "Murmillo Brutes",
+    "cost": "250",
+    "addrestriction": "0--24 Models/Army*",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Callous",
+        "id": "callous"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Murmillo Brute",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Quick to Fire",
+        "id": "quick_to_fire"
+      }
+    ],
+    "offenseweapons": [],
+    "unit_id": "murmillo_brutes",
+    "option_id": "26486idw2jrpdcavfhy1jf"
+  },
+  "plague_disciples": {
+    "name": "Plague Disciples",
+    "cost": "225",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Callous",
+        "id": "callous"
+      },
+      {
+        "name": "Bodyguard",
+        "id": "bodyguard",
+        "params": [
+          "Sacred Platform"
+        ]
+      },
+      {
+        "name": "Fear no Evil",
+        "id": "fear_no_evil"
+      },
+      {
+        "name": "Life is Cheap",
+        "id": "life_is_cheap"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defenserules": [],
+    "offensename": "Plague Disciple",
+    "offense": {
+      "At": "2",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Cult of Errahman",
+        "id": "cult_of_errahman"
+      }
+    ],
+    "offenseweapons": [],
+    "unit_id": "plague_disciples",
+    "option_id": "567gcjgwur6nfsg97kix89"
+  },
+  "praetorian_brute_mount": {
+    "name": "Praetorian Brute",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "maxmountsperarmy": "3",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "C"
+    },
+    "globalrules": [],
+    "defense": {
+      "HP": "3",
+      "Df": "C",
+      "Re": "5",
+      "Arm": "C+1"
+    },
+    "defenserules": [],
+    "offensename": "Praetorian Brute",
+    "offense": {
+      "At": "4",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "praetorian_brute_mount",
+    "option_id": "432grebvrejk786herbew3253"
+  },
+  "rat_swarm": {
+    "name": "Rat Swarm",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "12",
+      "Ma": "12",
+      "Di": "4"
+    },
+    "globalrules": [
+      {
+        "name": "Insignificant",
+        "id": "insignificant"
+      },
+      {
+        "name": "Endless Tide",
+        "id": "endless_tide"
+      },
+      {
+        "name": "Callous",
+        "id": "callous"
+      },
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "0",
+      "Re": "1",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Rat Swarm",
+    "offense": {
+      "At": "",
+      "Of": "0",
+      "St": "2",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserules": [],
+    "offenseweapons": [],
+    "unit_id": "rat_swarm",
+    "option_id": "qwiqruhz2xypp96dt0pgl"
+  },
+  "ruinous_dictator": {
+    "name": "Ruinous Dictator",
+    "cost": "445",
+    "addrestriction": "One of a Kind",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "75\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Callous",
+        "id": "callous"
+      },
+      {
+        "name": "Wizard Adept",
+        "id": "wizard_adept"
+      },
+      {
+        "name": "Unlimited Power!",
+        "id": "unlimited_power"
+      },
+      {
+        "name": "Stubborn",
+        "id": "stubborn"
+      },
+      {
+        "name": "Holy Triumvirate",
+        "id": "holy_triumvirate"
+      }
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "2"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Ruinous Dictator",
+    "offense": {
+      "At": "4",
+      "Of": "4",
+      "St": "5",
+      "AP": "4",
+      "Ag": "8"
+    },
+    "offenseweapons": [
+      {
+        "name": "Halberd",
+        "id": "halberd"
+      }
+    ],
+    "paths": "Occultism=occultism",
+    "magicnoptstag": "yes",
+    "additionalframe": "|\u00a8title\u00a8: \u00a8I am the Senate\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>When friendly units within range of the model's Commanding Presence (including the model itself) lose Health Points due to Unstable, the number of lost Health Points is reduced by the unit's number of Full Ranks, to a maximum of 3.\u00a8\u00a7,\n\t\t\t|\u00a8title\u00a8: \u00a8Lord of the Legions\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model gains Great Weapon and Paired Weapons.\u00a8\u00a7,\t\t\n\t\t\t|\u00a8title\u00a8: \u00a8Pontifex Maximus\u00a8, \u00a8def\u00a8: \u00a8<i>Universal Rule</i><br><br>The model knows <i>The Awakened Swarm</i> (Hereditary Spell) in addition to its other spells. In addition, the model <span class=\"textbf\">always</span> selects its spells from all Learned Spells of its chosen Path.\u00a8\u00a7,\t\t\n\t\t",
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdefonecolprintadditionalframetwocolprintadditionalframe",
+    "unit_id": "ruinous_dictator",
+    "option_id": "ebzmoieimwcfmkhqk5k6w9"
+  },
+  "sacred_platform_mount": {
+    "name": "Sacred Platform",
+    "type": "Construct",
+    "size": "Gigantic",
+    "basesize": "60\u00d7100",
+    "maxmountsperarmy": "2",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "War Platform",
+        "id": "war_platform"
+      },
+      {
+        "name": "Channel",
+        "id": "channel",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "Attached",
+        "id": "attached"
+      }
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "1",
+      "Re": "5",
+      "Arm": "2"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Acolyte (8)",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenseweapons": [
+      {
+        "name": "Great Weapon",
+        "id": "great_weapon"
+      }
+    ],
+    "offensenameB": "Chassis",
+    "offenseB": {
+      "At": "",
+      "Of": "",
+      "St": "5",
+      "AP": "2",
+      "Ag": ""
+    },
+    "offenserulesB": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D3"
+        ]
+      },
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "sacred_platform_mount",
+    "option_id": "xxamy2s17od2753afhyosm"
+  },
+  "senatorial_litter_mount": {
+    "name": "Senatorial Litter",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "The Die is Cast",
+        "id": "the_die_is_cast"
+      },
+      {
+        "name": "Tall",
+        "id": "tall"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "4",
+      "Arm": "C"
+    },
+    "defenserules": [
+      {
+        "name": "Cannot be Stomped",
+        "id": "cannot_be_stomped"
+      }
+    ],
+    "offensename": "Blackfur Veteran (4)",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "senatorial_litter_mount",
+    "option_id": "948trebvvhf3452rejk786herbew3253"
+  },
+  "shadowfur_stalkers": {
+    "name": "Shadowfur Stalkers",
+    "cost": "130",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Callous",
+        "id": "callous"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Life is Cheap",
+        "id": "life_is_cheap"
+      },
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      },
+      {
+        "name": "Sicarran Smugglers",
+        "id": "sicarran_smugglers"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "2",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Shadowfur Stalker",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "2",
+      "Ag": "5"
+    },
+    "offenseweapons": [
+      {
+        "name": "Paired Weapons",
+        "id": "paired_weapons"
+      }
+    ],
+    "offenserules": [],
+    "unit_id": "shadowfur_stalkers",
+    "option_id": "oqg6ny4fcai4lynwymqjw7"
+  },
+  "stygian_earthbreaker": {
+    "name": "Stygian Earthbreaker",
+    "cost": "290",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "6",
+      "Ma": "6",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Callous",
+        "id": "callous"
+      },
+      {
+        "name": "Strider",
+        "id": "strider"
+      },
+      {
+        "name": "Stubborn",
+        "id": "stubborn"
+      },
+      {
+        "name": "Underground Arrival",
+        "id": "underground_arrival"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "1",
+      "Re": "5",
+      "Arm": "5"
+    },
+    "offensename": "Stygian Earthbreaker",
+    "offense": {
+      "At": "",
+      "Of": "",
+      "St": "6",
+      "AP": "4",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Grind Attacks",
+        "id": "grind_attacks",
+        "params": [
+          "3D3"
+        ]
+      },
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "2D3"
+        ]
+      },
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "Fear"
+        ]
+      }
+    ],
+    "unit_id": "stygian_earthbreaker",
+    "option_id": "k01osz9blodssribkly"
+  },
+  "swarm_priest": {
+    "name": "Swarm Priest",
+    "cost": "105",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Callous",
+        "id": "callous"
+      },
+      {
+        "name": "Wizard Apprentice",
+        "id": "wizard_apprentice"
+      }
+    ],
+    "defense": {
+      "HP": "2",
+      "Df": "2",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Swarm Priest",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [],
+    "paths": "Thaumaturgy=thaumaturgy,Occultism=occultism",
+    "unit_id": "swarm_priest",
+    "option_id": "ouvg0qi1smcu4vg6s20aj"
+  },
+  "triumphal_platform_mount": {
+    "name": "Triumphal Platform",
+    "type": "Construct",
+    "size": "Gigantic",
+    "basesize": "80\u00d780",
+    "maxmountsperarmy": "",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "C+1"
+    },
+    "globalrules": [
+      {
+        "name": "War Platform",
+        "id": "war_platform"
+      },
+      {
+        "name": "Exclusive",
+        "id": "exclusive",
+        "params": [
+          "Blackfur Veterans",
+          "Fetthis Brutes",
+          "Vermin Legionaries"
+        ]
+      },
+      {
+        "name": "Attached",
+        "id": "attached"
+      }
+    ],
+    "defense": {
+      "HP": "8",
+      "Df": "1",
+      "Re": "5",
+      "Arm": "4"
+    },
+    "defenserules": [],
+    "offensename": "Praetorian Brute (3)",
+    "offense": {
+      "At": "4",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offenseweapons": [],
+    "offensenameB": "Chassis",
+    "offenseB": {
+      "At": "",
+      "Of": "",
+      "St": "5",
+      "AP": "2",
+      "Ag": ""
+    },
+    "offenserulesB": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "triumphal_platform_mount",
+    "option_id": "zpmhpx5bqwcvhbu9w11k5n"
+  },
+  "vermin_artillery": {
+    "name": "Vermin Artillery",
+    "cost": "190",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "75",
+    "global": {
+      "Ad": "5",
+      "Ma": "5",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Callous",
+        "id": "callous"
+      },
+      {
+        "name": "War Machine",
+        "id": "war_machine"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "1",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "offensename": "Crew",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Move or Fire",
+        "id": "move_or_fire"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "vermin_artillery",
+    "option_id": "rdmgw1suo40oa0iaj4tv6"
+  },
+  "vermin_legionaries": {
+    "name": "Vermin Legionaries",
+    "cost": "175",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Callous",
+        "id": "callous"
+      },
+      {
+        "name": "Life is Cheap",
+        "id": "life_is_cheap"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "2",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Vermin Legionary",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Cohort Coordination",
+        "id": "cohort_coordination"
+      }
+    ],
+    "unit_id": "vermin_legionaries",
+    "option_id": "24ty2x90nakwyjgma29ng"
+  },
+  "vermin_senator": {
+    "name": "Vermin Senator",
+    "cost": "125",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Vox Populi",
+        "id": "vox_populi"
+      },
+      {
+        "name": "Callous",
+        "id": "callous"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Vermin Senator",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenseweapons": [
+      {
+        "name": "Pistol",
+        "id": "pistol",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "unit_id": "vermin_senator",
+    "option_id": "hkp71v03ipwx86imbstv4g"
+  },
+  "vermin_slaves": {
+    "name": "Vermin Slaves",
+    "cost": "120",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "3"
+    },
+    "globalrules": [
+      {
+        "name": "Callous",
+        "id": "callous"
+      },
+      {
+        "name": "Insignificant",
+        "id": "insignificant"
+      },
+      {
+        "name": "Life is Cheap",
+        "id": "life_is_cheap"
+      },
+      {
+        "name": "Cannon Fodder",
+        "id": "cannon_fodder"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "1",
+      "Re": "2",
+      "Arm": "0"
+    },
+    "defensearmour": [],
+    "offensename": "Vermin Slave",
+    "offense": {
+      "At": "1",
+      "Of": "1",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [],
+    "offenseweapons": [],
+    "unit_id": "vermin_slaves",
+    "option_id": "99s0ibs9n7b8bbflqhm6p9"
+  },
+  "vermin_velites": {
+    "name": "Vermin Velites",
+    "cost": "130",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Callous",
+        "id": "callous"
+      },
+      {
+        "name": "Life is Cheap",
+        "id": "life_is_cheap"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "2",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Vermin Velite",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Cohort Coordination",
+        "id": "cohort_coordination"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Paired Weapons",
+        "id": "paired_weapons"
+      }
+    ],
+    "unit_id": "vermin_velites",
+    "option_id": "wbmyfsqzval0ccxw8yflwz9"
+  },
+  "verminous_giant": {
+    "name": "Verminous Giant",
+    "cost": "260",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "id": "vs-giant_see_giant_do",
+        "name": "Giant See, Giant Do",
+        "params": []
+      },
+      null
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "defenserules": [],
+    "offensename": "Verminous Giant",
+    "offense": {
+      "Ag": "3",
+      "At": "5",
+      "Of": "3",
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Rage",
+        "id": "rage"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "verminous_giant",
+    "option_id": "4lxfpjvqz3qb3uv01kma0f"
+  }
+}

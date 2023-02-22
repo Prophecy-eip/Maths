@@ -1,0 +1,2516 @@
+{
+  "alpha_carnosaur_mount": {
+    "name": "Alpha Carnosaur",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Frenzy",
+        "id": "frenzy"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "3",
+      "Re": "6",
+      "Arm": "4"
+    },
+    "offensename": "Alpha Carnosaur",
+    "offense": {
+      "At": "5",
+      "Of": "4",
+      "St": "7",
+      "AP": "4",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Multiple Wounds",
+        "id": "multiple_wounds",
+        "params": [
+          "2"
+        ]
+      },
+      {
+        "name": "Battle Focus",
+        "id": "battle_focus"
+      },
+      {
+        "name": "Apex Predator",
+        "id": "apex_predator"
+      },
+      {
+        "name": "Predator Senses",
+        "id": "predator_senses"
+      }
+    ],
+    "unit_id": "alpha_carnosaur_mount",
+    "option_id": "8ocedsokg9g8ft3wgzpqiy"
+  },
+  "anurarch_archmage": {
+    "name": "Anurarch Archmage",
+    "cost": "500",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "2"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Wizard Master",
+        "id": "wizard_master"
+      },
+      {
+        "name": "Channel",
+        "id": "channel",
+        "params": [
+          "2"
+        ]
+      },
+      {
+        "name": "Tall",
+        "id": "tall"
+      },
+      {
+        "name": "Closely Guarded",
+        "id": "closely_guarded"
+      },
+      {
+        "name": "Grasp of the Immortal",
+        "id": "grasp_of_the_immortal"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "1",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "5+"
+        ]
+      },
+      {
+        "name": "Cannot be Stomped",
+        "id": "cannot_be_stomped"
+      }
+    ],
+    "offensename": "Anurarch",
+    "offense": {
+      "At": "1",
+      "Of": "1",
+      "St": "1",
+      "AP": "0",
+      "Ag": "1"
+    },
+    "paths": "Alchemy=alchemy,Evocation=evocation,Druidism=druidism,Divination=divination",
+    "endtext": "Eidetic Mastery=50,=50,Mind-Shifting Mastery=30,\n\t\t\t\tAbjuration Mastery=50,\n\t\t\t\tForbidden Mastery=100,\n\t\t\t",
+    "unit_id": "anurarch_archmage",
+    "option_id": "foer71w4krf0a5ehntldoz"
+  },
+  "anurarch_wardens_mount": {
+    "name": "Anurarch Wardens",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8"
+    },
+    "defense": {
+      "HP": "5",
+      "Df": "4",
+      "Re": "C",
+      "Arm": "3"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+",
+          "against Magical Attacks"
+        ]
+      }
+    ],
+    "offensename": "Wardens",
+    "offense": {
+      "At": "4",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenseweapons": [
+      {
+        "name": "Halberd",
+        "id": "halberd"
+      }
+    ],
+    "offensenameB": "Palanquin",
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "anurarch_wardens_mount",
+    "option_id": "4707cnhqugm95po0yg5v1"
+  },
+  "caiman_elders": {
+    "name": "Caiman Elders",
+    "cost": "260",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Water Terrain"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "3"
+    },
+    "offensename": "Caiman Elder",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Tooth and Claw",
+        "id": "tooth_and_claw"
+      },
+      {
+        "name": "Weapon Master",
+        "id": "weapon_master"
+      }
+    ],
+    "wizardconclave": "<span class=\"textbf\">Must</span> select 2 spells from:\n\t",
+    "unit_id": "caiman_elders",
+    "option_id": "68wdlbek3caezli630l3mf"
+  },
+  "caiman_master": {
+    "name": "Caiman Master",
+    "cost": "300",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Exclusive",
+        "id": "exclusive"
+      },
+      {
+        "name": "Art of War",
+        "id": "art_of_war"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Water Terrain"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "3"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Caiman Master",
+    "offense": {
+      "At": "5",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Weapon Master",
+        "id": "weapon_master"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Great Weapon",
+        "id": "great_weapon"
+      },
+      {
+        "name": "Halberd",
+        "id": "halberd"
+      },
+      {
+        "name": "Tooth and Claw",
+        "id": "tooth_and_claw"
+      }
+    ],
+    "unit_id": "caiman_master",
+    "option_id": "geacrv1wf7u9szrltltla"
+  },
+  "caiman_warriors": {
+    "name": "Caiman Warriors",
+    "cost": "170",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Water Terrain"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "3"
+    },
+    "offensename": "Caiman Warrior",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "1"
+    },
+    "offenseweapons": [
+      {
+        "name": "Tooth and Claw",
+        "id": "tooth_and_claw"
+      }
+    ],
+    "wizardconclave": "<span class=\"textbf\">Must</span> select 1 spell from:\n\t",
+    "unit_id": "caiman_warriors",
+    "option_id": "oqwq9z2ay1s5onbfgbj9pr"
+  },
+  "carnosaur": {
+    "name": "Carnosaur",
+    "cost": "370",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Frenzy",
+        "id": "frenzy"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "2",
+      "Re": "5",
+      "Arm": "4"
+    },
+    "offensename": "Tegu Rider",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Lodestone",
+        "id": "lodestone"
+      }
+    ],
+    "offensenameB": "Carnosaur",
+    "offenseB": {
+      "At": "5",
+      "Of": "3",
+      "St": "6",
+      "AP": "3",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Battle Focus",
+        "id": "battle_focus"
+      },
+      {
+        "name": "Multiple Wounds",
+        "id": "multiple_wounds",
+        "params": [
+          "2",
+          "against Standard",
+          "Large"
+        ]
+      },
+      {
+        "name": "Predator Senses",
+        "id": "predator_senses"
+      }
+    ],
+    "unit_id": "carnosaur",
+    "option_id": "7rrwrx288mb43oqaod5hld"
+  },
+  "levitation_palanquin_mount": {
+    "name": "Levitation Palanquin",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Strider",
+        "id": "strider"
+      },
+      {
+        "name": "Tall",
+        "id": "tall"
+      },
+      {
+        "name": "Stand Behind",
+        "id": "stand_behind"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "C",
+      "Re": "4",
+      "Arm": "C+1"
+    },
+    "defenserules": [
+      {
+        "name": "Cannot be Stomped",
+        "id": "cannot_be_stomped"
+      }
+    ],
+    "offensename": "Levitation Palanquin",
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "levitation_palanquin_mount",
+    "option_id": "dh6c74qkdekmfs9v3nqoo"
+  },
+  "mountain_pteradon_mount": {
+    "name": "Mountain Pteradon",
+    "maxmountsperarmy": "2",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "2",
+      "Ma": "4",
+      "Adfly": "8",
+      "Mafly": "16",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "16\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      },
+      {
+        "name": "Aerial Assault",
+        "id": "aerial_assault"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "C",
+      "Re": "3",
+      "Arm": "C+1"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Mountain Pteradon",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "mountain_pteradon_mount",
+    "option_id": "dlyzxjfy9jiblxtg6sk7yt"
+  },
+  "pouakai_sky_tyrant_mount": {
+    "name": "Pouakai Sky Tyrant",
+    "maxmountsperarmy": "1",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "2",
+      "Ma": "4",
+      "Adfly": "8",
+      "Mafly": "16",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard",
+        "params": [
+          "6\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Exclusive",
+        "id": "exclusive"
+      },
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "16\""
+        ]
+      },
+      {
+        "name": "Special Ambush",
+        "id": "special_ambush",
+        "params": [
+          "Open Terrain"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "4",
+      "Arm": "C+1"
+    },
+    "offensename": "Pouakai Sky Tyrant",
+    "offense": {
+      "At": "4",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Predator Senses",
+        "id": "predator_senses"
+      }
+    ],
+    "unit_id": "pouakai_sky_tyrant_mount",
+    "option_id": "fasssktztq8m1imu1ll958"
+  },
+  "pteradon_riders": {
+    "name": "Pteradon Riders",
+    "cost": "180",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "2",
+      "Ma": "4",
+      "Adfly": "8",
+      "Mafly": "16",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Feigned Flight",
+        "id": "feigned_flight"
+      },
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      },
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "16\""
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "2",
+      "Df": "2",
+      "Re": "3",
+      "Arm": "2"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "defensearmour": [
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Skink Rider",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      }
+    ],
+    "offensenameB": "Pteradon",
+    "offenseB": {
+      "At": "2",
+      "Of": "2",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Aerial Assault",
+        "id": "aerial_assault"
+      }
+    ],
+    "wizardconclave": "<span class=\"textbf\">Must</span> select 2 spells from:\n\t",
+    "unit_id": "pteradon_riders",
+    "option_id": "u11y9ov6vbty1k3qcr2y9"
+  },
+  "raptor_mount": {
+    "name": "Raptor",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+2"
+    },
+    "offensename": "Raptor",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "raptor_mount",
+    "option_id": "j733oaholp9zdqr1xkitmj"
+  },
+  "raptor_pack": {
+    "name": "Raptor Pack",
+    "cost": "130",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      },
+      {
+        "name": "Pack Hunter",
+        "id": "pack_hunter"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "offensename": "Raptor",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "4",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "unit_id": "raptor_pack",
+    "option_id": "ml8ao39c1o3adtza8e6ef"
+  },
+  "raptor_riders": {
+    "name": "Raptor Riders",
+    "cost": "300",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Pack Hunter",
+        "id": "pack_hunter"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "3"
+    },
+    "defensearmour": [
+      {
+        "name": "Shield",
+        "id": "shield"
+      },
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Tegu Rider",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Lodestone",
+        "id": "lodestone"
+      }
+    ],
+    "offensenameB": "Raptor",
+    "offenseB": {
+      "At": "2",
+      "Of": "3",
+      "St": "4",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "raptor_riders",
+    "option_id": "9za2b74fioosnikwac2k9"
+  },
+  "rhamphodon_riders": {
+    "name": "Rhamphodon Riders",
+    "cost": "235",
+    "addrestriction": "0--2 Units/Army*",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "2",
+      "Ma": "4",
+      "Adfly": "8",
+      "Mafly": "16",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Frenzy",
+        "id": "frenzy"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      },
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "16\""
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "2",
+      "Df": "2",
+      "Re": "3",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "offensename": "Skink Rider",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      }
+    ],
+    "offensenameB": "Rhamphodon",
+    "offenseB": {
+      "At": "3",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      },
+      {
+        "name": "Predator Senses",
+        "id": "predator_senses"
+      },
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Battle Focus",
+        "id": "battle_focus"
+      },
+      {
+        "name": "Feeding Frenzy",
+        "id": "feeding_frenzy"
+      }
+    ],
+    "unit_id": "rhamphodon_riders",
+    "option_id": "abmyw2f7r0llh36ilkyl2"
+  },
+  "saurian_raptor_mount": {
+    "name": "Saurian Raptor",
+    "type": "Cavalry",
+    "size": "Standard",
+    "maxmountsperarmy": "2",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Pack Hunter",
+        "id": "pack_hunter"
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+1"
+    },
+    "offensename": "Saurian Raptor",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "4",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "saurian_raptor_mount",
+    "option_id": "6j49yatcdgs75fl2smntvm"
+  },
+  "saurian_swarms": {
+    "name": "Saurian Swarms",
+    "cost": "140",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Venomous Tide",
+        "id": "venomous_tide"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Unstable",
+        "id": "unstable"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "2",
+      "Re": "2",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "offensename": "Saurian Swarm",
+    "offense": {
+      "At": "5",
+      "Of": "2",
+      "St": "2",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Extra Support",
+        "id": "extra_support",
+        "params": [
+          "3"
+        ]
+      },
+      {
+        "name": "Predator Senses",
+        "id": "predator_senses"
+      }
+    ],
+    "unit_id": "saurian_swarms",
+    "option_id": "680d7g5j4sd1hfmfsr0zz6j"
+  },
+  "skink_guerrillas": {
+    "name": "Skink Guerrillas",
+    "cost": "135",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      },
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Water Terrain"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "2",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "6+"
+        ]
+      },
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Skink Guerrilla",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "unit_id": "skink_guerrillas",
+    "option_id": "7lb7aupievmcnjhnx4u1ut"
+  },
+  "skink_hunters": {
+    "name": "Skink Hunters",
+    "secondlogo": "arrows",
+    "cost": "160",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Water Terrain"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "2",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "offensename": "Skink Hunter",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenseweapons": [
+      {
+        "name": "Poisoned Javelin",
+        "id": "poisoned_javelin",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "wizardconclave": "<span class=\"textbf\">Must</span> select 1 spell from:\n\t",
+    "unit_id": "skink_hunters",
+    "option_id": "u1w8nax5svqc8lgx8doiaw"
+  },
+  "skink_veteran": {
+    "name": "Skink Veteran",
+    "secondoptionallogo": "character_monster",
+    "cost": "75",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Water Terrain"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "2",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Skink Veteran",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "5"
+    },
+    "unit_id": "skink_veteran",
+    "option_id": "sgv1d4x4q6otuozyg0jtc"
+  },
+  "skink_warriors": {
+    "name": "Skink Warriors",
+    "cost": "140",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Water Terrain"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "2",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "defensearmour": [
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Skink Warrior",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "wizardconclave": "<span class=\"textbf\">Must</span> select 1 spell from:\n\t",
+    "unit_id": "skink_warriors",
+    "option_id": "2fx027kyarxecugcf5auzn"
+  },
+  "stygiosaur_pack": {
+    "name": "Stygiosaur Pack",
+    "cost": "310",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Pack Hunter",
+        "id": "pack_hunter"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Skink Rider",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      }
+    ],
+    "offensenameB": "Stygiosaur",
+    "offenseB": {
+      "At": "4",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Stomp Attacks",
+        "id": "stomp_attacks",
+        "params": [
+          "D3"
+        ]
+      },
+      {
+        "name": "Predator Senses",
+        "id": "predator_senses"
+      }
+    ],
+    "wizardconclave": "\t<span class=\"textbf\">Must</span> select 1 spell from:\n",
+    "unit_id": "stygiosaur_pack",
+    "option_id": "rlp1316x8x9w5hxwcc72j"
+  },
+  "taurosaur": {
+    "name": "Taurosaur",
+    "cost": "425",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "6",
+      "Ma": "10",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "3",
+      "Re": "6",
+      "Arm": "4"
+    },
+    "offensename": "Skink Rider (5)",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offensenameB": "Taurosaur",
+    "offenseB": {
+      "At": "4",
+      "Of": "3",
+      "St": "6",
+      "AP": "3",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "3D3"
+        ]
+      },
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "taurosaur",
+    "option_id": "yg2igze9vga0jd5n2j4s4"
+  },
+  "taurosaur_mount": {
+    "name": "Taurosaur",
+    "maxmountsperarmy": "1",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "6",
+      "Ma": "10",
+      "Di": "C"
+    },
+    "defense": {
+      "HP": "6",
+      "Df": "3",
+      "Re": "6",
+      "Arm": "4"
+    },
+    "offensename": "Skink Rider (4)",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offensenameB": "Taurosaur",
+    "offenseB": {
+      "At": "4",
+      "Of": "3",
+      "St": "6",
+      "AP": "3",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "3D3"
+        ]
+      },
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "taurosaur_mount",
+    "option_id": "9plnhq6c5ivizectd1yck"
+  },
+  "tegu_guards": {
+    "name": "Tegu Guards",
+    "cost": "305",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Bodyguard",
+        "id": "bodyguard",
+        "params": [
+          "Anurarch Archmage"
+        ]
+      },
+      {
+        "name": "Magic Resistance",
+        "id": "magic_resistance",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Water Terrain"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defenserules": [
+      {
+        "name": "Containment Field",
+        "id": "containment_field"
+      }
+    ],
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Tegu Guard",
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Lodestone",
+        "id": "lodestone"
+      }
+    ],
+    "unit_id": "tegu_guards",
+    "option_id": "ewslulmwmfea0fdviq2f3"
+  },
+  "tegu_mystics": {
+    "name": "Tegu Mystics",
+    "cost": "170",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Water Terrain"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Tegu Mystic",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      },
+      {
+        "name": "Battle Focus",
+        "id": "battle_focus"
+      },
+      {
+        "name": "Vitalist Combat",
+        "id": "vitalist_combat"
+      }
+    ],
+    "wizardconclave": "<span class=\"textbf\">Must</span> select 2 spells from:\n\t",
+    "unit_id": "tegu_mystics",
+    "option_id": "uuvcriml86f9gc2guwzc"
+  },
+  "tegu_veteran": {
+    "name": "Tegu Veteran",
+    "cost": "180",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Water Terrain"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Tegu Veteran",
+    "offense": {
+      "At": "5",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Lodestone",
+        "id": "lodestone"
+      }
+    ],
+    "unit_id": "tegu_veteran",
+    "option_id": "t2rch76zhb0c4shk1rzs7"
+  },
+  "tegu_warriors": {
+    "name": "Tegu Warriors",
+    "cost": "210",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Water Terrain"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Tegu Warrior",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Lodestone",
+        "id": "lodestone"
+      }
+    ],
+    "wizardconclave": "<span class=\"textbf\">Must</span> select 1 spell from:\n\t",
+    "unit_id": "tegu_warriors",
+    "option_id": "frl86chl47jxlbxmqw5xq"
+  },
+  "thyroscutus_herd": {
+    "name": "Thyroscutus Herd",
+    "cost": "190",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Herd Mentality",
+        "id": "herd_mentality"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "5"
+    },
+    "defenserules": [
+      {
+        "name": "Parry",
+        "id": "parry"
+      }
+    ],
+    "offensename": "Skink Rider (4)",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offensenameB": "Thyroscutus",
+    "offenseB": {
+      "At": "3",
+      "Of": "2",
+      "St": "4",
+      "AP": "1",
+      "Ag": "0"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Crush Attack",
+        "id": "crush_attack"
+      }
+    ],
+    "unit_id": "thyroscutus_herd",
+    "option_id": "9k6jjb2gw9reo8ume87qw6"
+  },
+  "titanopod": {
+    "name": "Titanopod",
+    "cost": "510",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "100\u00d7200",
+    "global": {
+      "Ad": "4",
+      "Ma": "14",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Strider",
+        "id": "strider"
+      },
+      {
+        "name": "Walking Mountain",
+        "id": "walking_mountain"
+      },
+      {
+        "name": "Deafening Clamour",
+        "id": "deafening_clamour"
+      }
+    ],
+    "defense": {
+      "HP": "10",
+      "Df": "3",
+      "Re": "6",
+      "Arm": "4"
+    },
+    "offensename": "Rock Releaser (6)",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offensenameB": "Titanopod",
+    "offenseB": {
+      "At": "2",
+      "Of": "3",
+      "St": "6",
+      "AP": "2",
+      "Ag": "0"
+    },
+    "offenserulesB": [
+      {
+        "name": "Path of Destruction",
+        "id": "path_of_destruction"
+      },
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Stomp Attacks",
+        "id": "stomp_attacks",
+        "params": [
+          "5D3"
+        ]
+      }
+    ],
+    "unit_id": "titanopod",
+    "option_id": "r97k74582qqg96aontuxyu"
+  },
+  "weapon_beasts": {
+    "name": "Weapon Beasts",
+    "cost": "230",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "3"
+    },
+    "offensename": "Weapon Beast",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "weapon_beasts",
+    "option_id": "id3hxtltqz2lgsv4uh56p"
+  },
+  "caiman_warriors_champion": {
+    "name": "Caiman Warriors Champion",
+    "cost": "0",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Wizard",
+        "id": "wizard"
+      },
+      {
+        "name": "Wizard Adept",
+        "id": "wizard_adept"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "3"
+    },
+    "offensename": "Caiman Warrior Champion",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "1"
+    },
+    "offenseweapons": [
+      {
+        "name": "Tooth and Claw",
+        "id": "tooth_and_claw"
+      }
+    ],
+    "unit_id": "caiman_warriors_champion",
+    "option_id": "fsfsdfqf32grhjgfjfgfgwef32"
+  },
+  "caiman_elders_champion": {
+    "name": "Caiman Elders Champion",
+    "cost": "275",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Wizard Adept",
+        "id": "wizard_adept"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "3"
+    },
+    "offensename": "Caiman Elder Champion",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Tooth and Claw",
+        "id": "tooth_and_claw"
+      },
+      {
+        "name": "Weapon Master",
+        "id": "weapon_master"
+      }
+    ],
+    "unit_id": "caiman_elders_champion",
+    "option_id": "kj53fg34g54h3g3g34g43g43"
+  },
+  "pteradon_riders_champion": {
+    "name": "Pteradon Riders Champion",
+    "cost": "185",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "2",
+      "Ma": "4",
+      "Adfly": "8",
+      "Mafly": "16",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Feigned Flight",
+        "id": "feigned_flight"
+      },
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      },
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "16\""
+        ]
+      },
+      {
+        "name": "Wizard Adept",
+        "id": "wizard_adept"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "2",
+      "Re": "3",
+      "Arm": "2"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "defensearmour": [
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Skink Rider Champion",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      }
+    ],
+    "offensenameB": "Pteradon",
+    "offenseB": {
+      "At": "2",
+      "Of": "2",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Aerial Assault",
+        "id": "aerial_assault"
+      }
+    ],
+    "wizardconclave": "<span class=\"textbf\">Must</span> select 2 spells from:\n\t",
+    "unit_id": "pteradon_riders_champion",
+    "option_id": "gfdg43g34g342g342h324hg43h43"
+  },
+  "saurian_giant": {
+    "name": "Saurian Giant",
+    "cost": "280",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "id": "sa-giant_see_giant_do",
+        "name": "Giant See, Giant Do",
+        "params": []
+      },
+      null
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "defensearmour": [],
+    "offensename": "Saurian Giant",
+    "offense": {
+      "Ag": "3",
+      "At": "5",
+      "Of": "3",
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Rage",
+        "id": "rage"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "saurian_giant",
+    "option_id": "onnl7wf3511tbl9wga8nh"
+  },
+  "skink_hunters_champion": {
+    "name": "Skink Hunters Champion",
+    "secondlogo": "arrows",
+    "cost": "0",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Wizard",
+        "id": "wizard"
+      }
+    ],
+    "defense": {
+      "HP": "2",
+      "Df": "2",
+      "Re": "2",
+      "Arm": "1"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "offensename": "Skink Hunter Champion",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenseweapons": [
+      {
+        "name": "Poisoned Javelin",
+        "id": "poisoned_javelin",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "unit_id": "skink_hunters_champion",
+    "option_id": "bmtrh534her56j54hj543h54"
+  },
+  "skink_warriors_champion": {
+    "name": "Skink Warriors Champion",
+    "cost": "140",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "2",
+      "Df": "2",
+      "Re": "2",
+      "Arm": "1"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "defensearmour": [
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Skink Warrior Champion",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "unit_id": "skink_warriors_champion",
+    "option_id": "g34gdfg4g34g43g342kjdsdsu"
+  },
+  "tegu_warriors_champion": {
+    "name": "Tegu Warriors Champion",
+    "cost": "0",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Wizard",
+        "id": "wizard"
+      },
+      {
+        "name": "Wizard Adept",
+        "id": "wizard_adept"
+      }
+    ],
+    "defense": {
+      "HP": "2",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Tegu Warrior Champion",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Lodestone",
+        "id": "lodestone"
+      }
+    ],
+    "unit_id": "tegu_warriors_champion",
+    "option_id": "fdsgjgjerhj54jdrfg4354h64g"
+  },
+  "tegu_mystics_champion": {
+    "name": "Tegu Mystics Champion",
+    "cost": "190",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Communal Bond",
+        "id": "communal_bond"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Wizard Adept",
+        "id": "wizard_adept"
+      }
+    ],
+    "defense": {
+      "HP": "2",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Tegu Mystic Champion",
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      },
+      {
+        "name": "Battle Focus",
+        "id": "battle_focus"
+      },
+      {
+        "name": "Vitalist Combat",
+        "id": "vitalist_combat"
+      }
+    ],
+    "wizardconclave": "<span class=\"textbf\">Must</span> select 2 spells from:\n\t",
+    "unit_id": "tegu_mystics_champion",
+    "option_id": "5h5rhb4n79hfgsdv342g43h43"
+  }
+}

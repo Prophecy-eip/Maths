@@ -1,0 +1,1455 @@
+{
+  "anvil_of_power": {
+    "name": "Anvil of Power",
+    "cost": "190",
+    "type": "Construct",
+    "size": "Standard",
+    "basesize": "60",
+    "global": {
+      "Ad": "3",
+      "Ma": "3",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Channel",
+        "id": "channel",
+        "params": [
+          "2"
+        ]
+      },
+      {
+        "name": "Unbreakable",
+        "id": "unbreakable"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "War Machine",
+        "id": "war_machine"
+      },
+      {
+        "name": "Magic Resistance",
+        "id": "magic_resistance",
+        "params": [
+          "2"
+        ]
+      },
+      {
+        "name": "Not a Leader",
+        "id": "not_a_leader"
+      },
+      {
+        "name": "Runic Anvil",
+        "id": "runic_anvil"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "1",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Plate Armour",
+        "id": "plate_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Anvil Guards",
+    "offense": {
+      "Ag": "2",
+      "At": "3",
+      "Of": "5",
+      "St": "4",
+      "AP": "1"
+    },
+    "unit_id": "anvil_of_power",
+    "option_id": "slikgro59okgxing3twd1b"
+  },
+  "clan_marksmen": {
+    "name": "Clan Marksmen",
+    "secondlogo": "pistols",
+    "cost": "185",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "3",
+      "Ma": "9",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Shield Wall",
+        "id": "shield_wall"
+      }
+    ],
+    "offensename": "Clan Marksman",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Sturdy",
+        "id": "sturdy"
+      }
+    ],
+    "unit_id": "clan_marksmen",
+    "option_id": "dakiowl2tc5noftaf00xj"
+  },
+  "clan_warriors": {
+    "name": "Clan Warriors",
+    "cost": "135",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "3",
+      "Ma": "9",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Shield Wall",
+        "id": "shield_wall"
+      }
+    ],
+    "offensename": "Clan Warrior",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Sturdy",
+        "id": "sturdy"
+      }
+    ],
+    "endtext": "*Only a single unit of Clan Warriors or Greybeards may take Vanguard.",
+    "unit_id": "clan_warriors",
+    "option_id": "pnlgc2b8b5htnuktsb0j"
+  },
+  "deep_watch": {
+    "name": "Deep Watch",
+    "cost": "230",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "3",
+      "Ma": "9",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Bodyguard",
+        "id": "bodyguard"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Plate Armour",
+        "id": "plate_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Wall of Iron",
+        "id": "wall_of_iron"
+      }
+    ],
+    "offensename": "Deep Watch",
+    "offense": {
+      "At": "1",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Sturdy",
+        "id": "sturdy"
+      }
+    ],
+    "toggles": "twocolprintcommandgrouponecolprintcommandgroup",
+    "unit_id": "deep_watch",
+    "option_id": "mzjlqkktmajcuqrbnmkec5"
+  },
+  "dragon_seeker": {
+    "name": "Dragon Seeker",
+    "cost": "200",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "3",
+      "Ma": "9",
+      "Di": "10"
+    },
+    "globalrules": [
+      {
+        "name": "Not a Leader",
+        "id": "not_a_leader"
+      },
+      {
+        "name": "Unbreakable",
+        "id": "unbreakable"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      },
+      {
+        "name": "Magic Resistance",
+        "id": "magic_resistance",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "The bigger they are",
+        "id": "the_bigger_they_are"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "7",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "offensename": "Dragon Seeker",
+    "offense": {
+      "Ag": "5",
+      "At": "5",
+      "Of": "7",
+      "St": "5",
+      "AP": "2"
+    },
+    "offenseweapons": [
+      {
+        "name": "Great Weapon",
+        "id": "great_weapon"
+      },
+      {
+        "name": "Paired Weapons",
+        "id": "paired_weapons"
+      }
+    ],
+    "offenserules": [
+      {
+        "name": "Sturdy",
+        "id": "sturdy"
+      },
+      {
+        "name": "Weapon Master",
+        "id": "weapon_master"
+      },
+      {
+        "name": "Lethal Strike",
+        "id": "lethal_strike"
+      },
+      {
+        "name": "Yer comin' with me!",
+        "id": "yer_comin_with_me"
+      }
+    ],
+    "unit_id": "dragon_seeker",
+    "option_id": "ds4kqir5y5tzk5oalqxhvg"
+  },
+  "engineer": {
+    "name": "Engineer",
+    "secondlogo": "cannonballs",
+    "cost": "120",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "3",
+      "Ma": "9",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Engineer",
+        "id": "engineer",
+        "params": [
+          "3+"
+        ]
+      },
+      {
+        "name": "Entrench",
+        "id": "entrench"
+      }
+    ],
+    "defense": {
+      "HP": "2",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Plate Armour",
+        "id": "plate_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Shield Wall",
+        "id": "shield_wall"
+      }
+    ],
+    "offensename": "Engineer",
+    "offense": {
+      "Ag": "3",
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Sturdy",
+        "id": "sturdy"
+      }
+    ],
+    "unit_id": "engineer",
+    "option_id": "lg2w8c8kyspj5r8g18e8l"
+  },
+  "field_artillery": {
+    "name": "Field Artillery",
+    "cost": "85",
+    "type": "Construct",
+    "size": "Standard",
+    "basesize": "60",
+    "global": {
+      "Ad": "3",
+      "Ma": "3",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "War Machine",
+        "id": "war_machine"
+      },
+      {
+        "name": "Stubborn",
+        "id": "stubborn"
+      },
+      {
+        "name": "Engineering Rune",
+        "id": "engineering_rune"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "1",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Crew",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Move or Fire",
+        "id": "move_or_fire"
+      }
+    ],
+    "endtext": "Dwarf BallistafreeArtillery WeaponRange 48\", Shots 1, Str 3 [6], AP 10, [Multiple Wounds (D3)], Area Attack (1\u00d75).Universal Rule40The model's Shooting Attacks gain <span class=\"textbf\">Accurate</span> and become <span class=\"textbf\">Magical Attacks</span>. The model gains <span class=\"textbf\">Scout</span> with the following exception: it <span class=\"textbf\">must</span> be deployed fully inside the owner's Deployment Zone.Flame Cannon45Artillery Weapon<span class=\"textbf\">Flamethrower</span>, Range 24\", Shots 1, Str 4 {5}, AP 1 {2}, ,Flaming Attacks.Universal Rule15The model's Height is changed to Large.Dwarf Catapult105Universal Rule<span class=\"textbf\">Catapult (4\u00d74)</span>, Range 12--60\", Shots 1, Str 3 [7], AP 0 [4], <span class=\"textbf\">[Multiple Wounds (D3, Clipped Wings)]</span>. Catapult (4\u00d74), Shots 1, 12--60\", Str 3 [7], AP 0 [4], [Multiple Wounds (D3, Clipped Wings)], The model\u2019s Height is changed to LargeAttack Attribute105The model's Shooting Attacks gain +1 Strength, +2 Armour Penetration, and become <span class=\"textbf\">Magical Attacks</span>.Dwarf Cannon160Artillery WeaponThis Artillery Weapon can be fired in two ways:\n\n\n&bull; Cannon 60\"  Shots  1, Str 4, [10], AP 0 [10], Area Attack (1\u00d75), [Multiple Wounds (D3+1, Clipped Wings)]\n&bull; Volley Gun, 12\", Shots  2D6, Str 4 AP 4 \n :<br>&bull;  <span class=\"textbf\">Cannon</span>, Range 60\", Shots 1, Str 4 [10], AP 0 [10], Area Attack (1\u00d75),[Multiple Wounds (D3+1)]<br>&bull;  <span class=\"textbf\">Volley Gun</span>, Range 12\", Shots 2D6, Str 4, AP 4Attack Attribute10The model's Shooting Attacks gain +1 Strength, +1 Armour Penetration, and become <span class=\"textbf\">Magical Attacks</span>.Organ Gun150Artillery Weapon<span class=\"textbf\">Volley Gun</span>, Range 30\", Shots 2D6\u00d72, Str 5, AP 3.Attack Attribute80The model's Shooting Attacks gain a +1 to-wound modifier and become <span class=\"textbf\">Magical Attacks</span>.",
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef\r\n\t\tonecolprintmodelrulesdeftwocolprintmodelrulesdef\r\n\t",
+    "unit_id": "field_artillery",
+    "option_id": "r1riufbrxto99jur1glzas"
+  },
+  "forge_wardens": {
+    "name": "Forge Wardens",
+    "cost": "190",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "3",
+      "Ma": "9",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Plate Armour",
+        "id": "plate_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "3+",
+          "against Flaming Attacks"
+        ]
+      }
+    ],
+    "offensename": "Forge Warden",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenseweapons": [
+      {
+        "name": "Forge Gun",
+        "id": "forge_gun",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "offenserules": [
+      {
+        "name": "Sturdy",
+        "id": "sturdy"
+      }
+    ],
+    "toggles": "twocolprintcommandgrouponecolprintcommandgroup",
+    "unit_id": "forge_wardens",
+    "option_id": "t037tkh4k87fbxqeodum9"
+  },
+  "greybeards": {
+    "name": "Greybeards",
+    "cost": "180",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "3",
+      "Ma": "9",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Hold the Line",
+        "id": "hold_the_line"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Shield Wall",
+        "id": "shield_wall"
+      }
+    ],
+    "offensename": "Greybeard",
+    "offense": {
+      "At": "1",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Sturdy",
+        "id": "sturdy"
+      }
+    ],
+    "endtext": "*Only a single unit of Clan Warriors or Greybeards may take Vanguard.",
+    "unit_id": "greybeards",
+    "option_id": "7heqqxalvg20xhbbn313u0b"
+  },
+  "grudge_buster": {
+    "name": "Grudge Buster",
+    "cost": "305",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "1",
+      "Ma": "1",
+      "Adfly": "8",
+      "Mafly": "8",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "8\""
+        ]
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "4"
+    },
+    "defensearmour": [],
+    "offensename": "Crew (2)",
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offensenameB": "Chassis",
+    "offenseB": {
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6+1"
+        ]
+      },
+      {
+        "name": "Grind Attacks",
+        "id": "grind_attacks",
+        "params": [
+          "3D3"
+        ]
+      }
+    ],
+    "offenseweaponsB": [
+      {
+        "name": "Forge Repeater",
+        "id": "forge_repeater",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "unit_id": "grudge_buster",
+    "option_id": "dlnsy3ktpvcd0lm888h298"
+  },
+  "hold_guardians": {
+    "name": "Hold Guardians",
+    "cost": "250",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "10"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Runic Engravings",
+        "id": "runic_engravings"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Plate Armour",
+        "id": "plate_armour"
+      }
+    ],
+    "offensename": "Hold Guardian",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenseweapons": [
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      }
+    ],
+    "toggles": "twocolprintcommandgrouponecolprintcommandgroup",
+    "unit_id": "hold_guardians",
+    "option_id": "e37tokk4mgyzo6chuxmpp"
+  },
+  "king": {
+    "name": "King",
+    "cost": "210",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "3",
+      "Ma": "9",
+      "Di": "10"
+    },
+    "globalrules": [],
+    "defense": {
+      "HP": "3",
+      "Df": "7",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Plate Armour",
+        "id": "plate_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Shield Wall",
+        "id": "shield_wall"
+      }
+    ],
+    "offensename": "King",
+    "offense": {
+      "Ag": "4",
+      "At": "4",
+      "Of": "7",
+      "St": "4",
+      "AP": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Sturdy",
+        "id": "sturdy"
+      }
+    ],
+    "toggles": "onecolprintoptionstwocolprintoptions",
+    "unit_id": "king",
+    "option_id": "iohlww4vvwsqorm6jeevx"
+  },
+  "kings_guard": {
+    "name": "King's Guard",
+    "cost": "310",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "3",
+      "Ma": "9",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Bodyguard",
+        "id": "bodyguard",
+        "params": [
+          "General",
+          "King"
+        ]
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Plate Armour",
+        "id": "plate_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "King's Guard",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenseweapons": [
+      {
+        "name": "Great Weapon",
+        "id": "great_weapon"
+      }
+    ],
+    "offenserules": [
+      {
+        "name": "Sturdy",
+        "id": "sturdy"
+      }
+    ],
+    "unit_id": "kings_guard",
+    "option_id": "uam09d24cmgblejkri7rrq"
+  },
+  "miners": {
+    "name": "Miners",
+    "cost": "180",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "3",
+      "Ma": "9",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Ambush",
+        "id": "ambush"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Shield Wall",
+        "id": "shield_wall"
+      }
+    ],
+    "offensename": "Miner",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Sturdy",
+        "id": "sturdy"
+      }
+    ],
+    "unit_id": "miners",
+    "option_id": "cw7wnqeht1wlkiu0lxut7l"
+  },
+  "rangers": {
+    "name": "Rangers",
+    "cost": "140",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "3",
+      "Ma": "9",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Scout",
+        "id": "scout"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Shield Wall",
+        "id": "shield_wall"
+      }
+    ],
+    "offensename": "Ranger",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Sturdy",
+        "id": "sturdy"
+      },
+      {
+        "name": "Quick to Fire",
+        "id": "quick_to_fire"
+      }
+    ],
+    "unit_id": "rangers",
+    "option_id": "bjf1ukgina763w7ejlduf6"
+  },
+  "runic_smith": {
+    "name": "Runic Smith",
+    "cost": "135",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "3",
+      "Ma": "9",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Channel",
+        "id": "channel",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "Magic Resistance",
+        "id": "magic_resistance",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "Rune Craft Mastery",
+        "id": "rune_craft_mastery"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Plate Armour",
+        "id": "plate_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Shield Wall",
+        "id": "shield_wall"
+      }
+    ],
+    "offensename": "Runic Smith",
+    "offense": {
+      "Ag": "3",
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Sturdy",
+        "id": "sturdy"
+      }
+    ],
+    "unit_id": "runic_smith",
+    "option_id": "ikcj2r2mpsjrcy7h1h97p"
+  },
+  "seekers": {
+    "name": "Seekers",
+    "cost": "105",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "3",
+      "Ma": "9",
+      "Di": "10"
+    },
+    "globalrules": [
+      {
+        "name": "Unbreakable",
+        "id": "unbreakable"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "The bigger they are",
+        "id": "the_bigger_they_are"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "6+"
+        ]
+      }
+    ],
+    "offensename": "Seeker",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenseweapons": [
+      {
+        "name": "Great Weapon",
+        "id": "great_weapon"
+      },
+      {
+        "name": "Paired Weapons",
+        "id": "paired_weapons"
+      }
+    ],
+    "offenserules": [
+      {
+        "name": "Weapon Master",
+        "id": "weapon_master"
+      },
+      {
+        "name": "Sturdy",
+        "id": "sturdy"
+      },
+      {
+        "name": "Yer comin' with me!",
+        "id": "yer_comin_with_me"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "seekers",
+    "option_id": "8lwrsnfgze8u099razvrd"
+  },
+  "shield_bearers_mount": {
+    "name": "Shield Bearers",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "40\u00d720",
+    "maxmountsperarmy": "2",
+    "global": {
+      "Ad": "3",
+      "Ma": "9",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Tall",
+        "id": "tall"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+2"
+    },
+    "defenserules": [
+      {
+        "name": "Cannot be Stomped",
+        "id": "cannot_be_stomped"
+      }
+    ],
+    "offensename": "Shield Bearers",
+    "offense": {
+      "Ag": "2",
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Sturdy",
+        "id": "sturdy"
+      }
+    ],
+    "unit_id": "shield_bearers_mount",
+    "option_id": "5ljhvqulejdmg4ljfova5o"
+  },
+  "steam_copters": {
+    "name": "Steam Copters",
+    "cost": "180",
+    "type": "Construct",
+    "size": "Standard",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "1",
+      "Ma": "2",
+      "Adfly": "8",
+      "Mafly": "16",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "16\""
+        ]
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Tall",
+        "id": "tall"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "3"
+    },
+    "defenserules": [
+      {
+        "name": "Cannot be Stomped",
+        "id": "cannot_be_stomped"
+      }
+    ],
+    "offensename": "Steam Copter",
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenseweapons": [
+      {
+        "name": "Forge Repeater",
+        "id": "forge_repeater",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "unit_id": "steam_copters",
+    "option_id": "0ztoz1oqlxu9zfthappx7cs"
+  },
+  "thane": {
+    "name": "Thane",
+    "cost": "105",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "3",
+      "Ma": "9",
+      "Di": "9"
+    },
+    "globalrules": [],
+    "defense": {
+      "HP": "3",
+      "Df": "6",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Plate Armour",
+        "id": "plate_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Shield Wall",
+        "id": "shield_wall"
+      }
+    ],
+    "offensename": "Thane",
+    "offense": {
+      "Ag": "3",
+      "At": "3",
+      "Of": "6",
+      "St": "4",
+      "AP": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Sturdy",
+        "id": "sturdy"
+      }
+    ],
+    "toggles": "onecolprintoptionstwocolprintoptions",
+    "unit_id": "thane",
+    "option_id": "p3j2jjzcvqnp4v3e6qpcem"
+  },
+  "vengeance_seeker": {
+    "name": "Vengeance Seeker",
+    "cost": "125",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "3",
+      "Ma": "9",
+      "Di": "10"
+    },
+    "globalrules": [
+      {
+        "name": "Unbreakable",
+        "id": "unbreakable"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "The bigger they are",
+        "id": "the_bigger_they_are"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "6+"
+        ]
+      },
+      {
+        "name": "Distracting",
+        "id": "distracting"
+      },
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Vengeance Seeker",
+    "offense": {
+      "At": "3D3",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenseweapons": [
+      {
+        "name": "Yer comin' with me!",
+        "id": "yer_comin_with_me"
+      },
+      {
+        "name": "Whirling Chains of Doom",
+        "id": "whirling_chains_of_doom"
+      }
+    ],
+    "unit_id": "vengeance_seeker",
+    "option_id": "vgp2oc88eoge8jlmp3te6"
+  },
+  "war_throne_mount": {
+    "name": "War Throne",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "40\u00d760",
+    "maxmountsperarmy": "2",
+    "global": {
+      "Ad": "3",
+      "Ma": "9",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Tall",
+        "id": "tall"
+      },
+      {
+        "name": "Majesty of High Kings",
+        "id": "majesty_of_high_kings"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+2"
+    },
+    "defenserules": [
+      {
+        "name": "Cannot be Stomped",
+        "id": "cannot_be_stomped"
+      }
+    ],
+    "offensename": "War Throne",
+    "offense": {
+      "Ag": "2",
+      "At": "4",
+      "Of": "5",
+      "St": "4",
+      "AP": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Sturdy",
+        "id": "sturdy"
+      },
+      {
+        "name": "Hatred",
+        "id": "hatred"
+      }
+    ],
+    "unit_id": "war_throne_mount",
+    "option_id": "zxvq71y49zahl2tkeytlrq"
+  },
+  "giant_dwarf": {
+    "name": "Giant Dwarf",
+    "cost": "330",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "5",
+      "Ma": "15",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "id": "dh-giant_see_giant_do",
+        "name": "Giant See, Giant Do",
+        "params": []
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "3",
+      "Re": "6",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Giant Dwarf",
+    "offense": {
+      "Ag": "3",
+      "At": "5",
+      "Of": "3",
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Rage",
+        "id": "rage"
+      },
+      {
+        "name": "Stomp Attacks",
+        "id": "stomp_attacks",
+        "params": [
+          "D3"
+        ]
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "giant_dwarf",
+    "option_id": "19rng7bo528nuspnf4c8a7"
+  }
+}
