@@ -1,0 +1,998 @@
+{
+  "\u00e5sklander_chief": {
+    "name": "\u00c5sklander Chief",
+    "fluff": "To lead is the destiny of the jarls and hersirs. But leading should be tested: trials must be endured and challenges won, for a chieftain should prove not only the strongest of the tribe, but the wisest also. Proud and dauntless, feared and respected, such are the demands of leadership.",
+    "cost": "110",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "\u00c5sklander Battle Fever",
+        "id": "sklander_battle_fever"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "offensename": "\u00c5sklander Chief",
+    "offense": {
+      "Ag": "5",
+      "At": "3",
+      "Of": "5",
+      "St": "5",
+      "AP": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Deeds not Words",
+        "id": "deeds_not_words"
+      }
+    ],
+    "unit_id": "\u00e5sklander_chief",
+    "option_id": "gefuxum96xalhk089efr5"
+  },
+  "\u00e5sklander_flayers": {
+    "name": "\u00c5sklander Flayers",
+    "fluff": "Riding huge wolves, spiders, and all manner of breakneck beasts, the role of the flayer is reserved for the most courageous and aggressive members of our tribes. Often hardened survivors without families, flayers are among the most feared of those we dread to face. Their speed and brutality is like a vicious blizzard, scouring the flesh and obliterating all hope.",
+    "cost": "145",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "10",
+      "Ma": "20",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Strider",
+        "id": "strider"
+      },
+      {
+        "name": "\u00c5sklander Battle Fever",
+        "id": "sklander_battle_fever"
+      },
+      {
+        "name": "Feigned Flight",
+        "id": "feigned_flight"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard",
+        "params": [
+          "6\""
+        ]
+      },
+      {
+        "name": "Ambush",
+        "id": "ambush"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "defenserules": [],
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "\u00c5sklander Flayer",
+    "offense": {
+      "Ag": "4",
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "0"
+    },
+    "offensenameB": "Shadow Chaser",
+    "offenseB": {
+      "Ag": "4",
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "\u00e5sklander_flayers",
+    "option_id": "1fuahcp7j9rs73cng1hwji"
+  },
+  "\u00e5sklander_horsemen": {
+    "name": "\u00c5sklander Horsemen",
+    "fluff": "Mounts are considered a privilege among the most important \u00c5sklander families. They are generally given to the youngest warriors, to prove themselves as scouts and vanguards of raiding forces, as there is limited space for horses on a longboat.",
+    "cost": "130",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "\u00c5sklander Battle Fever",
+        "id": "sklander_battle_fever"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "\u00c5sklander Horseman",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offensenameB": "Black Steed",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "\u00e5sklander_horsemen",
+    "option_id": "klh1ug7e8f8gwx23em8ka"
+  },
+  "\u00e5sklanders": {
+    "name": "\u00c5sklanders",
+    "fluff": "The \u00c5sklander is a fighter to be feared: strengthened by harsh living and long hunts through the forest, each man and maiden of our people is skilled with axe or bow and born to raiding.",
+    "cost": "130",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "\u00c5sklander Battle Fever",
+        "id": "sklander_battle_fever"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "\u00c5sklander",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "unit_id": "\u00e5sklanders",
+    "option_id": "pusqugbv9iqcwldlhzs7z"
+  },
+  "berserkers": {
+    "name": "Berserkers",
+    "fluff": "Gnashing teeth, crazed howling, deranged biting of shields---a ferocious blur of axes, bleeding steel, and bear pelts: these are the berserkers of Vigi. He asked of them to be the nightmare of the elven enemy, and they became as such. They do not fear death, nor defeat, for their only purpose is killing elves.",
+    "cost": "160",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "\u00c5sklander Battle Fever",
+        "id": "sklander_battle_fever"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Berserker's Bear Pelt",
+        "id": "berserkers_bear_pelt"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Berserker",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "unit_id": "berserkers",
+    "option_id": "fejk312y9bjqwwkjkshy8c"
+  },
+  "black_stallion_mount": {
+    "name": "Black Stallion",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "C"
+    },
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+2"
+    },
+    "offensename": "Black Stallion",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "black_stallion_mount",
+    "option_id": "i3o7gpfcvte8eyk0q0qg66"
+  },
+  "chimera_mount": {
+    "name": "Chimera",
+    "maxmountsperarmy": "2",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "20",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "5",
+      "Arm": "C"
+    },
+    "offensename": "Chimera",
+    "offense": {
+      "At": "5",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "chimera_mount",
+    "option_id": "te2hmsnho8gaxclp1e7a"
+  },
+  "dark_chariot_mount": {
+    "name": "Dark Chariot",
+    "maxmountsperarmy": "3",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "8",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "5",
+      "Arm": "C+2"
+    },
+    "defensearmour": [],
+    "offensename": "Black Steed (2)",
+    "offense": {
+      "Ag": "3",
+      "St": "4",
+      "AP": "0",
+      "At": "1",
+      "Of": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6+1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "dark_chariot_mount",
+    "option_id": "fho8t1xpzutxmiigg6xupd"
+  },
+  "huskarls": {
+    "name": "Huskarls",
+    "fluff": "No one can become a jarl without the support of the huskarls, and new jarls are often elected from their number, for they are not only bodyguards but a warrior elite. Seasoned fighters, their wisdom and ruthlessness in matters of war and raiding is rarely matched by younger warriors and chiefs.",
+    "cost": "185",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "\u00c5sklander Battle Fever",
+        "id": "sklander_battle_fever"
+      },
+      {
+        "name": "Bodyguard",
+        "id": "bodyguard",
+        "params": [
+          "\u00c5sklander Chief"
+        ]
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Huskarl",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "unit_id": "huskarls",
+    "option_id": "hqo78wgtyfmz9q18ddsj0n"
+  },
+  "j\u00f6tunn": {
+    "name": "J\u00f6tunn",
+    "fluff": "Walk upon a mountainous road, and you may find yourself in the vicinity of one of the mightiest creatures to inhabit the earth---a j\u00f6tunn.\n\n\tThe first you will know is the drop in temperature; your skin will burn and your bones freeze, until you can barely crawl. A mist of freezing air will rise around you. The next sign is the ground shuddering; the very mountain appears to split, until blue-grey flesh resolves from blue-grey rock.\n\n\tLast, eyes open. Vast eyes, with a red hue, taking moments to focus upon the tiny creatures before it.\n\n\tIf you are fortunate, you will be accompanied by a seidhkennar, who can fathom the landslide rumbling that passes for language between them. If you are truly blessed, your guide can settle that mountain back to sleep, before the mighty being decides to crush those who disturb its slumber.\n\n\tReturning to cold stone's embrace, it might be years before the j\u00f6tunn rises again, but time seems to matter little to their kind. I simply pray I am never the cause of their ire, or have reason to defend against them---castle walls can only do so much!My Time in the North---Lionel Bethune,\\ Baron of Equitaine",
+    "cost": "460",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "75\u00d7100",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Stubborn",
+        "id": "stubborn"
+      },
+      {
+        "name": "Freezing Mist",
+        "id": "freezing_mist"
+      }
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "7",
+      "Arm": "3"
+    },
+    "offensename": "J\u00f6tunn",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "7",
+      "AP": "3",
+      "Ag": "1"
+    },
+    "unit_id": "j\u00f6tunn",
+    "option_id": "jz7ycjig1t930vf5gec3ns"
+  },
+  "kraken": {
+    "name": "Kraken",
+    "fluff": "The most experienced raiding jarls and seidhkennars develop a deep connection with the seas, and have even proved able to tame and master these legendary creatures, often luring them away from isolated forces of dread elves.",
+    "cost": "385",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Coastal Predator",
+        "id": "coastal_predator"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "3"
+    },
+    "defenserules": [
+      {
+        "name": "Distracting",
+        "id": "distracting"
+      },
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Kraken",
+    "offense": {
+      "At": "4",
+      "Of": "5",
+      "St": "7",
+      "AP": "3",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Multiple Wounds",
+        "id": "multiple_wounds",
+        "params": [
+          "D3"
+        ]
+      },
+      {
+        "name": "Hatred",
+        "id": "hatred",
+        "params": [
+          "against Large",
+          "Gigantic"
+        ]
+      }
+    ],
+    "offensenameB": "Handler (2)",
+    "offenseB": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [],
+    "unit_id": "kraken",
+    "option_id": "ie8ia4mp5mp896usdef8s"
+  },
+  "marauding_giant": {
+    "name": "Marauding Giant",
+    "fluff": "Duty patrolling the Beacons can be a dull business. Nothing to see but league upon league of remote steppes, where nothing lives but roving bands of barbarians. For a thousand years, our Order has been among those tasked with the safety of the Empire, by keeping vigil upon the border and responding with devastating force against any incursion.Our outriders are fleet and well provisioned, with remounts available along the roads to Aschau. It is a hard life, with many dangers, but they are highly effective. In 842, late in the year, we rode to intercept a warband. The beacons had been lit, their flames blazing bright in the early morning gloom. Word had been dispatched to the capital, yet by the reports, we would disperse the raid in short order.Arriving at the Donegar Beacon, we found the warband arrayed against us, banners showing a cloven skull. Their numbers were as described---a challenging prospect, but I rode with seasoned troops. We levelled lances, moving naturally into flanking positions, and struck hard. The battle was bloody. Good soldiers fell beside me, but we broke their lines, circling to launch another attack.The intervention of the giant changed everything. One moment we were routing the broken remnants of a defeated force. The next, they turned to face us once more, reforming, as the great Beacon tower itself shook and creaked. With a cracking sound like a cannon, it fell thunderously to the ground, shattering our right flank. The figure that loomed in the Beacon's stead bellowed incoherently, raising a hand, and two more of my comrades fell beneath a lash of green energy. The retreat was called, though in truth it was a flight. Months would pass before the Beacon was restored, and we would not be the last to feel the giant's wrath.\n\tBeacons of Light: Tales from the Border\\Knight Commander Ingolf Ehlers' memoirs, 860 A.S.\n",
+    "cost": "290",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "id": "al-giant_see_giant_do",
+        "name": "Giant See, Giant Do",
+        "params": []
+      },
+      null
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "offensename": "Marauding Giant",
+    "offense": {
+      "Ag": "3",
+      "At": "5",
+      "Of": "3",
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Rage",
+        "id": "rage"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "marauding_giant",
+    "option_id": "ox3ltedh399blq17oe8yr"
+  },
+  "seidhkennar": {
+    "name": "Seidhkennar",
+    "fluff": "Seidhkennars are the voice of the gods, advisers of the jarls, guides to the berserkers. They are tellers of sagas, masters of magic, and speakers with all the creatures of the North. No force would dare to raid without their blessing, nor a king march to war: for the seers of \u00c5skland know the spirit of the land.",
+    "cost": "115",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "\u00c5sklander Battle Fever",
+        "id": "sklander_battle_fever"
+      },
+      {
+        "name": "Wizard Apprentice",
+        "id": "wizard_apprentice"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "offensename": "Seidhkennar",
+    "offense": {
+      "Ag": "3",
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0"
+    },
+    "offenserules": [],
+    "paths": "Witchcraft=witchcraft,Shamanism=shamanism,Thaumaturgy=thaumaturgy",
+    "unit_id": "seidhkennar",
+    "option_id": "1p8erqaiaozdr02udlvxh7"
+  },
+  "shadow_chaser_mount": {
+    "name": "Shadow Chaser",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "10",
+      "Ma": "20",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Strider",
+        "id": "strider"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard",
+        "params": [
+          "6\""
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+1"
+    },
+    "defenserules": [],
+    "offensename": "Shadow Chaser",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "shadow_chaser_mount",
+    "option_id": "8jlctm76uzm1q1kaerddbj"
+  },
+  "trolls": {
+    "name": "Trolls",
+    "fluff": "Trolls are hardy creatures. So much so, that it is rumoured neither man nor nature can kill them. The beasts that inhabit the frozen lands are no exception. As grotesque, greedy, and ill-tempered as their southern cousins, their tough, icy hide emits a palpable aura of cold so fierce it has even been known to extinguish fire.",
+    "cost": "170",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "4"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Stupid",
+        "id": "stupid"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "offensename": "Troll",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Troll Belch",
+        "id": "troll_belch"
+      }
+    ],
+    "toggles": "onecolprintmodelrulesdeftwocolprintmodelrulesdef",
+    "unit_id": "trolls",
+    "option_id": "mwy14q4xs3u2mfj3gas0i"
+  },
+  "war_dais_mount": {
+    "name": "War Dais",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "C",
+      "Ma": "C",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Tall",
+        "id": "tall"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+2"
+    },
+    "defenserules": [
+      {
+        "name": "Cannot be Stomped",
+        "id": "cannot_be_stomped"
+      }
+    ],
+    "offensename": "War Dais",
+    "offense": {
+      "At": "4",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "war_dais_mount",
+    "option_id": "2gm7v3fcy6e8mkcvll9ssm"
+  },
+  "wargs": {
+    "name": "Wargs",
+    "fluff": "Wargs are not mere pet wolves, trained to attack on command. They are born of Ullr's fury, impervious to the rigours of a mountain winter, tougher and sometimes larger than a horse. A single warg can down a giant elk if it catches it unaware, and a pack is a serious danger even to well-armed travellers. You are never free of the warg's nose. It will track you for days if it deems you a worthy prize. If you are fierce enough, you can steal the pups and harness this fury yourself: but be sure to serve Ullr well, or you'll be a meal for the beast soon enough.",
+    "cost": "170",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "1"
+    },
+    "offensename": "Warg",
+    "offense": {
+      "At": "4",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "unit_id": "wargs",
+    "option_id": "ezz6la348drammdjiedkwo"
+  },
+  "warhounds": {
+    "name": "Warhounds",
+    "fluff": "Hunting is our oldest and most indispensable tradition. The deepest bonds of man and beast are forged from the cradle with our hunting packs. Our hounds are no foppish southern pups, but proud heirs of the great wolves of the northern forest. Long generations of careful stewardship have created one of the smartest and most dangerous breeds of warhounds ever seen.",
+    "cost": "100",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Insignificant",
+        "id": "insignificant"
+      },
+      {
+        "name": "Release the Hounds",
+        "id": "release_the_hounds"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Warhound",
+    "offense": {
+      "Ag": "4",
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0"
+    },
+    "offenserules": [],
+    "unit_id": "warhounds",
+    "option_id": "4p8evfm3anvhfv52lhw6zj"
+  },
+  "warriors": {
+    "name": "Warriors",
+    "fluff": "\u00c5sklanders who have sworn to the Dark Gods often return to their homes to fulfil their path, for reasons that are unclear even to seidhkennars. Nonetheless, they are always welcomed among the ranks of a raiding party, as their prowess in battle is doubted by none.",
+    "cost": "220",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Path of the Favoured",
+        "id": "path_of_the_favoured"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Hell-Forged Armour",
+        "id": "hellforged_armour"
+      },
+      {
+        "name": "Spiked Shield",
+        "id": "spiked_shield"
+      }
+    ],
+    "offensename": "Warrior",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "toggles": "onecolprintmodelrulesdeftwocolprintmodelrulesdef",
+    "unit_id": "warriors",
+    "option_id": "sdulfxii51bc2ba30fnqih"
+  },
+  "wasteland_behemoth_mount": {
+    "name": "Wasteland Behemoth",
+    "maxmountsperarmy": "2",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "100\u00d7150",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "6",
+      "Arm": "4"
+    },
+    "offensename": "Wasteland Behemoth",
+    "offense": {
+      "Ag": "3",
+      "At": "6",
+      "Of": "3",
+      "St": "6",
+      "AP": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "wasteland_behemoth_mount",
+    "option_id": "ln5gbhotgjphb77ng2yww"
+  }
+}

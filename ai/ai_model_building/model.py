@@ -16,6 +16,8 @@ class _BaseGlobalModifiers:
     discipline: uint32 = 0
 
 # Buff the stats with an offensive modifier
+
+
 @dataclass
 class _BaseOffensiveModifiers:
     attack: uint32 = 0
@@ -25,12 +27,15 @@ class _BaseOffensiveModifiers:
     agility: uint32 = 0
 
 # Buff the stats with a defensive modifier
+
+
 @dataclass
 class _BaseDefensiveModifiers:
     health_points: uint32 = 0
     defense: uint32 = 0
     resilience: uint32 = 0
     armour: uint32 = 0
+
 
 @dataclass
 class _BaseWeaponModifiers:
@@ -39,8 +44,10 @@ class _BaseWeaponModifiers:
     shots: uint32 = 0
 
 # Gather all the modifiers into a dataclass
+
+
 @dataclass
-class Modifiers :
+class Modifiers:
     global_modifiers: _BaseGlobalModifiers = _BaseGlobalModifiers()
     offensive_modifiers: _BaseOffensiveModifiers = _BaseOffensiveModifiers()
     defensive_modifiers: _BaseDefensiveModifiers = _BaseDefensiveModifiers()
@@ -54,7 +61,9 @@ class Modifiers :
                 values[attr] = value
         return values
 
-## Class containing all the statistics in the game for a unit
+# Class containing all the statistics in the game for a unit
+
+
 @dataclass
 class Stats:
     # advance (usize): The distance the Model can advance per turn
@@ -71,8 +80,6 @@ class Stats:
     resilience: uint32
     # armour (usize): The armour of the Model
     armour: uint32
-    # aegis (usize): The special armour of the Model
-    aegis: uint32
     # attack (usize): The number of attack the Model do
     attack: uint32
     # offensive (usize): The offensive of the Model
@@ -83,32 +90,38 @@ class Stats:
     armour_penetration: uint32
     # agility (usize): The agility of the Model
     agility: uint32
+    # aegis (usize): The special armour of the Model
+    aegis: uint32 = 0
     # ballistic_skill (usize): The ballistic skill of the Model
-    ballistic_skill: uint32
+    ballistic_skill: uint32 = 0
     # shots (usize): The number of shots the Model can do depending on the weapon
     shots: uint32 = 0
 
     # This function will take up any type of modifiers as long as it has the 'Modifiers' type, then apply the stats changes if there is any
-    def safe_apply_modifiers(self, modifiers : Modifiers):
+    def safe_apply_modifiers(self, modifiers: Modifiers):
         global_values = modifiers.get_values(modifiers.global_modifiers)
         offensive_values = modifiers.get_values(modifiers.offensive_modifiers)
         defensive_values = modifiers.get_values(modifiers.defensive_modifiers)
         weapon_values = modifiers.get_values(modifiers.weapon_modifiers)
 
-        stats_modifiers_values = concatenate_dictionaries(global_values, offensive_values, defensive_values, weapon_values)
+        stats_modifiers_values = concatenate_dictionaries(
+            global_values, offensive_values, defensive_values, weapon_values)
         for key, val, in stats_modifiers_values.items():
-            setattr(self, key, safe_add_signed_unsigned(getattr(self, key), val)) # a safe_addition on the last parameters here to update the class
+            # a safe_addition on the last parameters here to update the class
+            setattr(self, key, safe_add_signed_unsigned(
+                getattr(self, key), val))
 
 
 # Create a new model for the units using the Stats and a list of modifiers
 @dataclass
 class Model:
-    stats : Stats
-    boosted_stats : Stats
-    modifiers : list[Modifiers]
+    stats: Stats
+    modifiers: list[Modifiers]
     banner_bearer: bool
 
-## UNIT TESTING
+# UNIT TESTING
+
+
 class TestInitModifiers(unittest.TestCase):
 
     def test_all_stats_init(self):
@@ -126,7 +139,7 @@ class TestInitModifiers(unittest.TestCase):
             strength=5,
             armour_penetration=5,
             agility=4,
-            ballistic_skill=5
+            ballistic_skill=5,
         )
         self.assertEqual(s.advance, 5)
         self.assertEqual(s.march, 5)
