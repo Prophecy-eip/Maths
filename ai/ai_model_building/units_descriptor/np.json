@@ -1,0 +1,1669 @@
+{
+  "ashigaru_bowmen": {
+    "name": "Ashigaru Bowmen",
+    "secondlogo": "arrows",
+    "cost": "110",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Sashimonos",
+        "id": "sashimonos"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Ashigaru Bowmen",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [],
+    "offenseweapons": [],
+    "unit_id": "ashigaru_bowmen",
+    "option_id": "p89mwptr931tmzbhdv70t"
+  },
+  "battle_kago_mount": {
+    "name": "Battle Kago",
+    "type": "Infantry",
+    "size": "Standard",
+    "maxmountsperarmy": "2",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Tall",
+        "id": "tall"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+1"
+    },
+    "defenserules": [
+      {
+        "name": "Cannot be Stomped",
+        "id": "cannot_be_stomped"
+      }
+    ],
+    "defensearmour": [],
+    "offensename": "Kago Bearers",
+    "offense": {
+      "At": "4",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Kenjutsu",
+        "id": "kenjutsu",
+        "params": [
+          "3"
+        ]
+      }
+    ],
+    "offenseweapons": [],
+    "unit_id": "battle_kago_mount",
+    "option_id": "w1l1u8z1a0adl7a4x4tek6"
+  },
+  "daimyo": {
+    "name": "Daimyo",
+    "cost": "160",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Way of the Warrior",
+        "id": "way_of_the_warrior"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "6",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Daimyo",
+    "offense": {
+      "At": "4",
+      "Of": "6",
+      "St": "4",
+      "AP": "1",
+      "Ag": "6"
+    },
+    "offenserules": [
+      {
+        "name": "Kenjutsu",
+        "id": "kenjutsu",
+        "params": [
+          "3"
+        ]
+      }
+    ],
+    "offenseweapons": [],
+    "unit_id": "daimyo",
+    "option_id": "8hhhd382rhhmj9o31mmla"
+  },
+  "great_guard": {
+    "name": "Great Guard",
+    "cost": "330",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Way of the Warrior",
+        "id": "way_of_the_warrior"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Water Terrain"
+        ]
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Sashimonos",
+        "id": "sashimonos"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      },
+      {
+        "name": "Horo Cloak",
+        "id": "horo_cloak"
+      },
+      {
+        "name": "Sode",
+        "id": "sode"
+      }
+    ],
+    "offensename": "Great Guard",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "5"
+    },
+    "offenserules": [
+      {
+        "name": "Kenjutsu",
+        "id": "kenjutsu",
+        "params": [
+          "3"
+        ]
+      },
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Att"
+        ]
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Halberd",
+        "id": "halberd"
+      }
+    ],
+    "offensenameB": "Tatsu",
+    "offenseB": {
+      "At": "2",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      }
+    ],
+    "unit_id": "great_guard",
+    "option_id": "qgrwdsxxc2mixo044jl5z"
+  },
+  "kabuki_dolls": {
+    "name": "Kabuki Dolls",
+    "cost": "140",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Strider",
+        "id": "strider"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Distracting",
+        "id": "distracting"
+      }
+    ],
+    "offensename": "Kabuki Doll",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "1",
+      "Ag": "5"
+    },
+    "offenseweapons": [
+      {
+        "name": "Paired Weapons",
+        "id": "paired_weapons"
+      }
+    ],
+    "offenserules": [
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      }
+    ],
+    "unit_id": "kabuki_dolls",
+    "option_id": "ragzwtzhqndhyewyrsyst"
+  },
+  "kensai": {
+    "name": "Kensai",
+    "cost": "220",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Way of the Warrior",
+        "id": "way_of_the_warrior"
+      },
+      {
+        "name": "Not a Leader",
+        "id": "not_a_leader"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Duellist",
+        "id": "duellist"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "7",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [],
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+",
+          "against Melee Attacks"
+        ]
+      }
+    ],
+    "offensename": "Kensai",
+    "offense": {
+      "At": "4",
+      "Of": "7",
+      "St": "4",
+      "AP": "1",
+      "Ag": "7"
+    },
+    "offenserules": [
+      {
+        "name": "Kenjutsu",
+        "id": "kenjutsu",
+        "params": [
+          "3"
+        ]
+      },
+      {
+        "name": "Iaijutsu",
+        "id": "iaijutsu"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Katana",
+        "id": "katana"
+      }
+    ],
+    "toggles": "onecolprintmodelrulesdeftwocolprintmodelrulesdef",
+    "unit_id": "kensai",
+    "option_id": "paskvj84f6k7ni2r0po69"
+  },
+  "kirin_mount": {
+    "name": "Kirin",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d750",
+    "maxmountsperarmy": "2",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Adfly": "8",
+      "Mafly": "16",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "16\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+1"
+    },
+    "defensearmour": [],
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Kirin",
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      }
+    ],
+    "unit_id": "kirin_mount",
+    "option_id": "gjltlv2vbxv6wu6d1ce5k7"
+  },
+  "kitsune": {
+    "name": "Kitsune",
+    "cost": "180",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "9",
+      "Ma": "18",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Ghost Step",
+        "id": "ghost_step"
+      },
+      {
+        "name": "Fox Fire",
+        "id": "fox_fire"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [],
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Kitsune",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      }
+    ],
+    "offenseweapons": [],
+    "unit_id": "kitsune",
+    "option_id": "ypsghd14d0gmqizauvmlrm"
+  },
+  "mikoshi_shrine": {
+    "name": "Mikoshi Shrine",
+    "cost": "210",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Channel",
+        "id": "channel",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      },
+      {
+        "name": "Blessings of the Kami",
+        "id": "blessings_of_the_kami"
+      },
+      {
+        "name": "Ritual Meditation",
+        "id": "ritual_meditation"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "4",
+      "Re": "5",
+      "Arm": "2"
+    },
+    "defensearmour": [],
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Shrine Bearer (6)",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [],
+    "offenseweapons": [],
+    "toggles": "printoffensenameonecolprintmodelrulesdeftwocolprintmodelrulesdef",
+    "unit_id": "mikoshi_shrine",
+    "option_id": "pgdpdef2tjlv4yw67orod"
+  },
+  "mizuchi": {
+    "name": "Mizuchi",
+    "cost": "360",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Meeting of Minds",
+        "id": "meeting_of_minds"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Water Terrain"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "5",
+      "Re": "6",
+      "Arm": "4"
+    },
+    "defensearmour": [],
+    "offensename": "Mizuchi",
+    "offense": {
+      "At": "5",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Breath Attack",
+        "id": "breath_attack",
+        "params": [
+          "Str 4",
+          "AP 1",
+          "Flaming Attacks"
+        ]
+      },
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      }
+    ],
+    "unit_id": "mizuchi",
+    "option_id": "2ngbocdast8sbev4qsyiys"
+  },
+  "ancient_mizuchi_mount": {
+    "name": "Ancient Mizuchi",
+    "type": "Beast",
+    "size": "Gigantic",
+    "maxmountsperarmy": "1",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Meeting of Minds",
+        "id": "meeting_of_minds"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Water Terrain"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "5",
+      "Re": "6",
+      "Arm": "4"
+    },
+    "defensearmour": [],
+    "offensename": "Ancient Mizuchi",
+    "offense": {
+      "At": "5",
+      "Of": "5",
+      "St": "6",
+      "AP": "3",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Breath Attack",
+        "id": "breath_attack",
+        "params": [
+          "Str 4",
+          "AP 1",
+          "Flaming Attacks"
+        ]
+      },
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      }
+    ],
+    "unit_id": "ancient_mizuchi_mount",
+    "option_id": "kj5umenluxhgybzwvcjvg"
+  },
+  "ninja": {
+    "name": "Ninja",
+    "cost": "160",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Scout",
+        "id": "scout"
+      },
+      {
+        "name": "Ambush",
+        "id": "ambush"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Ninja",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Paired Weapons",
+        "id": "paired_weapons"
+      },
+      {
+        "name": "Shuriken",
+        "id": "shuriken",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "unit_id": "ninja",
+    "option_id": "uyxh8kf54wmwflvf7e23m"
+  },
+  "oath_keepers": {
+    "name": "Oath Keepers",
+    "cost": "230",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Way of the Warrior",
+        "id": "way_of_the_warrior"
+      },
+      {
+        "name": "Sashimonos",
+        "id": "sashimonos"
+      },
+      {
+        "name": "Bodyguard",
+        "id": "bodyguard",
+        "params": [
+          "General",
+          "Daimyo"
+        ]
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      },
+      {
+        "name": "Sode",
+        "id": "sode"
+      },
+      {
+        "name": "Horo Cloak",
+        "id": "horo_cloak"
+      }
+    ],
+    "offensename": "Oath Keeper",
+    "offense": {
+      "At": "1",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Kenjutsu",
+        "id": "kenjutsu",
+        "params": [
+          "3"
+        ]
+      }
+    ],
+    "unit_id": "oath_keepers",
+    "option_id": "opiw21sh0eqn5a408l68mj"
+  },
+  "oni": {
+    "name": "Oni",
+    "cost": "230",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Supernal",
+        "id": "supernal"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Summoned from the Underworld",
+        "id": "summoned_from_the_underworld"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "defenserules": [
+      {
+        "name": "Aegis",
+        "id": "aegis",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Oni",
+    "offense": {
+      "At": "3",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      }
+    ],
+    "offenseweapons": [],
+    "toggles": "printoffensenameonecolprintmodelrulesdeftwocolprintmodelrulesdef",
+    "unit_id": "oni",
+    "option_id": "fsapmplyv3dkbanzlm1t4"
+  },
+  "red_devils": {
+    "name": "Red Devils",
+    "cost": "190",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Way of the Warrior",
+        "id": "way_of_the_warrior"
+      },
+      {
+        "name": "Sashimonos",
+        "id": "sashimonos"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      },
+      {
+        "name": "Horo Cloak",
+        "id": "horo_cloak"
+      },
+      {
+        "name": "Sode",
+        "id": "sode"
+      }
+    ],
+    "offensename": "Red Devil",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Kenjutsu",
+        "id": "kenjutsu",
+        "params": [
+          "3"
+        ]
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      }
+    ],
+    "offensenameB": "Warhorse",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "red_devils",
+    "option_id": "yrj8c5mgr6zwuaiznc39"
+  },
+  "samurai_cavalry": {
+    "name": "Samurai Cavalry",
+    "cost": "220",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Way of the Warrior",
+        "id": "way_of_the_warrior"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Sashimonos",
+        "id": "sashimonos"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Horo Cloak",
+        "id": "horo_cloak"
+      }
+    ],
+    "offensename": "Samurai Cavalry",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Kenjutsu",
+        "id": "kenjutsu",
+        "params": [
+          "3"
+        ]
+      },
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Att"
+        ]
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      }
+    ],
+    "offensenameB": "Warhorse",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "samurai_cavalry",
+    "option_id": "9cy4skg5hawq5cjddvqd4a"
+  },
+  "samurai_warriors": {
+    "name": "Samurai Warriors",
+    "cost": "150",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Way of the Warrior",
+        "id": "way_of_the_warrior"
+      },
+      {
+        "name": "Sashimonos",
+        "id": "sashimonos"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Samurai Warrior",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Kenjutsu",
+        "id": "kenjutsu",
+        "params": [
+          "3"
+        ]
+      }
+    ],
+    "unit_id": "samurai_warriors",
+    "option_id": "q6ediajwpi12l8lf3hp3an"
+  },
+  "shinobi": {
+    "name": "Shinobi",
+    "cost": "160",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "5",
+      "Ma": "10",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Hidden",
+        "id": "hidden"
+      },
+      {
+        "name": "Not a Leader",
+        "id": "not_a_leader"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "6",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defenserules": [],
+    "defensearmour": [],
+    "offensename": "Shinobi",
+    "offense": {
+      "Ag": "7",
+      "At": "4",
+      "Of": "6",
+      "St": "4",
+      "AP": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Poison Attacks",
+        "id": "poison_attacks"
+      },
+      {
+        "name": "Multiple Wounds",
+        "id": "multiple_wounds",
+        "params": [
+          "2",
+          "against Characters"
+        ]
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Paired Weapons",
+        "id": "paired_weapons"
+      },
+      {
+        "name": "Shuriken",
+        "id": "shuriken",
+        "params": [
+          "2+"
+        ]
+      }
+    ],
+    "unit_id": "shinobi",
+    "option_id": "1kod99y6rqhigygwlsoejw"
+  },
+  "shugenja": {
+    "name": "Shugenja",
+    "cost": "120",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Wizard Apprentice",
+        "id": "wizard_apprentice"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Shugenja",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [],
+    "paths": "Cosmology=cosmology,Druidism=druidism,\nEvocation=evocation",
+    "unit_id": "shugenja",
+    "option_id": "02f380qmp2py17ybgxgcvzn"
+  },
+  "tatsu_mount": {
+    "name": "Tatsu",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Water Terrain"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+1"
+    },
+    "defensearmour": [],
+    "offensename": "Tatsu",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Magical Attacks",
+        "id": "magical_attacks"
+      }
+    ],
+    "unit_id": "tatsu_mount",
+    "option_id": "n1phgqm85jvj2neys45eo"
+  },
+  "warhorse_mount": {
+    "name": "Warhorse",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "C"
+    },
+    "globalrules": [],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+1"
+    },
+    "defensearmour": [],
+    "offensename": "Warhorse",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "warhorse_mount",
+    "option_id": "bkqk65sm6nwcmyt0snbljh"
+  },
+  "war_machine": {
+    "name": "War Machine",
+    "cost": "140",
+    "type": "Construct",
+    "size": "Standard",
+    "basesize": "60",
+    "global": {
+      "Ad": "4",
+      "Ma": "4",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "War Machine",
+        "id": "war_machine"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "1",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Flammable",
+        "id": "flammable"
+      }
+    ],
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Crew",
+    "forceoffensenameprint": "yes",
+    "offense": {
+      "At": "3",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Move or Fire",
+        "id": "move_or_fire"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdef\n\t\ttwocolprintoptionalmodelrulesdef\n\t",
+    "unit_id": "war_machine",
+    "option_id": "ijd9r3jfv6f0fmhsmoyrraa"
+  },
+  "warrior_monks": {
+    "name": "Warrior Monks",
+    "cost": "210",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Ritual Meditation",
+        "id": "ritual_meditation"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [],
+    "offensename": "Warrior Monk",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Fight in Extra Rank",
+        "id": "fight_in_extra_rank"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Halberd",
+        "id": "halberd"
+      }
+    ],
+    "unit_id": "warrior_monks",
+    "option_id": "8peps3txrr9xizv5bayiif"
+  },
+  "yabusame": {
+    "name": "Yabusame",
+    "cost": "170",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Way of the Warrior",
+        "id": "way_of_the_warrior"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      },
+      {
+        "name": "Feigned Flight",
+        "id": "feigned_flight"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "defenserules": [
+      {
+        "name": "Horo Cloak",
+        "id": "horo_cloak"
+      }
+    ],
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Yabusame",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Kenjutsu",
+        "id": "kenjutsu",
+        "params": [
+          "3"
+        ]
+      },
+      {
+        "name": "Kyudo",
+        "id": "kyudo"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Longbow",
+        "id": "longbow",
+        "params": [
+          "3+"
+        ]
+      }
+    ],
+    "offensenameB": "Warhorse",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "yabusame",
+    "option_id": "rmxkf8pbyysfcd91d8aqjg"
+  },
+  "yamabushi": {
+    "name": "Yamabushi",
+    "cost": "150",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Prayers of the Kami",
+        "id": "prayers_of_the_kami"
+      },
+      {
+        "name": "Blessing of the Crescent Moon",
+        "id": "blessing_of_the_crescent_moon"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Channel",
+        "id": "channel",
+        "params": [
+          "1"
+        ]
+      },
+      {
+        "name": "Ritual Meditation",
+        "id": "ritual_meditation"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Yamabushi",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Halberd",
+        "id": "halberd"
+      }
+    ],
+    "toggles": "printoffensenameonecolprintmodelrulesdeftwocolprintmodelrulesdef",
+    "unit_id": "yamabushi",
+    "option_id": "llt1xcqex68oz8htxil1i"
+  },
+  "ashigaru": {
+    "name": "Ashigaru",
+    "cost": "150",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Sashimonos",
+        "id": "sashimonos"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Ashigaru",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [],
+    "offenseweapons": [],
+    "unit_id": "ashigaru",
+    "option_id": "vqcgx53axlr1sj5n2y6gc"
+  }
+}
