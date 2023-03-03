@@ -17,3 +17,5 @@ libmaths.so
 /Cargo.lock
 
 .vscode
+
+__pycache__

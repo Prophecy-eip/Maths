@@ -1,0 +1,1104 @@
+{
+  "black_stallion_mount": {
+    "name": "Black Stallion",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "C"
+    },
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+2"
+    },
+    "offensename": "Black Stallion",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "black_stallion_mount",
+    "option_id": "t1qtqnrwgigl8ntmmnuiip"
+  },
+  "chimera_mount": {
+    "name": "Chimera",
+    "maxmountsperarmy": "2",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "20",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "5",
+      "Arm": "C"
+    },
+    "offensename": "Chimera",
+    "offense": {
+      "At": "5",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "chimera_mount",
+    "option_id": "3fjxqngsqr9s3gy8x6sg8"
+  },
+  "dark_chariot_mount": {
+    "name": "Dark Chariot",
+    "maxmountsperarmy": "3",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "8",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "5",
+      "Arm": "C+2"
+    },
+    "defensearmour": [],
+    "offensename": "Black Steed (2)",
+    "offense": {
+      "Ag": "3",
+      "St": "4",
+      "AP": "0",
+      "At": "1",
+      "Of": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6+1"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "dark_chariot_mount",
+    "option_id": "flaeaibasibfue525soabt"
+  },
+  "great_elk_mount": {
+    "name": "Great Elk",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Strider",
+        "id": "strider",
+        "params": [
+          "Forest"
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "5",
+      "Arm": "C+1"
+    },
+    "offensename": "Great Elk",
+    "offense": {
+      "At": "2",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "great_elk_mount",
+    "option_id": "f4p6ivk8b25jzhad8bwt4"
+  },
+  "horse_archers": {
+    "name": "Horse Archers",
+    "fluff": "Our warrior code is a way of life and it extends to our horses, the closest and oldest of our allies. Their loyalty is complete and ancient, our families and their bloodlines intertwine far beyond the telling. We are as one. We live or die, together. All Makhar can ride and are masters of the bow, our survival demands it and no man can match us. We ride before we walk and shoot before we talk. With our bows a Makhar Horse Archer is to be feared, appearing without warning and fading away as fast. The last sound many have heard is the flight of our arrows.",
+    "secondlogo": "arrows",
+    "cost": "225",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Makhar Battle Fever",
+        "id": "makhar_battle_fever"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      },
+      {
+        "name": "Feigned Flight",
+        "id": "feigned_flight"
+      },
+      {
+        "name": "Parting Shot",
+        "id": "parting_shot"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Rider",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Recurve Bow",
+        "id": "recurve_bow",
+        "params": [
+          "3+"
+        ]
+      },
+      {
+        "name": "Light Lance",
+        "id": "light_lance"
+      }
+    ],
+    "offensenameB": "Horse",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "horse_archers",
+    "option_id": "2gi5i6ry4akp1vsl8dmioo"
+  },
+  "karkadan_herd": {
+    "name": "Karkadan Herd",
+    "fluff": "Our guide continues to find our ignorance amusing. Many months after we left Volskagrad, we camped the night in a rocky river basin next to a watering hole fed by a small stream. Upon awakening with the morning sun I went to stretch my legs and loose my bladder. Much to my surprise, I was confronted across the watering hole by a furry beast with a gigantic nose-horn slurping greedily. In my excitement at being the first man of Zilas to experience the majesty of a unicorn, I awoke the camp with my screams of delight. Once roused, our guide promptly dismissed my discovery and informed me of the beast's true nature. As if in agreement, the karkadan turned and released its bowels in my direction, kicking its back legs to spread its steaming faeces. With a grunt it promptly rumbled off into the tundra to join its herd.Excerpt from the diary and travels of Columbo Vinaroni. Embassy of Zilas to the Great Khan---found in the Gyula's Pavilion",
+    "cost": "110",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Terror",
+        "id": "terror"
+      },
+      {
+        "name": "Frenzy",
+        "id": "frenzy"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      },
+      {
+        "name": "Insignificant",
+        "id": "insignificant"
+      },
+      {
+        "name": "Follow The Herd",
+        "id": "follow_the_herd"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "2",
+      "Re": "4",
+      "Arm": "1"
+    },
+    "offense": {
+      "At": "2",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offensename": "Karkadan",
+    "offenserules": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D3"
+        ]
+      },
+      {
+        "name": "Stampede",
+        "id": "stampede"
+      }
+    ],
+    "unit_id": "karkadan_herd",
+    "option_id": "nud2z2aja6ae746l6tesh"
+  },
+  "makhar_chariot": {
+    "name": "Makhar Chariots",
+    "fluff": "You want to know what haunts my nightmares? Thirty years I was a Reiter. Seen, fought, and killed most anything that walks, flies, or crawls. I've fought plenty of cavalry and infantry, easy kills for the repeaters, but that chariot was the worst I faced I'll never forget it. Four warriors to deal with, two of them riding the horses caused us a lot of problems. Either too many bows, or too many of those damned heavy lances. Lost good men that day, Ullor bless them. Now, hand me that bottle.Sgt JG Holtz, former Reiter, now guide to the Makhar",
+    "cost": "140",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "12",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Makhar Battle Fever",
+        "id": "makhar_battle_fever"
+      },
+      {
+        "name": "Parting Shot",
+        "id": "parting_shot"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Crew and Rider (4)",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offensenameB": "Horse (2)",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "4",
+      "AP": "1"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      }
+    ],
+    "unit_id": "makhar_chariot",
+    "option_id": "thdhubjbbi7d3bfdugcdp"
+  },
+  "makhar_flayers": {
+    "name": "Makhar Flayers",
+    "fluff": "Among the Makhar, some follow a darker path. That of the Flayer. Where the herdsman is content with his horses and sheep, the Flayer seeks more exotic and sometimes dangerous pastoral beasts. Chimeras, turuls, karkadans, and in rare cases humans; the more dangerous the herd, the more prestigious in the eyes of a Flayer. To control these perilous and unpredictable herds, Flayers mount the most spirited creatures: Shadow Chasers.",
+    "cost": "180",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "10",
+      "Ma": "20",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Strider",
+        "id": "strider"
+      },
+      {
+        "name": "Makhar Battle Fever",
+        "id": "makhar_battle_fever"
+      },
+      {
+        "name": "Feigned Flight",
+        "id": "feigned_flight"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "defenserules": [],
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Makhar Flayer",
+    "offense": {
+      "Ag": "4",
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "0"
+    },
+    "offenserules": [
+      {
+        "name": "Beast Taker",
+        "id": "beast_taker"
+      }
+    ],
+    "offensenameB": "Shadow Chaser",
+    "offenseB": {
+      "Ag": "4",
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "makhar_flayers",
+    "option_id": "y5bcevc9battcy9nqotqph"
+  },
+  "makhar_gyula": {
+    "name": "Makhar Gyula",
+    "fluff": "Our Gyulas lead by example, gifted leaders, as skilled in war as they are in holding together the fractious elements of our people. This is no easy task and many fall to the usurper's blade or the enemy's spear. Those that master this enigmatic art are elevated almost to the status of gods. When their time on the Steppe is at an end we raise massive earth mounds to house their treasures in this realm and the next. The weak are left in the grass for the wolves.",
+    "cost": "110",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Makhar Battle Fever",
+        "id": "makhar_battle_fever"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Makhar Gyula",
+    "offense": {
+      "Ag": "5",
+      "At": "3",
+      "Of": "5",
+      "St": "5",
+      "AP": "1"
+    },
+    "offenserules": [
+      {
+        "name": "Deeds not Words",
+        "id": "deeds_not_words"
+      }
+    ],
+    "unit_id": "makhar_gyula",
+    "option_id": "20hge030tka3jy20rnh7jx"
+  },
+  "makhar_lancers": {
+    "name": "Makhar Lancers",
+    "fluff": "We are the Gyula's shock cavalry. We ride larger horses than most Makhar, Kadzoly warmbloods, specially bred in the lands bordering Vetia. Wielding fearsome double-handed lances, we close with the enemy with terrifying speed, devastating our foes with bone splintering force. Either skewered by lance or smashed lifeless by flailing hooves, the role of the lancers is to decimate arrow-riddled units, sending them fleeing or to their graves.Elac---Makhar Lancer",
+    "cost": "180",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Makhar Battle Fever",
+        "id": "makhar_battle_fever"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Makhar Lancer",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offensenameB": "Black Steed",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "makhar_lancers",
+    "option_id": "ti8osu1cgqsoub8x6k9j"
+  },
+  "nomadic_giant": {
+    "name": "Nomadic Giant",
+    "fluff": "Some Steppe people foster relations with the wandering giants of the grasslands. Although their lumbering gait is dissimilar to our highly mobile warriors, they can be brutal in battle and in simple imitation of our archers some sport mighty bows that launch gigantic arrows of death to smash apart our foes. A fine sight indeed.",
+    "cost": "290",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "id": "mh-giant_see_giant_do",
+        "name": "Giant See, Giant Do",
+        "params": []
+      },
+      null
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "offensename": "Nomadic Giant",
+    "offense": {
+      "Ag": "3",
+      "At": "5",
+      "Of": "3",
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Rage",
+        "id": "rage"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "nomadic_giant",
+    "option_id": "r22rzrcmj6nceo2a5kus"
+  },
+  "shadow_chaser_mount": {
+    "name": "Shadow Chaser",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "10",
+      "Ma": "20",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Strider",
+        "id": "strider"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard",
+        "params": [
+          "6\""
+        ]
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+1"
+    },
+    "defenserules": [],
+    "offensename": "Shadow Chaser",
+    "offense": {
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "shadow_chaser_mount",
+    "option_id": "82ryqitd06fgx6ll7m365e"
+  },
+  "steppe_mammoth": {
+    "name": "Steppe Mammoth",
+    "fluff": "Entering the valley from over a high pass, the green sea of grass spread out before us like verdant silk slung carelessly across a floor. The deep blue of the morning sky met the boundless green of the steppe. The only thing disturbing the idyllic folds of the grasslands appeared to be large boulders clumped together haphazardly. On closer inspection these boulders seemed to possess a heavy fur coat. When I remarked this to our guide he almost fell off his horse with laughter. He informed us that these boulders were in fact humongous beasts and quite approachable when grazing. However, if roused to anger, these mamuts, he divulged, are unstoppable behemoths of rage. They are herded and ridden in the same way as horses and their milk is fermented as a highly prized delicacy along the Makhar tribes---kumis, powerful liquor.Excerpt from the diary and travels of Columbo Vinaroni. Embassy of Zilas to the Great Khan---found in the Gyula's Pavillion",
+    "cost": "400",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "100\u00d7150",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Makhar Battle Fever",
+        "id": "makhar_battle_fever"
+      },
+      {
+        "name": "Parting Shot",
+        "id": "parting_shot"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "3",
+      "Re": "6",
+      "Arm": "3"
+    },
+    "offensename": "Crew (6)",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenseweapons": [
+      {
+        "name": "Recurve Bow",
+        "id": "recurve_bow",
+        "params": [
+          "3+"
+        ]
+      },
+      {
+        "name": "Makhar Lance",
+        "id": "makhar_lance"
+      }
+    ],
+    "offensenameB": "Mammoth",
+    "offenseB": {
+      "At": "4",
+      "Of": "3",
+      "St": "6",
+      "AP": "3",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D3"
+        ]
+      },
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "steppe_mammoth",
+    "option_id": "e7yvbmoku8emyrjtvzxbs"
+  },
+  "steppe_wolfhounds": {
+    "name": "Steppe Wolfhounds",
+    "fluff": "The Steppe harbours many fearsome beasts. As children we learn of these terrors---the stories told around the fire create a healthy fear. The young are entrusted to guard the herds, and to aid them we keep dogs. These are no fireside lapdogs familiar to the settled people, but bred over centuries as the fiercest and fastest of their kind.",
+    "cost": "100",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Insignificant",
+        "id": "insignificant"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Steppe Wolfhound",
+    "offense": {
+      "Ag": "4",
+      "At": "1",
+      "Of": "3",
+      "St": "3",
+      "AP": "0"
+    },
+    "offenserules": [],
+    "unit_id": "steppe_wolfhounds",
+    "option_id": "kgzxtxqxx4qf1ficq9l4it"
+  },
+  "t\u00e1ltos": {
+    "name": "T\u00e1ltos",
+    "fluff": "There are some amongst us who see that which is beyond most Makhar. They perceive the living, beating heart of the Steppe, feel the pulsing rhythms of the winds, and commune with the spirit of our land. Their way is no easy path, these T\u00e1ltos; they are as much part of our war horde as the horses or bows. We expect them to fight alongside us, to live and die as we do, in the cauldron of battle. Their skills which bring the power of the Steppe crashing into our enemies has turned many battles in our favour.",
+    "cost": "110",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Makhar Battle Fever",
+        "id": "makhar_battle_fever"
+      },
+      {
+        "name": "Wizard Apprentice",
+        "id": "wizard_apprentice"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "T\u00e1ltos",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserules": [],
+    "paths": "Pyromancy=pyromancy,Shamanism=shamanism,Thaumaturgy=thaumaturgy",
+    "unit_id": "t\u00e1ltos",
+    "option_id": "hbjyzyyw96k8uwnavsal8"
+  },
+  "tamyir_vassals": {
+    "name": "Tamyir Vassals",
+    "fluff": "We were ready for their horsemen, knew they would be coming. Spent all day digging shallow pits and covering them with mown grass to break their horses' legs. Well, the peasants did, obviously I only supervised. But the horses never came, just hordes of wild Tamyir Vassals on foot. We were overrun in a heartbeat.Baron Luis de Ch\u00e2tray, formerly an Equitan Questing Knight, latterly a dung shoveller",
+    "cost": "135",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "25\u00d725",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Makhar Battle Fever",
+        "id": "makhar_battle_fever"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "4",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Tamyir Vassal",
+    "offense": {
+      "At": "1",
+      "Of": "4",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "unit_id": "tamyir_vassals",
+    "option_id": "tw1vju2r6vaksumiw3bkik"
+  },
+  "turul": {
+    "name": "Turul",
+    "fluff": "I am struggling to get the turul eggs you requested, Master. These creatures are smarter than eagles. When the mother goes off to hunt and I see her wings disappear over the horizon, I begin my descent. Every time I am within metres of her nest my spotter shouts down to me and I must abort the climb. It's as though the damned turul can see me from miles away! These beasts are fearsome, truly. With the hindquarters of a mountain lion and the claws, head, and wings of a giant hawk I dare not get close to the nest when she is within sight. I would be ripped to shreds. Another method must be found.Taken from a letter found in the Gyula's Pavilion",
+    "cost": "220",
+    "type": "Beast",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Adfly": "8",
+      "Mafly": "16",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Towering Presence",
+        "id": "towering_presence"
+      },
+      {
+        "name": "Fly",
+        "id": "fly",
+        "params": [
+          "8\"",
+          "16\""
+        ]
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "3"
+    },
+    "offensename": "Turul",
+    "offense": {
+      "At": "5",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "turul",
+    "option_id": "d5rwbrq1a29ueup1ui0djp"
+  },
+  "war_dais_mount": {
+    "name": "War Dais",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "50\u00d750",
+    "global": {
+      "Ad": "C",
+      "Ma": "C",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Tall",
+        "id": "tall"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+2"
+    },
+    "defenserules": [
+      {
+        "name": "Cannot be Stomped",
+        "id": "cannot_be_stomped"
+      }
+    ],
+    "offensename": "War Dais",
+    "offense": {
+      "At": "4",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "war_dais_mount",
+    "option_id": "tkal05vpajrsw3qnkrudmi"
+  },
+  "warrior_knights": {
+    "name": "Warrior Knights",
+    "fluff": "Makhar who have sworn themselves to the Dark Gods often return to their homes on the Steppe to fulfill their path for reasons that are unclear to even the T\u00e1ltos. Nonetheless, we welcome them, as their prowess in battle is undoubted.",
+    "cost": "255",
+    "type": "Cavalry",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Path of the Favoured",
+        "id": "path_of_the_favoured"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "5",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Hell-Forged Armour",
+        "id": "hellforged_armour"
+      },
+      {
+        "name": "Shield",
+        "id": "shield"
+      }
+    ],
+    "offensename": "Warrior Knight",
+    "offense": {
+      "At": "2",
+      "Of": "5",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offensenameB": "Black Steed",
+    "offenseB": {
+      "At": "1",
+      "Of": "3",
+      "St": "4",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "toggles": "onecolprintmodelrulesdeftwocolprintmodelrulesdef",
+    "unit_id": "warrior_knights",
+    "option_id": "eh0mhp7hk1kg8py9pkcpke"
+  },
+  "wasteland_behemoth_mount": {
+    "name": "Wasteland Behemoth",
+    "maxmountsperarmy": "2",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "100\u00d7150",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "6",
+      "Arm": "4"
+    },
+    "offensename": "Wasteland Behemoth",
+    "offense": {
+      "Ag": "3",
+      "At": "6",
+      "Of": "3",
+      "St": "6",
+      "AP": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "wasteland_behemoth_mount",
+    "option_id": "lqceszwq4soglu6i1r49j"
+  }
+}

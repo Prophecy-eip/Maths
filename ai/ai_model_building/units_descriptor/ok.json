@@ -1,0 +1,1252 @@
+{
+  "bombardiers": {
+    "name": "Bombardiers",
+    "cost": "175",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Scrapling Lookout",
+        "id": "scrapling_lookout"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Bombardier",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Sons of the Avalanche",
+        "id": "sons_of_the_avalanche"
+      },
+      {
+        "name": "Hand Cannon",
+        "id": "hand_cannon",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "unit_id": "bombardiers",
+    "option_id": "9ikzkr50ubo4wkiknj9q"
+  },
+  "bruisers": {
+    "name": "Bruisers",
+    "cost": "180",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scrapling Lookout",
+        "id": "scrapling_lookout"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Bruiser",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Sons of the Avalanche",
+        "id": "sons_of_the_avalanche"
+      }
+    ],
+    "offenseweapons": [
+      {
+        "name": "Great Weapon",
+        "id": "great_weapon"
+      }
+    ],
+    "unit_id": "bruisers",
+    "option_id": "pdhq7i79ralm4nq9bm3nm"
+  },
+  "frost_mammoth": {
+    "name": "Frost Mammoth",
+    "cost": "380",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "100\u00d7150",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Freezing Aura",
+        "id": "freezing_aura"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "3",
+      "Re": "6",
+      "Arm": "3"
+    },
+    "offensename": "Rider (2)",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offensenameB": "Frost Mammoth",
+    "offenseB": {
+      "At": "4",
+      "Of": "3",
+      "St": "6",
+      "AP": "3",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D3"
+        ]
+      },
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "frost_mammoth",
+    "option_id": "4kol33sqj2659kwvbfo6om"
+  },
+  "great_khan": {
+    "name": "Great Khan",
+    "cost": "270",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "9"
+    },
+    "defense": {
+      "HP": "5",
+      "Df": "6",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Great Khan",
+    "offense": {
+      "At": "5",
+      "Of": "6",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Sons of the Avalanche",
+        "id": "sons_of_the_avalanche"
+      }
+    ],
+    "unit_id": "great_khan",
+    "option_id": "3zmp0cmkxc94hgsmyo74ei"
+  },
+  "khan": {
+    "name": "Khan",
+    "cost": "190",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scrapling Lookout",
+        "id": "scrapling_lookout"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Khan",
+    "offense": {
+      "At": "4",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Sons of the Avalanche",
+        "id": "sons_of_the_avalanche"
+      }
+    ],
+    "unit_id": "khan",
+    "option_id": "x3bwojejgts662fp4wppd"
+  },
+  "kin-eater": {
+    "name": "Kin-Eater",
+    "cost": "175",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Ambush",
+        "id": "ambush"
+      },
+      {
+        "name": "Unbreakable",
+        "id": "unbreakable"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Fortitude",
+        "id": "fortitude",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "offensename": "Kin-Eater",
+    "offense": {
+      "At": "4",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Hatred",
+        "id": "hatred"
+      }
+    ],
+    "unit_id": "kin-eater",
+    "option_id": "dqrjc96795iwz5v1hku4"
+  },
+  "mammoth_hunter": {
+    "name": "Mammoth Hunter",
+    "cost": "240",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "9"
+    },
+    "globalrules": [
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Not a Leader",
+        "id": "not_a_leader"
+      },
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Loner",
+        "id": "loner"
+      },
+      {
+        "name": "Animal Master",
+        "id": "animal_master"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "5",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Mammoth Hunter",
+    "offense": {
+      "At": "4",
+      "Of": "5",
+      "St": "5",
+      "AP": "2",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Sons of the Avalanche",
+        "id": "sons_of_the_avalanche"
+      }
+    ],
+    "toggles": "onecolprintmodelrulesdeftwocolprintmodelrulesdef",
+    "unit_id": "mammoth_hunter",
+    "option_id": "7rl6en4i8wopjtpi7yzoo"
+  },
+  "mercenary_veterans": {
+    "name": "Mercenary Veterans",
+    "cost": "180",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Scrapling Lookout",
+        "id": "scrapling_lookout"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Mercenary Veteran",
+    "offense": {
+      "At": "4",
+      "Of": "4",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Sons of the Avalanche",
+        "id": "sons_of_the_avalanche"
+      }
+    ],
+    "unit_id": "mercenary_veterans",
+    "option_id": "yy4f0thhxj1uz4mn8jwmp"
+  },
+  "rock_aurochs": {
+    "name": "Rock Aurochs",
+    "cost": "480",
+    "addrestriction": "0--2 Units/Army*",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "100\u00d7150",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Frenzy",
+        "id": "frenzy"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "2",
+      "Re": "6",
+      "Arm": "3"
+    },
+    "defenserules": [
+      {
+        "name": "Mountain Hide",
+        "id": "mountain_hide"
+      }
+    ],
+    "offensename": "Rider",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "3"
+    },
+    "offensenameB": "Rock Aurochs",
+    "offenseB": {
+      "At": "5",
+      "Of": "3",
+      "St": "6",
+      "AP": "3",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "3D3"
+        ]
+      },
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Battle Focus",
+        "id": "battle_focus"
+      },
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Str",
+          "+1 AP"
+        ]
+      },
+      {
+        "name": "Living Avalanche",
+        "id": "living_avalanche"
+      }
+    ],
+    "unit_id": "rock_aurochs",
+    "option_id": "qkvs7vh0ey8ixsxkvpx9lb"
+  },
+  "rock_aurochs_mount": {
+    "name": "Rock Aurochs",
+    "maxmountsperarmy": "1",
+    "type": "Beast",
+    "size": "Gigantic",
+    "basesize": "100\u00d7150",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Frenzy",
+        "id": "frenzy"
+      },
+      {
+        "name": "Fearless",
+        "id": "fearless"
+      }
+    ],
+    "defense": {
+      "HP": "6",
+      "Df": "2",
+      "Re": "6",
+      "Arm": "3"
+    },
+    "defenserules": [
+      {
+        "name": "Mountain Hide",
+        "id": "mountain_hide"
+      }
+    ],
+    "offensename": "Rock Aurochs",
+    "offense": {
+      "At": "5",
+      "Of": "3",
+      "St": "6",
+      "AP": "3",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "3D3"
+        ]
+      },
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      },
+      {
+        "name": "Battle Focus",
+        "id": "battle_focus"
+      },
+      {
+        "name": "Devastating Charge",
+        "id": "devastating_charge",
+        "params": [
+          "+1 Str",
+          "+1 AP"
+        ]
+      },
+      {
+        "name": "Living Avalanche",
+        "id": "living_avalanche"
+      }
+    ],
+    "unit_id": "rock_aurochs_mount",
+    "option_id": "eyy5pmwobmvxwz7jxq0zp"
+  },
+  "sabretooth_tigers": {
+    "name": "Sabretooth Tigers",
+    "cost": "85",
+    "type": "Beast",
+    "size": "Standard",
+    "basesize": "25\u00d750",
+    "global": {
+      "Ad": "8",
+      "Ma": "16",
+      "Di": "5"
+    },
+    "globalrules": [
+      {
+        "name": "Insignificant",
+        "id": "insignificant"
+      }
+    ],
+    "defense": {
+      "HP": "2",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "offensename": "Sabretooth Tiger",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "4"
+    },
+    "offenserules": [
+      {
+        "name": "Extra Support",
+        "id": "extra_support",
+        "params": [
+          "2"
+        ]
+      }
+    ],
+    "unit_id": "sabretooth_tigers",
+    "option_id": "9i3g2sy733ahdcgetflijp"
+  },
+  "scraplings": {
+    "name": "Scraplings",
+    "cost": "115",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Insignificant",
+        "id": "insignificant"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      },
+      {
+        "name": "Back to Work!",
+        "id": "back_to_work"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "offensename": "Scrapling",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "unit_id": "scraplings",
+    "option_id": "4q21e8dhbti4jww4ihkszp"
+  },
+  "scrapling_trappers": {
+    "name": "Scrapling Trappers",
+    "cost": "80",
+    "type": "Infantry",
+    "size": "Standard",
+    "basesize": "20\u00d720",
+    "global": {
+      "Ad": "4",
+      "Ma": "8",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Insignificant",
+        "id": "insignificant"
+      },
+      {
+        "name": "Scout",
+        "id": "scout"
+      },
+      {
+        "name": "Skirmisher",
+        "id": "skirmisher"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      },
+      {
+        "name": "It's a Trap!",
+        "id": "its_a_trap"
+      }
+    ],
+    "defense": {
+      "HP": "1",
+      "Df": "2",
+      "Re": "3",
+      "Arm": "0"
+    },
+    "defenserules": [
+      {
+        "name": "Hard Target",
+        "id": "hard_target",
+        "params": [
+          "1"
+        ]
+      }
+    ],
+    "offensename": "Scrapling Trapper",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offenseweapons": [
+      {
+        "name": "Throwing Weapons",
+        "id": "throwing_weapons",
+        "params": [
+          "5+"
+        ]
+      }
+    ],
+    "toggles": "onecolprintmodelrulesdeftwocolprintmodelrulesdef",
+    "unit_id": "scrapling_trappers",
+    "option_id": "8ccsho3zl5ol0w8jyozceq"
+  },
+  "scratapult": {
+    "name": "Scratapult",
+    "cost": "240",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "6",
+      "Ma": "6",
+      "Di": "6"
+    },
+    "globalrules": [
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Insignificant",
+        "id": "insignificant"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "3"
+    },
+    "offensename": "Scrapling Crew (7)",
+    "offense": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offensenameB": "Woolly Rhino",
+    "offenseB": {
+      "At": "3",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      },
+      {
+        "name": "Scratapult",
+        "id": "scratapult",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "unit_id": "scratapult",
+    "option_id": "bvq9goe7ygsj120i1cj1v"
+  },
+  "shaman": {
+    "name": "Shaman",
+    "cost": "145",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Wizard Apprentice",
+        "id": "wizard_apprentice"
+      }
+    ],
+    "defense": {
+      "HP": "4",
+      "Df": "4",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "offensename": "Shaman",
+    "offense": {
+      "At": "3",
+      "Of": "4",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Sons of the Avalanche",
+        "id": "sons_of_the_avalanche"
+      }
+    ],
+    "paths": "Shamanism=shamanism,Thaumaturgy=thaumaturgy,Pyromancy=pyromancy",
+    "unit_id": "shaman",
+    "option_id": "sympxpp3atb0svr4743ue"
+  },
+  "slave_giant": {
+    "name": "Slave Giant",
+    "cost": "270",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "id": "ok-giant_see_giant_do",
+        "name": "Giant See, Giant Do",
+        "params": []
+      },
+      null
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "offensename": "Slave Giant",
+    "offense": {
+      "At": "5",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Rage",
+        "id": "rage"
+      }
+    ],
+    "unit_id": "slave_giant",
+    "option_id": "frslggme6swehd7gb5znui"
+  },
+  "thunder_cannon": {
+    "name": "Thunder Cannon",
+    "cost": "310",
+    "type": "Construct",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "6",
+      "Ma": "6",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      }
+    ],
+    "defense": {
+      "HP": "5",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "3"
+    },
+    "offensename": "Bombardier Crew",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Sons of the Avalanche",
+        "id": "sons_of_the_avalanche"
+      }
+    ],
+    "offensenameB": "Scrapling Crew",
+    "offenseB": {
+      "At": "1",
+      "Of": "2",
+      "St": "3",
+      "AP": "0",
+      "Ag": "3"
+    },
+    "offensenameC": "Woolly Rhino",
+    "offenseC": {
+      "At": "3",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenserulesC": [
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "offensenameI": "Chassis",
+    "offenseI": {
+      "St": "5",
+      "AP": "2"
+    },
+    "offenserulesI": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D6"
+        ]
+      },
+      {
+        "name": "Inanimate",
+        "id": "inanimate"
+      },
+      {
+        "name": "Thunder Cannon",
+        "id": "thunder_cannon",
+        "params": [
+          "4+"
+        ]
+      }
+    ],
+    "unit_id": "thunder_cannon",
+    "option_id": "3ap3al88beeuq4eed76zmk"
+  },
+  "tribesmen": {
+    "name": "Tribesmen",
+    "cost": "150",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "6",
+      "Ma": "12",
+      "Di": "7"
+    },
+    "globalrules": [
+      {
+        "name": "Scrapling Lookout",
+        "id": "scrapling_lookout"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "0"
+    },
+    "defensearmour": [
+      {
+        "name": "Light Armour",
+        "id": "light_armour"
+      }
+    ],
+    "offensename": "Tribesman",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Sons of the Avalanche",
+        "id": "sons_of_the_avalanche"
+      }
+    ],
+    "offenseweapons": [],
+    "unit_id": "tribesmen",
+    "option_id": "f9imkag7ixkph9sw83n2s"
+  },
+  "tusker_mount": {
+    "name": "Tusker",
+    "maxmountsperarmy": "2",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "14",
+      "Di": "C"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      }
+    ],
+    "defense": {
+      "HP": "C",
+      "Df": "C",
+      "Re": "C",
+      "Arm": "C+2"
+    },
+    "offensename": "Tusker",
+    "offense": {
+      "At": "4",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenserules": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D3"
+        ]
+      },
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "tusker_mount",
+    "option_id": "no4j5i9a6f79cf42mgjiu"
+  },
+  "tusker_cavalry": {
+    "name": "Tusker Cavalry",
+    "cost": "360",
+    "type": "Cavalry",
+    "size": "Large",
+    "basesize": "50\u00d7100",
+    "global": {
+      "Ad": "8",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Scoring",
+        "id": "scoring"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "2"
+    },
+    "defensearmour": [
+      {
+        "name": "Heavy Armour",
+        "id": "heavy_armour"
+      }
+    ],
+    "offensename": "Rider",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "4",
+      "AP": "1",
+      "Ag": "2"
+    },
+    "offensenameB": "Tusker",
+    "offenseB": {
+      "At": "4",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "2"
+    },
+    "offenserulesB": [
+      {
+        "name": "Impact Hits",
+        "id": "impact_hits",
+        "params": [
+          "D3"
+        ]
+      },
+      {
+        "name": "Harnessed",
+        "id": "harnessed"
+      }
+    ],
+    "unit_id": "tusker_cavalry",
+    "option_id": "cd1acyqoesrpxwgtr8qdos"
+  },
+  "yetis": {
+    "name": "Yetis",
+    "cost": "170",
+    "type": "Infantry",
+    "size": "Large",
+    "basesize": "40\u00d740",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "name": "Swiftstride",
+        "id": "swiftstride"
+      },
+      {
+        "name": "Fear",
+        "id": "fear"
+      },
+      {
+        "name": "Vanguard",
+        "id": "vanguard"
+      },
+      {
+        "name": "Light Troops",
+        "id": "light_troops"
+      },
+      {
+        "name": "Touch of Frost",
+        "id": "touch_of_frost"
+      }
+    ],
+    "defense": {
+      "HP": "3",
+      "Df": "3",
+      "Re": "4",
+      "Arm": "2"
+    },
+    "offensename": "Yeti",
+    "offense": {
+      "At": "3",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Paired Weapons",
+        "id": "paired_weapons"
+      }
+    ],
+    "unit_id": "yetis",
+    "option_id": "2qlgvzss2roj3dv2av52p"
+  },
+  "supplement_slave_giant": {
+    "name": "Supplement Slave Giant",
+    "cost": "270",
+    "type": "Infantry",
+    "size": "Gigantic",
+    "basesize": "50\u00d775",
+    "global": {
+      "Ad": "7",
+      "Ma": "14",
+      "Di": "8"
+    },
+    "globalrules": [
+      {
+        "id": "ok-giant_see_giant_do",
+        "name": "Giant See, Giant Do",
+        "params": []
+      },
+      null
+    ],
+    "defense": {
+      "HP": "7",
+      "Df": "3",
+      "Re": "5",
+      "Arm": "1"
+    },
+    "offensename": "Slave Giant",
+    "offense": {
+      "At": "5",
+      "Of": "3",
+      "St": "5",
+      "AP": "2",
+      "Ag": "3"
+    },
+    "offenserules": [
+      {
+        "name": "Rage",
+        "id": "rage"
+      }
+    ],
+    "toggles": "onecolprintoptionalmodelrulesdeftwocolprintoptionalmodelrulesdef",
+    "unit_id": "supplement_slave_giant",
+    "option_id": "c6fup5wpjqk364w8sm3wpl"
+  }
+}
