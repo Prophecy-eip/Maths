@@ -38,7 +38,6 @@ def load_unit_stat(stat, unit):
         for sub_stat in stats_config[stat]:
             result += [numerise_field(
                 unit[stat][sub_stat]) if sub_stat in unit[stat] else 0]
-
     else:
         for sub_stat in stats_config[stat]:
             result += [0]
