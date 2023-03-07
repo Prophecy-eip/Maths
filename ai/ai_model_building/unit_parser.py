@@ -1,8 +1,9 @@
 import json
 import os
 from stat_parser import create_stat
+import pathlib
 
-UNITS_FOLDER = 'units_descriptor'
+UNITS_FOLDER = str(pathlib.Path(__file__).parent.resolve()) + '/units_descriptor'
 
 UNITS_FILES = [file for file in os.listdir(
     UNITS_FOLDER) if file.endswith('.json')]
