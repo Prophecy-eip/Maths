@@ -1,5 +1,7 @@
 #Utils and miscellaneous set of functions in python to help building the AI model
 
+import dataclasses, json
+
 #This function will concatenate any number of dictionary
 def concatenate_dictionaries(*dicts):
     result = {}
@@ -13,3 +15,10 @@ def safe_add_signed_unsigned(a: int, rhs: int) -> int:
         return a - abs(rhs) if a > abs(rhs) else 0
     else:
         return a + rhs if a + rhs >= 0 else 0
+
+# Serve as a dataclass encoder for json
+class EnhancedJSONEncoder(json.JSONEncoder):
+        def default(self, o):
+            if dataclasses.is_dataclass(o):
+                return dataclasses.asdict(o)
+            return super().default(o)

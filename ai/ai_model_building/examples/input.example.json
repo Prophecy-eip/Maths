@@ -1,0 +1,611 @@
+[
+  {
+    "first_player": {
+      "score": 15,
+      "modifiers": [
+        -755321876802698317, -4321550732796468032, -361745846750428232,
+        7565832293339514261, 7565832293339514261, 7565832293339514261,
+        -472036734363947408, -5065730953557232180, -2261610387513431016,
+        -3066613289030816000, 5086243523854547985, 4486841942772089153,
+        -5346707032520496989, -3033639091399762979, -3804238814546308181,
+        -6258466412191610414, 8407985117048896793, 8407985117048896793,
+        8407985117048896793, 2001840679336095193, -5635927952625522856,
+        -3002073492974377420, -445630695823497287, -445630695823497287,
+        -445630695823497287, -445630695823497287, 2241654308401107569,
+        8640645932965701709, 8640645932965701709, 8640645932965701709,
+        8640645932965701709, -3383702377924447445, -3383702377924447445,
+        -3383702377924447445, -3383702377924447445, 7941293559752013892,
+        7259201214834126343, 2733436631948761243, -6373717259406369706,
+        -5243570966303057643
+      ],
+      "units": [
+        {
+          "name": "Mage",
+          "stat": {
+            "advance": 5,
+            "march": 10,
+            "discipline": 9,
+            "health_points": 3,
+            "defense": 4,
+            "resilience": 3,
+            "armour": 0,
+            "attack": 1,
+            "offensive": 4,
+            "strength": 3,
+            "armour_penetration": 0,
+            "agility": 5,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "Mage",
+          "stat": {
+            "advance": 5,
+            "march": 10,
+            "discipline": 9,
+            "health_points": 3,
+            "defense": 4,
+            "resilience": 3,
+            "armour": 0,
+            "attack": 1,
+            "offensive": 4,
+            "strength": 3,
+            "armour_penetration": 0,
+            "agility": 5,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "Commander",
+          "stat": {
+            "advance": 5,
+            "march": 10,
+            "discipline": 9,
+            "health_points": 3,
+            "defense": 6,
+            "resilience": 3,
+            "armour": 0,
+            "attack": 3,
+            "offensive": 6,
+            "strength": 4,
+            "armour_penetration": 1,
+            "agility": 7,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "Citizen Spears",
+          "stat": {
+            "advance": 5,
+            "march": 10,
+            "discipline": 8,
+            "health_points": 1,
+            "defense": 4,
+            "resilience": 3,
+            "armour": 0,
+            "attack": 1,
+            "offensive": 4,
+            "strength": 3,
+            "armour_penetration": 0,
+            "agility": 5,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "Sea Guard",
+          "stat": {
+            "advance": 5,
+            "march": 10,
+            "discipline": 8,
+            "health_points": 1,
+            "defense": 5,
+            "resilience": 3,
+            "armour": 0,
+            "attack": 1,
+            "offensive": 4,
+            "strength": 3,
+            "armour_penetration": 0,
+            "agility": 5,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "Elein Reavers",
+          "stat": {
+            "advance": 9,
+            "march": 18,
+            "discipline": 8,
+            "health_points": 1,
+            "defense": 4,
+            "resilience": 3,
+            "armour": 1,
+            "attack": 1,
+            "offensive": 4,
+            "strength": 3,
+            "armour_penetration": 0,
+            "agility": 5,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "Flame Wardens",
+          "stat": {
+            "advance": 5,
+            "march": 10,
+            "discipline": 9,
+            "health_points": 1,
+            "defense": 5,
+            "resilience": 3,
+            "armour": 0,
+            "attack": 1,
+            "offensive": 5,
+            "strength": 3,
+            "armour_penetration": 0,
+            "agility": 6,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "Knights of Ryma",
+          "stat": {
+            "advance": 9,
+            "march": 18,
+            "discipline": 9,
+            "health_points": 1,
+            "defense": 5,
+            "resilience": 3,
+            "armour": 2,
+            "attack": 2,
+            "offensive": 5,
+            "strength": 4,
+            "armour_penetration": 1,
+            "agility": 6,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "Giant Eagles",
+          "stat": {
+            "advance": 2,
+            "march": 4,
+            "discipline": 8,
+            "health_points": 3,
+            "defense": 5,
+            "resilience": 4,
+            "armour": 0,
+            "attack": 2,
+            "offensive": 5,
+            "strength": 4,
+            "armour_penetration": 1,
+            "agility": 4,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "Giant Eagles",
+          "stat": {
+            "advance": 2,
+            "march": 4,
+            "discipline": 8,
+            "health_points": 3,
+            "defense": 5,
+            "resilience": 4,
+            "armour": 0,
+            "attack": 2,
+            "offensive": 5,
+            "strength": 4,
+            "armour_penetration": 1,
+            "agility": 4,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "Grey Watchers",
+          "stat": {
+            "advance": 5,
+            "march": 10,
+            "discipline": 8,
+            "health_points": 1,
+            "defense": 4,
+            "resilience": 3,
+            "armour": 0,
+            "attack": 1,
+            "offensive": 4,
+            "strength": 3,
+            "armour_penetration": 0,
+            "agility": 5,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "Grey Watchers",
+          "stat": {
+            "advance": 5,
+            "march": 10,
+            "discipline": 8,
+            "health_points": 1,
+            "defense": 4,
+            "resilience": 3,
+            "armour": 0,
+            "attack": 1,
+            "offensive": 4,
+            "strength": 3,
+            "armour_penetration": 0,
+            "agility": 5,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        }
+      ]
+    },
+    "second_player": {
+      "score": 5,
+      "modifiers": [
+        -4321550732796468032, 404362255715124815, -6377991310951820994,
+        4486841942772089153, -3258453273844580442, -7445479371774393803,
+        5086243523854547985, 2438773016698083397, -5884564612827754483,
+        -5884564612827754483, 6739367405647612280, 6739367405647612280,
+        6739367405647612280, 6739367405647612280, -4165312327249586884,
+        7565832293339514261, 6836925275744535033, -5065730953557232180,
+        -6258466412191610414, 8407985117048896793, -6373717259406369706,
+        -6373717259406369706, -6373717259406369706, -6373717259406369706,
+        -6373717259406369706, -6373717259406369706, -6373717259406369706,
+        -6373717259406369706, 7509205186994134795, 2100295988941308492,
+        7521588812628974887, 7521588812628974887, 7521588812628974887,
+        7521588812628974887, 7521588812628974887, 5405738393861531525,
+        5405738393861531525, -3383702377924447445, -3383702377924447445,
+        -3383702377924447445, -3383702377924447445, 8640645932965701709,
+        8640645932965701709, 8640645932965701709, 8640645932965701709,
+        8640645932965701709, 8640645932965701709, -445630695823497287,
+        2241654308401107569, 7941293559752013892, 7941293559752013892,
+        -374241642251449182, -374241642251449182
+      ],
+      "units": [
+        {
+          "name": "Seidhkennar",
+          "stat": {
+            "advance": 4,
+            "march": 8,
+            "discipline": 8,
+            "health_points": 3,
+            "defense": 3,
+            "resilience": 4,
+            "armour": 0,
+            "attack": 1,
+            "offensive": 3,
+            "strength": 3,
+            "armour_penetration": 0,
+            "agility": 3,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "Seidhkennar",
+          "stat": {
+            "advance": 4,
+            "march": 8,
+            "discipline": 8,
+            "health_points": 3,
+            "defense": 3,
+            "resilience": 4,
+            "armour": 0,
+            "attack": 1,
+            "offensive": 3,
+            "strength": 3,
+            "armour_penetration": 0,
+            "agility": 3,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "\u00c5sklander Chief",
+          "stat": {
+            "advance": 4,
+            "march": 8,
+            "discipline": 9,
+            "health_points": 3,
+            "defense": 5,
+            "resilience": 4,
+            "armour": 0,
+            "attack": 3,
+            "offensive": 5,
+            "strength": 5,
+            "armour_penetration": 1,
+            "agility": 5,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "\u00c5sklander Chief",
+          "stat": {
+            "advance": 4,
+            "march": 8,
+            "discipline": 9,
+            "health_points": 3,
+            "defense": 5,
+            "resilience": 4,
+            "armour": 0,
+            "attack": 3,
+            "offensive": 5,
+            "strength": 5,
+            "armour_penetration": 1,
+            "agility": 5,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "\u00c5sklander Chief",
+          "stat": {
+            "advance": 4,
+            "march": 8,
+            "discipline": 9,
+            "health_points": 3,
+            "defense": 5,
+            "resilience": 4,
+            "armour": 0,
+            "attack": 3,
+            "offensive": 5,
+            "strength": 5,
+            "armour_penetration": 1,
+            "agility": 5,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "\u00c5sklander Chief",
+          "stat": {
+            "advance": 4,
+            "march": 8,
+            "discipline": 9,
+            "health_points": 3,
+            "defense": 5,
+            "resilience": 4,
+            "armour": 0,
+            "attack": 3,
+            "offensive": 5,
+            "strength": 5,
+            "armour_penetration": 1,
+            "agility": 5,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "\u00c5sklanders",
+          "stat": {
+            "advance": 4,
+            "march": 8,
+            "discipline": 7,
+            "health_points": 1,
+            "defense": 4,
+            "resilience": 3,
+            "armour": 0,
+            "attack": 1,
+            "offensive": 4,
+            "strength": 4,
+            "armour_penetration": 0,
+            "agility": 3,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "\u00c5sklanders",
+          "stat": {
+            "advance": 4,
+            "march": 8,
+            "discipline": 7,
+            "health_points": 1,
+            "defense": 4,
+            "resilience": 3,
+            "armour": 0,
+            "attack": 1,
+            "offensive": 4,
+            "strength": 4,
+            "armour_penetration": 0,
+            "agility": 3,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "\u00c5sklanders",
+          "stat": {
+            "advance": 4,
+            "march": 8,
+            "discipline": 7,
+            "health_points": 1,
+            "defense": 4,
+            "resilience": 3,
+            "armour": 0,
+            "attack": 1,
+            "offensive": 4,
+            "strength": 4,
+            "armour_penetration": 0,
+            "agility": 3,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "\u00c5sklanders",
+          "stat": {
+            "advance": 4,
+            "march": 8,
+            "discipline": 7,
+            "health_points": 1,
+            "defense": 4,
+            "resilience": 3,
+            "armour": 0,
+            "attack": 1,
+            "offensive": 4,
+            "strength": 4,
+            "armour_penetration": 0,
+            "agility": 3,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "Warhounds",
+          "stat": {
+            "advance": 8,
+            "march": 16,
+            "discipline": 5,
+            "health_points": 1,
+            "defense": 3,
+            "resilience": 3,
+            "armour": 0,
+            "attack": 1,
+            "offensive": 3,
+            "strength": 3,
+            "armour_penetration": 0,
+            "agility": 4,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "Warhounds",
+          "stat": {
+            "advance": 8,
+            "march": 16,
+            "discipline": 5,
+            "health_points": 1,
+            "defense": 3,
+            "resilience": 3,
+            "armour": 0,
+            "attack": 1,
+            "offensive": 3,
+            "strength": 3,
+            "armour_penetration": 0,
+            "agility": 4,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "Trolls",
+          "stat": {
+            "advance": 6,
+            "march": 12,
+            "discipline": 4,
+            "health_points": 3,
+            "defense": 3,
+            "resilience": 4,
+            "armour": 0,
+            "attack": 3,
+            "offensive": 3,
+            "strength": 5,
+            "armour_penetration": 2,
+            "agility": 1,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "Trolls",
+          "stat": {
+            "advance": 6,
+            "march": 12,
+            "discipline": 4,
+            "health_points": 3,
+            "defense": 3,
+            "resilience": 4,
+            "armour": 0,
+            "attack": 3,
+            "offensive": 3,
+            "strength": 5,
+            "armour_penetration": 2,
+            "agility": 1,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "Huskarls",
+          "stat": {
+            "advance": 4,
+            "march": 8,
+            "discipline": 8,
+            "health_points": 1,
+            "defense": 5,
+            "resilience": 3,
+            "armour": 0,
+            "attack": 1,
+            "offensive": 4,
+            "strength": 4,
+            "armour_penetration": 1,
+            "agility": 4,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        },
+        {
+          "name": "Huskarls",
+          "stat": {
+            "advance": 4,
+            "march": 8,
+            "discipline": 8,
+            "health_points": 1,
+            "defense": 5,
+            "resilience": 3,
+            "armour": 0,
+            "attack": 1,
+            "offensive": 4,
+            "strength": 4,
+            "armour_penetration": 1,
+            "agility": 4,
+            "aegis": 0,
+            "ballistic_skill": 0,
+            "shots": 0
+          }
+        }
+      ]
+    },
+    "map": 20
+  }
+]
