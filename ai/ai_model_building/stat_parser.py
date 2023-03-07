@@ -12,6 +12,14 @@ stat_model_param = ['advance', 'march', 'discipline', 'health_points', 'defense'
 
 
 def handle_special_values(value):
+    """This function handles the special values of the stats
+
+    Args:
+        value (str): The value to convert
+
+    Returns:
+        str: The converted value
+    """
     def replace_dice_six(match): return str(
         int(match.group(1)) * 3) if match.group(1) else '3'
     def replace_dice_three(match): return str(
@@ -23,6 +31,14 @@ def handle_special_values(value):
 
 
 def numerise_field(value):
+    """This function handles the non numeric values of the stats
+
+    Args:
+        value (str): The value to convert
+
+    Returns:
+        int: The converted value
+    """
     if value.isnumeric():
         return int(value)
     if (len(value) == 0):
@@ -33,6 +49,15 @@ def numerise_field(value):
 
 
 def load_unit_stat(stat, unit):
+    """Fetch the substats of a stat from a unit descriptor
+
+    Args:
+        stat (str): The stat's name
+        unit (str): The unit name
+
+    Returns:
+        dict: The substats of the stat
+    """
     result = []
     if stat in unit:
         for sub_stat in stats_config[stat]:
@@ -45,6 +70,14 @@ def load_unit_stat(stat, unit):
 
 
 def create_stat(unit):
+    """Based on the unit descriptor, create a Stats object
+
+    Args:
+        unit (str): The name of the unit to create the stats for
+
+    Returns:
+        Stat: A dataclass Stat that contains all the stats for the unit
+    """
     result = []
     for stat in stats_config:
         result += load_unit_stat(stat, unit)
