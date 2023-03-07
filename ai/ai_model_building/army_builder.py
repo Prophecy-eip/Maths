@@ -64,3 +64,24 @@ def build_trainning_data(matchs):
     for match in matchs:
         result.append(match_builder(match))
     return result
+
+
+if __name__ == '__main__':
+    import json
+    import sys
+    import os
+    from utils import EnhancedJSONEncoder
+
+    try:
+        trainning_folder = 'trainning_data'
+        dataset_path = sys.argv[1]
+        dataset = json.load(open(dataset_path))
+        trainning_data = build_trainning_data(dataset)
+        os.mkdir(trainning_folder)
+        with open(trainning_folder + '/trainning_data.json', 'w') as f:
+            json.dump(trainning_data, f, cls=EnhancedJSONEncoder)
+        print('Trainning data created')
+    except Exception as e:
+        print('Error while creating trainning data')
+        print(e)
+        exit(84)
