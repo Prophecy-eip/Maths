@@ -351,6 +351,7 @@ impl ModifierDto {
                 offensive.agility,
             ),
             ModifierDto::Weapon(weapon) => crate::modifier::Modifier::new_weapon(
+                Some(3),
                 weapon.shots,
                 weapon.strength,
                 weapon.armour_penetration,
@@ -425,7 +426,7 @@ mod tests {
 
     #[test]
     fn test_modifier_dto_shooting_weapon() {
-        let modifier = crate::modifier::Modifier::new_weapon(Some(1), 2, 3);
+        let modifier = crate::modifier::Modifier::new_weapon(Some(3), Some(1), 2, 3);
         let modifier_dto = crate::dto::modifier::ModifierDto::dehydrate(&modifier);
         let modifier2 = modifier_dto.hydrate();
         assert_eq!(modifier, modifier2);
@@ -433,7 +434,7 @@ mod tests {
 
     #[test]
     fn test_modifier_dto_melee_weapon() {
-        let modifier = crate::modifier::Modifier::new_weapon(None, 2, 3);
+        let modifier = crate::modifier::Modifier::new_weapon(Some(3), None, 2, 3);
         let modifier_dto = crate::dto::modifier::ModifierDto::dehydrate(&modifier);
         let modifier2 = modifier_dto.hydrate();
         assert_eq!(modifier, modifier2);
