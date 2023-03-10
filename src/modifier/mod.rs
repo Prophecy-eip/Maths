@@ -280,6 +280,7 @@ impl DefensiveModifier {
 /// armour_penetration (isize): The armour penetration stat boost
 #[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
 pub struct WeaponModifier {
+    aim: Option<isize>,
     shots: Option<isize>,
     strength: isize,
     armour_penetration: isize,
@@ -298,12 +299,27 @@ impl WeaponModifier {
     /// # Return
     ///
     /// WeaponModifier: The WeaponModifier struct
-    pub fn new(shots: Option<isize>, strength: isize, armour_penetration: isize) -> WeaponModifier {
+    pub fn new(
+        aim: Option<isize>,
+        shots: Option<isize>,
+        strength: isize,
+        armour_penetration: isize,
+    ) -> WeaponModifier {
         WeaponModifier {
+            aim,
             shots,
             strength,
             armour_penetration,
         }
+    }
+
+    /// Getter for the shots stat boost
+    ///
+    /// # Return
+    ///
+    /// Option<isize>: The number of shots if it's a ranged weapon, None otherwise
+    pub fn get_aim(&self) -> Option<isize> {
+        self.aim
     }
 
     /// Getter for the shots stat boost
@@ -369,8 +385,18 @@ impl Modifier {
     /// # Return
     ///
     /// Modifier: The Modifier struct
-    pub fn new_weapon(shots: Option<isize>, strength: isize, armour_penetration: isize) -> Self {
-        Modifier::Weapon(WeaponModifier::new(shots, strength, armour_penetration))
+    pub fn new_weapon(
+        aim: Option<isize>,
+        shots: Option<isize>,
+        strength: isize,
+        armour_penetration: isize,
+    ) -> Self {
+        Modifier::Weapon(WeaponModifier::new(
+            aim,
+            shots,
+            strength,
+            armour_penetration,
+        ))
     }
 
     /// Constructor for the Modifier struct \[Variant: global\]
@@ -459,7 +485,7 @@ mod tests {
 
     #[test]
     fn test_new_ranged_weapon() {
-        let modifier: Modifier = Modifier::new_weapon(Some(2), 3, 4);
+        let modifier: Modifier = Modifier::new_weapon(Some(3), Some(2), 3, 4);
         match modifier {
             Modifier::Weapon(ranged_weapon_modifier) => {
                 match ranged_weapon_modifier.get_shots() {
@@ -475,7 +501,7 @@ mod tests {
 
     #[test]
     fn test_new_close_range_weapon() {
-        let modifier: Modifier = Modifier::new_weapon(None, 3, 4);
+        let modifier: Modifier = Modifier::new_weapon(Some(3), None, 3, 4);
         match modifier {
             Modifier::Weapon(ranged_weapon_modifier) => {
                 match ranged_weapon_modifier.get_shots() {

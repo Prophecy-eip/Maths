@@ -429,7 +429,12 @@ mod tests {
     #[test]
     fn stat_buff_ranged_weapon() {
         let mut stats: Stats = global_test::tests::initialize_mock_stats();
-        stats.apply_weapon_modifier(&crate::modifier::WeaponModifier::new(Some(1), 3, 4));
+        stats.apply_weapon_modifier(&crate::modifier::WeaponModifier::new(
+            Some(3),
+            Some(1),
+            3,
+            4,
+        ));
         assert_eq!(stats.get_armour_penetration(), 5);
         assert_eq!(stats.get_strength(), 4);
     }
@@ -447,11 +452,12 @@ mod tests {
     fn model_get_boosted_stats_with_modifier() {
         let stats: Stats = global_test::tests::initialize_mock_stats();
         let mut copy: Stats = stats.clone();
-        copy.apply_weapon_modifier(&modifier::WeaponModifier::new(Some(1), 1, 1));
+        copy.apply_weapon_modifier(&modifier::WeaponModifier::new(Some(3), Some(1), 1, 1));
 
         let model: model::Model = model::Model::new(
             stats,
             vec![modifier::Modifier::Weapon(modifier::WeaponModifier::new(
+                Some(1),
                 Some(1),
                 1,
                 1,
@@ -471,7 +477,7 @@ mod tests {
     #[test]
     fn test_apply_modifier_ranged_weapon() {
         let mut stats: Stats = global_test::tests::initialize_mock_stats();
-        let modifier: modifier::Modifier = modifier::Modifier::new_weapon(Some(1), 3, 4);
+        let modifier: modifier::Modifier = modifier::Modifier::new_weapon(Some(3), Some(1), 3, 4);
         stats.apply_modifier(&modifier);
         assert_eq!(stats.get_armour_penetration(), 5);
         assert_eq!(stats.get_strength(), 4);

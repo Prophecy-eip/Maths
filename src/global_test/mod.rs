@@ -236,7 +236,7 @@ pub mod tests {
     ) -> regiment::Regiment {
         let stats: stat::Stats = model_stats;
 
-        let modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
+        let modifier: modifier::Modifier = modifier::Modifier::new_weapon(Some(3), None, 0, 0);
         let model: model::Model = model::Model::new(stats, vec![modifier], banner);
         let regiment: regiment::Regiment =
             regiment::Regiment::new(model, nb_rows, nb_cols, nb_models, None);
@@ -251,7 +251,7 @@ pub mod tests {
     pub fn initialize_mock_model() -> model::Model {
         let stats: stat::Stats = initialize_mock_stats();
 
-        let modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
+        let modifier: modifier::Modifier = modifier::Modifier::new_weapon(Some(3), None, 0, 0);
         let model: model::Model = model::Model::new(stats, vec![modifier], false);
         model
     }
@@ -264,7 +264,7 @@ pub mod tests {
     pub fn initialize_mock_regiment() -> regiment::Regiment {
         let stats: stat::Stats = initialize_mock_stats();
 
-        let modifier: modifier::Modifier = modifier::Modifier::new_weapon(None, 0, 0);
+        let modifier: modifier::Modifier = modifier::Modifier::new_weapon(Some(3), None, 0, 0);
         let model: model::Model = model::Model::new(stats, vec![modifier], false);
         let regiment: regiment::Regiment = regiment::Regiment::new(model, 1, 1, 1, None);
         regiment
