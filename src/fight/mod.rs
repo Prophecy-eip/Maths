@@ -5,6 +5,8 @@
 
 mod computation_tools;
 mod global_values;
+pub mod shooting;
+mod shooting_tools;
 
 use crate::regiment;
 
@@ -340,7 +342,7 @@ mod tests {
             },
         );
         let silexian_spears_modifier: modifier::Modifier =
-            modifier::Modifier::new_weapon(None, 0, 0);
+            modifier::Modifier::new_weapon(Some(3), None, 0, 0);
         let model_silexian_spears: model::Model =
             model::Model::new(silexian_spears_stats, vec![silexian_spears_modifier], false);
         let silexian_spears: regiment::Regiment =
