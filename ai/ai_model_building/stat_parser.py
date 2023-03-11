@@ -56,7 +56,7 @@ def load_unit_stat(stat, unit):
         unit (str): The unit name
 
     Returns:
-        dict: The substats of the stat
+        list(int): A list with the substats values
     """
     result = []
     if stat in unit:
