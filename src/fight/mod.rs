@@ -5,8 +5,7 @@
 
 mod computation_tools;
 mod global_values;
-pub mod shooting;
-mod shooting_tools;
+pub mod shooting_tools;
 
 use crate::regiment;
 
