@@ -7,13 +7,12 @@ use crate::stat;
 /// Compute the value to hit the opponent in the shooting phase
 ///
 /// # Parameters
-/// offensive (usize): The offensive Stats of the attacking Regiment
+/// aim (usize): The aim Stats of the weapon modifier within the attacking Regiment
 ///
-/// defense (usize): The defense Stats of the defending Regiment
+/// resilience (usize): The resilience Stats of the defending Regiment
 ///
 /// # Return
 /// usize: The minimum roll to hit the opponent
-/// TODO: Add a list of malus as parameter to compute the final aim to replace the resilience
 pub fn compute_roll_to_hit_shoot(aim: isize, resilience: usize) -> usize {
     let difference: i8 = aim as i8 - resilience as i8;
 
@@ -29,7 +28,6 @@ pub fn compute_roll_to_hit_shoot(aim: isize, resilience: usize) -> usize {
 /// Compute the probability for a model to wound an another
 ///
 /// # Parameters
-/// attacking_stats (&model::Stats): The attacker stats
 ///
 /// defending_stats (&model::Stats): The defender stats
 ///
@@ -66,7 +64,6 @@ fn compute_wound_probability_shooting(
 /// This function take account of the defender defensive stats
 ///
 /// # Parameters
-/// attacking_stats (&model::Stats): The attacker stats
 ///
 /// defending_stats (&model::Stats): The defender stats
 ///
@@ -93,7 +90,7 @@ pub fn compute_damage_probability_shooting(
 /// # Parameters
 /// defending_stats (&model::Stats): The defender stats
 ///
-/// attacking_stats (&model::Stats): The attacker stats
+/// weapon_ap (isize): The weapon armour penetration attached to the attacking unit weapon modifier
 ///
 /// # Return
 /// f64: The probability to save a damage dealt by attacker
@@ -179,26 +176,15 @@ pub fn compute_case_shooting(
     defending_regiment: &crate::regiment::Regiment,
     case: &ComputeCase,
 ) -> (usize, f64) {
-    // shooting stat block
-    let weapon_aim: isize;
-    let weapon_strength: isize;
-    let weapon_ap: isize;
-    //let mut weapon_shots: isize = 0;
-
-    // fetch the weapon modifiers
+    let mut weapon_aim: isize = 0;
+    let mut weapon_strength: isize = 0;
+    let mut weapon_ap: isize = 0;
     let attacking_modifiers_weapon = attacking_regiment.get_model().get_modifiers();
-    match &attacking_modifiers_weapon[0] {
-        // iterate throughout every values of Modifier::Weapon and attribute it to different variables, the values are the following
-        Modifier::Weapon(weapon_stats) => {
-            weapon_aim = weapon_stats.get_aim().unwrap_or(0);
-            //weapon_shots = weapon_stats.get_shots().unwrap_or(0);
-            weapon_strength = weapon_stats.get_strength();
-            weapon_ap = weapon_stats.get_armour_penetration();
-        }
 
-        Modifier::Global(_) => todo!(),
-        Modifier::Offensive(_) => todo!(),
-        Modifier::Defensive(_) => todo!(),
+    if let Modifier::Weapon(weapon_stats) = &attacking_modifiers_weapon[0] {
+        weapon_aim = weapon_stats.get_aim().unwrap_or(0);
+        weapon_strength = weapon_stats.get_strength();
+        weapon_ap = weapon_stats.get_armour_penetration();
     }
 
     let nb_touch: usize =
@@ -249,6 +235,7 @@ pub fn compute_case_shooting(
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::{model, modifier, regiment, stat};
 
     #[test]
     fn test_hit_shoot() {
@@ -257,5 +244,88 @@ mod tests {
         assert_eq!(compute_roll_to_hit_shoot(1, 9), 6);
         assert_eq!(compute_roll_to_hit_shoot(6, 4), 3);
         assert_eq!(compute_roll_to_hit_shoot(8, 3), 2);
+    }
+
+    pub fn initialize_stats_w_ballistic(
+        advance: usize,
+        march: usize,
+        discipline: usize,
+        health_points: usize,
+        defense: usize,
+        resilience: usize,
+        armour: usize,
+        aegis: usize,
+        attack: usize,
+        offensive: usize,
+        strength: usize,
+        armour_penetration: usize,
+        agility: usize,
+    ) -> stat::Stats {
+        let stats: stat::Stats = stat::Stats::new(
+            stat::GlobalStats {
+                advance,
+                march,
+                discipline,
+            },
+            stat::DefensiveStats {
+                health_points,
+                defense,
+                resilience,
+                armour,
+                aegis,
+            },
+            stat::OffensiveStats {
+                attack,
+                offensive,
+                strength,
+                armour_penetration,
+                agility,
+            },
+        );
+        stats
+    }
+
+    fn initialize_heavy_infantry_with_weapon() -> regiment::Regiment {
+        let h_stats = initialize_stats_w_ballistic(4, 8, 7, 1, 3, 3, 0, 0, 1, 3, 3, 0, 3);
+        let h_modifiers: modifier::Modifier = modifier::Modifier::new_weapon(Some(1), None, 3, 0);
+        let h_model: model::Model = model::Model::new(h_stats, vec![h_modifiers], false);
+
+        let h_infantry: regiment::Regiment = regiment::Regiment::new(h_model, 4, 5, 20, None);
+        h_infantry
+    }
+
+    fn initialize_chaos_warrior_with_weapon() -> regiment::Regiment {
+        let c_stats = initialize_stats_w_ballistic(4, 8, 8, 1, 5, 4, 0, 0, 2, 4, 5, 1, 4);
+        let c_modifiers: modifier::Modifier = modifier::Modifier::new_weapon(Some(1), None, 4, 1);
+        let c_model: model::Model = model::Model::new(c_stats, vec![c_modifiers], false);
+
+        let c_warrior: regiment::Regiment = regiment::Regiment::new(c_model, 4, 5, 20, None);
+        c_warrior
+    }
+
+    pub fn initialize_two_units_with_weapon() -> (regiment::Regiment, regiment::Regiment) {
+        (
+            initialize_chaos_warrior_with_weapon(),
+            initialize_heavy_infantry_with_weapon(),
+        )
+    }
+
+    #[test]
+    fn test_compute_case_shoot() {
+        let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
+            initialize_two_units_with_weapon();
+        let mut res: (usize, f64) =
+            compute_case_shooting(&attacking, &defending, &ComputeCase::MEAN);
+        assert_eq!(res.0, 3);
+        res = compute_case_shooting(&attacking, &defending, &ComputeCase::WORST);
+        assert_eq!(res.0, 3);
+        res = compute_case_shooting(&attacking, &defending, &ComputeCase::BEST);
+        assert_eq!(res.0, 5);
+        res = compute_case_shooting(&defending, &attacking, &ComputeCase::MEAN);
+        assert_eq!(res.0, 1);
+        res = compute_case_shooting(&defending, &attacking, &ComputeCase::WORST);
+        assert_eq!(res.0, 3);
+        res = compute_case_shooting(&defending, &attacking, &ComputeCase::BEST);
+        assert_eq!(res.0, 3);
     }
 }
