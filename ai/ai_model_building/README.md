@@ -1,4 +1,4 @@
-# PRophecy - AI model building
+# Prophecy - AI model building
 
 This folder contains the code needed to create artificial intelligence models. These models are intended to be trained on specific data whose schema will be documentated below.
 
