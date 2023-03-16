@@ -138,7 +138,6 @@ fn compute_mean_case_shooting(
     weapon_strength: isize,
     weapon_ap: isize,
 ) -> (usize, f64) {
-    //let attacking_stats: &stat::Stats = attacking_regiment.get_model().get_boosted_stats();
     let defending_stats: &stat::Stats = defending_regiment.get_model().get_boosted_stats();
 
     let damage_probability: f64 = compute_damage_probability_shooting(
@@ -148,7 +147,7 @@ fn compute_mean_case_shooting(
         weapon_ap,
     );
 
-    let nb_attacks: f64 = (weapon_aim as f64 * 1.5 * attacking_regiment.get_cols() as f64).round(); // TODO: 1 is default, add the number of attacks depending on the profile of the weapon attached to the unit
+    let nb_attacks: f64 = (weapon_aim as f64 * 1.5 * attacking_regiment.get_cols() as f64).round();
     let damage: usize = std::cmp::min(
         (nb_attacks * damage_probability).round() as usize,
         defending_stats.get_health_points() * defending_regiment.get_nb_models(),
