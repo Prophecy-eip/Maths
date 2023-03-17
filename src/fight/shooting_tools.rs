@@ -7,7 +7,7 @@ use crate::stat;
 /// Compute the value to hit the opponent in the shooting phase
 ///
 /// # Parameters
-/// aim (usize): The aim Stats of the weapon modifier within the attacking Regiment
+/// aim (isize): The aim Stats of the weapon modifier within the attacking Regiment
 ///
 /// resilience (usize): The resilience Stats of the defending Regiment
 ///
@@ -29,7 +29,7 @@ pub fn compute_roll_to_hit_shoot(aim: isize, resilience: usize) -> usize {
 ///
 /// # Parameters
 ///
-/// defending_stats (&model::Stats): The defender stats
+/// defending_stats (&stat::Stats): The defender stats
 ///
 /// weapon_aim (isize): The aim of the weapon
 ///
@@ -45,7 +45,7 @@ fn compute_wound_probability_shooting(
     let minimum_to_hit: usize =
         compute_roll_to_hit_shoot(weapon_aim, defending_stats.get_resilience());
     let minimum_to_wound: usize = computation_tools::compute_roll_to_wound(
-        weapon_strength as usize, // need a get weapon strength
+        weapon_strength as usize,
         defending_stats.get_resilience(),
     );
     let hit_probability: f64 = (global_values::DEFAULT_DICE - (minimum_to_hit as f64) + 1.0_f64)
@@ -65,7 +65,7 @@ fn compute_wound_probability_shooting(
 ///
 /// # Parameters
 ///
-/// defending_stats (&model::Stats): The defender stats
+/// defending_stats (&stat::Stats): The defender stats
 ///
 /// weapon_aim (isize): The aim of the weapon
 ///
@@ -88,7 +88,7 @@ pub fn compute_damage_probability_shooting(
 /// Compute the probability for a model to protect itself from another model damages
 ///
 /// # Parameters
-/// defending_stats (&model::Stats): The defender stats
+/// defending_stats (&stat::Stats): The defender stats
 ///
 /// weapon_ap (isize): The weapon armour penetration attached to the attacking unit weapon modifier
 ///
@@ -96,8 +96,7 @@ pub fn compute_damage_probability_shooting(
 /// f64: The probability to save a damage dealt by attacker
 fn compute_save_probability_shooting(defending_stats: &stat::Stats, weapon_ap: isize) -> f64 {
     let armour_save: usize = match global_values::ARMOUR_SAVE_THRESHOLD as isize
-        - (defending_stats.get_armour() as isize
-            - weapon_ap) // get the armour penetration of the weapon
+        - (defending_stats.get_armour() as isize - weapon_ap)
     {
         x if x < 0 => 0usize,
         y => y as usize,
