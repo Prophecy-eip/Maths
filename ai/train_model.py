@@ -3,44 +3,75 @@ from keras.models import Model
 import numpy as np
 import json
 
-class army:
-    def __init__(self, modifiers, units):
-        self.modifiers = modifiers
-        self.units = units
+json_data = json.load(
+    open('./ai_model_building/trainning_data/trainning_data.json'))
 
-    def __repr__(self):
-        return 'modifiers: {}\nunits: {}'.format(self.modifiers, self.units)
+data = []
 
-scores = []
-armies = []
+for match in json_data:
+    first_x = []
+    second_x = []
 
-# load_data from json file
-# load_data returns a tuple of Numpy arrays: (x_train, y_train), (x_test, y_test).
-def load_data():
-    # with open('ai_model_building/examples/input.example.json') as json_file:
-    with open('ai_model_building/trainning_data/trainning_data.json') as json_file:
-        data = json.load(json_file)
-        for i in range(len(data)):
-            first_player = data[i]['first_player']
-            second_player = data[i]['second_player']
-            first_player_score = data[i]['first_player']['score']
-            second_player_score = data[i]['second_player']['score']
-            scores.append((first_player_score, second_player_score))
-            first_player_army = army(first_player['modifiers'], first_player['units'])
-            second_player_army = army(second_player['modifiers'], second_player['units'])
-            armies.append((first_player_army, second_player_army))
-            # [0][0][0] -> first player modifiers
-            # [0][0][1] -> first player units
-            # [0][1][0] -> second player modifiers
-            # [0][1][1] -> second player units
-        scores_np = np.array(scores)
-        scores_np = scores_np.astype('int32')
-        armies_np = np.array(armies)
-        armies_np = armies_np.astype('object')
-        return (armies_np, scores_np)
+    for unit in match['first_player']['units']:
+        if unit is not None:
+            first_x.append(list(unit['stat'].values()))
+            if len(list(unit['stat'].values())) != 15:
+                print(list(unit['stat'].values()))
+    for unit in match['second_player']['units']:
+        if unit is not None:
+            second_x.append(list(unit['stat'].values()))
+            if len(list(unit['stat'].values())) != 15:
+                print(list(unit['stat'].values()))
+    sample = (
+        first_x,
+        second_x,
+        match['first_player']['score'],
+        match['second_player']['score']
+    )
+    data.append(sample)
 
-(x_train, y_train) = load_data()
-InputModel = Input(shape=(40, 15,))
+
+def clean_data(data):
+    for match in data:
+        if match[0] == 0 or match[1] == 0:
+            data.remove(match)
+            continue
+        if match[2] == 0 or match[3] == 0:
+            data.remove(match)
+            continue
+        if any(len(x) != 15 for x in match[0]) or any(len(x) != 15 for x in match[1]):
+            data.remove(match)
+            continue
+    print(len(data))
+    return data
+
+
+def format_data(data):
+    units = []
+    scores = []
+    first_len = 0
+    second_len = 0
+    max_len = 0
+
+    for match in data:
+        first_len = len(match[0])
+        second_len = len(match[1])
+        if first_len == 0 or second_len == 0:
+            continue
+        units.append([np.array(match[0]), np.array(match[1])])
+        scores.append(np.array([match[2], match[3]]))
+        max_len = max(first_len, second_len, max_len)
+    for match in units:
+        match[0] = np.pad(match[0], ((0, max_len - len(match[0])), (0, 0)), 'constant')
+        match[1] = np.pad(match[1], ((0, max_len - len(match[1])), (0, 0)), 'constant')
+    return (np.array(units), np.array(scores))
+
+
+data = clean_data(data)
+(x_train, y_train) = format_data(data)
+
+
+InputModel = Input(shape=(2,22,15))
 EncodedLayer = Dense(15, activation='relu')(InputModel)
 EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
 EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
@@ -54,4 +85,7 @@ AutoEncoder.compile(optimizer='adam', loss='mse')
 nb_batch_size = 1
 nb_epoch = 300
 
-AutoEncoder.fit(x_train, x_train, batch_size=nb_batch_size, epochs=nb_epoch, shuffle=True, validation_data=(x_train, x_train))
+AutoEncoder.fit(x_train, y_train, batch_size=nb_batch_size,
+                epochs=nb_epoch, shuffle=True, validation_data=(x_train, y_train))
+
+AutoEncoder.save('./ai_model_building/models/encoder.h5')
