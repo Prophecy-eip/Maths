@@ -14,53 +14,45 @@ pub mod regiment;
 pub mod stat;
 pub mod web_server;
 
-#[actix_web::get("/heartbeat")]
-async fn heartbeat() -> impl actix_web::Responder {
-    actix_web::HttpResponse::Ok()
+#[cfg(debug_assertions)]
+async fn end() {
+    std::process::exit(0)
 }
 
-#[actix_web::post("/units")]
+async fn heartbeat() -> axum::http::StatusCode {
+    axum::http::StatusCode::OK
+}
+
 async fn make_prophecy(
-    regiments: actix_web::web::Json<web_server::ProphecyRequest>,
-) -> Result<actix_web::web::Json<web_server::response::ProphecyResponse>, actix_web::error::Error> {
-    if !regiments
+    regiment: axum::Json<web_server::ProphecyRequest>,
+) -> axum::response::Response {
+    if !regiment
         .get_key()
         .eq(&std::env::var("PRIVATE_KEY").unwrap_or_else(|_| "".to_string()))
     {
-        return Err(actix_web::error::ErrorUnauthorized("Missing or wrong key, if you should access this data please contact the administrators"));
+        return axum::response::IntoResponse::into_response((axum::http::StatusCode::UNAUTHORIZED, [(axum::http::header::CONTENT_TYPE, "text/plain")], "Missing or wrong key, if you should access this data please contact the administrators"));
     }
     let prophecies: maths::fight::FightPredictionResult = maths::fight::compute_turn(
-        regiments.convert_attacking_position(),
-        &regiments.convert_regiment(true),
-        &regiments.convert_regiment(false),
+        regiment.convert_attacking_position(),
+        &regiment.convert_regiment(true),
+        &regiment.convert_regiment(false),
     );
     let result: web_server::response::ProphecyResponse =
         web_server::response::ProphecyResponse::from_fight_prediction_result(prophecies);
-    Ok(actix_web::web::Json(result))
+    axum::response::IntoResponse::into_response(axum::Json(result))
 }
 
-#[actix_web::main]
-async fn main() -> std::io::Result<()> {
-    env_logger::init();
-    actix_web::HttpServer::new(|| {
-        let logger: actix_web::middleware::Logger = actix_web::middleware::Logger::default();
-        actix_web::App::new()
-            .service(make_prophecy)
-            .service(heartbeat)
-            .wrap(logger)
-            .app_data(
-                actix_web::web::JsonConfig::default().error_handler(|err, _req| {
-                    actix_web::error::InternalError::from_response(
-                        "Missing element in request",
-                        actix_web::HttpResponse::BadRequest()
-                            .content_type("application/json")
-                            .body(format!(r#"{{"statusCode": 400,"message":"{err}"}}"#)),
-                    )
-                    .into()
-                }),
-            )
-    })
-    .bind(("0.0.0.0", 8080))?
-    .run()
-    .await
+#[tokio::main]
+async fn main() {
+    let app: axum::Router = axum::Router::new().route("/heartbeat", axum::routing::get(heartbeat));
+    let app: axum::Router = app.route("/units", axum::routing::post(make_prophecy));
+    #[cfg(debug_assertions)]
+    let app: axum::Router = app.route("/end", axum::routing::get(end));
+
+    let addr: std::net::SocketAddr = std::net::SocketAddr::from(([0, 0, 0, 0], 8080));
+    println!("listening on {}", addr);
+    axum::Server::bind(&addr)
+        .serve(app.into_make_service())
+        .await
+        .expect("Error while creating the webserver");
 }
