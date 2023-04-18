@@ -20,3 +20,5 @@ libmaths.so
 
 __pycache__
 .fleet/
+.DS_STORE
+*/.DS_STORE
