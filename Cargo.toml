@@ -18,8 +18,7 @@ name = "prophecy-maths"
 path = "src/main.rs"
 
 [dependencies]
+axum = "0.6.15"
 factorial = "0.3.0"
-actix-web = "4"
 serde = { version = "1.0", features = ["derive"] }
-env_logger = "0.10.0"
-log = "0.4"
+tokio = { version = "1.27.0", features = ["full"] }
