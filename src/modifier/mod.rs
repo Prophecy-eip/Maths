@@ -5,6 +5,8 @@
 //! It can be applied on the global stats or the offensive stats or the defensive stats
 //! It can be applied on a specific stat or on all the stats of a category
 
+mod modifiers_listing;
+
 /// Struct containing the modification granted to the global stats of a Model
 ///
 /// # Attributes

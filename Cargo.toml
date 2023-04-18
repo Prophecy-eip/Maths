@@ -20,5 +20,6 @@ path = "src/main.rs"
 [dependencies]
 axum = "0.6.15"
 factorial = "0.3.0"
+lazy_static = "1.4.0"
 serde = { version = "1.0", features = ["derive"] }
 tokio = { version = "1.27.0", features = ["full"] }
