@@ -6,10 +6,10 @@ lazy_static::lazy_static! {
     ///
     /// THE 2 FIRST ELEMENTS MUST BE DELETED
     /// They are only here as an example for the boolean and the function
-    static ref HASHMAP: std::collections::HashMap<modifier_list::ModifierList, (std::sync::Arc<crate::modifier::Modifier>, modifier_check::ModifierCheck)> = {
-        let mut m: std::collections::HashMap<modifier_list::ModifierList, (std::sync::Arc<crate::modifier::Modifier>, modifier_check::ModifierCheck)> = std::collections::HashMap::new();
-        m.insert(modifier_list::ModifierList::MockBool, (std::sync::Arc::new(crate::modifier::Modifier::new_offensive(0, 0, 0, 0, 0)), modifier_check::ModifierCheck::AlwaysTrue(true)));
-        m.insert(modifier_list::ModifierList::MockFunction, (std::sync::Arc::new(crate::modifier::Modifier::new_offensive(0, 0, 0, 0, 0)), modifier_check::ModifierCheck::Function(modifier_check::check_mockfunction)));
+    static ref HASHMAP: std::collections::HashMap<modifier_list::ModifierList, (crate::modifier::Modifier, modifier_check::ModifierCheck)> = {
+        let mut m: std::collections::HashMap<modifier_list::ModifierList, (crate::modifier::Modifier, modifier_check::ModifierCheck)> = std::collections::HashMap::new();
+        m.insert(modifier_list::ModifierList::MockBool, (crate::modifier::Modifier::new_offensive(0, 0, 0, 0, 0), modifier_check::ModifierCheck::AlwaysTrue(true)));
+        m.insert(modifier_list::ModifierList::MockFunction, (crate::modifier::Modifier::new_offensive(0, 0, 0, 0, 0), modifier_check::ModifierCheck::Function(modifier_check::check_mockfunction)));
         m
     };
 }
