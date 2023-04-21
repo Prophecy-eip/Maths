@@ -22,4 +22,6 @@ def format_value(value):
 
 x_test, y_test = format_value(values)
 
+print('Predicted result:')
 print(model.predict(x_test))
+print(f'Actual result: {y_test}')
