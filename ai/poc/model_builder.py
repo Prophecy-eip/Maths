@@ -20,7 +20,6 @@ def clean_data(data):
         if any(len(x) != 15 for x in match[0]) or any(len(x) != 15 for x in match[1]):
             data.remove(match)
             continue
-    print(len(data))
     return data
 
 
