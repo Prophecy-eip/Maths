@@ -272,11 +272,29 @@ impl Stats {
     /// # Parameters
     ///
     /// modifier (&modifier::GlobalModifier): The GlobalModifier to buff the Stats with
-    fn apply_global_modifier(&mut self, modifier: &crate::modifier::GlobalModifier) {
-        self.advance = math_tools::safe_add_signed_unsigned(self.advance, modifier.get_advance());
-        self.march = math_tools::safe_add_signed_unsigned(self.march, modifier.get_march());
-        self.discipline =
-            math_tools::safe_add_signed_unsigned(self.discipline, modifier.get_discipline());
+    ///
+    /// stat_replaced (bool): If the modifier replace the stat or not
+    fn apply_global_modifier(
+        &mut self,
+        modifier: &crate::modifier::GlobalModifier,
+        stat_replaced: bool,
+    ) {
+        match stat_replaced {
+            true => {
+                self.advance = modifier.get_advance() as usize;
+                self.march = modifier.get_march() as usize;
+                self.discipline = modifier.get_discipline() as usize;
+            }
+            false => {
+                self.advance =
+                    math_tools::safe_add_signed_unsigned(self.advance, modifier.get_advance());
+                self.march = math_tools::safe_add_signed_unsigned(self.march, modifier.get_march());
+                self.discipline = math_tools::safe_add_signed_unsigned(
+                    self.discipline,
+                    modifier.get_discipline(),
+                );
+            }
+        }
     }
 
     /// Buff the Stats with a OffensiveModifier
@@ -284,17 +302,36 @@ impl Stats {
     /// # Parameters
     ///
     /// modifier (&modifier::OffensiveModifier): The OffensiveModifier to buff the Stats with
-    fn apply_offensive_modifier(&mut self, modifier: &crate::modifier::OffensiveModifier) {
-        self.attack = math_tools::safe_add_signed_unsigned(self.attack, modifier.get_attack());
-        self.offensive =
-            math_tools::safe_add_signed_unsigned(self.offensive, modifier.get_offensive());
-        self.strength =
-            math_tools::safe_add_signed_unsigned(self.strength, modifier.get_strength());
-        self.armour_penetration = math_tools::safe_add_signed_unsigned(
-            self.armour_penetration,
-            modifier.get_armour_penetration(),
-        );
-        self.agility = math_tools::safe_add_signed_unsigned(self.agility, modifier.get_agility());
+    ///
+    /// stat_replaced (bool): If the modifier replace the stat or not
+    fn apply_offensive_modifier(
+        &mut self,
+        modifier: &crate::modifier::OffensiveModifier,
+        stat_replaced: bool,
+    ) {
+        match stat_replaced {
+            true => {
+                self.attack = modifier.get_attack() as usize;
+                self.offensive = modifier.get_offensive() as usize;
+                self.strength = modifier.get_strength() as usize;
+                self.armour_penetration = modifier.get_armour_penetration() as usize;
+                self.agility = modifier.get_agility() as usize;
+            }
+            false => {
+                self.attack =
+                    math_tools::safe_add_signed_unsigned(self.attack, modifier.get_attack());
+                self.offensive =
+                    math_tools::safe_add_signed_unsigned(self.offensive, modifier.get_offensive());
+                self.strength =
+                    math_tools::safe_add_signed_unsigned(self.strength, modifier.get_strength());
+                self.armour_penetration = math_tools::safe_add_signed_unsigned(
+                    self.armour_penetration,
+                    modifier.get_armour_penetration(),
+                );
+                self.agility =
+                    math_tools::safe_add_signed_unsigned(self.agility, modifier.get_agility());
+            }
+        }
     }
 
     /// Buff the Stats with a DefensiveModifier
@@ -302,13 +339,35 @@ impl Stats {
     /// # Parameters
     ///
     /// modifier (&modifier::DefensiveModifier): The DefensiveModifier to buff the Stats with
-    fn apply_defensive_modifier(&mut self, modifier: &crate::modifier::DefensiveModifier) {
-        self.health_points =
-            math_tools::safe_add_signed_unsigned(self.health_points, modifier.get_health_points());
-        self.defense = math_tools::safe_add_signed_unsigned(self.defense, modifier.get_defense());
-        self.resilience =
-            math_tools::safe_add_signed_unsigned(self.resilience, modifier.get_resilience());
-        self.armour = math_tools::safe_add_signed_unsigned(self.armour, modifier.get_armour());
+    ///
+    /// stat_replaced (bool): If the modifier replace the stat or not
+    fn apply_defensive_modifier(
+        &mut self,
+        modifier: &crate::modifier::DefensiveModifier,
+        stat_replaced: bool,
+    ) {
+        match stat_replaced {
+            true => {
+                self.health_points = modifier.get_health_points() as usize;
+                self.defense = modifier.get_defense() as usize;
+                self.resilience = modifier.get_resilience() as usize;
+                self.armour = modifier.get_armour() as usize;
+            }
+            false => {
+                self.health_points = math_tools::safe_add_signed_unsigned(
+                    self.health_points,
+                    modifier.get_health_points(),
+                );
+                self.defense =
+                    math_tools::safe_add_signed_unsigned(self.defense, modifier.get_defense());
+                self.resilience = math_tools::safe_add_signed_unsigned(
+                    self.resilience,
+                    modifier.get_resilience(),
+                );
+                self.armour =
+                    math_tools::safe_add_signed_unsigned(self.armour, modifier.get_armour());
+            }
+        }
     }
 
     /// Buff the Stats with the given weapon modifier
@@ -316,12 +375,27 @@ impl Stats {
     /// # Parameters
     ///
     /// modifier (&modifier::WeaponModifier): The modifier to apply
-    fn apply_weapon_modifier(&mut self, weapon: &crate::modifier::WeaponModifier) {
-        self.armour_penetration = math_tools::safe_add_signed_unsigned(
-            self.armour_penetration,
-            weapon.get_armour_penetration(),
-        );
-        self.strength = math_tools::safe_add_signed_unsigned(self.strength, weapon.get_strength());
+    ///
+    /// stat_replaced (bool): Whether the modifier replaces the stat or not
+    fn apply_weapon_modifier(
+        &mut self,
+        weapon: &crate::modifier::WeaponModifier,
+        stat_replaced: bool,
+    ) {
+        match stat_replaced {
+            true => {
+                self.armour_penetration = weapon.get_armour_penetration() as usize;
+                self.strength = weapon.get_strength() as usize;
+            }
+            false => {
+                self.armour_penetration = math_tools::safe_add_signed_unsigned(
+                    self.armour_penetration,
+                    weapon.get_armour_penetration(),
+                );
+                self.strength =
+                    math_tools::safe_add_signed_unsigned(self.strength, weapon.get_strength());
+            }
+        }
     }
 
     /// Apply the given modifier to the Stats
@@ -330,14 +404,18 @@ impl Stats {
     ///
     /// modifier (&modifier::Modifier): The Modifier to apply
     pub fn apply_modifier(&mut self, modifier: &crate::modifier::Modifier) {
-        match modifier {
-            crate::modifier::Modifier::Weapon(weapon) => self.apply_weapon_modifier(weapon),
-            crate::modifier::Modifier::Global(modifier) => self.apply_global_modifier(modifier),
-            crate::modifier::Modifier::Offensive(modifier) => {
-                self.apply_offensive_modifier(modifier)
+        match modifier.get_stats_modifier() {
+            crate::modifier::StatsModifier::Weapon(weapon) => {
+                self.apply_weapon_modifier(&weapon, modifier.get_stats_replaced())
             }
-            crate::modifier::Modifier::Defensive(modifier) => {
-                self.apply_defensive_modifier(modifier)
+            crate::modifier::StatsModifier::Global(global) => {
+                self.apply_global_modifier(&global, modifier.get_stats_replaced())
+            }
+            crate::modifier::StatsModifier::Offensive(offensive) => {
+                self.apply_offensive_modifier(&offensive, modifier.get_stats_replaced())
+            }
+            crate::modifier::StatsModifier::Defensive(defensive) => {
+                self.apply_defensive_modifier(&defensive, modifier.get_stats_replaced())
             }
         }
     }
@@ -429,12 +507,10 @@ mod tests {
     #[test]
     fn stat_buff_ranged_weapon() {
         let mut stats: Stats = global_test::tests::initialize_mock_stats();
-        stats.apply_weapon_modifier(&crate::modifier::WeaponModifier::new(
-            Some(3),
-            Some(1),
-            3,
-            4,
-        ));
+        stats.apply_weapon_modifier(
+            &crate::modifier::WeaponModifier::new(Some(3), Some(1), 3, 4),
+            false,
+        );
         assert_eq!(stats.get_armour_penetration(), 5);
         assert_eq!(stats.get_strength(), 4);
     }
@@ -452,16 +528,21 @@ mod tests {
     fn model_get_boosted_stats_with_modifier() {
         let stats: Stats = global_test::tests::initialize_mock_stats();
         let mut copy: Stats = stats.clone();
-        copy.apply_weapon_modifier(&modifier::WeaponModifier::new(Some(3), Some(1), 1, 1));
+        copy.apply_weapon_modifier(
+            &modifier::WeaponModifier::new(Some(3), Some(1), 1, 1),
+            false,
+        );
 
         let model: model::Model = model::Model::new(
             stats,
-            vec![modifier::Modifier::Weapon(modifier::WeaponModifier::new(
+            vec![modifier::Modifier::new_weapon(
                 Some(1),
                 Some(1),
                 1,
                 1,
-            ))],
+                None,
+                false,
+            )],
             false,
         );
         assert_eq!(model.get_boosted_stats(), &copy);
@@ -477,7 +558,8 @@ mod tests {
     #[test]
     fn test_apply_modifier_ranged_weapon() {
         let mut stats: Stats = global_test::tests::initialize_mock_stats();
-        let modifier: modifier::Modifier = modifier::Modifier::new_weapon(Some(3), Some(1), 3, 4);
+        let modifier: modifier::Modifier =
+            modifier::Modifier::new_weapon(Some(3), Some(1), 3, 4, None, false);
         stats.apply_modifier(&modifier);
         assert_eq!(stats.get_armour_penetration(), 5);
         assert_eq!(stats.get_strength(), 4);
@@ -486,7 +568,7 @@ mod tests {
     #[test]
     fn test_apply_modifier_global() {
         let mut stats: Stats = global_test::tests::initialize_mock_stats();
-        let modifier: modifier::Modifier = modifier::Modifier::new_global(1, 1, 1);
+        let modifier: modifier::Modifier = modifier::Modifier::new_global(1, 1, 1, None, false);
         stats.apply_modifier(&modifier);
         assert_eq!(stats.get_advance(), 2);
         assert_eq!(stats.get_march(), 2);
@@ -496,7 +578,8 @@ mod tests {
     #[test]
     fn test_apply_modifier_defensive() {
         let mut stats: Stats = global_test::tests::initialize_mock_stats();
-        let modifier: modifier::Modifier = modifier::Modifier::new_defensive(1, 1, 1, 1, 1);
+        let modifier: modifier::Modifier =
+            modifier::Modifier::new_defensive(1, 1, 1, 1, 1, None, false);
         stats.apply_modifier(&modifier);
         assert_eq!(stats.get_health_points(), 2);
         assert_eq!(stats.get_defense(), 2);
@@ -508,7 +591,8 @@ mod tests {
     #[test]
     fn test_apply_modifier_offensive() {
         let mut stats: Stats = global_test::tests::initialize_mock_stats();
-        let modifier: modifier::Modifier = modifier::Modifier::new_offensive(1, 2, 3, 4, 5);
+        let modifier: modifier::Modifier =
+            modifier::Modifier::new_offensive(1, 2, 3, 4, 5, None, false);
         stats.apply_modifier(&modifier);
         assert_eq!(stats.get_attack(), 2);
         assert_eq!(stats.get_offensive(), 3);

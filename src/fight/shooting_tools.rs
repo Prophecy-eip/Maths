@@ -1,7 +1,7 @@
 use crate::fight::computation_tools;
 use crate::fight::global_values;
 use crate::fight::ComputeCase;
-use crate::modifier::Modifier;
+use crate::modifier::StatsModifier;
 use crate::stat;
 
 /// Compute the value to hit the opponent in the shooting phase
@@ -179,7 +179,8 @@ pub fn compute_case_shooting(
     let mut weapon_ap: isize = 0;
     let attacking_modifiers_weapon = attacking_regiment.get_model().get_modifiers();
 
-    if let Modifier::Weapon(weapon_stats) = &attacking_modifiers_weapon[0] {
+    if let StatsModifier::Weapon(weapon_stats) = &attacking_modifiers_weapon[0].get_stats_modifier()
+    {
         weapon_aim = weapon_stats.get_aim().unwrap_or(0);
         weapon_strength = weapon_stats.get_strength();
         weapon_ap = weapon_stats.get_armour_penetration();
@@ -285,7 +286,8 @@ mod tests {
 
     fn initialize_heavy_infantry_with_weapon() -> regiment::Regiment {
         let h_stats = initialize_stats_w_ballistic(4, 8, 7, 1, 3, 3, 0, 0, 1, 3, 3, 0, 3);
-        let h_modifiers: modifier::Modifier = modifier::Modifier::new_weapon(Some(1), None, 3, 0);
+        let h_modifiers: modifier::Modifier =
+            modifier::Modifier::new_weapon(Some(1), None, 3, 0, None, false);
         let h_model: model::Model = model::Model::new(h_stats, vec![h_modifiers], false);
 
         let h_infantry: regiment::Regiment = regiment::Regiment::new(h_model, 4, 5, 20, None);
@@ -294,7 +296,8 @@ mod tests {
 
     fn initialize_chaos_warrior_with_weapon() -> regiment::Regiment {
         let c_stats = initialize_stats_w_ballistic(4, 8, 8, 1, 5, 4, 0, 0, 2, 4, 5, 1, 4);
-        let c_modifiers: modifier::Modifier = modifier::Modifier::new_weapon(Some(1), None, 4, 1);
+        let c_modifiers: modifier::Modifier =
+            modifier::Modifier::new_weapon(Some(1), None, 4, 1, None, false);
         let c_model: model::Model = model::Model::new(c_stats, vec![c_modifiers], false);
 
         let c_warrior: regiment::Regiment = regiment::Regiment::new(c_model, 4, 5, 20, None);

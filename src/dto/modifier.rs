@@ -199,7 +199,65 @@ impl WeaponModifierDto {
     }
 }
 
-/// Enum used to represent a modifier outside of rust code
+/// Struct used to represent the modification granted to dice rolls out of rust code
+///
+/// # Attributes
+///
+/// dice_size (isize): The size of the dice
+///
+/// dice_number (isize): The number of dice
+#[derive(Clone, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize, Copy)]
+pub struct DiceModifierDto {
+    dice_size: isize,
+    dice_number: isize,
+}
+
+impl DiceModifierDto {
+    /// Create a new DiceModifierDto
+    ///
+    /// # Parameters
+    ///
+    /// dice_size (isize): The size of the dice
+    ///
+    /// dice_number (isize): The number of dice
+    ///
+    /// # Return
+    ///
+    /// DiceModifierDto: The newly created DiceModifierDto
+    pub fn new(dice_size: isize, dice_number: isize) -> DiceModifierDto {
+        DiceModifierDto {
+            dice_size,
+            dice_number,
+        }
+    }
+
+    /// Hydrate a DiceModifierDto into a DiceModifier
+    ///
+    /// # Return
+    ///
+    /// DiceModifier: The hydrated DiceModifier
+    pub fn hydrate(&self) -> crate::modifier::DiceModifier {
+        crate::modifier::DiceModifier::new(self.dice_size, self.dice_number)
+    }
+
+    /// Dehydrate a DiceModifier into a DiceModifierDto
+    ///
+    /// # Parameters
+    ///
+    /// dice_modifier (&crate::modifier::DiceModifier): The DiceModifier to dehydrate
+    ///
+    /// # Return
+    ///
+    /// DiceModifierDto: The dehydrated DiceModifierDto
+    pub fn dehydrate(dice_modifier: &crate::modifier::DiceModifier) -> DiceModifierDto {
+        DiceModifierDto::new(
+            dice_modifier.get_dice_size(),
+            dice_modifier.get_dice_number(),
+        )
+    }
+}
+
+/// Enum used to represent a Statsmodifier outside of rust code
 ///
 /// # Attributes
 ///
@@ -212,15 +270,68 @@ impl WeaponModifierDto {
 /// Weapon (WeaponModifierDto): The weapon modifier
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, Copy)]
 #[serde(rename_all = "lowercase")]
-pub enum ModifierDto {
+pub enum StatsModifierDto {
     Global(GlobalModifierDto),
     Defensive(DefensiveModifierDto),
     Offensive(OffensiveModifierDto),
     Weapon(WeaponModifierDto),
 }
 
+/// Struct used to represent a modifier outside of rust code
+///
+/// # Attributes
+///
+/// dice_modifier (Option<DiceModifierDto>): The dice modifier
+///
+/// stats_modifier (Option<StatsModifierDto>): The stats modifier
+///
+/// stats_replaced (bool): Whether the stats are replaced or not
+#[derive(serde::Serialize, serde::Deserialize, Debug, Clone, Copy)]
+#[serde(rename_all = "lowercase")]
+pub struct ModifierDto {
+    dice_modifier: Option<DiceModifierDto>,
+    stats_modifier: StatsModifierDto,
+    stats_replaced: bool,
+}
+
 impl ModifierDto {
-    /// Create a new ModifierDto
+    /// Convert the StatsModifierDto into a StatsModifier
+    ///
+    /// # Return
+    ///
+    /// Modifier: The newly created Modifier
+    pub fn hydrate(&self) -> crate::modifier::Modifier {
+        crate::modifier::Modifier::new(
+            self.dice_modifier
+                .as_ref()
+                .map(|dice_modifier| dice_modifier.hydrate()),
+            self.stats_modifier.hydrate(),
+            self.stats_replaced,
+        )
+    }
+
+    /// Convert a Modifier into a ModifierDto
+    ///
+    /// # Parameters
+    ///
+    /// modifier (Modifier): The modifier to convert
+    ///
+    /// # Return
+    ///
+    /// ModifierDto: The newly created ModifierDto
+    pub fn dehydrate(modifier: &crate::modifier::Modifier) -> ModifierDto {
+        ModifierDto {
+            dice_modifier: modifier
+                .get_dice_modifier()
+                .map(|dice_modifier| DiceModifierDto::dehydrate(&dice_modifier)),
+            stats_modifier: StatsModifierDto::dehydrate(&modifier.get_stats_modifier()),
+            stats_replaced: modifier.get_stats_replaced(),
+        }
+    }
+}
+
+impl StatsModifierDto {
+    /// Create a new StatsModifierDto
     ///
     /// # Parameters
     ///
@@ -232,12 +343,12 @@ impl ModifierDto {
     ///
     /// # Return
     ///
-    /// ModifierDto: The newly created ModifierDto
-    pub fn new_global_dto(advance: isize, march: isize, discipline: isize) -> ModifierDto {
-        ModifierDto::Global(GlobalModifierDto::new(advance, march, discipline))
+    /// StatsModifierDto: The newly created StatsModifierDto
+    pub fn new_global_dto(advance: isize, march: isize, discipline: isize) -> StatsModifierDto {
+        StatsModifierDto::Global(GlobalModifierDto::new(advance, march, discipline))
     }
 
-    /// Create a new ModifierDto
+    /// Create a new StatsModifierDto
     ///
     /// # Parameters
     ///
@@ -253,15 +364,15 @@ impl ModifierDto {
     ///
     /// # Return
     ///
-    /// ModifierDto: The newly created ModifierDto
+    /// StatsModifierDto: The newly created StatsModifierDto
     pub fn new_defensive_dto(
         health_points: isize,
         defense: isize,
         resilience: isize,
         armour: isize,
         aegis: isize,
-    ) -> ModifierDto {
-        ModifierDto::Defensive(DefensiveModifierDto::new(
+    ) -> StatsModifierDto {
+        StatsModifierDto::Defensive(DefensiveModifierDto::new(
             health_points,
             defense,
             resilience,
@@ -270,7 +381,7 @@ impl ModifierDto {
         ))
     }
 
-    /// Create a new ModifierDto
+    /// Create a new StatsModifierDto
     ///
     /// # Parameters
     ///
@@ -286,15 +397,15 @@ impl ModifierDto {
     ///
     /// # Return
     ///
-    /// ModifierDto: The newly created ModifierDto
+    /// StatsModifierDto: The newly created StatsModifierDto
     pub fn new_offensive_dto(
         attack: isize,
         offensive: isize,
         strength: isize,
         armour_penetration: isize,
         agility: isize,
-    ) -> ModifierDto {
-        ModifierDto::Offensive(OffensiveModifierDto::new(
+    ) -> StatsModifierDto {
+        StatsModifierDto::Offensive(OffensiveModifierDto::new(
             attack,
             offensive,
             strength,
@@ -303,7 +414,7 @@ impl ModifierDto {
         ))
     }
 
-    /// Create a new ModifierDto
+    /// Create a new StatsModifierDto
     ///
     /// # Parameters
     ///
@@ -315,42 +426,46 @@ impl ModifierDto {
     ///
     /// # Return
     ///
-    /// ModifierDto: The newly created ModifierDto
+    /// StatsModifierDto: The newly created StatsModifierDto
     pub fn new_weapon_dto(
         shots: Option<isize>,
         strength: isize,
         armour_penetration: isize,
-    ) -> ModifierDto {
-        ModifierDto::Weapon(WeaponModifierDto::new(shots, strength, armour_penetration))
+    ) -> StatsModifierDto {
+        StatsModifierDto::Weapon(WeaponModifierDto::new(shots, strength, armour_penetration))
     }
 
-    /// Convert the ModifierDto into a Modifier
+    /// Convert the StatsModifierDto into a StatsModifier
     ///
     /// # Return
     ///
-    /// Modifier: The newly created Modifier
-    pub fn hydrate(&self) -> crate::modifier::Modifier {
+    /// StatsModifier: The newly created StatsModifier
+    pub fn hydrate(&self) -> crate::modifier::StatsModifier {
         match self {
-            ModifierDto::Global(global) => crate::modifier::Modifier::new_global(
+            StatsModifierDto::Global(global) => crate::modifier::StatsModifier::new_global(
                 global.advance,
                 global.march,
                 global.discipline,
             ),
-            ModifierDto::Defensive(defensive) => crate::modifier::Modifier::new_defensive(
-                defensive.health_points,
-                defensive.defense,
-                defensive.resilience,
-                defensive.armour,
-                defensive.aegis,
-            ),
-            ModifierDto::Offensive(offensive) => crate::modifier::Modifier::new_offensive(
-                offensive.attack,
-                offensive.offensive,
-                offensive.strength,
-                offensive.armour_penetration,
-                offensive.agility,
-            ),
-            ModifierDto::Weapon(weapon) => crate::modifier::Modifier::new_weapon(
+            StatsModifierDto::Defensive(defensive) => {
+                crate::modifier::StatsModifier::new_defensive(
+                    defensive.health_points,
+                    defensive.defense,
+                    defensive.resilience,
+                    defensive.armour,
+                    defensive.aegis,
+                )
+            }
+            StatsModifierDto::Offensive(offensive) => {
+                crate::modifier::StatsModifier::new_offensive(
+                    offensive.attack,
+                    offensive.offensive,
+                    offensive.strength,
+                    offensive.armour_penetration,
+                    offensive.agility,
+                )
+            }
+            StatsModifierDto::Weapon(weapon) => crate::modifier::StatsModifier::new_weapon(
                 Some(3),
                 weapon.shots,
                 weapon.strength,
@@ -359,37 +474,41 @@ impl ModifierDto {
         }
     }
 
-    /// Convert a Modifier into a ModifierDto
+    /// Convert a statModifier into a StatsModifierDto
     ///
     /// # Parameters
     ///
-    /// modifier (Modifier): The modifier to convert
+    /// modifier (StatsModifier): The statsModifier to convert
     ///
     /// # Return
     ///
-    /// ModifierDto: The newly created ModifierDto
-    pub fn dehydrate(modifier: &crate::modifier::Modifier) -> ModifierDto {
-        match modifier {
-            crate::modifier::Modifier::Global(global) => ModifierDto::new_global_dto(
+    /// StatsModifierDto: The newly created StatsModifierDto
+    pub fn dehydrate(stat_modifier: &crate::modifier::StatsModifier) -> StatsModifierDto {
+        match stat_modifier {
+            crate::modifier::StatsModifier::Global(global) => StatsModifierDto::new_global_dto(
                 global.get_advance(),
                 global.get_march(),
                 global.get_discipline(),
             ),
-            crate::modifier::Modifier::Defensive(defensive) => ModifierDto::new_defensive_dto(
-                defensive.get_health_points(),
-                defensive.get_defense(),
-                defensive.get_resilience(),
-                defensive.get_armour(),
-                defensive.get_aegis(),
-            ),
-            crate::modifier::Modifier::Offensive(offensive) => ModifierDto::new_offensive_dto(
-                offensive.get_attack(),
-                offensive.get_offensive(),
-                offensive.get_strength(),
-                offensive.get_armour_penetration(),
-                offensive.get_agility(),
-            ),
-            crate::modifier::Modifier::Weapon(weapon) => ModifierDto::new_weapon_dto(
+            crate::modifier::StatsModifier::Defensive(defensive) => {
+                StatsModifierDto::new_defensive_dto(
+                    defensive.get_health_points(),
+                    defensive.get_defense(),
+                    defensive.get_resilience(),
+                    defensive.get_armour(),
+                    defensive.get_aegis(),
+                )
+            }
+            crate::modifier::StatsModifier::Offensive(offensive) => {
+                StatsModifierDto::new_offensive_dto(
+                    offensive.get_attack(),
+                    offensive.get_offensive(),
+                    offensive.get_strength(),
+                    offensive.get_armour_penetration(),
+                    offensive.get_agility(),
+                )
+            }
+            crate::modifier::StatsModifier::Weapon(weapon) => StatsModifierDto::new_weapon_dto(
                 weapon.get_shots(),
                 weapon.get_strength(),
                 weapon.get_armour_penetration(),
@@ -402,7 +521,7 @@ impl ModifierDto {
 mod tests {
     #[test]
     fn test_modifier_dto_global() {
-        let modifier = crate::modifier::Modifier::new_global(1, 2, 3);
+        let modifier = crate::modifier::Modifier::new_global(1, 2, 3, None, false);
         let modifier_dto = crate::dto::modifier::ModifierDto::dehydrate(&modifier);
         let modifier2 = modifier_dto.hydrate();
         assert_eq!(modifier, modifier2);
@@ -410,7 +529,7 @@ mod tests {
 
     #[test]
     fn test_modifier_dto_defensive() {
-        let modifier = crate::modifier::Modifier::new_defensive(1, 2, 3, 4, 5);
+        let modifier = crate::modifier::Modifier::new_defensive(1, 2, 3, 4, 5, None, false);
         let modifier_dto = crate::dto::modifier::ModifierDto::dehydrate(&modifier);
         let modifier2 = modifier_dto.hydrate();
         assert_eq!(modifier, modifier2);
@@ -418,7 +537,7 @@ mod tests {
 
     #[test]
     fn test_modifier_dto_offensive() {
-        let modifier = crate::modifier::Modifier::new_offensive(1, 2, 3, 4, 5);
+        let modifier = crate::modifier::Modifier::new_offensive(1, 2, 3, 4, 5, None, false);
         let modifier_dto = crate::dto::modifier::ModifierDto::dehydrate(&modifier);
         let modifier2 = modifier_dto.hydrate();
         assert_eq!(modifier, modifier2);
@@ -426,7 +545,7 @@ mod tests {
 
     #[test]
     fn test_modifier_dto_shooting_weapon() {
-        let modifier = crate::modifier::Modifier::new_weapon(Some(3), Some(1), 2, 3);
+        let modifier = crate::modifier::Modifier::new_weapon(Some(3), Some(1), 2, 3, None, false);
         let modifier_dto = crate::dto::modifier::ModifierDto::dehydrate(&modifier);
         let modifier2 = modifier_dto.hydrate();
         assert_eq!(modifier, modifier2);
@@ -434,7 +553,7 @@ mod tests {
 
     #[test]
     fn test_modifier_dto_melee_weapon() {
-        let modifier = crate::modifier::Modifier::new_weapon(Some(3), None, 2, 3);
+        let modifier = crate::modifier::Modifier::new_weapon(Some(3), None, 2, 3, None, false);
         let modifier_dto = crate::dto::modifier::ModifierDto::dehydrate(&modifier);
         let modifier2 = modifier_dto.hydrate();
         assert_eq!(modifier, modifier2);

@@ -206,7 +206,7 @@ mod tests {
     fn test_apply_modifier_ranged_weapon() {
         let mut stats: Stats = global_test::tests::initialize_mock_stats();
         let modifier: super::modifier::Modifier =
-            super::modifier::Modifier::new_weapon(Some(3), Some(1), 3, 4);
+            super::modifier::Modifier::new_weapon(Some(3), Some(1), 3, 4, None, false);
         stats.apply_modifier(&modifier);
         assert_eq!(stats.get_armour_penetration(), 5);
         assert_eq!(stats.get_strength(), 4);
@@ -215,7 +215,8 @@ mod tests {
     #[test]
     fn test_apply_modifier_global() {
         let mut stats: Stats = global_test::tests::initialize_mock_stats();
-        let modifier: super::modifier::Modifier = super::modifier::Modifier::new_global(1, 1, 1);
+        let modifier: super::modifier::Modifier =
+            super::modifier::Modifier::new_global(1, 1, 1, None, false);
         stats.apply_modifier(&modifier);
         assert_eq!(stats.get_advance(), 2);
         assert_eq!(stats.get_march(), 2);
@@ -226,7 +227,7 @@ mod tests {
     fn test_apply_modifier_offensive() {
         let mut stats: Stats = global_test::tests::initialize_mock_stats();
         let modifier: super::modifier::Modifier =
-            super::modifier::Modifier::new_offensive(1, 2, 3, 4, 5);
+            super::modifier::Modifier::new_offensive(1, 2, 3, 4, 5, None, false);
         stats.apply_modifier(&modifier);
         assert_eq!(stats.get_attack(), 2);
         assert_eq!(stats.get_offensive(), 3);

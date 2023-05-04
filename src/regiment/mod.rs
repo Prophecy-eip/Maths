@@ -181,7 +181,7 @@ mod tests {
             global_test::tests::initialize_mock_modifier_stats();
 
         let chaos_warrior_modifier: modifier::Modifier =
-            modifier::Modifier::new_weapon(Some(3), None, 0, 0);
+            modifier::Modifier::new_weapon(Some(3), None, 0, 0, None, false);
         let model_chaos_warrior: model::Model =
             model::Model::new(chaos_warrior_stats, vec![chaos_warrior_modifier], false);
         let chaos_warrior: regiment::Regiment = initialize_chaos_warrior();

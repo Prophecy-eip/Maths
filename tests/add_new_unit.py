@@ -43,7 +43,7 @@ with open('tests/initialize_units.rs', 'a') as f:
     f.write('        },\n')
     f.write('    );\n')
     f.write(f'    let {name}_modifier: modifier::Modifier =\n')
-    f.write(f'        modifier::Modifier::new_weapon(Some(3),None, 0, 0);\n')
+    f.write(f'        modifier::Modifier::new_weapon(Some(3),None, 0, 0, None, false);\n')
     f.write(f'    let model_{name}: model::Model =\n')
     f.write(f'        model::Model::new({name}_stats, vec![{name}_modifier], false);\n')
     f.write(f'    let {name}: regiment::Regiment = regiment::Regiment::new(model_{name}, {nb_rows}, {nb_columns}, {nb_models}, None);\n')
