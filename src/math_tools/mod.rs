@@ -56,9 +56,11 @@ fn compute_coefficient(trials: usize, nb_success: usize) -> usize {
     if nb_success == 0 || trials == 0 {
         return 1;
     }
-    let fac_trials: u128 = trials.factorial() as u128;
-    let fac_nb_success: u128 = nb_success.factorial() as u128;
-    let fac_product: u128 = (trials - nb_success).factorial() as u128;
+    let trials: u128 = trials as u128;
+    let nb_success: u128 = nb_success as u128;
+    let fac_trials: u128 = trials.factorial();
+    let fac_nb_success: u128 = nb_success.factorial();
+    let fac_product: u128 = (trials - nb_success).factorial();
 
     (fac_trials / (fac_nb_success * fac_product)) as usize
 }
