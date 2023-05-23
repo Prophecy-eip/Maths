@@ -163,7 +163,10 @@ pub fn find_great_gauss_checkpoints(
     while compute_proba(low_checkpoint) < 0.03 && low_checkpoint <= max_hit / 2 {
         low_checkpoint += 1;
     }
-    while compute_proba(high_checkpoint) < 0.03 && high_checkpoint >= max_hit / 2 {
+    while compute_proba(high_checkpoint) < 0.03
+        && high_checkpoint >= max_hit / 2
+        && high_checkpoint != 0
+    {
         high_checkpoint -= 1;
     }
     (low_checkpoint, high_checkpoint)
