@@ -82,6 +82,8 @@ if __name__ == '__main__':
     EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
     EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
     EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
+    EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
+    EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
     EncodedLayer = Flatten()(EncodedLayer)
     DecodedLayer = Dense(2, activation='relu')(EncodedLayer)
     AutoEncoder = Model(InputModel, DecodedLayer)
