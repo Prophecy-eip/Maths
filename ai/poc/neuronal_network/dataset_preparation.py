@@ -37,16 +37,6 @@ def purge_data(data):
         len(x) != nb_stats for x in x['first_player_units']), data))
     data = list(filter(lambda x: not any(
         len(x) != nb_stats for x in x['second_player_units']), data))
-    # for match in data:
-    #     if match is None:
-    #         data.remove(match)
-    #         return purge_data(data)
-    #     if len(match['first_player_units']) == 0 or len(match['second_player_units']) == 0:
-    #         data.remove(match)
-    #         return purge_data(data)
-    #     if any(len(x) != nb_stats for x in match['first_player_units']) or any(len(x) != nb_stats for x in match['second_player_units']):
-    #         data.remove(match)
-    #         return purge_data(data)
     return data
 
 
@@ -66,7 +56,6 @@ def format_matchs(matchs):
                       match['second_player_score']])
         max_army_len = max(first_army_len, second_army_len, max_army_len)
 
-    # armies_length = max_army_len
     for match in units:
         match[0] = np.pad(
             match[0], ((0, max_army_len - len(match[0])), (0, 0)), 'constant')
