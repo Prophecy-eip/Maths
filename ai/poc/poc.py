@@ -4,7 +4,7 @@ from tensorflow import keras
 import json
 from model_builder import match_to_data
 
-model = keras.models.load_model('./train_results/model.h5')
+model = keras.models.load_model('./neuronal_network/trainning_data/model.h5')
 match = json.load(open('./match_sample.json'))
 
 
