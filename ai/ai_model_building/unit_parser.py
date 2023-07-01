@@ -10,41 +10,75 @@ UNITS_FOLDER = str(pathlib.Path(__file__).parent.resolve()
 UNITS_FILES = [file for file in os.listdir(
     UNITS_FOLDER) if file.endswith('.json')]
 
+def build_subunits(file_unit, subunits):
+    """Generate the subunits of a unit
 
-def unit_builder(file_unit: dict):
-    sub_unit_fields = {}
+    Args:
+        file_unit (dict): The base unit descriptor
+        subunits (dict): A dict with for each subunit, the list of its fields
+
+    Returns:
+        list(dict({
+            "name": str,
+            "stat": Stat,
+            "cost": int
+            })) -> A list of units with their name and their stats
+    """
+    stats = create_stat(file_unit)
     results = []
-    reffined = {}
-    branching_list = []
-    stats = create_stat(
-        file_unit)
-    results.append({'name': file_unit['name'], 'stat': stats,
-                   'cost': file_unit['cost'] if 'cost' in file_unit else 0})
-    unit_fields = file_unit.keys()
-    for field in stats_config:
-        sub_unit_fields[field] = list(filter(lambda x: x.startswith(
-            field + 'name') and x != field + 'name', unit_fields))
-    for field in sub_unit_fields:
-        for sub_unit in sub_unit_fields[field]:
-            branching = sub_unit.split(field + 'name')[1]
-            if branching not in branching_list:
-                branching_list.append(branching)
 
-    def func(x): return x if x + 'name' + \
-        branch in sub_unit_fields[x] else None
-    for branch in branching_list:
-        reffined[branch] = list(filter(func, sub_unit_fields))
-
-    for branch in reffined:
+    for branch in subunits:
         unit = copy.deepcopy(stats)
-        for field in reffined[branch]:
+        for field in subunits[branch]:
             values = custom_load_unit_stat(field + branch, file_unit)
-
             for i in values:
                 unit[i] = values[i]
         results.append({'name': branch, 'stat': unit,
                        'cost': file_unit['cost'] if 'cost' in file_unit else 0})
     return results
+
+
+def unit_builder(file_unit: dict):
+    """Create a representation of a unit or group of units from the unit descriptor.
+
+    Args:
+        file_unit (dict): The unit descriptor
+
+    Returns:
+        list(dict({
+            "name": str,
+            "stat": Stat,
+            "cost": int
+            })) -> A list of units with their name and their stats
+    """
+    sub_unit_fields = {}
+    result = []
+    subunits = {}
+    branching_list = []
+    stats = create_stat(file_unit)
+    does_unit_exist = lambda x: x if x + 'name' +  branch in sub_unit_fields[x] else None
+
+    # Save base unit
+    result.append({'name': file_unit['name'], 'stat': stats,
+                   'cost': file_unit['cost'] if 'cost' in file_unit else 0})
+
+    # Find all subunits's fields
+    for field in stats_config:
+        sub_unit_fields[field] = list(filter(lambda x: x.startswith(
+            field + 'name') and x != field + 'name', list(file_unit.keys())))
+
+    # Find all subunits's names
+    for field in sub_unit_fields:
+        for sub_unit in sub_unit_fields[field]:
+            branching_list.append(sub_unit.split(field + 'name')[1])
+    branching_list = list(set(branching_list))
+
+    # Save for all subunits the modified stats
+    for branch in branching_list:
+        subunits[branch] = list(filter(does_unit_exist, sub_unit_fields))
+
+    # Create the subunits
+    return result + build_subunits(file_unit, subunits)
 
 
 def fetch_game_units():
