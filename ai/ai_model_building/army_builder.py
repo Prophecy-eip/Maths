@@ -8,12 +8,13 @@ def unit_binder(unit_name):
         unit_name (str): The name of the unit
 
     Returns:
-        dict({name: str, stat: Stat}): The unit descriptor
+        dict({name: str, stat: Stat, cost: int}): The unit descriptor
     """
     for unit in UNIT_LIST:
         if unit['name'] == unit_name:
             return unit
-    return None
+    print('Unknown unit ' + unit_name)
+    raise Exception('Unknown unit ' + unit_name)
 
 
 def army_builder(player_resume):
@@ -32,15 +33,25 @@ def army_builder(player_resume):
             "score": int,
             "modifiers": list(int),
             "units": list(dict({name: str, stat: Stat}))
+            "cost": int
             }) -> The army representation
     """
     modifiers = []
+    cost = 0
     units = []
     score = 0
     score = player_resume['score']
+
     modifiers = [hash(modifier) for modifier in player_resume['modifier']]
-    units = [unit_binder(unit) for unit in player_resume['units']]
-    return {'score': score, 'modifiers': modifiers, 'units': units}
+    for unit in player_resume['units']:
+        try:
+            val = unit_binder(unit)
+            cost += val['cost']
+            del val['cost']
+            units.append(val)
+        except Exception:
+            continue
+    return {'score': score, 'modifiers': modifiers, 'units': units, 'cost': cost}
 
 
 def match_builder(match_resume):
@@ -67,12 +78,14 @@ def match_builder(match_resume):
             "first_player": dict({
                 "score": int,
                 "modifiers": list(int),
-                "units": list(dict({name: str, stat: Stat}))
+                "units": list(dict({name: str, stat: Stat})),
+                "cost": int
                 }),
             "second_player": dict({
                 "score": int,
                 "modifiers": list(int),
-                "units": list(dict({name: str, stat: Stat}))
+                "units": list(dict({name: str, stat: Stat})),
+                "cost": int
                 }),
             "map": int
             }) -> The match representation
@@ -106,12 +119,14 @@ def build_trainning_data(matchs):
             "first_player": dict({
                 "score": int,
                 "modifiers": list(int),
-                "units": list(dict({name: str, stat: Stat}))
+                "units": list(dict({name: str, stat: Stat})),
+                "cost": int
                 }),
             "second_player": dict({
                 "score": int,
                 "modifiers": list(int),
-                "units": list(dict({name: str, stat: Stat}))
+                "units": list(dict({name: str, stat: Stat})),
+                "cost": int
                 }),
             "map": int
             })) -> The list of matchs built
