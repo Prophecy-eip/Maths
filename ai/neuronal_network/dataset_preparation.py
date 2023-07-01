@@ -26,17 +26,32 @@ def format_json_match(match):
         'second_player_units': second_player_units,
         'first_player_score': match['first_player']['score'],
         'second_player_score': match['second_player']['score'],
+        'first_player_cost': match['first_player']['cost'],
+        'second_player_cost': match['second_player']['cost']
     }
 
 
 def purge_data(data):
+    army_max_cost = 4500
+    threshold = 0.8
+    # Remove None
     data = list(filter(lambda x: x is not None, data))
+    # Remove empty units
     data = list(filter(lambda x: len(x['first_player_units']) != 0, data))
     data = list(filter(lambda x: len(x['second_player_units']) != 0, data))
+    # Remove units with missing stats
     data = list(filter(lambda x: not any(
         len(x) != nb_stats for x in x['first_player_units']), data))
     data = list(filter(lambda x: not any(
         len(x) != nb_stats for x in x['second_player_units']), data))
+    # Remove matchs with score != 20
+    data = list(filter(
+        lambda x: x['first_playser_score'] + x['second_player_score'] == 20, data))
+    # Remove matchs with cost > 4500 or < 3600
+    data = list(filter(lambda x: x['first_player_cost'] >
+                army_max_cost and x['first_player_cost'] < threshold * army_max_cost, data))
+    data = list(filter(lambda x: x['second_player_cost'] >
+                army_max_cost and x['second_player_cost'] < threshold * army_max_cost, data))
     return data
 
 

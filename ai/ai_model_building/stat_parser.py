@@ -1,15 +1,10 @@
 import re
-from model import Stats
 
 stats_config = {
     'global': ['Ad', 'Ma', 'Di'],
     'defense': ['HP', 'Df', 'Re', 'Arm'],
     'offense': ['At', 'Of', 'St', 'AP', 'Ag']
 }
-
-stat_model_param = ['advance', 'march', 'discipline', 'health_points', 'defense',
-                    'resilience', 'armour', 'attack', 'offensive', 'strength', 'armour_penetration', 'agility']
-
 
 def handle_special_values(value):
     """This function handles the special values of the stats
@@ -48,12 +43,33 @@ def numerise_field(value):
     return int(eval(value))
 
 
+def custom_load_unit_stat(stat, unit):
+    """Fetch the substats of a stat from a unit descriptor
+
+    Args:
+        stat (str): The stat's name
+        unit (dict): The unit descriptor
+
+    Returns:
+        dict: A dict with the substats values
+    """
+    result = {}
+
+    try:
+        for sub_stat in unit[stat]:
+            result[sub_stat] = [numerise_field(
+                unit[stat][sub_stat]) if sub_stat in unit[stat] else 0]
+
+        return result
+    except KeyError:
+        return {}
+
 def load_unit_stat(stat, unit):
     """Fetch the substats of a stat from a unit descriptor
 
     Args:
         stat (str): The stat's name
-        unit (str): The unit name
+        unit (dict): The unit descriptor
 
     Returns:
         list(int): A list with the substats values
@@ -73,13 +89,16 @@ def create_stat(unit):
     """Based on the unit descriptor, create a Stats object
 
     Args:
-        unit (str): The name of the unit to create the stats for
+        unit (dict): The unit fetched from the json files
 
     Returns:
         Stat: A dataclass Stat that contains all the stats for the unit
     """
+    fields = []
+    for val in stats_config:
+        fields.extend(stats_config[val])
     result = []
     for stat in stats_config:
         result += load_unit_stat(stat, unit)
-    result = dict(list(zip(stat_model_param, result)))
-    return Stats(**result)
+    result = dict(list(zip(fields, result)))
+    return result
