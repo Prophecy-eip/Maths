@@ -22,3 +22,9 @@ class EnhancedJSONEncoder(json.JSONEncoder):
             if dataclasses.is_dataclass(o):
                 return dataclasses.asdict(o)
             return super().default(o)
+
+# This function will remove a key from a dictionary and return the result
+def removekey(d, key):
+    r = dict(d)
+    del r[key]
+    return r
