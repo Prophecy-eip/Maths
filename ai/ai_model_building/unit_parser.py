@@ -97,13 +97,7 @@ def fetch_game_units():
         with open(os.path.join(UNITS_FOLDER, file)) as f:
             file_content = json.load(f)
             for unit in file_content:
-                r = unit_builder(file_content[unit])
-                for u in r:
-                    print('Added unit: ' + u['name'])
-                    print('cost: ' + str(u['cost']))
-                result += r
-                # result.append(
-                #     {'name': file_content[unit]['name'], 'stat': create_stat(file_content[unit]), 'cost': file_content[unit]['cost'] if 'cost' in file_content[unit] else 0})
+                result += unit_builder(file_content[unit])
     return result
 
 

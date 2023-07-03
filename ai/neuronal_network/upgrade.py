@@ -29,7 +29,6 @@ def compute_predictions(model, units):
     points = []
     for x in units:
         prediction = model.predict(np.array([x]))
-        # print(prediction)
         points.append(prediction[0])
     return points
 
