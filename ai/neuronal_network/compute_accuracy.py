@@ -2,7 +2,7 @@ import json
 import numpy as np
 from keras.models import load_model
 import random
-from dataset_preparation import format_json_match, purge_data, format_matchs
+from ai.neuronal_network.model_builder import format_json_match, purge_data, format_matchs
 
 data = json.load(open('./trainning_data/trainning_data.json', 'r'))
 
