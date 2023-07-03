@@ -1,4 +1,5 @@
 from unit_parser import UNIT_LIST
+from utils import removekey
 
 
 def unit_binder(unit_name):
@@ -12,6 +13,7 @@ def unit_binder(unit_name):
     """
     for unit in UNIT_LIST:
         if unit['name'] == unit_name:
+            print('Found unit ' + unit_name)
             return unit
     print('Unknown unit ' + unit_name)
     raise Exception('Unknown unit ' + unit_name)
@@ -46,10 +48,11 @@ def army_builder(player_resume):
     for unit in player_resume['units']:
         try:
             val = unit_binder(unit)
-            cost += val['cost']
-            del val['cost']
+            cost += int(val['cost'])
+            removekey(val, 'cost')
             units.append(val)
-        except Exception:
+        except Exception as e:
+            print('shit happenned with', e)
             continue
     return {'score': score, 'modifiers': modifiers, 'units': units, 'cost': cost}
 
@@ -144,6 +147,8 @@ if __name__ == '__main__':
     from utils import EnhancedJSONEncoder
 
     try:
+        print(UNIT_LIST[0])
+        print('Tried')
         trainning_folder = 'trainning_data'
         dataset_path = sys.argv[1]
         dataset = json.load(open(dataset_path))
