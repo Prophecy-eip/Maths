@@ -46,7 +46,6 @@ for match in json_data:
     sample = match_to_data(match)
     data.append(sample)
 
-
 def format_data(data):
     units = []
     scores = []
@@ -58,6 +57,7 @@ def format_data(data):
         first_len = len(match[0])
         second_len = len(match[1])
         if first_len == 0 or second_len == 0:
+            print('empty match: ', match)
             continue
         units.append([np.array(match[0]), np.array(match[1])])
         scores.append(np.array([match[2], match[3]]))
@@ -66,10 +66,13 @@ def format_data(data):
     for match in units:
         match[0] = np.pad(match[0], ((0, max_len - len(match[0])), (0, 0)), 'constant')
         match[1] = np.pad(match[1], ((0, max_len - len(match[1])), (0, 0)), 'constant')
+    print('units len: ', len(units))
+    print('scores len: ', len(scores))
     return (np.array(units), np.array(scores))
 
 
 data = clean_data(data)
+print('data len: ', len(data))
 (x_train, y_train) = format_data(data)
 
 
@@ -92,4 +95,4 @@ if __name__ == '__main__':
     AutoEncoder.fit(x_train, y_train, batch_size=nb_batch_size,
                     epochs=nb_epoch, shuffle=True, validation_data=(x_train, y_train))
 
-    AutoEncoder.save('./train_results/model.h5')
+    AutoEncoder.save('./train_results/models.h5')
