@@ -5,7 +5,7 @@ from keras.models import Model
 
 json_data = json.load(open('./trainning_data/trainning_data.json'))
 armies_length = 0
-nb_stats = 15
+nb_stats = 12
 
 
 def format_json_match(match):
@@ -32,8 +32,6 @@ def format_json_match(match):
 
 
 def purge_data(data):
-    army_max_cost = 4500
-    threshold = 0.8
     # Remove None
     data = list(filter(lambda x: x is not None, data))
     # Remove empty units
@@ -46,12 +44,7 @@ def purge_data(data):
         len(x) != nb_stats for x in x['second_player_units']), data))
     # Remove matchs with score != 20
     data = list(filter(
-        lambda x: x['first_playser_score'] + x['second_player_score'] == 20, data))
-    # Remove matchs with cost > 4500 or < 3600
-    data = list(filter(lambda x: x['first_player_cost'] >
-                army_max_cost and x['first_player_cost'] < threshold * army_max_cost, data))
-    data = list(filter(lambda x: x['second_player_cost'] >
-                army_max_cost and x['second_player_cost'] < threshold * army_max_cost, data))
+        lambda x: x['first_player_score'] + x['second_player_score'] == 20, data))
     return data
 
 
