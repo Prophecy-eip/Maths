@@ -25,6 +25,9 @@ class EnhancedJSONEncoder(json.JSONEncoder):
 
 # This function will remove a key from a dictionary and return the result
 def removekey(d, key):
-    r = dict(d)
-    del r[key]
+    try:
+        r = dict(d)
+        del r[key]
+    except KeyError:
+        raise KeyError(f'Key {key} not found in dictionary')
     return r
