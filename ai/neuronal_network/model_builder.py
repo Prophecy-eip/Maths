@@ -9,6 +9,29 @@ nb_stats = 12
 
 
 def format_json_match(match):
+    """This function format a match from the json format to a more usable format
+
+    Args:
+        match (match): a match in the json provided
+
+    Returns:
+        {
+            'first_player_units': list(dict({
+            "name": str,
+            "stat": Stat,
+            "cost": int
+            })),
+            'second_player_units': list(dict({
+            "name": str,
+            "stat": Stat,
+            "cost": int
+            })),
+            'first_player_score': int,
+            'second_player_score': int,
+            'first_player_cost': int,
+            'second_player_cost': int
+        } | None: The match in a more usable format
+    """
     first_player_units = []
     second_player_units = []
 
@@ -32,6 +55,44 @@ def format_json_match(match):
 
 
 def purge_data(data):
+    """This function purge the data from the json file
+
+    Args:
+        data (list({
+            'first_player_units': list(dict({
+            "name": str,
+            "stat": Stat,
+            "cost": int
+            })),
+            'second_player_units': list(dict({
+            "name": str,
+            "stat": Stat,
+            "cost": int
+            })),
+            'first_player_score': int,
+            'second_player_score': int,
+            'first_player_cost': int,
+            'second_player_cost': int
+        })): The data to purge
+
+    Returns:
+        (list({
+            'first_player_units': list(dict({
+            "name": str,
+            "stat": Stat,
+            "cost": int
+            })),
+            'second_player_units': list(dict({
+            "name": str,
+            "stat": Stat,
+            "cost": int
+            })),
+            'first_player_score': int,
+            'second_player_score': int,
+            'first_player_cost': int,
+            'second_player_cost': int
+        })): The purged data
+    """
     # Remove None
     data = list(filter(lambda x: x is not None, data))
     # Remove empty units
@@ -48,14 +109,37 @@ def purge_data(data):
     return data
 
 
-def format_matchs(matchs):
+def format_matchs(matches):
+    """This function create the inputs and outputs for the neuronal network out of the matches
+
+    Args:
+        matchs (list({
+            'first_player_units': list(dict({
+            "name": str,
+            "stat": Stat,
+            "cost": int
+            })),
+            'second_player_units': list(dict({
+            "name": str,
+            "stat": Stat,
+            "cost": int
+            })),
+            'first_player_score': int,
+            'second_player_score': int,
+            'first_player_cost': int,
+            'second_player_cost': int
+        })): The matches to format
+
+    Returns:
+        (np.array, np.array, int): The inputs, the outputs and the max length of the armies
+    """
     max_army_len = 0
     first_army_len = 0
     second_army_len = 0
     scores = []
     units = []
 
-    for match in matchs:
+    for match in matches:
         first_army_len = len(match['first_player_units'])
         second_army_len = len(match['second_player_units'])
         units.append([np.array(match['first_player_units']),
@@ -73,6 +157,14 @@ def format_matchs(matchs):
 
 
 def neuronal_network_build(shape):
+    """Build the neuronal network
+
+    Args:
+        shape (Keras.shape): The shape of the NN's input
+
+    Returns:
+        Keras.Model: The built model
+    """
     InputModel = Input(shape=shape)
     EncodedLayer = Dense(15, activation='relu')(InputModel)
     EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
