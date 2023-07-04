@@ -6,9 +6,10 @@ import json
 json_data = json.load(
     open('./trainning_data/trainning_data.json'))
 
-data = []
+nb_stats = 15
+max_army_size = 22
 
-for match in json_data:
+def match_to_data(match):
     first_x = []
     second_x = []
 
@@ -28,7 +29,7 @@ for match in json_data:
         match['first_player']['score'],
         match['second_player']['score']
     )
-    data.append(sample)
+    return sample
 
 
 def clean_data(data):
@@ -67,25 +68,28 @@ def format_data(data):
     return (np.array(units), np.array(scores))
 
 
-data = clean_data(data)
-(x_train, y_train) = format_data(data)
+if __name__ == '__main__':
+    data = [match_to_data(match) for match in json_data]
+
+    data = clean_data(data)
+    (x_train, y_train) = format_data(data)
 
 
-InputModel = Input(shape=(2,22,15))
-EncodedLayer = Dense(15, activation='relu')(InputModel)
-EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
-EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
-EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
-EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
-EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
-DecodedLayer = Dense(2, activation='relu')(EncodedLayer)
-AutoEncoder = Model(InputModel, DecodedLayer)
-AutoEncoder.compile(optimizer='adam', loss='mse')
+    InputModel = Input(shape=(2, max_army_size, nb_stats))
+    EncodedLayer = Dense(15, activation='relu')(InputModel)
+    EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
+    EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
+    EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
+    EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
+    EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
+    DecodedLayer = Dense(2, activation='relu')(EncodedLayer)
+    AutoEncoder = Model(InputModel, DecodedLayer)
+    AutoEncoder.compile(optimizer='adam', loss='mse')
 
-nb_batch_size = 1
-nb_epoch = 300
+    nb_batch_size = 1
+    nb_epoch = 300
 
-AutoEncoder.fit(x_train, y_train, batch_size=nb_batch_size,
-                epochs=nb_epoch, shuffle=True, validation_data=(x_train, y_train))
+    AutoEncoder.fit(x_train, y_train, batch_size=nb_batch_size,
+                    epochs=nb_epoch, shuffle=True, validation_data=(x_train, y_train))
 
-AutoEncoder.save('./ai_model_building/models/encoder.h5')
+    AutoEncoder.save('./ai_model_building/models/encoder.h5')

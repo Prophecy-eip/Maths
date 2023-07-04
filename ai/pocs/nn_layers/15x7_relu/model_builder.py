@@ -6,7 +6,8 @@ import json
 json_data = json.load(
     open('./trainning_data/trainning_data.json'))
 
-data = []
+nb_stats = 15
+max_army_size = 22
 
 
 def clean_data(data):
@@ -17,7 +18,7 @@ def clean_data(data):
         if match[2] == 0 or match[3] == 0:
             data.remove(match)
             continue
-        if any(len(x) != 15 for x in match[0]) or any(len(x) != 15 for x in match[1]):
+        if any(len(x) != nb_stats for x in match[0]) or any(len(x) != nb_stats for x in match[1]):
             data.remove(match)
             continue
     return data
@@ -42,9 +43,6 @@ def match_to_data(match):
     )
     return sample
 
-for match in json_data:
-    sample = match_to_data(match)
-    data.append(sample)
 
 def format_data(data):
     units = []
@@ -64,20 +62,23 @@ def format_data(data):
         max_len = max(first_len, second_len, max_len)
 
     for match in units:
-        match[0] = np.pad(match[0], ((0, max_len - len(match[0])), (0, 0)), 'constant')
-        match[1] = np.pad(match[1], ((0, max_len - len(match[1])), (0, 0)), 'constant')
+        match[0] = np.pad(
+            match[0], ((0, max_len - len(match[0])), (0, 0)), 'constant')
+        match[1] = np.pad(
+            match[1], ((0, max_len - len(match[1])), (0, 0)), 'constant')
     print('units len: ', len(units))
     print('scores len: ', len(scores))
     return (np.array(units), np.array(scores))
 
 
-data = clean_data(data)
-print('data len: ', len(data))
-(x_train, y_train) = format_data(data)
-
-
 if __name__ == '__main__':
-    InputModel = Input(shape=(2,22,15))
+
+    data = [match_to_data(match) for match in json_data]
+    data = clean_data(data)
+    print('data len: ', len(data))
+    (x_train, y_train) = format_data(data)
+    InputModel = Input(shape=(2, max_army_size, nb_stats))
+
     EncodedLayer = Dense(15, activation='relu')(InputModel)
     EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
     EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
