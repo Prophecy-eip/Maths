@@ -4,6 +4,7 @@
 //! This may evolve to multiple Regiment against multiple Regiment
 
 mod computation_tools;
+pub mod full_fight;
 mod global_values;
 pub mod shooting_tools;
 
@@ -313,7 +314,7 @@ pub fn compute_turn(
 #[cfg(test)]
 mod tests {
     use crate::fight::computation_tools::compute_case;
-    use crate::fight::{compute_turn, create_prediction};
+    use crate::fight::{compute_turn, create_prediction, full_fight};
     use crate::{global_test, model, modifier, regiment, stat};
 
     use super::ComputeCase;
@@ -445,6 +446,38 @@ mod tests {
         assert_eq!(11, res.get_attacking_regiment().get_points());
 
         let res: crate::fight::FightCase = create_prediction(
+            attacking_position,
+            &attacking,
+            &defending,
+            &ComputeCase::WORST,
+        );
+        assert_eq!(3, res.get_defending_regiment().get_points());
+        assert_eq!(6, res.get_attacking_regiment().get_points());
+    }
+
+    #[test]
+    fn test_create_prediction_all() {
+        let attacking_position: crate::fight::AttackPosition = crate::fight::AttackPosition::FRONT;
+        let (attacking, defending): (regiment::Regiment, regiment::Regiment) =
+            initialize_two_units();
+        let res: crate::fight::FightCase = create_prediction(
+            attacking_position,
+            &attacking,
+            &defending,
+            &ComputeCase::MEAN,
+        );
+        assert_eq!(1, res.get_defending_regiment().get_points());
+        assert_eq!(9, res.get_attacking_regiment().get_points());
+        let res: crate::fight::FightCase = full_fight::create_prediction_all(
+            attacking_position,
+            &attacking,
+            &defending,
+            &ComputeCase::BEST,
+        );
+        assert_eq!(3, res.get_defending_regiment().get_points());
+        assert_eq!(11, res.get_attacking_regiment().get_points());
+
+        let res: crate::fight::FightCase = full_fight::create_prediction_all(
             attacking_position,
             &attacking,
             &defending,
