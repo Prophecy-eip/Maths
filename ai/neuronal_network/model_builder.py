@@ -2,10 +2,22 @@ import json
 import numpy as np
 from keras.layers import Input, Dense, Flatten
 from keras.models import Model
+import os
 
-json_data = json.load(open('./trainning_data/trainning_data.json'))
-armies_length = 0
-nb_stats = 12
+# The absolute path to the current file
+ABSOLUTE_PATH = os.path.dirname(os.path.abspath(__file__))
+
+if not ABSOLUTE_PATH.endswith('neuronal_network'):
+    ABSOLUTE_PATH = os.path.join(ABSOLUTE_PATH, 'ai', 'neuronal_network')
+
+# The data loaded from the json file
+JSON_DATA = json.load(open(os.path.join(ABSOLUTE_PATH, 'trainning_data', 'trainning_data.json'), 'r'))
+
+# Size of the biggest army
+MAX_ARMY_SIZE = 0
+
+# Number of stats for each unit
+NB_STAT = 12
 
 
 def format_json_match(match):
@@ -55,7 +67,7 @@ def format_json_match(match):
 
 
 def purge_data(data):
-    """This function purge the data from the json file
+    """This function purge the data from the json file, removing None, empty units, units with missing stats and matchs with score != 20
 
     Args:
         data (list({
@@ -100,9 +112,9 @@ def purge_data(data):
     data = list(filter(lambda x: len(x['second_player_units']) != 0, data))
     # Remove units with missing stats
     data = list(filter(lambda x: not any(
-        len(x) != nb_stats for x in x['first_player_units']), data))
+        len(x) != NB_STAT for x in x['first_player_units']), data))
     data = list(filter(lambda x: not any(
-        len(x) != nb_stats for x in x['second_player_units']), data))
+        len(x) != NB_STAT for x in x['second_player_units']), data))
     # Remove matchs with score != 20
     data = list(filter(
         lambda x: x['first_player_score'] + x['second_player_score'] == 20, data))
@@ -185,11 +197,11 @@ if __name__ == '__main__':
     nb_epoch = 600
     model = None
 
-    for match in json_data:
+    for match in JSON_DATA:
         matchs.append(format_json_match(match))
     matchs = purge_data(matchs)
     (units, scores, armies_len) = format_matchs(matchs)
-    armies_length = armies_len
-    model = neuronal_network_build((2, armies_length, nb_stats))
+    MAX_ARMY_SIZE = armies_len
+    model = neuronal_network_build((2, MAX_ARMY_SIZE, NB_STAT))
     model.fit(units, scores, batch_size=nb_batch_size, epochs=nb_epoch)
     model.save('./trainning_data/model.h5')

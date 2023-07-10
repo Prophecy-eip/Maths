@@ -2,13 +2,23 @@ import json
 import numpy as np
 from keras.models import load_model
 import random
+import os
 from ai.neuronal_network.model_builder import format_json_match, purge_data, format_matchs
 
-data = json.load(open('./trainning_data/trainning_data.json', 'r'))
+# The absolute path to the current file
+ABSOLUTE_PATH = os.path.dirname(os.path.abspath(__file__))
 
-model = load_model('./trainning_data/model.h5')
+if not ABSOLUTE_PATH.endswith('neuronal_network'):
+    ABSOLUTE_PATH = os.path.join(ABSOLUTE_PATH, 'ai', 'neuronal_network')
 
-test_size = 1000
+# The data loaded from the json file
+DATA = json.load(open(os.path.join(ABSOLUTE_PATH, 'trainning_data', 'trainning_data.json'), 'r'))
+
+# The model to use
+MODEL = load_model(os.path.join(ABSOLUTE_PATH, 'trainning_data', 'model.h5'))
+
+# The number of matchs to use for the test
+TEST_SIZE = 1000
 
 
 def compute_points_distance(p1, p2):
@@ -28,11 +38,26 @@ def build_test_dataset():
     """This function build a test dataset from the trainning data
 
     Returns:
-        list(match): A list of matchs according to the format of the trainning data
+        list({
+            'first_player_units': list(dict({
+            "name": str,
+            "stat": Stat,
+            "cost": int
+            })),
+            'second_player_units': list(dict({
+            "name": str,
+            "stat": Stat,
+            "cost": int
+            })),
+            'first_player_score': int,
+            'second_player_score': int,
+            'first_player_cost': int,
+            'second_player_cost': int
+        } | None): A list of matchs according to the format of the trainning data
     """
     test_dataset = []
-    for i in range(test_size):
-        match = format_json_match(random.choice(data))
+    for i in range(TEST_SIZE):
+        match = format_json_match(random.choice(DATA))
         if match is not None:
             test_dataset.append(match)
     test_dataset = purge_data(test_dataset)
@@ -74,8 +99,9 @@ def compute_distance(points, scores):
 
 if __name__ == '__main__':
     test_dataset = build_test_dataset()
+    # last parameter here is the size of the largest army. Useless here
     (units, scores, _) = format_matchs(test_dataset)
 
-    predictions = compute_predictions(model, units)
+    predictions = compute_predictions(MODEL, units)
     distances = compute_distance(predictions, scores)
     print(sum(distances) / len(distances))
