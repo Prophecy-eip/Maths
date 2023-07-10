@@ -5,6 +5,25 @@ import json
 import sys
 
 def match_to_data(match):
+    """format the json data to a more usable format
+
+    Args:
+        match (match): A match from the json data
+
+    Returns:
+        (
+            list(dict({
+            "name": str,
+            "stat": Stat
+            })),
+            list(dict({
+            "name": str,
+            "stat": Stat
+            })),
+            int,
+            int)
+        ): The formatted match
+    """
     first_x = []
     second_x = []
 
@@ -26,7 +45,27 @@ def match_to_data(match):
 
 
 def format_value(value):
+    """build the model's trainning data from the dataset
+
+    Args:
+        value (
+            list(dict({
+                "name": str,
+                "stat": Stat
+                })),
+                list(dict({
+                "name": str,
+                "stat": Stat
+                })),
+                int,
+                int)
+        ): The dataset formatted
+
+    Returns:
+        (np.array(np.array(int)), np.array(int)): A tuple with 1) The units to train on and 2) The scores to train on
+    """
     scores = []
+    # This file is an old poc, so the army length is hardcoded. I decided to keep those files are they are, since they are not used anymore
     final_len = 22
     units = [np.array(value[0]), np.array(value[1])]
     scores = np.array([value[2], value[3]])
@@ -36,7 +75,7 @@ def format_value(value):
 
 
 
-if __name__ == '__main__':
+def main():
     if len(sys.argv) != 3:
         print('Usage: python3 model_launcher.py <model_path> <match_path>')
         sys.exit(1)
@@ -53,3 +92,6 @@ if __name__ == '__main__':
     print('Predicted result:')
     print(model.predict(x_test))
     print(f'Actual result: {y_test}')
+
+if __name__ == '__main__':
+    main()

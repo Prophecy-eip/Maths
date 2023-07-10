@@ -2,15 +2,63 @@ from keras.layers import Input, Dense, Flatten
 from keras.models import Model
 import numpy as np
 import json
+import os
 
-json_data = json.load(
-    open('./trainning_data/trainning_data.json'))
+# The absolute path to the current file
+ABSOLUTE_PATH = os.path.dirname(os.path.abspath(__file__))
 
-nb_stats = 15
-max_army_size = 22
+# If the file is not in the nn_layers folder, we add it
+if not ABSOLUTE_PATH.endswith('15x7_relu'):
+    ABSOLUTE_PATH = os.path.join(ABSOLUTE_PATH, 'ai', 'pocs', 'nn_layers', '15x7_relu')
+
+# The data loaded from the json file
+JSON_DATA = json.load(
+    open(os.path.join(ABSOLUTE_PATH, 'trainning_data', 'trainning_data.json'), 'r'))
+
+# Number of stats for each unit
+NB_STAT = 15
+
+# Size of the biggest army
+MAX_ARMY_SIZE = 22
+
+# Number of batch to train on
+BATCH_SIZE = 1
+
+# Number of epoch to train on
+EPOCH = 600
 
 
 def clean_data(data):
+    """Remove invalid data from the dataset
+
+    Args:
+        data (list((
+            list(dict({
+            "name": str,
+            "stat": Stat
+            })),
+            list(dict({
+            "name": str,
+            "stat": Stat
+            })),
+            int,
+            int)
+        ))): The dataset
+
+    Returns:
+        list((
+            list(dict({
+            "name": str,
+            "stat": Stat
+            })),
+            list(dict({
+            "name": str,
+            "stat": Stat
+            })),
+            int,
+            int)
+        )): The dataset without invalid data
+    """
     for match in data:
         if len(match[0]) == 0 or len(match[1]) == 0:
             data.remove(match)
@@ -18,13 +66,32 @@ def clean_data(data):
         if int(match[2]) + int(match[3]) != 20:
             data.remove(match)
             continue
-        if any(len(x) != nb_stats for x in match[0]) or any(len(x) != nb_stats for x in match[1]):
+        if any(len(x) != NB_STAT for x in match[0]) or any(len(x) != NB_STAT for x in match[1]):
             data.remove(match)
             continue
     return data
 
 
 def match_to_data(match):
+    """format the json data to a more usable format
+
+    Args:
+        match (match): A match from the json data
+
+    Returns:
+        (
+            list(dict({
+            "name": str,
+            "stat": Stat
+            })),
+            list(dict({
+            "name": str,
+            "stat": Stat
+            })),
+            int,
+            int)
+        ): The formatted match
+    """
     first_x = []
     second_x = []
 
@@ -45,6 +112,25 @@ def match_to_data(match):
 
 
 def format_data(data):
+    """build the model's trainning data from the dataset
+
+    Args:
+        data (
+            list(dict({
+                "name": str,
+                "stat": Stat
+                })),
+                list(dict({
+                "name": str,
+                "stat": Stat
+                })),
+                int,
+                int)
+        ): The dataset formatted
+
+    Returns:
+        (np.array(np.array(int)), np.array(int)): A tuple with 1) The units to train on and 2) The scores to train on
+    """
     units = []
     scores = []
     first_len = 0
@@ -73,12 +159,10 @@ def format_data(data):
 
 if __name__ == '__main__':
 
-    data = [match_to_data(match) for match in json_data]
+    data = [match_to_data(match) for match in JSON_DATA]
     data = clean_data(data)
-    print('data len: ', len(data))
     (x_train, y_train) = format_data(data)
-    InputModel = Input(shape=(2, max_army_size, nb_stats))
-
+    InputModel = Input(shape=(2, MAX_ARMY_SIZE, NB_STAT))
     EncodedLayer = Dense(15, activation='relu')(InputModel)
     EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
     EncodedLayer = Dense(15, activation='relu')(EncodedLayer)
@@ -91,11 +175,6 @@ if __name__ == '__main__':
     DecodedLayer = Dense(2, activation='relu')(EncodedLayer)
     AutoEncoder = Model(InputModel, DecodedLayer)
     AutoEncoder.compile(optimizer='adam', loss='mse')
-
-    nb_batch_size = 1
-    nb_epoch = 600
-
-    AutoEncoder.fit(x_train, y_train, batch_size=nb_batch_size,
-                    epochs=nb_epoch, shuffle=True, validation_data=(x_train, y_train))
-
-    AutoEncoder.save('./train_results/models.h5')
+    AutoEncoder.fit(x_train, y_train, batch_size=BATCH_SIZE,
+                    epochs=EPOCH, shuffle=True, validation_data=(x_train, y_train))
+    AutoEncoder.save(os.path.join(ABSOLUTE_PATH, 'train_results', 'models.h5'))
