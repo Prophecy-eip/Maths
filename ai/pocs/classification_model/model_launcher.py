@@ -49,6 +49,6 @@ if __name__ == '__main__':
     if model is None:
         print('Model not found')
         sys.exit(1)
-    print('Predicted result:')
-    print(model.predict(x_test))
+    predictions = model.predict(x_test)
+    print('Predictions:', round(predictions[0][0]))
     print(f'Actual result: {y_test}')
