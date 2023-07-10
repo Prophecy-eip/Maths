@@ -12,10 +12,10 @@ max_army_size = 22
 
 def clean_data(data):
     for match in data:
-        if match[0] == 0 or match[1] == 0:
+        if len(match[0]) == 0 or len(match[1]) == 0:
             data.remove(match)
             continue
-        if match[2] == 0 or match[3] == 0:
+        if int(match[2]) + int(match[3]) != 20:
             data.remove(match)
             continue
         if any(len(x) != nb_stats for x in match[0]) or any(len(x) != nb_stats for x in match[1]):
