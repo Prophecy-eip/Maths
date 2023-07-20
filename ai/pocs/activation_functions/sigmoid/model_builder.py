@@ -7,9 +7,9 @@ import os
 # The absolute path to the current file
 ABSOLUTE_PATH = os.path.dirname(os.path.abspath(__file__))
 
-if not ABSOLUTE_PATH.endswith('tanh'):
+if not ABSOLUTE_PATH.endswith('sigmoid'):
     ABSOLUTE_PATH = os.path.join(
-        ABSOLUTE_PATH, 'ai', 'pocs', 'activation_functions', 'tanh'
+        ABSOLUTE_PATH, 'ai', 'pocs', 'activation_functions', 'sigmoid'
     )
 
 # The data loaded from the json file
@@ -194,12 +194,12 @@ def neuronal_network_build(shape):
         Keras.Model: The built model
     """
     InputModel = Input(shape=shape)
-    EncodedLayer = Dense(15, activation='tanh')(InputModel)
-    EncodedLayer = Dense(15, activation='tanh')(EncodedLayer)
-    EncodedLayer = Dense(15, activation='tanh')(EncodedLayer)
-    EncodedLayer = Dense(15, activation='tanh')(EncodedLayer)
-    EncodedLayer = Dense(15, activation='tanh')(EncodedLayer)
-    EncodedLayer = Dense(15, activation='tanh')(EncodedLayer)
+    EncodedLayer = Dense(15, activation='sigmoid')(InputModel)
+    EncodedLayer = Dense(15, activation='sigmoid')(EncodedLayer)
+    EncodedLayer = Dense(15, activation='sigmoid')(EncodedLayer)
+    EncodedLayer = Dense(15, activation='sigmoid')(EncodedLayer)
+    EncodedLayer = Dense(15, activation='sigmoid')(EncodedLayer)
+    EncodedLayer = Dense(15, activation='sigmoid')(EncodedLayer)
     EncodedLayer = Flatten()(EncodedLayer)
     DecodedLayer = Dense(21, activation='softmax')(EncodedLayer)
     AutoEncoder = Model(InputModel, DecodedLayer)

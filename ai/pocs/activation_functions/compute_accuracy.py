@@ -5,22 +5,25 @@ import random
 import os
 import sys
 
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
 
-from ai.neuronal_network.model_builder import format_json_match, purge_data, format_matchs
+from ai.neuronal_network.model_builder import (
+    format_json_match,
+    purge_data,
+    format_matchs,
+)
 
 # The absolute path to the current file
 ABSOLUTE_PATH = os.path.dirname(os.path.abspath(__file__))
-print(ABSOLUTE_PATH)
 
-if not ABSOLUTE_PATH.endswith('tanh'):
-    ABSOLUTE_PATH = os.path.join(ABSOLUTE_PATH, 'ai', 'pocs', 'activation_functions', 'tanh')
+if not ABSOLUTE_PATH.endswith('activation_functions'):
+    ABSOLUTE_PATH = os.path.join(ABSOLUTE_PATH, 'ai', 'pocs', 'activation_functions')
 
 # The data loaded from the json file
-DATA = json.load(open(os.path.join(ABSOLUTE_PATH, 'trainning_data', 'trainning_data.json'), 'r'))
+DATA = json.load(
+    open(os.path.join(ABSOLUTE_PATH, 'trainning_data', 'trainning_data.json'), 'r')
+)
 
-# The model to use
-MODEL = load_model(os.path.join(ABSOLUTE_PATH, 'trainning_data', 'model.h5'))
 
 # The number of matchs to use for the test
 TEST_SIZE = 1000
@@ -73,17 +76,19 @@ def compute_predictions(model, units):
     return points
 
 
-
 if __name__ == '__main__':
+    if len(sys.argv) != 2:
+        print('Usage: python3 compute_accuracy.py <model_path>')
+        sys.exit(1)
+    # The model to use
+    model = load_model(sys.argv[1])
     test_dataset = build_test_dataset()
     # last parameter here is the size of the largest army. Useless here
     (units, scores, _) = format_matchs(test_dataset)
     scores = [x[0] for x in scores]
     distances = []
 
-    predictions = compute_predictions(MODEL, units)
+    predictions = compute_predictions(model, units)
     for i in range(len(predictions)):
         distances.append(abs(predictions[i] - scores[i]))
     print(sum(distances) / len(distances))
-    # distances = compute_distance(predictions, scores)
-    # print(sum(distances) / len(distances))
