@@ -86,7 +86,7 @@ impl PredictionResponse {
     }
 }
 
-/// The structure containing the information for a prophecy in the response of the web server
+/// The structure containing the information for a prophecy between two units in the response of the web server
 /// Each prophecy contains 3 predictions: the best case, the worst case and the average case of the same fight
 ///
 /// # Attributes
@@ -97,14 +97,14 @@ impl PredictionResponse {
 ///
 /// mean_case (PredictionResponse): The average case prediction
 #[derive(serde::Serialize, serde::Deserialize)]
-pub struct ProphecyResponse {
+pub struct ProphecyResponseUnits {
     best_case: PredictionResponse,
     worst_case: PredictionResponse,
     mean_case: PredictionResponse,
 }
 
-impl ProphecyResponse {
-    /// Create a new ProphecyResponse
+impl ProphecyResponseUnits {
+    /// Create a new ProphecyResponseUnits
     ///
     /// # Parameters
     ///
@@ -116,7 +116,7 @@ impl ProphecyResponse {
     ///
     /// # Return
     ///
-    /// ProphecyResponse: The newly created ProphecyResponse
+    /// ProphecyResponseUnits: The newly created ProphecyResponseUnits
     pub fn new(
         best_case: PredictionResponse,
         worst_case: PredictionResponse,
@@ -129,7 +129,7 @@ impl ProphecyResponse {
         }
     }
 
-    /// Create a new ProphecyResponse from a FightPredictionResult
+    /// Create a new ProphecyResponseUnits from a FightPredictionResult
     ///
     /// # Parameters
     ///
@@ -137,11 +137,11 @@ impl ProphecyResponse {
     ///
     /// # Return
     ///
-    /// ProphecyResponse: The newly created ProphecyResponse
+    /// ProphecyResponseUnits: The newly created ProphecyResponseUnits
     pub fn from_fight_prediction_result(
         fight_prediction_result: maths::fight::FightPredictionResult,
-    ) -> ProphecyResponse {
-        ProphecyResponse {
+    ) -> ProphecyResponseUnits {
+        ProphecyResponseUnits {
             best_case: PredictionResponse::new(
                 RegimentResponse::new(
                     fight_prediction_result
@@ -259,6 +259,40 @@ impl ProphecyResponse {
                 ),
                 fight_prediction_result.get_mean_case().get_probability(),
             ),
+        }
+    }
+}
+
+/// The structure containing the information for a prophecy between two armies in the response of the web server
+/// Each prophecy contains 2 scores: one for the first player and one for the second player
+///
+/// # Attributes
+///
+/// first_player_score (u8): The score of the first player
+///
+/// second_player_score (u8): The score of the second player
+#[derive(serde::Serialize, serde::Deserialize)]
+pub struct ProphecyResponseArmies {
+    first_player_score: u8,
+    second_player_score: u8,
+}
+
+impl ProphecyResponseArmies {
+    /// Create a new ProphecyResponseArmies
+    ///
+    /// # Parameters
+    ///
+    /// first_player_score (u8): The score of the first player
+    ///
+    /// second_player_score (u8): The score of the second player
+    ///
+    /// # Return
+    ///
+    /// ProphecyResponseArmies: The newly created ProphecyResponseArmies
+    pub fn new(first_player_score: u8, second_player_score: u8) -> Self {
+        Self {
+            first_player_score,
+            second_player_score,
         }
     }
 }
