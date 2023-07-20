@@ -24,7 +24,7 @@ async fn heartbeat() -> axum::http::StatusCode {
     axum::http::StatusCode::OK
 }
 
-async fn make_prophecy(
+async fn make_prophecy_unit_vs_unit(
     regiment: axum::Json<web_server::ProphecyRequest>,
 ) -> axum::response::Response {
     if !regiment
@@ -38,15 +38,22 @@ async fn make_prophecy(
         &regiment.convert_regiment(true),
         &regiment.convert_regiment(false),
     );
-    let result: web_server::response::ProphecyResponse =
-        web_server::response::ProphecyResponse::from_fight_prediction_result(prophecies);
+    let result: web_server::response::ProphecyResponseUnits =
+        web_server::response::ProphecyResponseUnits::from_fight_prediction_result(prophecies);
     axum::response::IntoResponse::into_response(axum::Json(result))
+}
+
+async fn make_prophecy_army_vs_army() -> axum::response::Response {
+    let scores: web_server::response::ProphecyResponseArmies =
+        web_server::response::ProphecyResponseArmies::new(14, 6);
+    axum::response::IntoResponse::into_response(axum::Json(scores))
 }
 
 #[tokio::main]
 async fn main() {
     let app: axum::Router = axum::Router::new().route("/heartbeat", axum::routing::get(heartbeat));
-    let app: axum::Router = app.route("/units", axum::routing::post(make_prophecy));
+    let app: axum::Router = app.route("/units", axum::routing::post(make_prophecy_unit_vs_unit));
+    let app: axum::Router = app.route("/armies", axum::routing::post(make_prophecy_army_vs_army));
     #[cfg(debug_assertions)]
     let app: axum::Router = app.route("/end", axum::routing::get(end));
 
