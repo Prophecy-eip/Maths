@@ -29,5 +29,5 @@ jobs:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           REPOSITORY: 032910807353.dkr.ecr.us-east-1.amazonaws.com
         run: |
-          docker build -t $REPOSITORY/prophecy_frontend:v$GITHUB_RUN_NUMBER.0.0 .
-          docker push $REPOSITORY/prophecy_frontend:v$GITHUB_RUN_NUMBER.0.0
+          docker build -t $REPOSITORY/prophecy-maths:v$GITHUB_RUN_NUMBER.0.0 .
+          docker push $REPOSITORY/prophecy-maths:v$GITHUB_RUN_NUMBER.0.0
