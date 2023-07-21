@@ -2,7 +2,6 @@ FROM rust:latest as builder
 
 WORKDIR /app
 
-COPY ./Cargo.lock ./Cargo.lock
 COPY ./Cargo.toml ./Cargo.toml
 COPY ./src ./src
 
