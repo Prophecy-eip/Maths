@@ -10,7 +10,8 @@ if not ABSOLUTE_PATH.endswith('nn_layers'):
 
 if __name__ == '__main__':
     data = json.load(
-        open(os.path.join(ABSOLUTE_PATH, 'trainning_data', 'trainning_data.json')))
+        open(os.path.join(ABSOLUTE_PATH, 'trainning_data', 'trainning_data.json'))
+    )
     index = random.randint(0, len(data) - 1)
     match = data[index]
     dump = json.dumps(match, indent=4, sort_keys=True)

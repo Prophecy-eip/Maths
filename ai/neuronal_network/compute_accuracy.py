@@ -3,7 +3,11 @@ import numpy as np
 from keras.models import load_model
 import random
 import os
-from ai.neuronal_network.model_builder import format_json_match, purge_data, format_matchs
+from ai.neuronal_network.model_builder import (
+    format_json_match,
+    purge_data,
+    format_matchs,
+)
 
 # The absolute path to the current file
 ABSOLUTE_PATH = os.path.dirname(os.path.abspath(__file__))
@@ -12,7 +16,9 @@ if not ABSOLUTE_PATH.endswith('neuronal_network'):
     ABSOLUTE_PATH = os.path.join(ABSOLUTE_PATH, 'ai', 'neuronal_network')
 
 # The data loaded from the json file
-DATA = json.load(open(os.path.join(ABSOLUTE_PATH, 'trainning_data', 'trainning_data.json'), 'r'))
+DATA = json.load(
+    open(os.path.join(ABSOLUTE_PATH, 'trainning_data', 'trainning_data.json'), 'r')
+)
 
 # The model to use
 MODEL = load_model(os.path.join(ABSOLUTE_PATH, 'trainning_data', 'model.h5'))
@@ -31,7 +37,7 @@ def compute_points_distance(p1, p2):
     Returns:
         float: The distance between the two points
     """
-    return np.sqrt((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)
+    return np.sqrt((p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2)
 
 
 def build_test_dataset():
