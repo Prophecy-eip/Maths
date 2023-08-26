@@ -4,11 +4,10 @@ from stat_parser import create_stat, stats_config, custom_load_unit_stat
 import pathlib
 import copy
 
-UNITS_FOLDER = str(pathlib.Path(__file__).parent.resolve()
-                   ) + '/units_descriptor'
+UNITS_FOLDER = str(pathlib.Path(__file__).parent.resolve()) + '/units_descriptor'
 
-UNITS_FILES = [file for file in os.listdir(
-    UNITS_FOLDER) if file.endswith('.json')]
+UNITS_FILES = [file for file in os.listdir(UNITS_FOLDER) if file.endswith('.json')]
+
 
 def build_subunits(file_unit, subunits):
     """Generate the subunits of a unit
@@ -33,8 +32,13 @@ def build_subunits(file_unit, subunits):
             values = custom_load_unit_stat(field + branch, file_unit)
             for i in values:
                 unit[i] = values[i]
-        results.append({'name': branch, 'stat': unit,
-                       'cost': file_unit['cost'] if 'cost' in file_unit else 0})
+        results.append(
+            {
+                'name': branch,
+                'stat': unit,
+                'cost': file_unit['cost'] if 'cost' in file_unit else 0,
+            }
+        )
     return results
 
 
@@ -56,16 +60,25 @@ def unit_builder(file_unit: dict):
     subunits = {}
     branching_list = []
     stats = create_stat(file_unit)
-    does_unit_exist = lambda x: x if x + 'name' +  branch in sub_unit_fields[x] else None
+    does_unit_exist = lambda x: x if x + 'name' + branch in sub_unit_fields[x] else None
 
     # Save base unit
-    result.append({'name': file_unit['name'], 'stat': stats,
-                   'cost': file_unit['cost'] if 'cost' in file_unit else 0})
+    result.append(
+        {
+            'name': file_unit['name'],
+            'stat': stats,
+            'cost': file_unit['cost'] if 'cost' in file_unit else 0,
+        }
+    )
 
     # Find all subunits's fields
     for field in stats_config:
-        sub_unit_fields[field] = list(filter(lambda x: x.startswith(
-            field + 'name') and x != field + 'name', list(file_unit.keys())))
+        sub_unit_fields[field] = list(
+            filter(
+                lambda x: x.startswith(field + 'name') and x != field + 'name',
+                list(file_unit.keys()),
+            )
+        )
 
     # Find all subunits's names
     for field in sub_unit_fields:

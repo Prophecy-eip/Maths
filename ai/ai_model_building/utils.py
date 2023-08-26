@@ -1,13 +1,15 @@
-#Utils and miscellaneous set of functions in python to help building the AI model
+# Utils and miscellaneous set of functions in python to help building the AI model
 
 import dataclasses, json
 
-#This function will concatenate any number of dictionary
+
+# This function will concatenate any number of dictionary
 def concatenate_dictionaries(*dicts):
     result = {}
     for d in dicts:
         result.update(d)
     return result
+
 
 # This function return the sum of two int but making sure that the result is unsigned
 def safe_add_signed_unsigned(a: int, rhs: int) -> int:
@@ -16,12 +18,14 @@ def safe_add_signed_unsigned(a: int, rhs: int) -> int:
     else:
         return a + rhs if a + rhs >= 0 else 0
 
+
 # Serve as a dataclass encoder for json
 class EnhancedJSONEncoder(json.JSONEncoder):
-        def default(self, o):
-            if dataclasses.is_dataclass(o):
-                return dataclasses.asdict(o)
-            return super().default(o)
+    def default(self, o):
+        if dataclasses.is_dataclass(o):
+            return dataclasses.asdict(o)
+        return super().default(o)
+
 
 # This function will remove a key from a dictionary and return the result
 def removekey(d, key):
