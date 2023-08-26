@@ -84,7 +84,7 @@ data: {
 
 We add to the unit's name their statistics.
 
-The modifiers are replaced by python's integer because they go through a hash function. The point is to make a tokenization so that the IA can easily use those values.
+The modifiers are replaced by python's integer because they go through a hash function. The point is to make a tokenization so that the AI can easily use those values.
 
 ## How to use
 
