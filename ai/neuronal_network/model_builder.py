@@ -11,7 +11,9 @@ if not ABSOLUTE_PATH.endswith('neuronal_network'):
     ABSOLUTE_PATH = os.path.join(ABSOLUTE_PATH, 'ai', 'neuronal_network')
 
 # The data loaded from the json file
-JSON_DATA = json.load(open(os.path.join(ABSOLUTE_PATH, 'trainning_data', 'trainning_data.json'), 'r'))
+JSON_DATA = json.load(
+    open(os.path.join(ABSOLUTE_PATH, 'trainning_data', 'trainning_data.json'), 'r')
+)
 
 # Size of the biggest army
 MAX_ARMY_SIZE = 0
@@ -62,7 +64,7 @@ def format_json_match(match):
         'first_player_score': match['first_player']['score'],
         'second_player_score': match['second_player']['score'],
         'first_player_cost': match['first_player']['cost'],
-        'second_player_cost': match['second_player']['cost']
+        'second_player_cost': match['second_player']['cost'],
     }
 
 
@@ -111,13 +113,20 @@ def purge_data(data):
     data = list(filter(lambda x: len(x['first_player_units']) != 0, data))
     data = list(filter(lambda x: len(x['second_player_units']) != 0, data))
     # Remove units with missing stats
-    data = list(filter(lambda x: not any(
-        len(x) != NB_STAT for x in x['first_player_units']), data))
-    data = list(filter(lambda x: not any(
-        len(x) != NB_STAT for x in x['second_player_units']), data))
+    data = list(
+        filter(
+            lambda x: not any(len(x) != NB_STAT for x in x['first_player_units']), data
+        )
+    )
+    data = list(
+        filter(
+            lambda x: not any(len(x) != NB_STAT for x in x['second_player_units']), data
+        )
+    )
     # Remove matchs with score != 20
-    data = list(filter(
-        lambda x: x['first_player_score'] + x['second_player_score'] == 20, data))
+    data = list(
+        filter(lambda x: x['first_player_score'] + x['second_player_score'] == 20, data)
+    )
     return data
 
 
@@ -154,17 +163,22 @@ def format_matchs(matches):
     for match in matches:
         first_army_len = len(match['first_player_units'])
         second_army_len = len(match['second_player_units'])
-        units.append([np.array(match['first_player_units']),
-                     np.array(match['second_player_units'])])
-        scores.append([match['first_player_score'],
-                      match['second_player_score']])
+        units.append(
+            [
+                np.array(match['first_player_units']),
+                np.array(match['second_player_units']),
+            ]
+        )
+        scores.append([match['first_player_score'], match['second_player_score']])
         max_army_len = max(first_army_len, second_army_len, max_army_len)
 
     for match in units:
         match[0] = np.pad(
-            match[0], ((0, max_army_len - len(match[0])), (0, 0)), 'constant')
+            match[0], ((0, max_army_len - len(match[0])), (0, 0)), 'constant'
+        )
         match[1] = np.pad(
-            match[1], ((0, max_army_len - len(match[1])), (0, 0)), 'constant')
+            match[1], ((0, max_army_len - len(match[1])), (0, 0)), 'constant'
+        )
     return (np.array(units), np.array(scores), max_army_len)
 
 

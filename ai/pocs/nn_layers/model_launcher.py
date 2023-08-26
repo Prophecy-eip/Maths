@@ -4,6 +4,7 @@ from tensorflow import keras
 import json
 import sys
 
+
 def match_to_data(match):
     """format the json data to a more usable format
 
@@ -38,10 +39,9 @@ def match_to_data(match):
         first_x,
         second_x,
         match['first_player']['score'],
-        match['second_player']['score']
+        match['second_player']['score'],
     )
     return sample
-
 
 
 def format_value(value):
@@ -74,7 +74,6 @@ def format_value(value):
     return (np.array([units]), np.array(scores))
 
 
-
 def main():
     if len(sys.argv) != 3:
         print('Usage: python3 model_launcher.py <model_path> <match_path>')
@@ -92,6 +91,7 @@ def main():
     print('Predicted result:')
     print(model.predict(x_test))
     print(f'Actual result: {y_test}')
+
 
 if __name__ == '__main__':
     main()

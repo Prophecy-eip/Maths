@@ -13,7 +13,8 @@ if not ABSOLUTE_PATH.endswith('15x7_relu'):
 
 # The data loaded from the json file
 JSON_DATA = json.load(
-    open(os.path.join(ABSOLUTE_PATH, 'trainning_data', 'trainning_data.json'), 'r'))
+    open(os.path.join(ABSOLUTE_PATH, 'trainning_data', 'trainning_data.json'), 'r')
+)
 
 # Number of stats for each unit
 NB_STAT = 15
@@ -66,7 +67,9 @@ def clean_data(data):
         if int(match[2]) + int(match[3]) != 20:
             data.remove(match)
             continue
-        if any(len(x) != NB_STAT for x in match[0]) or any(len(x) != NB_STAT for x in match[1]):
+        if any(len(x) != NB_STAT for x in match[0]) or any(
+            len(x) != NB_STAT for x in match[1]
+        ):
             data.remove(match)
             continue
     return data
@@ -106,7 +109,7 @@ def match_to_data(match):
         first_x,
         second_x,
         match['first_player']['score'],
-        match['second_player']['score']
+        match['second_player']['score'],
     )
     return sample
 
@@ -148,17 +151,14 @@ def format_data(data):
         max_len = max(first_len, second_len, max_len)
 
     for match in units:
-        match[0] = np.pad(
-            match[0], ((0, max_len - len(match[0])), (0, 0)), 'constant')
-        match[1] = np.pad(
-            match[1], ((0, max_len - len(match[1])), (0, 0)), 'constant')
+        match[0] = np.pad(match[0], ((0, max_len - len(match[0])), (0, 0)), 'constant')
+        match[1] = np.pad(match[1], ((0, max_len - len(match[1])), (0, 0)), 'constant')
     print('units len: ', len(units))
     print('scores len: ', len(scores))
     return (np.array(units), np.array(scores))
 
 
 if __name__ == '__main__':
-
     data = [match_to_data(match) for match in JSON_DATA]
     data = clean_data(data)
     (x_train, y_train) = format_data(data)
@@ -175,6 +175,12 @@ if __name__ == '__main__':
     DecodedLayer = Dense(2, activation='relu')(EncodedLayer)
     AutoEncoder = Model(InputModel, DecodedLayer)
     AutoEncoder.compile(optimizer='adam', loss='mse')
-    AutoEncoder.fit(x_train, y_train, batch_size=BATCH_SIZE,
-                    epochs=EPOCH, shuffle=True, validation_data=(x_train, y_train))
+    AutoEncoder.fit(
+        x_train,
+        y_train,
+        batch_size=BATCH_SIZE,
+        epochs=EPOCH,
+        shuffle=True,
+        validation_data=(x_train, y_train),
+    )
     AutoEncoder.save(os.path.join(ABSOLUTE_PATH, 'train_results', 'models.h5'))
