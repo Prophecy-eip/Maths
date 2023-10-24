@@ -130,7 +130,7 @@ def purge_data(data):
     return data
 
 
-def format_matchs(matches):
+def format_matchs(matches: dict):
     """This function create the inputs and outputs for the neuronal network out of the matches
 
     Args:
@@ -160,17 +160,17 @@ def format_matchs(matches):
     scores = []
     units = []
 
-    for match in matches:
-        first_army_len = len(match['first_player_units'])
-        second_army_len = len(match['second_player_units'])
-        units.append(
-            [
-                np.array(match['first_player_units']),
-                np.array(match['second_player_units']),
-            ]
-        )
-        scores.append([match['first_player_score'], match['second_player_score']])
-        max_army_len = max(first_army_len, second_army_len, max_army_len)
+    # for match in matches:
+    first_army_len = len(matches['first_player_units'])
+    second_army_len = len(matches['second_player_units'])
+    units.append(
+        [
+            np.array(matches['first_player_units']),
+            np.array(matches['second_player_units']),
+        ]
+    )
+    scores.append([matches['first_player_score'], matches['second_player_score']])
+    max_army_len = max(first_army_len, second_army_len, max_army_len)
 
     for match in units:
         match[0] = np.pad(
