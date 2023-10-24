@@ -1,5 +1,16 @@
+import os
+import sys
+
+# The absolute path to the current file
+ABSOLUTE_PATH = os.path.dirname(os.path.abspath(__file__))
+
+if not ABSOLUTE_PATH.endswith('ai_model_building'):
+    ABSOLUTE_PATH = os.path.join(ABSOLUTE_PATH, 'ai_model_building')
+
+sys.path.append(ABSOLUTE_PATH)
+
 from unit_parser import UNIT_LIST
-from utils import removekey
+from ai_model_building.utils import removekey
 
 
 def unit_binder(unit_name):
@@ -42,7 +53,7 @@ def army_builder(player_resume):
     score = 0
     score = player_resume['score']
 
-    modifiers = [hash(modifier) for modifier in player_resume['modifier']]
+    modifiers = [hash(modifier) for modifier in player_resume['modifiers']]
     for unit in player_resume['units']:
         try:
             val = unit_binder(unit)
