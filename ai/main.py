@@ -49,11 +49,11 @@ def format_request(request):
     result = format_json_match(
         {'first_player': first_army, 'second_player': second_army, 'map': 0}
     )
-    result = purge_data([result])
-    if len(result) == 0:
-        raise Exception('Invalid match')
+    # result = purge_data([result])
+    # if len(result) == 0:
+        # raise Exception('Invalid match')
     (X, _, _) = format_matchs(result)
-    return X[0]
+    return X
 
 
 def predict(request):

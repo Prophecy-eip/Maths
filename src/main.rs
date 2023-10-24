@@ -1,4 +1,5 @@
 #![forbid(unsafe_code)]
+pub mod ai_integration;
 #[warn(missing_copy_implementations)]
 #[warn(missing_debug_implementations)]
 #[warn(missing_docs)]
@@ -43,10 +44,42 @@ async fn make_prophecy_unit_vs_unit(
     axum::response::IntoResponse::into_response(axum::Json(result))
 }
 
-async fn make_prophecy_army_vs_army() -> axum::response::Response {
-    let scores: web_server::response::ProphecyResponseArmies =
-        web_server::response::ProphecyResponseArmies::new(14, 6);
-    axum::response::IntoResponse::into_response(axum::Json(scores))
+async fn make_prophecy_army_vs_army(
+    regiment: axum::Json<web_server::ProphecyRequestArmies>,
+) -> axum::response::Response {
+    if !regiment
+        .get_key()
+        .eq(&std::env::var("PRIVATE_KEY").unwrap_or_else(|_| "".to_string()))
+    {
+        return axum::response::IntoResponse::into_response((axum::http::StatusCode::UNAUTHORIZED, [(axum::http::header::CONTENT_TYPE, "text/plain")], "Missing or wrong key, if you should access this data please contact the administrators"));
+    }
+
+    match ai_integration::implement_route::poc_flask(regiment.0).await {
+        Ok((50, 50)) => {
+            // Handle the error case as needed
+            eprintln!("Error: received (50, 50) from flask, something is wrong with the IA");
+            axum::response::IntoResponse::into_response((
+                axum::http::StatusCode::INTERNAL_SERVER_ERROR,
+                [(axum::http::header::CONTENT_TYPE, "text/plain")],
+                "Error in processing prediction",
+            ))
+        }
+        Ok((score1, score2)) => {
+            // Update the scores variable with the returned values
+            let scores: web_server::response::ProphecyResponseArmies =
+                web_server::response::ProphecyResponseArmies::new(score1, score2);
+            axum::response::IntoResponse::into_response(axum::Json(scores))
+        }
+        Err(e) => {
+            // Handle any other error from poc_flask as needed
+            eprintln!("Error: {:?}", e);
+            axum::response::IntoResponse::into_response((
+                axum::http::StatusCode::INTERNAL_SERVER_ERROR,
+                [(axum::http::header::CONTENT_TYPE, "text/plain")],
+                "Error in processing prediction",
+            ))
+        }
+    }
 }
 
 #[tokio::main]
