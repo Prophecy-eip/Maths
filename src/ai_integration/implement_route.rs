@@ -15,9 +15,10 @@ use reqwest::*;
 ///
 /// # Return
 /// (u8,u8) : a tuple of the modified value to send it back to the application
-fn adjust_values(val1: f64, val2: f64, target_sum: u8) -> (u8, u8) {
+fn adjust_values(val1: f64, val2: f64) -> (u8, u8) {
     let diff1 = val1.ceil() - val1;
     let diff2 = val2.ceil() - val2;
+    let target_sum: u8 = 20;
 
     if diff1 < diff2 {
         let adjusted_val1 = val1.ceil() as u8;
@@ -55,8 +56,7 @@ pub async fn poc_flask(req: web_server::ProphecyRequestArmies) -> Result<(u8, u8
             if array.len() == 2 {
                 let val1 = array[0].as_f64().unwrap();
                 let val2 = array[1].as_f64().unwrap();
-                let target_sum = 20;
-                let (adjusted_val1, adjusted_val2) = adjust_values(val1, val2, target_sum);
+                let (adjusted_val1, adjusted_val2) = adjust_values(val1, val2);
                 println!("Adjusted values: {}, {}", adjusted_val1, adjusted_val2);
                 return Ok((adjusted_val1, adjusted_val2));
             } else {
@@ -69,7 +69,7 @@ pub async fn poc_flask(req: web_server::ProphecyRequestArmies) -> Result<(u8, u8
         eprintln!("Failed to get a successful response: {}", res.status());
     }
 
-    Ok((50, 50))
+    unreachable!()
 }
 
 #[cfg(test)]

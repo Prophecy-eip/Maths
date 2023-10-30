@@ -155,9 +155,9 @@ impl ProphecyUnit {
     ///
     /// # Arguments
     ///
-    /// name: String of the name of the unit
+    /// name (String): String of the name of the unit
     ///
-    /// Modifiers : list of String for the modifiers linked to the unit
+    /// Modifiers (Vec<String>) : list of String for the modifiers linked to the unit
     ///
     /// # Return
     ///
@@ -192,9 +192,9 @@ impl ProphecyRequestArmies {
     ///
     /// key (String): The key to access the web server
     ///
-    /// first player: a list of attacking prophecy units
+    /// first player (Vec<ProphecyUnit>): a list of attacking prophecy units
     ///
-    /// second player : a list of defending prophecy units
+    /// second player (Vec<ProphecyUnit>): a list of defending prophecy units
     ///
     /// # Return
     ///
@@ -224,7 +224,7 @@ impl ProphecyRequestArmies {
     ///
     /// # Return
     ///
-    /// &String: The key name
+    /// &Vec<ProphecyUnit>: A reference the army list of the first player
     pub fn get_first_player(&self) -> &Vec<ProphecyUnit> {
         &self.first_player
     }
@@ -233,17 +233,25 @@ impl ProphecyRequestArmies {
     ///
     /// # Return
     ///
-    /// &String: The key name
+    /// &Vec<ProphecyUnit>: A reference the army list of the second player
     pub fn get_second_player(&self) -> &Vec<ProphecyUnit> {
         &self.second_player
     }
 
-    /// Add a unit to the first player's army
+    /// Add a unit to the first player army.
+    ///
+    /// # Parameters
+    ///
+    /// `unit` (ProphecyUnit): The unit to be added to the first player army.
     pub fn add_unit_to_first_player(&mut self, unit: ProphecyUnit) {
         self.first_player.push(unit);
     }
 
-    /// Add a unit to the second player's army
+    /// Add a unit to the second player army.
+    ///
+    /// # Parameters
+    ///
+    /// `unit` (ProphecyUnit): The unit to be added to the second player army.
     pub fn add_unit_to_second_player(&mut self, unit: ProphecyUnit) {
         self.second_player.push(unit);
     }
