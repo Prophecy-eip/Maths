@@ -11,7 +11,6 @@ use reqwest::*;
 /// # Parameters
 /// val1 (f64): The first value given by the ai
 /// val2 (f64): The second value given by the ai
-/// target_sum (u8): The sum that we want to reach
 ///
 /// # Return
 /// (u8,u8) : a tuple of the modified value to send it back to the application
