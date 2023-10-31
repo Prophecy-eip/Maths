@@ -3,7 +3,6 @@
 //! This module contains the web server implementation and the response structures.
 
 pub mod response;
-use serde_json::*;
 
 ///ProphecyRequest
 ///
@@ -134,22 +133,6 @@ pub struct ProphecyUnit {
     modifiers: Vec<String>,
 }
 
-///ProphecyRequestArmies
-///
-/// # Attributes
-///
-/// key (String): The key to access the web server
-///
-/// first_player (Vec<ProphecyUnit>): The attacking player units
-///
-/// second_player (Vec<ProphecyUnit>): The attacking player units
-#[derive(serde::Serialize, serde::Deserialize)]
-pub struct ProphecyRequestArmies {
-    key: String,
-    first_player: Vec<ProphecyUnit>,
-    second_player: Vec<ProphecyUnit>,
-}
-
 impl ProphecyUnit {
     /// Create a new prophecy unit object
     ///
@@ -183,6 +166,22 @@ impl ProphecyUnit {
     pub fn get_modifiers(&self) -> &Vec<String> {
         &self.modifiers
     }
+}
+
+///ProphecyRequestArmies
+///
+/// # Attributes
+///
+/// key (String): The key to access the web server
+///
+/// first_player (Vec<ProphecyUnit>): The attacking player units
+///
+/// second_player (Vec<ProphecyUnit>): The attacking player units
+#[derive(serde::Serialize, serde::Deserialize)]
+pub struct ProphecyRequestArmies {
+    key: String,
+    first_player: Vec<ProphecyUnit>,
+    second_player: Vec<ProphecyUnit>,
 }
 
 impl ProphecyRequestArmies {
@@ -254,44 +253,5 @@ impl ProphecyRequestArmies {
     /// `unit` (ProphecyUnit): The unit to be added to the second player army.
     pub fn add_unit_to_second_player(&mut self, unit: ProphecyUnit) {
         self.second_player.push(unit);
-    }
-
-    /// Converts the ProphecyRequestArmies to a JSON string
-    ///
-    /// # Return
-    ///
-    /// Result<String, serde_json::Error>: The JSON string or an error
-    pub fn to_json(&self) -> Result<String> {
-        serde_json::to_string_pretty(self)
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_prophecy_request_armies_to_json() {
-        let mut request =
-            ProphecyRequestArmies::new("test_key".to_string(), Vec::new(), Vec::new());
-
-        // Adding multiple units to the first player
-        for i in 1..=3 {
-            request.add_unit_to_first_player(ProphecyUnit::new(
-                format!("Unit{}", i),
-                vec![format!("Modifier{}", i), format!("Modifier{}", i + 1)],
-            ));
-        }
-
-        // Adding a single unit to the second player
-        request.add_unit_to_second_player(ProphecyUnit::new(
-            "Unit4".to_string(),
-            vec!["Modifier4".to_string(), "Modifier5".to_string()],
-        ));
-
-        match request.to_json() {
-            Ok(json_str) => println!("{}", json_str),
-            Err(e) => panic!("Failed to serialize to JSON: {}", e),
-        }
     }
 }
