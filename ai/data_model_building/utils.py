@@ -1,6 +1,7 @@
 # Utils and miscellaneous set of functions in python to help building the AI model
 
-import dataclasses, json
+import dataclasses
+import json
 
 
 # This function will concatenate any number of dictionary
@@ -28,6 +29,8 @@ class EnhancedJSONEncoder(json.JSONEncoder):
 
 
 # This function will remove a key from a dictionary and return the result
+
+
 def removekey(d, key):
     try:
         r = dict(d)

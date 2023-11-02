@@ -3,11 +3,7 @@ import numpy as np
 from keras.models import load_model
 import random
 import os
-from ai.neuronal_network.model_builder import (
-    format_json_match,
-    purge_data,
-    format_matchs,
-)
+from nn_builder import format_json_match, purge_data, format_matches
 
 # The absolute path to the current file
 ABSOLUTE_PATH = os.path.dirname(os.path.abspath(__file__))
@@ -24,20 +20,7 @@ DATA = json.load(
 MODEL = load_model(os.path.join(ABSOLUTE_PATH, 'trainning_data', 'model.h5'))
 
 # The number of matchs to use for the test
-TEST_SIZE = 1000
-
-
-def compute_points_distance(p1, p2):
-    """This function compute the distance between two points
-
-    Args:
-        p1 (list(int)): First point
-        p2 (list(int)): Second point
-
-    Returns:
-        float: The distance between the two points
-    """
-    return np.sqrt((p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2)
+TEST_SIZE = 100
 
 
 def build_test_dataset():
@@ -99,14 +82,14 @@ def compute_distance(points, scores):
     """
     distances = []
     for i in range(len(points)):
-        distances.append(compute_points_distance(points[i], scores[i]))
+        distances.append(abs(points[i][0] - scores[i][0]))
     return distances
 
 
 if __name__ == '__main__':
     test_dataset = build_test_dataset()
     # last parameter here is the size of the largest army. Useless here
-    (units, scores, _) = format_matchs(test_dataset)
+    (units, scores, _, _) = format_matches(test_dataset)
 
     predictions = compute_predictions(MODEL, units)
     distances = compute_distance(predictions, scores)
