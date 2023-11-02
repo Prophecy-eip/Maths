@@ -4,6 +4,7 @@ from utils import align_lists
 from keras.layers import Input, Dense, Flatten
 from keras.models import Model
 import os
+import time
 
 # The absolute path to the current file
 ABSOLUTE_PATH = os.path.dirname(os.path.abspath(__file__))
@@ -139,6 +140,7 @@ def format_json_match(match):
         'second_player_score': match['second_player']['score'],
         'first_player_cost': match['first_player']['cost'],
         'second_player_cost': match['second_player']['cost'],
+        'map': match['map'],
     }
 
 
@@ -160,7 +162,8 @@ def purge_data(data):
             'first_player_score': int,
             'second_player_score': int,
             'first_player_cost': int,
-            'second_player_cost': int
+            'second_player_cost': int,
+            'map': int
         })): The data to purge
 
     Returns:
@@ -178,7 +181,8 @@ def purge_data(data):
             'first_player_score': int,
             'second_player_score': int,
             'first_player_cost': int,
-            'second_player_cost': int
+            'second_player_cost': int,
+            'map': int
         })): The purged data
     """
     # Remove None
@@ -228,14 +232,15 @@ def format_matches(matches):
             'first_player_score': int,
             'second_player_score': int,
             'first_player_cost': int,
-            'second_player_cost': int
+            'second_player_cost': int,
+            'map': int
         })): The matches to format
 
     Returns:
         (np.array, np.array, int): The inputs, the outputs and the max length of the armies
     """
     armies_len = 22
-    equipment_len = 1000  # Arbitrary value for now
+    equipment_len = 50  # Arbitrary value for now
 
     for match in matches:
         armies_len = max(
@@ -268,6 +273,18 @@ def format_matches(matches):
     scores = []
 
     for match in matches:
+        match['first_player_units'][armies_len - 1]['stat'] = [
+            match['map']
+        ] * equipment_len
+        match['first_player_units'][armies_len - 1]['modifiers'] = [
+            match['map']
+        ] * equipment_len
+        match['second_player_units'][armies_len - 1]['stat'] = [
+            match['map']
+        ] * equipment_len
+        match['second_player_units'][armies_len - 1]['modifiers'] = [
+            match['map']
+        ] * equipment_len
         units.append(
             [
                 np.array(
@@ -287,29 +304,6 @@ def format_matches(matches):
         scores.append([match['first_player_score']])
     return (np.array(units), np.array(scores), armies_len, equipment_len)
 
-    # max_army_len = 0
-    # first_army_len = 0
-    # second_army_len = 0
-    # scores = []
-    # units = []
-    # equipment_size = len(matches[0]['first_player_units']['stat'])
-
-    # for match in matches:
-    #     first_army_len = len(match['first_player_units'])
-    #     second_army_len = len(match['second_player_units'])
-    #     units.append([np.array(match['first_player_units']),
-    #                  np.array(match['second_player_units'])])
-    #     scores.append([match['first_player_score'],
-    #                   match['second_player_score']])
-    #     max_army_len = max(first_army_len, second_army_len, max_army_len)
-
-    # for match in units:
-    #     match[0] = np.pad(
-    #         match[0], ((0, max_army_len - len(match[0])), (0, 0)), 'constant')
-    #     match[1] = np.pad(
-    #         match[1], ((0, max_army_len - len(match[1])), (0, 0)), 'constant')
-    # return (np.array(units), np.array(scores), max_army_len)
-
 
 def neuronal_network_build(shape):
     """Build the neuronal network
@@ -320,6 +314,7 @@ def neuronal_network_build(shape):
     Returns:
         Keras.Model: The built model
     """
+    print(shape)
     InputModel = Input(shape=shape)
     EncodedLayer = Dense(20, activation='softmax')(InputModel)
     EncodedLayer = Dense(20, activation='softmax')(EncodedLayer)
@@ -331,6 +326,7 @@ def neuronal_network_build(shape):
     DecodedLayer = Dense(1)(EncodedLayer)
     AutoEncoder = Model(InputModel, DecodedLayer)
     AutoEncoder.compile(optimizer='adam', loss='mse', metrics=['accuracy'])
+    print('yikes')
     return AutoEncoder
 
 

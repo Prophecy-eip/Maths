@@ -3,6 +3,7 @@
 import dataclasses
 import json
 
+
 # This function will concatenate any number of dictionary
 def concatenate_dictionaries(*dicts):
     result = {}
