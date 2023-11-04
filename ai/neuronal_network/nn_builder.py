@@ -111,7 +111,7 @@ def format_json_match(match):
         } | None: The match in a more usable format
     """
 
-    def player_treatment(player):
+    def extract_player_data(player):
         player_units = []
         for unit in player['units']:
             if unit is not None:
@@ -127,8 +127,8 @@ def format_json_match(match):
             unit['modifiers'] = aligned_version[1]
         return player_units
 
-    first_player_units = player_treatment(match['first_player'])
-    second_player_units = player_treatment(match['second_player'])
+    first_player_units = extract_player_data(match['first_player'])
+    second_player_units = extract_player_data(match['second_player'])
 
     if len(first_player_units) == 0 or len(second_player_units) == 0:
         return None
@@ -287,31 +287,8 @@ def format_matches(matches):
         scores.append([match['first_player_score']])
     return (np.array(units), np.array(scores), armies_len, equipment_len)
 
-    # max_army_len = 0
-    # first_army_len = 0
-    # second_army_len = 0
-    # scores = []
-    # units = []
-    # equipment_size = len(matches[0]['first_player_units']['stat'])
 
-    # for match in matches:
-    #     first_army_len = len(match['first_player_units'])
-    #     second_army_len = len(match['second_player_units'])
-    #     units.append([np.array(match['first_player_units']),
-    #                  np.array(match['second_player_units'])])
-    #     scores.append([match['first_player_score'],
-    #                   match['second_player_score']])
-    #     max_army_len = max(first_army_len, second_army_len, max_army_len)
-
-    # for match in units:
-    #     match[0] = np.pad(
-    #         match[0], ((0, max_army_len - len(match[0])), (0, 0)), 'constant')
-    #     match[1] = np.pad(
-    #         match[1], ((0, max_army_len - len(match[1])), (0, 0)), 'constant')
-    # return (np.array(units), np.array(scores), max_army_len)
-
-
-def neuronal_network_build(shape):
+def build_neuronal_network(shape):
     """Build the neuronal network
 
     Args:
@@ -345,6 +322,6 @@ if __name__ == '__main__':
     matchs = purge_data(matchs)
     (units, scores, armies_len, equipment_len) = format_matches(matchs)
     MAX_ARMY_SIZE = armies_len
-    model = neuronal_network_build((2, 2, MAX_ARMY_SIZE, equipment_len))
+    model = build_neuronal_network((2, 2, MAX_ARMY_SIZE, equipment_len))
     model.fit(units, scores, batch_size=nb_batch_size, epochs=nb_epoch)
     model.save('./trainning_data/model.h5')
