@@ -54,7 +54,7 @@ async fn make_prophecy_army_vs_army(
         return axum::response::IntoResponse::into_response((axum::http::StatusCode::UNAUTHORIZED, [(axum::http::header::CONTENT_TYPE, "text/plain")], "Missing or wrong key, if you should access this data please contact the administrators"));
     }
 
-    match ai_integration::implement_route::poc_flask(armies.0).await {
+    match ai_integration::implement_route::handle_flask_request(armies.0).await {
         Ok((score1, score2)) => {
             // Update the scores variable with the returned values
             let scores: web_server::response::ProphecyResponseArmies =
@@ -62,7 +62,7 @@ async fn make_prophecy_army_vs_army(
             axum::response::IntoResponse::into_response(axum::Json(scores))
         }
         Err(e) => {
-            // Handle any other error from poc_flask as needed
+            // Handle any other error from handle_flask_request as needed
             eprintln!("Error: {:?}", e);
             axum::response::IntoResponse::into_response((
                 axum::http::StatusCode::INTERNAL_SERVER_ERROR,

@@ -3,8 +3,10 @@ import numpy as np
 import main, os
 import random, json
 
-app = Flask(__name__)
+with open('flask_config.json', 'r') as config_file:
+    config = json.load(config_file)
 
+app = Flask(__name__)
 @app.route('/predict', methods=['POST'])
 def predict():
     """Forward the requested format the the IA with a minimum of 20 units in of the army
@@ -39,4 +41,4 @@ def predict():
     return jsonify(res_converted)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=4242, debug=True)
+    app.run(host=config['host_flask'], port=config['port'], debug=True)
