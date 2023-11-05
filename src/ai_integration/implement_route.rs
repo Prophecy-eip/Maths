@@ -4,6 +4,9 @@
 //!
 use crate::web_server;
 use reqwest::*;
+use serde_json::Value;
+use std::fs::File;
+use std::io::Read;
 
 /// Take the two values given by the IA and round the closest value to its ceiling to and truncate the other to make
 /// an even 20 every time in the total score.
@@ -37,8 +40,31 @@ fn adjust_values(val1: f64, val2: f64) -> (u8, u8) {
 ///
 /// # Return
 /// Result<(u8,u8)> : a tuple of the formatted values, that will be send to the application
-pub async fn poc_flask(req: web_server::ProphecyRequestArmies) -> Result<(u8, u8)> {
-    let url = "http://127.0.0.1:4242/predict";
+pub async fn handle_flask_request(req: web_server::ProphecyRequestArmies) -> Result<(u8, u8)> {
+    let mut host = String::from("localhost");
+    let mut port = 4242;
+
+    match File::open("../../ai/flask_config.json") {
+        Ok(mut file) => {
+            let mut contents = String::new();
+            match file.read_to_string(&mut contents) {
+                Ok(_) => match serde_json::from_str::<Value>(&contents) {
+                    Ok(config) => {
+                        host = config["client_rust"]
+                            .as_str()
+                            .unwrap_or("localhost")
+                            .to_string();
+                        port = config["port"].as_u64().unwrap_or(4242) as u16;
+                    }
+                    Err(e) => eprintln!("Error: Unable to parse the config file. {:?}", e),
+                },
+                Err(e) => eprintln!("Error: Unable to read the config file. {:?}", e),
+            }
+        }
+        Err(e) => eprintln!("Error: Unable to open the config file. {:?}", e),
+    }
+
+    let url = format!("http://{}:{}/predict", host, port);
     let data = serde_json::to_value(&req).expect("Failed to serialize request to JSON.");
     let client = reqwest::Client::new();
     let res = client
@@ -112,8 +138,8 @@ mod tests {
             vec![unit2.clone()],
         );
 
-        // Call poc_flask with the mockup data
-        let result = poc_flask(request_armies).await.unwrap();
+        // Call handle_flask_request with the mockup data
+        let result = handle_flask_request(request_armies).await.unwrap();
         assert_eq!(result, (11, 9)); // Replace with the expected result
     }
 }
