@@ -33,7 +33,7 @@ fn adjust_values(val1: f64, val2: f64) -> (u8, u8) {
 /// The bridge between the request in the front and the call to the ai in the back, requested through a flask server
 ///
 /// # Parameters
-/// req: web_server::ProphecyRequestArmies
+/// req (web_server::ProphecyRequestArmies): Request ...
 ///
 /// # Return
 /// Result<(u8,u8)> : a tuple of the formatted values, that will be send to the application
