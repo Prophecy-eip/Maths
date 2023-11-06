@@ -180,8 +180,8 @@ impl ProphecyUnit {
 #[derive(serde::Serialize, serde::Deserialize)]
 pub struct ProphecyRequestArmies {
     key: String,
-    first_player: Vec<ProphecyUnit>,
-    second_player: Vec<ProphecyUnit>,
+    first_player_army: Vec<ProphecyUnit>,
+    second_player_army: Vec<ProphecyUnit>,
 }
 
 impl ProphecyRequestArmies {
@@ -200,13 +200,13 @@ impl ProphecyRequestArmies {
     /// ProphecyRequestArmies : The new ProphecyRequestArmies
     pub fn new(
         key: String,
-        first_player: Vec<ProphecyUnit>,
-        second_player: Vec<ProphecyUnit>,
+        first_player_army: Vec<ProphecyUnit>,
+        second_player_army: Vec<ProphecyUnit>,
     ) -> Self {
         Self {
             key,
-            first_player,
-            second_player,
+            first_player_army,
+            second_player_army,
         }
     }
 
@@ -224,8 +224,8 @@ impl ProphecyRequestArmies {
     /// # Return
     ///
     /// &Vec<ProphecyUnit>: A reference the army list of the first player
-    pub fn get_first_player(&self) -> &Vec<ProphecyUnit> {
-        &self.first_player
+    pub fn get_first_player_army(&self) -> &Vec<ProphecyUnit> {
+        &self.first_player_army
     }
 
     /// Get the key for the request
@@ -233,8 +233,8 @@ impl ProphecyRequestArmies {
     /// # Return
     ///
     /// &Vec<ProphecyUnit>: A reference the army list of the second player
-    pub fn get_second_player(&self) -> &Vec<ProphecyUnit> {
-        &self.second_player
+    pub fn get_second_player_army(&self) -> &Vec<ProphecyUnit> {
+        &self.second_player_army
     }
 
     /// Add a unit to the first player army.
@@ -242,8 +242,8 @@ impl ProphecyRequestArmies {
     /// # Parameters
     ///
     /// `unit` (ProphecyUnit): The unit to be added to the first player army.
-    pub fn add_unit_to_first_player(&mut self, unit: ProphecyUnit) {
-        self.first_player.push(unit);
+    pub fn add_unit_to_first_player_army(&mut self, unit: ProphecyUnit) {
+        self.first_player_army.push(unit);
     }
 
     /// Add a unit to the second player army.
@@ -251,7 +251,7 @@ impl ProphecyRequestArmies {
     /// # Parameters
     ///
     /// `unit` (ProphecyUnit): The unit to be added to the second player army.
-    pub fn add_unit_to_second_player(&mut self, unit: ProphecyUnit) {
-        self.second_player.push(unit);
+    pub fn add_unit_to_second_player_army(&mut self, unit: ProphecyUnit) {
+        self.second_player_army.push(unit);
     }
 }
