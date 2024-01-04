@@ -3,7 +3,7 @@ import numpy as np
 import main, os
 import random, json
 
-with open('flask_config.json', 'r') as config_file:
+with open('./flask_config.json', 'r') as config_file:
     config = json.load(config_file)
 
 app = Flask(__name__)
