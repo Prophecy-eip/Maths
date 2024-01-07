@@ -1,9 +1,11 @@
+#![allow(missing_docs)]
 //! Implement Route module
 //!
 //! This module contains the integration of the flask poc to link the IA and the dynamic library.
 //!
 use crate::web_server;
-use reqwest::*;
+
+//use reqwest::*;
 // use serde_json::Value;
 // use std::fs::File;
 // use std::io::Read;
@@ -33,6 +35,37 @@ fn adjust_values(val1: f64, val2: f64) -> (u8, u8) {
     }
 }
 
+/// Enum used to Represents an error that occurred during a reqwest operation.
+///
+/// # Attributes
+///
+/// ReqwestError (reqwest::Error): tott
+///
+/// JsonError (serde_json::Error): tttt
+///
+/// Other (String): tttt
+#[derive(Debug)]
+pub enum MyError {
+    //documentation
+    ReqwestError(reqwest::Error),
+    JsonError(serde_json::Error),
+    Other(String),
+}
+
+impl From<reqwest::Error> for MyError {
+    //doc
+    fn from(err: reqwest::Error) -> MyError {
+        MyError::ReqwestError(err)
+    }
+}
+
+impl From<serde_json::Error> for MyError {
+    // doc
+    fn from(err: serde_json::Error) -> MyError {
+        MyError::JsonError(err)
+    }
+}
+
 /// The bridge between the request in the front and the call to the ai in the back, requested through a flask server
 ///
 /// # Parameters
@@ -40,7 +73,9 @@ fn adjust_values(val1: f64, val2: f64) -> (u8, u8) {
 ///
 /// # Return
 /// Result<(u8,u8)> : a tuple of the formatted values, that will be send to the application
-pub async fn handle_flask_request(req: web_server::ProphecyRequestArmies) -> Result<(u8, u8)> {
+pub async fn handle_flask_request(
+    req: web_server::ProphecyRequestArmies,
+) -> std::result::Result<(u8, u8), MyError> {
     // let mut host: String = String::from("0.0.0.0");
     // let mut port = 4242;
 
@@ -91,9 +126,15 @@ pub async fn handle_flask_request(req: web_server::ProphecyRequestArmies) -> Res
             eprintln!("Response is not an array");
         }
     } else {
-        eprintln!("Failed to get a successful response: {}", res.status());
+        return Err(MyError::Other(format!(
+            "Failed to get a successful response: {}",
+            res.status()
+        )));
     }
-    todo!("Return Error");
+
+    Err(MyError::Other("Unexpected error".to_string()))
+
+    // todo!("Return Error");
 }
 
 #[cfg(test)]
