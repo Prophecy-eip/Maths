@@ -4,9 +4,9 @@
 //!
 use crate::web_server;
 use reqwest::*;
-use serde_json::Value;
-use std::fs::File;
-use std::io::Read;
+// use serde_json::Value;
+// use std::fs::File;
+// use std::io::Read;
 
 /// Take the two values given by the IA and round the closest value to its ceiling to and truncate the other to make
 /// an even 20 every time in the total score.
@@ -41,30 +41,30 @@ fn adjust_values(val1: f64, val2: f64) -> (u8, u8) {
 /// # Return
 /// Result<(u8,u8)> : a tuple of the formatted values, that will be send to the application
 pub async fn handle_flask_request(req: web_server::ProphecyRequestArmies) -> Result<(u8, u8)> {
-    let mut host = String::from("localhost");
-    let mut port = 4242;
+    // let mut host: String = String::from("0.0.0.0");
+    // let mut port = 4242;
 
-    match File::open("../../ai/flask_config.json") {
-        Ok(mut file) => {
-            let mut contents = String::new();
-            match file.read_to_string(&mut contents) {
-                Ok(_) => match serde_json::from_str::<Value>(&contents) {
-                    Ok(config) => {
-                        host = config["client_rust"]
-                            .as_str()
-                            .unwrap_or("localhost")
-                            .to_string();
-                        port = config["port"].as_u64().unwrap_or(4242) as u16;
-                    }
-                    Err(e) => eprintln!("Error: Unable to parse the config file. {:?}", e),
-                },
-                Err(e) => eprintln!("Error: Unable to read the config file. {:?}", e),
-            }
-        }
-        Err(e) => eprintln!("Error: Unable to open the config file. {:?}", e),
-    }
+    // match File::open("../../ai/flask_config.json") {
+    //     Ok(mut file) => {
+    //         let mut contents = String::new();
+    //         match file.read_to_string(&mut contents) {
+    //             Ok(_) => match serde_json::from_str::<Value>(&contents) {
+    //                 Ok(config) => {
+    //                     host = config["client_rust"]
+    //                         .as_str()
+    //                         .unwrap_or("0.0.0.0")
+    //                         .to_string();
+    //                     port = config["port"].as_u64().unwrap_or(4242) as u16;
+    //                 }
+    //                 Err(e) => eprintln!("Error: Unable to parse the config file. {:?}", e),
+    //             },
+    //             Err(e) => eprintln!("Error: Unable to read the config file. {:?}", e),
+    //         }
+    //     }
+    //     Err(e) => eprintln!("Error: Unable to open the config file. {:?}", e),
+    // }
 
-    let url = format!("http://{}:{}/predict", host, port);
+    let url = "http://dev.prophecy-eip.com/ai".to_string();
     let data = serde_json::to_value(&req).expect("Failed to serialize request to JSON.");
     let client = reqwest::Client::new();
     let res = client
@@ -93,8 +93,7 @@ pub async fn handle_flask_request(req: web_server::ProphecyRequestArmies) -> Res
     } else {
         eprintln!("Failed to get a successful response: {}", res.status());
     }
-
-    unreachable!()
+    todo!("Return Error");
 }
 
 #[cfg(test)]
