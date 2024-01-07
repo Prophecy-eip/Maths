@@ -7,8 +7,8 @@ from neuronal_network.model_builder import format_json_match, format_matchs, pur
 # The absolute path to the current file
 ABSOLUTE_PATH = os.path.dirname(os.path.abspath(__file__))
 
-if not ABSOLUTE_PATH.endswith('ai'):
-    ABSOLUTE_PATH = os.path.join(ABSOLUTE_PATH, 'ai')
+# if not ABSOLUTE_PATH.endswith('ai'):
+#     ABSOLUTE_PATH = os.path.join(ABSOLUTE_PATH, 'ai')
 
 MODEL_PATH = os.path.join(
     ABSOLUTE_PATH, 'neuronal_network', 'trainning_data', 'model.h5'
