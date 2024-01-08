@@ -16,7 +16,7 @@ JSON_DATA = json.load(
 )
 
 # Size of the biggest army
-MAX_ARMY_SIZE = 0
+MAX_ARMY_SIZE = 22
 
 # Number of stats for each unit
 NB_STAT = 12
@@ -154,7 +154,7 @@ def format_matchs(matches: dict):
     Returns:
         (np.array, np.array, int): The inputs, the outputs and the max length of the armies
     """
-    max_army_len = 0
+    max_army_len = 22
     first_army_len = 0
     second_army_len = 0
     scores = []
