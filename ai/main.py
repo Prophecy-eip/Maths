@@ -3,6 +3,7 @@ from keras.models import load_model
 from ai_model_building.army_builder import army_builder
 from ai_model_building.utils import removekey
 from neuronal_network.model_builder import format_json_match, format_matchs, purge_data
+import copy
 
 # The absolute path to the current file
 ABSOLUTE_PATH = os.path.dirname(os.path.abspath(__file__))
@@ -29,6 +30,14 @@ def is_in_cache(request):
 
 def put_in_cache(request, result):
     CACHE.append({'request': request, 'result': result})
+    
+def sanitize_request(request):
+    cop = copy.deepcopy(request)
+    if len (request['first_player']) > 22 :
+        cop['first_player'] = request['first_player'][:22]
+    if len (request['second_player']) > 22 :
+        cop['second_player'] = request['second_player'][:22]
+    return cop
 
 def format_request(request):
     """Format the request to a format usable by our model
@@ -93,7 +102,7 @@ def predict(request):
     cache_request = is_in_cache(request)
     if cache_request is not None:
         return cache_request
-    x_value = format_request(request)
+    x_value = format_request(sanitize_request(request))
     result = MODEL.predict(x_value)
     put_in_cache(request, list(result[0]))
     return list(result[0])
