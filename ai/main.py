@@ -99,6 +99,8 @@ def predict(request):
     if MODEL is None:
         print('Model not found')
         return
+    
+    print("Received: ", request)
     cache_request = is_in_cache(request)
     if cache_request is not None:
         return cache_request
