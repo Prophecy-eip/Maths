@@ -14,6 +14,21 @@ MODEL_PATH = os.path.join(
     ABSOLUTE_PATH, 'neuronal_network', 'trainning_data', 'model.h5'
 )
 
+MODEL = load_model(MODEL_PATH)
+
+CACHE = []
+
+
+def is_in_cache(request):
+    for cache in CACHE:
+        if cache['request'] == request:
+            return cache['result']
+        elif cache['request']['first_player'] == request['second_player'] and cache['request']['second_player'] == request['first_player']:
+            return cache['result'][::-1]
+    return None
+
+def put_in_cache(request, result):
+    CACHE.append({'request': request, 'result': result})
 
 def format_request(request):
     """Format the request to a format usable by our model
@@ -71,10 +86,14 @@ def predict(request):
 
     Returns: (list(int)): The model's prediction)
     """
-    model = load_model(MODEL_PATH)
-    if model is None:
+   
+    if MODEL is None:
         print('Model not found')
         return
+    cache_request = is_in_cache(request)
+    if cache_request is not None:
+        return cache_request
     x_value = format_request(request)
-    result = model.predict(x_value)
+    result = MODEL.predict(x_value)
+    put_in_cache(request, list(result[0]))
     return list(result[0])
