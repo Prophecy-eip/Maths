@@ -24,6 +24,7 @@ def predict():
     Returns: (np.array): The request formatted
     """
     my_json = request.json
+    print("RUST REFEIVED: ", my_json)
     res = main.predict(my_json)
 
     # Convert float32 values to float64
