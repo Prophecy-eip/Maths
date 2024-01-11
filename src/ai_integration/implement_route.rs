@@ -99,7 +99,7 @@ pub async fn handle_flask_request(
     //     Err(e) => eprintln!("Error: Unable to open the config file. {:?}", e),
     // }
 
-    let url = "https://dev.prophecy-eip.com/ai/predict".to_string();
+    let url = "https://prophecy-eip.com/ai/predict".to_string();
     let data = serde_json::to_value(&req).expect("Failed to serialize request to JSON.");
     let client = reqwest::Client::new();
     let res = client
